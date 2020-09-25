@@ -15,8 +15,10 @@
 Update 2020-09-25 #5
 - 
 
+[commited]
 Update 2020-09-25 #4
-- 
+- Update DMT.TA.TODv1 #2
+  - Add NLib and NLib.Reports project.
 
 [commited]
 Update 2020-09-25 #3
