@@ -18,8 +18,10 @@ Update 2020-09-25 #10
 Update 2020-09-25 #9
 - 
 
+[commited]
 Update 2020-09-25 #8
-- 
+- Update DMT.TA.TODv1 #6
+  - Add DMT.Smartcard project.
 
 [commited]
 Update 2020-09-25 #7

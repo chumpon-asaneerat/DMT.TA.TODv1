@@ -15,7 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.NLib", "00.NLib", "{53DA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLib.Reports", "00.NLib\NLib.Reports\NLib.Reports.csproj", "{5879D92A-F850-4A70-8D88-99D29F6A46F3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01Core", "01Core", "{A7135166-0550-4B37-856A-0816FB2A3BD7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Core", "01.Core", "{A7135166-0550-4B37-856A-0816FB2A3BD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.DMT.Smartcard", "01.Core\01.DMT.Smartcard\01.DMT.Smartcard.csproj", "{5148ED2A-41FA-409C-BB41-36806D98BF81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,10 @@ Global
 		{5879D92A-F850-4A70-8D88-99D29F6A46F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5879D92A-F850-4A70-8D88-99D29F6A46F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5879D92A-F850-4A70-8D88-99D29F6A46F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5148ED2A-41FA-409C-BB41-36806D98BF81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5148ED2A-41FA-409C-BB41-36806D98BF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5148ED2A-41FA-409C-BB41-36806D98BF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5148ED2A-41FA-409C-BB41-36806D98BF81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{41A9D6C0-C833-403F-9BC1-EECDC246A428} = {53DAF96C-957C-4E0F-B167-82107ADF16BB}
 		{5879D92A-F850-4A70-8D88-99D29F6A46F3} = {53DAF96C-957C-4E0F-B167-82107ADF16BB}
+		{5148ED2A-41FA-409C-BB41-36806D98BF81} = {A7135166-0550-4B37-856A-0816FB2A3BD7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
