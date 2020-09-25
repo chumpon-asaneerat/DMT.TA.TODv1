@@ -29,6 +29,10 @@ Update 2020-09-26 #1
 
 --------------------------------------------------------------------------------------------
 [commited]
+Update 2020-09-25 #17
+- Remove Test proejct to test INotifyPropertyChanged
+
+[commited]
 Update 2020-09-25 #16
 - Add Test proejct to test INotifyPropertyChanged
 
