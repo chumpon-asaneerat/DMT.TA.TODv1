@@ -24,8 +24,10 @@ Update 2020-09-25 #13
 Update 2020-09-25 #12
 - 
 
+[commited]
 Update 2020-09-25 #11
-- 
+- Update DMT.TA.TODv1 #9
+  - Add required tools folder.
 
 [commited]
 Update 2020-09-25 #10

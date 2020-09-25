@@ -21,6 +21,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.DMT.Smartcard", "01.Core
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10.Tests", "10.Tests", "{39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99.Tools", "99.Tools", "{D934BB3A-EEC0-4CD9-ACAB-3386A3C1D92D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.VSIX", "01.VSIX", "{E0D1CEBC-9526-4637-A313-18D1C73C76DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReportViewer", "ReportViewer", "{3EC54B94-6C68-44B1-8445-071B343196CF}"
+	ProjectSection(SolutionItems) = preProject
+		99.Tools\01.VSIX\ReportViewer\Microsoft.DataTools.ReportingServices.z01 = 99.Tools\01.VSIX\ReportViewer\Microsoft.DataTools.ReportingServices.z01
+		99.Tools\01.VSIX\ReportViewer\Microsoft.DataTools.ReportingServices.z02 = 99.Tools\01.VSIX\ReportViewer\Microsoft.DataTools.ReportingServices.z02
+		99.Tools\01.VSIX\ReportViewer\Microsoft.DataTools.ReportingServices.zip = 99.Tools\01.VSIX\ReportViewer\Microsoft.DataTools.ReportingServices.zip
+		99.Tools\01.VSIX\ReportViewer\Microsoft.RdlcDesigner.vsix = 99.Tools\01.VSIX\ReportViewer\Microsoft.RdlcDesigner.vsix
+		99.Tools\01.VSIX\ReportViewer\note.txt = 99.Tools\01.VSIX\ReportViewer\note.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.RFREADER", "02.RFREADER", "{B195EA14-C142-484A-AC82-00D3B8D06F50}"
+	ProjectSection(SolutionItems) = preProject
+		99.Tools\02.RFREADER\ICTransfer.exe = 99.Tools\02.RFREADER\ICTransfer.exe
+		99.Tools\02.RFREADER\MasterCom.dll = 99.Tools\02.RFREADER\MasterCom.dll
+		99.Tools\02.RFREADER\MasterRD.dll = 99.Tools\02.RFREADER\MasterRD.dll
+		99.Tools\02.RFREADER\SL600 test.txt = 99.Tools\02.RFREADER\SL600 test.txt
+		99.Tools\02.RFREADER\SL_Paper.dll = 99.Tools\02.RFREADER\SL_Paper.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +69,9 @@ Global
 		{41A9D6C0-C833-403F-9BC1-EECDC246A428} = {53DAF96C-957C-4E0F-B167-82107ADF16BB}
 		{5879D92A-F850-4A70-8D88-99D29F6A46F3} = {53DAF96C-957C-4E0F-B167-82107ADF16BB}
 		{5148ED2A-41FA-409C-BB41-36806D98BF81} = {A7135166-0550-4B37-856A-0816FB2A3BD7}
+		{E0D1CEBC-9526-4637-A313-18D1C73C76DD} = {D934BB3A-EEC0-4CD9-ACAB-3386A3C1D92D}
+		{3EC54B94-6C68-44B1-8445-071B343196CF} = {E0D1CEBC-9526-4637-A313-18D1C73C76DD}
+		{B195EA14-C142-484A-AC82-00D3B8D06F50} = {D934BB3A-EEC0-4CD9-ACAB-3386A3C1D92D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
