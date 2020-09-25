@@ -22,8 +22,11 @@ Update 2020-09-26 #4
 Update 2020-09-26 #3
 - 
 
+[commited]
 Update 2020-09-26 #2
-- 
+- Add Wpf Sample.
+  - Update ScrollViewer Sample #1.
+  - Update EnterAsTab Sample #1.
 
 [commited]
 Update 2020-09-26 #1
