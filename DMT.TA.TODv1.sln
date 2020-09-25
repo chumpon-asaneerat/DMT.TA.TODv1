@@ -53,6 +53,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Models", "02.Models", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.WebServices", "03.WebServices", "{EBCD7A0A-EB25-4850-88F3-80895FB25E4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartcardM1Test", "11.Samples\SmartcardM1Test\SmartcardM1Test.csproj", "{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{5148ED2A-41FA-409C-BB41-36806D98BF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5148ED2A-41FA-409C-BB41-36806D98BF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5148ED2A-41FA-409C-BB41-36806D98BF81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +88,7 @@ Global
 		{E0D1CEBC-9526-4637-A313-18D1C73C76DD} = {D934BB3A-EEC0-4CD9-ACAB-3386A3C1D92D}
 		{3EC54B94-6C68-44B1-8445-071B343196CF} = {E0D1CEBC-9526-4637-A313-18D1C73C76DD}
 		{B195EA14-C142-484A-AC82-00D3B8D06F50} = {D934BB3A-EEC0-4CD9-ACAB-3386A3C1D92D}
+		{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53} = {E41B4DB4-8280-4394-A3F1-6B628388902A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}

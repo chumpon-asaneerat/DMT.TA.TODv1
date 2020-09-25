@@ -15,8 +15,10 @@
 Update 2020-09-25 #15
 - 
 
+[commited]
 Update 2020-09-25 #14
-- 
+- Update DMT.TA.TODv1 #12
+  - Add SmartcardM1Test project.
 
 [commited]
 Update 2020-09-25 #13
