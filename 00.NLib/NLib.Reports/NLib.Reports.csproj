@@ -97,16 +97,16 @@
     <None Include="softbase.snk" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NLib\NLib.csproj">
-      <Project>{41a9d6c0-c833-403f-9bc1-eecdc246a428}</Project>
-      <Name>NLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Page Include="Controls\WpfReportViewer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NLib\NLib.csproj">
+      <Project>{41a9d6c0-c833-403f-9bc1-eecdc246a428}</Project>
+      <Name>NLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
