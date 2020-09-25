@@ -49,6 +49,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09.App", "09.App", "{E172C8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11.Samples", "11.Samples", "{E41B4DB4-8280-4394-A3F1-6B628388902A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Models", "02.Models", "{37EC37D7-C3F5-47BE-87E8-B4D5965C2D21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.WebServices", "03.WebServices", "{EBCD7A0A-EB25-4850-88F3-80895FB25E4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
