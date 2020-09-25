@@ -12,8 +12,10 @@
     - TSBCreditTransaction Required GroupId for group all by each operation.
   - Update Config app and simulator.
 --------------------------------------------------------------------------------------------
+[commited]
 Update 2020-09-25 #5
-- 
+- Update DMT.TA.TODv1 #3
+  - Add Owin, RabbitMQ and some common dlls.
 
 [commited]
 Update 2020-09-25 #4
