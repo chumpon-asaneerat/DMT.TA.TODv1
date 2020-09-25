@@ -43,6 +43,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.RFREADER", "02.RFREADER"
 		99.Tools\02.RFREADER\SL_Paper.dll = 99.Tools\02.RFREADER\SL_Paper.dll
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Controls", "05.Controls", "{5695B8B7-62C5-466C-8712-0BDC4F8CC9CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09.App", "09.App", "{E172C8E1-5AAC-4FAB-91A5-C826BCEA3FBA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11.Samples", "11.Samples", "{E41B4DB4-8280-4394-A3F1-6B628388902A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -21,8 +21,9 @@ Update 2020-09-25 #14
 Update 2020-09-25 #13
 - 
 
+[commited]
 Update 2020-09-25 #12
-- 
+- Update DMT.TA.TODv1 #10
 
 [commited]
 Update 2020-09-25 #11
