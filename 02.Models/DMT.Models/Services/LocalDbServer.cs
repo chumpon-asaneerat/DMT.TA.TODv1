@@ -81,6 +81,8 @@ namespace DMT.Services
 
 		#region Private Methods
 
+		#region InitTables
+
 		private void InitTables()
 		{
 			if (null == Db) return;
@@ -89,6 +91,10 @@ namespace DMT.Services
 			Db.CreateTable<ViewHistory>();
 			Db.CreateTable<UniqueCode>();
 		}
+
+		#endregion
+
+		#region InitView(s)
 
 		class ViewInfo
 		{
@@ -189,6 +195,72 @@ namespace DMT.Services
 				}
 			}
 		}
+
+		private void InitViews()
+		{
+			if (null == Db) return;
+
+			string prefix;
+
+			// Users - Embeded resource used . instead / to access sub contents.
+			prefix = @"Users";
+			InitView("UserView", prefix);
+
+			//TODO: Refactor
+			/*
+			// Infrastructures - Embeded resource used . instead / to access sub contents.
+			prefix = @"Infrastructures";
+			InitView("PlazaGroupView", prefix);
+			InitView("PlazaView", prefix);
+			InitView("LaneView", prefix);
+
+			// Shifts - Embeded resource used . instead / to access sub contents.
+			prefix = @"Shifts";
+			InitView("TSBShiftView", prefix);
+			InitView("UserShiftView", prefix);
+			InitView("UserShiftRevenueView", prefix);
+
+			// LaneActivities - Embeded resource used . instead / to access sub contents.
+			prefix = @"LaneActivities";
+			InitView("LaneAttendanceView", prefix);
+			InitView("LanePaymentView", prefix);
+
+			// Revenues - Embeded resource used . instead / to access sub contents.
+			prefix = @"Revenues";
+			InitView("RevenueEntryView", prefix);
+
+			// Credits - Embeded resource used . instead / to access sub contents.
+			prefix = @"Credits";
+			InitView("TSBCreditSummarryView", prefix);
+			InitView("TSBCreditTransactionView", prefix);
+			InitView("UserCreditBorrowSummaryView", prefix);
+			InitView("UserCreditReturnSummaryView", prefix);
+			InitView("UserCreditSummaryView", prefix);
+			InitView("UserCreditTransactionView", prefix);
+
+			// Coupons - Embeded resource used . instead / to access sub contents.
+			prefix = @"Coupons";
+			InitView("TSBCouponTransactionView", prefix);
+
+			InitView("TSBCouponStockBalanceView", prefix);
+			InitView("TSBCouponLaneBalanceView", prefix);
+			InitView("TSBCouponSoldByLaneBalanceView", prefix);
+			InitView("TSBCouponSoldByTSBBalanceView", prefix);
+			InitView("TSBCouponBalanceView", prefix);
+
+			InitView("TSBCouponSummarryView", prefix);
+			InitView("UserCoupon35SummaryView", prefix);
+			InitView("UserCoupon80SummaryView", prefix);
+			InitView("UserCouponSummaryView", prefix);
+			InitView("UserCouponTransactionView", prefix);
+
+			// Exchanges - Embeded resource used . instead / to access sub contents.
+			prefix = @"Exchanges";
+			InitView("TSBExchangeTransactionView", prefix);
+			*/
+		}
+
+		#endregion
 
 		#endregion
 

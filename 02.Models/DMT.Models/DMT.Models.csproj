@@ -151,7 +151,7 @@
     <Compile Include="Models\Users\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\LocalDbServer.cs" />
-    <Compile Include="Views\Scripts\SqlScriptManager.cs" />
+    <Compile Include="Views\SqlScriptManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
@@ -163,7 +163,9 @@
       <Name>DMT.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Scripts\Users\UserView.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(SolutionDir)References\runtimes\*.*" "$(TargetDir)\runtimes\*.*" /Y/D/E</PostBuildEvent>
