@@ -67,8 +67,11 @@ Update 2020-09-27 #4
 Update 2020-09-27 #3
 - 
 
+[commited]
 Update 2020-09-27 #2
-- 
+- Update DMT.TA.TODv1 #30
+  - Update DMT Models project #1.
+    - ported all models (set compile to none).
 
 [commited]
 Update 2020-09-27 #1
