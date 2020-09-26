@@ -387,7 +387,7 @@ namespace DMT.Models
 		[Category("Lane")]
 		[Description("Gets or sets LaneId")]
 		[ReadOnly(true)]
-		[Ignore]
+		[MaxLength(10)]
 		[PropertyMapName("LaneId")]
 		public string LaneId
 		{
@@ -410,6 +410,7 @@ namespace DMT.Models
 		[Category("Lane")]
 		[Description("Gets or sets Lane No.")]
 		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("LaneNo")]
 		public virtual int LaneNo
 		{

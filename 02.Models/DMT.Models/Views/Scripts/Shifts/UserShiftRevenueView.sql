@@ -13,11 +13,10 @@ AS
 		 , UserShift
 	 WHERE PlazaGroup.TSBId = TSB.TSBId
 	   AND UserShift.TSBId = TSB.TSBId
-	   AND UserShift.PlazaGroupId = PlazaGroup.PlazaGroupId
 	   AND UserShift.ShiftId = [Shift].ShiftId
 	   --AND UserShift.UserId = UserView.UserId
 	   AND UserShiftRevenue.TSBId = TSB.TSBId
-	   AND UserShiftRevenue.PlazaGroupId = TSB.PlazaGroupId
+	   AND UserShiftRevenue.PlazaGroupId = PlazaGroup.PlazaGroupId
 	   AND UserShiftRevenue.ShiftId = [Shift].ShiftId
 	   --AND UserShiftRevenue.UserId = UserView.UserId
 	   AND UserShiftRevenue.UserId = UserShift.UserId

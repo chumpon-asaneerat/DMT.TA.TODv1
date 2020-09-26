@@ -28,8 +28,12 @@ Update 2020-09-27 #17
 Update 2020-09-27 #16
 - 
 
+[commited]
 Update 2020-09-27 #15
-- 
+- Update DMT.TA.TODv1 #44
+  - Update DMT Models project #14.
+    - update UserShiftRevenue view fixed bug in query.
+    - update LanePayment fixed bug in LaneId, LaneNo property.
 
 [commited]
 Update 2020-09-27 #14
