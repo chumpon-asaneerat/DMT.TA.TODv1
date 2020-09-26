@@ -37,8 +37,12 @@ Update 2020-09-27 #14
 Update 2020-09-27 #13
 - 
 
+[commited]
 Update 2020-09-27 #12
-- 
+- Update DMT.TA.TODv1 #41
+  - Update DMT Models project #11.
+    - ported UserShiftRevenue (comment out all static methods)
+    - update UserShiftRevenue Table add FullNameTH, FullNameEN column.
 
 [commited]
 Update 2020-09-27 #11
