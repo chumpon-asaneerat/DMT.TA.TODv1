@@ -148,9 +148,9 @@ namespace DMT.Services
 			Db.CreateTable<LaneAttendance>();
 			Db.CreateTable<LanePayment>();
 
-			/*
 			Db.CreateTable<RevenueEntry>();
 
+			/*
 			Db.CreateTable<TSBCreditTransaction>();
 
 			Db.CreateTable<TSBCouponTransaction>();
@@ -1843,12 +1843,12 @@ namespace DMT.Services
 			InitView("LaneAttendanceView", prefix);
 			InitView("LanePaymentView", prefix);
 
-			//TODO: Refactor
-			/*
-
 			// Revenues - Embeded resource used . instead / to access sub contents.
 			prefix = @"Revenues";
 			InitView("RevenueEntryView", prefix);
+
+			//TODO: Refactor
+			/*
 
 			// Credits - Embeded resource used . instead / to access sub contents.
 			prefix = @"Credits";

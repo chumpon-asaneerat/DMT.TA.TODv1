@@ -61,18 +61,12 @@ namespace DMT.Models
 		private string _ShiftNameEN = string.Empty;
 
 		private string _UserId = string.Empty;
-		private string _FullNameEN = string.Empty;
-		private string _FullNameTH = string.Empty;
-		// Store when printed.
 		private string _CollectorNameEN = string.Empty;
 		private string _CollectorNameTH = string.Empty;
 
 		private string _SupervisorId = string.Empty;
 		private string _SupervisorNameEN = string.Empty;
 		private string _SupervisorNameTH = string.Empty;
-		// Store when printed.
-		private string _ChiefNameEN = string.Empty;
-		private string _ChiefNameTH = string.Empty;
 
 		// Traffic
 		private int _TrafficST25 = 0;
@@ -825,52 +819,6 @@ namespace DMT.Models
 			}
 		}
 		/// <summary>
-		/// Gets or sets Full Name EN.
-		/// </summary>
-		[Category("User")]
-		[Description("Gets or sets User Full Name EN.")]
-		[ReadOnly(true)]
-		[Ignore]
-		[PropertyMapName("FullNameEN")]
-		public virtual string FullNameEN
-		{
-			get
-			{
-				return _FullNameEN;
-			}
-			set
-			{
-				if (_FullNameEN != value)
-				{
-					_FullNameEN = value;
-					this.RaiseChanged("FullNameEN");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets Full Name TH.
-		/// </summary>
-		[Category("User")]
-		[Description("Gets or sets User Full Name TH.")]
-		[ReadOnly(true)]
-		[Ignore]
-		[PropertyMapName("FullNameTH")]
-		public virtual string FullNameTH
-		{
-			get
-			{
-				return _FullNameTH;
-			}
-			set
-			{
-				if (_FullNameTH != value)
-				{
-					_FullNameTH = value;
-					this.RaiseChanged("FullNameTH");
-				}
-			}
-		}
-		/// <summary>
 		/// Gets or sets Collector Name EN (stoed when printed).
 		/// </summary>
 		[Category("User")]
@@ -941,7 +889,7 @@ namespace DMT.Models
 		[Category("Supervisor")]
 		[Description("Gets or sets Supervisor Name EN.")]
 		[ReadOnly(true)]
-		[Ignore]
+		[MaxLength(150)]
 		[PropertyMapName("Supervisor Name EN")]
 		public virtual string SupervisorNameEN
 		{
@@ -964,7 +912,7 @@ namespace DMT.Models
 		[Category("Supervisor")]
 		[Description("Gets or sets Supervisor Name TH.")]
 		[ReadOnly(true)]
-		[Ignore]
+		[MaxLength(150)]
 		[PropertyMapName("SupervisorNameTH")]
 		public virtual string SupervisorNameTH
 		{
@@ -978,42 +926,6 @@ namespace DMT.Models
 				{
 					_SupervisorNameTH = value;
 					this.RaiseChanged("SupervisorNameTH");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets Chief Name EN (stoed when printed).
-		/// </summary>
-		[Category("Supervisor")]
-		[Description("Gets or sets Chief Name EN (stoed when printed).")]
-		[MaxLength(150)]
-		[PropertyMapName("ChiefNameEN")]
-		public string ChiefNameEN
-		{
-			get { return _ChiefNameEN; }
-			set
-			{
-				if (null != _ChiefNameEN)
-				{
-					_ChiefNameEN = value;
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets Chief Name TH (stoed when printed).
-		/// </summary>
-		[Category("Supervisor")]
-		[Description("Gets or sets Chief Name TH (stoed when printed).")]
-		[MaxLength(150)]
-		[PropertyMapName("ChiefNameTH")]
-		public string ChiefNameTH
-		{
-			get { return _ChiefNameTH; }
-			set
-			{
-				if (null != _ChiefNameTH)
-				{
-					_ChiefNameTH = value;
 				}
 			}
 		}
@@ -1708,62 +1620,16 @@ namespace DMT.Models
 			}
 
 			#endregion
-
-			#region User
-
-			/// <summary>
-			/// Gets or sets Full Name EN.
-			/// </summary>
-			[MaxLength(100)]
-			[PropertyMapName("FullNameEN")]
-			public override string FullNameEN
-			{
-				get { return base.FullNameEN; }
-				set { base.FullNameEN = value; }
-			}
-			/// <summary>
-			/// Gets or sets Full Name TH.
-			/// </summary>
-			[MaxLength(100)]
-			[PropertyMapName("FullNameTH")]
-			public override string FullNameTH
-			{
-				get { return base.FullNameTH; }
-				set { base.FullNameTH = value; }
-			}
-
-			#endregion
-
-			#region Supervisor
-
-			/// <summary>
-			/// Gets or sets Supervisor Name EN.
-			/// </summary>
-			[MaxLength(100)]
-			[PropertyMapName("SupervisorNameEN")]
-			public override string SupervisorNameEN
-			{
-				get { return base.SupervisorNameEN; }
-				set { base.SupervisorNameEN = value; }
-			}
-			/// <summary>
-			/// Gets or sets Supervisor Name TH.
-			/// </summary>
-			[MaxLength(100)]
-			[PropertyMapName("SupervisorNameTH")]
-			public override string SupervisorNameTH
-			{
-				get { return base.SupervisorNameTH; }
-				set { base.SupervisorNameTH = value; }
-			}
-
-			#endregion
 		}
 
 		#endregion
 
 		#region Static Methods
 
+		#endregion
+
+		#region Static Methods - Original
+		/*
 		/// <summary>
 		/// Gets all Revenue Enties.
 		/// </summary>
@@ -1919,7 +1785,7 @@ namespace DMT.Models
 				return result;
 			}
 		}
-
+		*/
 		#endregion
 	}
 

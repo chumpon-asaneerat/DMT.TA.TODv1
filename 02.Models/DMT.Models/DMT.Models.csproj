@@ -132,7 +132,7 @@
     <Compile Include="Models\Master\Coupon.cs" />
     <Compile Include="Models\Master\Currency.cs" />
     <Compile Include="Models\Payments\Payment.cs" />
-    <None Include="Models\Old1\Revenues\RevenueEntry.cs" />
+    <Compile Include="Models\Revenues\RevenueEntry.cs" />
     <None Include="Models\Old1\SCW\Common.cs" />
     <None Include="Models\Old1\SCW\SCWChiefOfDuty.cs" />
     <None Include="Models\Old1\SCW\SCWCoupon.cs" />
@@ -179,6 +179,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Views\Scripts\LaneActivities\LaneAttendanceView.sql" />
     <EmbeddedResource Include="Views\Scripts\LaneActivities\LanePaymentView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Scripts\Revenues\RevenueEntryView.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

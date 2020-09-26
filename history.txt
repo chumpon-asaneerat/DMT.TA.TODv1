@@ -25,8 +25,15 @@ Update 2020-09-27 #18
 Update 2020-09-27 #17
 - 
 
+[commited]
 Update 2020-09-27 #16
-- 
+- Update DMT.TA.TODv1 #45
+  - Update DMT Models project #15.
+    - ported RevenueEntry (comment out all static methods).
+    - ported RevenueEntry view. script and related code.
+    - update RevenueEntry Table add CollectorNameTH, CollectorNameEN, SupervisorNameTH, SupervisorNameEN column.
+    - update RevenueEntry View script remove UserView join.
+    - Update Data Dictionay document and update content.
 
 [commited]
 Update 2020-09-27 #15
