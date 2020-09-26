@@ -20,8 +20,8 @@ namespace DMT.Services
         {
             FileName = "netsh.exe";
             UseShellExecute = false;
-            RedirectStandardOutput = true;
-            RedirectStandardError = true;
+            RedirectStandardOutput = false;
+            RedirectStandardError = false;
             CreateNoWindow = true;
 
         }
@@ -38,8 +38,14 @@ namespace DMT.Services
 
             using (var process = Process.Start(psi))
             {
-                process.OutputDataReceived += (sender, eventArgs) => Console.WriteLine("OUTPUT: " + eventArgs.Data);
-                process.ErrorDataReceived += (sender, eventArgs) => Console.WriteLine("ERROR: " + eventArgs.Data);
+                if (RedirectStandardOutput)
+                {
+                    process.OutputDataReceived += (sender, eventArgs) => Console.WriteLine("OUTPUT: " + eventArgs.Data);
+                }
+                if (RedirectStandardError)
+                {
+                    process.ErrorDataReceived += (sender, eventArgs) => Console.WriteLine("ERROR: " + eventArgs.Data);
+                }
 
                 process.BeginOutputReadLine();
                 process.BeginErrorReadLine();

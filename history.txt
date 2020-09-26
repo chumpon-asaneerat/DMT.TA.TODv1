@@ -34,8 +34,10 @@ Update 2020-09-26 #15
 Update 2020-09-26 #14
 - 
 
+[commited]
 Update 2020-09-26 #13
-- 
+- Update DMT.TA.TODv1 #23
+  - Update CommandLine class.
 
 [commited]
 Update 2020-09-26 #12
