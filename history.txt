@@ -13,9 +13,42 @@
   - Update Config app and simulator.
   - Need to check model one by one (in new DMT.TA.TODv1 solution)
 --------------------------------------------------------------------------------------------
-Update 2020-09-26 #10
+Update 2020-09-26 #20
 - 
 
+Update 2020-09-26 #19
+- 
+
+Update 2020-09-26 #18
+- 
+
+Update 2020-09-26 #17
+- 
+
+Update 2020-09-26 #16
+- 
+
+Update 2020-09-26 #15
+- 
+
+Update 2020-09-26 #14
+- 
+
+Update 2020-09-26 #13
+- 
+
+Update 2020-09-26 #12
+- 
+
+Update 2020-09-26 #11
+- 
+
+[commited]
+Update 2020-09-26 #10
+- Update DMT.TA.TODv1 #20
+  - Rename DMT RestServer to DMT Local.RestServer project.
+
+[commited]
 Update 2020-09-26 #9
 - Update DMT.TA.TODv1 #19
   - Add DMT RestServer project.
