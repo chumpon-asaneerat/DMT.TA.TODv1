@@ -1,6 +1,8 @@
 ﻿#region Using
 
 using System;
+using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows;
 
 using NLib;
@@ -15,12 +17,15 @@ namespace DMT
     /// </summary>
     public partial class App : Application
     {
+        /// <summary>
         /// OnStartup.
         /// </summary>
         /// <param name="e"></param>
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+
+            SetupExceptionHandling();
 
             Console.WriteLine("OnStartUp");
             if (null != AppDomain.CurrentDomain)
@@ -113,6 +118,28 @@ namespace DMT
             WpfAppContoller.Instance.Shutdown(autoCloseProcess, e.ApplicationExitCode);
 
             base.OnExit(e);
+        }
+
+        private void SetupExceptionHandling()
+        {
+            MethodBase med = MethodBase.GetCurrentMethod();
+            AppDomain.CurrentDomain.UnhandledException += (s, e) =>
+            {
+                var ex = (Exception)e.ExceptionObject;
+                //LogUnhandledException(ex, "AppDomain.CurrentDomain.UnhandledException");
+            };
+
+            DispatcherUnhandledException += (s, e) =>
+            {
+                //LogUnhandledException(e.Exception, "Application.Current.DispatcherUnhandledException");
+                e.Handled = true;
+            };
+
+            TaskScheduler.UnobservedTaskException += (s, e) =>
+            {
+                //LogUnhandledException(e.Exception, "TaskScheduler.UnobservedTaskException");
+                e.SetObserved();
+            };
         }
     }
 }

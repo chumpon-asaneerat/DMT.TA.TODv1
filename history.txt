@@ -22,8 +22,15 @@ Update 2020-09-26 #19
 Update 2020-09-26 #18
 - 
 
+[commited]
 Update 2020-09-26 #17
-- 
+- Update DMT.TA.TODv1 #27
+  - DMT Controls project.
+    - Add images.
+  - TA App
+    - Add UnhandledException handler
+  - TOD App
+    - Add UnhandledException handler
 
 [commited]
 Update 2020-09-26 #16
