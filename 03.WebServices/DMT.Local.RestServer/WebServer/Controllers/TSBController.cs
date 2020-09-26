@@ -89,10 +89,11 @@ namespace DMT.Services
 
         #region PlazaGroup
 
-        #endregion
-
-        #region PlazaGroup - Original
-        /*
+        /// <summary>
+        /// Gets TSB's Plaza Groups
+        /// </summary>
+        /// <param name="value">The target TSB instance.</param>
+        /// <returns>Returns List of Plaza Groups of specificed TSB.</returns>
         [HttpPost]
         [ActionName(RouteConsts.TSB.GetTSBPlazaGroups.Name)]
         public NDbResult<List<PlazaGroup>> GetTSBPlazaGroups([FromBody] TSB value)
@@ -109,7 +110,11 @@ namespace DMT.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Save PlazaGroup.
+        /// </summary>
+        /// <param name="value">The plaza group instance.</param>
+        /// <returns>Returns Save plaza group instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.TSB.SavePlazaGroup.Name)]
         public NDbResult<PlazaGroup> SavePlazaGroup([FromBody] PlazaGroup value)
@@ -126,7 +131,7 @@ namespace DMT.Services
             }
             return result;
         }
-        */
+
         #endregion
 
         #region Plaza

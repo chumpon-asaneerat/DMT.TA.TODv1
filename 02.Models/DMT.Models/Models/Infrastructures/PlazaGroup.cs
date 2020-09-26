@@ -313,10 +313,6 @@ namespace DMT.Models
 
 		#region Static Methods
 
-		#endregion
-
-		#region Static Methods - Original
-		/*
 		/// <summary>
 		/// Gets PlazaGroups.
 		/// </summary>
@@ -362,54 +358,6 @@ namespace DMT.Models
 			{
 				SQLiteConnection db = Default;
 				return GetPlazaGroups(db);
-			}
-		}
-		/// <summary>
-		/// Gets PlazaGroup (By PlazaGroupId).
-		/// </summary>
-		/// <param name="db">The database connection.</param>
-		/// <param name="plazaGroupId">The Plaza Group Id.</param>
-		/// <returns>Returns PlazaGroup instance.</returns>
-		public static NDbResult<PlazaGroup> GetPlazaGroup(SQLiteConnection db, string plazaGroupId)
-		{
-			var result = new NDbResult<PlazaGroup>();
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM PlazaGroupView ";
-					cmd += " WHERE PlazaGroupId = ? ";
-					var ret = NQuery.Query<FKs>(cmd, plazaGroupId).FirstOrDefault();
-					var data = (null != ret) ? ret.ToModel() : null;
-					result.Success(data);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
-		/// <summary>
-		/// Gets PlazaGroup (By PlazaGroupId).
-		/// </summary>
-		/// <param name="plazaGroupId">The Plaza Group Id</param>
-		/// <returns>Returns PlazaGroup instance.</returns>
-		public static NDbResult<PlazaGroup> GetPlazaGroup(string plazaGroupId)
-		{
-			lock (sync)
-			{
-				SQLiteConnection db = Default;
-				return GetPlazaGroup(db, plazaGroupId);
 			}
 		}
 		/// <summary>
@@ -461,7 +409,55 @@ namespace DMT.Models
 				return result;
 			}
 		}
-		*/
+		/// <summary>
+		/// Gets PlazaGroup (By PlazaGroupId).
+		/// </summary>
+		/// <param name="db">The database connection.</param>
+		/// <param name="plazaGroupId">The Plaza Group Id.</param>
+		/// <returns>Returns PlazaGroup instance.</returns>
+		public static NDbResult<PlazaGroup> GetPlazaGroup(SQLiteConnection db, string plazaGroupId)
+		{
+			var result = new NDbResult<PlazaGroup>();
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string cmd = string.Empty;
+					cmd += "SELECT * ";
+					cmd += "  FROM PlazaGroupView ";
+					cmd += " WHERE PlazaGroupId = ? ";
+					var ret = NQuery.Query<FKs>(cmd, plazaGroupId).FirstOrDefault();
+					var data = (null != ret) ? ret.ToModel() : null;
+					result.Success(data);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+		/// <summary>
+		/// Gets PlazaGroup (By PlazaGroupId).
+		/// </summary>
+		/// <param name="plazaGroupId">The Plaza Group Id</param>
+		/// <returns>Returns PlazaGroup instance.</returns>
+		public static NDbResult<PlazaGroup> GetPlazaGroup(string plazaGroupId)
+		{
+			lock (sync)
+			{
+				SQLiteConnection db = Default;
+				return GetPlazaGroup(db, plazaGroupId);
+			}
+		}
+
 		#endregion
 	}
 

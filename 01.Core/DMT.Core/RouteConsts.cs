@@ -17,7 +17,7 @@ namespace DMT
 
         #endregion
 
-        #region TSB (Infrastructures)
+        #region TSB - OK
 
         /// <summary>
         /// The TSB routes class.
@@ -32,6 +32,8 @@ namespace DMT
             public const string Url = RouteConsts.Url + @"/TSB";
 
             #endregion
+
+            #region TSB - OK
 
             #region GetTSBs - OK
 
@@ -52,7 +54,7 @@ namespace DMT
 
             #endregion
 
-            #region GetCurrent
+            #region GetCurrent - OK
 
             /// <summary>
             /// Gets Current TSB.
@@ -71,7 +73,7 @@ namespace DMT
 
             #endregion
 
-            #region SetActive
+            #region SetActive - OK
 
             /// <summary>
             /// Set Active TSB.
@@ -90,7 +92,7 @@ namespace DMT
 
             #endregion
 
-            #region SaveTSB
+            #region SaveTSB - OK
 
             /// <summary>
             /// Save TSB.
@@ -106,6 +108,58 @@ namespace DMT
                 /// </summary>
                 public const string Url = TSB.Url + @"/" + Name;
             }
+
+            #endregion
+
+            #endregion
+
+            #region PlazaGroup - OK
+
+            #region GetTSBPlazaGroups - OK
+
+            /// <summary>
+            /// Gets PlazaGroups by TSB.
+            /// </summary>
+            public static class GetTSBPlazaGroups
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetTSBPlazaGroups";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SavePlazaGroup - OK
+
+            /// <summary>
+            /// Save PlazaGroup.
+            /// </summary>
+            public static class SavePlazaGroup
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SavePlazaGroup";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+
+            #region Plaza
+
+            #endregion
+
+            #region Lane
 
             #endregion
         }

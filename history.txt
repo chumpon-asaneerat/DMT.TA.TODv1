@@ -13,8 +13,42 @@
   - Update Config app and simulator.
   - Need to check model one by one (in new DMT.TA.TODv1 solution)
 --------------------------------------------------------------------------------------------
-Update 2020-09-27 #20
+Update 2020-09-27 #30
 - 
+
+Update 2020-09-27 #29
+- 
+
+Update 2020-09-27 #28
+- 
+
+Update 2020-09-27 #27
+- 
+
+Update 2020-09-27 #26
+- 
+
+Update 2020-09-27 #25
+- 
+
+Update 2020-09-27 #24
+- 
+
+Update 2020-09-27 #23
+- 
+
+Update 2020-09-27 #22
+- 
+
+Update 2020-09-27 #21
+- 
+
+[commited]
+Update 2020-09-27 #20
+- Update DMT.TA.TODv1 #49
+  - Update DMT Models project #19.
+    - Update RouteConts for TSB Rest API #3.
+    - Update TSBController for PlazaGroup Rest API #1 (completed).
 
 [commited]
 Update 2020-09-27 #19
