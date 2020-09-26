@@ -40,9 +40,18 @@ Update 2020-09-27 #13
 Update 2020-09-27 #12
 - 
 
+[commited]
 Update 2020-09-27 #11
 - Update DMT.TA.TODv1 #40
   - Update DMT Models project #10.
+    - TSBShift Table add FullNameTH, FullNameEN column.
+    - UserShift Table add FullNameTH, FullNameEN column.
+    - update TSBShift View script remove UserView join.
+    - update UserShift View script remove UserView join.
+    - update UserShiftRevenue View script remove UserView join.
+    - ported InitTSBAndPlazaAndLanes.
+    - ported InitRoleAndUsers.
+
 
 [commited]
 Update 2020-09-27 #10
