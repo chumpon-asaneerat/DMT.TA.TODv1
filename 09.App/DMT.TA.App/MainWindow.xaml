@@ -16,6 +16,7 @@
     <Grid Background="DimGray">
         <DockPanel LastChildFill="True">
             <ctrl:TAHeader DockPanel.Dock="Top" Height="100"></ctrl:TAHeader>
+            <ctrl:TAStatusBar DockPanel.Dock="Bottom" Height="30"/>
             <ContentPresenter x:Name="container"/>
         </DockPanel>
     </Grid>

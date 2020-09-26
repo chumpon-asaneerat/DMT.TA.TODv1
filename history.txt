@@ -16,8 +16,11 @@
 Update 2020-09-26 #20
 - 
 
+[commited]
 Update 2020-09-26 #19
-- 
+- Update DMT.TA.TODv1 #29
+  - DMT Controls project.
+    - Add StatusBar related controls.
 
 [commited]
 Update 2020-09-26 #18

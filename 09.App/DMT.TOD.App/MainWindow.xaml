@@ -16,6 +16,7 @@
     <Grid Background="DimGray">
         <DockPanel LastChildFill="True">
             <ctrl:PlazaHeader DockPanel.Dock="Top" Height="100"></ctrl:PlazaHeader>
+            <ctrl:TODStatusBar DockPanel.Dock="Bottom" Height="30"/>
             <ContentPresenter x:Name="container"/>
         </DockPanel>
     </Grid>
