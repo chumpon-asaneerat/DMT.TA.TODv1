@@ -52,8 +52,15 @@ Update 2020-09-27 #9
 Update 2020-09-27 #8
 - 
 
+[commited]
 Update 2020-09-27 #7
-- 
+- Update DMT.TA.TODv1 #36
+  - Update DMT Models project #6.
+    - ported TSBShift (comment out all static methods).
+    - ported UserShift (comment out all static methods).
+    - ported TSBShift View script and related code.
+    - ported UserShift View script and related code.
+    - ported UserShiftRevenue View script and related code.
 
 [commited]
 Update 2020-09-27 #6

@@ -107,11 +107,11 @@ namespace DMT.Services
 
 			//Db.CreateTable<Payment>();
 
-			/*
 			Db.CreateTable<TSBShift>();
 			Db.CreateTable<UserShift>();
-			Db.CreateTable<UserShiftRevenue>();
+			//Db.CreateTable<UserShiftRevenue>();
 
+			/*
 			Db.CreateTable<LaneAttendance>();
 			Db.CreateTable<LanePayment>();
 

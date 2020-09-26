@@ -143,8 +143,8 @@
     <None Include="Models\Old1\SCW\SCWJob2.cs" />
     <None Include="Models\Old1\SCW\SCWQRCode.cs" />
     <Compile Include="Models\Shifts\Shift.cs" />
-    <None Include="Models\Old1\Shifts\TSBShift.cs" />
-    <None Include="Models\Old1\Shifts\UserShift.cs" />
+    <Compile Include="Models\Shifts\TSBShift.cs" />
+    <Compile Include="Models\Shifts\UserShift.cs" />
     <None Include="Models\Old1\Shifts\UserShiftRevenue.cs" />
     <Compile Include="Models\Users\LogInLog.cs" />
     <Compile Include="Models\Users\Role.cs" />
@@ -170,6 +170,11 @@
     <EmbeddedResource Include="Views\Scripts\Infrastructures\LaneView.sql" />
     <EmbeddedResource Include="Views\Scripts\Infrastructures\PlazaGroupView.sql" />
     <EmbeddedResource Include="Views\Scripts\Infrastructures\PlazaView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Scripts\Shifts\TSBShiftView.sql" />
+    <EmbeddedResource Include="Views\Scripts\Shifts\UserShiftRevenueView.sql" />
+    <EmbeddedResource Include="Views\Scripts\Shifts\UserShiftView.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

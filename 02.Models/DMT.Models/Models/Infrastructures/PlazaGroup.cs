@@ -311,6 +311,10 @@ namespace DMT.Models
 
 		#endregion
 
+		#region Static Methods
+
+		#endregion
+
 		#region Static Methods - Original
 		/*
 		/// <summary>

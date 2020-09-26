@@ -21,28 +21,28 @@ using System.Reflection;
 
 namespace DMT.Models
 {
-    #region UserShift
+    #region TSBShift
 
     /// <summary>
-    /// The UserShift Data Model class.
+    /// The TSBShift Data Model class.
     /// </summary>
     [TypeConverter(typeof(PropertySorterSupportExpandableTypeConverter))]
     [Serializable]
     [JsonObject(MemberSerialization.OptOut)]
-    //[Table("UserShift")]
-    public class UserShift : NTable<UserShift>
+    //[Table("TSBShift")]
+    public class TSBShift : NTable<TSBShift>
     {
         #region Intenral Variables
 
-        private int _UserShiftId = 0;
+        private int _TSBShiftId = 0;
 
         private string _TSBId = string.Empty;
         private string _TSBNameEN = string.Empty;
         private string _TSBNameTH = string.Empty;
 
         private int _ShiftId = 0;
-        private string _ShiftNameTH = string.Empty;
         private string _ShiftNameEN = string.Empty;
+        private string _ShiftNameTH = string.Empty;
 
         private string _UserId = string.Empty;
         private string _FullNameEN = string.Empty;
@@ -61,7 +61,7 @@ namespace DMT.Models
         /// <summary>
         /// Constructor.
         /// </summary>
-        public UserShift() : base() { }
+        public TSBShift() : base() { }
 
         #endregion
 
@@ -76,19 +76,19 @@ namespace DMT.Models
         [Description("Gets or sets PK Id.")]
         [ReadOnly(true)]
         [PrimaryKey, AutoIncrement]
-        [PropertyMapName("UserShiftId")]
-        public int UserShiftId
+        [PropertyMapName("TSBShiftId")]
+        public int TSBShiftId
         {
             get
             {
-                return _UserShiftId;
+                return _TSBShiftId;
             }
             set
             {
-                if (_UserShiftId != value)
+                if (_TSBShiftId != value)
                 {
-                    _UserShiftId = value;
-                    this.RaiseChanged("UserShiftId");
+                    _TSBShiftId = value;
+                    this.RaiseChanged("TSBShiftId");
                 }
             }
         }
@@ -268,7 +268,7 @@ namespace DMT.Models
             }
         }
         /// <summary>
-        /// Gets or sets User Full Name EN
+        /// Gets or sets Full Name EN.
         /// </summary>
         [Category("User")]
         [Description("Gets or sets User Full Name EN.")]
@@ -291,7 +291,7 @@ namespace DMT.Models
             }
         }
         /// <summary>
-        /// Gets or sets User Full Name TH
+        /// Gets or sets Full Name TH.
         /// </summary>
         [Category("User")]
         [Description("Gets or sets User Full Name TH.")]
@@ -450,10 +450,10 @@ namespace DMT.Models
             set { }
         }
         /// <summary>
-        /// Gets or sets End Date Time String.
+        /// Gets End Date Time String.
         /// </summary>
         [Category("Shift")]
-        [Description("Gets or sets End Date Time String.")]
+        [Description("Gets End Date Time String.")]
         [ReadOnly(true)]
         [JsonIgnore]
         [Ignore]
@@ -478,7 +478,7 @@ namespace DMT.Models
         [Category("DataCenter")]
         [Description("Gets or sets Status (1 = Sync, 0 = Unsync, etc..)")]
         [ReadOnly(true)]
-        [PropertyMapName("Status", typeof(UserShift))]
+        [PropertyMapName("Status", typeof(TSBShift))]
         [PropertyOrder(10001)]
         public int Status
         {
@@ -501,7 +501,7 @@ namespace DMT.Models
         [Category("DataCenter")]
         [Description("Gets or sets LastUpdated (Sync to DC).")]
         [ReadOnly(true)]
-        [PropertyMapName("LastUpdate", typeof(UserShift))]
+        [PropertyMapName("LastUpdate", typeof(TSBShift))]
         [PropertyOrder(10002)]
         public DateTime LastUpdate
         {
@@ -525,12 +525,12 @@ namespace DMT.Models
         /// <summary>
         /// The internal FKs class for query data.
         /// </summary>
-        public class FKs : UserShift, IFKs<UserShift>
+        public class FKs : TSBShift, IFKs<TSBShift>
         {
             #region TSB
 
             /// <summary>
-            /// Gets or sets TSB Name EN.
+            /// Gets or sets TSBNameEN.
             /// </summary>
             [MaxLength(100)]
             [PropertyMapName("TSBNameEN")]
@@ -540,7 +540,7 @@ namespace DMT.Models
                 set { base.TSBNameEN = value; }
             }
             /// <summary>
-            /// Gets or sets TSB Name TH.
+            /// Gets or sets TSBNameTH.
             /// </summary>
             [MaxLength(100)]
             [PropertyMapName("TSBNameTH")]
@@ -555,16 +555,6 @@ namespace DMT.Models
             #region Shift
 
             /// <summary>
-            /// Gets or sets Shift Name TH.
-            /// </summary>
-            [MaxLength(50)]
-            [PropertyMapName("ShiftNameTH")]
-            public override string ShiftNameTH
-            {
-                get { return base.ShiftNameTH; }
-                set { base.ShiftNameTH = value; }
-            }
-            /// <summary>
             /// Gets or sets Shift Name EN.
             /// </summary>
             [MaxLength(50)]
@@ -574,6 +564,16 @@ namespace DMT.Models
                 get { return base.ShiftNameEN; }
                 set { base.ShiftNameEN = value; }
             }
+            /// <summary>
+            /// Gets or sets Shift Name TH.
+            /// </summary>
+            [MaxLength(50)]
+            [PropertyMapName("ShiftNameTH")]
+            public override string ShiftNameTH
+            {
+                get { return base.ShiftNameTH; }
+                set { base.ShiftNameTH = value; }
+            }
 
             #endregion
 
@@ -582,7 +582,7 @@ namespace DMT.Models
             /// <summary>
             /// Gets or sets Full Name EN.
             /// </summary>
-            [MaxLength(100)]
+            [MaxLength(150)]
             [PropertyMapName("FullNameEN")]
             public override string FullNameEN
             {
@@ -592,7 +592,7 @@ namespace DMT.Models
             /// <summary>
             /// Gets or sets Full Name TH.
             /// </summary>
-            [MaxLength(100)]
+            [MaxLength(150)]
             [PropertyMapName("FullNameTH")]
             public override string FullNameTH
             {
@@ -607,38 +607,42 @@ namespace DMT.Models
 
         #region Static Methods
 
+        #endregion
+
+        #region Static Methods - Original
+        /*
         /// <summary>
-        /// Create UserShift.
+        /// Create.
         /// </summary>
         /// <param name="shift">The Shift instance.</param>
         /// <param name="supervisor">The User instance.</param>
-        /// <returns>Returns UserShift instance.</returns>
-        public static NDbResult<UserShift> Create(Shift shift, User supervisor)
+        /// <returns>Returns instance of TSBShift.</returns>
+        public static NDbResult<TSBShift> Create(Shift shift, User supervisor)
         {
-            var result = new NDbResult<UserShift>();
+            var result = new NDbResult<TSBShift>();
             SQLiteConnection db = Default;
             if (null == db)
             {
                 result.DbConenctFailed();
                 return result;
             }
-            UserShift inst = Create();
-            // TODO: Assign ReCheck.
             var tsb = TSB.GetCurrent().Value();
+            TSBShift inst = Create();
+            // TODO: Assign ReCheck.
             if (null != tsb) tsb.AssignTo(inst);
             if (null != shift) shift.AssignTo(inst);
             if (null != supervisor) supervisor.AssignTo(inst);
             result.Success(inst);
+
             return result;
         }
         /// <summary>
-        /// Gets UserShift by User Id.
+        /// Gets Current TSB Shift.
         /// </summary>
-        /// <param name="userId">The User Id.</param>
-        /// <returns>Returns UserShift instance.</returns>
-        public static NDbResult<UserShift> GetUserShift(string userId)
+        /// <returns>Returns TSBShift instance</returns>
+        public static NDbResult<TSBShift> GetTSBShift()
         {
-            var result = new NDbResult<UserShift>();
+            var result = new NDbResult<TSBShift>();
             SQLiteConnection db = Default;
             if (null == db)
             {
@@ -651,234 +655,17 @@ namespace DMT.Models
                 result.ParameterIsNull();
                 return result;
             }
-            result = GetUserShift(tsb.TSBId, userId);
+            result = GetTSBShift(tsb.TSBId);
             return result;
         }
         /// <summary>
-        /// Gets UserShift by TSBId and UserId.
-        /// </summary>
-        /// <param name="tsbId">Ths TSB id.</param>
-        /// <param name="userId">The User Id.</param>
-        /// <returns>Returns UserShift instance.</returns>
-        public static NDbResult<UserShift> GetUserShift(string tsbId, string userId)
-        {
-            var result = new NDbResult<UserShift>();
-            SQLiteConnection db = Default;
-            if (null == db)
-            {
-                result.DbConenctFailed();
-                return result;
-            }
-            lock (sync)
-            {
-                MethodBase med = MethodBase.GetCurrentMethod();
-                try
-                {
-                    string cmd = string.Empty;
-                    cmd += "SELECT * ";
-                    cmd += "  FROM UserShiftView ";
-                    cmd += " WHERE TSBId = ? ";
-                    cmd += "   AND UserId = ? ";
-                    cmd += "   AND End = ? ";
-
-                    var ret = NQuery.Query<FKs>(cmd, 
-                        tsbId, userId, DateTime.MinValue).FirstOrDefault();
-                    result.data = (null != ret) ? ret.ToModel() : null;
-                    result.Success();
-                }
-                catch (Exception ex)
-                {
-                    med.Err(ex);
-                    result.Error(ex);
-                }
-                return result;
-            }
-        }
-        /// <summary>
-        /// Begin User Shift.
-        /// </summary>
-        /// <param name="value">The UserShift instance.</param>
-        /// <returns>Returns Begin User Shift Result.</returns>
-        public static NDbResult BeginUserShift(UserShift value)
-        {
-            var result = new NDbResult();
-            SQLiteConnection db = Default;
-            if (null == db)
-            {
-                result.DbConenctFailed();
-                return result;
-            }
-            if (null == value)
-            {
-                result.ParameterIsNull();
-                return result;
-            }
-            lock (sync)
-            {
-                MethodBase med = MethodBase.GetCurrentMethod();
-                try
-                {
-                    var last = GetUserShift(value.TSBId, value.UserId);
-                    if (null != last && null != last.data && !last.errors.hasError)
-                    {
-                        // not enter revenue entry.
-                        result.Error(new Exception("ยังมีกะที่ยังไม่ได้ป้อนรายได้"));
-                        result.errors.errNum = -10;
-                        return result;
-                    }
-                    // Begin new shift.
-                    if (value.Begin == DateTime.MinValue)
-                        value.Begin = DateTime.Now;
-
-                    var saveRet = Save(value);
-                    result.errors = saveRet.errors;
-                    if (!result.errors.hasError)
-                    {
-                        result.Success();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    med.Err(ex);
-                    result.Error(ex);
-                }
-                return result;
-            }
-        }
-        /// <summary>
-        /// End User Shift.
-        /// </summary>
-        /// <param name="value">The UserShift instance.</param>
-        /// <returns>Returns End User Shift Result.</returns>
-        public static NDbResult EndUserShift(UserShift value)
-        {
-            var result = new NDbResult();
-            SQLiteConnection db = Default;
-            if (null == db)
-            {
-                result.DbConenctFailed();
-                return result;
-            }
-            if (null == value)
-            {
-                result.ParameterIsNull();
-                return result;
-            }
-            lock (sync)
-            {
-                MethodBase med = MethodBase.GetCurrentMethod();
-                try
-                {
-                    // End shift.
-                    if (value.End == DateTime.MinValue)
-                        value.End = DateTime.Now;
-
-                    var saveRet = Save(value);
-                    result.errors = saveRet.errors;
-                    if (!result.errors.hasError)
-                    {
-                        result.Success();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    med.Err(ex);
-                    result.Error(ex);
-                }
-                return result;
-            }
-        }
-        /// <summary>
-        /// Gets User Shifts (Active TSB).
-        /// </summary>
-        /// <param name="userId">The User Id.</param>
-        /// <returns>Returns List of User Shifts.</returns>
-        public static NDbResult<List<UserShift>> GetUserShifts(string userId)
-        {
-            var result = new NDbResult<List<UserShift>>();
-            SQLiteConnection db = Default;
-            if (null == db)
-            {
-                result.DbConenctFailed();
-                return result;
-            }
-            var tsb = TSB.GetCurrent().Value();
-            if (null == tsb)
-            {
-                result.ParameterIsNull();
-                return result;
-            }
-            result = GetUserShifts(tsb.TSBId, userId);
-            return result;
-        }
-        /// <summary>
-        /// Gets User Shifts.
-        /// </summary>
-        /// <param name="tsbId">The TSB Id.</param>
-        /// <param name="userId">The User Id.</param>
-        /// <returns>Returns List of User Shifts.</returns>
-        public static NDbResult<List<UserShift>> GetUserShifts(string tsbId, string userId)
-        {
-            var result = new NDbResult<List<UserShift>>();
-            SQLiteConnection db = Default;
-            if (null == db)
-            {
-                result.DbConenctFailed();
-                return result;
-            }
-            lock (sync)
-            {
-                MethodBase med = MethodBase.GetCurrentMethod();
-                try
-                {
-                    string cmd = string.Empty;
-                    cmd += "SELECT * ";
-                    cmd += "  FROM UserShiftView ";
-                    cmd += " WHERE TSBId = ? ";
-                    cmd += "   AND UserShift.UserId = ? ";
-
-                    var rets = NQuery.Query<FKs>(cmd, tsbId, userId).ToList();
-                    var results = rets.ToModels();
-                    result.Success(results);
-                }
-                catch (Exception ex)
-                {
-                    med.Err(ex);
-                    result.Error(ex);
-                }
-                return result;
-            }
-        }
-        /// <summary>
-        /// Gets Un Close User Shifts (Active TSB).
-        /// </summary>
-        /// <returns>Returns List of User Shifts.</returns>
-        public static NDbResult<List<UserShift>> GetUnCloseUserShifts()
-        {
-            var result = new NDbResult<List<UserShift>>();
-            SQLiteConnection db = Default;
-            if (null == db)
-            {
-                result.DbConenctFailed();
-                return result;
-            }
-            var tsb = TSB.GetCurrent().Value();
-            if (null == tsb)
-            {
-                result.ParameterIsNull();
-                return result;
-            }
-            result = GetUnCloseUserShifts(tsb.TSBId);
-            return result;
-        }
-        /// <summary>
-        /// Gets Un Close User Shifts.
+        /// Gets TSBShift by TSBId.
         /// </summary>
         /// <param name="tsbid">The TSB Id.</param>
-        /// <returns>Returns List of User Shifts.</returns>
-        public static NDbResult<List<UserShift>> GetUnCloseUserShifts(string tsbid)
+        /// <returns>Returns TSBShift instance</returns>
+        public static NDbResult<TSBShift> GetTSBShift(string tsbid)
         {
-            var result = new NDbResult<List<UserShift>>();
+            var result = new NDbResult<TSBShift>();
             SQLiteConnection db = Default;
             if (null == db)
             {
@@ -892,13 +679,14 @@ namespace DMT.Models
                 {
                     string cmd = string.Empty;
                     cmd += "SELECT * ";
-                    cmd += "  FROM UserShiftView ";
+                    cmd += "  FROM TSBShiftView ";
                     cmd += " WHERE TSBId = ? ";
                     cmd += "   AND End = ? ";
 
-                    var rets = NQuery.Query<FKs>(cmd, tsbid, DateTime.MinValue).ToList();
-                    var results = rets.ToModels();
-                    result.Success(results);
+                    var ret = NQuery.Query<FKs>(cmd,
+                        tsbid, DateTime.MinValue).FirstOrDefault();
+                    var data = (null != ret) ? ret.ToModel() : null;
+                    result.Success(data);
                 }
                 catch (Exception ex)
                 {
@@ -908,18 +696,67 @@ namespace DMT.Models
                 return result;
             }
         }
+        /// <summary>
+        /// Change Shift.
+        /// </summary>
+        /// <param name="value">The TSBShift instance.</param>
+        /// <returns>Returns Change Shift result.</returns>
+        public static NDbResult ChangeShift(TSBShift value)
+        {
+            var result = new NDbResult();
+            SQLiteConnection db = Default;
+            if (null == db)
+            {
+                result.DbConenctFailed();
+                return result;
+            }
+            if (null == value)
+            {
+                result.ParameterIsNull();
+                return result;
+            }
+            lock (sync)
+            {
+                MethodBase med = MethodBase.GetCurrentMethod();
+                try
+                {
+                    var last = GetTSBShift(value.TSBId).Value();
+                    if (null != last)
+                    {
+                        // End shift.
+                        last.End = DateTime.Now;
+                        Save(last);
+                    }
+                    // Begin new shift.
+                    value.Begin = DateTime.Now;
+                    var saveRet = Save(value);
 
+                    result.errors = saveRet.errors;
+                    if (!result.errors.hasError)
+                    {
+                        result.Success();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    med.Err(ex);
+                    result.Error(ex);
+                }
+                return result;
+            }
+        }
+        */
         #endregion
     }
 
     #endregion
 
-    #region UserShiftCreate
-
+    #region TSBShiftCreate
+    /*
     /// <summary>
-    /// The UserShiftCreate class.
+    /// The TSBShiftCreate class.
     /// </summary>
-    public class UserShiftCreate
+    public class TSBShiftCreate
     {
         /// <summary>
         /// Gets or sets Shift.
@@ -930,6 +767,6 @@ namespace DMT.Models
         /// </summary>
         public User User { get; set; }
     }
-
+    */
     #endregion
 }
