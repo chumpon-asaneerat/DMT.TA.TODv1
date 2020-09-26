@@ -311,8 +311,8 @@ namespace DMT.Models
 
 		#endregion
 
-		#region Static Methods
-
+		#region Static Methods - Original
+		/*
 		/// <summary>
 		/// Gets PlazaGroups.
 		/// </summary>
@@ -457,7 +457,7 @@ namespace DMT.Models
 				return result;
 			}
 		}
-
+		*/
 		#endregion
 	}
 

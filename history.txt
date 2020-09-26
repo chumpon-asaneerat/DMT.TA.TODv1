@@ -64,8 +64,12 @@ Update 2020-09-27 #5
 Update 2020-09-27 #4
 - 
 
+[commited]
 Update 2020-09-27 #3
-- 
+- Update DMT.TA.TODv1 #31
+  - Update DMT Models project #2.
+    - ported TSB, PlazaGroup, Plaza, Lane (comment out all static methods).
+    - ported Role, User, LogInLog (comment out all static methods).
 
 [commited]
 Update 2020-09-27 #2

@@ -198,8 +198,8 @@ namespace DMT.Models
 
 		#endregion
 
-		#region Static Methods
-
+		#region Static Methods - Original
+		/*
 		/// <summary>
 		/// Gets Roles.
 		/// </summary>
@@ -289,7 +289,7 @@ namespace DMT.Models
 				return GetRole(db, roleId);
 			}
 		}
-
+		*/
 		#endregion
 	}
 

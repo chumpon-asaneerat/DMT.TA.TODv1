@@ -21,22 +21,24 @@ using System.Reflection;
 
 namespace DMT.Models
 {
-	#region Plaza
+	#region Lane
 
 	/// <summary>
-	/// The Plaza Data Model class.
+	/// The Lane Data Model class.
 	/// </summary>
 	[TypeConverter(typeof(PropertySorterSupportExpandableTypeConverter))]
 	[Serializable]
 	[JsonObject(MemberSerialization.OptOut)]
-	//[Table("Plaza")]
-	public class Plaza : NTable<Plaza>
+	//[Table("Lane")]
+	public class Lane : NTable<Lane>
 	{
 		#region Intenral Variables
 
-		private string _PlazaId = string.Empty;
-		private string _PlazaNameEN = string.Empty;
-		private string _PlazaNameTH = string.Empty;
+		private int _PkId = 0;
+		private int _LaneNo = 0;
+		private string _LaneId = string.Empty;
+		private string _LaneType = string.Empty;
+		private string _LaneAbbr = string.Empty;
 
 		private string _TSBId = string.Empty;
 		private string _TSBNameEN = string.Empty;
@@ -46,6 +48,10 @@ namespace DMT.Models
 		private string _PlazaGroupNameEN = string.Empty;
 		private string _PlazaGroupNameTH = string.Empty;
 		private string _Direction = string.Empty;
+
+		private string _PlazaId = string.Empty;
+		private string _PlazaNameEN = string.Empty;
+		private string _PlazaNameTH = string.Empty;
 
 		private int _Status = 0;
 		private DateTime _LastUpdate = DateTime.MinValue;
@@ -57,7 +63,7 @@ namespace DMT.Models
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		public Plaza() : base() { }
+		public Lane() : base() { }
 
 		#endregion
 
@@ -66,68 +72,112 @@ namespace DMT.Models
 		#region Common
 
 		/// <summary>
-		/// Gets or sets PlazaId.
+		/// Gets or sets LanePkId
 		/// </summary>
-		[Category("Plaza")]
-		[Description("Gets or sets PlazaId.")]
-		[PrimaryKey, MaxLength(10)]
-		[PropertyMapName("PlazaId")]
-		public string PlazaId
+		[Category("Lane")]
+		[Description("Gets or sets LanePkId")]
+		[ReadOnly(true)]
+		[PrimaryKey, AutoIncrement]
+		[PropertyMapName("PkId")]
+		public int PkId
 		{
 			get
 			{
-				return _PlazaId;
+				return _PkId;
 			}
 			set
 			{
-				if (_PlazaId != value)
+				if (_PkId != value)
 				{
-					_PlazaId = value;
-					this.RaiseChanged("PlazaId");
+					_PkId = value;
+					this.RaiseChanged("PkId");
 				}
 			}
 		}
 		/// <summary>
-		/// Gets or sets PlazaNameEN
+		/// Gets or sets Lane No.
 		/// </summary>
-		[Category("Plaza")]
-		[Description("Gets or sets PlazaNameEN")]
-		[MaxLength(100)]
-		[PropertyMapName("PlazaNameEN")]
-		public string PlazaNameEN
+		[Category("Lane")]
+		[Description("Gets or sets Lane No.")]
+		[PropertyMapName("LaneNo")]
+		public int LaneNo
 		{
 			get
 			{
-				return _PlazaNameEN;
+				return _LaneNo;
 			}
 			set
 			{
-				if (_PlazaNameEN != value)
+				if (_LaneNo != value)
 				{
-					_PlazaNameEN = value;
-					this.RaiseChanged("PlazaNameEN");
+					_LaneNo = value;
+					this.RaiseChanged("LaneNo");
 				}
 			}
 		}
 		/// <summary>
-		/// Gets or sets PlazaNameTH
+		/// Gets or sets LaneId
 		/// </summary>
-		[Category("Plaza")]
-		[Description("Gets or sets PlazaNameTH")]
-		[MaxLength(100)]
-		[PropertyMapName("PlazaNameTH")]
-		public string PlazaNameTH
+		[Category("Lane")]
+		[Description("Gets or sets LaneId")]
+		[MaxLength(10)]
+		[PropertyMapName("LaneId")]
+		public string LaneId
 		{
 			get
 			{
-				return _PlazaNameTH;
+				return _LaneId;
 			}
 			set
 			{
-				if (_PlazaNameTH != value)
+				if (_LaneId != value)
 				{
-					_PlazaNameTH = value;
-					this.RaiseChanged("PlazaNameTH");
+					_LaneId = value;
+					this.RaiseChanged("LaneId");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets LaneType
+		/// </summary>
+		[Category("Lane")]
+		[Description("Gets or sets LaneType")]
+		[MaxLength(10)]
+		[PropertyMapName("LaneType")]
+		public string LaneType
+		{
+			get
+			{
+				return _LaneType;
+			}
+			set
+			{
+				if (_LaneType != value)
+				{
+					_LaneType = value;
+					this.RaiseChanged("LaneType");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets LaneAbbr
+		/// </summary>
+		[Category("Lane")]
+		[Description("Gets or sets LaneAbbr")]
+		[MaxLength(10)]
+		[PropertyMapName("LaneAbbr")]
+		public string LaneAbbr
+		{
+			get
+			{
+				return _LaneAbbr;
+			}
+			set
+			{
+				if (_LaneAbbr != value)
+				{
+					_LaneAbbr = value;
+					this.RaiseChanged("LaneAbbr");
 				}
 			}
 		}
@@ -305,6 +355,80 @@ namespace DMT.Models
 
 		#endregion
 
+		#region Plaza
+
+		/// <summary>
+		/// Gets or sets Plaza Id.
+		/// </summary>
+		[Category("Plaza")]
+		[Description("Gets or sets Plaza Id.")]
+		[ReadOnly(true)]
+		[MaxLength(10)]
+		[PropertyMapName("PlazaId")]
+		public string PlazaId
+		{
+			get
+			{
+				return _PlazaId;
+			}
+			set
+			{
+				if (_PlazaId != value)
+				{
+					_PlazaId = value;
+					this.RaiseChanged("PlazaId");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets Plaza Name EN
+		/// </summary>
+		[Category("Plaza")]
+		[Description("Gets or sets Plaza Name EN")]
+		[ReadOnly(true)]
+		[Ignore]
+		[PropertyMapName("PlazaNameEN")]
+		public virtual string PlazaNameEN
+		{
+			get
+			{
+				return _PlazaNameEN;
+			}
+			set
+			{
+				if (_PlazaNameEN != value)
+				{
+					_PlazaNameEN = value;
+					this.RaiseChanged("PlazaNameEN");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets Plaza Name TH
+		/// </summary>
+		[Category("Plaza")]
+		[Description("Gets or sets Plaza Name TH")]
+		[ReadOnly(true)]
+		[Ignore]
+		[PropertyMapName("PlazaNameTH")]
+		public virtual string PlazaNameTH
+		{
+			get
+			{
+				return _PlazaNameTH;
+			}
+			set
+			{
+				if (_PlazaNameTH != value)
+				{
+					_PlazaNameTH = value;
+					this.RaiseChanged("PlazaNameTH");
+				}
+			}
+		}
+
+		#endregion
+
 		#region Status (DC)
 
 		/// <summary>
@@ -313,7 +437,7 @@ namespace DMT.Models
 		[Category("DataCenter")]
 		[Description("Gets or sets Status (1 = Sync, 0 = Unsync, etc..)")]
 		[ReadOnly(true)]
-		[PropertyMapName("Status", typeof(Plaza))]
+		[PropertyMapName("Status", typeof(Lane))]
 		[PropertyOrder(10001)]
 		public int Status
 		{
@@ -336,7 +460,7 @@ namespace DMT.Models
 		[Category("DataCenter")]
 		[Description("Gets or sets LastUpdated (Sync to DC).")]
 		[ReadOnly(true)]
-		[PropertyMapName("LastUpdate", typeof(Plaza))]
+		[PropertyMapName("LastUpdate", typeof(Lane))]
 		[PropertyOrder(10002)]
 		public DateTime LastUpdate
 		{
@@ -360,7 +484,7 @@ namespace DMT.Models
 		/// <summary>
 		/// The internal FKs class for query data.
 		/// </summary>
-		public class FKs : Plaza, IFKs<Plaza>
+		public class FKs : Lane, IFKs<Lane>
 		{
 			#region TSB
 
@@ -421,20 +545,45 @@ namespace DMT.Models
 			}
 
 			#endregion
+
+			#region Plaza
+
+			/// <summary>
+			/// Gets or sets Plaza Name EN.
+			/// </summary>
+			[MaxLength(100)]
+			[PropertyMapName("PlazaNameEN")]
+			public override string PlazaNameEN
+			{
+				get { return base.PlazaNameEN; }
+				set { base.PlazaNameEN = value; }
+			}
+			/// <summary>
+			/// Gets or sets Plaza Name TH.
+			/// </summary>
+			[MaxLength(100)]
+			[PropertyMapName("PlazaNameTH")]
+			public override string PlazaNameTH
+			{
+				get { return base.PlazaNameTH; }
+				set { base.PlazaNameTH = value; }
+			}
+
+			#endregion
 		}
 
 		#endregion
 
-		#region Static Methods
-
+		#region Static Methods - Original
+		/*
 		/// <summary>
-		/// Gets Plazas.
+		/// Gets Lanes (all TSBs).
 		/// </summary>
 		/// <param name="db">The database connection.</param>
-		/// <returns>Returns List of Plaza.</returns>
-		public static NDbResult<List<Plaza>> GetPlazas(SQLiteConnection db)
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetLanes(SQLiteConnection db)
 		{
-			var result = new NDbResult<List<Plaza>>();
+			var result = new NDbResult<List<Lane>>();
 			if (null == db)
 			{
 				result.DbConenctFailed();
@@ -447,7 +596,7 @@ namespace DMT.Models
 				{
 					string cmd = string.Empty;
 					cmd += "SELECT * ";
-					cmd += "  FROM PlazaView ";
+					cmd += "  FROM LaneView ";
 
 					var rets = NQuery.Query<FKs>(cmd).ToList();
 					var results = rets.ToModels();
@@ -462,26 +611,26 @@ namespace DMT.Models
 			}
 		}
 		/// <summary>
-		/// Gets Plazas.
+		/// Gets Lanes (all TSBs).
 		/// </summary>
-		/// <returns>Returns List of Plaza.</returns>
-		public static NDbResult<List<Plaza>> GetPlazas()
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetLanes()
 		{
 			lock (sync)
 			{
 				SQLiteConnection db = Default;
-				return GetPlazas(db);
+				return GetLanes(db);
 			}
 		}
 		/// <summary>
-		/// Gets Plaza.
+		/// Get Lane.
 		/// </summary>
 		/// <param name="db">The database connection.</param>
-		/// <param name="plazaId">The Plaza Id</param>
-		/// <returns>Returns Plaza instance.</returns>
-		public static NDbResult<Plaza> GetPlaza(SQLiteConnection db, string plazaId)
+		/// <param name="laneId">The lane Id.</param>
+		/// <returns>Returns instance of Lane.</returns>
+		public static NDbResult<Lane> GetLane(SQLiteConnection db, string laneId)
 		{
-			var result = new NDbResult<Plaza>();
+			var result = new NDbResult<Lane>();
 			if (null == db)
 			{
 				result.DbConenctFailed();
@@ -494,9 +643,10 @@ namespace DMT.Models
 				{
 					string cmd = string.Empty;
 					cmd += "SELECT * ";
-					cmd += "  FROM PlazaView ";
-					cmd += " WHERE PlazaId = ? ";
-					var ret = NQuery.Query<FKs>(cmd, plazaId).FirstOrDefault();
+					cmd += "  FROM LaneView ";
+					cmd += " WHERE LaneId = ? ";
+
+					var ret = NQuery.Query<FKs>(cmd, laneId).FirstOrDefault();
 					var data = (null != ret) ? ret.ToModel() : null;
 					result.Success(data);
 				}
@@ -509,46 +659,45 @@ namespace DMT.Models
 			}
 		}
 		/// <summary>
-		/// Gets Plaza.
+		/// Get Lane.
 		/// </summary>
-		/// <param name="plazaId">The Plaza Id.</param>
-		/// <returns>Returns Plaza instance.</returns>
-		public static NDbResult<Plaza> GetPlaza(string plazaId)
+		/// <param name="laneId">The lane Id.</param>
+		/// <returns>Returns instance of Lane.</returns>
+		public static NDbResult<Lane> GetLane(string laneId)
 		{
 			lock (sync)
 			{
 				SQLiteConnection db = Default;
-				return GetPlaza(db, plazaId);
+				return GetLane(db, laneId);
 			}
 		}
 		/// <summary>
-		/// Gets Plazas (By TSB).
+		/// Get Lanes (By TSB).
 		/// </summary>
-		/// <param name="value">The TSB Instance.</param>
-		/// <returns>Returns List of Plaza.</returns>
-		public static NDbResult<List<Plaza>> GetTSBPlazas(TSB value)
+		/// <param name="value">The TSB instance.</param>
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetTSBLanes(TSB value)
 		{
-			var result = new NDbResult<List<Plaza>>();
+			var result = new NDbResult<List<Lane>>();
 			SQLiteConnection db = Default;
-			if (null == value)
+			if (null == db)
 			{
-				result.ParameterIsNull();
+				result.DbConenctFailed();
 				return result;
 			}
-
 			lock (sync)
 			{
-				return GetTSBPlazas(value.TSBId);
+				return GetTSBLanes(value.TSBId);
 			}
 		}
 		/// <summary>
-		/// Gets Plazas (By TSB d).
+		/// Gets Lanes (By TSBId).
 		/// </summary>
 		/// <param name="tsbId">The TSB Id.</param>
-		/// <returns>Returns List of Plaza.</returns>
-		public static NDbResult<List<Plaza>> GetTSBPlazas(string tsbId)
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetTSBLanes(string tsbId)
 		{
-			var result = new NDbResult<List<Plaza>>();
+			var result = new NDbResult<List<Lane>>();
 			SQLiteConnection db = Default;
 			if (null == db)
 			{
@@ -562,9 +711,8 @@ namespace DMT.Models
 				{
 					string cmd = string.Empty;
 					cmd += "SELECT * ";
-					cmd += "  FROM PlazaView ";
+					cmd += "  FROM LaneView ";
 					cmd += " WHERE TSBId = ? ";
-
 					var rets = NQuery.Query<FKs>(cmd, tsbId).ToList();
 					var results = rets.ToModels();
 					result.Success(results);
@@ -577,38 +725,34 @@ namespace DMT.Models
 				return result;
 			}
 		}
-
 		/// <summary>
-		/// Gets Plazas (By PlazaGroup).
+		/// Gets Lanes (By PlazaGroup).
 		/// </summary>
-		/// <param name="value">The PlazaGroup Instance.</param>
-		/// <returns>Returns List of Plaza.</returns>
-		public static NDbResult<List<Plaza>> GetPlazaGroupPlazas(PlazaGroup value)
+		/// <param name="value">The PlazaGroup instance.</param>
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetPlazaGroupLanes(PlazaGroup value)
 		{
-			var result = new NDbResult<List<Plaza>>();
+			var result = new NDbResult<List<Lane>>();
 			SQLiteConnection db = Default;
-			if (null == value)
+			if (null == db)
 			{
-				result.ParameterIsNull();
+				result.DbConenctFailed();
 				return result;
 			}
-
 			lock (sync)
 			{
-				return GetPlazaGroupPlazas(value.TSBId, value.PlazaGroupId);
+				return GetPlazaGroupLanes(value.TSBId, value.PlazaGroupId);
 			}
 		}
 		/// <summary>
-		/// Gets Plazas (By PlazaGroup Id).
+		/// Gets Lanes (By TSBId, PlazaGroupId)
 		/// </summary>
 		/// <param name="tsbId">The TSB Id.</param>
-		/// <param name="plazaGroupId">The PlazaGroup Id.</param>
-		/// <returns>Returns List of Plaza.</returns>
-		public static NDbResult<List<Plaza>> GetPlazaGroupPlazas(
-			string tsbId,
-			string plazaGroupId)
+		/// <param name="plazaGroupId">The Plaza Group Id.</param>
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetPlazaGroupLanes(string tsbId, string plazaGroupId)
 		{
-			var result = new NDbResult<List<Plaza>>();
+			var result = new NDbResult<List<Lane>>();
 			SQLiteConnection db = Default;
 			if (null == db)
 			{
@@ -622,7 +766,7 @@ namespace DMT.Models
 				{
 					string cmd = string.Empty;
 					cmd += "SELECT * ";
-					cmd += "  FROM PlazaView ";
+					cmd += "  FROM LaneView ";
 					cmd += " WHERE TSBId = ? ";
 					cmd += "   AND PlazaGroupId = ? ";
 
@@ -638,7 +782,105 @@ namespace DMT.Models
 				return result;
 			}
 		}
+		/// <summary>
+		/// Gets Lanes (By Plaza).
+		/// </summary>
+		/// <param name="value">The Plaza instance.</param>
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetPlazaLanes(Plaza value)
+		{
+			var result = new NDbResult<List<Lane>>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				return GetPlazaLanes(value.TSBId, value.PlazaGroupId, value.PlazaId);
+			}
+		}
+		/// <summary>
+		/// Gets Lanes (By TSBId, PlazaGroupId. PlazaId).
+		/// </summary>
+		/// <param name="tsbId">The TSB Id.</param>
+		/// <param name="plazaGroupId">The Plaza Group Id.</param>
+		/// <param name="plazaId">The Plaza Id.</param>
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetPlazaLanes(string tsbId, string plazaGroupId, 
+			string plazaId)
+		{
+			var result = new NDbResult<List<Lane>>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string cmd = string.Empty;
+					cmd += "SELECT * ";
+					cmd += "  FROM LaneView ";
+					cmd += " WHERE TSBId = ? ";
+					cmd += "   AND PlazaGroupId = ? ";
+					cmd += "   AND PlazaId = ? ";
 
+					var rets = NQuery.Query<FKs>(cmd, tsbId, plazaGroupId, plazaId).ToList();
+					var results = rets.ToModels();
+					result.Success(results);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+		/// <summary>
+		/// Gets Plaza Lane.
+		/// </summary>
+		/// <param name="plazaId">The plaza Id.</param>
+		/// <param name="laneNo">The lane number.</param>
+		/// <returns>Returns match lane.</returns>
+		public static NDbResult<Lane> GetPlazaLane(string plazaId, int laneNo)
+		{
+			var result = new NDbResult<Lane>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string cmd = string.Empty;
+					cmd += "SELECT * ";
+					cmd += "  FROM LaneView ";
+					cmd += " WHERE PlazaId = ? ";
+					cmd += "   AND LaneNo = ? ";
+
+					var ret = NQuery.Query<FKs>(cmd, plazaId, laneNo).FirstOrDefault();
+					var data = (null != ret) ? ret.ToModel() : null;
+					result.Success(data);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+		*/
 		#endregion
 	}
 
