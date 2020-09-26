@@ -15,9 +15,7 @@
         Unloaded="Window_Unloaded">
     <Grid Background="DimGray">
         <DockPanel LastChildFill="True">
-            <!--                
-            <ctrl:AccountHeader DockPanel.Dock="Top" Height="100"></ctrl:AccountHeader>
-            -->
+            <ctrl:TAHeader DockPanel.Dock="Top" Height="100"></ctrl:TAHeader>
             <ContentPresenter x:Name="container"/>
         </DockPanel>
     </Grid>

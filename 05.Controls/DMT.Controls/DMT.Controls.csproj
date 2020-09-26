@@ -58,6 +58,31 @@
     <Compile Include="Controls\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Header\TAHeader.xaml.cs">
+      <DependentUpon>TAHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\CurrentTA.cs" />
+    <Compile Include="Header\Elements\HeaderDateTime.xaml.cs">
+      <DependentUpon>HeaderDateTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\Elements\HeaderLogo.xaml.cs">
+      <DependentUpon>HeaderLogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\Elements\HeaderPlaza.xaml.cs">
+      <DependentUpon>HeaderPlaza.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\Elements\HeaderShift.xaml.cs">
+      <DependentUpon>HeaderShift.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\Elements\HeaderSupervisor.xaml.cs">
+      <DependentUpon>HeaderSupervisor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\Elements\HeaderUser.xaml.cs">
+      <DependentUpon>HeaderUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\PlazaHeader.xaml.cs">
+      <DependentUpon>PlazaHeader.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -113,6 +138,38 @@
     <Page Include="Controls\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Header\TAHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\Elements\HeaderDateTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\Elements\HeaderLogo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\Elements\HeaderPlaza.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\Elements\HeaderShift.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\Elements\HeaderSupervisor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\Elements\HeaderUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\PlazaHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
