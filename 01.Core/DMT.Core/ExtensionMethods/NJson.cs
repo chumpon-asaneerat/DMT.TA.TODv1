@@ -155,8 +155,11 @@ namespace DMT
         {
             get
             {
+                /*
                 string localFilder = Folders.Combine(
                     Folders.Assemblies.CurrentExecutingAssembly, "configs");
+                */
+                string localFilder = ApplicationManager.Instance.Environments.Company.Configs.FullName;
                 if (!Folders.Exists(localFilder))
                 {
                     Folders.Create(localFilder);

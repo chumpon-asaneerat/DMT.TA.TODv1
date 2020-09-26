@@ -103,13 +103,6 @@ namespace DMT.Services
                 HostName = "localhost",
                 PortNumber = 9000
             };
-
-            this.WebSocket = new WebServiceConfig()
-            {
-                Protocol = "ws",
-                HostName = "localhost",
-                PortNumber = 9100
-            };
         }
 
         #endregion
@@ -145,10 +138,6 @@ namespace DMT.Services
         /// Gets or sets Http service.
         /// </summary>
         public WebServiceConfig Http { get; set; }
-        /// <summary>
-        /// Gets or sets Web Socket service.
-        /// </summary>
-        public WebServiceConfig WebSocket { get; set; }
 
         #endregion
     }
@@ -279,6 +268,130 @@ namespace DMT.Services
 
     #endregion
 
+    #region TAAppConfig
+
+    /// <summary>
+    /// The TAAppConfig class.
+    /// </summary>
+    [JsonObject(MemberSerialization.OptOut)]
+    public class TAAppConfig
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public TAAppConfig()
+        {
+            this.Http = new WebServiceConfig()
+            {
+                Protocol = "http",
+                HostName = "localhost",
+                PortNumber = 9001
+            };
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// IsEquals.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public bool IsEquals(object obj)
+        {
+            if (null == obj || !(obj is TAAppConfig)) return false;
+            return this.GetString() == (obj as TAAppConfig).GetString();
+        }
+        /// <summary>
+        /// GetString.
+        /// </summary>
+        /// <returns></returns>
+        public string GetString()
+        {
+            if (null != this.Http)
+                return string.Format("{0}", this.Http.GetString());
+            else return "TA App http is null.";
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets Http service.
+        /// </summary>
+        public WebServiceConfig Http { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
+    #region TODAppConfig
+
+    /// <summary>
+    /// The TAAppConfig class.
+    /// </summary>
+    [JsonObject(MemberSerialization.OptOut)]
+    public class TODAppConfig
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public TODAppConfig()
+        {
+            this.Http = new WebServiceConfig()
+            {
+                Protocol = "http",
+                HostName = "localhost",
+                PortNumber = 9002
+            };
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// IsEquals.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public bool IsEquals(object obj)
+        {
+            if (null == obj || !(obj is TODAppConfig)) return false;
+            return this.GetString() == (obj as TODAppConfig).GetString();
+        }
+        /// <summary>
+        /// GetString.
+        /// </summary>
+        /// <returns></returns>
+        public string GetString()
+        {
+            if (null != this.Http)
+                return string.Format("{0}", this.Http.GetString());
+            else return "TOD App http is null.";
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets Http service.
+        /// </summary>
+        public WebServiceConfig Http { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
     #region PlazaConfig
 
     /// <summary>
@@ -297,6 +410,8 @@ namespace DMT.Services
             this.Local = new LocalWebServiceConfig();
             this.TAxTOD = new TAxTODWebServiceConfig();
             this.SCW = new SCWWebServiceConfig();
+            this.TAApp = new TAAppConfig();
+            this.TODApp = new TODAppConfig();
         }
 
         #endregion
@@ -366,6 +481,14 @@ namespace DMT.Services
         /// Gets or sets SCW Service Config.
         /// </summary>
         public SCWWebServiceConfig SCW { get; set; }
+        /// <summary>
+        /// Gets or sets TA App Service Config (for notify).
+        /// </summary>
+        public TAAppConfig TAApp { get; set; }
+        /// <summary>
+        /// Gets or sets TOD App Service Config (for notify).
+        /// </summary>
+        public TODAppConfig TODApp { get; set; }
 
         #endregion
     }
@@ -435,112 +558,7 @@ namespace DMT.Services
 
         #endregion
 
-        #region Private Methods
-
-        /*
-        private void Processing()
-        {
-            TimeSpan ts;
-            while (null != _th && IsRunning &&
-                !ApplicationManager.Instance.IsExit)
-            {
-                ts = DateTime.Now - _lastUpdate;
-                if (ts.TotalMilliseconds > _timeout)
-                {
-                    UpdateConfig();
-                    _lastUpdate = DateTime.Now;
-                }
-            }
-            Shutdown();
-        }
-        */
-        /*
-        private void UpdateConfig()
-        {
-            lock (this)
-            {
-                MethodBase med = MethodBase.GetCurrentMethod();
-                try
-                {
-                    var oldCfg = _plazaCfg;
-                    if (!NJson.ConfigExists(_fileName))
-                    {
-                        _plazaCfg = null;
-                    }
-                    else
-                    {
-                        _plazaCfg = NJson.LoadFromFile<PlazaConfig>(_fileName);
-                        if (null != oldCfg)
-                        {
-                            // some thing error
-                        }
-                    }
-
-                    // save back to file.
-                    if (null == _plazaCfg)
-                    {
-                        Console.WriteLine("Config create new.");
-                        _plazaCfg = (null != oldCfg ) ? oldCfg : new PlazaConfig();
-                        NJson.SaveToFile(_plazaCfg, _fileName);
-                        // Raise event.
-                        ConfigChanged.Call(this, EventArgs.Empty);
-                    }
-                    else
-                    {
-                        if (!_plazaCfg.IsEquals(oldCfg))
-                        {
-                            Console.WriteLine("Config changed by external.");
-                            NJson.SaveToFile(_plazaCfg, _fileName);
-                            // Raise event.
-                            ConfigChanged.Call(this, EventArgs.Empty);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Config not changed.");
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    med.Err(ex);
-                }
-            }
-        }
-        */
-        #endregion
-
         #region Public Methods
-
-        /*
-        /// <summary>
-        /// Start Service.
-        /// </summary>
-        public void Start()
-        {
-            if (null == _th)
-            {
-                _th = new Thread(Processing);
-                _th.Priority = ThreadPriority.BelowNormal;
-                _th.Name = "DMT Config Manager Thread";
-                _th.IsBackground = true;
-                IsRunning = true;
-                _th.Start();
-            }
-        }
-        /// <summary>
-        /// Shutdown Service.
-        /// </summary>
-        public void Shutdown()
-        {
-            IsRunning = false;
-            if (null != _th)
-            {
-                try { _th.Abort(); }
-                catch (ThreadAbortException) { }
-            }
-            _th = null;
-        }
-        */
 
         /// <summary>
         /// Load Config from file.

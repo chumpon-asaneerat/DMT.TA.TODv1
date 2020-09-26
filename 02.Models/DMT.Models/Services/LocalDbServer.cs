@@ -11,14 +11,14 @@ using System.Reflection;
 
 // SQLite
 using SQLite;
-using SQLiteNetExtensions.Attributes;
-using SQLiteNetExtensions.Extensions;
+//using SQLiteNetExtensions.Attributes;
+//using SQLiteNetExtensions.Extensions;
 
 using NLib;
 using NLib.IO;
 
 using DMT.Models;
-//using DMT.Views;
+using DMT.Views;
 
 #endregion
 
@@ -83,7 +83,111 @@ namespace DMT.Services
 
 		private void InitTables()
 		{
+			if (null == Db) return;
 
+			Db.CreateTable<Config>();
+			Db.CreateTable<ViewHistory>();
+			Db.CreateTable<UniqueCode>();
+		}
+
+		class ViewInfo
+		{
+			public string Name { get; set; }
+		}
+
+		private void InitView(string viewName, string resourcePrefix = "")
+		{
+			if (null == Db) return;
+
+			var hist = ViewHistory.GetWithChildren(viewName, false).Value();
+
+			string checkViewCmd = "SELECT Name FROM sqlite_master WHERE Type = 'view' AND Name = ?";
+			var rets = Db.Query<ViewInfo>(checkViewCmd, viewName);
+			bool exists = (null != rets && rets.Count > 0);
+
+			//bool exists = (null != info) ? info.Count > 0 : false;
+
+			if (!exists || null == hist || hist.VersionId != HistoryVersion)
+			{
+				string script = string.Empty;
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string dropCmd = string.Empty;
+					dropCmd += "DROP VIEW IF EXISTS " + viewName;
+					Db.BeginTransaction();
+					try { Db.Execute(dropCmd); }
+					catch (Exception dropEx)
+					{
+						//Console.WriteLine(dropEx);
+						med.Err(dropEx);
+						med.Err("Drop Failed:" + Environment.NewLine + viewName);
+						Db.Rollback();
+					}
+					finally { Db.Commit(); }
+
+					// Recheck
+					/*
+					rets = Db.Query<ViewInfo>(checkViewCmd, viewName);
+					exists = (null != rets && rets.Count > 0);
+					if (exists)
+					{
+						Console.WriteLine("Drop View Failed.");
+					}
+					*/
+
+					string resourceName = viewName + ".sql";
+					// Note: 
+					// -----------------------------------------------------------
+					// Embeded resource used . instead / to access sub contents.
+					// -----------------------------------------------------------
+					string embededResourceName;
+					if (!string.IsNullOrWhiteSpace(resourcePrefix))
+					{
+						// Has prefix
+						if (!resourcePrefix.Trim().EndsWith("."))
+						{
+							// Not end with . so append . and concat full name.
+							embededResourceName = @"DMT.Views.Scripts." + resourcePrefix + "." + resourceName;
+						}
+						else
+						{
+							// Already end with . so concat to full name.
+							embededResourceName = @"DMT.Views.Scripts." + resourcePrefix + resourceName;
+						}
+					}
+					else
+					{
+						// No prefix.
+						embededResourceName = @"DMT.Views.Scripts." + resourceName;
+					}
+
+					script = SqliteScriptManager.GetScript(embededResourceName);
+
+					if (!string.IsNullOrEmpty(script))
+					{
+						var ret = Db.Execute(script);
+
+						Console.WriteLine("Returns: {0}", ret);
+
+						if (null == hist) hist = new ViewHistory();
+						hist.ViewName = viewName;
+						hist.VersionId = HistoryVersion;
+						ViewHistory.Save(hist);
+					}
+					else
+					{
+						Console.WriteLine("{0} Has Empty Scripts.", viewName);
+					}
+				}
+				catch (Exception ex)
+				{
+					//Console.WriteLine(ex);
+					med.Err(ex);
+					med.Err("Script:" + Environment.NewLine + script);
+					Console.WriteLine(script);
+				}
+			}
 		}
 
 		#endregion
@@ -101,8 +205,9 @@ namespace DMT.Services
 				string localFilder = Folders.Combine(
 					Folders.Assemblies.CurrentExecutingAssembly, "data");
 				*/
-				string localFilder = Folders.Combine(
-					Folders.Locals.CommonAppData, "data");
+
+				// Stored in C:\ProgarmData\DMT\Data\ folder
+				string localFilder = ApplicationManager.Instance.Environments.Company.Data.FullName;
 				if (!Folders.Exists(localFilder))
 				{
 					Folders.Create(localFilder);
@@ -160,8 +265,8 @@ namespace DMT.Services
 						// for all domain otherwise call static method with user connnection
 						// in each domain class instead omit connection version).
 
-						//NTable.Default = Db;
-						//NQuery.Default = Db;
+						NTable.Default = Db;
+						NQuery.Default = Db;
 
 						InitTables();
 
