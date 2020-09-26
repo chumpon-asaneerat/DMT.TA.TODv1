@@ -91,9 +91,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\01.Core\01.DMT.Smartcard\01.DMT.Smartcard.csproj">
+    <ProjectReference Include="..\..\01.Core\DMT.Smartcard\DMT.Smartcard.csproj">
       <Project>{5148ed2a-41fa-409c-bb41-36806d98bf81}</Project>
-      <Name>01.DMT.Smartcard</Name>
+      <Name>DMT.Smartcard</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
