@@ -13,9 +13,68 @@
   - Update Config app and simulator.
   - Need to check model one by one (in new DMT.TA.TODv1 solution)
 --------------------------------------------------------------------------------------------
-Update 2020-09-26 #20
+Update 2020-09-27 #20
 - 
 
+Update 2020-09-27 #19
+- 
+
+Update 2020-09-27 #18
+- 
+
+Update 2020-09-27 #17
+- 
+
+Update 2020-09-27 #16
+- 
+
+Update 2020-09-27 #15
+- 
+
+Update 2020-09-27 #14
+- 
+
+Update 2020-09-27 #13
+- 
+
+Update 2020-09-27 #12
+- 
+
+Update 2020-09-27 #11
+- 
+
+Update 2020-09-27 #10
+- 
+
+Update 2020-09-27 #9
+- 
+
+Update 2020-09-27 #8
+- 
+
+Update 2020-09-27 #7
+- 
+
+Update 2020-09-27 #6
+- 
+
+Update 2020-09-27 #5
+- 
+
+Update 2020-09-27 #4
+- 
+
+Update 2020-09-27 #3
+- 
+
+Update 2020-09-27 #2
+- 
+
+[commited]
+Update 2020-09-27 #1
+- Prepare history.txt
+
+--------------------------------------------------------------------------------------------
 [commited]
 Update 2020-09-26 #19
 - Update DMT.TA.TODv1 #29
