@@ -81,6 +81,7 @@ namespace DMT.Models
 		private string _NewPassword = string.Empty;
 		private string _ConfirmPassword = string.Empty;
 
+		private bool _IsDummy = false;
 		private int _Status = 1;
 		private DateTime _LastUpdate = DateTime.MinValue;
 
@@ -574,6 +575,30 @@ namespace DMT.Models
 				{
 					_ConfirmPassword = value;
 					ApplyNewPassword();
+				}
+			}
+		}
+
+		#endregion
+
+		#region IsDummy
+
+		/// <summary>
+		/// Gets or sets is dummy data.
+		/// </summary>
+		[Category("Developer")]
+		[Description("Gets or sets is dummy data.")]
+		[ReadOnly(true)]
+		[PropertyMapName("IsDummy")]
+		public bool IsDummy
+		{
+			get { return _IsDummy; }
+			set
+			{
+				if (_IsDummy != value)
+				{
+					_IsDummy = value;
+					this.RaiseChanged("IsDummy");
 				}
 			}
 		}

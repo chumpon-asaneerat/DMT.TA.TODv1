@@ -41,10 +41,17 @@ Update 2020-09-27 #12
 - 
 
 Update 2020-09-27 #11
-- 
+- Update DMT.TA.TODv1 #40
+  - Update DMT Models project #10.
 
+[commited]
 Update 2020-09-27 #10
-- 
+- Update DMT.TA.TODv1 #39
+  - Update DMT Models project #9.
+    - ported InitRoleAndUsers.
+    - User model add IsDummy property.
+    - Add Data Dictionay document and update content.
+    - Add ER Diagram document.
 
 [commited]
 Update 2020-09-27 #9

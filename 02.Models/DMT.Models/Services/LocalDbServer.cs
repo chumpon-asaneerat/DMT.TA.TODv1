@@ -409,7 +409,433 @@ namespace DMT.Services
 
 		private void InitRoleAndUsers()
 		{
+			if (null == Db) return;
+			Role item;
+			User user;
+			string prefix = string.Empty;
+			string fName = string.Empty;
+			string mName = string.Empty;
+			string lName = string.Empty;
 
+			#region ADMINS
+
+			item = new Role()
+			{
+				RoleId = "ADMINS",
+				RoleNameEN = "Administrator",
+				RoleNameTH = "ผู้ดูแลระบบ",
+				GroupId = 1
+			};
+			if (!Role.Exists(item)) Role.Save(item);
+
+			prefix = "";
+			fName = "Admin 1";
+			mName = "";
+			lName = "";
+			user = new User()
+			{
+				UserId = "99901",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("123456"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			#endregion
+
+			#region ACCOUNT
+
+			item = new Role()
+			{
+				RoleId = "ACCOUNT",
+				RoleNameEN = "Account",
+				RoleNameTH = "ฝ่ายบัญขี",
+				GroupId = 12
+			};
+			if (!Role.Exists(item)) Role.Save(item);
+
+			prefix = "";
+			fName = "audit1";
+			mName = "";
+			lName = "";
+			user = new User()
+			{
+				UserId = "85020",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "นาย";
+			fName = "สมชาย";
+			mName = "";
+			lName = "ตุยเอียว";
+			user = new User()
+			{
+				UserId = "65401",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			#endregion
+
+			#region CTC
+
+			item = new Role()
+			{
+				RoleId = "CTC",
+				RoleNameEN = "Chief Toll Collector",
+				RoleNameTH = "หัวหน้ากะ",
+				GroupId = 4
+			};
+			if (!Role.Exists(item)) Role.Save(item);
+
+			prefix = "นาย";
+			fName = "ผจญ";
+			mName = "";
+			lName = "สุดศิริ";
+			user = new User()
+			{
+				UserId = "13566",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "นาย";
+			fName = "วิรชัย";
+			mName = "";
+			lName = "ขำหิรัญ";
+			user = new User()
+			{
+				UserId = "26855",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "นาย";
+			fName = "บุญส่ง";
+			mName = "";
+			lName = "บุญปลื้ม";
+			user = new User()
+			{
+				UserId = "30242",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "นาย";
+			fName = "สมบูรณ์";
+			mName = "";
+			lName = "สบายดี";
+			user = new User()
+			{
+				UserId = "76333",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			#endregion
+
+			#region TC
+
+			item = new Role()
+			{
+				RoleId = "TC",
+				RoleNameEN = "Toll Collector",
+				RoleNameTH = "พนักงาน",
+				GroupId = 2
+			};
+			if (!Role.Exists(item)) Role.Save(item);
+
+			prefix = "นาย";
+			fName = "อดิศร";
+			mName = "";
+			lName = "ทิพยไพศาล";
+			user = new User()
+			{
+				UserId = "00111",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "นาย";
+			fName = "ภักดี";
+			mName = "";
+			lName = "อมรรุ่งโรจน์";
+			user = new User()
+			{
+				UserId = "14211",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "นางสาว";
+			fName = "แก้วใส";
+			mName = "";
+			lName = "ฟ้ารุ่งโรจณ์";
+			user = new User()
+			{
+				UserId = "14124",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "นาง";
+			fName = "วิภา";
+			mName = "";
+			lName = "สวัสดิวัฒน์";
+			user = new User()
+			{
+				UserId = "14055",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "นาย";
+			fName = "สุเทพ";
+			mName = "";
+			lName = "เหมัน";
+			user = new User()
+			{
+				UserId = "14321",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "นาย";
+			fName = "ศิริลักษณ์";
+			mName = "";
+			lName = "วงษาหาร";
+			user = new User()
+			{
+				UserId = "14477",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "นางสาว";
+			fName = "สุณิสา";
+			mName = "";
+			lName = "อีนูน";
+			user = new User()
+			{
+				UserId = "14566",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "นาง";
+			fName = "วาสนา";
+			mName = "";
+			lName = "ชาญวิเศษ";
+			user = new User()
+			{
+				UserId = "15097",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("1234"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			prefix = "Mr.";
+			fName = "killer1115";
+			mName = "";
+			lName = "";
+			user = new User()
+			{
+				UserId = "15097",
+				PrefixEN = prefix,
+				FirstNameEN = fName,
+				MiddleNameEN = mName,
+				LastNameEN = lName,
+				PrefixTH = prefix,
+				FirstNameTH = fName,
+				MiddleNameTH = mName,
+				LastNameTH = lName,
+				Password = Utils.MD5.Encrypt("killer1115"),
+				CardId = "",
+				IsDummy = true,
+				Status = 1,
+				RoleId = item.RoleId
+			};
+			if (!User.Exists(user)) User.Save(user);
+
+			#endregion
 		}
 
 		#endregion
