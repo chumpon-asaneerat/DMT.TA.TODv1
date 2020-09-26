@@ -34,8 +34,14 @@ Update 2020-09-27 #15
 Update 2020-09-27 #14
 - 
 
+[commited]
 Update 2020-09-27 #13
-- 
+- Update DMT.TA.TODv1 #42
+  - Update DMT Models project #12.
+    - ported LaneAttendance, LanePayment (comment out all static methods)
+    - update LaneAttendance, LanePayment Table add FullNameTH, FullNameEN column.
+    - ported LaneAttendance, LanePayment View script and related code.
+    - update LaneAttendance, LanePayment View script remove UserView join.
 
 [commited]
 Update 2020-09-27 #12

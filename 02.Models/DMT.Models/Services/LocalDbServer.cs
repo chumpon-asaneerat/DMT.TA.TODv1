@@ -143,12 +143,12 @@ namespace DMT.Services
 
 			Db.CreateTable<TSBShift>();
 			Db.CreateTable<UserShift>();
-			//Db.CreateTable<UserShiftRevenue>();
+			Db.CreateTable<UserShiftRevenue>();
 
-			/*
 			Db.CreateTable<LaneAttendance>();
 			Db.CreateTable<LanePayment>();
 
+			/*
 			Db.CreateTable<RevenueEntry>();
 
 			Db.CreateTable<TSBCreditTransaction>();
@@ -1836,14 +1836,15 @@ namespace DMT.Services
 			prefix = @"Shifts";
 			InitView("TSBShiftView", prefix);
 			InitView("UserShiftView", prefix);
-			//InitView("UserShiftRevenueView", prefix);
+			InitView("UserShiftRevenueView", prefix);
 
-			//TODO: Refactor
-			/*
 			// LaneActivities - Embeded resource used . instead / to access sub contents.
 			prefix = @"LaneActivities";
 			InitView("LaneAttendanceView", prefix);
 			InitView("LanePaymentView", prefix);
+
+			//TODO: Refactor
+			/*
 
 			// Revenues - Embeded resource used . instead / to access sub contents.
 			prefix = @"Revenues";

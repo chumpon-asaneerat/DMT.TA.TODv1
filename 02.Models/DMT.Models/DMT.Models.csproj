@@ -127,8 +127,8 @@
     <Compile Include="Models\Infrastructures\Plaza.cs" />
     <Compile Include="Models\Infrastructures\PlazaGroup.cs" />
     <Compile Include="Models\Infrastructures\TSB.cs" />
-    <None Include="Models\Old1\LaneActivities\LaneAttendance.cs" />
-    <None Include="Models\Old1\LaneActivities\LanePayment.cs" />
+    <Compile Include="Models\LaneActivities\LaneAttendance.cs" />
+    <Compile Include="Models\LaneActivities\LanePayment.cs" />
     <Compile Include="Models\Master\Coupon.cs" />
     <Compile Include="Models\Master\Currency.cs" />
     <Compile Include="Models\Payments\Payment.cs" />
@@ -175,6 +175,10 @@
     <EmbeddedResource Include="Views\Scripts\Shifts\TSBShiftView.sql" />
     <EmbeddedResource Include="Views\Scripts\Shifts\UserShiftRevenueView.sql" />
     <EmbeddedResource Include="Views\Scripts\Shifts\UserShiftView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Scripts\LaneActivities\LaneAttendanceView.sql" />
+    <EmbeddedResource Include="Views\Scripts\LaneActivities\LanePaymentView.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
