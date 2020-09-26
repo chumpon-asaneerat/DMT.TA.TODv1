@@ -22,8 +22,13 @@ Update 2020-09-27 #19
 Update 2020-09-27 #18
 - 
 
+[commited]
 Update 2020-09-27 #17
-- 
+- Update DMT.TA.TODv1 #46
+  - Update DMT Models project #16.
+    - Add Nullable Extension Methods.
+    - Add SCW Extension Methods.
+    - Add TAxTOD Extension Methods.
 
 [commited]
 Update 2020-09-27 #16

@@ -102,6 +102,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExtensionMethods\NullableType,ExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\SCW.ExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\TAxTOD,ExtensionMethods.cs" />
     <Compile Include="Models\Common\DMTModelBase.cs" />
     <Compile Include="Models\Common\NDbResult.cs" />
     <Compile Include="Models\Common\NQueries.cs" />

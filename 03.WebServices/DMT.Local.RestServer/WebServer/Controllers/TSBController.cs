@@ -18,7 +18,7 @@ namespace DMT.Services
     public class TSBController : ApiController
     {
         #region TSB
-
+        /*
         [HttpPost]
         [ActionName(RouteConsts.TSB.GetTSBs.Name)]
         public NDbResult<List<TSB>> GetTSBs()
@@ -70,11 +70,11 @@ namespace DMT.Services
             }
             return result;
         }
-
+        */
         #endregion
 
         #region Plaza
-
+        /*
         [HttpPost]
         [ActionName(RouteConsts.TSB.GetTSBPlazas.Name)]
         public NDbResult<List<Plaza>> GetTSBPlazas([FromBody] TSB value)
@@ -125,11 +125,11 @@ namespace DMT.Services
             }
             return result;
         }
-
+        */
         #endregion
 
         #region PlazaGroup
-
+        /*
         [HttpPost]
         [ActionName(RouteConsts.TSB.GetTSBPlazaGroups.Name)]
         public NDbResult<List<PlazaGroup>> GetTSBPlazaGroups([FromBody] TSB value)
@@ -163,11 +163,11 @@ namespace DMT.Services
             }
             return result;
         }
-
+        */
         #endregion
 
         #region Lane
-
+        /*
         [HttpPost]
         [ActionName(RouteConsts.TSB.GetTSBLanes.Name)]
         public NDbResult<List<Lane>> GetTSBLanes([FromBody] TSB value)
@@ -253,7 +253,7 @@ namespace DMT.Services
             }
             return result;
         }
-
+        */
         #endregion
     }
 }
