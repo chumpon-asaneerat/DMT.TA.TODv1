@@ -19,8 +19,10 @@ Update 2020-09-26 #5
 Update 2020-09-26 #4
 - 
 
+[commited]
 Update 2020-09-26 #3
-- 
+- Update DMT.TA.TODv1 #13
+  - Add SQLLite-Net-PCL and SQLLite-Net.Extension dlls.
 
 [commited]
 Update 2020-09-26 #2
