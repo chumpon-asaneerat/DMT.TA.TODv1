@@ -24,6 +24,40 @@ using DMT.Views;
 
 namespace DMT.Services
 {
+	#region Configs(key) constants
+
+	/// <summary>
+	/// The Config key constants.
+	/// </summary>
+	public static class Configs
+	{
+		/// <summary>
+		/// DC Config key constants.
+		/// </summary>
+		public static class DC
+		{
+			// for data center
+			public static string network = "network";
+			public static string tsb = "tsb";
+			public static string terminal = "terminal";
+		}
+		/*
+		/// <summary>
+		/// Application Config key constants.
+		/// </summary>
+		public static class App
+		{
+			// For app.
+			public static string TSBId = "app_tsb_id";
+			public static string PlazaId = "app_plaza_id";
+			public static string SupervisorId = "app_sup_id";
+			public static string ShiftId = "app_shift_id";
+		}
+		*/
+	}
+
+	#endregion
+
 	#region LobalDbServer
 
 	/// <summary>
@@ -105,7 +139,7 @@ namespace DMT.Services
 			Db.CreateTable<User>();
 			Db.CreateTable<LogInLog>();
 
-			//Db.CreateTable<Payment>();
+			Db.CreateTable<Payment>();
 
 			Db.CreateTable<TSBShift>();
 			Db.CreateTable<UserShift>();
@@ -134,7 +168,7 @@ namespace DMT.Services
 
 		#endregion
 
-		#region InitDefaults
+		#region InitDefaults - OK
 
 		private void InitDefaults()
 		{
@@ -150,20 +184,180 @@ namespace DMT.Services
 
 		#endregion
 
-		#region InitMCurrency
+		#region InitMCurrency - OK
 
 		private void InitMCurrency()
 		{
+			if (null == Db) return;
 
+			if (Db.Table<MCurrency>().Count() > 0) return; // already exists.
+
+			MCurrency item;
+			item = new MCurrency()
+			{
+				currencyDenomId = 1,
+				abbreviation = "Satang25",
+				description = "25 Satang",
+				denomValue = (decimal)0.25,
+				currencyId = 1,
+				denomTypeId = 2 // coin
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
+			item = new MCurrency()
+			{
+				currencyDenomId = 2,
+				abbreviation = "Satang50",
+				description = "50 Satang",
+				denomValue = (decimal)0.5,
+				currencyId = 1,
+				denomTypeId = 2 // coin
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
+			item = new MCurrency()
+			{
+				currencyDenomId = 3,
+				abbreviation = "Baht1",
+				description = "1 Baht",
+				denomValue = 1,
+				currencyId = 1,
+				denomTypeId = 2 // coin
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
+			item = new MCurrency()
+			{
+				currencyDenomId = 4,
+				abbreviation = "Baht2",
+				description = "2 Baht",
+				denomValue = 2,
+				currencyId = 1,
+				denomTypeId = 2 // coin
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
+			item = new MCurrency()
+			{
+				currencyDenomId = 5,
+				abbreviation = "Baht5",
+				description = "5 Baht",
+				denomValue = 5,
+				currencyId = 1,
+				denomTypeId = 2 // coin
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
+			item = new MCurrency()
+			{
+				currencyDenomId = 6,
+				abbreviation = "CBaht10",
+				description = "10 Baht",
+				denomValue = 10,
+				currencyId = 1,
+				denomTypeId = 2 // coin
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
+			item = new MCurrency()
+			{
+				currencyDenomId = 7,
+				abbreviation = "NBaht10",
+				description = "10 Baht",
+				denomValue = 10,
+				currencyId = 1,
+				denomTypeId = 1 // Note
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
+			item = new MCurrency()
+			{
+				currencyDenomId = 8,
+				abbreviation = "NBaht20",
+				description = "20 Baht",
+				denomValue = 20,
+				currencyId = 1,
+				denomTypeId = 1 // Note
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
+			item = new MCurrency()
+			{
+				currencyDenomId = 9,
+				abbreviation = "NBaht50",
+				description = "50 Baht",
+				denomValue = 50,
+				currencyId = 1,
+				denomTypeId = 1 // Note
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
+			item = new MCurrency()
+			{
+				currencyDenomId = 10,
+				abbreviation = "NBaht100",
+				description = "100 Baht",
+				denomValue = 100,
+				currencyId = 1,
+				denomTypeId = 1 // Note
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
+			item = new MCurrency()
+			{
+				currencyDenomId = 11,
+				abbreviation = "NBaht500",
+				description = "500 Baht",
+				denomValue = 500,
+				currencyId = 1,
+				denomTypeId = 1 // Note
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
+			item = new MCurrency()
+			{
+				currencyDenomId = 12,
+				abbreviation = "NBaht1000",
+				description = "1000 Baht",
+				denomValue = 1000,
+				currencyId = 1,
+				denomTypeId = 1 // Note
+			};
+			if (!MCurrency.Exists(item)) MCurrency.Save(item);
 		}
 
 		#endregion
 
-		#region InitMCoupon
+		#region InitMCoupon - OK
 
 		private void InitMCoupon()
 		{
+			if (null == Db) return;
 
+			if (Db.Table<MCoupon>().Count() > 0) return; // already exists.
+
+			MCoupon item;
+			item = new MCoupon()
+			{
+				couponId = 1,
+				couponValue = 30,
+				abbreviation = "30",
+				description = "30 บาท"
+			};
+			if (!MCoupon.Exists(item)) MCoupon.Save(item);
+			item = new MCoupon()
+			{
+				couponId = 2,
+				couponValue = 35,
+				abbreviation = "35",
+				description = "35 บาท"
+			};
+			if (!MCoupon.Exists(item)) MCoupon.Save(item);
+			item = new MCoupon()
+			{
+				couponId = 3,
+				couponValue = 70,
+				abbreviation = "70",
+				description = "70 บาท"
+			};
+			if (!MCoupon.Exists(item)) MCoupon.Save(item);
+			item = new MCoupon()
+			{
+				couponId = 4,
+				couponValue = 80,
+				abbreviation = "80",
+				description = "80 บาท"
+			};
+			if (!MCoupon.Exists(item)) MCoupon.Save(item);
 		}
 
 		#endregion
@@ -177,11 +371,36 @@ namespace DMT.Services
 
 		#endregion
 
-		#region InitShifts
+		#region InitShifts - OK
 
 		private void InitShifts()
 		{
+			if (null == Db) return;
 
+			if (Db.Table<Shift>().Count() > 0) return; // already exists.
+
+			Shift item;
+			item = new Shift()
+			{
+				ShiftId = 1,
+				ShiftNameEN = "Morning",
+				ShiftNameTH = "เช้า"
+			};
+			if (!Shift.Exists(item)) Shift.Save(item);
+			item = new Shift()
+			{
+				ShiftId = 2,
+				ShiftNameEN = "Afternoon",
+				ShiftNameTH = "บ่าย"
+			};
+			if (!Shift.Exists(item)) Shift.Save(item);
+			item = new Shift()
+			{
+				ShiftId = 3,
+				ShiftNameEN = "Midnight",
+				ShiftNameTH = "ดึก"
+			};
+			if (!Shift.Exists(item)) Shift.Save(item);
 		}
 
 		#endregion
@@ -195,25 +414,60 @@ namespace DMT.Services
 
 		#endregion
 
-		#region InitPayments
+		#region InitPayments - OK
 
 		private void InitPayments()
 		{
-
+			if (null == Db) return;
+			Payment item;
+			// for send to Data Center.
+			item = new Payment()
+			{
+				PaymentId = "EMV",
+				PaymentNameEN = "EMV",
+				PaymentNameTH = "อีเอ็มวี"
+			};
+			if (!Payment.Exists(item)) Payment.Save(item);
+			item = new Payment()
+			{
+				PaymentId = "QRCODE",
+				PaymentNameEN = "QR Code",
+				PaymentNameTH = "คิวอาร์ โค้ด"
+			};
+			if (!Payment.Exists(item)) Payment.Save(item);
 		}
 
 		#endregion
 
-		#region InitConfigs
+		#region InitConfigs - OK
 
 		private void InitConfigs()
 		{
-
+			if (null == Db) return;
+			Config item;
+			// for send to Data Center.
+			item = new Config() { Key = Configs.DC.network, Value = "4" };
+			if (!Config.Exists(item)) Config.Save(item);
+			item = new Config() { Key = Configs.DC.tsb, Value = "97" };
+			if (!Config.Exists(item)) Config.Save(item);
+			item = new Config() { Key = Configs.DC.terminal, Value = "49701" };
+			if (!Config.Exists(item)) Config.Save(item);
+			// for application
+			/*
+			item = new Config() { Key = Configs.App.TSBId, Value = "" };
+			if (!Config.Exists(item)) Config.Save(item);
+			item = new Config() { Key = Configs.App.PlazaId, Value = "" };
+			if (!Config.Exists(item)) Config.Save(item);
+			item = new Config() { Key = Configs.App.SupervisorId, Value = "" };
+			if (!Config.Exists(item)) Config.Save(item);
+			item = new Config() { Key = Configs.App.ShiftId, Value = "" };
+			if (!Config.Exists(item)) Config.Save(item);
+			*/
 		}
 
 		#endregion
 
-		#region InitView(s)
+		#region InitView(s) - OK
 
 		class ViewInfo
 		{
@@ -331,14 +585,14 @@ namespace DMT.Services
 			prefix = @"Users";
 			InitView("UserView", prefix);
 
-			//TODO: Refactor
-			/*
 			// Shifts - Embeded resource used . instead / to access sub contents.
 			prefix = @"Shifts";
 			InitView("TSBShiftView", prefix);
 			InitView("UserShiftView", prefix);
-			InitView("UserShiftRevenueView", prefix);
+			//InitView("UserShiftRevenueView", prefix);
 
+			//TODO: Refactor
+			/*
 			// LaneActivities - Embeded resource used . instead / to access sub contents.
 			prefix = @"LaneActivities";
 			InitView("LaneAttendanceView", prefix);

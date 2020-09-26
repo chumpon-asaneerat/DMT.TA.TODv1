@@ -176,8 +176,12 @@ namespace DMT.Models
 
 		#endregion
 
-		#region Static Methods
+		#region Static Methods - Original
 
+		#endregion
+
+		#region Static Methods
+		/*
 		/// <summary>
 		/// Gets Payments.
 		/// </summary>
@@ -221,7 +225,7 @@ namespace DMT.Models
 				return GetPayments(db);
 			}
 		}
-
+		*/
 		#endregion
 	}
 

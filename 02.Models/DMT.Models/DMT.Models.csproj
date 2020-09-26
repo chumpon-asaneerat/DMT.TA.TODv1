@@ -131,7 +131,7 @@
     <None Include="Models\Old1\LaneActivities\LanePayment.cs" />
     <Compile Include="Models\Master\Coupon.cs" />
     <Compile Include="Models\Master\Currency.cs" />
-    <None Include="Models\Old1\Payments\Payment.cs" />
+    <Compile Include="Models\Payments\Payment.cs" />
     <None Include="Models\Old1\Revenues\RevenueEntry.cs" />
     <None Include="Models\Old1\SCW\Common.cs" />
     <None Include="Models\Old1\SCW\SCWChiefOfDuty.cs" />

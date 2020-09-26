@@ -46,8 +46,16 @@ Update 2020-09-27 #11
 Update 2020-09-27 #10
 - 
 
+[commited]
 Update 2020-09-27 #9
-- 
+- Update DMT.TA.TODv1 #38
+  - Update DMT Models project #8.
+    - ported Payment (comment out all static methods).
+    - ported InitMCurrency.
+    - ported InitMCoupon.
+    - ported InitShifts.
+    - ported InitPayments.
+    - ported InitConfigs.
 
 [commited]
 Update 2020-09-27 #8
