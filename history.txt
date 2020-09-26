@@ -58,14 +58,19 @@ Update 2020-09-27 #7
 Update 2020-09-27 #6
 - 
 
+[commited]
 Update 2020-09-27 #5
-- 
+- Update DMT.TA.TODv1 #34
+  - Update DMT Models project #4.
+    - ported PlazaGroup View script and related code.
+    - ported Plaza View script and related code.
+    - ported Lane View script and related code.
 
 [commited]
 Update 2020-09-27 #4
 - Update DMT.TA.TODv1 #33
   - Update DMT Models project #3.
-    - ported UserView script and related code.
+    - ported User View script and related code.
 
 [commited]
 Update 2020-09-27 #3

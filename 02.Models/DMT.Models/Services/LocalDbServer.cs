@@ -94,6 +94,22 @@ namespace DMT.Services
 
 		#endregion
 
+		#region InitDefaults
+
+		private void InitDefaults()
+		{
+			//InitMCurrency();
+			//InitMCoupon();
+			//InitTSBAndPlazaAndLanes();
+			//InitShifts();
+			//InitRoleAndUsers();
+			//InitPayments();
+			//InitConfigs();
+			InitViews();
+		}
+
+		#endregion
+
 		#region InitView(s)
 
 		class ViewInfo
@@ -202,18 +218,18 @@ namespace DMT.Services
 
 			string prefix;
 
-			// Users - Embeded resource used . instead / to access sub contents.
-			prefix = @"Users";
-			InitView("UserView", prefix);
-
-			//TODO: Refactor
-			/*
 			// Infrastructures - Embeded resource used . instead / to access sub contents.
 			prefix = @"Infrastructures";
 			InitView("PlazaGroupView", prefix);
 			InitView("PlazaView", prefix);
 			InitView("LaneView", prefix);
 
+			// Users - Embeded resource used . instead / to access sub contents.
+			prefix = @"Users";
+			InitView("UserView", prefix);
+
+			//TODO: Refactor
+			/*
 			// Shifts - Embeded resource used . instead / to access sub contents.
 			prefix = @"Shifts";
 			InitView("TSBShiftView", prefix);
@@ -341,6 +357,8 @@ namespace DMT.Services
 						NQuery.Default = Db;
 
 						InitTables();
+
+						InitDefaults(); // init default data and views
 
 						OnConnected.Call(this, EventArgs.Empty);
 					}
