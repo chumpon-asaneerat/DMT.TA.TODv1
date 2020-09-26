@@ -247,10 +247,6 @@ namespace DMT.Models
 
 		#region Static Methods
 
-		#endregion
-
-		#region Static Methods - Original
-		/*
 		/// <summary>
 		/// Gets TSBs.
 		/// </summary>
@@ -293,52 +289,6 @@ namespace DMT.Models
 			{
 				SQLiteConnection db = Default;
 				return GetTSBs(db);
-			}
-		}
-		/// <summary>
-		/// Gets TSB By TSB Id.
-		/// </summary>
-		/// <param name="db">The database connection.</param>
-		/// <param name="tsbId">The TSB Id.</param>
-		/// <returns>Returns TSB instance.</returns>
-		public static NDbResult<TSB> GetTSB(SQLiteConnection db, string tsbId)
-		{
-			var result = new NDbResult<TSB>();
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					string cmd = string.Empty;
-					cmd += "SELECT * FROM TSB ";
-					cmd += " WHERE TSBId = ? ";
-					var data = NQuery.Query<TSB>(cmd, tsbId).FirstOrDefault();
-					result.Success(data);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
-		/// <summary>
-		/// Gets TSB By TSB Id.
-		/// </summary>
-		/// <param name="tsbId">The TSB Id.</param>
-		/// <returns>Returns TSB instance.</returns>
-		public static NDbResult<TSB> GetTSB(string tsbId)
-		{
-			lock (sync)
-			{
-				SQLiteConnection db = Default;
-				return GetTSB(db, tsbId);
 			}
 		}
 		/// <summary>
@@ -413,6 +363,57 @@ namespace DMT.Models
 					result.Error(ex);
 				}
 				return result;
+			}
+		}
+
+		#endregion
+
+		#region Static Methods - Original
+		/*
+		/// <summary>
+		/// Gets TSB By TSB Id.
+		/// </summary>
+		/// <param name="db">The database connection.</param>
+		/// <param name="tsbId">The TSB Id.</param>
+		/// <returns>Returns TSB instance.</returns>
+		public static NDbResult<TSB> GetTSB(SQLiteConnection db, string tsbId)
+		{
+			var result = new NDbResult<TSB>();
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string cmd = string.Empty;
+					cmd += "SELECT * FROM TSB ";
+					cmd += " WHERE TSBId = ? ";
+					var data = NQuery.Query<TSB>(cmd, tsbId).FirstOrDefault();
+					result.Success(data);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+		/// <summary>
+		/// Gets TSB By TSB Id.
+		/// </summary>
+		/// <param name="tsbId">The TSB Id.</param>
+		/// <returns>Returns TSB instance.</returns>
+		public static NDbResult<TSB> GetTSB(string tsbId)
+		{
+			lock (sync)
+			{
+				SQLiteConnection db = Default;
+				return GetTSB(db, tsbId);
 			}
 		}
 		*/
