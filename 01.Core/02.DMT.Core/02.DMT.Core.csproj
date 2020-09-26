@@ -65,7 +65,6 @@
     <Compile Include="Services\Common.cs" />
     <Compile Include="Services\ConfigManager.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
       <Project>{41a9d6c0-c833-403f-9bc1-eecdc246a428}</Project>
