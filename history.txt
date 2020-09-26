@@ -55,8 +55,11 @@ Update 2020-09-27 #8
 Update 2020-09-27 #7
 - 
 
+[commited]
 Update 2020-09-27 #6
-- 
+- Update DMT.TA.TODv1 #35
+  - Update DMT Models project #5.
+    - ported Shift (comment out all static methods).
 
 [commited]
 Update 2020-09-27 #5

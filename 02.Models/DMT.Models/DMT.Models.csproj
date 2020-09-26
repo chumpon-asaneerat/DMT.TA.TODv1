@@ -142,7 +142,7 @@
     <None Include="Models\Old1\SCW\SCWJob.cs" />
     <None Include="Models\Old1\SCW\SCWJob2.cs" />
     <None Include="Models\Old1\SCW\SCWQRCode.cs" />
-    <None Include="Models\Old1\Shifts\Shift.cs" />
+    <Compile Include="Models\Shifts\Shift.cs" />
     <None Include="Models\Old1\Shifts\TSBShift.cs" />
     <None Include="Models\Old1\Shifts\UserShift.cs" />
     <None Include="Models\Old1\Shifts\UserShiftRevenue.cs" />

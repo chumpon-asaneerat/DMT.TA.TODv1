@@ -90,6 +90,46 @@ namespace DMT.Services
 			Db.CreateTable<Config>();
 			Db.CreateTable<ViewHistory>();
 			Db.CreateTable<UniqueCode>();
+
+			//Db.CreateTable<MCurrency>();
+			//Db.CreateTable<MCoupon>();
+
+			Db.CreateTable<TSB>();
+			Db.CreateTable<PlazaGroup>();
+			Db.CreateTable<Plaza>();
+			Db.CreateTable<Lane>();
+
+			Db.CreateTable<Shift>();
+
+			Db.CreateTable<Role>();
+			Db.CreateTable<User>();
+			Db.CreateTable<LogInLog>();
+
+			//Db.CreateTable<Payment>();
+
+			/*
+			Db.CreateTable<TSBShift>();
+			Db.CreateTable<UserShift>();
+			Db.CreateTable<UserShiftRevenue>();
+
+			Db.CreateTable<LaneAttendance>();
+			Db.CreateTable<LanePayment>();
+
+			Db.CreateTable<RevenueEntry>();
+
+			Db.CreateTable<TSBCreditTransaction>();
+
+			Db.CreateTable<TSBCouponTransaction>();
+
+			Db.CreateTable<UserCreditBalance>();
+			Db.CreateTable<UserCreditTransaction>();
+
+			//Db.CreateTable<UserCouponBalance>();
+			Db.CreateTable<UserCouponTransaction>();
+
+			Db.CreateTable<TSBExchangeGroup>();
+			Db.CreateTable<TSBExchangeTransaction>();
+			*/
 		}
 
 		#endregion
@@ -98,14 +138,77 @@ namespace DMT.Services
 
 		private void InitDefaults()
 		{
-			//InitMCurrency();
-			//InitMCoupon();
-			//InitTSBAndPlazaAndLanes();
-			//InitShifts();
-			//InitRoleAndUsers();
-			//InitPayments();
-			//InitConfigs();
+			InitMCurrency();
+			InitMCoupon();
+			InitTSBAndPlazaAndLanes();
+			InitShifts();
+			InitRoleAndUsers();
+			InitPayments();
+			InitConfigs();
 			InitViews();
+		}
+
+		#endregion
+
+		#region InitMCurrency
+
+		private void InitMCurrency()
+		{
+
+		}
+
+		#endregion
+
+		#region InitMCoupon
+
+		private void InitMCoupon()
+		{
+
+		}
+
+		#endregion
+
+		#region InitTSBAndPlazaAndLanes
+
+		private void InitTSBAndPlazaAndLanes()
+		{
+
+		}
+
+		#endregion
+
+		#region InitShifts
+
+		private void InitShifts()
+		{
+
+		}
+
+		#endregion
+
+		#region InitRoleAndUsers
+
+		private void InitRoleAndUsers()
+		{
+
+		}
+
+		#endregion
+
+		#region InitPayments
+
+		private void InitPayments()
+		{
+
+		}
+
+		#endregion
+
+		#region InitConfigs
+
+		private void InitConfigs()
+		{
+
 		}
 
 		#endregion
