@@ -49,8 +49,12 @@ Update 2020-09-27 #10
 Update 2020-09-27 #9
 - 
 
+[commited]
 Update 2020-09-27 #8
-- 
+- Update DMT.TA.TODv1 #37
+  - Update DMT Models project #7.
+    - ported MCurrency (comment out all static methods).
+    - ported MCoupon (comment out all static methods).
 
 [commited]
 Update 2020-09-27 #7

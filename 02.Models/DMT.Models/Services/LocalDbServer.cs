@@ -91,8 +91,8 @@ namespace DMT.Services
 			Db.CreateTable<ViewHistory>();
 			Db.CreateTable<UniqueCode>();
 
-			//Db.CreateTable<MCurrency>();
-			//Db.CreateTable<MCoupon>();
+			Db.CreateTable<MCurrency>();
+			Db.CreateTable<MCoupon>();
 
 			Db.CreateTable<TSB>();
 			Db.CreateTable<PlazaGroup>();
