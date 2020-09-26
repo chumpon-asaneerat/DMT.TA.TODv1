@@ -37,8 +37,10 @@ Update 2020-09-26 #14
 Update 2020-09-26 #13
 - 
 
+[commited]
 Update 2020-09-26 #12
-- 
+- Update DMT.TA.TODv1 #22
+  - Supports auto add/delete firewall for all owin self host servers.
 
 [commited]
 Update 2020-09-26 #11

@@ -13,6 +13,7 @@ namespace DMT.Services
 
         public bool UseShellExecute { get; set; }
         public bool RedirectStandardOutput { get; set; }
+        public bool RedirectStandardError { get; set; }
         public bool CreateNoWindow { get; set; }
 
         public CommandLine()
@@ -20,19 +21,31 @@ namespace DMT.Services
             FileName = "netsh.exe";
             UseShellExecute = false;
             RedirectStandardOutput = true;
+            RedirectStandardError = true;
             CreateNoWindow = true;
 
         }
 
         public void Run(string arguments)
         {
-            Process process = new Process();
-            process.StartInfo.FileName = FileName;
-            process.StartInfo.Arguments = arguments;
-            process.StartInfo.UseShellExecute = UseShellExecute;
-            process.StartInfo.RedirectStandardOutput = RedirectStandardOutput;
-            process.StartInfo.CreateNoWindow = CreateNoWindow;
-            process.Start();
+            var psi = new ProcessStartInfo();
+            psi.FileName = FileName;
+            psi.Arguments = arguments;
+            psi.UseShellExecute = UseShellExecute;
+            psi.RedirectStandardOutput = RedirectStandardOutput;
+            psi.RedirectStandardError = RedirectStandardError;
+            psi.CreateNoWindow = CreateNoWindow;
+
+            using (var process = Process.Start(psi))
+            {
+                process.OutputDataReceived += (sender, eventArgs) => Console.WriteLine("OUTPUT: " + eventArgs.Data);
+                process.ErrorDataReceived += (sender, eventArgs) => Console.WriteLine("ERROR: " + eventArgs.Data);
+
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+
+                process.WaitForExit();
+            }
         }
     }
 }

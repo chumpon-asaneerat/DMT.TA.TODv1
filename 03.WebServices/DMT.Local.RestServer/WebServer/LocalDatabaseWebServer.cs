@@ -83,12 +83,20 @@ namespace DMT.Services
 
         private void InitOwinFirewall()
         {
-
+            string portNum = ConfigManager.Instance.Plaza.Local.Http.PortNumber.ToString();
+            string appName = "DMT TODxTA Local Service(REST)";
+            var nash = new CommandLine();
+            nash.Run("http add urlacl url=http://+:" + portNum + "/ user=Everyone");
+            nash.Run("advfirewall firewall add rule dir=in action=allow protocol=TCP localport=" + portNum + " name=\"" + appName  + "\" enable=yes profile=Any");
         }
 
         private void ReleaseOwinFirewall()
         {
-
+            string portNum = ConfigManager.Instance.Plaza.Local.Http.PortNumber.ToString();
+            string appName = "DMT TODxTA Local Service(REST)";
+            var nash = new CommandLine();
+            nash.Run("http delete urlacl url=http://+:" + portNum + "/");
+            nash.Run("advfirewall firewall delete rule name=\"" + appName + "\"");
         }
 
         #endregion
