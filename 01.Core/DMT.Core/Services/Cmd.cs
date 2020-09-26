@@ -41,14 +41,14 @@ namespace DMT.Services
                 if (RedirectStandardOutput)
                 {
                     process.OutputDataReceived += (sender, eventArgs) => Console.WriteLine("OUTPUT: " + eventArgs.Data);
+                    process.BeginOutputReadLine();
                 }
+
                 if (RedirectStandardError)
                 {
                     process.ErrorDataReceived += (sender, eventArgs) => Console.WriteLine("ERROR: " + eventArgs.Data);
+                    process.BeginErrorReadLine();
                 }
-
-                process.BeginOutputReadLine();
-                process.BeginErrorReadLine();
 
                 process.WaitForExit();
             }
