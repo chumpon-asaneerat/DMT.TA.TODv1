@@ -19,6 +19,8 @@ namespace DMT.Services
     {
         #region MCurrency
 
+        #region GetCurrencies
+
         /// <summary>
         /// Gets all Currencies (master).
         /// </summary>
@@ -33,7 +35,11 @@ namespace DMT.Services
 
         #endregion
 
+        #endregion
+
         #region MCoupon
+
+        #region GetCoupons
 
         /// <summary>
         /// Gets all Coupons (master).
@@ -46,6 +52,8 @@ namespace DMT.Services
             var results = MCoupon.GetCoupons();
             return results;
         }
+
+        #endregion
 
         #endregion
     }

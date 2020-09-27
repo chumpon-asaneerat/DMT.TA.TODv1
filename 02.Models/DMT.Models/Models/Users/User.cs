@@ -1083,15 +1083,23 @@ namespace DMT.Models
 		/// </summary>
 		public static class Users
 		{
+			#region ByCardId
+
 			/// <summary>
 			/// Search By Card Id.
 			/// </summary>
 			public class ByCardId : NSearch<ByCardId>
 			{
+				#region Public Properties
+
 				/// <summary>
 				/// Gets or sets Card Id.
 				/// </summary>
 				public string CardId { get; set; }
+
+				#endregion
+
+				#region Static Method (Create)
 
 				/// <summary>
 				/// Create Search instance.
@@ -1104,12 +1112,21 @@ namespace DMT.Models
 					ret.CardId = cardId;
 					return ret;
 				}
+
+				#endregion
 			}
+
+			#endregion
+
+			#region ByLogIn
+
 			/// <summary>
 			/// Search By User Id and Password.
 			/// </summary>
 			public class ByLogIn : NSearch<ByLogIn>
 			{
+				#region Public Properties
+
 				/// <summary>
 				/// Gets or sets User Id.
 				/// </summary>
@@ -1118,6 +1135,10 @@ namespace DMT.Models
 				/// Gets or sets Password.
 				/// </summary>
 				public string Password { get; set; }
+
+				#endregion
+
+				#region Static Method (Create)
 
 				/// <summary>
 				/// Create Search instance.
@@ -1132,16 +1153,29 @@ namespace DMT.Models
 					ret.Password = pwd;
 					return ret;
 				}
+
+				#endregion
 			}
+
+			#endregion
+
+			#region ByGroupId
+
 			/// <summary>
 			/// Search By User Group Id.
 			/// </summary>
 			public class ByGroupId : NSearch<ByGroupId>
 			{
+				#region Public Properties
+
 				/// <summary>
 				/// Gets or sets User Group Id.
 				/// </summary>
 				public int GroupId { get; set; }
+
+				#endregion
+
+				#region Static Method (Create)
 
 				/// <summary>
 				/// Create Search instance.
@@ -1154,12 +1188,21 @@ namespace DMT.Models
 					ret.GroupId = groupId;
 					return ret;
 				}
+
+				#endregion
 			}
+
+			#endregion
+
+			#region ById
+
 			/// <summary>
 			/// Search By User Id in various Roles.
 			/// </summary>
 			public class ById : NSearch<ById>
 			{
+				#region Public Properties
+
 				/// <summary>
 				/// Gets or sets User Id.
 				/// </summary>
@@ -1168,6 +1211,10 @@ namespace DMT.Models
 				/// Gets or sets roles array.
 				/// </summary>
 				public string[] Roles { get; set; }
+
+				#endregion
+
+				#region Static Method (Create)
 
 				/// <summary>
 				/// Create Search instance.
@@ -1182,7 +1229,11 @@ namespace DMT.Models
 					ret.Roles = roles;
 					return ret;
 				}
+
+				#endregion
 			}
+
+			#endregion
 		}
 	}
 

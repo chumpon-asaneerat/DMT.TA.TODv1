@@ -303,15 +303,24 @@ namespace DMT.Models
 		/// </summary>
 		public static class Roles
 		{
+			#region ById
+
 			/// <summary>
 			/// Seach Role By Role Id.
 			/// </summary>
 			public class ById : NSearch<ById>
 			{
+				#region Public Properties
+
 				/// <summary>
 				/// Gets or sets Role Id.
 				/// </summary>
 				public string RoleId { get; set; }
+
+				#endregion
+
+				#region Static Method (Create)
+
 				/// <summary>
 				/// Create Search instance.
 				/// </summary>
@@ -323,7 +332,11 @@ namespace DMT.Models
 					ret.RoleId = roleId;
 					return ret;
 				}
+
+				#endregion
 			}
+
+			#endregion
 		}
 	}
 

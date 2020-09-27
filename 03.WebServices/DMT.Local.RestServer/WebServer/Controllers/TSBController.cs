@@ -19,6 +19,8 @@ namespace DMT.Services
     {
         #region TSB
 
+        #region GetTSBs
+
         /// <summary>
         /// Gets all TSBs.
         /// </summary>
@@ -30,6 +32,11 @@ namespace DMT.Services
             var results = TSB.GetTSBs();
             return results;
         }
+
+        #endregion
+
+        #region GetCurrent
+
         /// <summary>
         /// Gets Current TSB.
         /// </summary>
@@ -41,6 +48,11 @@ namespace DMT.Services
             var result = TSB.GetCurrent();
             return result;
         }
+
+        #endregion
+
+        #region SetActive
+
         /// <summary>
         /// Set Active TSB.
         /// </summary>
@@ -64,6 +76,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region SaveTSB
+
         /// <summary>
         /// Save TSB.
         /// </summary>
@@ -87,7 +104,11 @@ namespace DMT.Services
 
         #endregion
 
+        #endregion
+
         #region PlazaGroup
+
+        #region GetTSBPlazaGroups
 
         /// <summary>
         /// Gets TSB's Plaza Groups
@@ -110,6 +131,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region SavePlazaGroup
+
         /// <summary>
         /// Save PlazaGroup.
         /// </summary>
@@ -134,7 +160,11 @@ namespace DMT.Services
 
         #endregion
 
+        #endregion
+
         #region Plaza
+
+        #region GetPlazaGroupPlazas
 
         /// <summary>
         /// Gets PlazaGroup Plazas.
@@ -157,6 +187,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region SavePlaza
+
         /// <summary>
         /// Save Plaza.
         /// </summary>
@@ -181,7 +216,11 @@ namespace DMT.Services
 
         #endregion
 
+        #endregion
+
         #region Lane
+
+        #region GetPlazaGroupLanes
 
         /// <summary>
         /// Gets PlazaGroup's Lanes.
@@ -205,6 +244,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region GetPlazaLanes
+
         /// <summary>
         /// Gets Plaza's Lanes.
         /// </summary>
@@ -226,6 +270,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region SaveLane
+
         /// <summary>
         /// Save Lane.
         /// </summary>
@@ -247,6 +296,8 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
 
         #endregion
     }

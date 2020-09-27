@@ -19,6 +19,8 @@ namespace DMT.Services
     {
         #region Role
 
+        #region GetRole
+
         /// <summary>
         /// Gets Role By Rold Id.
         /// </summary>
@@ -40,6 +42,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region GetRoles
+
         /// <summary>
         /// Gets Roles.
         /// </summary>
@@ -51,6 +58,11 @@ namespace DMT.Services
             NDbResult<List<Role>> result = Role.GetRoles();
             return result;
         }
+
+        #endregion
+
+        #region SaveRole
+
         /// <summary>
         /// Save Role.
         /// </summary>
@@ -75,7 +87,11 @@ namespace DMT.Services
 
         #endregion
 
+        #endregion
+
         #region User
+
+        #region GetUsers
 
         /// <summary>
         /// Gets Users by Role.
@@ -101,6 +117,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region GetById
+
         /// <summary>
         /// Seach User By User Id (partial match).
         /// </summary>
@@ -123,6 +144,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region SearchByGroupId
+
         /// <summary>
         /// Search User By Role Group Id.
         /// </summary>
@@ -146,6 +172,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region SearchById
+
         /// <summary>
         /// Search User By User Id (exact match).
         /// </summary>
@@ -168,6 +199,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region GetByCardId
+
         /// <summary>
         /// Search User By Card Id.
         /// </summary>
@@ -189,6 +225,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region GetByLogIn
+
         /// <summary>
         /// Gets User by User Name and Password.
         /// </summary>
@@ -210,6 +251,11 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
+
+        #region SaveUser
+
         /// <summary>
         /// Save User.
         /// </summary>
@@ -231,6 +277,8 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
 
         #endregion
     }

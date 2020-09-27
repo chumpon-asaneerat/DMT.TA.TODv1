@@ -726,22 +726,51 @@ namespace DMT.Models
 
     #endregion
 
-    #region TSBShiftCreate
-    /*
-    /// <summary>
-    /// The TSBShiftCreate class.
-    /// </summary>
-    public class TSBShiftCreate
+    #region Create (TSBShift)
+
+    partial class Create
     {
+        #region TSBShift
+
         /// <summary>
-        /// Gets or sets Shift.
+        /// Create TSB Shift By Shift and User instance.
         /// </summary>
-        public Shift Shift { get; set; }
-        /// <summary>
-        /// Gets or sets User.
-        /// </summary>
-        public User User { get; set; }
+        public class TSBShift
+        {
+            #region Public Properties
+
+            /// <summary>
+            /// Gets or sets Shift.
+            /// </summary>
+            public Shift Shift { get; set; }
+            /// <summary>
+            /// Gets or sets User.
+            /// </summary>
+            public User User { get; set; }
+
+            #endregion
+
+            #region Static Method (Create)
+
+            /// <summary>
+            /// Create New instance.
+            /// </summary>
+            /// <param name="shift">The Shift Instance.</param>
+            /// <param name="user">The User Instance.</param>
+            /// <returns>Returns New Create instance.</returns>
+            public static TSBShift Create(Shift shift, User user)
+            {
+                var ret = new TSBShift();
+                ret.Shift = shift;
+                ret.User = user;
+                return ret;
+            }
+
+            #endregion
+        }
+
+        #endregion
     }
-    */
+
     #endregion
 }

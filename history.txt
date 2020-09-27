@@ -25,8 +25,13 @@ Update 2020-09-27 #28
 Update 2020-09-27 #27
 - 
 
+[commited]
 Update 2020-09-27 #26
-- 
+- Update DMT.TA.TODv1 #55
+  - Update DMT Models project #24.
+    - Update TSBController format code region.
+    - Update MasterController format code region.
+    - Update UserController for Role and User Rest API #1 (completed).
 
 [commited]
 Update 2020-09-27 #25

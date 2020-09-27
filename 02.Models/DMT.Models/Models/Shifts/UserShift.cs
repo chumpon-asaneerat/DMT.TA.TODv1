@@ -893,22 +893,51 @@ namespace DMT.Models
 
     #endregion
 
-    #region UserShiftCreate
-    /*
-    /// <summary>
-    /// The UserShiftCreate class.
-    /// </summary>
-    public class UserShiftCreate
+    #region Create (UserShift)
+
+    partial class Create
     {
+        #region UserShift
+
         /// <summary>
-        /// Gets or sets Shift.
+        /// Create User Shift By Shift and User instance.
         /// </summary>
-        public Shift Shift { get; set; }
-        /// <summary>
-        /// Gets or sets User.
-        /// </summary>
-        public User User { get; set; }
+        public class UserShift
+        {
+            #region Public Properties
+
+            /// <summary>
+            /// Gets or sets Shift.
+            /// </summary>
+            public Shift Shift { get; set; }
+            /// <summary>
+            /// Gets or sets User.
+            /// </summary>
+            public User User { get; set; }
+
+            #endregion
+
+            #region Static Method (Create)
+
+            /// <summary>
+            /// Create New instance.
+            /// </summary>
+            /// <param name="shift">The Shift Instance.</param>
+            /// <param name="user">The User Instance.</param>
+            /// <returns>Returns New Create instance.</returns>
+            public static UserShift Create(Shift shift, User user)
+            {
+                var ret = new UserShift();
+                ret.Shift = shift;
+                ret.User = user;
+                return ret;
+            }
+
+            #endregion
+        }
+
+        #endregion
     }
-    */
+
     #endregion
 }
