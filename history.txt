@@ -40,13 +40,15 @@ Update 2020-09-28 #3
 Update 2020-09-28 #2
 - 
 
+[commited]
 Update 2020-09-28 #1
-- 
+- Update DMT.TA.TODv1 #58
+    - update TSBCreditTransaction add SupervisorNameTH, SupervisorNameEN column.
+    - update UserCreditBalance, UserCreditTransaction add FullNameTH, FullNameEN column.
+    - update TSBCouponTransaction add FullNameTH, FullNameEN, SoldByFullNameEN, SoldByFullNameTH column.
+    - update UserCouponBalance, UserCouponTransaction add FullNameTH, FullNameEN column.
 
 --------------------------------------------------------------------------------------------
-Update 2020-09-27 #30
-- 
-
 [commited]
 Update 2020-09-27 #29
 - Prepare history.txt
