@@ -55,9 +55,6 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Header\TAHeader.xaml.cs">
       <DependentUpon>TAHeader.xaml</DependentUpon>
     </Compile>
@@ -153,10 +150,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Controls\UserControl1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Header\TAHeader.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -286,7 +279,16 @@
     <Resource Include="Images\Reports\ใบนำส่งรายได้รวม2.jpg" />
     <Resource Include="Images\Reports\ใบนำส่งเงิน2.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="MessageBox\" />
+    <Folder Include="SignIn\" />
+    <Folder Include="TA\Controls\" />
+    <Folder Include="TA\Pages\" />
+    <Folder Include="TA\Windows\" />
+    <Folder Include="TOD\Controls\" />
+    <Folder Include="TOD\Pages\" />
+    <Folder Include="TOD\Windows\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
