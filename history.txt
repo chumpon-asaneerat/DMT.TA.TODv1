@@ -40,8 +40,12 @@ Update 2020-09-27 #23
 Update 2020-09-27 #22
 - 
 
+[commited]
 Update 2020-09-27 #21
-- 
+- Update DMT.TA.TODv1 #50
+  - Update DMT Models project #20.
+    - Update RouteConts for TSB Rest API #4.
+    - Update TSBController for Plaza Rest API #1 (completed).
 
 [commited]
 Update 2020-09-27 #20

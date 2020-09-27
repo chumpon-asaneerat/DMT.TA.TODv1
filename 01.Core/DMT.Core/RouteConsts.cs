@@ -155,7 +155,36 @@ namespace DMT
 
             #endregion
 
-            #region Plaza
+            #region Plaza - OK
+
+            /// <summary>
+            /// Get PlazaGroup's Plazas.
+            /// </summary>
+            public static class GetPlazaGroupPlazas
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetPlazaGroupPlazas";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/" + Name;
+            }
+            /// <summary>
+            /// Save Plaza.
+            /// </summary>
+            public static class SavePlaza
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SavePlaza";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/" + Name;
+            }
 
             #endregion
 

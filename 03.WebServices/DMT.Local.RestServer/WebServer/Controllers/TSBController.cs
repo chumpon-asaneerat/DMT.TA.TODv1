@@ -136,27 +136,11 @@ namespace DMT.Services
 
         #region Plaza
 
-        #endregion
-
-        #region Plaza - Original
-        /*
-        [HttpPost]
-        [ActionName(RouteConsts.TSB.GetTSBPlazas.Name)]
-        public NDbResult<List<Plaza>> GetTSBPlazas([FromBody] TSB value)
-        {
-            NDbResult<List<Plaza>> result;
-            if (null == value)
-            {
-                result = new NDbResult<List<Plaza>>();
-                result.ParameterIsNull();
-            }
-            else
-            {
-                result = Plaza.GetTSBPlazas(value);
-            }
-            return result;
-        }
-
+        /// <summary>
+        /// Gets PlazaGroup Plazas.
+        /// </summary>
+        /// <param name="value">The PlazaGroup instance.</param>
+        /// <returns>Returns List of Plaza in specificed PlazaGroup.</returns>
         [HttpPost]
         [ActionName(RouteConsts.TSB.GetPlazaGroupPlazas.Name)]
         public NDbResult<List<Plaza>> GetPlazaGroupPlazas([FromBody] PlazaGroup value)
@@ -173,13 +157,17 @@ namespace DMT.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Save Plaza.
+        /// </summary>
+        /// <param name="value">The Plaza Instance.</param>
+        /// <returns>Returns save plaza instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.TSB.SavePlaza.Name)]
         public NDbResult<Plaza> SavePlaza([FromBody] Plaza value)
         {
             NDbResult<Plaza> result;
-            if (null != value)
+            if (null == value)
             {
                 result = new NDbResult<Plaza>();
                 result.ParameterIsNull();
@@ -190,7 +178,7 @@ namespace DMT.Services
             }
             return result;
         }
-        */
+
         #endregion
 
         #region Lane
