@@ -19,8 +19,10 @@ Update 2020-09-27 #30
 Update 2020-09-27 #29
 - 
 
+[commited]
 Update 2020-09-27 #28
-- 
+- Update DMT.TA.TODv1 #57
+  - Update DMT Models project #26.
 
 [commited]
 Update 2020-09-27 #27

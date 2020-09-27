@@ -819,14 +819,14 @@ namespace DMT.Models
 			}
 		}
 		/// <summary>
-		/// Gets or sets Collector Name EN (stoed when printed).
+		/// Gets or sets Collector Name EN.
 		/// </summary>
 		[Category("User")]
 		[ReadOnly(true)]
 		[MaxLength(150)]
-		[Description("Gets or sets Collector Name EN (stoed when printed).")]
+		[Description("Gets or sets Collector Name EN.")]
 		[PropertyMapName("CollectorNameEN")]
-		public string CollectorNameEN
+		public virtual string CollectorNameEN
 		{
 			get { return _CollectorNameEN; }
 			set
@@ -838,13 +838,13 @@ namespace DMT.Models
 			}
 		}
 		/// <summary>
-		/// Gets or sets Collector Name TH (stoed when printed).
+		/// Gets or sets Collector Name TH.
 		/// </summary>
 		[Category("User")]
-		[Description("Gets or sets Collector Name TH (stoed when printed).")]
+		[Description("Gets or sets Collector Name TH.")]
 		[MaxLength(150)]
 		[PropertyMapName("CollectorNameTH")]
-		public string CollectorNameTH
+		public virtual string CollectorNameTH
 		{
 			get { return _CollectorNameTH; }
 			set
