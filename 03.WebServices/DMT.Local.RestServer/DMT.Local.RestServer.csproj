@@ -91,10 +91,9 @@
     <None Include="WebServer\Controllers\Old1\CreditController.cs" />
     <None Include="WebServer\Controllers\Old1\ExchangeController.cs" />
     <Compile Include="WebServer\Controllers\MasterController.cs" />
-    <None Include="WebServer\Controllers\Old1\UserShiftController.cs" />
     <None Include="WebServer\Controllers\Old1\LaneController.cs" />
     <None Include="WebServer\Controllers\Old1\RevenueController.cs" />
-    <None Include="WebServer\Controllers\Old1\ShiftController.cs" />
+    <Compile Include="WebServer\Controllers\ShiftController.cs" />
     <Compile Include="WebServer\Controllers\TSBController.cs" />
     <Compile Include="WebServer\Controllers\UserController.cs" />
     <Compile Include="WebServer\LocalDatabaseWebServer.cs" />

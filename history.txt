@@ -22,8 +22,13 @@ Update 2020-09-27 #29
 Update 2020-09-27 #28
 - 
 
+[commited]
 Update 2020-09-27 #27
-- 
+- Update DMT.TA.TODv1 #56
+  - Update DMT Models project #25.
+    - TSBShift model ported static methods.
+    - UserShift model ported static methods.
+    - ported ShiftController for Shift, TSBShift and UserShift Rest API #1 (completed).
 
 [commited]
 Update 2020-09-27 #26

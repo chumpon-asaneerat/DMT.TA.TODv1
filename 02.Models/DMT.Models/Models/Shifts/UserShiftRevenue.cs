@@ -688,10 +688,6 @@ namespace DMT.Models
 
         #region Static Methods
 
-        #endregion
-
-        #region Static Methods - Original
-        /*
         /// <summary>
         /// Create Plaza Revenue.
         /// </summary>
@@ -803,7 +799,7 @@ namespace DMT.Models
                 return result;
             }
         }
-        */
+
         #endregion
     }
 }

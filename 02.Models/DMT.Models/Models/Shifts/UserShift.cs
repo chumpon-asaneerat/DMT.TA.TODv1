@@ -582,17 +582,13 @@ namespace DMT.Models
 
         #region Static Methods
 
-        #endregion
-
-        #region Static Methods - Original
-        /*
         /// <summary>
         /// Create UserShift.
         /// </summary>
         /// <param name="shift">The Shift instance.</param>
-        /// <param name="supervisor">The User instance.</param>
+        /// <param name="user">The User instance.</param>
         /// <returns>Returns UserShift instance.</returns>
-        public static NDbResult<UserShift> Create(Shift shift, User supervisor)
+        public static NDbResult<UserShift> Create(Shift shift, User user)
         {
             var result = new NDbResult<UserShift>();
             SQLiteConnection db = Default;
@@ -606,7 +602,7 @@ namespace DMT.Models
             var tsb = TSB.GetCurrent().Value();
             if (null != tsb) tsb.AssignTo(inst);
             if (null != shift) shift.AssignTo(inst);
-            if (null != supervisor) supervisor.AssignTo(inst);
+            if (null != user) user.AssignTo(inst);
             result.Success(inst);
             return result;
         }
@@ -660,7 +656,7 @@ namespace DMT.Models
                     cmd += "   AND UserId = ? ";
                     cmd += "   AND End = ? ";
 
-                    var ret = NQuery.Query<FKs>(cmd, 
+                    var ret = NQuery.Query<FKs>(cmd,
                         tsbId, userId, DateTime.MinValue).FirstOrDefault();
                     result.data = (null != ret) ? ret.ToModel() : null;
                     result.Success();
@@ -887,7 +883,7 @@ namespace DMT.Models
                 return result;
             }
         }
-        */
+
         #endregion
     }
 

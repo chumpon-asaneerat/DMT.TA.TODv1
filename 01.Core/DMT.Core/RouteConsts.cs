@@ -336,25 +336,6 @@ namespace DMT
 
             #region Role
 
-            #region GetRoles
-
-            /// <summary>
-            /// Get Roles.
-            /// </summary>
-            public static class GetRoles
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "GetRoles";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = User.Url + @"/" + Name;
-            }
-
-            #endregion
-
             #region GetRole
 
             /// <summary>
@@ -374,7 +355,26 @@ namespace DMT
 
             #endregion
 
-            #region
+            #region GetRoles
+
+            /// <summary>
+            /// Get Roles.
+            /// </summary>
+            public static class GetRoles
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetRoles";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = User.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SaveRole
 
             /// <summary>
             /// Save Role.
@@ -536,6 +536,242 @@ namespace DMT
         #endregion
 
         #region Shift
+
+        /// <summary>
+        /// The Shift routes class.
+        /// </summary>
+        public static class Shift
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base Shift api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Shift";
+
+            #endregion
+
+            #region Shift
+
+            #region GetShifts
+
+            /// <summary>
+            /// Get Shifts.
+            /// </summary>
+            public static class GetShifts
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetShifts";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SaveShift 
+
+            /// <summary>
+            /// Save Shift.
+            /// </summary>
+            public static class SaveShift
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveShift";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+
+            #region TSB Shift
+
+            #region CreateTSBShift
+
+            /// <summary>
+            /// Create TSB Shift.
+            /// </summary>
+            public static class CreateTSBShift
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "Create";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetCurrentTSBShift
+
+            /// <summary>
+            /// Get Current TSB Shift.
+            /// </summary>
+            public static class GetCurrentTSBShift
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetCurrent";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region ChangeShift
+
+            /// <summary>
+            /// Change Shift.
+            /// </summary>
+            public static class ChangeShift
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "ChangeShift";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+
+            #region User Shift
+
+            #region CreateUserShift
+
+            /// <summary>
+            /// Create User Shift.
+            /// </summary>
+            public static class CreateUserShift
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "CreateUserShift";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetCurrentUserShift
+
+            /// <summary>
+            /// Get Current User Shift.
+            /// </summary>
+            public static class GetCurrentUserShift
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetCurrent";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region BeginUserShift
+
+            /// <summary>
+            /// Begin User Shift.
+            /// </summary>
+            public static class BeginUserShift
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "BeginUserShift";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region EndUserShift
+
+            /// <summary>
+            /// End User Shift.
+            /// </summary>
+            public static class EndUserShift
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "EndUserShift";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetUserShifts
+
+            /// <summary>
+            /// Get User Shifts
+            /// </summary>
+            public static class GetUserShifts
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetUserShifts";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetUnCloseUserShifts
+
+            /// <summary>
+            /// Get UnClose User Shifts.
+            /// </summary>
+            public static class GetUnCloseUserShifts
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetUnCloseUserShifts";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+        }
 
         #endregion
 
