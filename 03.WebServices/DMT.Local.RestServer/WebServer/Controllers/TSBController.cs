@@ -183,6 +183,71 @@ namespace DMT.Services
 
         #region Lane
 
+        /// <summary>
+        /// Gets PlazaGroup's Lanes.
+        /// </summary>
+        /// <param name="value">The PlazaGroup instance.</param>
+        /// <returns>Returnsl Lane list in PlazaGroup.</returns>
+        [HttpPost]
+        [ActionName(RouteConsts.TSB.GetPlazaGroupLanes.Name)]
+        public NDbResult<List<Lane>> GetPlazaGroupLanes([FromBody] PlazaGroup value)
+        {
+            NDbResult<List<Lane>> result;
+            if (null == value)
+            {
+                result = new NDbResult<List<Lane>>();
+                result.ParameterIsNull();
+            }
+            else
+            {
+                result = Lane.GetPlazaGroupLanes(value);
+
+            }
+            return result;
+        }
+        /// <summary>
+        /// Gets Plaza's Lanes.
+        /// </summary>
+        /// <param name="value">The Plaza instance.</param>
+        /// <returns>Returnsl Lane list in Plaza.</returns>
+        [HttpPost]
+        [ActionName(RouteConsts.TSB.GetPlazaLanes.Name)]
+        public NDbResult<List<Lane>> GetPlazaLanes([FromBody] Plaza value)
+        {
+            NDbResult<List<Lane>> result;
+            if (null == value)
+            {
+                result = new NDbResult<List<Lane>>();
+                result.ParameterIsNull();
+            }
+            else
+            {
+                result = Lane.GetPlazaLanes(value);
+            }
+            return result;
+        }
+        /// <summary>
+        /// Save Lane.
+        /// </summary>
+        /// <param name="value">The Lane Instance.</param>
+        /// <returns>Returns save Lane instance.</returns>
+        [HttpPost]
+        [ActionName(RouteConsts.TSB.SaveLane.Name)]
+        public NDbResult<Lane> SaveLane([FromBody] Lane value)
+        {
+            NDbResult<Lane> result;
+            if (null == value)
+            {
+                result = new NDbResult<Lane>();
+                result.ParameterIsNull();
+            }
+            else
+            {
+                result = Lane.Save(value);
+            }
+            return result;
+        }
+
         #endregion
 
         #region Lane - Original
@@ -204,22 +269,6 @@ namespace DMT.Services
             return result;
         }
 
-        [HttpPost]
-        [ActionName(RouteConsts.TSB.GetPlazaLanes.Name)]
-        public NDbResult<List<Lane>> GetPlazaLanes([FromBody] Plaza value)
-        {
-            NDbResult<List<Lane>> result;
-            if (null == value)
-            {
-                result = new NDbResult<List<Lane>>();
-                result.ParameterIsNull();
-            }
-            else
-            {
-                result = Lane.GetPlazaLanes(value);
-            }
-            return result;
-        }
 
         [HttpPost]
         [ActionName(RouteConsts.TSB.GetPlazaLane.Name)]
@@ -238,40 +287,6 @@ namespace DMT.Services
             return result;
         }
 
-        [HttpPost]
-        [ActionName(RouteConsts.TSB.GetPlazaGroupLanes.Name)]
-        public NDbResult<List<Lane>> GetPlazaGroupLanes([FromBody] PlazaGroup value)
-        {
-            NDbResult<List<Lane>> result;
-            if (null == value)
-            {
-                result = new NDbResult<List<Lane>>();
-                result.ParameterIsNull();
-            }
-            else
-            {
-                result = Lane.GetPlazaGroupLanes(value);
-
-            }
-            return result;
-        }
-
-        [HttpPost]
-        [ActionName(RouteConsts.TSB.SaveLane.Name)]
-        public NDbResult<Lane> SaveLane([FromBody] Lane value)
-        {
-            NDbResult<Lane> result;
-            if (null == value)
-            {
-                result = new NDbResult<Lane>();
-                result.ParameterIsNull();
-            }
-            else
-            {
-                result = Lane.Save(value);
-            }
-            return result;
-        }
         */
         #endregion
     }

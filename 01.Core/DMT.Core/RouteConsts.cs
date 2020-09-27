@@ -190,6 +190,49 @@ namespace DMT
 
             #region Lane
 
+            /// <summary>
+            /// Gets Plaza Group's Lanes.
+            /// </summary>
+            public static class GetPlazaGroupLanes
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetPlazaGroupLanes";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/" + Name;
+            }
+            /// <summary>
+            /// Gets Plaza's Lanes.
+            /// </summary>
+            public static class GetPlazaLanes
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetPlazaLanes";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/" + Name;
+            }
+            /// <summary>
+            /// Save Lane.
+            /// </summary>
+            public static class SaveLane
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveLane";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/" + Name;
+            }
+
             #endregion
         }
 

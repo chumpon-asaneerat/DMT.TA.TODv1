@@ -37,8 +37,12 @@ Update 2020-09-27 #24
 Update 2020-09-27 #23
 - 
 
+[commited]
 Update 2020-09-27 #22
-- 
+- Update DMT.TA.TODv1 #51
+  - Update DMT Models project #21.
+    - Update RouteConts for TSB Rest API #5.
+    - Update TSBController for Lane Rest API #1 (completed).
 
 [commited]
 Update 2020-09-27 #21
