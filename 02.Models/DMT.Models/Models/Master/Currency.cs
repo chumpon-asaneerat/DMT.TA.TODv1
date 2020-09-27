@@ -89,10 +89,6 @@ namespace DMT.Models
 
 		#region Static Methods
 
-		#endregion
-
-		#region Static Methods - Original
-		/*
 		/// <summary>
 		/// Gets Currencies.
 		/// </summary>
@@ -137,7 +133,7 @@ namespace DMT.Models
 				return GetCurrencies(db);
 			}
 		}
-		*/
+
 		#endregion
 	}
 }

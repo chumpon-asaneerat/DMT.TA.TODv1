@@ -249,45 +249,5 @@ namespace DMT.Services
         }
 
         #endregion
-
-        #region Lane - Original
-        /*
-        [HttpPost]
-        [ActionName(RouteConsts.TSB.GetTSBLanes.Name)]
-        public NDbResult<List<Lane>> GetTSBLanes([FromBody] TSB value)
-        {
-            NDbResult<List<Lane>> result;
-            if (null == value)
-            {
-                result = new NDbResult<List<Lane>>();
-                result.ParameterIsNull();
-            }
-            else
-            {
-                result = Lane.GetTSBLanes(value);
-            }
-            return result;
-        }
-
-
-        [HttpPost]
-        [ActionName(RouteConsts.TSB.GetPlazaLane.Name)]
-        public NDbResult<Lane> GetPlazaLane([FromBody] Search.Plaza.LaneByNo value)
-        {
-            NDbResult<Lane> result;
-            if (null == value)
-            {
-                result = new NDbResult<Lane>();
-                result.ParameterIsNull();
-            }
-            else
-            {
-                result = Lane.GetPlazaLane(value.PlazaId, value.LaneNo);
-            }
-            return result;
-        }
-
-        */
-        #endregion
     }
 }

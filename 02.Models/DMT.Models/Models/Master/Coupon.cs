@@ -76,10 +76,6 @@ namespace DMT.Models
 
 		#region Static Methods
 
-		#endregion
-
-		#region Static Methods - Original
-		/*
 		/// <summary>
 		/// Gets Coupons.
 		/// </summary>
@@ -124,7 +120,7 @@ namespace DMT.Models
 				return GetCoupons(db);
 			}
 		}
-		*/
+
 		#endregion
 	}
 }

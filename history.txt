@@ -34,8 +34,13 @@ Update 2020-09-27 #25
 Update 2020-09-27 #24
 - 
 
+[commited]
 Update 2020-09-27 #23
-- 
+- Update DMT.TA.TODv1 #52
+  - Update DMT Models project #22.
+    - Update RouteConts for Master Rest API #1.
+    - Update MasterController for MCurrency Rest API #1 (completed).
+    - Update MasterController for MCoupon Rest API #1 (completed).
 
 [commited]
 Update 2020-09-27 #22

@@ -19,6 +19,10 @@ namespace DMT.Services
     {
         #region MCurrency
 
+        /// <summary>
+        /// Gets all Currencies (master).
+        /// </summary>
+        /// <returns>Returns list of all currencies (master).</returns>
         [HttpPost]
         [ActionName(RouteConsts.Master.GetCurrencies.Name)]
         public NDbResult<List<MCurrency>> GetCurrencies()
@@ -31,6 +35,10 @@ namespace DMT.Services
 
         #region MCoupon
 
+        /// <summary>
+        /// Gets all Coupons (master).
+        /// </summary>
+        /// <returns>Returns list of all coupons (master).</returns>
         [HttpPost]
         [ActionName(RouteConsts.Master.GetCoupons.Name)]
         public NDbResult<List<MCoupon>> GetCoupons()

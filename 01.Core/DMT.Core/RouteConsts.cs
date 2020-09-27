@@ -17,6 +17,63 @@ namespace DMT
 
         #endregion
 
+        #region Master - OK
+
+        /// <summary>
+        /// The Master routes class.
+        /// </summary>
+        public static class Master
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base Master api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Master";
+
+            #endregion
+
+            #region MCurrency - OK
+
+            /// <summary>
+            /// Gets all Currencies (master).
+            /// </summary>
+            public static class GetCurrencies
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetCurrencies";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Master.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region MCoupon - OK
+
+            /// <summary>
+            /// Gets all Coupons (master).
+            /// </summary>
+            public static class GetCoupons
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetCoupons";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Master.Url + @"/" + Name;
+            }
+
+            #endregion
+        }
+
+        #endregion
+
         #region TSB - OK
 
         /// <summary>
@@ -157,6 +214,8 @@ namespace DMT
 
             #region Plaza - OK
 
+            #region GetPlazaGroupPlazas - OK
+
             /// <summary>
             /// Get PlazaGroup's Plazas.
             /// </summary>
@@ -171,6 +230,11 @@ namespace DMT
                 /// </summary>
                 public const string Url = TSB.Url + @"/" + Name;
             }
+
+            #endregion
+
+            #region SavePlaza - OK
+
             /// <summary>
             /// Save Plaza.
             /// </summary>
@@ -188,7 +252,11 @@ namespace DMT
 
             #endregion
 
-            #region Lane
+            #endregion
+
+            #region Lane - OK
+
+            #region GetPlazaGroupLanes - OK
 
             /// <summary>
             /// Gets Plaza Group's Lanes.
@@ -204,6 +272,11 @@ namespace DMT
                 /// </summary>
                 public const string Url = TSB.Url + @"/" + Name;
             }
+
+            #endregion
+
+            #region GetPlazaGroupLanes - OK
+
             /// <summary>
             /// Gets Plaza's Lanes.
             /// </summary>
@@ -218,6 +291,11 @@ namespace DMT
                 /// </summary>
                 public const string Url = TSB.Url + @"/" + Name;
             }
+
+            #endregion
+
+            #region SaveLane - OK
+
             /// <summary>
             /// Save Lane.
             /// </summary>
@@ -232,6 +310,8 @@ namespace DMT
                 /// </summary>
                 public const string Url = TSB.Url + @"/" + Name;
             }
+
+            #endregion
 
             #endregion
         }
