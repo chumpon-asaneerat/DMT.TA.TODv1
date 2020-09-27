@@ -19,6 +19,11 @@ namespace DMT.Services
     {
         #region Role
 
+        /// <summary>
+        /// Gets Role By Rold Id.
+        /// </summary>
+        /// <param name="value">The search instance.</param>
+        /// <returns>Returns instance of Role.</returns>
         [HttpPost]
         [ActionName(RouteConsts.User.GetRole.Name)]
         public NDbResult<Role> GetRole([FromBody] Search.Roles.ById value)
@@ -35,7 +40,10 @@ namespace DMT.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Gets Roles.
+        /// </summary>
+        /// <returns>Returns list of Role.</returns>
         [HttpPost]
         [ActionName(RouteConsts.User.GetRoles.Name)]
         public NDbResult<List<Role>> GetRoles()
@@ -43,7 +51,11 @@ namespace DMT.Services
             NDbResult<List<Role>> result = Role.GetRoles();
             return result;
         }
-
+        /// <summary>
+        /// Save Role.
+        /// </summary>
+        /// <param name="value">The Role instance.</param>
+        /// <returns>Returns save Role instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.User.SaveRole.Name)]
         public NDbResult<Role> SaveRole([FromBody] Role value)
@@ -65,6 +77,11 @@ namespace DMT.Services
 
         #region User
 
+        /// <summary>
+        /// Gets Users by Role.
+        /// </summary>
+        /// <param name="value">The Role instance.</param>
+        /// <returns>Returns list of User that match specificed Role.</returns>
         [HttpPost]
         [ActionName(RouteConsts.User.GetUsers.Name)]
         public NDbResult<List<User>> GetUsers(Role value)
@@ -84,7 +101,11 @@ namespace DMT.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Seach User By User Id (partial match).
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         [HttpPost]
         [ActionName(RouteConsts.User.GetById.Name)]
         public NDbResult<User> GetById([FromBody] Search.Users.ById value)
@@ -102,7 +123,11 @@ namespace DMT.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Search User By Role Group Id.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         [HttpPost]
         [ActionName(RouteConsts.User.SearchByGroupId.Name)]
         public NDbResult<List<User>> SearchByGroupId([FromBody] Search.Users.ByGroupId value)
@@ -121,7 +146,11 @@ namespace DMT.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Search User By User Id (exact match).
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>Returns List of User that match specificed User.</returns>
         [HttpPost]
         [ActionName(RouteConsts.User.SearchById.Name)]
         public NDbResult<List<User>> SearchById([FromBody] Search.Users.ById value)
@@ -139,7 +168,11 @@ namespace DMT.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Search User By Card Id.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>Returns match User instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.User.GetByCardId.Name)]
         public NDbResult<User> GetByCardId([FromBody] Search.Users.ByCardId value)
@@ -156,7 +189,11 @@ namespace DMT.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Gets User by User Name and Password.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>Returns match User instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.User.GetByLogIn.Name)]
         public NDbResult<User> GetByLogIn([FromBody] Search.Users.ByLogIn value)
@@ -173,7 +210,11 @@ namespace DMT.Services
             }
             return result;
         }
-
+        /// <summary>
+        /// Save User.
+        /// </summary>
+        /// <param name="value">The User Instance.</param>
+        /// <returns>Returns Save User instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.User.SaveUser.Name)]
         public NDbResult<User> SaveUser([FromBody] User value)

@@ -199,11 +199,6 @@ namespace DMT.Models
 		#endregion
 
 		#region Static Methods
-
-		#endregion
-
-		#region Static Methods - Original
-		/*
 		/// <summary>
 		/// Gets Roles.
 		/// </summary>
@@ -293,8 +288,43 @@ namespace DMT.Models
 				return GetRole(db, roleId);
 			}
 		}
-		*/
+
 		#endregion
+	}
+
+	#endregion
+
+	#region Search (Role)
+
+	partial class Search
+	{
+		/// <summary>
+		/// Search (Role).
+		/// </summary>
+		public static class Roles
+		{
+			/// <summary>
+			/// Seach Role By Role Id.
+			/// </summary>
+			public class ById : NSearch<ById>
+			{
+				/// <summary>
+				/// Gets or sets Role Id.
+				/// </summary>
+				public string RoleId { get; set; }
+				/// <summary>
+				/// Create Search instance.
+				/// </summary>
+				/// <param name="roleId">The Role Id.</param>
+				/// <returns>Returns Search instance.</returns>
+				public static ById Create(string roleId)
+				{
+					var ret = new ById();
+					ret.RoleId = roleId;
+					return ret;
+				}
+			}
+		}
 	}
 
 	#endregion

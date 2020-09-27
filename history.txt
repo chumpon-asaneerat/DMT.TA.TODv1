@@ -28,8 +28,12 @@ Update 2020-09-27 #27
 Update 2020-09-27 #26
 - 
 
+[commited]
 Update 2020-09-27 #25
-- 
+- Update DMT.TA.TODv1 #54
+  - Update DMT Models project #23.
+    - ported Search (Role) classes.
+    - ported Search (User) classes.
 
 [commited]
 Update 2020-09-27 #24

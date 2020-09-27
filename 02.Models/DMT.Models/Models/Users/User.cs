@@ -692,10 +692,6 @@ namespace DMT.Models
 
 		#region Static Methods
 
-		#endregion
-
-		#region Static Methods - Original
-		/*
 		/// <summary>
 		/// Gets Users.
 		/// </summary>
@@ -797,7 +793,7 @@ namespace DMT.Models
 		/// <param name="userId">The User Id.</param>
 		/// <param name="roles">The roles Id list.</param>
 		/// <returns>Returns List of User.</returns>
-		public static NDbResult<List<User>> SearchById(string userId, 
+		public static NDbResult<List<User>> SearchById(string userId,
 			string[] roles)
 		{
 			lock (sync)
@@ -813,7 +809,7 @@ namespace DMT.Models
 		/// <param name="userId">The User Id.</param>
 		/// <param name="roles">The roles Id list.</param>
 		/// <returns>Returns List of User.</returns>
-		public static NDbResult<List<User>> SearchById(SQLiteConnection db, 
+		public static NDbResult<List<User>> SearchById(SQLiteConnection db,
 			string userId, string[] roles)
 		{
 			var result = new NDbResult<List<User>>();
@@ -1072,8 +1068,122 @@ namespace DMT.Models
 				return result;
 			}
 		}
-		*/
+
 		#endregion
+	}
+
+	#endregion
+
+	#region Search (User)
+
+	partial class Search
+	{
+		/// <summary>
+		/// Search (User).
+		/// </summary>
+		public static class Users
+		{
+			/// <summary>
+			/// Search By Card Id.
+			/// </summary>
+			public class ByCardId : NSearch<ByCardId>
+			{
+				/// <summary>
+				/// Gets or sets Card Id.
+				/// </summary>
+				public string CardId { get; set; }
+
+				/// <summary>
+				/// Create Search instance.
+				/// </summary>
+				/// <param name="cardId">The Card Id.</param>
+				/// <returns>Returns Search instance.</returns>
+				public static ByCardId Create(string cardId)
+				{
+					var ret = new ByCardId();
+					ret.CardId = cardId;
+					return ret;
+				}
+			}
+			/// <summary>
+			/// Search By User Id and Password.
+			/// </summary>
+			public class ByLogIn : NSearch<ByLogIn>
+			{
+				/// <summary>
+				/// Gets or sets User Id.
+				/// </summary>
+				public string UserId { get; set; }
+				/// <summary>
+				/// Gets or sets Password.
+				/// </summary>
+				public string Password { get; set; }
+
+				/// <summary>
+				/// Create Search instance.
+				/// </summary>
+				/// <param name="userId">The User Id.</param>
+				/// <param name="pwd">The Password.</param>
+				/// <returns>Returns Search instance.</returns>
+				public static ByLogIn Create(string userId, string pwd)
+				{
+					var ret = new ByLogIn();
+					ret.UserId = userId;
+					ret.Password = pwd;
+					return ret;
+				}
+			}
+			/// <summary>
+			/// Search By User Group Id.
+			/// </summary>
+			public class ByGroupId : NSearch<ByGroupId>
+			{
+				/// <summary>
+				/// Gets or sets User Group Id.
+				/// </summary>
+				public int GroupId { get; set; }
+
+				/// <summary>
+				/// Create Search instance.
+				/// </summary>
+				/// <param name="groupId">The User Group Id.</param>
+				/// <returns>Returns Search instance.</returns>
+				public static ByGroupId Create(int groupId)
+				{
+					var ret = new ByGroupId();
+					ret.GroupId = groupId;
+					return ret;
+				}
+			}
+			/// <summary>
+			/// Search By User Id in various Roles.
+			/// </summary>
+			public class ById : NSearch<ById>
+			{
+				/// <summary>
+				/// Gets or sets User Id.
+				/// </summary>
+				public string UserId { get; set; }
+				/// <summary>
+				/// Gets or sets roles array.
+				/// </summary>
+				public string[] Roles { get; set; }
+
+				/// <summary>
+				/// Create Search instance.
+				/// </summary>
+				/// <param name="userId">The User Id.</param>
+				/// <param name="roles">The list of role.</param>
+				/// <returns>Returns Search instance.</returns>
+				public static ById Create(string userId, params string[] roles)
+				{
+					var ret = new ById();
+					ret.UserId = userId;
+					ret.Roles = roles;
+					return ret;
+				}
+			}
+		}
 	}
 
 	#endregion

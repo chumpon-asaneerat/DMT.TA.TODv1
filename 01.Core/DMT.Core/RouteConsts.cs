@@ -317,5 +317,246 @@ namespace DMT
         }
 
         #endregion
+
+        #region User
+
+        /// <User>
+        /// The TSB routes class.
+        /// </summary>
+        public static class User
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base User api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/User";
+
+            #endregion
+
+            #region Role
+
+            #region GetRoles
+
+            /// <summary>
+            /// Get Roles.
+            /// </summary>
+            public static class GetRoles
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetRoles";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = User.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetRole
+
+            /// <summary>
+            /// Get Role.
+            /// </summary>
+            public static class GetRole
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetRole";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = User.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region
+
+            /// <summary>
+            /// Save Role.
+            /// </summary>
+            public static class SaveRole
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveRole";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = User.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+
+            #region User
+
+            #region GetUsers
+
+            /// <summary>
+            /// Get Users.
+            /// </summary>
+            public static class GetUsers
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetUsers";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = User.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetById
+
+            /// <summary>
+            /// Get User By User Id (exact match).
+            /// </summary>
+            public static class GetById
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetById";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = User.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SearchByGroupId
+
+            /// <summary>
+            /// Get User By GroupId.
+            /// </summary>
+            public static class SearchByGroupId
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SearchByGroupId";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = User.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SearchById
+
+            /// <summary>
+            /// Search User By User Id (partian match).
+            /// </summary>
+            public static class SearchById
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SearchById";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = User.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetByCardId
+
+            /// <summary>
+            /// Get User By Card Id
+            /// </summary>
+            public static class GetByCardId
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetByCardId";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = User.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetByLogIn
+
+            /// <summary>
+            /// Get User By User Name and Password
+            /// </summary>
+            public static class GetByLogIn
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetByLogIn";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = User.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SaveUser
+
+            /// <summary>
+            /// Save User.
+            /// </summary>
+            public static class SaveUser
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveUser";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = User.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Shift
+
+        #endregion
+
+        #region Lane Attendance/Payment
+
+        #endregion
+
+        #region Revenue
+
+        #endregion
+
+        #region Credit
+
+        #endregion
+
+        #region Coupon
+
+        #endregion
+
+        #region Exchange
+
+        #endregion
     }
 }

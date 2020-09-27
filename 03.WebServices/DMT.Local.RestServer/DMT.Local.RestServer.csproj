@@ -96,7 +96,7 @@
     <None Include="WebServer\Controllers\Old1\RevenueController.cs" />
     <None Include="WebServer\Controllers\Old1\ShiftController.cs" />
     <Compile Include="WebServer\Controllers\TSBController.cs" />
-    <None Include="WebServer\Controllers\Old1\UserController.cs" />
+    <Compile Include="WebServer\Controllers\UserController.cs" />
     <Compile Include="WebServer\LocalDatabaseWebServer.cs" />
   </ItemGroup>
   <ItemGroup>

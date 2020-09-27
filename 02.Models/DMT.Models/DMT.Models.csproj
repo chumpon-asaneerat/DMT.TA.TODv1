@@ -105,9 +105,12 @@
     <Compile Include="ExtensionMethods\NullableType,ExtensionMethods.cs" />
     <Compile Include="ExtensionMethods\SCW.ExtensionMethods.cs" />
     <Compile Include="ExtensionMethods\TAxTOD,ExtensionMethods.cs" />
+    <Compile Include="Models\Common\DMT.Create.cs" />
+    <Compile Include="Models\Common\DMT.Search.cs" />
     <Compile Include="Models\Common\DMTModelBase.cs" />
     <Compile Include="Models\Common\NDbResult.cs" />
     <Compile Include="Models\Common\NQueries.cs" />
+    <Compile Include="Models\Common\NSearch.cs" />
     <Compile Include="Models\Common\NTables.cs" />
     <Compile Include="Models\Common\Utils.cs" />
     <Compile Include="Models\Configuration\Config.cs" />
