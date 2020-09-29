@@ -1,13 +1,128 @@
 DMT.Core: 
     ExtensionMethods:
-        ☐ DateTime.cs
-        ☐ NJson.js
-        ☐ RangeParser.cs
+        ✔ DateTime.cs ported. @done(20-09-30 04:57)
+        ✔ NJson.js ported. @done(20-09-30 05:16)
+        ✔ RangeParser.cs ported. @done(20-09-30 05:01)
     Services:
-        ☐ Cmd.cs
-        ☐ Common.cs
-        ☐ ConfigManager.cs
-    ☐ AppConsts.cs
-    ☐ ErrorConsts.cs
-    ☐ NofifyConsts.cs
-    ☐ RouteConsts.cs
+        ✔ Cmd.cs (updaed code from DMT.TA.TODv1). @done(20-09-30 05:20)
+        ✔ Common.cs ported. @done(20-09-30 05:21)
+        ✔ ConfigManager.cs ported. @done(20-09-30 05:24)
+    ✔ AppConsts.cs ported. @done(20-09-30 05:30)
+    ✔ ErrorConsts.cs ported. @done(20-09-30 05:25)
+    ✔ NofifyConsts.cs ported. @done(20-09-30 05:31)
+    RouteConsts.cs:
+        Master Routes:
+            MCurrency:
+                ✔ GetCurrencies ported. @done(20-09-30 05:38)
+            MCoupon:
+                ✔ GetCoupons ported. @done(20-09-30 05:38)
+        TSB Routes:
+            TSB:
+                ✔ GetTSBs ported. @done(20-09-30 05:40)
+                ✔ GetCurrent ported. @done(20-09-30 05:40)
+                ✔ SetActive ported. @done(20-09-30 06:05)
+                ✔ SaveTSB ported. @done(20-09-30 06:05)
+            Plaza:
+                ✘ GetTSBPlazas removed in DMT.TA.TODv1 @cancelled(20-09-30 06:06)
+                ✔ GetPlazaGroupPlazas ported @done(20-09-30 06:06)
+                ✔ SavePlaza ported @done(20-09-30 06:06)
+            PlazaGroup:
+                ✔ GetTSBPlazaGroups ported @done(20-09-30 06:06)
+                ✔ SavePlazaGroup ported @done(20-09-30 06:06)
+            Lane:
+                ✘ GetTSBLanes removed in DMT.TA.TODv1 @cancelled(20-09-30 06:10)
+                ✔ GetPlazaLanes ported @done(20-09-30 06:10)
+                ✘ GetPlazaLane removed in DMT.TA.TODv1 @cancelled(20-09-30 06:10)
+                ✔ GetPlazaGroupLanes ported @done(20-09-30 06:09)
+                ✔ SaveLane ported @done(20-09-30 06:10)
+        User Routes:
+            Role:
+                ✔ GetRole ported @done(20-09-30 06:12)
+                ✔ GetRoles ported @done(20-09-30 06:12)
+                ✔ SaveRole ported @done(20-09-30 06:12)
+            User:
+                ✔ GetUsers ported @done(20-09-30 06:12)
+                ✔ GetById ported @done(20-09-30 06:12)
+                ✔ SearchByGroupId ported @done(20-09-30 06:13)
+                ✔ SearchById ported @done(20-09-30 06:13)
+                ✔ GetByCardId ported @done(20-09-30 06:13)
+                ✔ GetByLogIn ported @done(20-09-30 06:13)
+                ✔ SaveUser ported @done(20-09-30 06:13)
+        Shift Routes:
+            Shift:
+                ✔ GetShifts ported @done(20-09-30 06:14)
+                ✔ SaveShift ported @done(20-09-30 06:14)
+            TSBShift:
+                ✔ Create ported (rename to CreateTSBShift) @done(20-09-30 06:16)
+                ✔ GetCurrent ported (rename to GetCurrentTSBShift) @done(20-09-30 06:16)
+                ✔ ChangeShift ported @done(20-09-30 06:17)
+        UserShift Routes:
+            UserShift:
+                ✔ Create ported (move to Shift Routes and rename to CreateUserShift) @done(20-09-30 06:17)
+                ✘ GetUsers removed in DMT.TA.TODv1 @cancelled(20-09-30 06:18)
+                ✔ GetCurrent ported (move to Shift Routes and rename to GetCurrentUserShift) @done(20-09-30 06:17)
+                ✔ BeginUserShift ported (move to Shift Routes) @done(20-09-30 06:17)
+                ✔ EndUserShift ported (move to Shift Routes) @done(20-09-30 06:17)
+                ✔ GetUserShifts ported (move to Shift Routes) @done(20-09-30 06:18)
+                ✔ GetUnCloseUserShifts ported (move to Shift Routes) @done(20-09-30 06:18)
+        Lane Routes:
+            Lane Attendance:
+                ☐ CreateAttendance
+                ☐ SaveAttendance
+                ☐ SaveAttendances
+                ☐ GetAttendancesByDate
+                ☐ GetAttendancesByUserShift
+                ☐ GetAttendancesByRevenue
+                ☐ GetAllAttendancesByUserShift
+                ☐ GetAttendancesByLane
+                ☐ GetCurrentAttendancesByLane
+                ☐ GetAllNotHasRevenueEntry
+                ☐ GetAllNotHasRevenueEntryByUser
+            Lane Payment:
+                ☐ CreatePayment
+                ☐ SavePayment
+                ☐ GetPaymentsByDate
+                ☐ GetPaymentsByUserShift
+                ☐ GetPaymentsByLane
+                ☐ GetCurrentPaymentsByLane
+        Revenue Routes:
+            UserShiftRevenue:
+                ☐ CreatePlazaRevenue
+                ☐ SavePlazaRevenue
+                ☐ GetPlazaRevenue
+            Revenue Entry:
+                ☐ SaveRevenue
+                ☐ GetRevenues
+                ☐ GetUnsendRevenues
+        Credit Routes:
+            TSB Credit Balance:
+                ☐ GetTSBBalance
+            TSB Credit Transaction:
+                ☐ GetInitialTSBCreditTransaction
+                ☐ GetReplaceTSBCreditTransaction
+                ☐ SaveTSBCreditTransaction
+            User Credit Balance:
+                ☐ GetActiveUserCreditBalances
+                ☐ GetActiveUserCreditBalanceById
+                ☐ SaveUserCreditBalance
+            User Credit Transaction:
+                ☐ SaveUserCreditTransaction
+        Coupon Routes:
+            TSB Coupon Balance:
+                ☐ GetTSBBalance
+            TSB Coupon Summary:
+                ☐ GetTSBCouponSummaries
+            TSB Coupon Transaction:
+                ☐ GetTSBCouponTransactions
+                ☐ SaveTSBCouponTransaction
+                ☐ SaveTSBCouponTransactions
+                ☐ SyncTSBCouponTransaction
+                ☐ SyncTSBCouponTransactions
+        Exchange Routes:
+            TSB Exchange Group:
+                ☐ GetRequestApproveTSBExchangeGroups
+                ☐ GetTSBExchangeGroups
+                ☐ SaveTSBExchangeGroup
+            TSB Exchange Transaction:
+                ☐ GetTSBExchangeTransactions
+                ☐ GetTSBExchangeTransaction

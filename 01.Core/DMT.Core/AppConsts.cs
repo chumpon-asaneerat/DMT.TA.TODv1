@@ -35,7 +35,6 @@ namespace DMT
                 public static string Build = AppConsts.Build;
                 public static DateTime LastUpdate = AppConsts.LastUpdate;
             }
-
             /*
             public static class Account
             {
@@ -47,7 +46,6 @@ namespace DMT
                 public static DateTime LastUpdate = AppConsts.LastUpdate;
             }
             */
-
             public static class PlazaConfig
             {
                 public static string ApplicationName = @"DMT TOD-TA Plaza Config";
@@ -67,7 +65,6 @@ namespace DMT
                 public static string Build = AppConsts.Build;
                 public static DateTime LastUpdate = AppConsts.LastUpdate;
             }
-
             /*
             public static class DataCenter
             {
@@ -95,35 +92,6 @@ namespace DMT
                 public static string Build = AppConsts.Build;
                 public static DateTime LastUpdate = AppConsts.LastUpdate;
             }
-            
-            /*
-            public static class DC
-            {
-                public static string ServiceName = "DMT Data Center Plaza Windows Service";
-                public static string DisplayName = "DMT Data Center Plaza Windows Service";
-                public static string Description = "DMT Data Center Plaza Windows Service";
-                public static string ExecutableFileName = @"DMT.DC.Plaza.Windows.Services.exe";
-                // common
-                public static string Version = AppConsts.Version;
-                public static string Minor = AppConsts.Minor;
-                public static string Build = AppConsts.Build;
-                public static DateTime LastUpdate = AppConsts.LastUpdate;
-            }
-            */
-            /*
-            public static class TAxTOD
-            {
-                public static string ServiceName = "DMT TAxTOD Plaza Windows Service";
-                public static string DisplayName = "DMT TAxTOD Plaza Windows Service";
-                public static string Description = "DMT TAxTOD Plaza Windows Service";
-                public static string ExecutableFileName = @"DMT.TAxTOD.Plaza.Windows.Services.exe";
-                // common
-                public static string Version = AppConsts.Version;
-                public static string Minor = AppConsts.Minor;
-                public static string Build = AppConsts.Build;
-                public static DateTime LastUpdate = AppConsts.LastUpdate;
-            }
-            */
         }
     }
 }

@@ -23,7 +23,6 @@ namespace DMT.Services
             RedirectStandardOutput = false;
             RedirectStandardError = false;
             CreateNoWindow = true;
-
         }
 
         public void Run(string arguments)

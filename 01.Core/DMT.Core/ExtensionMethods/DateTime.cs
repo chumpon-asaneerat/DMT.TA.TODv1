@@ -39,7 +39,7 @@ namespace DMT
         {
             if (value == DateTime.MinValue || value == DateTime.MaxValue)
                 return "";
-            return value.ToString("yyyy/MM/dd", DateTimeFormatInfo.InvariantInfo);
+            return value.ToString("dd/MM/yyyy", DateTimeFormatInfo.InvariantInfo);
         }
         /// <summary>
         /// To Time String (fixed format used ToDateTimeString for custom format).
@@ -59,7 +59,7 @@ namespace DMT
         /// <param name="format">The DateTime format.</param>
         /// <returns>Returns string that represents datetime part.</returns>
         public static string ToDateTimeString(this DateTime value,
-            string format = "yyyy/MM/dd HH:mm:ss.fff")
+            string format = "dd/MM/yyyy HH:mm:ss.fff")
         {
             if (value == DateTime.MinValue || value == DateTime.MaxValue)
                 return "";
@@ -75,7 +75,7 @@ namespace DMT
         {
             if (value == DateTime.MinValue || value == DateTime.MaxValue)
                 return "";
-            return value.ToString("yyyy/MM/dd", DateTimeExtension.ThaiCultureInfo);
+            return value.ToString("dd/MM/yyyy", DateTimeExtension.ThaiCultureInfo);
         }
         /// <summary>
         /// To Thai Time String (fixed format used ToDateTimeString for custom format).
@@ -93,7 +93,7 @@ namespace DMT
         /// <param name="format">The DateTime format.</param>
         /// <returns>Returns string that represents datetime part.</returns>
         public static string ToThaiDateTimeString(this DateTime value,
-            string format = "yyyy/MM/dd HH:mm:ss.fff")
+            string format = "dd/MM/yyyy HH:mm:ss.fff")
         {
             if (value == DateTime.MinValue || value == DateTime.MaxValue)
                 return "";

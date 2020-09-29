@@ -155,15 +155,16 @@ namespace DMT
         {
             get
             {
-                /*
+#if !USE_PROGRAM_DATA
                 string localFilder = Folders.Combine(
                     Folders.Assemblies.CurrentExecutingAssembly, "configs");
-                */
+#else
                 string localFilder = ApplicationManager.Instance.Environments.Company.Configs.FullName;
                 if (!Folders.Exists(localFilder))
                 {
                     Folders.Create(localFilder);
                 }
+#endif
                 return localFilder;
             }
         }
