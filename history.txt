@@ -19,8 +19,10 @@ Update 2020-09-29 #5
 Update 2020-09-29 #4
 - 
 
+[commited]
 Update 2020-09-29 #3
-- 
+- Update history.txt #3
+- Add ubuntu.txt.
 
 [commited]
 Update 2020-09-29 #2

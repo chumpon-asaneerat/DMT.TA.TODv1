@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		teamviewer.txt = teamviewer.txt
 		TOD - Data Dictionary.docx = TOD - Data Dictionary.docx
 		TOD-TA-ERD.vsd = TOD-TA-ERD.vsd
+		Ubuntu.txt = Ubuntu.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLib", "00.NLib\NLib\NLib.csproj", "{41A9D6C0-C833-403F-9BC1-EECDC246A428}"
