@@ -1,0 +1,13 @@
+DMT.Core: 
+    ExtensionMethods:
+        ☐ DateTime.cs
+        ☐ NJson.js
+        ☐ RangeParser.cs
+    Services:
+        ☐ Cmd.cs
+        ☐ Common.cs
+        ☐ ConfigManager.cs
+    ☐ AppConsts.cs
+    ☐ ErrorConsts.cs
+    ☐ NofifyConsts.cs
+    ☐ RouteConsts.cs

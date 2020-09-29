@@ -1,0 +1,7 @@
+DMT.DataCenter.WebClient:
+    Services:
+        Operations:
+            ☐ PlazaOperations.base.cs
+            ☐ PlazaOperations.Masters.cs
+            ☐ PlazaOperations.TOD.cs
+        ☐ SCWServiceOperations.cs

@@ -104,7 +104,7 @@
   <ItemGroup>
     <Compile Include="ExtensionMethods\NullableType,ExtensionMethods.cs" />
     <Compile Include="ExtensionMethods\SCW.ExtensionMethods.cs" />
-    <Compile Include="ExtensionMethods\TAxTOD,ExtensionMethods.cs" />
+    <Compile Include="ExtensionMethods\TAxTOD.ExtensionMethods.cs" />
     <Compile Include="Models\Common\DMT.Create.cs" />
     <Compile Include="Models\Common\DMT.Search.cs" />
     <Compile Include="Models\Common\DMTModelBase.cs" />

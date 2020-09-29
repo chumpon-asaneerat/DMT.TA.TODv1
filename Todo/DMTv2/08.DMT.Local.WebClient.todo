@@ -1,0 +1,15 @@
+DMT.Local.WebClient:
+    Services:
+        Operations:
+            ☐ PlazaOperations.base.cs
+            ☐ PlazaOperations.Coupon.cs
+            ☐ PlazaOperations.Credit.cs
+            ☐ PlazaOperations.Exchange.cs
+            ☐ PlazaOperations.Lane.cs
+            ☐ PlazaOperations.Master.cs
+            ☐ PlazaOperations.Revenue.cs
+            ☐ PlazaOperations.Shift.cs
+            ☐ PlazaOperations.TSB.cs
+            ☐ PlazaOperations.User.cs
+            ☐ PlazaOperations.UserShift.cs
+        ☐ ServiceOperations.cs

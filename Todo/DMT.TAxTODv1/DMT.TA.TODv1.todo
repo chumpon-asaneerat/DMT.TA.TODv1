@@ -1,0 +1,274 @@
+DMT.Controls:
+    Header:
+        Elements:
+            ☐ HeaderDateTime.xaml
+            ☐ HeaderDateTime.xaml.cs
+            ☐ HeaderLogo.xaml
+            ☐ HeaderLogo.xaml.cs
+            ☐ HeaderPlaza.xaml
+            ☐ HeaderPlaza.xaml.cs
+            ☐ HeaderShift.xaml
+            ☐ HeaderShift.xaml.cs
+            ☐ HeaderSupervisor.xaml
+            ☐ HeaderSupervisor.xaml.cs
+            ☐ HeaderUser.xaml
+            ☐ HeaderUser.xaml.cs
+        ☐ CurrentTA.cs
+        ☐ PlazaHeader.xaml
+        ☐ PlazaHeader.xaml.cs
+        ☐ TAHeader.xaml
+        ☐ TAHeader.xaml.cs
+    Images:
+        ☐ Background
+        ☐ Button
+        ☐ Logo
+        ☐ Menu
+        ☐ Reports
+    SignIn:
+        Common:
+            ☐ SmartcardManager.cs
+            ☐ UserSearchManager.cs
+        Pages:
+            ☐ SignInPage.xaml
+            ☐ SignInPage.xaml.cs
+        Windows:
+            ☐ SignInWindow.xaml
+            ☐ SignInWindow.xaml.cs
+            ☐ UserFilterWindow.xaml
+            ☐ UserFilterWindow.xaml.cs
+    StatusBar:
+        Elements:
+            ☐ AppInfoStatus.xaml
+            ☐ AppInfoStatus.xaml.cs
+            ☐ LocalDbStatus.xaml
+            ☐ LocalDbStatus.xaml.cs
+            ☐ SCWStatus.xaml
+            ☐ SCWStatus.xaml.cs
+            ☐ TAServerStatus.xaml
+            ☐ TAServerStatus.xaml.cs
+        ☐ TAStatusBar.xaml
+        ☐ TAStatusBar.xaml.cs
+        ☐ TODStatusBar.xaml
+        ☐ TODStatusBar.xaml.cs
+    Styles:
+        ☐ ImageButtonStyle.xaml
+    TA:
+        Controls:
+            Collector:
+                Coupon:
+                    Entry:
+                        ☐ CollectorCouponBorrowEntry.xaml
+                        ☐ CollectorCouponBorrowEntry.xaml.cs
+                    View:
+                        ☐ CouponReceiveView.xaml
+                        ☐ CouponReceiveView.xaml.cs
+                        ☐ CouponReturnView.xaml
+                        ☐ CouponReturnView.xaml.cs
+                Credit:
+                    View:
+                        ☐ CollectorCreditSummaryView.xaml
+                        ☐ CollectorCreditSummaryView.xaml.cs
+            Exchange:
+                View:
+                    ☐ AccountRequestExchangeView.xaml
+                    ☐ AccountRequestExchangeView.xaml.cs
+                    ☐ PlazaRequestExchangeView.xaml
+                    ☐ PlazaRequestExchangeView.xaml.cs
+            History:
+                View:
+                    ☐ PlazaFundHistoryView.xaml
+                    ☐ PlazaFundHistoryView.xaml.cs
+            Plaza:
+                Entry:
+                    ☐ FundDetailEntry.xaml
+                    ☐ FundDetailEntry.xaml.cs
+                    ☐ LoanMoney2Entry.xaml
+                    ☐ LoanMoney2Entry.xaml.cs
+                    ☐ LoanMoneyEntry.xaml
+                    ☐ LoanMoneyEntry.xaml.cs
+                    ☐ PlazaCouponEntry.xaml
+                    ☐ PlazaCouponEntry.xaml.cs
+                    ☐ PlazaCreditEntry.xaml
+                    ☐ PlazaCreditEntry.xaml.cs
+                    ☐ PlazaCreditEntryOld.xaml
+                    ☐ PlazaCreditEntryOld.xaml.cs
+                    ☐ PlazaCreditEntryTotal.xaml
+                    ☐ PlazaCreditEntryTotal.xaml.cs
+                View:
+                    ☐ FundPlaza2View.xaml
+                    ☐ FundPlaza2View.xaml.cs
+                    ☐ FundPlaza3View.xaml
+                    ☐ FundPlaza3View.xaml.cs
+                    ☐ PlazaAllCouponView.xaml
+                    ☐ PlazaAllCouponView.xaml.cs
+                    ☐ PlazaCouponView.xaml
+                    ☐ PlazaCouponView.xaml.cs
+                    ☐ PlazaFundView.xaml
+                    ☐ PlazaFundView.xaml.cs
+        Pages:
+            Collector:
+                ☐ CollectorFundViewPage.xaml
+                ☐ CollectorFundViewPage.xaml.cs
+            Coupon:
+                ☐ CouponTSBSalePage.xaml
+                ☐ CouponTSBSalePage.xaml.cs
+                ☐ ReceivedCouponPage.xaml
+                ☐ ReceivedCouponPage.xaml.cs
+                ☐ ReturnCouponPage.xaml
+                ☐ ReturnCouponPage.xaml.cs
+            Exchange:
+                ☐ PlazaRequestExchangePage.xaml
+                ☐ PlazaRequestExchangePage.xaml.cs
+            History:
+                ☐ PlazaReturnHistoryPage.xaml
+                ☐ PlazaReturnHistoryPage.xaml.cs
+            Menu:
+                ☐ MainMenu.xaml
+                ☐ MainMenu.xaml.cs
+                ☐ ReportMenu.xaml
+                ☐ ReportMenu.xaml.cs
+            Plaza:
+                ☐ PlazaAllCouponPage.xaml
+                ☐ PlazaAllCouponPage.xaml.cs
+                ☐ PlazaCouponReceivedReturnPage.xaml
+                ☐ PlazaCouponReceivedReturnPage.xaml.cs
+                ☐ PlazaInternalCreditExchangePage.xaml
+                ☐ PlazaInternalCreditExchangePage.xaml.cs
+                ☐ PlazaReceivedReturnPage.xaml
+                ☐ PlazaReceivedReturnPage.xaml.cs
+            Reports:
+                ☐ CollectorCouponReceived.rdlc
+                ☐ CollectorCouponReceivedReportPage.xaml
+                ☐ CollectorCouponReceivedReportPage.xaml.cs
+                ☐ CollectorFundSummaryRep.rdlc
+                ☐ CollectorFundSummaryReportPage.xaml
+                ☐ CollectorFundSummaryReportPage.xaml.cs
+                ☐ CollectorFundSummaryReportPageOld.xaml
+                ☐ CollectorFundSummaryReportPageOld.xaml.cs
+                ☐ CouponSalesReceiptRep.rdlc
+                ☐ CouponSalesReceiptReportPage.xaml
+                ☐ CouponSalesReceiptReportPage.xaml.cs
+        Windows:
+            Collector:
+                Credit:
+                    ☐ CollectorCreditBorrowWindow.xaml
+                    ☐ CollectorCreditBorrowWindow.xaml.cs
+                    ☐ CollectorCreditReturnWindow.xaml
+                    ☐ CollectorCreditReturnWindow.xaml.cs
+                    ☐ MessageWindow.xaml
+                    ☐ MessageWindow.xaml.cs
+                    ☐ ReceiveMoneyBagWindow.xaml
+                    ☐ ReceiveMoneyBagWindow.xaml.cs
+            Coupon:
+                ☐ CouponEditWindow.xaml
+                ☐ CouponEditWindow.xaml.cs
+                ☐ CouponReportWindow.xaml
+                ☐ CouponReportWindow.xaml.cs
+                ☐ CouponReturnWindow.xaml
+                ☐ CouponReturnWindow.xaml.cs
+            Exchange:
+                ☐ ExchangeWindowMode.cs
+                ☐ PlazaCreditRequestExchangeWindow.xaml
+                ☐ PlazaCreditRequestExchangeWindow.xaml.cs
+                ☐ PlazaCreditUpdateExchangeWindow.xaml
+                ☐ PlazaCreditUpdateExchangeWindow.xaml.cs
+            MessageBox:
+                ☐ MessageBoxYesNoRed2Window.xaml
+                ☐ MessageBoxYesNoRed2Window.xaml.cs
+                ☐ MessageBoxYesNoRed3Window.xaml
+                ☐ MessageBoxYesNoRed3Window.xaml.cs
+                ☐ MessageBoxYesNoRedWindow - Copy.xaml
+                ☐ MessageBoxYesNoRedWindow - Copy.xaml.cs
+            Plaza:
+                ☐ PlazaInternalCreditExchangeWindow.xaml
+                ☐ PlazaInternalCreditExchangeWindow.xaml.cs
+                ☐ PlazaReceivedCreditWindow.xaml
+                ☐ PlazaReceivedCreditWindow.xaml.cs
+                ☐ PlazaStockSummaryWindow.xaml
+                ☐ PlazaStockSummaryWindow.xaml.cs
+    TOD:
+        Controls:
+            Revenue:
+                Entry:
+                    ☐ CouponDMTEntry.xaml
+                    ☐ CouponDMTEntry.xaml.cs
+                    ☐ CouponRevenueEntry.xaml
+                    ☐ CouponRevenueEntry.xaml.cs
+                    ☐ CouponUsageEntry.xaml
+                    ☐ CouponUsageEntry.xaml.cs
+                    ☐ EMVEntry.xaml
+                    ☐ EMVEntry.xaml.cs
+                    ☐ OtherEntry.xaml
+                    ☐ OtherEntry.xaml.cs
+                    ☐ QRCodeEntry.xaml
+                    ☐ QRCodeEntry.xaml.cs
+                    ☐ RevenueEntry.xaml
+                    ☐ RevenueEntry.xaml.cs
+                    ☐ TrafficEntry.xaml
+                    ☐ TrafficEntry.xaml.cs
+                View:
+                    ☐ EMVQRCodeView.xaml
+                    ☐ EMVQRCodeView.xaml.cs
+                    ☐ Lane2View.xaml
+                    ☐ Lane2View.xaml.cs
+                    ☐ LaneView.xaml
+                    ☐ LaneView.xaml.cs
+                    ☐ SelectLaneView.xaml
+                    ☐ SelectLaneView.xaml.cs
+            Shift:
+                View:
+                    ☐ LoginList2View.xaml
+                    ☐ LoginList2View.xaml.cs
+                    ☐ ShiftView.xaml
+                    ☐ ShiftView.xaml.cs
+                    ☐ SlipView.xaml
+                    ☐ SlipView.xaml.cs
+        Pages:
+            LoginList:
+                ☐ LoginListPage.xaml
+                ☐ LoginListPage.xaml.cs
+            Menu:
+                ☐ MainMenu.xaml
+                ☐ MainMenu.xaml.cs
+                ☐ ReportMenu.xaml
+                ☐ ReportMenu.xaml.cs
+            Reports:
+                ☐ DailyRevenueSummaryPreview.xaml
+                ☐ DailyRevenueSummaryPreview.xaml.cs
+                ☐ RevenueSlip.rdlc
+                ☐ RevenueSlipNull.rdlc
+                ☐ RevenueSlipPreview.xaml
+                ☐ RevenueSlipPreview.xaml.cs
+                ☐ RevenueSlipPreviewNull.xaml
+                ☐ RevenueSlipPreviewNull.xaml.cs
+                ☐ RevenueSlipSum.rdlc
+            Revenue:
+                Collector:
+                    ☐ RevenueDateSelectionPage.xaml
+                    ☐ RevenueDateSelectionPage.xaml.cs
+                    ☐ RevenueEntryPage.xaml
+                    ☐ RevenueEntryPage.xaml.cs
+                Supervisor:
+                    ☐ SupervisorRevenueDateSelectionPage.xaml
+                    ☐ SupervisorRevenueDateSelectionPage.xaml.cs
+                    ☐ SupervisorRevenueEntryPage.xaml
+                    ☐ SupervisorRevenueEntryPage.xaml.cs
+            TollAdmin:
+                ☐ ChangeShiftPage.xaml
+                ☐ ChangeShiftPage.xaml.cs
+                ☐ EMVQRCodePage.xaml
+                ☐ EMVQRCodePage.xaml.cs
+        Windows:
+            MessageBox:
+                ☐ MessageBoxWindow.xaml
+                ☐ MessageBoxWindow.xaml.cs
+                ☐ MessageBoxYesNoWindow.xaml
+                ☐ MessageBoxYesNoWindow.xaml.cs
+            Reports:
+                ☐ RevenueSlipSearchWindow.xaml
+                ☐ RevenueSlipSearchWindow.xaml.cs
+                ☐ RevenueSummarySearchWindow.xaml
+                ☐ RevenueSummarySearchWindow.xaml.cs
+            UserShifts:
+                ☐ BOSWindow.xaml
+                ☐ BOSWindow.xaml.cs

@@ -1,0 +1,16 @@
+DMT.Local.WebServer:
+    WebServer:
+        Behaviors:
+            ☐ NotifyBehavior.cs
+        Controllers:
+            ☐ CouponController.cs
+            ☐ CreditController.cs
+            ☐ ExchangeController.cs
+            ☐ LaneController.cs
+            ☐ MasterController.cs
+            ☐ RevenueController.cs
+            ☐ ShiftController.cs
+            ☐ TSBController.cs
+            ☐ UserController.cs
+            ☐ UserShiftController.cs
+        ☐ LocalDatabaseWebServer.cs

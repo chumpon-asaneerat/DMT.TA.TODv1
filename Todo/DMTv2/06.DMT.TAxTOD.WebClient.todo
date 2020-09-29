@@ -1,0 +1,6 @@
+DMT.TAxTOD.WebClient:
+    Services:
+        Operations:
+            ☐ PlazaOperations.base.cs
+            ☐ PlazaOperations.Coupon.cs
+        ☐ TODxTAServiceOperations.cs

@@ -1,0 +1,4 @@
+DMT.Common.WebClient:
+    Services:
+        ☐ NRestClient.cs
+        ☐ NRestResult.cs

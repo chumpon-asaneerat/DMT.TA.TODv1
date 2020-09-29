@@ -1,0 +1,8 @@
+DMT.Local.RestServer:
+    WebServer:
+        Controllers:
+            ☐ MasterController.cs
+            ☐ ShiftController.cs
+            ☐ TSBController.cs
+            ☐ UserController.cs
+        ☐ LocalDatabaseWebServer.cs

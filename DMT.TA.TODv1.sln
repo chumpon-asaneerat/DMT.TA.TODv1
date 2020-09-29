@@ -6,13 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C21033D8-F60F-460C-AF3A-D13A4B27D6B6}"
 	ProjectSection(SolutionItems) = preProject
 		history.txt = history.txt
-		owin.setting.txt = owin.setting.txt
-		Software Spec.docx = Software Spec.docx
-		TA - Data Dictionary.docx = TA - Data Dictionary.docx
-		teamviewer.txt = teamviewer.txt
-		TOD - Data Dictionary.docx = TOD - Data Dictionary.docx
-		TOD-TA-ERD.vsd = TOD-TA-ERD.vsd
-		Ubuntu.txt = Ubuntu.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLib", "00.NLib\NLib\NLib.csproj", "{41A9D6C0-C833-403F-9BC1-EECDC246A428}"
@@ -90,6 +83,50 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMT.TA.App", "09.App\DMT.TA.App\DMT.TA.App.csproj", "{F23DE176-ECAA-4F92-898F-CF12091ED8C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMT.TOD.App", "09.App\DMT.TOD.App\DMT.TOD.App.csproj", "{835688A1-A3A7-41BE-B85F-CCFA12D60A98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{0C58C1CA-EBC8-4045-A278-CB16C8F92CE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Todo", "Todo", "{10C5A3B4-B415-4D49-A27D-BC7F232090A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DMTv2", "DMTv2", "{E26D3D88-08A7-4614-A744-8A0164309F5B}"
+	ProjectSection(SolutionItems) = preProject
+		Todo\DMTv2\01.DMT.Core.todo = Todo\DMTv2\01.DMT.Core.todo
+		Todo\DMTv2\02.DMT.Smartcard.todo = Todo\DMTv2\02.DMT.Smartcard.todo
+		Todo\DMTv2\03.DMT.Models.todo = Todo\DMTv2\03.DMT.Models.todo
+		Todo\DMTv2\04.DMT.Common.WebClient.todo = Todo\DMTv2\04.DMT.Common.WebClient.todo
+		Todo\DMTv2\05.DMT.DataCenter.WebClient.todo = Todo\DMTv2\05.DMT.DataCenter.WebClient.todo
+		Todo\DMTv2\06.DMT.TAxTOD.WebClient.todo = Todo\DMTv2\06.DMT.TAxTOD.WebClient.todo
+		Todo\DMTv2\07.DMT.Local.WebServer.todo = Todo\DMTv2\07.DMT.Local.WebServer.todo
+		Todo\DMTv2\08.DMT.Local.WebClient.todo = Todo\DMTv2\08.DMT.Local.WebClient.todo
+		Todo\DMTv2\09.DMT.Controls.todo = Todo\DMTv2\09.DMT.Controls.todo
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DMT.TAxTODv1", "DMT.TAxTODv1", "{9D9A859C-5A35-4733-9593-7EFA9174528F}"
+	ProjectSection(SolutionItems) = preProject
+		Todo\DMT.TAxTODv1\01.DMT.Core.todo = Todo\DMT.TAxTODv1\01.DMT.Core.todo
+		Todo\DMT.TAxTODv1\02.DMT.Smartcard.todo = Todo\DMT.TAxTODv1\02.DMT.Smartcard.todo
+		Todo\DMT.TAxTODv1\03.DMT.Models.todo = Todo\DMT.TAxTODv1\03.DMT.Models.todo
+		Todo\DMT.TAxTODv1\04.DMT.Local.RestServer.todo = Todo\DMT.TAxTODv1\04.DMT.Local.RestServer.todo
+		Todo\DMT.TAxTODv1\05.DMT.RestClient.todo = Todo\DMT.TAxTODv1\05.DMT.RestClient.todo
+		Todo\DMT.TAxTODv1\06.DMT.TA.RestServer.todo = Todo\DMT.TAxTODv1\06.DMT.TA.RestServer.todo
+		Todo\DMT.TAxTODv1\07.DMT.TOD.RestServer.todo = Todo\DMT.TAxTODv1\07.DMT.TOD.RestServer.todo
+		Todo\DMT.TAxTODv1\DMT.TA.TODv1.todo = Todo\DMT.TAxTODv1\DMT.TA.TODv1.todo
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{8ADCD558-1C22-49B7-88EA-667E939CE824}"
+	ProjectSection(SolutionItems) = preProject
+		Technical.Documents\Notes\owin.setting.txt = Technical.Documents\Notes\owin.setting.txt
+		Technical.Documents\Notes\teamviewer.txt = Technical.Documents\Notes\teamviewer.txt
+		Technical.Documents\Notes\Ubuntu.txt = Technical.Documents\Notes\Ubuntu.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{906ED54D-C9C2-4227-ACAA-91813175CF0A}"
+	ProjectSection(SolutionItems) = preProject
+		Technical.Documents\Design\Software Spec.docx = Technical.Documents\Design\Software Spec.docx
+		Technical.Documents\Design\TA - Data Dictionary.docx = Technical.Documents\Design\TA - Data Dictionary.docx
+		Technical.Documents\Design\TOD - Data Dictionary.docx = Technical.Documents\Design\TOD - Data Dictionary.docx
+		Technical.Documents\Design\TOD-TA-ERD.vsd = Technical.Documents\Design\TOD-TA-ERD.vsd
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -195,6 +232,12 @@ Global
 		{FF8B1C83-92EA-47D8-B4D4-C4E646F1A20C} = {E172C8E1-5AAC-4FAB-91A5-C826BCEA3FBA}
 		{F23DE176-ECAA-4F92-898F-CF12091ED8C3} = {E172C8E1-5AAC-4FAB-91A5-C826BCEA3FBA}
 		{835688A1-A3A7-41BE-B85F-CCFA12D60A98} = {E172C8E1-5AAC-4FAB-91A5-C826BCEA3FBA}
+		{0C58C1CA-EBC8-4045-A278-CB16C8F92CE1} = {C21033D8-F60F-460C-AF3A-D13A4B27D6B6}
+		{10C5A3B4-B415-4D49-A27D-BC7F232090A0} = {C21033D8-F60F-460C-AF3A-D13A4B27D6B6}
+		{E26D3D88-08A7-4614-A744-8A0164309F5B} = {10C5A3B4-B415-4D49-A27D-BC7F232090A0}
+		{9D9A859C-5A35-4733-9593-7EFA9174528F} = {10C5A3B4-B415-4D49-A27D-BC7F232090A0}
+		{8ADCD558-1C22-49B7-88EA-667E939CE824} = {0C58C1CA-EBC8-4045-A278-CB16C8F92CE1}
+		{906ED54D-C9C2-4227-ACAA-91813175CF0A} = {0C58C1CA-EBC8-4045-A278-CB16C8F92CE1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
