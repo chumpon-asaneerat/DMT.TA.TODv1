@@ -22,8 +22,10 @@ Update 2020-09-29 #4
 Update 2020-09-29 #3
 - 
 
+[commited]
 Update 2020-09-29 #2
-- 
+- Update history.txt #2
+  - Required to track changed in DMTv2 project on 2020-09-28 to update code.
 
 [commited]
 Update 2020-09-29 #1
