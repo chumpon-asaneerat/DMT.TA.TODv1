@@ -1,0 +1,14 @@
+DMT.Models:
+    Models:
+        Coupons:
+            Common:
+                ☐ Enums.cs
+            TAServer:
+                ☐ TACouponTransaction.cs
+            TSB:
+                ☐ TSBCouponBalance.cs
+                ☐ TSBCouponSummary.cs
+                ☐ TSBCouponTransaction.cs
+            Users:
+                ☐ UserCouponBalance.cs
+                ☐ UserCouponTransaction.cs

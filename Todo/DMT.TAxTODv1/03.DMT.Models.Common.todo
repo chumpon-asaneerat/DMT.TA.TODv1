@@ -1,0 +1,11 @@
+DMT.Models:
+    Models:
+        Common:
+            ☐ DMT.Create.cs
+            ☐ DMT.Search.cs
+            ☐ DMTModelBase.cs
+            ☐ NDbResult.cs
+            ☐ NQueries.cs
+            ☐ NSearch.cs
+            ☐ NTables.cs
+            ☐ Utils.cs

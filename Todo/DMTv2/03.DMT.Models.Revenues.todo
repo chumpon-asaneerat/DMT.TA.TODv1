@@ -1,0 +1,4 @@
+DMT.Models:
+    Models:
+        Revenues:
+            ☐ RevenueEntry.cs

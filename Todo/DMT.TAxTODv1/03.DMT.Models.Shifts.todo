@@ -1,0 +1,7 @@
+DMT.Models:
+    Models:
+        Shifts:
+            ☐ Shift.cs
+            ☐ TSBShift.cs
+            ☐ UserShift.cs
+            ☐ UserShiftRevenue.cs

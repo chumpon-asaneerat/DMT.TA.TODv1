@@ -1,0 +1,5 @@
+DMT.Models:
+    Models:
+        Master:
+            ☐ Coupon.cs
+            ☐ Currency.cs

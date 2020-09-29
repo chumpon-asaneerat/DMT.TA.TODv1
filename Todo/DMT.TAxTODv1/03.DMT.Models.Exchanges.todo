@@ -1,0 +1,5 @@
+DMT.Models:
+    Models:
+        Exchanges:
+            ☐ TSBExchangeGroup.cs
+            ☐ TSBExchangeTransaction.cs

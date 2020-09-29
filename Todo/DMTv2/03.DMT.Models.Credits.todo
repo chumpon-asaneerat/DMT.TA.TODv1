@@ -1,0 +1,9 @@
+DMT.Models:
+    Models:
+        Credits:
+            TSB:
+                ☐ TSBCreditBalance.cs
+                ☐ TSBCreditTransaction.cs
+            Users:
+                ☐ UserCreditBalance.cs
+                ☐ UserCreditTransaction.cs

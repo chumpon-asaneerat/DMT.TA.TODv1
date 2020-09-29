@@ -1,0 +1,6 @@
+DMT.Models:
+    Models:
+        Configurations:
+            ☐ Config.cs
+            ☐ UniqueCode.cs
+            ☐ ViewHistory.cs
