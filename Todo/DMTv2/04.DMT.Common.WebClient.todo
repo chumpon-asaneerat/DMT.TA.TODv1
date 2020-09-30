@@ -1,4 +1,4 @@
 DMT.Common.WebClient:
     Services:
-        ☐ NRestClient.cs
-        ☐ NRestResult.cs
+        ✔ NRestClient.cs ported. @done(20-09-30 09:30)
+        ✔ NRestResult.cs ported. @done(20-09-30 09:31)

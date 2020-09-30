@@ -1,30 +1,30 @@
 DMT.RestClient:
     Services:
         Common:
-            ☐ NRestClient.cs
-            ☐ NRestResult.cs
+            ✔ NRestClient.cs checked. @done(20-09-30 09:30)
+            ✔ NRestResult.cs checked. @done(20-09-30 09:31)
         Local:
             Operations:
-                ☐ PlazaOperations.base.cs
-                ☐ PlazaOperations.Coupon.cs
-                ☐ PlazaOperations.Credit.cs
-                ☐ PlazaOperations.Exchange.cs
-                ☐ PlazaOperations.Lane.cs
-                ☐ PlazaOperations.Master.cs
-                ☐ PlazaOperations.Revenue.cs
-                ☐ PlazaOperations.Shift.cs
-                ☐ PlazaOperations.TSB.cs
-                ☐ PlazaOperations.User.cs
-                ☐ PlazaOperations.UserShift.cs
-            ☐ ServiceOperations.cs
+                ☐ PlazaOperations.base.cs checked.
+                ☐ PlazaOperations.Coupon.cs checked.
+                ☐ PlazaOperations.Credit.cs checked.
+                ☐ PlazaOperations.Exchange.cs checked.
+                ☐ PlazaOperations.Lane.cs checked.
+                ☐ PlazaOperations.Master.cs checked.
+                ☐ PlazaOperations.Revenue.cs checked.
+                ☐ PlazaOperations.Shift.cs checked.
+                ☐ PlazaOperations.TSB.cs checked.
+                ☐ PlazaOperations.User.cs checked.
+                ☐ PlazaOperations.UserShift.cs checked.
+            ☐ ServiceOperations.cs checked.
         SCW:
             Operations:
-                ☐ PlazaOperations.base.cs
-                ☐ PlazaOperations.Masters.cs
-                ☐ PlazaOperations.TOD.cs
-            ☐ SCWServiceOperations.cs
+                ☐ PlazaOperations.base.cs checked.
+                ☐ PlazaOperations.Masters.cs checked.
+                ☐ PlazaOperations.TOD.cs checked.
+            ☐ SCWServiceOperations.cs checked.
         TAxTOD:
             Operations:
-                ☐ PlazaOperations.base.cs
-                ☐ PlazaOperations.Coupon.cs
-            ☐ TODxTAServiceOperations.cs
+                ☐ PlazaOperations.base.cs checked.
+                ☐ PlazaOperations.Coupon.cs checked.
+            ☐ TODxTAServiceOperations.cs checked.

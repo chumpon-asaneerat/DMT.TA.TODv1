@@ -1,8 +1,8 @@
 DMT.Local.RestServer:
     WebServer:
         Controllers:
-            ☐ MasterController.cs
-            ☐ ShiftController.cs
-            ☐ TSBController.cs
-            ☐ UserController.cs
-        ☐ LocalDatabaseWebServer.cs
+            ✔ MasterController.cs checked. @done(20-09-30 09:42)
+            ✔ ShiftController.cs checked. @done(20-09-30 09:43)
+            ✔ TSBController.cs checked. @done(20-09-30 09:44)
+            ✔ UserController.cs checked. @done(20-09-30 09:45)
+        ✔ LocalDatabaseWebServer.cs (remove WebSocker and add supports init/release nash, firewall) checked. @done(20-09-30 09:36)

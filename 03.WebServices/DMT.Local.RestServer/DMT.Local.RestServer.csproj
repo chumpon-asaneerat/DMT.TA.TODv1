@@ -87,12 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="WebServer\Controllers\Old1\CouponController.cs" />
-    <None Include="WebServer\Controllers\Old1\CreditController.cs" />
-    <None Include="WebServer\Controllers\Old1\ExchangeController.cs" />
     <Compile Include="WebServer\Controllers\MasterController.cs" />
-    <None Include="WebServer\Controllers\Old1\LaneController.cs" />
-    <None Include="WebServer\Controllers\Old1\RevenueController.cs" />
     <Compile Include="WebServer\Controllers\ShiftController.cs" />
     <Compile Include="WebServer\Controllers\TSBController.cs" />
     <Compile Include="WebServer\Controllers\UserController.cs" />
