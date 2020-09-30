@@ -45,18 +45,18 @@ DMT.Controls:
             ☐ UserFilterWindow.xaml.cs ported.
     StatusBar:
         Elements:
-            ☐ AppInfoStatus.xaml ported.
-            ☐ AppInfoStatus.xaml.cs ported.
-            ☐ LocalDbStatus.xaml ported.
-            ☐ LocalDbStatus.xaml.cs ported.
-            ☐ SCWStatus.xaml ported.
-            ☐ SCWStatus.xaml.cs ported.
-            ☐ TAServerStatus.xaml ported.
-            ☐ TAServerStatus.xaml.cs ported.
-        ☐ TAStatusBar.xaml ported.
-        ☐ TAStatusBar.xaml.cs ported.
-        ☐ TODStatusBar.xaml ported.
-        ☐ TODStatusBar.xaml.cs ported.
+            ✔ AppInfoStatus.xaml ported. @done(20-09-30 11:40)
+            ✔ AppInfoStatus.xaml.cs ported. @done(20-09-30 11:40)
+            ✔ LocalDbStatus.xaml ported. @done(20-09-30 11:40)
+            ✔ LocalDbStatus.xaml.cs ported. @done(20-09-30 11:40)
+            ✔ SCWStatus.xaml ported. @done(20-09-30 11:40)
+            ✔ SCWStatus.xaml.cs ported. @done(20-09-30 11:40)
+            ✔ TAServerStatus.xaml ported. @done(20-09-30 11:40)
+            ✔ TAServerStatus.xaml.cs ported. @done(20-09-30 11:40)
+        ✔ TAStatusBar.xaml ported. @done(20-09-30 11:40)
+        ✔ TAStatusBar.xaml.cs ported. @done(20-09-30 11:40)
+        ✔ TODStatusBar.xaml ported. @done(20-09-30 11:40)
+        ✔ TODStatusBar.xaml.cs ported. @done(20-09-30 11:41)
     Styles:
         ☐ ImageButtonStyle.xaml ported.
     TA:

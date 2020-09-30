@@ -38,18 +38,18 @@ DMT.Controls:
             ☐ UserFilterWindow.xaml.cs checked.
     StatusBar:
         Elements:
-            ☐ AppInfoStatus.xaml checked.
-            ☐ AppInfoStatus.xaml.cs checked.
-            ☐ LocalDbStatus.xaml checked.
-            ☐ LocalDbStatus.xaml.cs checked.
-            ☐ SCWStatus.xaml checked.
-            ☐ SCWStatus.xaml.cs checked.
-            ☐ TAServerStatus.xaml checked.
-            ☐ TAServerStatus.xaml.cs checked.
-        ☐ TAStatusBar.xaml checked.
-        ☐ TAStatusBar.xaml.cs checked.
-        ☐ TODStatusBar.xaml checked.
-        ☐ TODStatusBar.xaml.cs checked.
+            ✔ AppInfoStatus.xaml checked. @done(20-09-30 11:40)
+            ✔ AppInfoStatus.xaml.cs checked. @done(20-09-30 11:40)
+            ✔ LocalDbStatus.xaml checked. @done(20-09-30 11:40)
+            ✔ LocalDbStatus.xaml.cs checked. @done(20-09-30 11:40)
+            ✔ SCWStatus.xaml checked. @done(20-09-30 11:40)
+            ✔ SCWStatus.xaml.cs checked. @done(20-09-30 11:40)
+            ✔ TAServerStatus.xaml checked. @done(20-09-30 11:40)
+            ✔ TAServerStatus.xaml.cs checked. @done(20-09-30 11:40)
+        ✔ TAStatusBar.xaml checked. @done(20-09-30 11:40)
+        ✔ TAStatusBar.xaml.cs checked. @done(20-09-30 11:40)
+        ✔ TODStatusBar.xaml checked. @done(20-09-30 11:40)
+        ✔ TODStatusBar.xaml.cs checked. @done(20-09-30 11:40)
     Styles:
         ☐ ImageButtonStyle.xaml checked.
     TA:
