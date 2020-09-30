@@ -1,283 +1,283 @@
 DMT.Controls:
     Common:
-        ☐ ImageButton.xaml
-        ☐ ImageButton.xaml.cs
-        ☐ MenuButton.xaml
-        ☐ MenuButton.xaml.cs
-        ☐ MenuGroupCaption.xaml
-        ☐ MenuGroupCaption.xaml.cs
+        ☐ ImageButton.xaml ported.
+        ☐ ImageButton.xaml.cs ported.
+        ☐ MenuButton.xaml ported.
+        ☐ MenuButton.xaml.cs ported.
+        ☐ MenuGroupCaption.xaml ported.
+        ☐ MenuGroupCaption.xaml.cs ported.
     Header:
         Elements:
-            ☐ HeaderDateTime.xaml
-            ☐ HeaderDateTime.xaml.cs
-            ☐ HeaderLogo.xaml
-            ☐ HeaderLogo.xaml.cs
-            ☐ HeaderPlaza.xaml
-            ☐ HeaderPlaza.xaml.cs
-            ☐ HeaderShift.xaml
-            ☐ HeaderShift.xaml.cs
-            ☐ HeaderSupervisor.xaml
-            ☐ HeaderSupervisor.xaml.cs
-            ☐ HeaderUser.xaml
-            ☐ HeaderUser.xaml.cs
-        ☐ AccountHeader.xaml
-        ☐ AccountHeader.xaml.cs
-        ☐ CurrentTA.cs
-        ☐ PlazaHeader.xaml
-        ☐ PlazaHeader.xaml.cs
+            ☐ HeaderDateTime.xaml ported.
+            ☐ HeaderDateTime.xaml.cs ported.
+            ☐ HeaderLogo.xaml ported.
+            ☐ HeaderLogo.xaml.cs ported.
+            ☐ HeaderPlaza.xaml ported.
+            ☐ HeaderPlaza.xaml.cs ported.
+            ☐ HeaderShift.xaml ported.
+            ☐ HeaderShift.xaml.cs ported.
+            ☐ HeaderSupervisor.xaml ported.
+            ☐ HeaderSupervisor.xaml.cs ported.
+            ☐ HeaderUser.xaml ported.
+            ☐ HeaderUser.xaml.cs ported.
+        ☐ AccountHeader.xaml ported.
+        ☐ AccountHeader.xaml.cs ported.
+        ☐ CurrentTA.cs ported.
+        ☐ PlazaHeader.xaml ported.
+        ☐ PlazaHeader.xaml.cs ported.
     Images:
-        ☐ Background
-        ☐ Button
-        ☐ Logo
-        ☐ Menu
-        ☐ Reports
+        ✔ Background ported. @done(20-09-30 11:29)
+        ✔ Button ported. @done(20-09-30 11:29)
+        ✔ Logo ported. @done(20-09-30 11:29)
+        ✔ Menu ported. @done(20-09-30 11:29)
+        ✔ Reports ported. @done(20-09-30 11:29)
     SignIn:
         Common:
-            ☐ SmartcardManager.cs
-            ☐ UserSearchManager.cs
+            ☐ SmartcardManager.cs ported.
+            ☐ UserSearchManager.cs ported.
         Pages:
-            ☐ SignInPage.xaml
-            ☐ SignInPage.xaml.cs
+            ☐ SignInPage.xaml ported.
+            ☐ SignInPage.xaml.cs ported.
         Windows:
-            ☐ SignInWindow.xaml
-            ☐ SignInWindow.xaml.cs
-            ☐ UserFilterWindow.xaml
-            ☐ UserFilterWindow.xaml.cs
+            ☐ SignInWindow.xaml ported.
+            ☐ SignInWindow.xaml.cs ported.
+            ☐ UserFilterWindow.xaml ported.
+            ☐ UserFilterWindow.xaml.cs ported.
     StatusBar:
         Elements:
-            ☐ AppInfoStatus.xaml
-            ☐ AppInfoStatus.xaml.cs
-            ☐ LocalDbStatus.xaml
-            ☐ LocalDbStatus.xaml.cs
-            ☐ SCWStatus.xaml
-            ☐ SCWStatus.xaml.cs
-            ☐ TAServerStatus.xaml
-            ☐ TAServerStatus.xaml.cs
-        ☐ TAStatusBar.xaml
-        ☐ TAStatusBar.xaml.cs
-        ☐ TODStatusBar.xaml
-        ☐ TODStatusBar.xaml.cs
+            ☐ AppInfoStatus.xaml ported.
+            ☐ AppInfoStatus.xaml.cs ported.
+            ☐ LocalDbStatus.xaml ported.
+            ☐ LocalDbStatus.xaml.cs ported.
+            ☐ SCWStatus.xaml ported.
+            ☐ SCWStatus.xaml.cs ported.
+            ☐ TAServerStatus.xaml ported.
+            ☐ TAServerStatus.xaml.cs ported.
+        ☐ TAStatusBar.xaml ported.
+        ☐ TAStatusBar.xaml.cs ported.
+        ☐ TODStatusBar.xaml ported.
+        ☐ TODStatusBar.xaml.cs ported.
     Styles:
-        ☐ ImageButtonStyle.xaml
+        ☐ ImageButtonStyle.xaml ported.
     TA:
         Controls:
             Collector:
                 Coupon:
                     Entry:
-                        ☐ CollectorCouponBorrowEntry.xaml
-                        ☐ CollectorCouponBorrowEntry.xaml.cs
+                        ☐ CollectorCouponBorrowEntry.xaml ported.
+                        ☐ CollectorCouponBorrowEntry.xaml.cs ported.
                     View:
-                        ☐ CouponReceiveView.xaml
-                        ☐ CouponReceiveView.xaml.cs
-                        ☐ CouponReturnView.xaml
-                        ☐ CouponReturnView.xaml.cs
+                        ☐ CouponReceiveView.xaml ported.
+                        ☐ CouponReceiveView.xaml.cs ported.
+                        ☐ CouponReturnView.xaml ported.
+                        ☐ CouponReturnView.xaml.cs ported.
                 Credit:
                     View:
-                        ☐ CollectorCreditSummaryView.xaml
-                        ☐ CollectorCreditSummaryView.xaml.cs
+                        ☐ CollectorCreditSummaryView.xaml ported.
+                        ☐ CollectorCreditSummaryView.xaml.cs ported.
             Exchange:
                 View:
-                    ☐ AccountRequestExchangeView.xaml
-                    ☐ AccountRequestExchangeView.xaml.cs
-                    ☐ PlazaRequestExchangeView.xaml
-                    ☐ PlazaRequestExchangeView.xaml.cs
+                    ☐ AccountRequestExchangeView.xaml ported.
+                    ☐ AccountRequestExchangeView.xaml.cs ported.
+                    ☐ PlazaRequestExchangeView.xaml ported.
+                    ☐ PlazaRequestExchangeView.xaml.cs ported.
             History:
                 View:
-                    ☐ PlazaFundHistoryView.xaml
-                    ☐ PlazaFundHistoryView.xaml.cs
+                    ☐ PlazaFundHistoryView.xaml ported.
+                    ☐ PlazaFundHistoryView.xaml.cs ported.
             Plaza:
                 Entry:
-                    ☐ FundDetailEntry.xaml
-                    ☐ FundDetailEntry.xaml.cs
-                    ☐ LoanMoney2Entry.xaml
-                    ☐ LoanMoney2Entry.xaml.cs
-                    ☐ LoanMoneyEntry.xaml
-                    ☐ LoanMoneyEntry.xaml.cs
-                    ☐ PlazaCouponEntry.xaml
-                    ☐ PlazaCouponEntry.xaml.cs
-                    ☐ PlazaCreditEntry.xaml
-                    ☐ PlazaCreditEntry.xaml.cs
-                    ☐ PlazaCreditEntryOld.xaml
-                    ☐ PlazaCreditEntryOld.xaml.cs
-                    ☐ PlazaCreditEntryTotal.xaml
-                    ☐ PlazaCreditEntryTotal.xaml.cs
+                    ☐ FundDetailEntry.xaml ported.
+                    ☐ FundDetailEntry.xaml.cs ported.
+                    ☐ LoanMoney2Entry.xaml ported.
+                    ☐ LoanMoney2Entry.xaml.cs ported.
+                    ☐ LoanMoneyEntry.xaml ported.
+                    ☐ LoanMoneyEntry.xaml.cs ported.
+                    ☐ PlazaCouponEntry.xaml ported.
+                    ☐ PlazaCouponEntry.xaml.cs ported.
+                    ☐ PlazaCreditEntry.xaml ported.
+                    ☐ PlazaCreditEntry.xaml.cs ported.
+                    ☐ PlazaCreditEntryOld.xaml ported.
+                    ☐ PlazaCreditEntryOld.xaml.cs ported.
+                    ☐ PlazaCreditEntryTotal.xaml ported.
+                    ☐ PlazaCreditEntryTotal.xaml.cs ported.
                 View:
-                    ☐ FundPlaza2View.xaml
-                    ☐ FundPlaza2View.xaml.cs
-                    ☐ FundPlaza3View.xaml
-                    ☐ FundPlaza3View.xaml.cs
-                    ☐ PlazaAllCouponView.xaml
-                    ☐ PlazaAllCouponView.xaml.cs
-                    ☐ PlazaCouponView.xaml
-                    ☐ PlazaCouponView.xaml.cs
-                    ☐ PlazaFundView.xaml
-                    ☐ PlazaFundView.xaml.cs
+                    ☐ FundPlaza2View.xaml ported.
+                    ☐ FundPlaza2View.xaml.cs ported.
+                    ☐ FundPlaza3View.xaml ported.
+                    ☐ FundPlaza3View.xaml.cs ported.
+                    ☐ PlazaAllCouponView.xaml ported.
+                    ☐ PlazaAllCouponView.xaml.cs ported.
+                    ☐ PlazaCouponView.xaml ported.
+                    ☐ PlazaCouponView.xaml.cs ported.
+                    ☐ PlazaFundView.xaml ported.
+                    ☐ PlazaFundView.xaml.cs ported.
         Pages:
             Collector:
-                ☐ CollectorFundViewPage.xaml
-                ☐ CollectorFundViewPage.xaml.cs
+                ☐ CollectorFundViewPage.xaml ported.
+                ☐ CollectorFundViewPage.xaml.cs ported.
             Coupon:
-                ☐ CouponTSBSalePage.xaml
-                ☐ CouponTSBSalePage.xaml.cs
-                ☐ ReceivedCouponPage.xaml
-                ☐ ReceivedCouponPage.xaml.cs
-                ☐ ReturnCouponPage.xaml
-                ☐ ReturnCouponPage.xaml.cs
+                ☐ CouponTSBSalePage.xaml ported.
+                ☐ CouponTSBSalePage.xaml.cs ported.
+                ☐ ReceivedCouponPage.xaml ported.
+                ☐ ReceivedCouponPage.xaml.cs ported.
+                ☐ ReturnCouponPage.xaml ported.
+                ☐ ReturnCouponPage.xaml.cs ported.
             Exchange:
-                ☐ PlazaRequestExchangePage.xaml
-                ☐ PlazaRequestExchangePage.xaml.cs
+                ☐ PlazaRequestExchangePage.xaml ported.
+                ☐ PlazaRequestExchangePage.xaml.cs ported.
             History:
-                ☐ PlazaReturnHistoryPage.xaml
-                ☐ PlazaReturnHistoryPage.xaml.cs
+                ☐ PlazaReturnHistoryPage.xaml ported.
+                ☐ PlazaReturnHistoryPage.xaml.cs ported.
             Menu:
-                ☐ MainMenu.xaml
-                ☐ MainMenu.xaml.cs
-                ☐ ReportMenu.xaml
-                ☐ ReportMenu.xaml.cs
+                ☐ MainMenu.xaml ported.
+                ☐ MainMenu.xaml.cs ported.
+                ☐ ReportMenu.xaml ported.
+                ☐ ReportMenu.xaml.cs ported.
             Plaza:
-                ☐ PlazaAllCouponPage.xaml
-                ☐ PlazaAllCouponPage.xaml.cs
-                ☐ PlazaCouponReceivedReturnPage.xaml
-                ☐ PlazaCouponReceivedReturnPage.xaml.cs
-                ☐ PlazaInternalCreditExchangePage.xaml
-                ☐ PlazaInternalCreditExchangePage.xaml.cs
-                ☐ PlazaReceivedReturnPage.xaml
-                ☐ PlazaReceivedReturnPage.xaml.cs
+                ☐ PlazaAllCouponPage.xaml ported.
+                ☐ PlazaAllCouponPage.xaml.cs ported.
+                ☐ PlazaCouponReceivedReturnPage.xaml ported.
+                ☐ PlazaCouponReceivedReturnPage.xaml.cs ported.
+                ☐ PlazaInternalCreditExchangePage.xaml ported.
+                ☐ PlazaInternalCreditExchangePage.xaml.cs ported.
+                ☐ PlazaReceivedReturnPage.xaml ported.
+                ☐ PlazaReceivedReturnPage.xaml.cs ported.
             Reports:
-                ☐ CollectorCouponReceived.rdlc
-                ☐ CollectorCouponReceivedReportPage.xaml
-                ☐ CollectorCouponReceivedReportPage.xaml.cs
-                ☐ CollectorFundSummaryRep.rdlc
-                ☐ CollectorFundSummaryReportPage.xaml
-                ☐ CollectorFundSummaryReportPage.xaml.cs
-                ☐ CollectorFundSummaryReportPageOld.xaml
-                ☐ CollectorFundSummaryReportPageOld.xaml.cs
-                ☐ CouponSalesReceiptRep.rdlc
-                ☐ CouponSalesReceiptReportPage.xaml
-                ☐ CouponSalesReceiptReportPage.xaml.cs
+                ☐ CollectorCouponReceived.rdlc ported.
+                ☐ CollectorCouponReceivedReportPage.xaml ported.
+                ☐ CollectorCouponReceivedReportPage.xaml.cs ported.
+                ☐ CollectorFundSummaryRep.rdlc ported.
+                ☐ CollectorFundSummaryReportPage.xaml ported.
+                ☐ CollectorFundSummaryReportPage.xaml.cs ported.
+                ☐ CollectorFundSummaryReportPageOld.xaml ported.
+                ☐ CollectorFundSummaryReportPageOld.xaml.cs ported.
+                ☐ CouponSalesReceiptRep.rdlc ported.
+                ☐ CouponSalesReceiptReportPage.xaml ported.
+                ☐ CouponSalesReceiptReportPage.xaml.cs ported.
         Windows:
             Collector:
                 Credit:
-                    ☐ CollectorCreditBorrowWindow.xaml
-                    ☐ CollectorCreditBorrowWindow.xaml.cs
-                    ☐ CollectorCreditReturnWindow.xaml
-                    ☐ CollectorCreditReturnWindow.xaml.cs
-                    ☐ MessageWindow.xaml
-                    ☐ MessageWindow.xaml.cs
-                    ☐ ReceiveMoneyBagWindow.xaml
-                    ☐ ReceiveMoneyBagWindow.xaml.cs
+                    ☐ CollectorCreditBorrowWindow.xaml ported.
+                    ☐ CollectorCreditBorrowWindow.xaml.cs ported.
+                    ☐ CollectorCreditReturnWindow.xaml ported.
+                    ☐ CollectorCreditReturnWindow.xaml.cs ported.
+                    ☐ MessageWindow.xaml ported.
+                    ☐ MessageWindow.xaml.cs ported.
+                    ☐ ReceiveMoneyBagWindow.xaml ported.
+                    ☐ ReceiveMoneyBagWindow.xaml.cs ported.
             Coupon:
-                ☐ CouponEditWindow.xaml
-                ☐ CouponEditWindow.xaml.cs
-                ☐ CouponReportWindow.xaml
-                ☐ CouponReportWindow.xaml.cs
-                ☐ CouponReturnWindow.xaml
-                ☐ CouponReturnWindow.xaml.cs
+                ☐ CouponEditWindow.xaml ported.
+                ☐ CouponEditWindow.xaml.cs ported.
+                ☐ CouponReportWindow.xaml ported.
+                ☐ CouponReportWindow.xaml.cs ported.
+                ☐ CouponReturnWindow.xaml ported.
+                ☐ CouponReturnWindow.xaml.cs ported.
             Exchange:
-                ☐ ExchangeWindowMode.cs
-                ☐ PlazaCreditRequestExchangeWindow.xaml
-                ☐ PlazaCreditRequestExchangeWindow.xaml.cs
-                ☐ PlazaCreditUpdateExchangeWindow.xaml
-                ☐ PlazaCreditUpdateExchangeWindow.xaml.cs
+                ☐ ExchangeWindowMode.cs ported.
+                ☐ PlazaCreditRequestExchangeWindow.xaml ported.
+                ☐ PlazaCreditRequestExchangeWindow.xaml.cs ported.
+                ☐ PlazaCreditUpdateExchangeWindow.xaml ported.
+                ☐ PlazaCreditUpdateExchangeWindow.xaml.cs ported.
             MessageBox:
-                ☐ MessageBoxYesNoRed2Window.xaml
-                ☐ MessageBoxYesNoRed2Window.xaml.cs
-                ☐ MessageBoxYesNoRed3Window.xaml
-                ☐ MessageBoxYesNoRed3Window.xaml.cs
-                ☐ MessageBoxYesNoRedWindow - Copy.xaml
-                ☐ MessageBoxYesNoRedWindow - Copy.xaml.cs
+                ☐ MessageBoxYesNoRed2Window.xaml ported.
+                ☐ MessageBoxYesNoRed2Window.xaml.cs ported.
+                ☐ MessageBoxYesNoRed3Window.xaml ported.
+                ☐ MessageBoxYesNoRed3Window.xaml.cs ported.
+                ☐ MessageBoxYesNoRedWindow - Copy.xaml ported.
+                ☐ MessageBoxYesNoRedWindow - Copy.xaml.cs ported.
             Plaza:
-                ☐ PlazaInternalCreditExchangeWindow.xaml
-                ☐ PlazaInternalCreditExchangeWindow.xaml.cs
-                ☐ PlazaReceivedCreditWindow.xaml
-                ☐ PlazaReceivedCreditWindow.xaml.cs
-                ☐ PlazaStockSummaryWindow.xaml
-                ☐ PlazaStockSummaryWindow.xaml.cs
+                ☐ PlazaInternalCreditExchangeWindow.xaml ported.
+                ☐ PlazaInternalCreditExchangeWindow.xaml.cs ported.
+                ☐ PlazaReceivedCreditWindow.xaml ported.
+                ☐ PlazaReceivedCreditWindow.xaml.cs ported.
+                ☐ PlazaStockSummaryWindow.xaml ported.
+                ☐ PlazaStockSummaryWindow.xaml.cs ported.
     Themes:
-        ☐ generic.xaml
+        ☐ generic.xaml ported.
     TOD:
         Controls:
             Revenue:
                 Entry:
-                    ☐ CouponDMTEntry.xaml
-                    ☐ CouponDMTEntry.xaml.cs
-                    ☐ CouponRevenueEntry.xaml
-                    ☐ CouponRevenueEntry.xaml.cs
-                    ☐ CouponUsageEntry.xaml
-                    ☐ CouponUsageEntry.xaml.cs
-                    ☐ EMVEntry.xaml
-                    ☐ EMVEntry.xaml.cs
-                    ☐ OtherEntry.xaml
-                    ☐ OtherEntry.xaml.cs
-                    ☐ QRCodeEntry.xaml
-                    ☐ QRCodeEntry.xaml.cs
-                    ☐ RevenueEntry.xaml
-                    ☐ RevenueEntry.xaml.cs
-                    ☐ TrafficEntry.xaml
-                    ☐ TrafficEntry.xaml.cs
+                    ☐ CouponDMTEntry.xaml ported.
+                    ☐ CouponDMTEntry.xaml.cs ported.
+                    ☐ CouponRevenueEntry.xaml ported.
+                    ☐ CouponRevenueEntry.xaml.cs ported.
+                    ☐ CouponUsageEntry.xaml ported.
+                    ☐ CouponUsageEntry.xaml.cs ported.
+                    ☐ EMVEntry.xaml ported.
+                    ☐ EMVEntry.xaml.cs ported.
+                    ☐ OtherEntry.xaml ported.
+                    ☐ OtherEntry.xaml.cs ported.
+                    ☐ QRCodeEntry.xaml ported.
+                    ☐ QRCodeEntry.xaml.cs ported.
+                    ☐ RevenueEntry.xaml ported.
+                    ☐ RevenueEntry.xaml.cs ported.
+                    ☐ TrafficEntry.xaml ported.
+                    ☐ TrafficEntry.xaml.cs ported.
                 View:
-                    ☐ EMVQRCodeView.xaml
-                    ☐ EMVQRCodeView.xaml.cs
-                    ☐ Lane2View.xaml
-                    ☐ Lane2View.xaml.cs
-                    ☐ LaneView.xaml
-                    ☐ LaneView.xaml.cs
-                    ☐ SelectLaneView.xaml
-                    ☐ SelectLaneView.xaml.cs
+                    ☐ EMVQRCodeView.xaml ported.
+                    ☐ EMVQRCodeView.xaml.cs ported.
+                    ☐ Lane2View.xaml ported.
+                    ☐ Lane2View.xaml.cs ported.
+                    ☐ LaneView.xaml ported.
+                    ☐ LaneView.xaml.cs ported.
+                    ☐ SelectLaneView.xaml ported.
+                    ☐ SelectLaneView.xaml.cs ported.
             Shift:
                 View:
-                    ☐ LoginList2View.xaml
-                    ☐ LoginList2View.xaml.cs
-                    ☐ ShiftView.xaml
-                    ☐ ShiftView.xaml.cs
-                    ☐ SlipView.xaml
-                    ☐ SlipView.xaml.cs
+                    ☐ LoginList2View.xaml ported.
+                    ☐ LoginList2View.xaml.cs ported.
+                    ☐ ShiftView.xaml ported.
+                    ☐ ShiftView.xaml.cs ported.
+                    ☐ SlipView.xaml ported.
+                    ☐ SlipView.xaml.cs ported.
         Pages:
             LoginList:
-                ☐ LoginListPage.xaml
-                ☐ LoginListPage.xaml.cs
+                ☐ LoginListPage.xaml ported.
+                ☐ LoginListPage.xaml.cs ported.
             Menu:
-                ☐ MainMenu.xaml
-                ☐ MainMenu.xaml.cs
-                ☐ ReportMenu.xaml
-                ☐ ReportMenu.xaml.cs
+                ☐ MainMenu.xaml ported.
+                ☐ MainMenu.xaml.cs ported.
+                ☐ ReportMenu.xaml ported.
+                ☐ ReportMenu.xaml.cs ported.
             Reports:
-                ☐ DailyRevenueSummaryPreview.xaml
-                ☐ DailyRevenueSummaryPreview.xaml.cs
-                ☐ RevenueSlip.rdlc
-                ☐ RevenueSlipNull.rdlc
-                ☐ RevenueSlipPreview.xaml
-                ☐ RevenueSlipPreview.xaml.cs
-                ☐ RevenueSlipPreviewNull.xaml
-                ☐ RevenueSlipPreviewNull.xaml.cs
-                ☐ RevenueSlipSum.rdlc
+                ☐ DailyRevenueSummaryPreview.xaml ported.
+                ☐ DailyRevenueSummaryPreview.xaml.cs ported.
+                ☐ RevenueSlip.rdlc ported.
+                ☐ RevenueSlipNull.rdlc ported.
+                ☐ RevenueSlipPreview.xaml ported.
+                ☐ RevenueSlipPreview.xaml.cs ported.
+                ☐ RevenueSlipPreviewNull.xaml ported.
+                ☐ RevenueSlipPreviewNull.xaml.cs ported.
+                ☐ RevenueSlipSum.rdlc ported.
             Revenue:
                 Collector:
-                    ☐ RevenueDateSelectionPage.xaml
-                    ☐ RevenueDateSelectionPage.xaml.cs
-                    ☐ RevenueEntryPage.xaml
-                    ☐ RevenueEntryPage.xaml.cs
+                    ☐ RevenueDateSelectionPage.xaml ported.
+                    ☐ RevenueDateSelectionPage.xaml.cs ported.
+                    ☐ RevenueEntryPage.xaml ported.
+                    ☐ RevenueEntryPage.xaml.cs ported.
                 Supervisor:
-                    ☐ SupervisorRevenueDateSelectionPage.xaml
-                    ☐ SupervisorRevenueDateSelectionPage.xaml.cs
-                    ☐ SupervisorRevenueEntryPage.xaml
-                    ☐ SupervisorRevenueEntryPage.xaml.cs
+                    ☐ SupervisorRevenueDateSelectionPage.xaml ported.
+                    ☐ SupervisorRevenueDateSelectionPage.xaml.cs ported.
+                    ☐ SupervisorRevenueEntryPage.xaml ported.
+                    ☐ SupervisorRevenueEntryPage.xaml.cs ported.
             TollAdmin:
-                ☐ ChangeShiftPage.xaml
-                ☐ ChangeShiftPage.xaml.cs
-                ☐ EMVQRCodePage.xaml
-                ☐ EMVQRCodePage.xaml.cs
+                ☐ ChangeShiftPage.xaml ported.
+                ☐ ChangeShiftPage.xaml.cs ported.
+                ☐ EMVQRCodePage.xaml ported.
+                ☐ EMVQRCodePage.xaml.cs ported.
         Windows:
             MessageBox:
-                ☐ MessageBoxWindow.xaml
-                ☐ MessageBoxWindow.xaml.cs
-                ☐ MessageBoxYesNoWindow.xaml
-                ☐ MessageBoxYesNoWindow.xaml.cs
+                ☐ MessageBoxWindow.xaml ported.
+                ☐ MessageBoxWindow.xaml.cs ported.
+                ☐ MessageBoxYesNoWindow.xaml ported.
+                ☐ MessageBoxYesNoWindow.xaml.cs ported.
             Reports:
-                ☐ RevenueSlipSearchWindow.xaml
-                ☐ RevenueSlipSearchWindow.xaml.cs
-                ☐ RevenueSummarySearchWindow.xaml
-                ☐ RevenueSummarySearchWindow.xaml.cs
+                ☐ RevenueSlipSearchWindow.xaml ported.
+                ☐ RevenueSlipSearchWindow.xaml.cs ported.
+                ☐ RevenueSummarySearchWindow.xaml ported.
+                ☐ RevenueSummarySearchWindow.xaml.cs ported.
             UserShifts:
-                ☐ BOSWindow.xaml
-                ☐ BOSWindow.xaml.cs
+                ☐ BOSWindow.xaml ported.
+                ☐ BOSWindow.xaml.cs ported.

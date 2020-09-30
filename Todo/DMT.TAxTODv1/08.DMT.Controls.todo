@@ -1,274 +1,274 @@
 DMT.Controls:
     Header:
         Elements:
-            ☐ HeaderDateTime.xaml
-            ☐ HeaderDateTime.xaml.cs
-            ☐ HeaderLogo.xaml
-            ☐ HeaderLogo.xaml.cs
-            ☐ HeaderPlaza.xaml
-            ☐ HeaderPlaza.xaml.cs
-            ☐ HeaderShift.xaml
-            ☐ HeaderShift.xaml.cs
-            ☐ HeaderSupervisor.xaml
-            ☐ HeaderSupervisor.xaml.cs
-            ☐ HeaderUser.xaml
-            ☐ HeaderUser.xaml.cs
-        ☐ CurrentTA.cs
-        ☐ PlazaHeader.xaml
-        ☐ PlazaHeader.xaml.cs
-        ☐ TAHeader.xaml
-        ☐ TAHeader.xaml.cs
+            ☐ HeaderDateTime.xaml checked.
+            ☐ HeaderDateTime.xaml.cs checked.
+            ☐ HeaderLogo.xaml checked.
+            ☐ HeaderLogo.xaml.cs checked.
+            ☐ HeaderPlaza.xaml checked.
+            ☐ HeaderPlaza.xaml.cs checked.
+            ☐ HeaderShift.xaml checked.
+            ☐ HeaderShift.xaml.cs checked.
+            ☐ HeaderSupervisor.xaml checked.
+            ☐ HeaderSupervisor.xaml.cs checked.
+            ☐ HeaderUser.xaml checked.
+            ☐ HeaderUser.xaml.cs checked.
+        ☐ CurrentTA.cs checked.
+        ☐ PlazaHeader.xaml checked.
+        ☐ PlazaHeader.xaml.cs checked.
+        ☐ TAHeader.xaml checked.
+        ☐ TAHeader.xaml.cs checked.
     Images:
-        ☐ Background
-        ☐ Button
-        ☐ Logo
-        ☐ Menu
-        ☐ Reports
+        ✔ Background checked. @done(20-09-30 11:29)
+        ✔ Button checked. @done(20-09-30 11:29)
+        ✔ Logo checked. @done(20-09-30 11:29)
+        ✔ Menu checked. @done(20-09-30 11:29)
+        ✔ Reports checked. @done(20-09-30 11:29)
     SignIn:
         Common:
-            ☐ SmartcardManager.cs
-            ☐ UserSearchManager.cs
+            ☐ SmartcardManager.cs checked.
+            ☐ UserSearchManager.cs checked.
         Pages:
-            ☐ SignInPage.xaml
-            ☐ SignInPage.xaml.cs
+            ☐ SignInPage.xaml checked.
+            ☐ SignInPage.xaml.cs checked.
         Windows:
-            ☐ SignInWindow.xaml
-            ☐ SignInWindow.xaml.cs
-            ☐ UserFilterWindow.xaml
-            ☐ UserFilterWindow.xaml.cs
+            ☐ SignInWindow.xaml checked.
+            ☐ SignInWindow.xaml.cs checked.
+            ☐ UserFilterWindow.xaml checked.
+            ☐ UserFilterWindow.xaml.cs checked.
     StatusBar:
         Elements:
-            ☐ AppInfoStatus.xaml
-            ☐ AppInfoStatus.xaml.cs
-            ☐ LocalDbStatus.xaml
-            ☐ LocalDbStatus.xaml.cs
-            ☐ SCWStatus.xaml
-            ☐ SCWStatus.xaml.cs
-            ☐ TAServerStatus.xaml
-            ☐ TAServerStatus.xaml.cs
-        ☐ TAStatusBar.xaml
-        ☐ TAStatusBar.xaml.cs
-        ☐ TODStatusBar.xaml
-        ☐ TODStatusBar.xaml.cs
+            ☐ AppInfoStatus.xaml checked.
+            ☐ AppInfoStatus.xaml.cs checked.
+            ☐ LocalDbStatus.xaml checked.
+            ☐ LocalDbStatus.xaml.cs checked.
+            ☐ SCWStatus.xaml checked.
+            ☐ SCWStatus.xaml.cs checked.
+            ☐ TAServerStatus.xaml checked.
+            ☐ TAServerStatus.xaml.cs checked.
+        ☐ TAStatusBar.xaml checked.
+        ☐ TAStatusBar.xaml.cs checked.
+        ☐ TODStatusBar.xaml checked.
+        ☐ TODStatusBar.xaml.cs checked.
     Styles:
-        ☐ ImageButtonStyle.xaml
+        ☐ ImageButtonStyle.xaml checked.
     TA:
         Controls:
             Collector:
                 Coupon:
                     Entry:
-                        ☐ CollectorCouponBorrowEntry.xaml
-                        ☐ CollectorCouponBorrowEntry.xaml.cs
+                        ☐ CollectorCouponBorrowEntry.xaml checked.
+                        ☐ CollectorCouponBorrowEntry.xaml.cs checked.
                     View:
-                        ☐ CouponReceiveView.xaml
-                        ☐ CouponReceiveView.xaml.cs
-                        ☐ CouponReturnView.xaml
-                        ☐ CouponReturnView.xaml.cs
+                        ☐ CouponReceiveView.xaml checked.
+                        ☐ CouponReceiveView.xaml.cs checked.
+                        ☐ CouponReturnView.xaml checked.
+                        ☐ CouponReturnView.xaml.cs checked.
                 Credit:
                     View:
-                        ☐ CollectorCreditSummaryView.xaml
-                        ☐ CollectorCreditSummaryView.xaml.cs
+                        ☐ CollectorCreditSummaryView.xaml checked.
+                        ☐ CollectorCreditSummaryView.xaml.cs checked.
             Exchange:
                 View:
-                    ☐ AccountRequestExchangeView.xaml
-                    ☐ AccountRequestExchangeView.xaml.cs
-                    ☐ PlazaRequestExchangeView.xaml
-                    ☐ PlazaRequestExchangeView.xaml.cs
+                    ☐ AccountRequestExchangeView.xaml checked.
+                    ☐ AccountRequestExchangeView.xaml.cs checked.
+                    ☐ PlazaRequestExchangeView.xaml checked.
+                    ☐ PlazaRequestExchangeView.xaml.cs checked.
             History:
                 View:
-                    ☐ PlazaFundHistoryView.xaml
-                    ☐ PlazaFundHistoryView.xaml.cs
+                    ☐ PlazaFundHistoryView.xaml checked.
+                    ☐ PlazaFundHistoryView.xaml.cs checked.
             Plaza:
                 Entry:
-                    ☐ FundDetailEntry.xaml
-                    ☐ FundDetailEntry.xaml.cs
-                    ☐ LoanMoney2Entry.xaml
-                    ☐ LoanMoney2Entry.xaml.cs
-                    ☐ LoanMoneyEntry.xaml
-                    ☐ LoanMoneyEntry.xaml.cs
-                    ☐ PlazaCouponEntry.xaml
-                    ☐ PlazaCouponEntry.xaml.cs
-                    ☐ PlazaCreditEntry.xaml
-                    ☐ PlazaCreditEntry.xaml.cs
-                    ☐ PlazaCreditEntryOld.xaml
-                    ☐ PlazaCreditEntryOld.xaml.cs
-                    ☐ PlazaCreditEntryTotal.xaml
-                    ☐ PlazaCreditEntryTotal.xaml.cs
+                    ☐ FundDetailEntry.xaml checked.
+                    ☐ FundDetailEntry.xaml.cs checked.
+                    ☐ LoanMoney2Entry.xaml checked.
+                    ☐ LoanMoney2Entry.xaml.cs checked.
+                    ☐ LoanMoneyEntry.xaml checked.
+                    ☐ LoanMoneyEntry.xaml.cs checked.
+                    ☐ PlazaCouponEntry.xaml checked.
+                    ☐ PlazaCouponEntry.xaml.cs checked.
+                    ☐ PlazaCreditEntry.xaml checked.
+                    ☐ PlazaCreditEntry.xaml.cs checked.
+                    ☐ PlazaCreditEntryOld.xaml checked.
+                    ☐ PlazaCreditEntryOld.xaml.cs checked.
+                    ☐ PlazaCreditEntryTotal.xaml checked.
+                    ☐ PlazaCreditEntryTotal.xaml.cs checked.
                 View:
-                    ☐ FundPlaza2View.xaml
-                    ☐ FundPlaza2View.xaml.cs
-                    ☐ FundPlaza3View.xaml
-                    ☐ FundPlaza3View.xaml.cs
-                    ☐ PlazaAllCouponView.xaml
-                    ☐ PlazaAllCouponView.xaml.cs
-                    ☐ PlazaCouponView.xaml
-                    ☐ PlazaCouponView.xaml.cs
-                    ☐ PlazaFundView.xaml
-                    ☐ PlazaFundView.xaml.cs
+                    ☐ FundPlaza2View.xaml checked.
+                    ☐ FundPlaza2View.xaml.cs checked.
+                    ☐ FundPlaza3View.xaml checked.
+                    ☐ FundPlaza3View.xaml.cs checked.
+                    ☐ PlazaAllCouponView.xaml checked.
+                    ☐ PlazaAllCouponView.xaml.cs checked.
+                    ☐ PlazaCouponView.xaml checked.
+                    ☐ PlazaCouponView.xaml.cs checked.
+                    ☐ PlazaFundView.xaml checked.
+                    ☐ PlazaFundView.xaml.cs checked.
         Pages:
             Collector:
-                ☐ CollectorFundViewPage.xaml
-                ☐ CollectorFundViewPage.xaml.cs
+                ☐ CollectorFundViewPage.xaml checked.
+                ☐ CollectorFundViewPage.xaml.cs checked.
             Coupon:
-                ☐ CouponTSBSalePage.xaml
-                ☐ CouponTSBSalePage.xaml.cs
-                ☐ ReceivedCouponPage.xaml
-                ☐ ReceivedCouponPage.xaml.cs
-                ☐ ReturnCouponPage.xaml
-                ☐ ReturnCouponPage.xaml.cs
+                ☐ CouponTSBSalePage.xaml checked.
+                ☐ CouponTSBSalePage.xaml.cs checked.
+                ☐ ReceivedCouponPage.xaml checked.
+                ☐ ReceivedCouponPage.xaml.cs checked.
+                ☐ ReturnCouponPage.xaml checked.
+                ☐ ReturnCouponPage.xaml.cs checked.
             Exchange:
-                ☐ PlazaRequestExchangePage.xaml
-                ☐ PlazaRequestExchangePage.xaml.cs
+                ☐ PlazaRequestExchangePage.xaml checked.
+                ☐ PlazaRequestExchangePage.xaml.cs checked.
             History:
-                ☐ PlazaReturnHistoryPage.xaml
-                ☐ PlazaReturnHistoryPage.xaml.cs
+                ☐ PlazaReturnHistoryPage.xaml checked.
+                ☐ PlazaReturnHistoryPage.xaml.cs checked.
             Menu:
-                ☐ MainMenu.xaml
-                ☐ MainMenu.xaml.cs
-                ☐ ReportMenu.xaml
-                ☐ ReportMenu.xaml.cs
+                ☐ MainMenu.xaml checked.
+                ☐ MainMenu.xaml.cs checked.
+                ☐ ReportMenu.xaml checked.
+                ☐ ReportMenu.xaml.cs checked.
             Plaza:
-                ☐ PlazaAllCouponPage.xaml
-                ☐ PlazaAllCouponPage.xaml.cs
-                ☐ PlazaCouponReceivedReturnPage.xaml
-                ☐ PlazaCouponReceivedReturnPage.xaml.cs
-                ☐ PlazaInternalCreditExchangePage.xaml
-                ☐ PlazaInternalCreditExchangePage.xaml.cs
-                ☐ PlazaReceivedReturnPage.xaml
-                ☐ PlazaReceivedReturnPage.xaml.cs
+                ☐ PlazaAllCouponPage.xaml checked.
+                ☐ PlazaAllCouponPage.xaml.cs checked.
+                ☐ PlazaCouponReceivedReturnPage.xaml checked.
+                ☐ PlazaCouponReceivedReturnPage.xaml.cs checked.
+                ☐ PlazaInternalCreditExchangePage.xaml checked.
+                ☐ PlazaInternalCreditExchangePage.xaml.cs checked.
+                ☐ PlazaReceivedReturnPage.xaml checked.
+                ☐ PlazaReceivedReturnPage.xaml.cs checked.
             Reports:
-                ☐ CollectorCouponReceived.rdlc
-                ☐ CollectorCouponReceivedReportPage.xaml
-                ☐ CollectorCouponReceivedReportPage.xaml.cs
-                ☐ CollectorFundSummaryRep.rdlc
-                ☐ CollectorFundSummaryReportPage.xaml
-                ☐ CollectorFundSummaryReportPage.xaml.cs
-                ☐ CollectorFundSummaryReportPageOld.xaml
-                ☐ CollectorFundSummaryReportPageOld.xaml.cs
-                ☐ CouponSalesReceiptRep.rdlc
-                ☐ CouponSalesReceiptReportPage.xaml
-                ☐ CouponSalesReceiptReportPage.xaml.cs
+                ☐ CollectorCouponReceived.rdlc checked.
+                ☐ CollectorCouponReceivedReportPage.xaml checked.
+                ☐ CollectorCouponReceivedReportPage.xaml.cs checked.
+                ☐ CollectorFundSummaryRep.rdlc checked.
+                ☐ CollectorFundSummaryReportPage.xaml checked.
+                ☐ CollectorFundSummaryReportPage.xaml.cs checked.
+                ☐ CollectorFundSummaryReportPageOld.xaml checked.
+                ☐ CollectorFundSummaryReportPageOld.xaml.cs checked.
+                ☐ CouponSalesReceiptRep.rdlc checked.
+                ☐ CouponSalesReceiptReportPage.xaml checked.
+                ☐ CouponSalesReceiptReportPage.xaml.cs checked.
         Windows:
             Collector:
                 Credit:
-                    ☐ CollectorCreditBorrowWindow.xaml
-                    ☐ CollectorCreditBorrowWindow.xaml.cs
-                    ☐ CollectorCreditReturnWindow.xaml
-                    ☐ CollectorCreditReturnWindow.xaml.cs
-                    ☐ MessageWindow.xaml
-                    ☐ MessageWindow.xaml.cs
-                    ☐ ReceiveMoneyBagWindow.xaml
-                    ☐ ReceiveMoneyBagWindow.xaml.cs
+                    ☐ CollectorCreditBorrowWindow.xaml checked.
+                    ☐ CollectorCreditBorrowWindow.xaml.cs checked.
+                    ☐ CollectorCreditReturnWindow.xaml checked.
+                    ☐ CollectorCreditReturnWindow.xaml.cs checked.
+                    ☐ MessageWindow.xaml checked.
+                    ☐ MessageWindow.xaml.cs checked.
+                    ☐ ReceiveMoneyBagWindow.xaml checked.
+                    ☐ ReceiveMoneyBagWindow.xaml.cs checked.
             Coupon:
-                ☐ CouponEditWindow.xaml
-                ☐ CouponEditWindow.xaml.cs
-                ☐ CouponReportWindow.xaml
-                ☐ CouponReportWindow.xaml.cs
-                ☐ CouponReturnWindow.xaml
-                ☐ CouponReturnWindow.xaml.cs
+                ☐ CouponEditWindow.xaml checked.
+                ☐ CouponEditWindow.xaml.cs checked.
+                ☐ CouponReportWindow.xaml checked.
+                ☐ CouponReportWindow.xaml.cs checked.
+                ☐ CouponReturnWindow.xaml checked.
+                ☐ CouponReturnWindow.xaml.cs checked.
             Exchange:
-                ☐ ExchangeWindowMode.cs
-                ☐ PlazaCreditRequestExchangeWindow.xaml
-                ☐ PlazaCreditRequestExchangeWindow.xaml.cs
-                ☐ PlazaCreditUpdateExchangeWindow.xaml
-                ☐ PlazaCreditUpdateExchangeWindow.xaml.cs
+                ☐ ExchangeWindowMode.cs checked.
+                ☐ PlazaCreditRequestExchangeWindow.xaml checked.
+                ☐ PlazaCreditRequestExchangeWindow.xaml.cs checked.
+                ☐ PlazaCreditUpdateExchangeWindow.xaml checked.
+                ☐ PlazaCreditUpdateExchangeWindow.xaml.cs checked.
             MessageBox:
-                ☐ MessageBoxYesNoRed2Window.xaml
-                ☐ MessageBoxYesNoRed2Window.xaml.cs
-                ☐ MessageBoxYesNoRed3Window.xaml
-                ☐ MessageBoxYesNoRed3Window.xaml.cs
-                ☐ MessageBoxYesNoRedWindow - Copy.xaml
-                ☐ MessageBoxYesNoRedWindow - Copy.xaml.cs
+                ☐ MessageBoxYesNoRed2Window.xaml checked.
+                ☐ MessageBoxYesNoRed2Window.xaml.cs checked.
+                ☐ MessageBoxYesNoRed3Window.xaml checked.
+                ☐ MessageBoxYesNoRed3Window.xaml.cs checked.
+                ☐ MessageBoxYesNoRedWindow - Copy.xaml checked.
+                ☐ MessageBoxYesNoRedWindow - Copy.xaml.cs checked.
             Plaza:
-                ☐ PlazaInternalCreditExchangeWindow.xaml
-                ☐ PlazaInternalCreditExchangeWindow.xaml.cs
-                ☐ PlazaReceivedCreditWindow.xaml
-                ☐ PlazaReceivedCreditWindow.xaml.cs
-                ☐ PlazaStockSummaryWindow.xaml
-                ☐ PlazaStockSummaryWindow.xaml.cs
+                ☐ PlazaInternalCreditExchangeWindow.xaml checked.
+                ☐ PlazaInternalCreditExchangeWindow.xaml.cs checked.
+                ☐ PlazaReceivedCreditWindow.xaml checked.
+                ☐ PlazaReceivedCreditWindow.xaml.cs checked.
+                ☐ PlazaStockSummaryWindow.xaml checked.
+                ☐ PlazaStockSummaryWindow.xaml.cs checked.
     TOD:
         Controls:
             Revenue:
                 Entry:
-                    ☐ CouponDMTEntry.xaml
-                    ☐ CouponDMTEntry.xaml.cs
-                    ☐ CouponRevenueEntry.xaml
-                    ☐ CouponRevenueEntry.xaml.cs
-                    ☐ CouponUsageEntry.xaml
-                    ☐ CouponUsageEntry.xaml.cs
-                    ☐ EMVEntry.xaml
-                    ☐ EMVEntry.xaml.cs
-                    ☐ OtherEntry.xaml
-                    ☐ OtherEntry.xaml.cs
-                    ☐ QRCodeEntry.xaml
-                    ☐ QRCodeEntry.xaml.cs
-                    ☐ RevenueEntry.xaml
-                    ☐ RevenueEntry.xaml.cs
-                    ☐ TrafficEntry.xaml
-                    ☐ TrafficEntry.xaml.cs
+                    ☐ CouponDMTEntry.xaml checked.
+                    ☐ CouponDMTEntry.xaml.cs checked.
+                    ☐ CouponRevenueEntry.xaml checked.
+                    ☐ CouponRevenueEntry.xaml.cs checked.
+                    ☐ CouponUsageEntry.xaml checked.
+                    ☐ CouponUsageEntry.xaml.cs checked.
+                    ☐ EMVEntry.xaml checked.
+                    ☐ EMVEntry.xaml.cs checked.
+                    ☐ OtherEntry.xaml checked.
+                    ☐ OtherEntry.xaml.cs checked.
+                    ☐ QRCodeEntry.xaml checked.
+                    ☐ QRCodeEntry.xaml.cs checked.
+                    ☐ RevenueEntry.xaml checked.
+                    ☐ RevenueEntry.xaml.cs checked.
+                    ☐ TrafficEntry.xaml checked.
+                    ☐ TrafficEntry.xaml.cs checked.
                 View:
-                    ☐ EMVQRCodeView.xaml
-                    ☐ EMVQRCodeView.xaml.cs
-                    ☐ Lane2View.xaml
-                    ☐ Lane2View.xaml.cs
-                    ☐ LaneView.xaml
-                    ☐ LaneView.xaml.cs
-                    ☐ SelectLaneView.xaml
-                    ☐ SelectLaneView.xaml.cs
+                    ☐ EMVQRCodeView.xaml checked.
+                    ☐ EMVQRCodeView.xaml.cs checked.
+                    ☐ Lane2View.xaml checked.
+                    ☐ Lane2View.xaml.cs checked.
+                    ☐ LaneView.xaml checked.
+                    ☐ LaneView.xaml.cs checked.
+                    ☐ SelectLaneView.xaml checked.
+                    ☐ SelectLaneView.xaml.cs checked.
             Shift:
                 View:
-                    ☐ LoginList2View.xaml
-                    ☐ LoginList2View.xaml.cs
-                    ☐ ShiftView.xaml
-                    ☐ ShiftView.xaml.cs
-                    ☐ SlipView.xaml
-                    ☐ SlipView.xaml.cs
+                    ☐ LoginList2View.xaml checked.
+                    ☐ LoginList2View.xaml.cs checked.
+                    ☐ ShiftView.xaml checked.
+                    ☐ ShiftView.xaml.cs checked.
+                    ☐ SlipView.xaml checked.
+                    ☐ SlipView.xaml.cs checked.
         Pages:
             LoginList:
-                ☐ LoginListPage.xaml
-                ☐ LoginListPage.xaml.cs
+                ☐ LoginListPage.xaml checked.
+                ☐ LoginListPage.xaml.cs checked.
             Menu:
-                ☐ MainMenu.xaml
-                ☐ MainMenu.xaml.cs
-                ☐ ReportMenu.xaml
-                ☐ ReportMenu.xaml.cs
+                ☐ MainMenu.xaml checked.
+                ☐ MainMenu.xaml.cs checked.
+                ☐ ReportMenu.xaml checked.
+                ☐ ReportMenu.xaml.cs checked.
             Reports:
-                ☐ DailyRevenueSummaryPreview.xaml
-                ☐ DailyRevenueSummaryPreview.xaml.cs
-                ☐ RevenueSlip.rdlc
-                ☐ RevenueSlipNull.rdlc
-                ☐ RevenueSlipPreview.xaml
-                ☐ RevenueSlipPreview.xaml.cs
-                ☐ RevenueSlipPreviewNull.xaml
-                ☐ RevenueSlipPreviewNull.xaml.cs
-                ☐ RevenueSlipSum.rdlc
+                ☐ DailyRevenueSummaryPreview.xaml checked.
+                ☐ DailyRevenueSummaryPreview.xaml.cs checked.
+                ☐ RevenueSlip.rdlc checked.
+                ☐ RevenueSlipNull.rdlc checked.
+                ☐ RevenueSlipPreview.xaml checked.
+                ☐ RevenueSlipPreview.xaml.cs checked.
+                ☐ RevenueSlipPreviewNull.xaml checked.
+                ☐ RevenueSlipPreviewNull.xaml.cs checked.
+                ☐ RevenueSlipSum.rdlc checked.
             Revenue:
                 Collector:
-                    ☐ RevenueDateSelectionPage.xaml
-                    ☐ RevenueDateSelectionPage.xaml.cs
-                    ☐ RevenueEntryPage.xaml
-                    ☐ RevenueEntryPage.xaml.cs
+                    ☐ RevenueDateSelectionPage.xaml checked.
+                    ☐ RevenueDateSelectionPage.xaml.cs checked.
+                    ☐ RevenueEntryPage.xaml checked.
+                    ☐ RevenueEntryPage.xaml.cs checked.
                 Supervisor:
-                    ☐ SupervisorRevenueDateSelectionPage.xaml
-                    ☐ SupervisorRevenueDateSelectionPage.xaml.cs
-                    ☐ SupervisorRevenueEntryPage.xaml
-                    ☐ SupervisorRevenueEntryPage.xaml.cs
+                    ☐ SupervisorRevenueDateSelectionPage.xaml checked.
+                    ☐ SupervisorRevenueDateSelectionPage.xaml.cs checked.
+                    ☐ SupervisorRevenueEntryPage.xaml checked.
+                    ☐ SupervisorRevenueEntryPage.xaml.cs checked.
             TollAdmin:
-                ☐ ChangeShiftPage.xaml
-                ☐ ChangeShiftPage.xaml.cs
-                ☐ EMVQRCodePage.xaml
-                ☐ EMVQRCodePage.xaml.cs
+                ☐ ChangeShiftPage.xaml checked.
+                ☐ ChangeShiftPage.xaml.cs checked.
+                ☐ EMVQRCodePage.xaml checked.
+                ☐ EMVQRCodePage.xaml.cs checked.
         Windows:
             MessageBox:
-                ☐ MessageBoxWindow.xaml
-                ☐ MessageBoxWindow.xaml.cs
-                ☐ MessageBoxYesNoWindow.xaml
-                ☐ MessageBoxYesNoWindow.xaml.cs
+                ☐ MessageBoxWindow.xaml checked.
+                ☐ MessageBoxWindow.xaml.cs checked.
+                ☐ MessageBoxYesNoWindow.xaml checked.
+                ☐ MessageBoxYesNoWindow.xaml.cs checked.
             Reports:
-                ☐ RevenueSlipSearchWindow.xaml
-                ☐ RevenueSlipSearchWindow.xaml.cs
-                ☐ RevenueSummarySearchWindow.xaml
-                ☐ RevenueSummarySearchWindow.xaml.cs
+                ☐ RevenueSlipSearchWindow.xaml checked.
+                ☐ RevenueSlipSearchWindow.xaml.cs checked.
+                ☐ RevenueSummarySearchWindow.xaml checked.
+                ☐ RevenueSummarySearchWindow.xaml.cs checked.
             UserShifts:
-                ☐ BOSWindow.xaml
-                ☐ BOSWindow.xaml.cs
+                ☐ BOSWindow.xaml checked.
+                ☐ BOSWindow.xaml.cs checked.
