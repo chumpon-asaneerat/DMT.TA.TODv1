@@ -1,4 +1,4 @@
 DMT.Models:
     Models:
         Revenues:
-            ☐ RevenueEntry.cs
+            ✔ RevenueEntry.cs (all static methods not ported). @done(20-09-30 08:09)

@@ -598,7 +598,7 @@ namespace DMT.Models
                 return result;
             }
             UserShift inst = Create();
-            // TODO: Assign ReCheck.
+            
             var tsb = TSB.GetCurrent().Value();
             if (null != tsb) tsb.AssignTo(inst);
             if (null != shift) shift.AssignTo(inst);
@@ -656,7 +656,7 @@ namespace DMT.Models
                     cmd += "   AND UserId = ? ";
                     cmd += "   AND End = ? ";
 
-                    var ret = NQuery.Query<FKs>(cmd,
+                    var ret = NQuery.Query<FKs>(cmd, 
                         tsbId, userId, DateTime.MinValue).FirstOrDefault();
                     result.data = (null != ret) ? ret.ToModel() : null;
                     result.Success();

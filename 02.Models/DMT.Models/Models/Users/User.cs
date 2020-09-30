@@ -793,7 +793,7 @@ namespace DMT.Models
 		/// <param name="userId">The User Id.</param>
 		/// <param name="roles">The roles Id list.</param>
 		/// <returns>Returns List of User.</returns>
-		public static NDbResult<List<User>> SearchById(string userId,
+		public static NDbResult<List<User>> SearchById(string userId, 
 			string[] roles)
 		{
 			lock (sync)
@@ -809,7 +809,7 @@ namespace DMT.Models
 		/// <param name="userId">The User Id.</param>
 		/// <param name="roles">The roles Id list.</param>
 		/// <returns>Returns List of User.</returns>
-		public static NDbResult<List<User>> SearchById(SQLiteConnection db,
+		public static NDbResult<List<User>> SearchById(SQLiteConnection db, 
 			string userId, string[] roles)
 		{
 			var result = new NDbResult<List<User>>();

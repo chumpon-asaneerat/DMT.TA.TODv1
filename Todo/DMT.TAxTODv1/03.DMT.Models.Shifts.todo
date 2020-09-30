@@ -1,7 +1,7 @@
 DMT.Models:
     Models:
         Shifts:
-            ☐ Shift.cs
-            ☐ TSBShift.cs
-            ☐ UserShift.cs
-            ☐ UserShiftRevenue.cs
+            ✔ Shift.cs (some static methods removed). @done(20-09-30 07:55)
+            ✔ TSBShift.cs (TSBShiftCreate class change to Create.TSBShift). @done(20-09-30 07:55)
+            ✔ UserShift.cs (UserShiftCreate class change to Create.UserShift). @done(20-09-30 07:59)
+            ✔ UserShiftRevenue.cs checked. @done(20-09-30 07:59)

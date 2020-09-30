@@ -1,6 +1,6 @@
 DMT.Models:
     Models:
         Users:
-            ☐ LogInLog.cs
-            ☐ Role.cs
-            ☐ User.cs
+            ✔ LogInLog.cs checked (stored FullName in Table). @done(20-09-30 08:02)
+            ✔ Role.cs checked. @done(20-09-30 08:04)
+            ✔ User.cs checked. @done(20-09-30 08:06)

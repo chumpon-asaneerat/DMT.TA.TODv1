@@ -199,6 +199,7 @@ namespace DMT.Models
 		#endregion
 
 		#region Static Methods
+
 		/// <summary>
 		/// Gets Roles.
 		/// </summary>

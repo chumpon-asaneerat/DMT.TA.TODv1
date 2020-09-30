@@ -1,6 +1,6 @@
 DMT.Models:
     Models:
         Users:
-            ☐ LogInLog.cs
-            ☐ Role.cs
-            ☐ User.cs
+            ✔ LogInLog.cs ported. @done(20-09-30 08:01)
+            ✔ Role.cs ported. @done(20-09-30 08:04)
+            ✔ User.cs ported. @done(20-09-30 08:06)
