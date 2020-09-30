@@ -139,6 +139,15 @@
     <Compile Include="Models\Master\Currency.cs" />
     <Compile Include="Models\Payments\Payment.cs" />
     <Compile Include="Models\Revenues\RevenueEntry.cs" />
+    <Compile Include="Models\SCW\Common.cs" />
+    <Compile Include="Models\SCW\SCWChiefOfDuty.cs" />
+    <Compile Include="Models\SCW\SCWCoupon.cs" />
+    <Compile Include="Models\SCW\SCWCurrency.cs" />
+    <Compile Include="Models\SCW\SCWDeclare.cs" />
+    <Compile Include="Models\SCW\SCWEMV.cs" />
+    <Compile Include="Models\SCW\SCWJob.cs" />
+    <Compile Include="Models\SCW\SCWJob2.cs" />
+    <Compile Include="Models\SCW\SCWQRCode.cs" />
     <Compile Include="Models\Shifts\Shift.cs" />
     <Compile Include="Models\Shifts\TSBShift.cs" />
     <Compile Include="Models\Shifts\UserShift.cs" />

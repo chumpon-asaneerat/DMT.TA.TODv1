@@ -2,40 +2,40 @@ DMT.Models:
     Views:
         Scripts:
             Coupons:
-                ☐ TSBCouponBalanceView.sql
-                ☐ TSBCouponLaneBalanceView.sql
-                ☐ TSBCouponSoldByLaneBalanceView.sql
-                ☐ TSBCouponSoldByTSBBalanceView.sql
-                ☐ TSBCouponStockBalanceView.sql
-                ☐ TSBCouponSummarryView.sql
-                ☐ TSBCouponTransactionView.sql
-                ☐ UserCoupon35SummaryView.sql
-                ☐ UserCoupon80SummaryView.sql
-                ☐ UserCouponSummaryView.sql
-                ☐ UserCouponTransactionView.sql
+                ☐ TSBCouponBalanceView.sql checked.
+                ☐ TSBCouponLaneBalanceView.sql checked.
+                ☐ TSBCouponSoldByLaneBalanceView.sql checked.
+                ☐ TSBCouponSoldByTSBBalanceView.sql checked.
+                ☐ TSBCouponStockBalanceView.sql checked.
+                ☐ TSBCouponSummarryView.sql checked.
+                ☐ TSBCouponTransactionView.sql checked.
+                ☐ UserCoupon35SummaryView.sql checked.
+                ☐ UserCoupon80SummaryView.sql checked.
+                ☐ UserCouponSummaryView.sql checked.
+                ☐ UserCouponTransactionView.sql checked.
             Credits:
-                ☐ TSBCreditSummarryView.sql
-                ☐ TSBCreditTransactionView.sql
-                ☐ UserCreditBorrowSummaryView.sql
-                ☐ UserCreditReturnSummaryView.sql
-                ☐ UserCreditSummaryView.sql
-                ☐ UserCreditTransactionView.sql
+                ☐ TSBCreditSummarryView.sql checked.
+                ☐ TSBCreditTransactionView.sql checked.
+                ☐ UserCreditBorrowSummaryView.sql checked.
+                ☐ UserCreditReturnSummaryView.sql checked.
+                ☐ UserCreditSummaryView.sql checked.
+                ☐ UserCreditTransactionView.sql checked.
             Exchanges:
-                ☐ TSBExchangeGroupView.sql
-                ☐ TSBExchangeTransactionView.sql
+                ☐ TSBExchangeGroupView.sql checked.
+                ☐ TSBExchangeTransactionView.sql checked.
             Infrastructures:
-                ☐ LaneView.sql
-                ☐ PlazaGroupView.sql
-                ☐ PlazaView.sql
+                ☐ LaneView.sql checked.
+                ☐ PlazaGroupView.sql checked.
+                ☐ PlazaView.sql checked.
             LaneActivities:
-                ☐ LaneAttendanceView.sql
-                ☐ LanePaymentView.sql
+                ☐ LaneAttendanceView.sql checked.
+                ☐ LanePaymentView.sql checked.
             Revenues:
-                ☐ RevenueEntryView.sql
+                ☐ RevenueEntryView.sql checked.
             Shifts:
-                ☐ TSBShiftView.sql
-                ☐ UserShiftRevenueView.sql
-                ☐ UserShiftView.sql
+                ☐ TSBShiftView.sql checked.
+                ☐ UserShiftRevenueView.sql checked.
+                ☐ UserShiftView.sql checked.
             Users:
-                ☐ UserView.sql
-        ☐ SqlScriptManager.cs
+                ☐ UserView.sql checked.
+        ☐ SqlScriptManager.cs checked.

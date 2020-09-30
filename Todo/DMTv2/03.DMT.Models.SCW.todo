@@ -1,12 +1,12 @@
 DMT.Models:
     Models:
         SCW:
-            ☐ Common.cs
-            ☐ SCWChiefOfDuty.cs
-            ☐ SCWCoupon.cs
-            ☐ SCWCurrency.cs
-            ☐ SCWDeclare.cs
-            ☐ SCWEMV.cs
-            ☐ SCWJob.cs
-            ☐ SCWJob2.cs
-            ☐ SCWQRCode.cs
+            ✔ Common.cs ported. @done(20-09-30 08:41)
+            ✔ SCWChiefOfDuty.cs ported. @done(20-09-30 08:41)
+            ✔ SCWCoupon.cs ported. @done(20-09-30 08:41)
+            ✔ SCWCurrency.cs ported. @done(20-09-30 08:41)
+            ✔ SCWDeclare.cs ported. @done(20-09-30 08:41)
+            ✔ SCWEMV.cs ported. @done(20-09-30 08:41)
+            ✔ SCWJob.cs ported. @done(20-09-30 08:41)
+            ✔ SCWJob2.cs ported. @done(20-09-30 08:41)
+            ✔ SCWQRCode.cs ported. @done(20-09-30 08:41)

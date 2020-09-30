@@ -2,40 +2,40 @@ DMT.Models:
     Views:
         Scripts:
             Coupons:
-                ☐ TSBCouponBalanceView.sql
-                ☐ TSBCouponLaneBalanceView.sql
-                ☐ TSBCouponSoldByLaneBalanceView.sql
-                ☐ TSBCouponSoldByTSBBalanceView.sql
-                ☐ TSBCouponStockBalanceView.sql
-                ☐ TSBCouponSummarryView.sql
-                ☐ TSBCouponTransactionView.sql
-                ☐ UserCoupon35SummaryView.sql
-                ☐ UserCoupon80SummaryView.sql
-                ☐ UserCouponSummaryView.sql
-                ☐ UserCouponTransactionView.sql
+                ☐ TSBCouponBalanceView.sql ported.
+                ☐ TSBCouponLaneBalanceView.sql ported.
+                ☐ TSBCouponSoldByLaneBalanceView.sql ported.
+                ☐ TSBCouponSoldByTSBBalanceView.sql ported.
+                ☐ TSBCouponStockBalanceView.sql ported.
+                ☐ TSBCouponSummarryView.sql ported.
+                ☐ TSBCouponTransactionView.sql ported.
+                ☐ UserCoupon35SummaryView.sql ported.
+                ☐ UserCoupon80SummaryView.sql ported.
+                ☐ UserCouponSummaryView.sql ported.
+                ☐ UserCouponTransactionView.sql ported.
             Credits:
-                ☐ TSBCreditSummarryView.sql
-                ☐ TSBCreditTransactionView.sql
-                ☐ UserCreditBorrowSummaryView.sql
-                ☐ UserCreditReturnSummaryView.sql
-                ☐ UserCreditSummaryView.sql
-                ☐ UserCreditTransactionView.sql
+                ☐ TSBCreditSummarryView.sql ported.
+                ☐ TSBCreditTransactionView.sql ported.
+                ☐ UserCreditBorrowSummaryView.sql ported.
+                ☐ UserCreditReturnSummaryView.sql ported.
+                ☐ UserCreditSummaryView.sql ported.
+                ☐ UserCreditTransactionView.sql ported.
             Exchanges:
-                ☐ TSBExchangeGroupView.sql
-                ☐ TSBExchangeTransactionView.sql
+                ☐ TSBExchangeGroupView.sql ported.
+                ☐ TSBExchangeTransactionView.sql ported.
             Infrastructures:
-                ☐ LaneView.sql
-                ☐ PlazaGroupView.sql
-                ☐ PlazaView.sql
+                ☐ LaneView.sql ported.
+                ☐ PlazaGroupView.sql ported.
+                ☐ PlazaView.sql ported.
             LaneActivities:
-                ☐ LaneAttendanceView.sql
-                ☐ LanePaymentView.sql
+                ☐ LaneAttendanceView.sql ported.
+                ☐ LanePaymentView.sql ported.
             Revenues:
-                ☐ RevenueEntryView.sql
+                ☐ RevenueEntryView.sql ported.
             Shifts:
-                ☐ TSBShiftView.sql
-                ☐ UserShiftRevenueView.sql
-                ☐ UserShiftView.sql
+                ☐ TSBShiftView.sql ported.
+                ☐ UserShiftRevenueView.sql ported.
+                ☐ UserShiftView.sql ported.
             Users:
-                ☐ UserView.sql
-        ☐ SqlScriptManager.cs
+                ☐ UserView.sql ported.
+        ☐ SqlScriptManager.cs ported.
