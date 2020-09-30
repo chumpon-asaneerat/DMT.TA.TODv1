@@ -140,7 +140,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DMT.TAxTODv1", "DMT.TAxTODv
 		Todo\DMT.TAxTODv1\05.DMT.RestClient.todo = Todo\DMT.TAxTODv1\05.DMT.RestClient.todo
 		Todo\DMT.TAxTODv1\06.DMT.TA.RestServer.todo = Todo\DMT.TAxTODv1\06.DMT.TA.RestServer.todo
 		Todo\DMT.TAxTODv1\07.DMT.TOD.RestServer.todo = Todo\DMT.TAxTODv1\07.DMT.TOD.RestServer.todo
-		Todo\DMT.TAxTODv1\DMT.TA.TODv1.todo = Todo\DMT.TAxTODv1\DMT.TA.TODv1.todo
+		Todo\DMT.TAxTODv1\08.DMT.Controls.todo = Todo\DMT.TAxTODv1\08.DMT.Controls.todo
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{8ADCD558-1C22-49B7-88EA-667E939CE824}"
