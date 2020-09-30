@@ -1,7 +1,12 @@
 DMT.Local.RestServer:
     WebServer:
         Controllers:
+            ✔ CouponController.cs checked. @done(20-09-30 10:28)
+            ✔ CreditController.cs checked. @done(20-09-30 10:36)
+            ✔ ExchangeController.cs checked. @done(20-09-30 10:36)
+            ✔ LaneController.cs checked. @done(20-09-30 10:36)
             ✔ MasterController.cs checked. @done(20-09-30 09:42)
+            ✔ RevenueController.cs checked. @done(20-09-30 10:36)
             ✔ ShiftController.cs checked. @done(20-09-30 09:43)
             ✔ TSBController.cs checked. @done(20-09-30 09:44)
             ✔ UserController.cs checked. @done(20-09-30 09:45)

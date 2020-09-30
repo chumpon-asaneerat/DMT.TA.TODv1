@@ -23,106 +23,106 @@ DMT.Core:
                 ✔ SetActive ported. @done(20-09-30 06:05)
                 ✔ SaveTSB ported. @done(20-09-30 06:05)
             Plaza:
-                ✘ GetTSBPlazas removed in DMT.TA.TODv1 @cancelled(20-09-30 06:06)
-                ✔ GetPlazaGroupPlazas ported @done(20-09-30 06:06)
-                ✔ SavePlaza ported @done(20-09-30 06:06)
+                ✘ GetTSBPlazas removed in DMT.TA.TODv1. @cancelled(20-09-30 06:06)
+                ✔ GetPlazaGroupPlazas ported. @done(20-09-30 06:06)
+                ✔ SavePlaza ported. @done(20-09-30 06:06)
             PlazaGroup:
-                ✔ GetTSBPlazaGroups ported @done(20-09-30 06:06)
-                ✔ SavePlazaGroup ported @done(20-09-30 06:06)
+                ✔ GetTSBPlazaGroups ported. @done(20-09-30 06:06)
+                ✔ SavePlazaGroup ported. @done(20-09-30 06:06)
             Lane:
-                ✘ GetTSBLanes removed in DMT.TA.TODv1 @cancelled(20-09-30 06:10)
-                ✔ GetPlazaLanes ported @done(20-09-30 06:10)
-                ✘ GetPlazaLane removed in DMT.TA.TODv1 @cancelled(20-09-30 06:10)
-                ✔ GetPlazaGroupLanes ported @done(20-09-30 06:09)
-                ✔ SaveLane ported @done(20-09-30 06:10)
+                ✘ GetTSBLanes removed in DMT.TA.TODv1. @cancelled(20-09-30 06:10)
+                ✔ GetPlazaLanes ported. @done(20-09-30 06:10)
+                ✘ GetPlazaLane removed in DMT.TA.TODv1. @cancelled(20-09-30 06:10)
+                ✔ GetPlazaGroupLanes ported. @done(20-09-30 06:09)
+                ✔ SaveLane ported. @done(20-09-30 06:10)
         User Routes:
             Role:
-                ✔ GetRole ported @done(20-09-30 06:12)
-                ✔ GetRoles ported @done(20-09-30 06:12)
-                ✔ SaveRole ported @done(20-09-30 06:12)
+                ✔ GetRole ported. @done(20-09-30 06:12)
+                ✔ GetRoles ported. @done(20-09-30 06:12)
+                ✔ SaveRole ported. @done(20-09-30 06:12)
             User:
-                ✔ GetUsers ported @done(20-09-30 06:12)
-                ✔ GetById ported @done(20-09-30 06:12)
-                ✔ SearchByGroupId ported @done(20-09-30 06:13)
-                ✔ SearchById ported @done(20-09-30 06:13)
-                ✔ GetByCardId ported @done(20-09-30 06:13)
-                ✔ GetByLogIn ported @done(20-09-30 06:13)
-                ✔ SaveUser ported @done(20-09-30 06:13)
+                ✔ GetUsers ported. @done(20-09-30 06:12)
+                ✔ GetById ported. @done(20-09-30 06:12)
+                ✔ SearchByGroupId ported. @done(20-09-30 06:13)
+                ✔ SearchById ported. @done(20-09-30 06:13)
+                ✔ GetByCardId ported. @done(20-09-30 06:13)
+                ✔ GetByLogIn ported. @done(20-09-30 06:13)
+                ✔ SaveUser ported. @done(20-09-30 06:13)
         Shift Routes:
             Shift:
-                ✔ GetShifts ported @done(20-09-30 06:14)
-                ✔ SaveShift ported @done(20-09-30 06:14)
+                ✔ GetShifts ported. @done(20-09-30 06:14)
+                ✔ SaveShift ported. @done(20-09-30 06:14)
             TSBShift:
-                ✔ Create ported (rename to CreateTSBShift) @done(20-09-30 06:16)
-                ✔ GetCurrent ported (rename to GetCurrentTSBShift) @done(20-09-30 06:16)
-                ✔ ChangeShift ported @done(20-09-30 06:17)
+                ✔ Create ported (rename to CreateTSBShift). @done(20-09-30 06:16)
+                ✔ GetCurrent ported (rename to GetCurrentTSBShift). @done(20-09-30 06:16)
+                ✔ ChangeShift ported. @done(20-09-30 06:17)
         UserShift Routes:
             UserShift:
-                ✔ Create ported (move to Shift Routes and rename to CreateUserShift) @done(20-09-30 06:17)
-                ✘ GetUsers removed in DMT.TA.TODv1 @cancelled(20-09-30 06:18)
-                ✔ GetCurrent ported (move to Shift Routes and rename to GetCurrentUserShift) @done(20-09-30 06:17)
-                ✔ BeginUserShift ported (move to Shift Routes) @done(20-09-30 06:17)
-                ✔ EndUserShift ported (move to Shift Routes) @done(20-09-30 06:17)
-                ✔ GetUserShifts ported (move to Shift Routes) @done(20-09-30 06:18)
-                ✔ GetUnCloseUserShifts ported (move to Shift Routes) @done(20-09-30 06:18)
+                ✔ Create ported (move to Shift Routes and rename to CreateUserShift). @done(20-09-30 06:17)
+                ✘ GetUsers removed in DMT.TA.TODv1. @cancelled(20-09-30 06:18)
+                ✔ GetCurrent ported (move to Shift Routes and rename to GetCurrentUserShift). @done(20-09-30 06:17)
+                ✔ BeginUserShift ported (move to Shift Routes). @done(20-09-30 06:17)
+                ✔ EndUserShift ported (move to Shift Routes). @done(20-09-30 06:17)
+                ✔ GetUserShifts ported (move to Shift Routes). @done(20-09-30 06:18)
+                ✔ GetUnCloseUserShifts ported (move to Shift Routes). @done(20-09-30 06:18)
         Lane Routes:
             Lane Attendance:
-                ☐ CreateAttendance
-                ☐ SaveAttendance
-                ☐ SaveAttendances
-                ☐ GetAttendancesByDate
-                ☐ GetAttendancesByUserShift
-                ☐ GetAttendancesByRevenue
-                ☐ GetAllAttendancesByUserShift
-                ☐ GetAttendancesByLane
-                ☐ GetCurrentAttendancesByLane
-                ☐ GetAllNotHasRevenueEntry
-                ☐ GetAllNotHasRevenueEntryByUser
+                ✔ CreateAttendance ported. @done(20-09-30 10:24)
+                ✔ SaveAttendance ported. @done(20-09-30 10:24)
+                ✔ SaveAttendances ported. @done(20-09-30 10:24)
+                ✔ GetAttendancesByDate ported. @done(20-09-30 10:24)
+                ✔ GetAttendancesByUserShift ported. @done(20-09-30 10:24)
+                ✔ GetAttendancesByRevenue ported. @done(20-09-30 10:24)
+                ✔ GetAllAttendancesByUserShift ported. @done(20-09-30 10:24)
+                ✔ GetAttendancesByLane ported. @done(20-09-30 10:24)
+                ✔ GetCurrentAttendancesByLane ported. @done(20-09-30 10:24)
+                ✔ GetAllNotHasRevenueEntry ported. @done(20-09-30 10:24)
+                ✔ GetAllNotHasRevenueEntryByUser ported. @done(20-09-30 10:24)
             Lane Payment:
-                ☐ CreatePayment
-                ☐ SavePayment
-                ☐ GetPaymentsByDate
-                ☐ GetPaymentsByUserShift
-                ☐ GetPaymentsByLane
-                ☐ GetCurrentPaymentsByLane
+                ✔ CreatePayment ported. @done(20-09-30 10:24)
+                ✔ SavePayment ported. @done(20-09-30 10:24)
+                ✔ GetPaymentsByDate ported. @done(20-09-30 10:24)
+                ✔ GetPaymentsByUserShift ported. @done(20-09-30 10:24)
+                ✔ GetPaymentsByLane ported. @done(20-09-30 10:24)
+                ✔ GetCurrentPaymentsByLane ported. @done(20-09-30 10:24)
         Revenue Routes:
             UserShiftRevenue:
-                ☐ CreatePlazaRevenue
-                ☐ SavePlazaRevenue
-                ☐ GetPlazaRevenue
+                ✔ CreatePlazaRevenue ported. @done(20-09-30 10:24)
+                ✔ SavePlazaRevenue ported. @done(20-09-30 10:24)
+                ✔ GetPlazaRevenue ported. @done(20-09-30 10:24)
             Revenue Entry:
-                ☐ SaveRevenue
-                ☐ GetRevenues
-                ☐ GetUnsendRevenues
+                ✔ SaveRevenue ported. @done(20-09-30 10:24)
+                ✔ GetRevenues ported. @done(20-09-30 10:24)
+                ✔ GetUnsendRevenues ported. @done(20-09-30 10:24)
         Credit Routes:
             TSB Credit Balance:
-                ☐ GetTSBBalance
+                ✔ GetTSBBalance ported. @done(20-09-30 10:24)
             TSB Credit Transaction:
-                ☐ GetInitialTSBCreditTransaction
-                ☐ GetReplaceTSBCreditTransaction
-                ☐ SaveTSBCreditTransaction
+                ✔ GetInitialTSBCreditTransaction ported. @done(20-09-30 10:24)
+                ✔ GetReplaceTSBCreditTransaction ported. @done(20-09-30 10:24)
+                ✔ SaveTSBCreditTransaction ported. @done(20-09-30 10:24)
             User Credit Balance:
-                ☐ GetActiveUserCreditBalances
-                ☐ GetActiveUserCreditBalanceById
-                ☐ SaveUserCreditBalance
+                ✔ GetActiveUserCreditBalances ported. @done(20-09-30 10:24)
+                ✔ GetActiveUserCreditBalanceById ported. @done(20-09-30 10:24)
+                ✔ SaveUserCreditBalance ported. @done(20-09-30 10:24)
             User Credit Transaction:
-                ☐ SaveUserCreditTransaction
+                ✔ SaveUserCreditTransaction ported. @done(20-09-30 10:24)
         Coupon Routes:
             TSB Coupon Balance:
-                ☐ GetTSBBalance
+                ✔ GetTSBBalance ported. @done(20-09-30 10:24)
             TSB Coupon Summary:
-                ☐ GetTSBCouponSummaries
+                ✔ GetTSBCouponSummaries ported. @done(20-09-30 10:24)
             TSB Coupon Transaction:
-                ☐ GetTSBCouponTransactions
-                ☐ SaveTSBCouponTransaction
-                ☐ SaveTSBCouponTransactions
-                ☐ SyncTSBCouponTransaction
-                ☐ SyncTSBCouponTransactions
+                ✔ GetTSBCouponTransactions ported. @done(20-09-30 10:24)
+                ✔ SaveTSBCouponTransaction ported. @done(20-09-30 10:24)
+                ✔ SaveTSBCouponTransactions ported. @done(20-09-30 10:24)
+                ✔ SyncTSBCouponTransaction ported. @done(20-09-30 10:24)
+                ✔ SyncTSBCouponTransactions ported. @done(20-09-30 10:24)
         Exchange Routes:
             TSB Exchange Group:
-                ☐ GetRequestApproveTSBExchangeGroups
-                ☐ GetTSBExchangeGroups
-                ☐ SaveTSBExchangeGroup
+                ✔ GetRequestApproveTSBExchangeGroups ported. @done(20-09-30 10:24)
+                ✔ GetTSBExchangeGroups ported. @done(20-09-30 10:24)
+                ✔ SaveTSBExchangeGroup ported. @done(20-09-30 10:24)
             TSB Exchange Transaction:
-                ☐ GetTSBExchangeTransactions
-                ☐ GetTSBExchangeTransaction
+                ✔ GetTSBExchangeTransactions ported. @done(20-09-30 10:24)
+                ✔ GetTSBExchangeTransaction ported. @done(20-09-30 10:24)

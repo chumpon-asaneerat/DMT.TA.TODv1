@@ -24,101 +24,101 @@ DMT.Core:
                 ✔ SetActive checked. @done(20-09-30 06:05)
                 ✔ SaveTSB checked. @done(20-09-30 06:05)
             PlazaGroup:
-                ✔ GetTSBPlazaGroups checked @done(20-09-30 06:06)
-                ✔ SavePlazaGroup checked @done(20-09-30 06:06)
+                ✔ GetTSBPlazaGroups checked. @done(20-09-30 06:06)
+                ✔ SavePlazaGroup checked. @done(20-09-30 06:06)
             Plaza:
-                ✔ GetPlazaGroupPlazas checked @done(20-09-30 06:06)
-                ✔ SavePlaza checked @done(20-09-30 06:06)
+                ✔ GetPlazaGroupPlazas checked. @done(20-09-30 06:06)
+                ✔ SavePlaza checked. @done(20-09-30 06:06)
             Lane:
-                ✔ GetPlazaGroupLanes checked @done(20-09-30 06:09)
-                ✔ GetPlazaLanes checked @done(20-09-30 06:10)
-                ✔ SaveLane checked @done(20-09-30 06:10)
+                ✔ GetPlazaGroupLanes checked. @done(20-09-30 06:09)
+                ✔ GetPlazaLanes checked. @done(20-09-30 06:10)
+                ✔ SaveLane checked. @done(20-09-30 06:10)
         User Routes:
             Role:
-                ✔ GetRole checked @done(20-09-30 06:12)
-                ✔ GetRoles checked @done(20-09-30 06:12)
-                ✔ SaveRole checked @done(20-09-30 06:12)
+                ✔ GetRole checked. @done(20-09-30 06:12)
+                ✔ GetRoles checked. @done(20-09-30 06:12)
+                ✔ SaveRole checked. @done(20-09-30 06:12)
             User:
-                ✔ GetUsers checked @done(20-09-30 06:12)
-                ✔ GetById checked @done(20-09-30 06:12)
-                ✔ SearchByGroupId checked @done(20-09-30 06:13)
-                ✔ SearchById checked @done(20-09-30 06:13)
-                ✔ GetByCardId checked @done(20-09-30 06:13)
-                ✔ GetByLogIn checked @done(20-09-30 06:13)
-                ✔ SaveUser checked @done(20-09-30 06:13)
+                ✔ GetUsers checked. @done(20-09-30 06:12)
+                ✔ GetById checked. @done(20-09-30 06:12)
+                ✔ SearchByGroupId checked. @done(20-09-30 06:13)
+                ✔ SearchById checked. @done(20-09-30 06:13)
+                ✔ GetByCardId checked. @done(20-09-30 06:13)
+                ✔ GetByLogIn checked. @done(20-09-30 06:13)
+                ✔ SaveUser checked. @done(20-09-30 06:13)
         Shift Routes:
             Shift:
-                ✔ GetShifts checked @done(20-09-30 06:14)
-                ✔ SaveShift checked @done(20-09-30 06:14)
+                ✔ GetShifts checked. @done(20-09-30 06:14)
+                ✔ SaveShift checked. @done(20-09-30 06:14)
             TSBShift:
-                ✔ CreateTSBShift checked @done(20-09-30 06:16)
-                ✔ GetCurrentTSBShift checked @done(20-09-30 06:16)
-                ✔ ChangeShift checked @done(20-09-30 06:17)
+                ✔ CreateTSBShift checked. @done(20-09-30 06:16)
+                ✔ GetCurrentTSBShift checked. @done(20-09-30 06:16)
+                ✔ ChangeShift checked. @done(20-09-30 06:17)
             UserShift:
-                ✔ CreateUserShift checked @done(20-09-30 06:17)
-                ✔ GetCurrentUserShift checked @done(20-09-30 06:17)
-                ✔ BeginUserShift checked @done(20-09-30 06:17)
-                ✔ EndUserShift checked @done(20-09-30 06:17)
-                ✔ GetUserShifts checked @done(20-09-30 06:18)
-                ✔ GetUnCloseUserShifts checked @done(20-09-30 06:18)
+                ✔ CreateUserShift checked. @done(20-09-30 06:17)
+                ✔ GetCurrentUserShift checked. @done(20-09-30 06:17)
+                ✔ BeginUserShift checked. @done(20-09-30 06:17)
+                ✔ EndUserShift checked. @done(20-09-30 06:17)
+                ✔ GetUserShifts checked. @done(20-09-30 06:18)
+                ✔ GetUnCloseUserShifts checked. @done(20-09-30 06:18)
         Lane Routes:
             Lane Attendance:
-                ☐ CreateAttendance
-                ☐ SaveAttendance
-                ☐ SaveAttendances
-                ☐ GetAttendancesByDate
-                ☐ GetAttendancesByUserShift
-                ☐ GetAttendancesByRevenue
-                ☐ GetAllAttendancesByUserShift
-                ☐ GetAttendancesByLane
-                ☐ GetCurrentAttendancesByLane
-                ☐ GetAllNotHasRevenueEntry
-                ☐ GetAllNotHasRevenueEntryByUser
+                ✔ CreateAttendance checked. @done(20-09-30 10:19)
+                ✔ SaveAttendance checked. @done(20-09-30 10:19)
+                ✔ SaveAttendances checked. @done(20-09-30 10:19)
+                ✔ GetAttendancesByDate checked. @done(20-09-30 10:19)
+                ✔ GetAttendancesByUserShift checked. @done(20-09-30 10:19)
+                ✔ GetAttendancesByRevenue checked. @done(20-09-30 10:19)
+                ✔ GetAllAttendancesByUserShift checked. @done(20-09-30 10:19)
+                ✔ GetAttendancesByLane checked. @done(20-09-30 10:19)
+                ✔ GetCurrentAttendancesByLane checked. @done(20-09-30 10:19)
+                ✔ GetAllNotHasRevenueEntry checked. @done(20-09-30 10:19)
+                ✔ GetAllNotHasRevenueEntryByUser checked. @done(20-09-30 10:19)
             Lane Payment:
-                ☐ CreatePayment
-                ☐ SavePayment
-                ☐ GetPaymentsByDate
-                ☐ GetPaymentsByUserShift
-                ☐ GetPaymentsByLane
-                ☐ GetCurrentPaymentsByLane
+                ✔ CreatePayment checked. @done(20-09-30 10:19)
+                ✔ SavePayment checked. @done(20-09-30 10:19)
+                ✔ GetPaymentsByDate checked. @done(20-09-30 10:19)
+                ✔ GetPaymentsByUserShift checked. @done(20-09-30 10:19)
+                ✔ GetPaymentsByLane checked. @done(20-09-30 10:19)
+                ✔ GetCurrentPaymentsByLane checked. @done(20-09-30 10:19)
         Revenue Routes:
             UserShiftRevenue:
-                ☐ CreatePlazaRevenue
-                ☐ SavePlazaRevenue
-                ☐ GetPlazaRevenue
+                ✔ CreatePlazaRevenue checked. @done(20-09-30 10:19)
+                ✔ SavePlazaRevenue checked. @done(20-09-30 10:20)
+                ✔ GetPlazaRevenue checked. @done(20-09-30 10:20)
             Revenue Entry:
-                ☐ SaveRevenue
-                ☐ GetRevenues
-                ☐ GetUnsendRevenues
+                ✔ SaveRevenue checked. @done(20-09-30 10:20)
+                ✔ GetRevenues checked. @done(20-09-30 10:20)
+                ✔ GetUnsendRevenues checked. @done(20-09-30 10:20)
         Credit Routes:
             TSB Credit Balance:
-                ☐ GetTSBBalance
+                ✔ GetTSBCreditBalance checked. @done(20-09-30 10:20)
             TSB Credit Transaction:
-                ☐ GetInitialTSBCreditTransaction
-                ☐ GetReplaceTSBCreditTransaction
-                ☐ SaveTSBCreditTransaction
+                ✔ GetInitialTSBCreditTransaction checked. @done(20-09-30 10:20)
+                ✔ GetReplaceTSBCreditTransaction checked. @done(20-09-30 10:20)
+                ✔ SaveTSBCreditTransaction checked. @done(20-09-30 10:20)
             User Credit Balance:
-                ☐ GetActiveUserCreditBalances
-                ☐ GetActiveUserCreditBalanceById
-                ☐ SaveUserCreditBalance
+                ✔ GetActiveUserCreditBalances checked. @done(20-09-30 10:20)
+                ✔ GetActiveUserCreditBalanceById checked. @done(20-09-30 10:20)
+                ✔ SaveUserCreditBalance checked. @done(20-09-30 10:20)
             User Credit Transaction:
-                ☐ SaveUserCreditTransaction
+                ✔ SaveUserCreditTransaction checked. @done(20-09-30 10:20)
         Coupon Routes:
             TSB Coupon Balance:
-                ☐ GetTSBBalance
+                ✔ GetTSBCouponBalance checked. @done(20-09-30 10:20)
             TSB Coupon Summary:
-                ☐ GetTSBCouponSummaries
+                ✔ GetTSBCouponSummaries checked. @done(20-09-30 10:20)
             TSB Coupon Transaction:
-                ☐ GetTSBCouponTransactions
-                ☐ SaveTSBCouponTransaction
-                ☐ SaveTSBCouponTransactions
-                ☐ SyncTSBCouponTransaction
-                ☐ SyncTSBCouponTransactions
+                ✔ GetTSBCouponTransactions checked. @done(20-09-30 10:20)
+                ✔ SaveTSBCouponTransaction checked. @done(20-09-30 10:20)
+                ✔ SaveTSBCouponTransactions checked. @done(20-09-30 10:20)
+                ✔ SyncTSBCouponTransaction checked. @done(20-09-30 10:20)
+                ✔ SyncTSBCouponTransactions checked. @done(20-09-30 10:20)
         Exchange Routes:
             TSB Exchange Group:
-                ☐ GetRequestApproveTSBExchangeGroups
-                ☐ GetTSBExchangeGroups
-                ☐ SaveTSBExchangeGroup
+                ✔ GetRequestApproveTSBExchangeGroups checked. @done(20-09-30 10:20)
+                ✔ GetTSBExchangeGroups checked. @done(20-09-30 10:20)
+                ✔ SaveTSBExchangeGroup checked. @done(20-09-30 10:20)
             TSB Exchange Transaction:
-                ☐ GetTSBExchangeTransactions
-                ☐ GetTSBExchangeTransaction
+                ✔ GetTSBExchangeTransactions checked. @done(20-09-30 10:20)
+                ✔ GetTSBExchangeTransaction checked. @done(20-09-30 10:20)

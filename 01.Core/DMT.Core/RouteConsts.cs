@@ -775,23 +775,963 @@ namespace DMT
 
         #endregion
 
-        #region Lane Attendance/Payment
+        #region Lane (Attendance/Payment) - OK
+
+        /// <summary>
+        /// The Lane (Attendance/Payment) routes class.
+        /// </summary>
+        public static class Lane
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base Lane api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Lane";
+
+            #endregion
+
+            #region Lane Attendance - OK
+
+            #region CreateAttendance
+
+            /// <summary>
+            /// Create Attendance.
+            /// </summary>
+            public static class CreateAttendance
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "CreateAttendance";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SaveAttendance
+
+            /// <summary>
+            /// Save Attendance.
+            /// </summary>
+            public static class SaveAttendance
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveAttendance";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SaveAttendances
+
+            /// <summary>
+            /// Save Attendances.
+            /// </summary>
+            public static class SaveAttendances
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveAttendances";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetAttendancesByDate
+
+            /// <summary>
+            /// Get Attendances By Date.
+            /// </summary>
+            public static class GetAttendancesByDate
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetAttendancesByDate";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetAttendancesByUserShift
+
+            /// <summary>
+            /// Get Attendances By User Shift.
+            /// </summary>
+            public static class GetAttendancesByUserShift
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetAttendancesByUserShift";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetAttendancesByRevenue
+
+            /// <summary>
+            /// Get Attendances By Revenue.
+            /// </summary>
+            public static class GetAttendancesByRevenue
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetAttendancesByRevenue";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetAllAttendancesByUserShift
+
+            /// <summary>
+            /// Get All Attendances By User Shift.
+            /// </summary>
+            public static class GetAllAttendancesByUserShift
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetAllAttendancesByUserShift";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetAttendancesByLane
+
+            /// <summary>
+            /// Get Attendances By Lane.
+            /// </summary>
+            public static class GetAttendancesByLane
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetAttendancesByLane";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetCurrentAttendancesByLane
+
+            /// <summary>
+            /// Get Current Attendances By Lane.
+            /// </summary>
+            public static class GetCurrentAttendancesByLane
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetCurrentAttendancesByLane";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetAllNotHasRevenueEntry
+
+            /// <summary>
+            /// Get All Not Has RevenueEntry.
+            /// </summary>
+            public static class GetAllNotHasRevenueEntry
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetAllNotHasRevenueEntry";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetAllNotHasRevenueEntryByUser
+
+            /// <summary>
+            /// Get All Not Has RevenueEntry By User.
+            /// </summary>
+            public static class GetAllNotHasRevenueEntryByUser
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetAllNotHasRevenueEntryByUser";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+
+            #region Lane Payment - OK
+
+            #region CreatePayment
+
+            /// <summary>
+            /// Create Payment.
+            /// </summary>
+            public static class CreatePayment
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "CreatePayment";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SavePayment
+
+            /// <summary>
+            /// Save Payment.
+            /// </summary>
+            public static class SavePayment
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SavePayment";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetPaymentsByDate
+
+            /// <summary>
+            /// Get Payments By Date.
+            /// </summary>
+            public static class GetPaymentsByDate
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetPaymentsByDate";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetPaymentsByUserShift
+
+            /// <summary>
+            /// Get Payments By User Shift.
+            /// </summary>
+            public static class GetPaymentsByUserShift
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetPaymentsByUserShift";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetPaymentsByLane
+
+            /// <summary>
+            /// Get Payments By Lane.
+            /// </summary>
+            public static class GetPaymentsByLane
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetPaymentsByLane";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetCurrentPaymentsByLane
+
+            /// <summary>
+            /// Get Current Payments By Lane.
+            /// </summary>
+            public static class GetCurrentPaymentsByLane
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetCurrentPaymentsByLane";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Lane.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+        }
 
         #endregion
 
-        #region Revenue
+        #region Revenue - OK
+
+        /// <summary>
+        /// The Revenue routes class.
+        /// </summary>
+        public static class Revenue
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base Revenue api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Revenue";
+
+            #endregion
+
+            #region UserShiftRevenue - OK
+
+            #region CreatePlazaRevenue
+
+            /// <summary>
+            /// Create Plaza Revenue.
+            /// </summary>
+            public static class CreatePlazaRevenue
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "CreatePlazaRevenue";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Revenue.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SavePlazaRevenue
+
+            /// <summary>
+            /// Save Plaza Revenue.
+            /// </summary>
+            public static class SavePlazaRevenue
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SavePlazaRevenue";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Revenue.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetPlazaRevenue
+
+            /// <summary>
+            /// Get Plaza Revenue.
+            /// </summary>
+            public static class GetPlazaRevenue
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetPlazaRevenue";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Revenue.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+
+            #region Revenue Entry - OK
+
+            #region SaveRevenue
+
+            /// <summary>
+            /// Save Revenue.
+            /// </summary>
+            public static class SaveRevenue
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveRevenue";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Revenue.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetRevenues
+
+            /// <summary>
+            /// Get Revenues.
+            /// </summary>
+            public static class GetRevenues
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetRevenues";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Revenue.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetUnsendRevenues
+
+            /// <summary>
+            /// Get Unsend Revenues.
+            /// </summary>
+            public static class GetUnsendRevenues
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetUnsendRevenues";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Revenue.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+        }
 
         #endregion
 
-        #region Credit
+        #region Credit - OK
+
+        /// <summary>
+        /// The Credit routes class.
+        /// </summary>
+        public static class Credit
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base Revenue api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Credit";
+
+            #endregion
+
+            #region TSB Credit Balance - OK
+
+            #region GetTSBCreditBalance
+
+            /// <summary>
+            /// Get TSB Credit Balance.
+            /// </summary>
+            public static class GetTSBCreditBalance
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetTSBCreditBalance";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Credit.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+
+            #region TSB Credit Transaction - OK
+
+            #region GetInitialTSBCreditTransaction
+
+            /// <summary>
+            /// Get Initial TSB Credit Transaction.
+            /// </summary>
+            public static class GetInitialTSBCreditTransaction
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetInitialTSBCreditTransaction";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Credit.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetReplaceTSBCreditTransaction
+
+            /// <summary>
+            /// Get Replace TSB Credit Transaction.
+            /// </summary>
+            public static class GetReplaceTSBCreditTransaction
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetReplaceTSBCreditTransaction";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Credit.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SaveTSBCreditTransaction
+
+            /// <summary>
+            /// Save TSB Credit Transaction.
+            /// </summary>
+            public static class SaveTSBCreditTransaction
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveTSBCreditTransaction";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Credit.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+
+            #region User Credit Balance - OK
+
+            #region GetActiveUserCreditBalances
+
+            /// <summary>
+            /// Get Active User Credit Balances.
+            /// </summary>
+            public static class GetActiveUserCreditBalances
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetActiveUserCreditBalances";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Credit.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetActiveUserCreditBalanceById
+
+            /// <summary>
+            /// Get Active User Credit Balance By Id.
+            /// </summary>
+            public static class GetActiveUserCreditBalanceById
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetActiveUserCreditBalanceById";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Credit.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SaveUserCreditBalance
+
+            /// <summary>
+            /// Save User Credi tBalance.
+            /// </summary>
+            public static class SaveUserCreditBalance
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveUserCreditBalance";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Credit.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+
+            #region User Credit Transaction - OK
+
+            #region SaveUserCreditTransaction
+
+            /// <summary>
+            /// Save User Credit Transaction.
+            /// </summary>
+            public static class SaveUserCreditTransaction
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveUserCreditTransaction";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Credit.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+        }
 
         #endregion
 
-        #region Coupon
+        #region Coupon - OK
+
+        /// <summary>
+        /// The Coupon routes class.
+        /// </summary>
+        public static class Coupon
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base Revenue api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Coupon";
+
+            #endregion
+
+            #region TSB Coupon Balance - OK
+
+            #region Get TSB Coupon Balance
+
+            /// <summary>
+            /// Get TSB Coupon Balance.
+            /// </summary>
+            public static class GetTSBCouponBalance
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetTSBCouponBalance";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Coupon.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+
+            #region TSB Coupon Summary - OK
+
+            #region GetTSBCouponSummaries
+
+            /// <summary>
+            /// Get TSB Coupon Summaries.
+            /// </summary>
+            public static class GetTSBCouponSummaries
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetTSBCouponSummaries";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Coupon.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+
+            #region TSB Coupon Transaction - OK
+
+            #region GetTSBCouponTransactions
+
+            /// <summary>
+            /// Get TSBCoupon Transactions.
+            /// </summary>
+            public static class GetTSBCouponTransactions
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetTSBCouponTransactions";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Coupon.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SaveTSBCouponTransaction
+
+            /// <summary>
+            /// Save TSB Coupon Transaction.
+            /// </summary>
+            public static class SaveTSBCouponTransaction
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveTSBCouponTransaction";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Coupon.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SaveTSBCouponTransactions
+
+            /// <summary>
+            /// Save TSB Coupon Transactions.
+            /// </summary>
+            public static class SaveTSBCouponTransactions
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveTSBCouponTransactions";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Coupon.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SyncTSBCouponTransaction
+
+            /// <summary>
+            /// Sync TSB Coupon Transaction.
+            /// </summary>
+            public static class SyncTSBCouponTransaction
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SyncTSBCouponTransaction";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Coupon.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SyncTSBCouponTransactions
+
+            /// <summary>
+            /// Sync TSB Coupon Transactions.
+            /// </summary>
+            public static class SyncTSBCouponTransactions
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SyncTSBCouponTransactions";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Coupon.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+        }
 
         #endregion
 
-        #region Exchange
+        #region Exchange - OK
+
+        /// <summary>
+        /// The Exchange routes class.
+        /// </summary>
+        public static class Exchange
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base Revenue api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Exchange";
+
+            #endregion
+
+            #region TSBExchangeGroup - OK
+
+            #region GetRequestApproveTSBExchangeGroups
+
+            /// <summary>
+            /// Get Request or Approve TSB Exchange Groups.
+            /// </summary>
+            public static class GetRequestApproveTSBExchangeGroups
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetRequestApproveTSBExchangeGroups";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Exchange.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetTSBExchangeGroups
+
+            /// <summary>
+            /// Get TSB Exchange Groups.
+            /// </summary>
+            public static class GetTSBExchangeGroups
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetRequestTSBExchangeGroups";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Exchange.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region SaveTSBExchangeGroup
+
+            /// <summary>
+            /// Save TSB Exchange Group.
+            /// </summary>
+            public static class SaveTSBExchangeGroup
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "SaveTSBExchangeGroup";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Exchange.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetTSBExchangeTransactions
+
+            /// <summary>
+            /// Get TSB Exchange Transactions.
+            /// </summary>
+            public static class GetTSBExchangeTransactions
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetTSBExchangeTransactions";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Exchange.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetTSBExchangeTransaction
+
+            /// <summary>
+            /// Get TSB Exchange Transaction.
+            /// </summary>
+            public static class GetTSBExchangeTransaction
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetTSBExchangeTransaction";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Exchange.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #endregion
+        }
 
         #endregion
 

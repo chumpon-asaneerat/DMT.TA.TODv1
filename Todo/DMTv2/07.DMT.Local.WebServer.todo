@@ -3,12 +3,12 @@ DMT.Local.WebServer:
         Behaviors:
             ✘ NotifyBehavior.cs (Wocket is removed from DMT.TA.TODv1). @cancelled(20-09-30 09:26)
         Controllers:
-            ☐ CouponController.cs ported.
-            ☐ CreditController.cs ported.
-            ☐ ExchangeController.cs ported.
-            ☐ LaneController.cs ported.
+            ✔ CouponController.cs ported. @done(20-09-30 10:28)
+            ✔ CreditController.cs ported. @done(20-09-30 10:36)
+            ✔ ExchangeController.cs ported. @done(20-09-30 10:36)
+            ✔ LaneController.cs ported. @done(20-09-30 10:36)
             ✔ MasterController.cs ported. @done(20-09-30 09:42)
-            ☐ RevenueController.cs ported.
+            ✔ RevenueController.cs ported. @done(20-09-30 10:36)
             ✔ ShiftController.cs ported. @done(20-09-30 09:44)
             ✔ TSBController.cs ported. @done(20-09-30 09:44)
             ✔ UserController.cs ported. @done(20-09-30 09:45)
