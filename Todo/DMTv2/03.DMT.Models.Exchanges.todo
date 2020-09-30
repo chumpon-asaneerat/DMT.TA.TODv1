@@ -1,5 +1,5 @@
 DMT.Models:
     Models:
         Exchanges:
-            ☐ TSBExchangeGroup.cs
-            ☐ TSBExchangeTransaction.cs
+            ✔ TSBExchangeGroup.cs ported. @done(20-09-30 08:36)
+            ✔ TSBExchangeTransaction.cs ported. @done(20-09-30 08:36)

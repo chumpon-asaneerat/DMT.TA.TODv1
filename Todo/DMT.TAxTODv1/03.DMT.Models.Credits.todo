@@ -2,8 +2,8 @@ DMT.Models:
     Models:
         Credits:
             TSB:
-                ☐ TSBCreditBalance.cs
-                ☐ TSBCreditTransaction.cs
+                ✔ TSBCreditBalance.cs checked. @done(20-09-30 08:36)
+                ✔ TSBCreditTransaction.cs checked. @done(20-09-30 08:36)
             Users:
-                ☐ UserCreditBalance.cs
-                ☐ UserCreditTransaction.cs
+                ✔ UserCreditBalance.cs checked. @done(20-09-30 08:36)
+                ✔ UserCreditTransaction.cs checked. @done(20-09-30 08:36)

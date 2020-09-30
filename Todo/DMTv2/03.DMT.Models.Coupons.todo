@@ -2,13 +2,13 @@ DMT.Models:
     Models:
         Coupons:
             Common:
-                ☐ Enums.cs
+                ✔ Enums.cs ported. @done(20-09-30 08:36)
             TAServer:
-                ☐ TACouponTransaction.cs
+                ✔ TACouponTransaction.cs ported. @done(20-09-30 08:37)
             TSB:
-                ☐ TSBCouponBalance.cs
-                ☐ TSBCouponSummary.cs
-                ☐ TSBCouponTransaction.cs
+                ✔ TSBCouponBalance.cs ported. @done(20-09-30 08:37)
+                ✔ TSBCouponSummary.cs ported. @done(20-09-30 08:37)
+                ✔ TSBCouponTransaction.cs ported. @done(20-09-30 08:37)
             Users:
-                ☐ UserCouponBalance.cs
-                ☐ UserCouponTransaction.cs
+                ✔ UserCouponBalance.cs ported. @done(20-09-30 08:37)
+                ✔ UserCouponTransaction.cs ported. @done(20-09-30 08:37)
