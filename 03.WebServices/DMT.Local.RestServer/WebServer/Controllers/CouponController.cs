@@ -12,8 +12,6 @@ using DMT.Models;
 
 namespace DMT.Services
 {
-    // TODO: Need region and summary comment in all classes and methods.
-
     /// <summary>
     /// The controller for manage coupon transaction TA.
     /// </summary>
@@ -21,6 +19,13 @@ namespace DMT.Services
     {
         #region TSB Coupon Balance
 
+        #region GetTSBCouponBalance
+
+        /// <summary>
+        /// Get TSB Coupon Balance.
+        /// </summary>
+        /// <param name="value">The TSB instance.</param>
+        /// <returns>Returns TSBCouponBalance instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Coupon.GetTSBCouponBalance.Name)]
         public NDbResult<TSBCouponBalance> GetTSBCouponBalance([FromBody] TSB value)
@@ -40,8 +45,17 @@ namespace DMT.Services
 
         #endregion
 
+        #endregion
+
         #region TSB Coupon Summary
 
+        #region GetTSBCouponSummaries
+
+        /// <summary>
+        /// Get TSB Coupon Summaries.
+        /// </summary>
+        /// <param name="value">The TSB instance.</param>
+        /// <returns>Returns List of TSBCouponSummary.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Coupon.GetTSBCouponSummaries.Name)]
         public NDbResult<List<TSBCouponSummary>> GetTSBCouponSummaries([FromBody] TSB value)
@@ -61,8 +75,17 @@ namespace DMT.Services
 
         #endregion
 
+        #endregion
+
         #region TSB Coupon Transaction
 
+        #region GetTSBCouponTransactions
+
+        /// <summary>
+        /// Get TSB Coupon Transactions.
+        /// </summary>
+        /// <param name="value">The TSB instance.</param>
+        /// <returns>Returns list of TSBCouponTransaction.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Coupon.GetTSBCouponTransactions.Name)]
         public NDbResult<List<TSBCouponTransaction>> GetTSBCouponTransactions([FromBody] TSB value)
@@ -80,6 +103,15 @@ namespace DMT.Services
             return result;
         }
 
+        #endregion
+
+        #region SaveTransaction
+
+        /// <summary>
+        /// Save Transaction.
+        /// </summary>
+        /// <param name="value">The TSBCouponTransaction instance.</param>
+        /// <returns>Returns save instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Coupon.SaveTSBCouponTransaction.Name)]
         public NDbResult<TSBCouponTransaction> SaveTransaction(
@@ -98,6 +130,15 @@ namespace DMT.Services
             return result;
         }
 
+        #endregion
+
+        #region SaveTransactions
+
+        /// <summary>
+        /// Save Transactions.
+        /// </summary>
+        /// <param name="values">The list of TSBCouponTransaction instance.</param>
+        /// <returns>Returns NDbResult instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Coupon.SaveTSBCouponTransactions.Name)]
         public NDbResult SaveTransactions([FromBody] List<TSBCouponTransaction> values)
@@ -115,6 +156,15 @@ namespace DMT.Services
             return result;
         }
 
+        #endregion
+
+        #region SyncTransaction
+
+        /// <summary>
+        /// Sync Transaction.
+        /// </summary>
+        /// <param name="value">The TSBCouponTransaction instance.</param>
+        /// <returns>Returns NDbResult instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Coupon.SyncTSBCouponTransaction.Name)]
         public NDbResult SyncTransaction(
@@ -133,6 +183,15 @@ namespace DMT.Services
             return result;
         }
 
+        #endregion
+
+        #region SyncTransactions
+
+        /// <summary>
+        /// Sync Transactions.
+        /// </summary>
+        /// <param name="values">The list of TSBCouponTransaction instance.</param>
+        /// <returns>Returns NDbResult instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Coupon.SyncTSBCouponTransactions.Name)]
         public NDbResult SyncTransactions(
@@ -150,6 +209,8 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
 
         #endregion
     }

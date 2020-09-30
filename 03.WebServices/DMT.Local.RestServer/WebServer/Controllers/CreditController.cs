@@ -12,8 +12,6 @@ using DMT.Models;
 
 namespace DMT.Services
 {
-    // TODO: Need region and summary comment in all classes and methods.
-
     /// <summary>
     /// The controller for manage credit transaction TA.
     /// </summary>
@@ -21,6 +19,13 @@ namespace DMT.Services
     {
         #region TSB Balance
 
+        #region GetTSBCreditBalance
+
+        /// <summary>
+        /// Get TSB Credit Balance.
+        /// </summary>
+        /// <param name="value">The TSB instance.</param>
+        /// <returns>Returns TSBCreditBalance instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Credit.GetTSBCreditBalance.Name)]
         public NDbResult<TSBCreditBalance> GetTSBCreditBalance([FromBody] TSB value)
@@ -40,8 +45,17 @@ namespace DMT.Services
 
         #endregion
 
+        #endregion
+
         #region TSB Credit Transaction
 
+        #region GetInitialTSBCreditTransaction
+
+        /// <summary>
+        /// Get Initial TSB Credit Transaction.
+        /// </summary>
+        /// <param name="value">The TSB instance.</param>
+        /// <returns>Returns Initial TSB Credit Transaction instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Credit.GetInitialTSBCreditTransaction.Name)]
         public NDbResult<TSBCreditTransaction> GetInitialTSBCreditTransaction([FromBody] TSB value)
@@ -59,6 +73,15 @@ namespace DMT.Services
             return result;
         }
 
+        #endregion
+
+        #region GetReplaceTSBCreditTransaction
+
+        /// <summary>
+        /// Get Replace TSB Credit Transaction.
+        /// </summary>
+        /// <param name="value">The DateTime to search.</param>
+        /// <returns>Returns list of TSBCreditTransaction.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Credit.GetReplaceTSBCreditTransaction.Name)]
         public NDbResult<List<TSBCreditTransaction>> GetReplaceTSBCreditTransaction([FromBody] DateTime value)
@@ -76,6 +99,15 @@ namespace DMT.Services
             return result;
         }
 
+        #endregion
+
+        #region SaveTSBCreditTransaction
+
+        /// <summary>
+        /// Save TSB Credit Transaction.
+        /// </summary>
+        /// <param name="value">The TSBCreditTransaction instance.</param>
+        /// <returns>Returns save instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Credit.SaveTSBCreditTransaction.Name)]
         public NDbResult<TSBCreditTransaction> SaveTSBCreditTransaction(
@@ -96,8 +128,17 @@ namespace DMT.Services
 
         #endregion
 
+        #endregion
+
         #region User Credit Balance
 
+        #region GetActiveUserCreditBalances
+
+        /// <summary>
+        /// Get Active User Credit Balances.
+        /// </summary>
+        /// <param name="value">The TSB instance.</param>
+        /// <returns>Returns list of UserCreditBalance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Credit.GetActiveUserCreditBalances.Name)]
         public NDbResult<List<UserCreditBalance>> GetActiveUserCreditBalances([FromBody] TSB value)
@@ -115,6 +156,15 @@ namespace DMT.Services
             return result;
         }
 
+        #endregion
+
+        #region GetActiveUserCreditBalanceById
+        /*
+        /// <summary>
+        /// Get Active User Credit Balance By Id.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>Returns UserCreditBalance instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Credit.GetActiveUserCreditBalanceById.Name)]
         public NDbResult<UserCreditBalance> GetActiveUserCreditBalanceById(
@@ -133,7 +183,16 @@ namespace DMT.Services
             }
             return result;
         }
+        */
+        #endregion
 
+        #region SaveUserCreditBalance
+
+        /// <summary>
+        /// Save User Credit Balance.
+        /// </summary>
+        /// <param name="value">The UserCreditBalance instance.</param>
+        /// <returns>Returns save instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Credit.SaveUserCreditBalance.Name)]
         public NDbResult<UserCreditBalance> SaveUserCreditBalance(
@@ -155,8 +214,17 @@ namespace DMT.Services
 
         #endregion
 
+        #endregion
+
         #region User Credit Transaction
 
+        #region SaveUserCreditTransaction
+
+        /// <summary>
+        /// Save User Credit Transaction.
+        /// </summary>
+        /// <param name="value">The UserCreditTransaction instance.</param>
+        /// <returns>Returns save instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Credit.SaveUserCreditTransaction.Name)]
         public NDbResult<UserCreditTransaction> SaveUserCreditTransaction(
@@ -174,6 +242,8 @@ namespace DMT.Services
             }
             return result;
         }
+
+        #endregion
 
         #endregion
     }

@@ -12,8 +12,6 @@ using DMT.Models;
 
 namespace DMT.Services
 {
-    // TODO: Need region and summary comment in all classes and methods.
-
     /// <summary>
     /// The controller for manage credit exchange transaction TA.
     /// </summary>
@@ -21,6 +19,13 @@ namespace DMT.Services
     {
         #region Exchange Transaction
 
+        #region GetRequestApproveTSBExchangeGroups
+
+        /// <summary>
+        /// Get Request or Approve TSB Exchange Groups.
+        /// </summary>
+        /// <param name="value">The TSB instance.</param>
+        /// <returns>Returns list of TSBExchangeGroup.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Exchange.GetRequestApproveTSBExchangeGroups.Name)]
         public NDbResult<List<TSBExchangeGroup>> GetRequestApproveTSBExchangeGroups(
@@ -39,6 +44,15 @@ namespace DMT.Services
             return result;
         }
 
+        #endregion
+
+        #region GetTSBExchangeGroups
+        /*
+        /// <summary>
+        /// Get TSB Exchange Groups.
+        /// </summary>
+        /// <param name="value">The filter parameter.</param>
+        /// <returns>Returns list of TSBExchangeGroup.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Exchange.GetTSBExchangeGroups.Name)]
         public NDbResult<List<TSBExchangeGroup>> GetTSBExchangeGroups(
@@ -57,7 +71,16 @@ namespace DMT.Services
             }
             return result;
         }
+        */
+        #endregion
 
+        #region SaveTSBExchangeGroup
+
+        /// <summary>
+        /// Save TSB Exchange Group.
+        /// </summary>
+        /// <param name="value">The TSBExchangeGroup instance.</param>
+        /// <returns>Returns save instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Exchange.SaveTSBExchangeGroup.Name)]
         public NDbResult<TSBExchangeGroup> SaveTSBExchangeGroup(
@@ -80,6 +103,15 @@ namespace DMT.Services
             return result;
         }
 
+        #endregion
+
+        #region GetTSBExchangeTransactions
+        /*
+        /// <summary>
+        /// Get TSB Exchange Transactions.
+        /// </summary>
+        /// <param name="value">The filter instance.</param>
+        /// <returns>Returns list of TSBExchangeTransaction.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Exchange.GetTSBExchangeTransactions.Name)]
         public NDbResult<List<TSBExchangeTransaction>> GetTSBExchangeTransactions(
@@ -97,7 +129,16 @@ namespace DMT.Services
             }
             return result;
         }
+        */
+        #endregion
 
+        #region GetTSBExchangeTransaction
+        /*
+        /// <summary>
+        /// Get TSB Exchange Transaction.
+        /// </summary>
+        /// <param name="value">The filter parameter.</param>
+        /// <returns>Returns TSBExchangeTransaction instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Exchange.GetTSBExchangeTransaction.Name)]
         public NDbResult<TSBExchangeTransaction> GetTSBExchangeTransaction(
@@ -115,6 +156,8 @@ namespace DMT.Services
             }
             return result;
         }
+        */
+        #endregion
 
         #endregion
     }

@@ -13,8 +13,6 @@ using DMT.Models;
 
 namespace DMT.Services
 {
-    // TODO: Need region and summary comment in all classes and methods.
-
     /// <summary>
     /// The controller for manage common data on Revenue Entry.
     /// </summary>
@@ -22,6 +20,13 @@ namespace DMT.Services
     {
         #region UserShiftRevenue
 
+        #region CreateRevenueShift
+        /*
+        /// <summary>
+        /// Create Revenue Shift.
+        /// </summary>
+        /// <param name="value">The search parameter instance.</param>
+        /// <returns>Returns instance of UserShiftRevenue (NDbResult).</returns>
         [HttpPost]
         [ActionName(RouteConsts.Revenue.CreatePlazaRevenue.Name)]
         public NDbResult<UserShiftRevenue> CreateRevenueShift([FromBody] Search.Revenues.PlazaShift value)
@@ -38,7 +43,16 @@ namespace DMT.Services
             }
             return result;
         }
+        */
+        #endregion
 
+        #region SaveRevenueShift
+        /*
+        /// <summary>
+        /// Save Revenue Shift.
+        /// </summary>
+        /// <param name="value">The save parameter instance.</param>
+        /// <returns>Returns instance of UserShiftRevenue (NDbResult).</returns>
         [HttpPost]
         [ActionName(RouteConsts.Revenue.SavePlazaRevenue.Name)]
         public NDbResult<UserShiftRevenue> SaveRevenueShift([FromBody] Search.Revenues.SaveRevenueShift value)
@@ -56,7 +70,16 @@ namespace DMT.Services
             }
             return result;
         }
+        */
+        #endregion
 
+        #region GetRevenueShift
+        /*
+        /// <summary>
+        /// Get Revenue Shift.
+        /// </summary>
+        /// <param name="value">The search parameter instance.</param>
+        /// <returns>Returns instance of UserShiftRevenue (NDbResult).</returns>
         [HttpPost]
         [ActionName(RouteConsts.Revenue.GetPlazaRevenue.Name)]
         public NDbResult<UserShiftRevenue> GetRevenueShift([FromBody] Search.Revenues.PlazaShift value)
@@ -73,11 +96,20 @@ namespace DMT.Services
             }
             return result;
         }
+        */
+        #endregion
 
         #endregion
 
         #region Revenue Entry
 
+        #region SaveRevenue
+
+        /// <summary>
+        /// Save Revenue.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>Returns save instance.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Revenue.SaveRevenue.Name)]
         public NDbResult<RevenueEntry> SaveRevenue([FromBody] RevenueEntry value)
@@ -98,7 +130,16 @@ namespace DMT.Services
             }
             return result;
         }
+        
+        #endregion
 
+        #region GetRevenues
+        /*
+        /// <summary>
+        /// Get Revenues.
+        /// </summary>
+        /// <param name="value">The DateTime to search.</param>
+        /// <returns>Returns list of Revenue Entries.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Revenue.GetRevenues.Name)]
         public NDbResult<List<RevenueEntry>> GetRevenues([FromBody] DateTime value)
@@ -117,7 +158,15 @@ namespace DMT.Services
 
             return result;
         }
+        */
+        #endregion
 
+        #region GetUnsendRevenues
+        /*
+        /// <summary>
+        /// Get Unsend Revenues.
+        /// </summary>
+        /// <returns>Returns list of Revenue Entries.</returns>
         [HttpPost]
         [ActionName(RouteConsts.Revenue.GetUnsendRevenues.Name)]
         public NDbResult<List<RevenueEntry>> GetUnsendRevenues()
@@ -126,6 +175,8 @@ namespace DMT.Services
             result = RevenueEntry.FindUnsendRevenueEnties();
             return result;
         }
+        */
+        #endregion
 
         #endregion
     }
