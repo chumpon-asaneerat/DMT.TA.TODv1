@@ -1,23 +1,23 @@
 DMT.Controls:
     Header:
         Elements:
-            ☐ HeaderDateTime.xaml checked.
-            ☐ HeaderDateTime.xaml.cs checked.
-            ☐ HeaderLogo.xaml checked.
-            ☐ HeaderLogo.xaml.cs checked.
-            ☐ HeaderPlaza.xaml checked.
-            ☐ HeaderPlaza.xaml.cs checked.
-            ☐ HeaderShift.xaml checked.
-            ☐ HeaderShift.xaml.cs checked.
-            ☐ HeaderSupervisor.xaml checked.
-            ☐ HeaderSupervisor.xaml.cs checked.
-            ☐ HeaderUser.xaml checked.
-            ☐ HeaderUser.xaml.cs checked.
-        ☐ CurrentTA.cs checked.
-        ☐ PlazaHeader.xaml checked.
-        ☐ PlazaHeader.xaml.cs checked.
-        ☐ TAHeader.xaml checked.
-        ☐ TAHeader.xaml.cs checked.
+            ✔ HeaderDateTime.xaml checked. @done(20-09-30 11:37)
+            ✔ HeaderDateTime.xaml.cs checked. @done(20-09-30 11:37)
+            ✔ HeaderLogo.xaml checked. @done(20-09-30 11:37)
+            ✔ HeaderLogo.xaml.cs checked. @done(20-09-30 11:37)
+            ✔ HeaderPlaza.xaml checked. @done(20-09-30 11:37)
+            ✔ HeaderPlaza.xaml.cs checked. @done(20-09-30 11:37)
+            ✔ HeaderShift.xaml checked. @done(20-09-30 11:37)
+            ✔ HeaderShift.xaml.cs checked. @done(20-09-30 11:37)
+            ✔ HeaderSupervisor.xaml checked. @done(20-09-30 11:37)
+            ✔ HeaderSupervisor.xaml.cs checked. @done(20-09-30 11:37)
+            ✔ HeaderUser.xaml checked. @done(20-09-30 11:37)
+            ✔ HeaderUser.xaml.cs checked. @done(20-09-30 11:37)
+        ✔ CurrentTA.cs checked. @done(20-09-30 11:37)
+        ✔ PlazaHeader.xaml checked. @done(20-09-30 11:37)
+        ✔ PlazaHeader.xaml.cs checked. @done(20-09-30 11:37)
+        ✔ TAHeader.xaml checked (rename from AccountHeader). @done(20-09-30 11:37)
+        ✔ TAHeader.xaml.cs checked (rename from AccountHeader). @done(20-09-30 11:37)
     Images:
         ✔ Background checked. @done(20-09-30 11:29)
         ✔ Button checked. @done(20-09-30 11:29)

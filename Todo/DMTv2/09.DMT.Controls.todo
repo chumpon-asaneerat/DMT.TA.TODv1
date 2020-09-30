@@ -8,23 +8,23 @@ DMT.Controls:
         ☐ MenuGroupCaption.xaml.cs ported.
     Header:
         Elements:
-            ☐ HeaderDateTime.xaml ported.
-            ☐ HeaderDateTime.xaml.cs ported.
-            ☐ HeaderLogo.xaml ported.
-            ☐ HeaderLogo.xaml.cs ported.
-            ☐ HeaderPlaza.xaml ported.
-            ☐ HeaderPlaza.xaml.cs ported.
-            ☐ HeaderShift.xaml ported.
-            ☐ HeaderShift.xaml.cs ported.
-            ☐ HeaderSupervisor.xaml ported.
-            ☐ HeaderSupervisor.xaml.cs ported.
-            ☐ HeaderUser.xaml ported.
-            ☐ HeaderUser.xaml.cs ported.
-        ☐ AccountHeader.xaml ported.
-        ☐ AccountHeader.xaml.cs ported.
-        ☐ CurrentTA.cs ported.
-        ☐ PlazaHeader.xaml ported.
-        ☐ PlazaHeader.xaml.cs ported.
+            ✔ HeaderDateTime.xaml ported. @done(20-09-30 11:36)
+            ✔ HeaderDateTime.xaml.cs ported. @done(20-09-30 11:36)
+            ✔ HeaderLogo.xaml ported. @done(20-09-30 11:36)
+            ✔ HeaderLogo.xaml.cs ported. @done(20-09-30 11:36)
+            ✔ HeaderPlaza.xaml ported. @done(20-09-30 11:36)
+            ✔ HeaderPlaza.xaml.cs ported. @done(20-09-30 11:36)
+            ✔ HeaderShift.xaml ported. @done(20-09-30 11:36)
+            ✔ HeaderShift.xaml.cs ported. @done(20-09-30 11:36)
+            ✔ HeaderSupervisor.xaml ported. @done(20-09-30 11:36)
+            ✔ HeaderSupervisor.xaml.cs ported. @done(20-09-30 11:36)
+            ✔ HeaderUser.xaml ported. @done(20-09-30 11:36)
+            ✔ HeaderUser.xaml.cs ported. @done(20-09-30 11:36)
+        ✔ AccountHeader.xaml ported (rename to TAHeader). @done(20-09-30 11:36)
+        ✔ AccountHeader.xaml.cs ported(rename to TAHeader). @done(20-09-30 11:36)
+        ✔ CurrentTA.cs ported. @done(20-09-30 11:36)
+        ✔ PlazaHeader.xaml ported. @done(20-09-30 11:36)
+        ✔ PlazaHeader.xaml.cs ported. @done(20-09-30 11:36)
     Images:
         ✔ Background ported. @done(20-09-30 11:29)
         ✔ Button ported. @done(20-09-30 11:29)
