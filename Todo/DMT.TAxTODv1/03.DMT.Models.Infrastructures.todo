@@ -1,7 +1,7 @@
 DMT.Models:
     Models:
         Infrastructures:
-            ☐ Lane.cs
-            ☐ Plaza.cs
-            ☐ PlazaGroup.cs
-            ☐ TSB.cs
+            ✔ Lane.cs checked (some static methods removed). @done(20-09-30 07:30)
+            ✔ Plaza.cs checked (some static methods removed). @done(20-09-30 07:32)
+            ✔ PlazaGroup.cs checked (some static methods removed). @done(20-09-30 07:32)
+            ✔ TSB.cs checked (some static methods removed). @done(20-09-30 07:33)

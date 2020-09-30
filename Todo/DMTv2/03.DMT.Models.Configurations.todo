@@ -1,6 +1,6 @@
 DMT.Models:
     Models:
         Configurations:
-            ☐ Config.cs
-            ☐ UniqueCode.cs
-            ☐ ViewHistory.cs
+            ✔ Config.cs ported. @done(20-09-30 07:27)
+            ✔ UniqueCode.cs ported. @done(20-09-30 07:27)
+            ✔ ViewHistory.cs ported. @done(20-09-30 07:27)
