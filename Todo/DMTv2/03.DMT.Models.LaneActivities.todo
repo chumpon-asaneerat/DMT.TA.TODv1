@@ -1,5 +1,5 @@
 DMT.Models:
     Models:
         LaneActivities:
-            ☐ LaneAttendance.cs
-            ☐ LanePayment.cs
+            ✔ LaneAttendance.cs (some static methods not ported). @done(20-09-30 07:40)
+            ✔ LanePayment.cs (some static methods not ported). @done(20-09-30 07:40)

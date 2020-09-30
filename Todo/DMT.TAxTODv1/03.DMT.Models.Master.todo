@@ -1,5 +1,5 @@
 DMT.Models:
     Models:
         Master:
-            ☐ Coupon.cs
-            ☐ Currency.cs
+            ✔ Coupon.cs checked. @done(20-09-30 07:41)
+            ✔ Currency.cs checked. @done(20-09-30 07:41)

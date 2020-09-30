@@ -1,4 +1,4 @@
 DMT.Models:
     Models:
         Payments:
-            ☐ Payment.cs
+            ✔ Payment.cs (some static methods not ported). @done(20-09-30 07:44)
