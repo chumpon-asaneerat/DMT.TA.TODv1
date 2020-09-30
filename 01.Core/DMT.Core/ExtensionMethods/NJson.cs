@@ -160,11 +160,11 @@ namespace DMT
                     Folders.Assemblies.CurrentExecutingAssembly, "configs");
 #else
                 string localFilder = ApplicationManager.Instance.Environments.Company.Configs.FullName;
+#endif
                 if (!Folders.Exists(localFilder))
                 {
                     Folders.Create(localFilder);
                 }
-#endif
                 return localFilder;
             }
         }

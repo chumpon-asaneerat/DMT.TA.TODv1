@@ -115,7 +115,7 @@ namespace DMT.Services
 
 		#region Private Methods
 
-		#region InitTables
+		#region InitTables - OK
 
 		private void InitTables()
 		{
@@ -150,7 +150,6 @@ namespace DMT.Services
 
 			Db.CreateTable<RevenueEntry>();
 
-			/*
 			Db.CreateTable<TSBCreditTransaction>();
 
 			Db.CreateTable<TSBCouponTransaction>();
@@ -163,7 +162,6 @@ namespace DMT.Services
 
 			Db.CreateTable<TSBExchangeGroup>();
 			Db.CreateTable<TSBExchangeTransaction>();
-			*/
 		}
 
 		#endregion
@@ -1847,9 +1845,6 @@ namespace DMT.Services
 			prefix = @"Revenues";
 			InitView("RevenueEntryView", prefix);
 
-			//TODO: Refactor
-			/*
-
 			// Credits - Embeded resource used . instead / to access sub contents.
 			prefix = @"Credits";
 			InitView("TSBCreditSummarryView", prefix);
@@ -1878,7 +1873,6 @@ namespace DMT.Services
 			// Exchanges - Embeded resource used . instead / to access sub contents.
 			prefix = @"Exchanges";
 			InitView("TSBExchangeTransactionView", prefix);
-			*/
 		}
 
 		#endregion
@@ -1894,13 +1888,13 @@ namespace DMT.Services
 		{
 			get
 			{
-				/*
+#if !USE_PROGRAM_DATA
 				string localFilder = Folders.Combine(
 					Folders.Assemblies.CurrentExecutingAssembly, "data");
-				*/
-
+#else
 				// Stored in C:\ProgarmData\DMT\Data\ folder
 				string localFilder = ApplicationManager.Instance.Environments.Company.Data.FullName;
+#endif
 				if (!Folders.Exists(localFilder))
 				{
 					Folders.Create(localFilder);
@@ -1911,7 +1905,7 @@ namespace DMT.Services
 
 		#endregion
 
-		#region Public Methods
+		#region Public Methods (Start/Shutdown)
 
 		/// <summary>
 		/// Start.
@@ -1985,6 +1979,26 @@ namespace DMT.Services
 
 		#endregion
 
+		#region Public Methods (Event raiser)
+
+		/// <summary>
+		/// Call for notify active TSB changed.
+		/// </summary>
+		public void ActiveTSBChanged()
+		{
+			OnActiveTSBChanged.Call(this, EventArgs.Empty);
+		}
+		/// <summary>
+		/// Call for notify TSB Change Shift.
+		/// </summary>
+		public void TSBChangeShift()
+		{
+			OnTSBChangeShift.Call(this, EventArgs.Empty);
+
+		}
+
+		#endregion
+
 		#region Public Properties
 
 		/// <summary>
@@ -2000,9 +2014,26 @@ namespace DMT.Services
 
 		#region Public Events
 
+		/// <summary>
+		/// OnConnected event.
+		/// </summary>
 		public event EventHandler OnConnected;
+		/// <summary>
+		/// OnDisconnected event.
+		/// </summary>
 		public event EventHandler OnDisconnected;
+		/// <summary>
+		/// OnConectError event.
+		/// </summary>
 		public event EventHandler OnConectError;
+		/// <summary>
+		/// OnTSBChangeShift event.
+		/// </summary>
+		public event EventHandler OnTSBChangeShift;
+		/// <summary>
+		/// OnActiveTSBChanged event.
+		/// </summary>
+		public event EventHandler OnActiveTSBChanged;
 
 		#endregion
 	}

@@ -2,40 +2,40 @@ DMT.Models:
     Views:
         Scripts:
             Coupons:
-                ☐ TSBCouponBalanceView.sql ported.
-                ☐ TSBCouponLaneBalanceView.sql ported.
-                ☐ TSBCouponSoldByLaneBalanceView.sql ported.
-                ☐ TSBCouponSoldByTSBBalanceView.sql ported.
-                ☐ TSBCouponStockBalanceView.sql ported.
-                ☐ TSBCouponSummarryView.sql ported.
-                ☐ TSBCouponTransactionView.sql ported.
-                ☐ UserCoupon35SummaryView.sql ported.
-                ☐ UserCoupon80SummaryView.sql ported.
-                ☐ UserCouponSummaryView.sql ported.
-                ☐ UserCouponTransactionView.sql ported.
+                ✔ TSBCouponBalanceView.sql ported. @done(20-09-30 08:53)
+                ✔ TSBCouponLaneBalanceView.sql ported. @done(20-09-30 08:53)
+                ✔ TSBCouponSoldByLaneBalanceView.sql ported. @done(20-09-30 08:53)
+                ✔ TSBCouponSoldByTSBBalanceView.sql ported. @done(20-09-30 08:53)
+                ✔ TSBCouponStockBalanceView.sql ported. @done(20-09-30 08:53)
+                ✔ TSBCouponSummarryView.sql ported. @done(20-09-30 08:53)
+                ✔ TSBCouponTransactionView.sql ported. @done(20-09-30 08:53)
+                ✔ UserCoupon35SummaryView.sql ported. @done(20-09-30 08:53)
+                ✔ UserCoupon80SummaryView.sql ported. @done(20-09-30 08:53)
+                ✔ UserCouponSummaryView.sql ported. @done(20-09-30 08:53)
+                ✔ UserCouponTransactionView.sql ported. @done(20-09-30 08:53)
             Credits:
-                ☐ TSBCreditSummarryView.sql ported.
-                ☐ TSBCreditTransactionView.sql ported.
-                ☐ UserCreditBorrowSummaryView.sql ported.
-                ☐ UserCreditReturnSummaryView.sql ported.
-                ☐ UserCreditSummaryView.sql ported.
-                ☐ UserCreditTransactionView.sql ported.
+                ✔ TSBCreditSummarryView.sql ported. @done(20-09-30 08:53)
+                ✔ TSBCreditTransactionView.sql ported. @done(20-09-30 08:53)
+                ✔ UserCreditBorrowSummaryView.sql ported. @done(20-09-30 08:53)
+                ✔ UserCreditReturnSummaryView.sql ported. @done(20-09-30 08:53)
+                ✔ UserCreditSummaryView.sql ported. @done(20-09-30 08:53)
+                ✔ UserCreditTransactionView.sql ported. @done(20-09-30 08:53)
             Exchanges:
-                ☐ TSBExchangeGroupView.sql ported.
-                ☐ TSBExchangeTransactionView.sql ported.
+                ✔ TSBExchangeGroupView.sql ported. @done(20-09-30 08:53)
+                ✔ TSBExchangeTransactionView.sql ported. @done(20-09-30 08:53)
             Infrastructures:
-                ☐ LaneView.sql ported.
-                ☐ PlazaGroupView.sql ported.
-                ☐ PlazaView.sql ported.
+                ✔ LaneView.sql ported. @done(20-09-30 08:54)
+                ✔ PlazaGroupView.sql ported. @done(20-09-30 08:54)
+                ✔ PlazaView.sql ported. @done(20-09-30 08:55)
             LaneActivities:
-                ☐ LaneAttendanceView.sql ported.
-                ☐ LanePaymentView.sql ported.
+                ✔ LaneAttendanceView.sql ported. @done(20-09-30 08:56)
+                ✔ LanePaymentView.sql ported. @done(20-09-30 08:56)
             Revenues:
-                ☐ RevenueEntryView.sql ported.
+                ✔ RevenueEntryView.sql ported. @done(20-09-30 08:51)
             Shifts:
-                ☐ TSBShiftView.sql ported.
-                ☐ UserShiftRevenueView.sql ported.
-                ☐ UserShiftView.sql ported.
+                ✔ TSBShiftView.sql ported. @done(20-09-30 08:49)
+                ✔ UserShiftRevenueView.sql ported. @done(20-09-30 08:50)
+                ✔ UserShiftView.sql ported. @done(20-09-30 08:50)
             Users:
-                ☐ UserView.sql ported.
-        ☐ SqlScriptManager.cs ported.
+                ✔ UserView.sql ported. @done(20-09-30 08:48)
+        ✔ SqlScriptManager.cs ported. @done(20-09-30 08:48)

@@ -3,3 +3,4 @@ DMT.Models project:
         ☐ SCW.ExtensionMethods
         ☐ TAxTOD.ExtensionMethods
     Models:
+        ☐ When TSB Coupon borrow/return required to add to UserCouponTransaction.

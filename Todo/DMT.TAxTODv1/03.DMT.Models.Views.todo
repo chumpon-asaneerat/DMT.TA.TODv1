@@ -2,40 +2,40 @@ DMT.Models:
     Views:
         Scripts:
             Coupons:
-                ☐ TSBCouponBalanceView.sql checked.
-                ☐ TSBCouponLaneBalanceView.sql checked.
-                ☐ TSBCouponSoldByLaneBalanceView.sql checked.
-                ☐ TSBCouponSoldByTSBBalanceView.sql checked.
-                ☐ TSBCouponStockBalanceView.sql checked.
-                ☐ TSBCouponSummarryView.sql checked.
-                ☐ TSBCouponTransactionView.sql checked.
-                ☐ UserCoupon35SummaryView.sql checked.
-                ☐ UserCoupon80SummaryView.sql checked.
-                ☐ UserCouponSummaryView.sql checked.
-                ☐ UserCouponTransactionView.sql checked.
+                ✔ TSBCouponBalanceView.sql checked. @done(20-09-30 08:53)
+                ✔ TSBCouponLaneBalanceView.sql checked. @done(20-09-30 08:53)
+                ✔ TSBCouponSoldByLaneBalanceView.sql checked. @done(20-09-30 08:53)
+                ✔ TSBCouponSoldByTSBBalanceView.sql checked. @done(20-09-30 08:53)
+                ✔ TSBCouponStockBalanceView.sql checked. @done(20-09-30 08:53)
+                ✔ TSBCouponSummarryView.sql checked. @done(20-09-30 08:53)
+                ✔ TSBCouponTransactionView.sql checked. @done(20-09-30 08:53)
+                ✔ UserCoupon35SummaryView.sql checked. @done(20-09-30 08:53)
+                ✔ UserCoupon80SummaryView.sql checked. @done(20-09-30 08:53)
+                ✔ UserCouponSummaryView.sql checked. @done(20-09-30 08:53)
+                ✔ UserCouponTransactionView.sql checked. @done(20-09-30 08:53)
             Credits:
-                ☐ TSBCreditSummarryView.sql checked.
-                ☐ TSBCreditTransactionView.sql checked.
-                ☐ UserCreditBorrowSummaryView.sql checked.
-                ☐ UserCreditReturnSummaryView.sql checked.
-                ☐ UserCreditSummaryView.sql checked.
-                ☐ UserCreditTransactionView.sql checked.
+                ✔ TSBCreditSummarryView.sql checked. @done(20-09-30 08:53)
+                ✔ TSBCreditTransactionView.sql checked. @done(20-09-30 08:53)
+                ✔ UserCreditBorrowSummaryView.sql checked. @done(20-09-30 08:53)
+                ✔ UserCreditReturnSummaryView.sql checked. @done(20-09-30 08:53)
+                ✔ UserCreditSummaryView.sql checked. @done(20-09-30 08:53)
+                ✔ UserCreditTransactionView.sql checked. @done(20-09-30 08:53)
             Exchanges:
-                ☐ TSBExchangeGroupView.sql checked.
-                ☐ TSBExchangeTransactionView.sql checked.
+                ✔ TSBExchangeGroupView.sql checked. @done(20-09-30 08:53)
+                ✔ TSBExchangeTransactionView.sql checked. @done(20-09-30 08:53)
             Infrastructures:
-                ☐ LaneView.sql checked.
-                ☐ PlazaGroupView.sql checked.
-                ☐ PlazaView.sql checked.
+                ✔ LaneView.sql checked. @done(20-09-30 08:54)
+                ✔ PlazaGroupView.sql checked. @done(20-09-30 08:54)
+                ✔ PlazaView.sql checked. @done(20-09-30 08:55)
             LaneActivities:
-                ☐ LaneAttendanceView.sql checked.
-                ☐ LanePaymentView.sql checked.
+                ✔ LaneAttendanceView.sql checked. @done(20-09-30 08:56)
+                ✔ LanePaymentView.sql checked. @done(20-09-30 08:56)
             Revenues:
-                ☐ RevenueEntryView.sql checked.
+                ✔ RevenueEntryView.sql checked. @done(20-09-30 08:51)
             Shifts:
-                ☐ TSBShiftView.sql checked.
-                ☐ UserShiftRevenueView.sql checked.
-                ☐ UserShiftView.sql checked.
+                ✔ TSBShiftView.sql checked. @done(20-09-30 08:49)
+                ✔ UserShiftRevenueView.sql checked. @done(20-09-30 08:50)
+                ✔ UserShiftView.sql checked. @done(20-09-30 08:50)
             Users:
-                ☐ UserView.sql checked.
-        ☐ SqlScriptManager.cs checked.
+                ✔ UserView.sql checked. @done(20-09-30 08:48)
+        ✔ SqlScriptManager.cs checked. @done(20-09-30 08:48)
