@@ -1,5 +1,5 @@
 DMT.Models:
     ExtensionMethods:
-        ☐ NullableType,ExtensionMethods.cs
-        ☐ SCW.ExtensionMethods.cs
-        ☐ TAxTOD.ExtensionMethods.cs
+        ✔ NullableType.ExtensionMethods.cs checked. @done(20-09-30 07:12)
+        ☐ SCW.ExtensionMethods.cs checked.
+        ☐ TAxTOD.ExtensionMethods.cs checked.

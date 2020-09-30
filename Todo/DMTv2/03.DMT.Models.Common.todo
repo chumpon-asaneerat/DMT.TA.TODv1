@@ -1,10 +1,10 @@
 DMT.Models:
     Models:
         Common:
-            ☐ DMT.Searchs.cs ported (change file name to DMT.Search.cs).
-            ☐ DMTModelBase.cs ported.
-            ☐ NDbResult.cs ported.
-            ☐ NQueries.cs ported.
-            ☐ NSearch.cs ported.
-            ☐ NTables.cs ported.
+            ✔ DMT.Searchs.cs ported (change file name to DMT.Search.cs). @done(20-09-30 07:09)
+            ✔ DMTModelBase.cs ported. @done(20-09-30 07:08)
+            ✔ NDbResult.cs ported. @done(20-09-30 07:08)
+            ✔ NQueries.cs ported. @done(20-09-30 07:07)
+            ✔ NSearch.cs ported. @done(20-09-30 07:06)
+            ✔ NTables.cs ported. @done(20-09-30 07:06)
             ✔ Utils.cs ported. @done(20-09-30 07:00)

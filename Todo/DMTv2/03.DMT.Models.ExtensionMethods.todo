@@ -1,3 +1,6 @@
 DMT.Models:
     ExtensionMethods:
-        ☐ ModelExtensionMethods.cs
+        ModelExtensionMethods.cs:
+            ✔ NullableType,ExtensionMethods ported. @done(20-09-30 07:13)
+            ☐ SCW.ExtensionMethods ported.
+            ☐ TAxTOD.ExtensionMethods ported.
