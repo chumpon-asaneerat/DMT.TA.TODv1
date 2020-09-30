@@ -1,0 +1,5 @@
+// {type:sequence}
+// {generate:true}
+
+[:Customer]Send>[:Address]
+[:Address]Forword>[:AddressLine]

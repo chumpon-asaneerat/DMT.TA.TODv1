@@ -1,0 +1,4 @@
+@startuml sample
+scale 4
+Alice -> Bob : test
+@enduml

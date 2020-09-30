@@ -1,0 +1,7 @@
+To Open file need to open folder in vs code.
+
+yUML Wiki:
+https://github.com/jaime-olivares/yuml-diagram/wiki
+
+PlantUML:
+https://www.codeproject.com/Articles/1278703/UML-Made-Easy-with-PlantUML-VS-Code
