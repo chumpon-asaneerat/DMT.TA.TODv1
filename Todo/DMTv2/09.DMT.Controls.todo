@@ -1,11 +1,11 @@
 DMT.Controls:
     Common:
-        ☐ ImageButton.xaml ported.
-        ☐ ImageButton.xaml.cs ported.
-        ☐ MenuButton.xaml ported.
-        ☐ MenuButton.xaml.cs ported.
-        ☐ MenuGroupCaption.xaml ported.
-        ☐ MenuGroupCaption.xaml.cs ported.
+        ✘ ImageButton.xaml removed from TA.TOD.v1. @cancelled(20-09-30 11:44)
+        ✘ ImageButton.xaml.cs removed from TA.TOD.v1. @cancelled(20-09-30 11:44)
+        ✘ MenuButton.xaml removed from TA.TOD.v1. @cancelled(20-09-30 11:44)
+        ✘ MenuButton.xaml.cs removed from TA.TOD.v1. @cancelled(20-09-30 11:44)
+        ✘ MenuGroupCaption.xaml removed from TA.TOD.v1. @cancelled(20-09-30 11:44)
+        ✘ MenuGroupCaption.xaml.cs removed from TA.TOD.v1. @cancelled(20-09-30 11:44)
     Header:
         Elements:
             ✔ HeaderDateTime.xaml ported. @done(20-09-30 11:36)
@@ -58,7 +58,7 @@ DMT.Controls:
         ✔ TODStatusBar.xaml ported. @done(20-09-30 11:40)
         ✔ TODStatusBar.xaml.cs ported. @done(20-09-30 11:41)
     Styles:
-        ☐ ImageButtonStyle.xaml ported.
+        ✘ ImageButtonStyle.xaml ported. @cancelled(20-09-30 11:49)
     TA:
         Controls:
             Collector:
@@ -194,7 +194,7 @@ DMT.Controls:
                 ☐ PlazaStockSummaryWindow.xaml ported.
                 ☐ PlazaStockSummaryWindow.xaml.cs ported.
     Themes:
-        ☐ generic.xaml ported.
+        ✔ generic.xaml ported. @done(20-09-30 11:49)
     TOD:
         Controls:
             Revenue:

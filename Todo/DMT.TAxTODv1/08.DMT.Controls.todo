@@ -51,7 +51,7 @@ DMT.Controls:
         ✔ TODStatusBar.xaml checked. @done(20-09-30 11:40)
         ✔ TODStatusBar.xaml.cs checked. @done(20-09-30 11:40)
     Styles:
-        ☐ ImageButtonStyle.xaml checked.
+        ✘ ImageButtonStyle.xaml checked. @cancelled(20-09-30 11:49)
     TA:
         Controls:
             Collector:
@@ -186,89 +186,91 @@ DMT.Controls:
                 ☐ PlazaReceivedCreditWindow.xaml.cs checked.
                 ☐ PlazaStockSummaryWindow.xaml checked.
                 ☐ PlazaStockSummaryWindow.xaml.cs checked.
-    TOD:
-        Controls:
-            Revenue:
-                Entry:
-                    ☐ CouponDMTEntry.xaml checked.
-                    ☐ CouponDMTEntry.xaml.cs checked.
-                    ☐ CouponRevenueEntry.xaml checked.
-                    ☐ CouponRevenueEntry.xaml.cs checked.
-                    ☐ CouponUsageEntry.xaml checked.
-                    ☐ CouponUsageEntry.xaml.cs checked.
-                    ☐ EMVEntry.xaml checked.
-                    ☐ EMVEntry.xaml.cs checked.
-                    ☐ OtherEntry.xaml checked.
-                    ☐ OtherEntry.xaml.cs checked.
-                    ☐ QRCodeEntry.xaml checked.
-                    ☐ QRCodeEntry.xaml.cs checked.
-                    ☐ RevenueEntry.xaml checked.
-                    ☐ RevenueEntry.xaml.cs checked.
-                    ☐ TrafficEntry.xaml checked.
-                    ☐ TrafficEntry.xaml.cs checked.
-                View:
-                    ☐ EMVQRCodeView.xaml checked.
-                    ☐ EMVQRCodeView.xaml.cs checked.
-                    ☐ Lane2View.xaml checked.
-                    ☐ Lane2View.xaml.cs checked.
-                    ☐ LaneView.xaml checked.
-                    ☐ LaneView.xaml.cs checked.
-                    ☐ SelectLaneView.xaml checked.
-                    ☐ SelectLaneView.xaml.cs checked.
-            Shift:
-                View:
-                    ☐ LoginList2View.xaml checked.
-                    ☐ LoginList2View.xaml.cs checked.
-                    ☐ ShiftView.xaml checked.
-                    ☐ ShiftView.xaml.cs checked.
-                    ☐ SlipView.xaml checked.
-                    ☐ SlipView.xaml.cs checked.
-        Pages:
-            LoginList:
-                ☐ LoginListPage.xaml checked.
-                ☐ LoginListPage.xaml.cs checked.
-            Menu:
-                ☐ MainMenu.xaml checked.
-                ☐ MainMenu.xaml.cs checked.
-                ☐ ReportMenu.xaml checked.
-                ☐ ReportMenu.xaml.cs checked.
-            Reports:
-                ☐ DailyRevenueSummaryPreview.xaml checked.
-                ☐ DailyRevenueSummaryPreview.xaml.cs checked.
-                ☐ RevenueSlip.rdlc checked.
-                ☐ RevenueSlipNull.rdlc checked.
-                ☐ RevenueSlipPreview.xaml checked.
-                ☐ RevenueSlipPreview.xaml.cs checked.
-                ☐ RevenueSlipPreviewNull.xaml checked.
-                ☐ RevenueSlipPreviewNull.xaml.cs checked.
-                ☐ RevenueSlipSum.rdlc checked.
-            Revenue:
-                Collector:
-                    ☐ RevenueDateSelectionPage.xaml checked.
-                    ☐ RevenueDateSelectionPage.xaml.cs checked.
-                    ☐ RevenueEntryPage.xaml checked.
-                    ☐ RevenueEntryPage.xaml.cs checked.
-                Supervisor:
-                    ☐ SupervisorRevenueDateSelectionPage.xaml checked.
-                    ☐ SupervisorRevenueDateSelectionPage.xaml.cs checked.
-                    ☐ SupervisorRevenueEntryPage.xaml checked.
-                    ☐ SupervisorRevenueEntryPage.xaml.cs checked.
-            TollAdmin:
-                ☐ ChangeShiftPage.xaml checked.
-                ☐ ChangeShiftPage.xaml.cs checked.
-                ☐ EMVQRCodePage.xaml checked.
-                ☐ EMVQRCodePage.xaml.cs checked.
-        Windows:
-            MessageBox:
-                ☐ MessageBoxWindow.xaml checked.
-                ☐ MessageBoxWindow.xaml.cs checked.
-                ☐ MessageBoxYesNoWindow.xaml checked.
-                ☐ MessageBoxYesNoWindow.xaml.cs checked.
-            Reports:
-                ☐ RevenueSlipSearchWindow.xaml checked.
-                ☐ RevenueSlipSearchWindow.xaml.cs checked.
-                ☐ RevenueSummarySearchWindow.xaml checked.
-                ☐ RevenueSummarySearchWindow.xaml.cs checked.
-            UserShifts:
-                ☐ BOSWindow.xaml checked.
-                ☐ BOSWindow.xaml.cs checked.
+        Themes:
+            ✔ generic.xaml checked. @done(20-09-30 11:50)
+        TOD:
+            Controls:
+                Revenue:
+                    Entry:
+                        ☐ CouponDMTEntry.xaml checked.
+                        ☐ CouponDMTEntry.xaml.cs checked.
+                        ☐ CouponRevenueEntry.xaml checked.
+                        ☐ CouponRevenueEntry.xaml.cs checked.
+                        ☐ CouponUsageEntry.xaml checked.
+                        ☐ CouponUsageEntry.xaml.cs checked.
+                        ☐ EMVEntry.xaml checked.
+                        ☐ EMVEntry.xaml.cs checked.
+                        ☐ OtherEntry.xaml checked.
+                        ☐ OtherEntry.xaml.cs checked.
+                        ☐ QRCodeEntry.xaml checked.
+                        ☐ QRCodeEntry.xaml.cs checked.
+                        ☐ RevenueEntry.xaml checked.
+                        ☐ RevenueEntry.xaml.cs checked.
+                        ☐ TrafficEntry.xaml checked.
+                        ☐ TrafficEntry.xaml.cs checked.
+                    View:
+                        ☐ EMVQRCodeView.xaml checked.
+                        ☐ EMVQRCodeView.xaml.cs checked.
+                        ☐ Lane2View.xaml checked.
+                        ☐ Lane2View.xaml.cs checked.
+                        ☐ LaneView.xaml checked.
+                        ☐ LaneView.xaml.cs checked.
+                        ☐ SelectLaneView.xaml checked.
+                        ☐ SelectLaneView.xaml.cs checked.
+                Shift:
+                    View:
+                        ☐ LoginList2View.xaml checked.
+                        ☐ LoginList2View.xaml.cs checked.
+                        ☐ ShiftView.xaml checked.
+                        ☐ ShiftView.xaml.cs checked.
+                        ☐ SlipView.xaml checked.
+                        ☐ SlipView.xaml.cs checked.
+            Pages:
+                LoginList:
+                    ☐ LoginListPage.xaml checked.
+                    ☐ LoginListPage.xaml.cs checked.
+                Menu:
+                    ☐ MainMenu.xaml checked.
+                    ☐ MainMenu.xaml.cs checked.
+                    ☐ ReportMenu.xaml checked.
+                    ☐ ReportMenu.xaml.cs checked.
+                Reports:
+                    ☐ DailyRevenueSummaryPreview.xaml checked.
+                    ☐ DailyRevenueSummaryPreview.xaml.cs checked.
+                    ☐ RevenueSlip.rdlc checked.
+                    ☐ RevenueSlipNull.rdlc checked.
+                    ☐ RevenueSlipPreview.xaml checked.
+                    ☐ RevenueSlipPreview.xaml.cs checked.
+                    ☐ RevenueSlipPreviewNull.xaml checked.
+                    ☐ RevenueSlipPreviewNull.xaml.cs checked.
+                    ☐ RevenueSlipSum.rdlc checked.
+                Revenue:
+                    Collector:
+                        ☐ RevenueDateSelectionPage.xaml checked.
+                        ☐ RevenueDateSelectionPage.xaml.cs checked.
+                        ☐ RevenueEntryPage.xaml checked.
+                        ☐ RevenueEntryPage.xaml.cs checked.
+                    Supervisor:
+                        ☐ SupervisorRevenueDateSelectionPage.xaml checked.
+                        ☐ SupervisorRevenueDateSelectionPage.xaml.cs checked.
+                        ☐ SupervisorRevenueEntryPage.xaml checked.
+                        ☐ SupervisorRevenueEntryPage.xaml.cs checked.
+                TollAdmin:
+                    ☐ ChangeShiftPage.xaml checked.
+                    ☐ ChangeShiftPage.xaml.cs checked.
+                    ☐ EMVQRCodePage.xaml checked.
+                    ☐ EMVQRCodePage.xaml.cs checked.
+            Windows:
+                MessageBox:
+                    ☐ MessageBoxWindow.xaml checked.
+                    ☐ MessageBoxWindow.xaml.cs checked.
+                    ☐ MessageBoxYesNoWindow.xaml checked.
+                    ☐ MessageBoxYesNoWindow.xaml.cs checked.
+                Reports:
+                    ☐ RevenueSlipSearchWindow.xaml checked.
+                    ☐ RevenueSlipSearchWindow.xaml.cs checked.
+                    ☐ RevenueSummarySearchWindow.xaml checked.
+                    ☐ RevenueSummarySearchWindow.xaml.cs checked.
+                UserShifts:
+                    ☐ BOSWindow.xaml checked.
+                    ☐ BOSWindow.xaml.cs checked.
