@@ -1,11 +1,11 @@
 DMT.Models:
     Models:
         Common:
-            ☐ DMT.Create.cs
-            ☐ DMT.Search.cs
-            ☐ DMTModelBase.cs
-            ☐ NDbResult.cs
-            ☐ NQueries.cs
-            ☐ NSearch.cs
-            ☐ NTables.cs
-            ☐ Utils.cs
+            ✔ DMT.Create.cs checked. @done(20-09-30 07:09)
+            ✔ DMT.Search.cs checked. @done(20-09-30 07:09)
+            ✔ DMTModelBase.cs checked. @done(20-09-30 07:08)
+            ✔ NDbResult.cs (removed unused usings) checked. @done(20-09-30 07:08)
+            ✔ NQueries.cs checked. @done(20-09-30 07:07)
+            ✔ NSearch.cs checked. @done(20-09-30 07:06)
+            ✔ NTables.cs checked. @done(20-09-30 07:06)
+            ✔ Utils.cs checked. @done(20-09-30 07:00)
