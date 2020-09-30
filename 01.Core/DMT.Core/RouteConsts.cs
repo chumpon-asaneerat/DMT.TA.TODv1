@@ -794,5 +794,62 @@ namespace DMT
         #region Exchange
 
         #endregion
+
+        #region Notify - OK
+
+        /// <summary>
+        /// The Notify routes class.
+        /// </summary>
+        public static class Notify
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base Notify api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Notify";
+
+            #endregion
+
+            #region ActiveTSBChanged - OK
+
+            /// <summary>
+            /// Call when active TSB Changed.
+            /// </summary>
+            public static class ActiveTSBChanged
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "ActiveTSBChanged";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Notify.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region TSBShiftChanged - OK
+
+            /// <summary>
+            /// Call when TSB Shift Changed.
+            /// </summary>
+            public static class TSBShiftChanged
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "TSBShiftChanged";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Notify.Url + @"/" + Name;
+            }
+
+            #endregion
+        }
+
+        #endregion
     }
 }
