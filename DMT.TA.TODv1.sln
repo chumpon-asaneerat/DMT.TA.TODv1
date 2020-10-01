@@ -178,6 +178,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UML", "UML", "{C12ED4FB-E83
 		Todo\UML\state.yuml = Todo\UML\state.yuml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.RabbitMQ.Sample", "10.Tests\Wpf.RabbitMQ.Sample\Wpf.RabbitMQ.Sample.csproj", "{4ABA961F-CB90-465F-A23E-09DAE7B2A69E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -256,6 +258,10 @@ Global
 		{835688A1-A3A7-41BE-B85F-CCFA12D60A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{835688A1-A3A7-41BE-B85F-CCFA12D60A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{835688A1-A3A7-41BE-B85F-CCFA12D60A98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ABA961F-CB90-465F-A23E-09DAE7B2A69E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ABA961F-CB90-465F-A23E-09DAE7B2A69E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ABA961F-CB90-465F-A23E-09DAE7B2A69E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ABA961F-CB90-465F-A23E-09DAE7B2A69E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -290,6 +296,7 @@ Global
 		{906ED54D-C9C2-4227-ACAA-91813175CF0A} = {0C58C1CA-EBC8-4045-A278-CB16C8F92CE1}
 		{C4C72E21-C7BC-4D4C-992A-6C16149BA7F8} = {10C5A3B4-B415-4D49-A27D-BC7F232090A0}
 		{C12ED4FB-E831-46B3-9045-9D655AF2B0A0} = {10C5A3B4-B415-4D49-A27D-BC7F232090A0}
+		{4ABA961F-CB90-465F-A23E-09DAE7B2A69E} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
