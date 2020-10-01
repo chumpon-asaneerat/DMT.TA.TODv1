@@ -33,7 +33,8 @@ namespace DMT.TOD.Pages.TollAdmin
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private User _user = null;
 
         private List<LaneAttendance> _laneActivities = null;
@@ -55,9 +56,12 @@ namespace DMT.TOD.Pages.TollAdmin
             Shift shift = cbShifts.SelectedItem as Shift;
             if (null != shift)
             {
+                // TODO: Neeed Web Client
+                /*
                 TSBShift inst = ops.Shifts.Create(shift, _user).Value();
                 if (null != inst) shift.AssignTo(inst);
                 ops.Shifts.ChangeShift(inst);
+                */
             }
             // Main Menu Page
             var page = new Menu.MainMenu();
@@ -66,6 +70,8 @@ namespace DMT.TOD.Pages.TollAdmin
 
         private void RefreshLanes()
         {
+            // TODO: Neeed Web Client
+            /*
             // get all lanes information.
             _laneActivities = ops.Lanes.GetAllNotHasRevenueEntry().Value();
             if (null == _laneActivities || _laneActivities.Count <= 0)
@@ -77,6 +83,7 @@ namespace DMT.TOD.Pages.TollAdmin
             {
                 grid.Setup(_laneActivities);
             }
+            */
         }
 
         public void Setup(User user)
@@ -84,11 +91,14 @@ namespace DMT.TOD.Pages.TollAdmin
             _user = user;
             if (null != _user)
             {
+                // TODO: Neeed Web Client
+                /*
                 DateTime dt = DateTime.Now;
                 var shifts = ops.Shifts.GetShifts().Value();
                 cbShifts.ItemsSource = shifts;
                 // Load related lane data.
                 RefreshLanes();
+                */
             }
         }
     }

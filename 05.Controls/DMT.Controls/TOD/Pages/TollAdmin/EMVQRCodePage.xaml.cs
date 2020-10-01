@@ -31,7 +31,8 @@ namespace DMT.TOD.Pages.TollAdmin
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private User _user = null;
 
         #region Button Handlers

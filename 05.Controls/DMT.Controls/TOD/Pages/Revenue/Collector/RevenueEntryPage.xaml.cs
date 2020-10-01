@@ -31,7 +31,8 @@ namespace DMT.TOD.Pages.Revenue
 
         #endregion
 
-        private RevenueEntryManager _manager = null;
+        // TODO: Neeed Web Client
+        //private RevenueEntryManager _manager = null;
 
         #region Button Handlers
 
@@ -41,7 +42,8 @@ namespace DMT.TOD.Pages.Revenue
             var page = new Reports.RevenueSlipPreview();
             page.MenuPage = new Menu.MainMenu(); // Set MenPage to main menu.
             page.CallerPage = this; // Set CallerPage for click back.
-            page.Setup(_manager);
+            // TODO: Neeed Web Client
+            //page.Setup(_manager);
             PageContentManager.Instance.Current = page;
         }
 
@@ -54,8 +56,11 @@ namespace DMT.TOD.Pages.Revenue
 
         #endregion
 
-        public void Setup(RevenueEntryManager manager)
+        // TODO: Neeed Web Client
+        public void Setup()
+        //public void Setup(RevenueEntryManager manager)
         {
+            /*
             _manager = manager;
 
             if (null == _manager || null == _manager.UserShift ||
@@ -85,6 +90,7 @@ namespace DMT.TOD.Pages.Revenue
 
                 revEntry.DataContext = _manager.RevenueEntry;
             }
+            */
         }
     }
 }

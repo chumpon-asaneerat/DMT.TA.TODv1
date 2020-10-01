@@ -230,10 +230,10 @@ DMT.Controls:
                 ✔ LoginListPage.xaml checked. @done(20-10-02 02:24)
                 ✔ LoginListPage.xaml.cs checked. @done(20-10-02 02:24)
             Menu:
-                ☐ MainMenu.xaml checked.
-                ☐ MainMenu.xaml.cs checked.
-                ☐ ReportMenu.xaml checked.
-                ☐ ReportMenu.xaml.cs checked.
+                ✔ MainMenu.xaml checked. @done(20-10-02 02:41)
+                ✔ MainMenu.xaml.cs checked. @done(20-10-02 02:41)
+                ✔ ReportMenu.xaml checked. @done(20-10-02 02:41)
+                ✔ ReportMenu.xaml.cs checked. @done(20-10-02 02:41)
             Reports:
                 ✔ DailyRevenueSummaryPreview.xaml checked. @done(20-10-02 02:32)
                 ✔ DailyRevenueSummaryPreview.xaml.cs checked. @done(20-10-02 02:32)
@@ -246,20 +246,20 @@ DMT.Controls:
                 ✔ RevenueSlipSum.rdlc checked. @done(20-10-02 02:32)
             Revenue:
                 Collector:
-                    ☐ RevenueDateSelectionPage.xaml checked.
-                    ☐ RevenueDateSelectionPage.xaml.cs checked.
-                    ☐ RevenueEntryPage.xaml checked.
-                    ☐ RevenueEntryPage.xaml.cs checked.
+                    ✔ RevenueDateSelectionPage.xaml checked. @done(20-10-02 02:39)
+                    ✔ RevenueDateSelectionPage.xaml.cs checked. @done(20-10-02 02:39)
+                    ✔ RevenueEntryPage.xaml checked. @done(20-10-02 02:39)
+                    ✔ RevenueEntryPage.xaml.cs checked. @done(20-10-02 02:39)
                 Supervisor:
-                    ☐ SupervisorRevenueDateSelectionPage.xaml checked.
-                    ☐ SupervisorRevenueDateSelectionPage.xaml.cs checked.
-                    ☐ SupervisorRevenueEntryPage.xaml checked.
-                    ☐ SupervisorRevenueEntryPage.xaml.cs checked.
+                    ✔ SupervisorRevenueDateSelectionPage.xaml checked. @done(20-10-02 02:39)
+                    ✔ SupervisorRevenueDateSelectionPage.xaml.cs checked. @done(20-10-02 02:39)
+                    ✔ SupervisorRevenueEntryPage.xaml checked. @done(20-10-02 02:39)
+                    ✔ SupervisorRevenueEntryPage.xaml.cs checked. @done(20-10-02 02:39)
             TollAdmin:
-                ☐ ChangeShiftPage.xaml checked.
-                ☐ ChangeShiftPage.xaml.cs checked.
-                ☐ EMVQRCodePage.xaml checked.
-                ☐ EMVQRCodePage.xaml.cs checked.
+                ✔ ChangeShiftPage.xaml checked. @done(20-10-02 02:41)
+                ✔ ChangeShiftPage.xaml.cs checked. @done(20-10-02 02:41)
+                ✔ EMVQRCodePage.xaml checked. @done(20-10-02 02:41)
+                ✔ EMVQRCodePage.xaml.cs checked. @done(20-10-02 02:41)
         Windows:
             MessageBox:
                 ☐ MessageBoxWindow.xaml checked.

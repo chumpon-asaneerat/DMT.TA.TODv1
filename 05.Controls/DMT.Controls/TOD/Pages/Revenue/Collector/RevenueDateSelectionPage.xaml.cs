@@ -31,8 +31,9 @@ namespace DMT.TOD.Pages.Revenue
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-        private RevenueEntryManager _manager = new RevenueEntryManager();
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private RevenueEntryManager _manager = new RevenueEntryManager();
 
         #region Button Handlers
 
@@ -45,6 +46,8 @@ namespace DMT.TOD.Pages.Revenue
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Neeed Web Client
+            /*
             // Revenue Entry Page
             var page = new RevenueEntryPage();
             if (null == _manager || null == _manager.PlazaGroup)
@@ -111,6 +114,7 @@ namespace DMT.TOD.Pages.Revenue
             page.Setup(_manager);
 
             PageContentManager.Instance.Current = page;
+            */
         }
 
         #endregion
@@ -127,6 +131,8 @@ namespace DMT.TOD.Pages.Revenue
 
         private void LoadPlazaGroups()
         {
+            // TODO: Neeed Web Client
+            /*
             cbPlazas.ItemsSource = null;
 
             var plazaGroups = new List<PlazaGroup>();
@@ -142,10 +148,13 @@ namespace DMT.TOD.Pages.Revenue
             {
                 cbPlazas.SelectedIndex = 0;
             }
+            */
         }
 
         private void RefreshLanes()
         {
+            // TODO: Neeed Web Client
+            /*
             if (null != _manager && null != _manager.UserShift)
             {
                 // get selected plaza group
@@ -161,10 +170,13 @@ namespace DMT.TOD.Pages.Revenue
                     grid.Setup(_manager.Attendances);
                 }
             }
+            */
         }
 
         public void Setup(User user)
         {
+            // TODO: Neeed Web Client
+            /*
             // check and send offline revenue entries to server.
             RevenueEntryManager.SendRevnues();
 
@@ -186,6 +198,7 @@ namespace DMT.TOD.Pages.Revenue
                 // Load Lane BOJ/EOJ List.
                 RefreshLanes();
             }
+            */
         }
     }
 }

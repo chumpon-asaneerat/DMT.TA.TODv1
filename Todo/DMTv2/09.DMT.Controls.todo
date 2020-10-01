@@ -253,20 +253,20 @@ DMT.Controls:
                 ✔ RevenueSlipSum.rdlc ported. @done(20-10-02 02:32)
             Revenue:
                 Collector:
-                    ☐ RevenueDateSelectionPage.xaml ported.
-                    ☐ RevenueDateSelectionPage.xaml.cs ported.
-                    ☐ RevenueEntryPage.xaml ported.
-                    ☐ RevenueEntryPage.xaml.cs ported.
+                    ✔ RevenueDateSelectionPage.xaml ported. @done(20-10-02 02:39)
+                    ✔ RevenueDateSelectionPage.xaml.cs ported. @done(20-10-02 02:39)
+                    ✔ RevenueEntryPage.xaml ported. @done(20-10-02 02:39)
+                    ✔ RevenueEntryPage.xaml.cs ported. @done(20-10-02 02:39)
                 Supervisor:
-                    ☐ SupervisorRevenueDateSelectionPage.xaml ported.
-                    ☐ SupervisorRevenueDateSelectionPage.xaml.cs ported.
-                    ☐ SupervisorRevenueEntryPage.xaml ported.
-                    ☐ SupervisorRevenueEntryPage.xaml.cs ported.
+                    ✔ SupervisorRevenueDateSelectionPage.xaml ported. @done(20-10-02 02:39)
+                    ✔ SupervisorRevenueDateSelectionPage.xaml.cs ported. @done(20-10-02 02:39)
+                    ✔ SupervisorRevenueEntryPage.xaml ported. @done(20-10-02 02:39)
+                    ✔ SupervisorRevenueEntryPage.xaml.cs ported. @done(20-10-02 02:39)
             TollAdmin:
-                ☐ ChangeShiftPage.xaml ported.
-                ☐ ChangeShiftPage.xaml.cs ported.
-                ☐ EMVQRCodePage.xaml ported.
-                ☐ EMVQRCodePage.xaml.cs ported.
+                ✔ ChangeShiftPage.xaml ported. @done(20-10-02 02:41)
+                ✔ ChangeShiftPage.xaml.cs ported. @done(20-10-02 02:41)
+                ✔ EMVQRCodePage.xaml ported. @done(20-10-02 02:41)
+                ✔ EMVQRCodePage.xaml.cs ported. @done(20-10-02 02:41)
         Windows:
             MessageBox:
                 ☐ MessageBoxWindow.xaml ported.

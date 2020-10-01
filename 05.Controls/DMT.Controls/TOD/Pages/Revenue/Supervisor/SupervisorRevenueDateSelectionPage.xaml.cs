@@ -34,8 +34,9 @@ namespace DMT.TOD.Pages.Revenue
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-        private HistoricalRevenueEntryManager _manager = new HistoricalRevenueEntryManager();
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private HistoricalRevenueEntryManager _manager = new HistoricalRevenueEntryManager();
         private UserCreditBalance _selectUser = new UserCreditBalance();
 
         #region Button Handlers
@@ -54,6 +55,8 @@ namespace DMT.TOD.Pages.Revenue
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Neeed Web Client
+            /*
             if (null == _manager.User)
             {
                 DMT.Windows.MessageBoxWindow msg = new DMT.Windows.MessageBoxWindow();
@@ -105,6 +108,7 @@ namespace DMT.TOD.Pages.Revenue
             var page = new SupervisorRevenueEntryPage();
             page.Setup(_manager.Create());
             PageContentManager.Instance.Current = page;
+            */
         }
 
         #endregion
@@ -113,20 +117,24 @@ namespace DMT.TOD.Pages.Revenue
 
         private void cbPlazas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // TODO: Neeed Web Client
+            /*
             var plazaGroup = cbPlazas.SelectedItem as PlazaGroup;
             _manager.PlazaGroup = plazaGroup;
             _manager.CreateUserShift();
-
+            */
             // Load related lane data.
             RefreshLanes();
         }
 
         private void cbShifts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // TODO: Neeed Web Client
+            /*
             var shift = cbShifts.SelectedItem as Shift;
             _manager.Shift = shift;
             _manager.CreateUserShift();
-
+            */
             // Load related lane data.
             RefreshLanes();
         }
@@ -153,6 +161,8 @@ namespace DMT.TOD.Pages.Revenue
                 if (string.IsNullOrEmpty(userId)) return;
 
                 UserSearchManager.Instance.Title = "กรุณาเลือกพนักงานเก็บเงิน";
+                // TODO: Neeed Web Client
+                /*
                 _manager.User = UserSearchManager.Instance.SelectUser(userId, "CTC", "TC");
                 if (null != _manager.User)
                 {
@@ -162,17 +172,23 @@ namespace DMT.TOD.Pages.Revenue
 
                     RefreshLanes();
                 }
+                */
             }
         }
 
         private void LoadShifts()
         {
+            // TODO: Neeed Web Client
+            /*
             var shifts = ops.Shifts.GetShifts().Value();
             cbShifts.ItemsSource = shifts;
+            */
         }
 
         private void LoadPlazaGroups()
         {
+            // TODO: Neeed Web Client
+            /*
             cbPlazas.ItemsSource = null;
 
             var plazaGroups = new List<PlazaGroup>();
@@ -187,10 +203,13 @@ namespace DMT.TOD.Pages.Revenue
             {
                 cbPlazas.SelectedIndex = 0;
             }
+            */
         }
 
         private void RefreshLanes()
         {
+            // TODO: Neeed Web Client
+            /*
             // get selected plaza group
             _manager.PlazaGroup = cbPlazas.SelectedItem as PlazaGroup;
             _manager.CreateUserShift();
@@ -208,11 +227,13 @@ namespace DMT.TOD.Pages.Revenue
                     grid.Setup(_manager.Attendances);
                 }
             }
+            */
         }
 
         public void Setup(User supervisor)
         {
-            _manager.Supervisor = supervisor;
+            // TODO: Neeed Web Client
+            //_manager.Supervisor = supervisor;
 
             LoadShifts();
             LoadPlazaGroups();
