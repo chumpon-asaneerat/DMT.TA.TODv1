@@ -66,14 +66,14 @@ DMT.Controls:
                         ✔ CouponReturnView.xaml.cs checked. @done(20-10-02 01:13)
                 Credit:
                     View:
-                        ☐ CollectorCreditSummaryView.xaml checked.
-                        ☐ CollectorCreditSummaryView.xaml.cs checked.
+                        ✔ CollectorCreditSummaryView.xaml checked. @done(20-10-02 01:16)
+                        ✔ CollectorCreditSummaryView.xaml.cs checked. @done(20-10-02 01:16)
             Exchange:
                 View:
-                    ☐ AccountRequestExchangeView.xaml checked.
-                    ☐ AccountRequestExchangeView.xaml.cs checked.
-                    ☐ PlazaRequestExchangeView.xaml checked.
-                    ☐ PlazaRequestExchangeView.xaml.cs checked.
+                    ✔ AccountRequestExchangeView.xaml checked. @done(20-10-02 01:19)
+                    ✔ AccountRequestExchangeView.xaml.cs checked. @done(20-10-02 01:19)
+                    ✔ PlazaRequestExchangeView.xaml checked. @done(20-10-02 01:19)
+                    ✔ PlazaRequestExchangeView.xaml.cs checked. @done(20-10-02 01:19)
             History:
                 View:
                     ☐ PlazaFundHistoryView.xaml checked.

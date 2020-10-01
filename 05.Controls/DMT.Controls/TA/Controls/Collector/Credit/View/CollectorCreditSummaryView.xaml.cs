@@ -35,7 +35,8 @@ namespace DMT.TA.Controls.Collector.Credit.View
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private TSB _tsb = null;
 
         #region Loaded/Unloaded
@@ -106,8 +107,11 @@ namespace DMT.TA.Controls.Collector.Credit.View
             else
             {
                 // Change state after received bag and update to database.
+                // TODO: Neeed Web Client
+                /*
                 userCredit.State = UserCreditBalance.StateTypes.Received;
                 ops.Credits.SaveUserCreditBalance(userCredit);
+                */
             }
         }
 
@@ -115,9 +119,12 @@ namespace DMT.TA.Controls.Collector.Credit.View
 
         private void RefreshUserCredits()
         {
+            // TODO: Neeed Web Client
+            /*
             _tsb = ops.TSB.GetCurrent().Value();
             var userCredits = ops.Credits.GetActiveUserCreditBalances(_tsb).Value();
             listView.ItemsSource = userCredits;
+            */
         }
 
         public void Setup()

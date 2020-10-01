@@ -73,14 +73,14 @@ DMT.Controls:
                         ✔ CouponReturnView.xaml.cs ported. @done(20-10-02 01:14)
                 Credit:
                     View:
-                        ☐ CollectorCreditSummaryView.xaml ported.
-                        ☐ CollectorCreditSummaryView.xaml.cs ported.
+                        ✔ CollectorCreditSummaryView.xaml ported. @done(20-10-02 01:16)
+                        ✔ CollectorCreditSummaryView.xaml.cs ported. @done(20-10-02 01:16)
             Exchange:
                 View:
-                    ☐ AccountRequestExchangeView.xaml ported.
-                    ☐ AccountRequestExchangeView.xaml.cs ported.
-                    ☐ PlazaRequestExchangeView.xaml ported.
-                    ☐ PlazaRequestExchangeView.xaml.cs ported.
+                    ✔ AccountRequestExchangeView.xaml ported. @done(20-10-02 01:20)
+                    ✔ AccountRequestExchangeView.xaml.cs ported. @done(20-10-02 01:20)
+                    ✔ PlazaRequestExchangeView.xaml ported. @done(20-10-02 01:20)
+                    ✔ PlazaRequestExchangeView.xaml.cs ported. @done(20-10-02 01:20)
             History:
                 View:
                     ☐ PlazaFundHistoryView.xaml ported.

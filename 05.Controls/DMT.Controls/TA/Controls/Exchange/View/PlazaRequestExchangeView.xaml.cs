@@ -36,7 +36,8 @@ namespace DMT.TA.Controls.Exchange.View
 
         private bool _isEdit = false;
         private DateTime _lastupdated = DateTime.MinValue;
-        private TSBExchangeManager manager = null;
+        // TODO: Neeed Web Client
+        //private TSBExchangeManager manager = null;
 
         #region Loaded/Unloaded
 
@@ -56,6 +57,8 @@ namespace DMT.TA.Controls.Exchange.View
         {
             Button b = sender as Button;
             var group = b.CommandParameter as TSBExchangeGroup;
+            // TODO: Neeed Web Client
+            /*
             if (null != manager && null != group)
             {
                 if (null == group.Request) manager.LoadRequest(group);
@@ -102,12 +105,15 @@ namespace DMT.TA.Controls.Exchange.View
                 // Raise Event.
                 PlazaBalanceUpdated.Call(this, EventArgs.Empty);
             }
+            */
         }
 
         private void cmdApprove_Click(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
             TSBExchangeGroup group = b.CommandParameter as TSBExchangeGroup;
+            // TODO: Neeed Web Client
+            /*
             if (null != manager && null != group)
             {
                 // prepare approve.
@@ -119,12 +125,15 @@ namespace DMT.TA.Controls.Exchange.View
                 // Raise Event.
                 PlazaBalanceUpdated.Call(this, EventArgs.Empty);
             }
+            */
         }
 
         private void cmdExchange_Click(object sender, RoutedEventArgs e)
         {
             Button b = sender as Button;
             TSBExchangeGroup group = b.CommandParameter as TSBExchangeGroup;
+            // TODO: Neeed Web Client
+            /*
             if (null != manager && null != group)
             {
                 _isEdit = true;
@@ -147,6 +156,7 @@ namespace DMT.TA.Controls.Exchange.View
                 // Raise Event.
                 PlazaBalanceUpdated.Call(this, EventArgs.Empty);
             }
+            */
         }
 
         void Instance_OnTick(object sender, EventArgs e)
@@ -162,15 +172,23 @@ namespace DMT.TA.Controls.Exchange.View
 
         public void RefreshList()
         {
+            // TODO: Neeed Web Client
+            /*
             listView.ItemsSource = null;
             if (null == manager) return;
             listView.ItemsSource = manager.GetRequestApproves();
+            */
         }
 
-        public void Setup(TSBExchangeManager value)
+        // TODO: Neeed Web Client
+        public void Setup()
+        //public void Setup(TSBExchangeManager value)
         {
+            // TODO: Neeed Web Client
+            /*
             manager = value;
             RefreshList();
+            */
         }
 
         public event EventHandler PlazaBalanceUpdated;
