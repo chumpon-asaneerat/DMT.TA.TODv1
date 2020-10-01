@@ -1,0 +1,33 @@
+Operations:
+    Coupons (/Coupon):
+        TSB (/Coupon/TSB):
+            ☐ GetBalance (/Coupon/TSB/GetBalance) checked.
+            ☐ GetSummaries (/Coupon/TSB/GetSummaries) checked.
+            Transactions (/Coupon/TSB/Transactions):
+                ☐ GetTransactions (/Coupon/TSB/Transactions/Gets) checked.
+                ☐ SaveTransactions (/Coupon/TSB/Transactions/Save) checked.
+                ☐ SyncTransactions (/Coupon/TSB/Transactions/Sync) checked.
+        User (/Coupon/User):
+            Transactions (/Coupon/User/Transactions):
+    Credits (/Credit):
+        TSB (/Credit/TSB):
+        User (/Credit/User):
+    Exchanges:
+    Lanes:
+    Master:
+    Revenue:
+    Shifts (/Shift):
+        ☐ GetShifts (/Shift/Gets) checked.
+        ☐ SaveShift (/Shift/Seve) checked.
+        TSB (/Shift/TSB):
+            ☐ Create (/Shift/TSB/Create) checked.
+            ☐ GetCurrent(/Shift/TSB/Current)  checked.
+            ☐ ChangeShift (/Shift/TSB/Change) checked.
+        User (/Shift/User):
+            ☐ Create (/Shift/User/Create) checked.
+            ☐ GetCurrent (/Shift/User/Current) checked.
+            ☐ Begin (/Shift/User/Begin) checked.
+            ☐ End (/Shift/User/End) checked.
+            ☐ Gets (/Shift/User/Gets) (has filter all/close/unclose ) checked.
+    TSB:
+    Users:

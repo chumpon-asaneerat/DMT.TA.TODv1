@@ -13,6 +13,17 @@ Operations:
     Master:
     Revenue:
     Shifts:
+        ✔ GetShifts ported. @done(20-10-01 21:18)
+        ✔ SaveShift ported. @done(20-10-01 21:18)
+        ✔ Create ported. @done(20-10-01 21:18)
+        ✔ GetCurrent ported. @done(20-10-01 21:18)
+        ✔ ChangeShift ported. @done(20-10-01 21:18)
     TSB:
     Users:
     UserShifts:
+        ✔ Create ported. @done(20-10-01 21:00)
+        ✔ GetCurrent ported. @done(20-10-01 21:00)
+        ✔ BeginUserShift ported. @done(20-10-01 21:00)
+        ✔ EndUserShift ported. @done(20-10-01 21:00)
+        ✔ GetUserShifts ported. @done(20-10-01 21:00)
+        ✔ GetUnCloseUserShifts ported. @done(20-10-01 21:01)

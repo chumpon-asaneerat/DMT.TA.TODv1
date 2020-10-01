@@ -13,6 +13,16 @@ Operations:
     Master:
     Revenue:
     Shifts:
+        ✔ GetShifts checked. @done(20-10-01 21:17)
+        ✔ SaveShift checked. @done(20-10-01 21:17)
+        ✔ CreateTSBShift checked. @done(20-10-01 21:17)
+        ✔ GetCurrentTSBShift checked. @done(20-10-01 21:17)
+        ✔ ChangeShift checked. @done(20-10-01 21:17)
+        ✔ CreateUserShift checked. @done(20-10-01 21:17)
+        ✔ GetCurrentUserShift checked. @done(20-10-01 21:17)
+        ✔ BeginUserShift checked. @done(20-10-01 21:17)
+        ✔ EndUserShift checked. @done(20-10-01 21:17)
+        ✔ GetUserShifts checked. @done(20-10-01 21:17)
+        ✔ GetUnCloseUserShifts checked. @done(20-10-01 21:17)
     TSB:
     Users:
-    UserShifts:
