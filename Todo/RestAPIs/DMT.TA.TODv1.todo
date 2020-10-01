@@ -19,6 +19,12 @@ Operations:
         ✔ GetCurrencies checked. @done(20-10-01 21:59)
         ✔ GetCoupons checked. @done(20-10-01 21:59)
     Revenue:
+        ✔ CreatePlazaRevenue checked. @done(20-10-01 22:17)
+        ✔ SavePlazaRevenue checked. @done(20-10-01 22:17)
+        ✔ GetPlazaRevenue checked. @done(20-10-01 22:17)
+        ✔ SaveRevenue checked. @done(20-10-01 22:17)
+        ✔ GetRevenues checked. @done(20-10-01 22:17)
+        ✔ GetUnsendRevenues checked. @done(20-10-01 22:17)
     Shifts:
         ✔ GetShifts checked. @done(20-10-01 21:17)
         ✔ SaveShift checked. @done(20-10-01 21:17)

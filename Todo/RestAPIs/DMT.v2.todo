@@ -19,6 +19,12 @@ Operations:
         ✔ GetCurrencies ported. @done(20-10-01 21:59)
         ✔ GetCoupons ported. @done(20-10-01 21:59)
     Revenue:
+        ✔ CreateRevenueShift ported. @done(20-10-01 22:14)
+        ✔ SaveRevenueShift ported. @done(20-10-01 22:14)
+        ✔ GetRevenueShift ported. @done(20-10-01 22:14)
+        ✔ SaveRevenue ported. @done(20-10-01 22:15)
+        ✔ GetRevenues ported. @done(20-10-01 22:15)
+        ✔ GetUnsendRevenues ported. @done(20-10-01 22:15)
     Shifts:
         ✔ GetShifts ported. @done(20-10-01 21:18)
         ✔ SaveShift ported. @done(20-10-01 21:18)

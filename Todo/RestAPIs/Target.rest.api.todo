@@ -22,7 +22,14 @@ Operations:
     Master (/Master):
         ☐ GetCurrencies (/Master/Currency/Gets) checked.
         ☐ GetCoupons (/Master/Coupon/Gets) checked.
-    Revenue:
+    Revenue (/Revenue):
+        PlazaRevenue:
+            ☐ CreatePlazaRevenue (should be merge to Create Revenue instead) checked.
+            ☐ SavePlazaRevenue (should be merge to Save Revenue instead) checked.
+            ☐ GetPlazaRevenue (should be removed) checked.
+        ☐ CreateRevenue (/Revenue/Create) checked.
+        ☐ SaveRevenue (/Revenue/Save) checked.
+        ☐ GetRevenues (/Revenue/Gets) (has filter send/unsend to dc) checked.
     Shift (/Shift):
         ☐ GetShifts (/Shift/Gets) checked.
         ☐ SaveShift (/Shift/Seve) checked.
@@ -35,7 +42,7 @@ Operations:
             ☐ GetCurrent (/Shift/Users/Current) checked.
             ☐ Begin (/Shift/Users/Begin) checked.
             ☐ End (/Shift/Users/End) checked.
-            ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose ) checked.
+            ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose) checked.
     TSB:
     User (/User):
         Role (/User/Roles):
