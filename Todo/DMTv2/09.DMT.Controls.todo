@@ -34,13 +34,13 @@ DMT.Controls:
     SignIn:
         Common:
             ✔ SmartcardManager.cs ported. @done(20-10-01 20:30)
-            ☐ UserSearchManager.cs ported.
+            ✔ UserSearchManager.cs ported. @done(20-10-01 20:31)
         Pages:
             ☐ SignInPage.xaml ported.
             ☐ SignInPage.xaml.cs ported.
         Windows:
-            ☐ SignInWindow.xaml ported.
-            ☐ SignInWindow.xaml.cs ported.
+            ✔ SignInWindow.xaml ported. @done(20-10-01 20:39)
+            ✔ SignInWindow.xaml.cs ported. @done(20-10-01 20:39)
             ☐ UserFilterWindow.xaml ported.
             ☐ UserFilterWindow.xaml.cs ported.
     StatusBar:

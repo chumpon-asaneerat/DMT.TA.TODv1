@@ -32,8 +32,8 @@ DMT.Controls:
             ☐ SignInPage.xaml checked.
             ☐ SignInPage.xaml.cs checked.
         Windows:
-            ☐ SignInWindow.xaml checked.
-            ☐ SignInWindow.xaml.cs checked.
+            ✔ SignInWindow.xaml checked. @done(20-10-01 20:39)
+            ✔ SignInWindow.xaml.cs checked. @done(20-10-01 20:39)
             ☐ UserFilterWindow.xaml checked.
             ☐ UserFilterWindow.xaml.cs checked.
     StatusBar:
