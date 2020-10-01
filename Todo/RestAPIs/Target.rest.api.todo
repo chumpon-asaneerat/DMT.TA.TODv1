@@ -43,7 +43,22 @@ Operations:
             ☐ Begin (/Shift/Users/Begin) checked.
             ☐ End (/Shift/Users/End) checked.
             ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose) checked.
-    TSB:
+    TSB (/TSB):
+        TSB (/TSB/TSB):
+            ☐ GetTSBs (/TSB/TSB/Gets) checked.
+            ☐ GetCurrent (/TSB/TSB/Current) checked.
+            ☐ SetActive (/TSB/TSB/SetActive) checked.
+            ☐ SaveTSB (/TSB/TSB/Save) checked.
+        PlazaGroups (/TSB/PlazaGroups):
+            ☐ GetTSBPlazaGroups (/TSB/PlazaGroups/Gets) checked.
+            ☐ SavePlazaGroup (/TSB/PlazaGroups/Save) checked.
+        Plazas (/TSB/Plazas):
+            ☐ GetPlazaGroupPlazas (/TSB/Plazas/Gets) checked.
+            ☐ SavePlaza (/TSB/Plazas/Save) checked.
+        Lanes (/TSB/Lanes):
+            ☐ GetPlazaGroupLanes (/TSB/Lanes/Gets) checked.
+            ☐ GetPlazaLanes (/TSB/Lanes/Gets) checked.
+            ☐ SaveLane (/TSB/Lanes/Save) checked.
     User (/User):
         Role (/User/Roles):
             ☐ GetRoles (/User/Roles/Gets) checked.

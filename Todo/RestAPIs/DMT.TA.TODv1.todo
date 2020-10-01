@@ -38,6 +38,17 @@ Operations:
         ✔ GetUserShifts checked. @done(20-10-01 21:17)
         ✔ GetUnCloseUserShifts checked. @done(20-10-01 21:17)
     TSB:
+        ✔ GetTSBs checked. @done(20-10-01 22:39)
+        ✔ GetCurrent checked. @done(20-10-01 22:39)
+        ✔ SetActive checked. @done(20-10-01 22:39)
+        ✔ SaveTSB checked. @done(20-10-01 22:39)
+        ✔ GetTSBPlazaGroups checked. @done(20-10-01 22:39)
+        ✔ SavePlazaGroup checked. @done(20-10-01 22:39)
+        ✔ GetPlazaGroupPlazas checked. @done(20-10-01 22:39)
+        ✔ SavePlaza checked. @done(20-10-01 22:39)
+        ✔ GetPlazaGroupLanes checked. @done(20-10-01 22:39)
+        ✔ GetPlazaLanes checked. @done(20-10-01 22:39)
+        ✔ SaveLane checked. @done(20-10-01 22:39)
     Users:
         ✔ GetRole checked. @done(20-10-01 21:49)
         ✔ GetRoles checked. @done(20-10-01 21:49)
