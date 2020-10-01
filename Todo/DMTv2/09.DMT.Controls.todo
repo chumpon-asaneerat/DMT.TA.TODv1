@@ -130,10 +130,10 @@ DMT.Controls:
                 ☐ PlazaReturnHistoryPage.xaml ported.
                 ☐ PlazaReturnHistoryPage.xaml.cs ported.
             Menu:
-                ☐ MainMenu.xaml ported.
-                ☐ MainMenu.xaml.cs ported.
-                ☐ ReportMenu.xaml ported.
-                ☐ ReportMenu.xaml.cs ported.
+                ✔ MainMenu.xaml ported. @done(20-10-02 01:04)
+                ✔ MainMenu.xaml.cs ported. @done(20-10-02 01:04)
+                ✔ ReportMenu.xaml ported. @done(20-10-02 01:04)
+                ✔ ReportMenu.xaml.cs ported. @done(20-10-02 01:04)
             Plaza:
                 ☐ PlazaAllCouponPage.xaml ported.
                 ☐ PlazaAllCouponPage.xaml.cs ported.
@@ -150,8 +150,8 @@ DMT.Controls:
                 ☐ CollectorFundSummaryRep.rdlc ported.
                 ☐ CollectorFundSummaryReportPage.xaml ported.
                 ☐ CollectorFundSummaryReportPage.xaml.cs ported.
-                ☐ CollectorFundSummaryReportPageOld.xaml ported.
-                ☐ CollectorFundSummaryReportPageOld.xaml.cs ported.
+                ✘ CollectorFundSummaryReportPageOld.xaml removed. @cancelled(20-10-02 01:04)
+                ✘ CollectorFundSummaryReportPageOld.xaml.cs removed. @cancelled(20-10-02 01:04)
                 ☐ CouponSalesReceiptRep.rdlc ported.
                 ☐ CouponSalesReceiptReportPage.xaml ported.
                 ☐ CouponSalesReceiptReportPage.xaml.cs ported.

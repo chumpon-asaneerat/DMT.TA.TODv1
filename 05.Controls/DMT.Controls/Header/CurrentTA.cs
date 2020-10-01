@@ -16,12 +16,9 @@ namespace DMT.Controls
 {
     public static class TAApp
     {
-        // TODO: Refactor
-        /*
         public static class User
         {
             public static Models.User Current { get; set; }
         }
-        */
     }
 }

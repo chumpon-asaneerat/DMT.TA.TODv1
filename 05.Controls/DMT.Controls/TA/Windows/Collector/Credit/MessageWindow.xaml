@@ -1,0 +1,109 @@
+﻿<Window x:Class="DMT.TA.Windows.Collector.Credit.MessageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="" 
+        ResizeMode="NoResize" 
+        ShowInTaskbar="False" 
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Center" 
+        WindowStartupLocation="CenterOwner"
+        Height="250" 
+        Width="700">
+    <Grid Margin="15">
+        <DockPanel>
+            <Border DockPanel.Dock="Top">
+                <TextBlock Margin="2" FontSize="35" FontWeight="Bold" Foreground="Red" 
+                               DockPanel.Dock="Left" 
+                               TextAlignment="Center"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Text="ยืนยันการคืนเงิน ยืมทอน"/>
+            </Border>
+            <DockPanel DockPanel.Dock="Bottom">
+                <Button x:Name="cmdOK"
+                            DockPanel.Dock="Right"
+                        Foreground="White"
+                        HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch"
+                            Height="50"
+                            Width="220"
+                        Click="cmdOK_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/DMT.Controls;component/Images/Button/Button5.png"/>
+                    </Button.Background>
+                    <DockPanel>
+                        <Grid Width="5"></Grid>
+                        <Image DockPanel.Dock="Left" 
+                               Height="50"
+                               Width="50"
+                               Source="/DMT.Controls;component/Images/Button/OK2.png" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                        <StackPanel Orientation="Vertical"
+                                    VerticalAlignment="Center">
+                            <TextBlock FontSize="20" 
+                                       HorizontalAlignment="Center"
+                                       Text="ยืนยัน"
+                                       FontWeight="Bold"
+                                       TextAlignment="Center"
+                                       TextWrapping="Wrap">
+                            </TextBlock>
+                            <Grid Height="10" />
+                        </StackPanel>
+                    </DockPanel>
+                </Button>
+                <Button x:Name="cmdCancel"
+                            DockPanel.Dock="Left"
+                        Foreground="White"
+                        HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Stretch"
+                            VerticalContentAlignment="Stretch"
+                            Height="50"
+                            Width="220"
+                        Click="cmdCancel_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/DMT.Controls;component/Images/Button/Button5.png"/>
+                    </Button.Background>
+                    <DockPanel>
+                        <Grid Width="5"></Grid>
+                        <Image DockPanel.Dock="Left" 
+                               Height="50"
+                               Width="50"
+                               Source="/DMT.Controls;component/Images/Button/Cancel2.png" 
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center" />
+                        <StackPanel Orientation="Vertical"
+                                    VerticalAlignment="Center">
+                            <TextBlock FontSize="20" 
+                                       HorizontalAlignment="Center"
+                                       Text="ยกเลิก"
+                                       FontWeight="Bold"
+                                       TextAlignment="Center"
+                                       TextWrapping="Wrap">
+                            </TextBlock>
+                            <Grid Height="10" />
+                        </StackPanel>
+                    </DockPanel>
+                </Button>
+                <Grid />
+            </DockPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Name="txtDescription" Margin="2" FontSize="35" FontWeight="Bold" Foreground="Red" 
+                               DockPanel.Dock="Top" 
+                               TextAlignment="Center"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Top"/>
+
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

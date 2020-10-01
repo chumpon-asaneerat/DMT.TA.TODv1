@@ -1,0 +1,311 @@
+﻿<Window x:Class="DMT.TA.Windows.Coupon.CouponReturnWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctrl="clr-namespace:DMT.Controls"
+        Title=""
+        Width="1100"
+        Height="580"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner"
+        Background="DimGray"
+        mc:Ignorable="d">
+    <Grid Margin="15">
+        <DockPanel>
+            <DockPanel Height="60"
+                       Margin="5"
+                       DockPanel.Dock="Bottom">
+                <Grid Width="5" DockPanel.Dock="Right" />
+                <Button x:Name="cmdSave"
+                        Width="220"
+                        Height="50"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch"
+                        DockPanel.Dock="Right"
+                        Foreground="White"
+                        Click="cmdSave_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/DMT.Controls;component/Images/Button/Button5.png" />
+                    </Button.Background>
+                    <DockPanel>
+                        <Grid Width="5" />
+                        <Image Width="50"
+                               Height="50"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               DockPanel.Dock="Left"
+                               Source="/DMT.Controls;component/Images/Button/Save2.png" />
+                        <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                            <TextBlock HorizontalAlignment="Center"
+                                       FontSize="20"
+                                       Text="บันทึก"
+                                       FontWeight="Bold"
+                                       TextAlignment="Center"
+                                       TextWrapping="Wrap" />
+                            <Grid Height="10" />
+                        </StackPanel>
+                    </DockPanel>
+                </Button>
+                <Grid Width="5" DockPanel.Dock="Left" />
+                <Button x:Name="cmdCancel"
+                        Width="220"
+                        Height="50"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch"
+                        DockPanel.Dock="Left"
+                        Foreground="White"
+                        Click="cmdCancel_Click">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/DMT.Controls;component/Images/Button/Button5.png" />
+                    </Button.Background>
+                    <DockPanel>
+                        <Grid Width="5" />
+                        <Image Width="50"
+                               Height="50"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               DockPanel.Dock="Left"
+                               Source="/DMT.Controls;component/Images/Button/Cancel2.png" />
+                        <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                            <TextBlock HorizontalAlignment="Center"
+                                       FontSize="20"
+                                       Text="ยกเลิก"
+                                       FontWeight="Bold"
+                                       TextAlignment="Center"
+                                       TextWrapping="Wrap" />
+                            <Grid Height="10" />
+                        </StackPanel>
+                    </DockPanel>
+                </Button>
+                <Grid />
+            </DockPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="7.2" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid Grid.ColumnSpan="9" Margin="10,0,10.2,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10" />
+                        <ColumnDefinition Width="*" />
+
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="10" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Column="1"
+                                Grid.ColumnSpan="3"
+                                Orientation="Horizontal">
+                        <Label x:Name="txtUser"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               Content=""
+                               FontSize="18"
+                               Foreground="White"
+                               FontWeight="Normal"
+                               FontFamily="Tahoma" />
+                        <TextBlock x:Name="txtUserId"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="18"
+                                   Foreground="White"
+                                   FontWeight="Normal"
+                                   FontFamily="Tahoma"
+                                   Text="" />
+                    </StackPanel>
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"
+                           Width="126"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="คูปอง 35 บาท"
+                           FontSize="18"
+                           Foreground="White"
+                           FontWeight="Normal"
+                           FontFamily="Tahoma" />
+
+                    <Label Grid.Row="1"
+                           Grid.Column="3"
+                           Grid.ColumnSpan="3"
+                           Width="126"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Content="คูปอง 80 บาท"
+                           FontSize="18"
+                           Foreground="White"
+                           FontWeight="Normal"
+                           FontFamily="Tahoma" />
+                </Grid>
+                <ListView x:Name="lvUserSold35"
+                          Grid.Row="1"
+                          Grid.RowSpan="2"
+                          Grid.ColumnSpan="2"
+                          Margin="10,7,0.4,0.4"
+                          FontSize="18"
+                          SelectionMode="Extended"
+                          ItemsSource="{Binding}">
+                    <ListView.View>
+                        <GridView>
+
+                            <GridViewColumn Width="200"
+                                            Header="รายการคูปองที่ขายได้"
+                                            DisplayMemberBinding="{Binding Path=CouponId}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <ListView x:Name="lvUserOnHand35"
+                          Grid.Row="1"
+                          Grid.RowSpan="2"
+                          Grid.Column="2"
+                          Grid.ColumnSpan="2"
+                          Margin="79.6,7,0.4,0.4"
+                          SelectionMode="Extended"
+                          FontSize="18"
+                          ItemsSource="{Binding}">
+                    <ListView.View>
+                        <GridView>
+
+                            <GridViewColumn Width="200"
+                                            Header="รายการคูปองที่รับคืน"
+                                            DisplayMemberBinding="{Binding Path=CouponId}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button Name="btnNext35"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Width="55"
+                        Height="55"
+                        Margin="9.6,117.8,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Foreground="{x:Null}"
+                        Click="btnNext35_Click">
+                    <Image Width="50"
+                           Height="50"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Source="/DMT.Controls;component/Images/Button/next.png" />
+                </Button>
+                <Button Name="btnBack35"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                        Width="55"
+                        Height="55"
+                        Margin="9.6,217.8,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Foreground="{x:Null}"
+                        Click="btnBack35_Click">
+                    <Image Width="50"
+                           Height="50"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Source="/DMT.Controls;component/Images/Button/back.png" />
+                </Button>
+                <ListView x:Name="lvUserSold80"
+                          Grid.Row="1"
+                          Grid.RowSpan="2"
+                          Grid.Column="5"
+                          Grid.ColumnSpan="2"
+                          Margin="0.2,7,79.8,0.4"
+                          SelectionMode="Extended"
+                          FontSize="18"
+                          ItemsSource="{Binding}">
+                    <ListView.View>
+                        <GridView>
+
+                            <GridViewColumn Width="200"
+                                            Header="รายการคูปองที่ขายได้"
+                                            DisplayMemberBinding="{Binding Path=CouponId}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <ListView x:Name="lvUserOnHand80"
+                          Grid.Row="1"
+                          Grid.RowSpan="2"
+                          Grid.Column="7"
+                          Grid.ColumnSpan="2"
+                          Margin="0.2,7,10.2,0.4"
+                          SelectionMode="Extended"
+                          FontSize="18"
+                          ItemsSource="{Binding}">
+                    <ListView.View>
+                        <GridView>
+
+                            <GridViewColumn Width="200"
+                                            Header="รายการคูปองที่รับคืน"
+                                            DisplayMemberBinding="{Binding Path=CouponId}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button Name="btnNext80"
+                        Grid.Row="2"
+                        Grid.Column="6"
+                        Width="55"
+                        Height="55"
+                        Margin="10.2,117.8,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Foreground="{x:Null}"
+                        Click="btnNext80_Click">
+                    <Image Width="50"
+                           Height="50"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Source="/DMT.Controls;component/Images/Button/next.png" />
+                </Button>
+                <Button Name="btnBack80"
+                        Grid.Row="2"
+                        Grid.Column="6"
+                        Width="55"
+                        Height="55"
+                        Margin="10.2,217.8,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Foreground="{x:Null}"
+                        Click="btnBack80_Click">
+                    <Image Width="50"
+                           Height="50"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Source="/DMT.Controls;component/Images/Button/back.png" />
+                </Button>
+
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

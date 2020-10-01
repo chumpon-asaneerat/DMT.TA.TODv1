@@ -123,10 +123,10 @@ DMT.Controls:
                 ☐ PlazaReturnHistoryPage.xaml checked.
                 ☐ PlazaReturnHistoryPage.xaml.cs checked.
             Menu:
-                ☐ MainMenu.xaml checked.
-                ☐ MainMenu.xaml.cs checked.
-                ☐ ReportMenu.xaml checked.
-                ☐ ReportMenu.xaml.cs checked.
+                ✔ MainMenu.xaml checked. @done(20-10-02 01:03)
+                ✔ MainMenu.xaml.cs checked. @done(20-10-02 01:03)
+                ✔ ReportMenu.xaml checked. @done(20-10-02 01:03)
+                ✔ ReportMenu.xaml.cs checked. @done(20-10-02 01:03)
             Plaza:
                 ☐ PlazaAllCouponPage.xaml checked.
                 ☐ PlazaAllCouponPage.xaml.cs checked.
