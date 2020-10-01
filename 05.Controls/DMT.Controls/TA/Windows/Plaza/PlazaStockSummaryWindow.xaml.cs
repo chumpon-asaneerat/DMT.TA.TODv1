@@ -33,7 +33,8 @@ namespace DMT.TA.Windows.Plaza
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private TSB _tsb = null;
 
         #region Button Handlers
@@ -47,6 +48,8 @@ namespace DMT.TA.Windows.Plaza
 
         public void RefreshPlazaInfo()
         {
+            // TODO: Neeed Web Client
+            /*
             _tsb = ops.TSB.GetCurrent().Value();
             var tsbCredit = ops.Credits.GetTSBBalance(_tsb).Value();
 
@@ -74,6 +77,7 @@ namespace DMT.TA.Windows.Plaza
                 txtMsg.Text = tsbCredit.BHTTotal.ToString("#,##0");
             else
                 txtMsg.Text = "0";
+            */
         }
     }
 }

@@ -173,19 +173,19 @@ DMT.Controls:
                 ✔ PlazaCreditUpdateExchangeWindow.xaml checked. @done(20-10-02 02:06)
                 ✔ PlazaCreditUpdateExchangeWindow.xaml.cs checked. @done(20-10-02 02:06)
             MessageBox:
-                ☐ MessageBoxYesNoRed2Window.xaml checked.
-                ☐ MessageBoxYesNoRed2Window.xaml.cs checked.
-                ☐ MessageBoxYesNoRed3Window.xaml checked.
-                ☐ MessageBoxYesNoRed3Window.xaml.cs checked.
+                ✔ MessageBoxYesNoRed2Window.xaml checked. @done(20-10-02 02:11)
+                ✔ MessageBoxYesNoRed2Window.xaml.cs checked. @done(20-10-02 02:11)
+                ✔ MessageBoxYesNoRed3Window.xaml checked. @done(20-10-02 02:11)
+                ✔ MessageBoxYesNoRed3Window.xaml.cs checked. @done(20-10-02 02:11)
                 ✘ MessageBoxYesNoRedWindow - Copy.xaml removed. @cancelled(20-10-02 02:07)
                 ✘ MessageBoxYesNoRedWindow - Copy.xaml.cs removed. @cancelled(20-10-02 02:07)
             Plaza:
-                ☐ PlazaInternalCreditExchangeWindow.xaml checked.
-                ☐ PlazaInternalCreditExchangeWindow.xaml.cs checked.
-                ☐ PlazaReceivedCreditWindow.xaml checked.
-                ☐ PlazaReceivedCreditWindow.xaml.cs checked.
-                ☐ PlazaStockSummaryWindow.xaml checked.
-                ☐ PlazaStockSummaryWindow.xaml.cs checked.
+                ✔ PlazaInternalCreditExchangeWindow.xaml checked. @done(20-10-02 02:11)
+                ✔ PlazaInternalCreditExchangeWindow.xaml.cs checked. @done(20-10-02 02:11)
+                ✔ PlazaReceivedCreditWindow.xaml checked. @done(20-10-02 02:11)
+                ✔ PlazaReceivedCreditWindow.xaml.cs checked. @done(20-10-02 02:11)
+                ✔ PlazaStockSummaryWindow.xaml checked. @done(20-10-02 02:11)
+                ✔ PlazaStockSummaryWindow.xaml.cs checked. @done(20-10-02 02:11)
     Themes:
         ✔ generic.xaml checked. @done(20-09-30 11:50)
     TOD:

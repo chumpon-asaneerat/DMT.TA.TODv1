@@ -180,19 +180,19 @@ DMT.Controls:
                 ✔ PlazaCreditUpdateExchangeWindow.xaml ported. @done(20-10-02 02:06)
                 ✔ PlazaCreditUpdateExchangeWindow.xaml.cs ported. @done(20-10-02 02:06)
             MessageBox:
-                ☐ MessageBoxYesNoRed2Window.xaml ported.
-                ☐ MessageBoxYesNoRed2Window.xaml.cs ported.
-                ☐ MessageBoxYesNoRed3Window.xaml ported.
-                ☐ MessageBoxYesNoRed3Window.xaml.cs ported.
+                ✔ MessageBoxYesNoRed2Window.xaml ported. @done(20-10-02 02:11)
+                ✔ MessageBoxYesNoRed2Window.xaml.cs ported. @done(20-10-02 02:11)
+                ✔ MessageBoxYesNoRed3Window.xaml ported. @done(20-10-02 02:11)
+                ✔ MessageBoxYesNoRed3Window.xaml.cs ported. @done(20-10-02 02:11)
                 ✘ MessageBoxYesNoRedWindow - Copy.xaml removed. @cancelled(20-10-02 02:07)
                 ✘ MessageBoxYesNoRedWindow - Copy.xaml.cs removed. @cancelled(20-10-02 02:07)
             Plaza:
-                ☐ PlazaInternalCreditExchangeWindow.xaml ported.
-                ☐ PlazaInternalCreditExchangeWindow.xaml.cs ported.
-                ☐ PlazaReceivedCreditWindow.xaml ported.
-                ☐ PlazaReceivedCreditWindow.xaml.cs ported.
-                ☐ PlazaStockSummaryWindow.xaml ported.
-                ☐ PlazaStockSummaryWindow.xaml.cs ported.
+                ✔ PlazaInternalCreditExchangeWindow.xaml ported. @done(20-10-02 02:11)
+                ✔ PlazaInternalCreditExchangeWindow.xaml.cs ported. @done(20-10-02 02:11)
+                ✔ PlazaReceivedCreditWindow.xaml ported. @done(20-10-02 02:11)
+                ✔ PlazaReceivedCreditWindow.xaml.cs ported. @done(20-10-02 02:11)
+                ✔ PlazaStockSummaryWindow.xaml ported. @done(20-10-02 02:11)
+                ✔ PlazaStockSummaryWindow.xaml.cs ported. @done(20-10-02 02:11)
     Themes:
         ✔ generic.xaml ported. @done(20-09-30 11:49)
     TOD:

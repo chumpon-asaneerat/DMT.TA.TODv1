@@ -41,8 +41,9 @@ namespace DMT.TA.Windows.Plaza
 
         #region Internal Variables
 
-        private TSBReplaceCreditManager _manager = new TSBReplaceCreditManager();
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private TSBReplaceCreditManager _manager = new TSBReplaceCreditManager();
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
 
         #endregion
 
@@ -50,6 +51,8 @@ namespace DMT.TA.Windows.Plaza
 
         private void cmdOK_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Neeed Web Client
+            /*
             if (null != _manager)
             {
                 if (!_manager.IsEquals)
@@ -60,6 +63,7 @@ namespace DMT.TA.Windows.Plaza
                 }
                 _manager.Save();
             }
+            */
             this.DialogResult = true;
         }
 
@@ -72,6 +76,8 @@ namespace DMT.TA.Windows.Plaza
 
         public void Setup()
         {
+            // TODO: Neeed Web Client
+            /*
             // Set TSB.
             _manager.TSB = ops.TSB.GetCurrent().Value();
             // Set Current Supervisor
@@ -82,6 +88,7 @@ namespace DMT.TA.Windows.Plaza
             // Set description (Replace in)
             _manager.ReplaceIn.Description = "เงินขอแลกเข้า";
             this.exchangeEntry.DataContext = _manager.ReplaceIn;
+            */
         }
     }
 }
