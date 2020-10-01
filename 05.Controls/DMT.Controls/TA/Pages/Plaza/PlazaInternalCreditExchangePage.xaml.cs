@@ -34,8 +34,9 @@ namespace DMT.TA.Pages.Plaza
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private TSB _tsb = null;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
 
         #region Loaded/Unloaded
 
@@ -92,6 +93,8 @@ namespace DMT.TA.Pages.Plaza
         private void RefreshPlazaInfo()
         {
             this.DataContext = null;
+            // TODO: Neeed Web Client
+            /*
             _tsb = ops.TSB.GetCurrent().Value();
             var tsbCredit = ops.Credits.GetTSBBalance(_tsb).Value();
             if (null != tsbCredit)
@@ -105,13 +108,17 @@ namespace DMT.TA.Pages.Plaza
                 loanEntry.IsEnabled = false;
                 loanEntry.DataContext = tsbCredit;
             }
+            */
         }
 
         private void RefreshList()
         {
+            // TODO: Neeed Web Client
+            /*
             this.grid.Setup(null);
             var items = ops.Credits.GetReplaceTSBCreditTransaction(dtDate.SelectedDate.Value).Value();
             this.grid.Setup(items);
+            */
         }
     }
 }

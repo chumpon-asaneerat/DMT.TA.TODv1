@@ -31,9 +31,10 @@ namespace DMT.TA.Pages.Reports
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-        private TSBCouponManager _manager = null;
         private TSBCouponSummary _summary = null;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private TSBCouponManager _manager = null;
 
         #region Button Handlers
 
@@ -71,6 +72,8 @@ namespace DMT.TA.Pages.Reports
             List<TSBCouponSummary> items = new List<TSBCouponSummary>();
             if (null != _summary) items.Add(_summary);
 
+            // TODO: Neeed Web Client
+            /*
             // load C35 items.
             List<TSBCouponTransaction> c35Items = new List<TSBCouponTransaction>();
             var c35coupons = (null != _manager)  ? _manager.C35TSBSolds : null;
@@ -110,12 +113,16 @@ namespace DMT.TA.Pages.Reports
             // Supervisor (Current User)
             string supervisorFullName = DMT.Controls.TAApp.User.Current.FullNameTH;
             inst.Parameters.Add(RdlcReportParameter.Create("supervisorFullName", supervisorFullName));
-
+            */
             return inst;
         }
 
-        public void Setup(TSBCouponManager manager)
+        // TODO: Neeed Web Client
+        public void Setup()
+        //public void Setup(TSBCouponManager manager)
         {
+            // TODO: Neeed Web Client
+            /*
             _manager = manager;
             if (null != _manager) 
             {
@@ -137,6 +144,7 @@ namespace DMT.TA.Pages.Reports
                     this.rptViewer.LoadReport(model);
                 }
             }
+            */
         }
     }
 }

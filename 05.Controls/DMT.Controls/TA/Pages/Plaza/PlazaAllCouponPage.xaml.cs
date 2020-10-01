@@ -37,8 +37,9 @@ namespace DMT.TA.Pages.Plaza
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private User _user = null;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
 
         #region Button Handlers
 
@@ -59,12 +60,15 @@ namespace DMT.TA.Pages.Plaza
 
         public void RefreshPlazaInfo()
         {
+            // TODO: Neeed Web Client
+            /*
             var tsb = ops.TSB.GetCurrent().Value();
             var tsbCredit = ops.Credits.GetTSBBalance(tsb).Value();
 
             this.DataContext = tsbCredit;
             tsbCredit.Description = "ยืมเงิน";
             tsbCredit.HasRemark = false;
+            */
         }
 
         private void cmdSearch_Click(object sender, RoutedEventArgs e)

@@ -31,10 +31,11 @@ namespace DMT.TA.Pages.Reports
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-        private TSBCouponManager manager = new TSBCouponManager();
         private User _user = null;
         private TSBCouponSummary _summary = null;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private TSBCouponManager manager = new TSBCouponManager();
 
         #region Button Handlers
 
@@ -73,6 +74,8 @@ namespace DMT.TA.Pages.Reports
             List<TSBCouponSummary> items = new List<TSBCouponSummary>();
             if (null != _summary) items.Add(_summary);
 
+            // TODO: Neeed Web Client
+            /*
             // gets coupon list by type.
             manager.User = _user;
             manager.Refresh(); // reload data.
@@ -85,7 +88,7 @@ namespace DMT.TA.Pages.Reports
             List<TSBCouponTransaction> c80Items = new List<TSBCouponTransaction>();
             var c80coupons = manager.C80Users;
             if (null != c80coupons) c80Items.AddRange(c80coupons);
-
+            
             // assign new data source (main for header)
             RdlcReportDataSource mainDS = new RdlcReportDataSource();
             mainDS.Name = "main"; // the datasource name in the rdlc report.
@@ -116,7 +119,7 @@ namespace DMT.TA.Pages.Reports
             // Supervisor (Current User)
             string supervisorFullName = DMT.Controls.TAApp.User.Current.FullNameTH;
             inst.Parameters.Add(RdlcReportParameter.Create("supervisorFullName", supervisorFullName));
-
+            */
             return inst;
         }
 

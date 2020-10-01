@@ -135,26 +135,26 @@ DMT.Controls:
                 ✔ ReportMenu.xaml ported. @done(20-10-02 01:04)
                 ✔ ReportMenu.xaml.cs ported. @done(20-10-02 01:04)
             Plaza:
-                ☐ PlazaAllCouponPage.xaml ported.
-                ☐ PlazaAllCouponPage.xaml.cs ported.
-                ☐ PlazaCouponReceivedReturnPage.xaml ported.
-                ☐ PlazaCouponReceivedReturnPage.xaml.cs ported.
-                ☐ PlazaInternalCreditExchangePage.xaml ported.
-                ☐ PlazaInternalCreditExchangePage.xaml.cs ported.
-                ☐ PlazaReceivedReturnPage.xaml ported.
-                ☐ PlazaReceivedReturnPage.xaml.cs ported.
+                ✔ PlazaAllCouponPage.xaml ported. @done(20-10-02 01:48)
+                ✔ PlazaAllCouponPage.xaml.cs ported. @done(20-10-02 01:48)
+                ✔ PlazaCouponReceivedReturnPage.xaml ported. @done(20-10-02 01:48)
+                ✔ PlazaCouponReceivedReturnPage.xaml.cs ported. @done(20-10-02 01:48)
+                ✔ PlazaInternalCreditExchangePage.xaml ported. @done(20-10-02 01:48)
+                ✔ PlazaInternalCreditExchangePage.xaml.cs ported. @done(20-10-02 01:48)
+                ✔ PlazaReceivedReturnPage.xaml ported. @done(20-10-02 01:48)
+                ✔ PlazaReceivedReturnPage.xaml.cs ported. @done(20-10-02 01:48)
             Reports:
-                ☐ CollectorCouponReceived.rdlc ported.
-                ☐ CollectorCouponReceivedReportPage.xaml ported.
-                ☐ CollectorCouponReceivedReportPage.xaml.cs ported.
-                ☐ CollectorFundSummaryRep.rdlc ported.
-                ☐ CollectorFundSummaryReportPage.xaml ported.
-                ☐ CollectorFundSummaryReportPage.xaml.cs ported.
+                ✔ CollectorCouponReceived.rdlc ported. @done(20-10-02 01:49)
+                ✔ CollectorCouponReceivedReportPage.xaml ported. @done(20-10-02 01:55)
+                ✔ CollectorCouponReceivedReportPage.xaml.cs ported. @done(20-10-02 01:55)
+                ✔ CollectorFundSummaryRep.rdlc ported. @done(20-10-02 01:50)
+                ✔ CollectorFundSummaryReportPage.xaml ported. @done(20-10-02 01:55)
+                ✔ CollectorFundSummaryReportPage.xaml.cs ported. @done(20-10-02 01:55)
                 ✘ CollectorFundSummaryReportPageOld.xaml removed. @cancelled(20-10-02 01:04)
                 ✘ CollectorFundSummaryReportPageOld.xaml.cs removed. @cancelled(20-10-02 01:04)
-                ☐ CouponSalesReceiptRep.rdlc ported.
-                ☐ CouponSalesReceiptReportPage.xaml ported.
-                ☐ CouponSalesReceiptReportPage.xaml.cs ported.
+                ✔ CouponSalesReceiptRep.rdlc ported. @done(20-10-02 01:50)
+                ✔ CouponSalesReceiptReportPage.xaml ported. @done(20-10-02 01:55)
+                ✔ CouponSalesReceiptReportPage.xaml.cs ported. @done(20-10-02 01:55)
         Windows:
             Collector:
                 Credit:

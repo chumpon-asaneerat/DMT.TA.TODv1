@@ -128,26 +128,26 @@ DMT.Controls:
                 ✔ ReportMenu.xaml checked. @done(20-10-02 01:03)
                 ✔ ReportMenu.xaml.cs checked. @done(20-10-02 01:03)
             Plaza:
-                ☐ PlazaAllCouponPage.xaml checked.
-                ☐ PlazaAllCouponPage.xaml.cs checked.
-                ☐ PlazaCouponReceivedReturnPage.xaml checked.
-                ☐ PlazaCouponReceivedReturnPage.xaml.cs checked.
-                ☐ PlazaInternalCreditExchangePage.xaml checked.
-                ☐ PlazaInternalCreditExchangePage.xaml.cs checked.
-                ☐ PlazaReceivedReturnPage.xaml checked.
-                ☐ PlazaReceivedReturnPage.xaml.cs checked.
+                ✔ PlazaAllCouponPage.xaml checked. @done(20-10-02 01:48)
+                ✔ PlazaAllCouponPage.xaml.cs checked. @done(20-10-02 01:48)
+                ✔ PlazaCouponReceivedReturnPage.xaml checked. @done(20-10-02 01:48)
+                ✔ PlazaCouponReceivedReturnPage.xaml.cs checked. @done(20-10-02 01:48)
+                ✔ PlazaInternalCreditExchangePage.xaml checked. @done(20-10-02 01:48)
+                ✔ PlazaInternalCreditExchangePage.xaml.cs checked. @done(20-10-02 01:48)
+                ✔ PlazaReceivedReturnPage.xaml checked. @done(20-10-02 01:48)
+                ✔ PlazaReceivedReturnPage.xaml.cs checked. @done(20-10-02 01:48)
             Reports:
-                ☐ CollectorCouponReceived.rdlc checked.
-                ☐ CollectorCouponReceivedReportPage.xaml checked.
-                ☐ CollectorCouponReceivedReportPage.xaml.cs checked.
-                ☐ CollectorFundSummaryRep.rdlc checked.
-                ☐ CollectorFundSummaryReportPage.xaml checked.
-                ☐ CollectorFundSummaryReportPage.xaml.cs checked.
+                ✔ CollectorCouponReceived.rdlc checked. @done(20-10-02 01:50)
+                ✔ CollectorCouponReceivedReportPage.xaml checked. @done(20-10-02 01:54)
+                ✔ CollectorCouponReceivedReportPage.xaml.cs checked. @done(20-10-02 01:54)
+                ✔ CollectorFundSummaryRep.rdlc checked. @done(20-10-02 01:50)
+                ✔ CollectorFundSummaryReportPage.xaml checked. @done(20-10-02 01:54)
+                ✔ CollectorFundSummaryReportPage.xaml.cs checked. @done(20-10-02 01:54)
                 ✘ CollectorFundSummaryReportPageOld.xaml removed. @cancelled(20-10-02 01:04)
                 ✘ CollectorFundSummaryReportPageOld.xaml.cs removed. @cancelled(20-10-02 01:04)
-                ☐ CouponSalesReceiptRep.rdlc checked.
-                ☐ CouponSalesReceiptReportPage.xaml checked.
-                ☐ CouponSalesReceiptReportPage.xaml.cs checked.
+                ✔ CouponSalesReceiptRep.rdlc checked. @done(20-10-02 01:50)
+                ✔ CouponSalesReceiptReportPage.xaml checked. @done(20-10-02 01:54)
+                ✔ CouponSalesReceiptReportPage.xaml.cs checked. @done(20-10-02 01:54)
         Windows:
             Collector:
                 Credit:
