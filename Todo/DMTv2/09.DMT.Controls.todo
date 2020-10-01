@@ -33,7 +33,7 @@ DMT.Controls:
         ✔ Reports ported. @done(20-09-30 11:29)
     SignIn:
         Common:
-            ☐ SmartcardManager.cs ported.
+            ✔ SmartcardManager.cs ported. @done(20-10-01 20:30)
             ☐ UserSearchManager.cs ported.
         Pages:
             ☐ SignInPage.xaml ported.

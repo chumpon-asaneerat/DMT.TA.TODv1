@@ -96,8 +96,7 @@ namespace DMT.Controls
         private void SmartcardService_OnCardReadSerial(object sender, M1CardReadSerialEventArgs e)
         {
             this.CardId = e.SerialNo.Replace(" ", string.Empty);
-            // TODO: Neeed Web Client
-            //FindUserByCardId();
+            FindUserByCardId();
         }
 
         #endregion
@@ -113,10 +112,10 @@ namespace DMT.Controls
 
         #region Search User By Card Id
 
-        // TODO: Neeed Web Client
-        /*
         private void FindUserByCardId()
         {
+            // TODO: Neeed Web Client
+            /*
             if (string.IsNullOrWhiteSpace(this.CardId))
             {
                 this.User = null;
@@ -144,8 +143,8 @@ namespace DMT.Controls
                     }
                 }
             }
+            */
         }
-        */
 
         #endregion
 

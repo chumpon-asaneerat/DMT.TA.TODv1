@@ -26,8 +26,8 @@ DMT.Controls:
         ✔ Reports checked. @done(20-09-30 11:29)
     SignIn:
         Common:
-            ☐ SmartcardManager.cs checked.
-            ☐ UserSearchManager.cs checked.
+            ✔ SmartcardManager.cs checked. @done(20-10-01 20:30)
+            ✔ UserSearchManager.cs checked. @done(20-10-01 20:31)
         Pages:
             ☐ SignInPage.xaml checked.
             ☐ SignInPage.xaml.cs checked.

@@ -94,6 +94,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SignIn\Common\SmartcardManager.cs" />
+    <Compile Include="SignIn\Common\UserSearchManager.cs" />
     <Compile Include="StatusBar\Elements\AppInfoStatus.xaml.cs">
       <DependentUpon>AppInfoStatus.xaml</DependentUpon>
     </Compile>
