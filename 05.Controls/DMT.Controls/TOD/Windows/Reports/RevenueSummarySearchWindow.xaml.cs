@@ -32,7 +32,8 @@ namespace DMT.TOD.Windows.Reports
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private User _user = null;
         private List<Models.RevenueEntry> _revenues = null;
         private bool loaded = false;
@@ -73,7 +74,8 @@ namespace DMT.TOD.Windows.Reports
         {
             if (!loaded) return;
             if (!dtDate.SelectedDate.HasValue) return;
-            _revenues = ops.Revenue.GetRevenues(dtDate.SelectedDate.Value).Value();
+            // TODO: Neeed Web Client
+            //_revenues = ops.Revenue.GetRevenues(dtDate.SelectedDate.Value).Value();
         }
 
         public void Setup(User user)

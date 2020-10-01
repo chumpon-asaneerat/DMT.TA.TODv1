@@ -30,7 +30,8 @@ namespace DMT.TOD.Windows.UserShifts
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private User _user = null;
 
         #region Loaded
@@ -53,6 +54,8 @@ namespace DMT.TOD.Windows.UserShifts
             Shift shift = cbShift.SelectedItem as Shift;
             if (null != shift)
             {
+                // TODO: Neeed Web Client
+                /*
                 UserShift inst = ops.UserShifts.Create(shift, _user).Value();
                 if (null != inst) shift.AssignTo(inst);
 
@@ -67,6 +70,7 @@ namespace DMT.TOD.Windows.UserShifts
 
                     }
                 }
+                */
             }
 
             DialogResult = true;
@@ -82,6 +86,8 @@ namespace DMT.TOD.Windows.UserShifts
             _user = user;
             if (null != _user)
             {
+                // TODO: Neeed Web Client
+                /*
                 DateTime dt = DateTime.Now;
                 var shifts = ops.Shifts.GetShifts().Value();
                 cbShift.ItemsSource = shifts;
@@ -96,6 +102,7 @@ namespace DMT.TOD.Windows.UserShifts
 
                 txtID.Text = _user.UserId;
                 txtName.Text = _user.FullNameTH;
+                */
             }
         }
     }

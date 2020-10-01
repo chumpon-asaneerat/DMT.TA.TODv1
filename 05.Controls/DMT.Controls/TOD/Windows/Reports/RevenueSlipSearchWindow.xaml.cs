@@ -33,7 +33,8 @@ namespace DMT.TOD.Windows.Reports
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private User _user = null;
 
         private bool loaded = false;
@@ -75,8 +76,11 @@ namespace DMT.TOD.Windows.Reports
             if (!loaded) return;
             if (!dtDate.SelectedDate.HasValue) return;
 
+            // TODO: Neeed Web Client
+            /*
             var items = ops.Revenue.GetRevenues(dtDate.SelectedDate.Value).Value();
             grid.Setup(items);
+            */
         }
 
         public void Setup(User user)

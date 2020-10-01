@@ -262,15 +262,15 @@ DMT.Controls:
                 ✔ EMVQRCodePage.xaml.cs checked. @done(20-10-02 02:41)
         Windows:
             MessageBox:
-                ☐ MessageBoxWindow.xaml checked.
-                ☐ MessageBoxWindow.xaml.cs checked.
-                ☐ MessageBoxYesNoWindow.xaml checked.
-                ☐ MessageBoxYesNoWindow.xaml.cs checked.
+                ✔ MessageBoxWindow.xaml checked. @done(20-10-02 02:43)
+                ✔ MessageBoxWindow.xaml.cs checked. @done(20-10-02 02:43)
+                ✔ MessageBoxYesNoWindow.xaml checked. @done(20-10-02 02:44)
+                ✔ MessageBoxYesNoWindow.xaml.cs checked. @done(20-10-02 02:44)
             Reports:
-                ☐ RevenueSlipSearchWindow.xaml checked.
-                ☐ RevenueSlipSearchWindow.xaml.cs checked.
-                ☐ RevenueSummarySearchWindow.xaml checked.
-                ☐ RevenueSummarySearchWindow.xaml.cs checked.
+                ✔ RevenueSlipSearchWindow.xaml checked. @done(20-10-02 02:47)
+                ✔ RevenueSlipSearchWindow.xaml.cs checked. @done(20-10-02 02:47)
+                ✔ RevenueSummarySearchWindow.xaml checked. @done(20-10-02 02:47)
+                ✔ RevenueSummarySearchWindow.xaml.cs checked. @done(20-10-02 02:47)
             UserShifts:
-                ☐ BOSWindow.xaml checked.
-                ☐ BOSWindow.xaml.cs checked.
+                ✔ BOSWindow.xaml checked. @done(20-10-02 02:45)
+                ✔ BOSWindow.xaml.cs checked. @done(20-10-02 02:45)

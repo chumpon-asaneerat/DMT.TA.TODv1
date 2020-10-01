@@ -269,15 +269,15 @@ DMT.Controls:
                 ✔ EMVQRCodePage.xaml.cs ported. @done(20-10-02 02:41)
         Windows:
             MessageBox:
-                ☐ MessageBoxWindow.xaml ported.
-                ☐ MessageBoxWindow.xaml.cs ported.
-                ☐ MessageBoxYesNoWindow.xaml ported.
-                ☐ MessageBoxYesNoWindow.xaml.cs ported.
+                ✔ MessageBoxWindow.xaml ported. @done(20-10-02 02:44)
+                ✔ MessageBoxWindow.xaml.cs ported. @done(20-10-02 02:44)
+                ✔ MessageBoxYesNoWindow.xaml ported. @done(20-10-02 02:44)
+                ✔ MessageBoxYesNoWindow.xaml.cs ported. @done(20-10-02 02:44)
             Reports:
-                ☐ RevenueSlipSearchWindow.xaml ported.
-                ☐ RevenueSlipSearchWindow.xaml.cs ported.
-                ☐ RevenueSummarySearchWindow.xaml ported.
-                ☐ RevenueSummarySearchWindow.xaml.cs ported.
+                ✔ RevenueSlipSearchWindow.xaml ported. @done(20-10-02 02:47)
+                ✔ RevenueSlipSearchWindow.xaml.cs ported. @done(20-10-02 02:47)
+                ✔ RevenueSummarySearchWindow.xaml ported. @done(20-10-02 02:47)
+                ✔ RevenueSummarySearchWindow.xaml.cs ported. @done(20-10-02 02:47)
             UserShifts:
-                ☐ BOSWindow.xaml ported.
-                ☐ BOSWindow.xaml.cs ported.
+                ✔ BOSWindow.xaml ported. @done(20-10-02 02:45)
+                ✔ BOSWindow.xaml.cs ported. @done(20-10-02 02:45)
