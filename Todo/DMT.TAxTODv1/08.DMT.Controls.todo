@@ -151,34 +151,34 @@ DMT.Controls:
         Windows:
             Collector:
                 Credit:
-                    ☐ CollectorCreditBorrowWindow.xaml checked.
-                    ☐ CollectorCreditBorrowWindow.xaml.cs checked.
-                    ☐ CollectorCreditReturnWindow.xaml checked.
-                    ☐ CollectorCreditReturnWindow.xaml.cs checked.
-                    ☐ MessageWindow.xaml checked.
-                    ☐ MessageWindow.xaml.cs checked.
-                    ☐ ReceiveMoneyBagWindow.xaml checked.
-                    ☐ ReceiveMoneyBagWindow.xaml.cs checked.
+                    ✔ CollectorCreditBorrowWindow.xaml checked. @done(20-10-02 02:00)
+                    ✔ CollectorCreditBorrowWindow.xaml.cs checked. @done(20-10-02 02:00)
+                    ✔ CollectorCreditReturnWindow.xaml checked. @done(20-10-02 02:00)
+                    ✔ CollectorCreditReturnWindow.xaml.cs checked. @done(20-10-02 02:00)
+                    ✔ MessageWindow.xaml checked. @done(20-10-02 02:00)
+                    ✔ MessageWindow.xaml.cs checked. @done(20-10-02 02:00)
+                    ✔ ReceiveMoneyBagWindow.xaml checked. @done(20-10-02 02:00)
+                    ✔ ReceiveMoneyBagWindow.xaml.cs checked. @done(20-10-02 02:00)
             Coupon:
-                ☐ CouponEditWindow.xaml checked.
-                ☐ CouponEditWindow.xaml.cs checked.
-                ☐ CouponReportWindow.xaml checked.
-                ☐ CouponReportWindow.xaml.cs checked.
-                ☐ CouponReturnWindow.xaml checked.
-                ☐ CouponReturnWindow.xaml.cs checked.
+                ✔ CouponEditWindow.xaml checked. @done(20-10-02 02:04)
+                ✔ CouponEditWindow.xaml.cs checked. @done(20-10-02 02:04)
+                ✔ CouponReportWindow.xaml checked. @done(20-10-02 02:04)
+                ✔ CouponReportWindow.xaml.cs checked. @done(20-10-02 02:04)
+                ✔ CouponReturnWindow.xaml checked. @done(20-10-02 02:04)
+                ✔ CouponReturnWindow.xaml.cs checked. @done(20-10-02 02:04)
             Exchange:
-                ☐ ExchangeWindowMode.cs checked.
-                ☐ PlazaCreditRequestExchangeWindow.xaml checked.
-                ☐ PlazaCreditRequestExchangeWindow.xaml.cs checked.
-                ☐ PlazaCreditUpdateExchangeWindow.xaml checked.
-                ☐ PlazaCreditUpdateExchangeWindow.xaml.cs checked.
+                ✔ ExchangeWindowMode.cs checked. @done(20-10-02 02:05)
+                ✔ PlazaCreditRequestExchangeWindow.xaml checked. @done(20-10-02 02:06)
+                ✔ PlazaCreditRequestExchangeWindow.xaml.cs checked. @done(20-10-02 02:06)
+                ✔ PlazaCreditUpdateExchangeWindow.xaml checked. @done(20-10-02 02:06)
+                ✔ PlazaCreditUpdateExchangeWindow.xaml.cs checked. @done(20-10-02 02:06)
             MessageBox:
                 ☐ MessageBoxYesNoRed2Window.xaml checked.
                 ☐ MessageBoxYesNoRed2Window.xaml.cs checked.
                 ☐ MessageBoxYesNoRed3Window.xaml checked.
                 ☐ MessageBoxYesNoRed3Window.xaml.cs checked.
-                ☐ MessageBoxYesNoRedWindow - Copy.xaml checked.
-                ☐ MessageBoxYesNoRedWindow - Copy.xaml.cs checked.
+                ✘ MessageBoxYesNoRedWindow - Copy.xaml removed. @cancelled(20-10-02 02:07)
+                ✘ MessageBoxYesNoRedWindow - Copy.xaml.cs removed. @cancelled(20-10-02 02:07)
             Plaza:
                 ☐ PlazaInternalCreditExchangeWindow.xaml checked.
                 ☐ PlazaInternalCreditExchangeWindow.xaml.cs checked.

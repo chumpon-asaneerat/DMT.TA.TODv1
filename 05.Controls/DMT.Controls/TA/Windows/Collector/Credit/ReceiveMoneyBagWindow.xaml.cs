@@ -36,7 +36,8 @@ namespace DMT.TA.Windows.Collector.Credit
 
         #region Internal Variables
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private List<string> _roles = new List<string>();
         private string _userId = null;
 
@@ -98,8 +99,11 @@ namespace DMT.TA.Windows.Collector.Credit
             }
 
             var md5 = Utils.MD5.Encrypt(pwd);
+            // TODO: Neeed Web Client
+            /*
             var user = ops.Users.GetByLogIn(Search.Users.ByLogIn.Create(userId, md5)).Value();
             CheckUser(user);
+            */
         }
 
         private void cmdCancel_Click(object sender, RoutedEventArgs e)

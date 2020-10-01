@@ -33,8 +33,9 @@ namespace DMT.TA.Windows.Exchange
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-        private TSBExchangeManager manager = null;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private TSBExchangeManager manager = null;
 
         #region Button Handlers
 
@@ -52,8 +53,12 @@ namespace DMT.TA.Windows.Exchange
 
         #region Public Methods
 
-        public void Setup(TSBExchangeManager value, TSBExchangeGroup group)
+        // TODO: Neeed Web Client
+        public void Setup()
+        //public void Setup(TSBExchangeManager value, TSBExchangeGroup group)
         {
+            // TODO: Neeed Web Client
+            /*
             manager = value;
             if (null == manager || null == group) return;
 
@@ -84,6 +89,7 @@ namespace DMT.TA.Windows.Exchange
             // exchange from plaza->account
             group.Exchange.Description = "จ่ายออก ธนบัตร/เหรียญ";
             exchangeEntry.DataContext = group.Exchange;
+            */
         }
 
         #endregion

@@ -35,15 +35,19 @@ namespace DMT.TA.Windows.Coupon
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-        private TSBCouponManager manager = new TSBCouponManager();
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private TSBCouponManager manager = new TSBCouponManager();
 
         #region Button Handlers
 
         private void cmdSave_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Neeed Web Client
+            /*
             // Save
             manager.Save();
+            */
             this.DialogResult = true;
         }
 
@@ -56,12 +60,15 @@ namespace DMT.TA.Windows.Coupon
         {
             var items = lvTSB35.SelectedItems;
             if (null == items || items.Count <= 0) return;
+            // TODO: Neeed Web Client
+            /*
             foreach (TSBCouponTransaction item in items)
             {
                 if (null == item) return;
                 if (item.TransactionType != TSBCouponTransaction.TransactionTypes.Stock) return;
                 manager.Borrow(item);
             }
+            */
             RefreshBHT35Coupons();
         }
 
@@ -69,11 +76,14 @@ namespace DMT.TA.Windows.Coupon
         {
             var items = lvUser35.SelectedItems;
             if (null == items || items.Count <= 0) return;
+            // TODO: Neeed Web Client
+            /*
             foreach (TSBCouponTransaction item in items)
             {
                 if (null == item) return;
                 manager.Return(item);
             }
+            */
             RefreshBHT35Coupons();
         }
 
@@ -81,12 +91,15 @@ namespace DMT.TA.Windows.Coupon
         {
             var items = lvTSB80.SelectedItems;
             if (null == items || items.Count <= 0) return;
+            // TODO: Neeed Web Client
+            /*
             foreach (TSBCouponTransaction item in items)
             {
                 if (null == item) return;
                 if (item.TransactionType != TSBCouponTransaction.TransactionTypes.Stock) return;
                 manager.Borrow(item);
             }
+            */
             RefreshBHT80Coupons();
         }
 
@@ -94,11 +107,14 @@ namespace DMT.TA.Windows.Coupon
         {
             var items = lvUser80.SelectedItems;
             if (null == items || items.Count <= 0) return;
+            // TODO: Neeed Web Client
+            /*
             foreach (TSBCouponTransaction item in items)
             {
                 if (null == item) return;
                 manager.Return(item);
             }
+            */
             RefreshBHT80Coupons();
         }
 
@@ -146,6 +162,8 @@ namespace DMT.TA.Windows.Coupon
 
         public void Setup(User user)
         {
+            // TODO: Neeed Web Client
+            /*
             manager.User = user;
             if (null != manager.User)
             {
@@ -157,11 +175,13 @@ namespace DMT.TA.Windows.Coupon
                 txtUser.Content = string.Empty;
             }
             LoadCoupons();
+            */
         }
 
         private void LoadCoupons()
         {
-            manager.Refresh();
+            // TODO: Neeed Web Client
+            //manager.Refresh();
 
             RefreshBHT35Coupons();
             RefreshBHT80Coupons();
@@ -169,6 +189,8 @@ namespace DMT.TA.Windows.Coupon
 
         private void RefreshBHT35Coupons()
         {
+            // TODO: Neeed Web Client
+            /*
             lvTSB35.ItemsSource = null;
             lvTSB35.ItemsSource = manager.C35Stocks.FindAll(item =>
             {
@@ -177,10 +199,13 @@ namespace DMT.TA.Windows.Coupon
 
             lvUser35.ItemsSource = null;
             lvUser35.ItemsSource = manager.C35Users;
+            */
         }
 
         private void RefreshBHT80Coupons()
         {
+            // TODO: Neeed Web Client
+            /*
             lvTSB80.ItemsSource = null;
             lvTSB80.ItemsSource = manager.C80Stocks.FindAll(item =>
             {
@@ -188,6 +213,7 @@ namespace DMT.TA.Windows.Coupon
             });
             lvUser80.ItemsSource = null;
             lvUser80.ItemsSource = manager.C80Users;
+            */
         }
     }
 }

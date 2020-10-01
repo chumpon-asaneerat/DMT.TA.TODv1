@@ -36,13 +36,16 @@ namespace DMT.TA.Windows.Collector.Credit
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-        private UserCreditReturnManager manager = new UserCreditReturnManager();
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private UserCreditReturnManager manager = new UserCreditReturnManager();
 
         #region Button Handlers
 
         private void cmdOK_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Neeed Web Client
+            /*
             if (manager.HasNegative())
             {
                 MessageBox.Show(Application.Current.MainWindow,
@@ -65,6 +68,7 @@ namespace DMT.TA.Windows.Collector.Credit
                     }
                 }
             }
+            */
         }
 
         private void cmdCancel_Click(object sender, RoutedEventArgs e)
@@ -76,6 +80,8 @@ namespace DMT.TA.Windows.Collector.Credit
 
         public void Setup(TSB tsb, UserCreditBalance credit)
         {
+            // TODO: Neeed Web Client
+            /*
             manager.Setup(tsb, credit);
             this.DataContext = manager.UserBalance;
 
@@ -88,6 +94,7 @@ namespace DMT.TA.Windows.Collector.Credit
 
             srcEntry.DataContext = manager.UserBalance;
             usrEntry.DataContext = manager.Transaction;
+            */
         }
     }
 }

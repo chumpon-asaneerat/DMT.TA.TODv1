@@ -158,34 +158,34 @@ DMT.Controls:
         Windows:
             Collector:
                 Credit:
-                    ☐ CollectorCreditBorrowWindow.xaml ported.
-                    ☐ CollectorCreditBorrowWindow.xaml.cs ported.
-                    ☐ CollectorCreditReturnWindow.xaml ported.
-                    ☐ CollectorCreditReturnWindow.xaml.cs ported.
-                    ☐ MessageWindow.xaml ported.
-                    ☐ MessageWindow.xaml.cs ported.
-                    ☐ ReceiveMoneyBagWindow.xaml ported.
-                    ☐ ReceiveMoneyBagWindow.xaml.cs ported.
+                    ✔ CollectorCreditBorrowWindow.xaml ported. @done(20-10-02 02:00)
+                    ✔ CollectorCreditBorrowWindow.xaml.cs ported. @done(20-10-02 02:00)
+                    ✔ CollectorCreditReturnWindow.xaml ported. @done(20-10-02 02:00)
+                    ✔ CollectorCreditReturnWindow.xaml.cs ported. @done(20-10-02 02:00)
+                    ✔ MessageWindow.xaml ported. @done(20-10-02 02:00)
+                    ✔ MessageWindow.xaml.cs ported. @done(20-10-02 02:00)
+                    ✔ ReceiveMoneyBagWindow.xaml ported. @done(20-10-02 02:00)
+                    ✔ ReceiveMoneyBagWindow.xaml.cs ported. @done(20-10-02 02:00)
             Coupon:
-                ☐ CouponEditWindow.xaml ported.
-                ☐ CouponEditWindow.xaml.cs ported.
-                ☐ CouponReportWindow.xaml ported.
-                ☐ CouponReportWindow.xaml.cs ported.
-                ☐ CouponReturnWindow.xaml ported.
-                ☐ CouponReturnWindow.xaml.cs ported.
+                ✔ CouponEditWindow.xaml ported. @done(20-10-02 02:04)
+                ✔ CouponEditWindow.xaml.cs ported. @done(20-10-02 02:04)
+                ✔ CouponReportWindow.xaml ported. @done(20-10-02 02:04)
+                ✔ CouponReportWindow.xaml.cs ported. @done(20-10-02 02:04)
+                ✔ CouponReturnWindow.xaml ported. @done(20-10-02 02:04)
+                ✔ CouponReturnWindow.xaml.cs ported. @done(20-10-02 02:04)
             Exchange:
-                ☐ ExchangeWindowMode.cs ported.
-                ☐ PlazaCreditRequestExchangeWindow.xaml ported.
-                ☐ PlazaCreditRequestExchangeWindow.xaml.cs ported.
-                ☐ PlazaCreditUpdateExchangeWindow.xaml ported.
-                ☐ PlazaCreditUpdateExchangeWindow.xaml.cs ported.
+                ✔ ExchangeWindowMode.cs ported. @done(20-10-02 02:05)
+                ✔ PlazaCreditRequestExchangeWindow.xaml ported. @done(20-10-02 02:06)
+                ✔ PlazaCreditRequestExchangeWindow.xaml.cs ported. @done(20-10-02 02:06)
+                ✔ PlazaCreditUpdateExchangeWindow.xaml ported. @done(20-10-02 02:06)
+                ✔ PlazaCreditUpdateExchangeWindow.xaml.cs ported. @done(20-10-02 02:06)
             MessageBox:
                 ☐ MessageBoxYesNoRed2Window.xaml ported.
                 ☐ MessageBoxYesNoRed2Window.xaml.cs ported.
                 ☐ MessageBoxYesNoRed3Window.xaml ported.
                 ☐ MessageBoxYesNoRed3Window.xaml.cs ported.
-                ☐ MessageBoxYesNoRedWindow - Copy.xaml ported.
-                ☐ MessageBoxYesNoRedWindow - Copy.xaml.cs ported.
+                ✘ MessageBoxYesNoRedWindow - Copy.xaml removed. @cancelled(20-10-02 02:07)
+                ✘ MessageBoxYesNoRedWindow - Copy.xaml.cs removed. @cancelled(20-10-02 02:07)
             Plaza:
                 ☐ PlazaInternalCreditExchangeWindow.xaml ported.
                 ☐ PlazaInternalCreditExchangeWindow.xaml.cs ported.

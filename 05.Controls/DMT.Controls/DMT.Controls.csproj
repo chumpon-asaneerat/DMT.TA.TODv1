@@ -255,9 +255,6 @@
     <Compile Include="TA\Windows\MessageBox\MessageBoxYesNoRed3Window.xaml.cs">
       <DependentUpon>MessageBoxYesNoRed3Window.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TA\Windows\MessageBox\MessageBoxYesNoRedWindow - Copy.xaml.cs">
-      <DependentUpon>MessageBoxYesNoRedWindow - Copy.xaml</DependentUpon>
-    </Compile>
     <Compile Include="TA\Windows\Plaza\PlazaInternalCreditExchangeWindow.xaml.cs">
       <DependentUpon>PlazaInternalCreditExchangeWindow.xaml</DependentUpon>
     </Compile>
@@ -649,10 +646,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="TA\Windows\MessageBox\MessageBoxYesNoRed3Window.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TA\Windows\MessageBox\MessageBoxYesNoRedWindow - Copy.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

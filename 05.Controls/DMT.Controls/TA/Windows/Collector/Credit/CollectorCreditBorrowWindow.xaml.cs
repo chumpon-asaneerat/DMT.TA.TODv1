@@ -38,8 +38,9 @@ namespace DMT.TA.Windows.Collector.Credit
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-        private UserCreditBorrowManager manager = new UserCreditBorrowManager();
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private UserCreditBorrowManager manager = new UserCreditBorrowManager();
 
         #region Button Handlers
 
@@ -52,6 +53,8 @@ namespace DMT.TA.Windows.Collector.Credit
         {
             if (!string.IsNullOrEmpty(txtBagNo.Text) && !string.IsNullOrEmpty(txtBeltNo.Text))
             {
+                // TODO: Neeed Web Client
+                /*
                 manager.PlazaGroup = cbPlzaGroups.SelectedItem as PlazaGroup;
                 if (null == manager.PlazaGroup)
                 {
@@ -71,6 +74,7 @@ namespace DMT.TA.Windows.Collector.Credit
                 {
                     this.DialogResult = true;
                 }
+                */
             }
             else
             {
@@ -104,6 +108,8 @@ namespace DMT.TA.Windows.Collector.Credit
 
         private void LoadPlazaGroups()
         {
+            // TODO: Neeed Web Client
+            /*
             var tsb = ops.TSB.GetCurrent().Value();
             if (null != tsb)
             {
@@ -115,10 +121,13 @@ namespace DMT.TA.Windows.Collector.Credit
                     cbPlzaGroups.SelectedIndex = 0;
                 }
             }
+            */
         }
 
         public void Setup(TSB tsb, UserCreditBalance credit)
         {
+            // TODO: Neeed Web Client
+            /*
             manager.Setup(tsb, credit);
 
             if (manager.UserBalance.UserCreditId == 0)
@@ -142,6 +151,7 @@ namespace DMT.TA.Windows.Collector.Credit
             srcEntry.DataContext = manager.UserBalance;
             usrEntry.DataContext = manager.Transaction;
             sumEntry.DataContext = manager.ResultBalance;
+            */
         }
 
         private void txtSearchUserId_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
@@ -179,6 +189,8 @@ namespace DMT.TA.Windows.Collector.Credit
 
         private void SearchUser()
         {
+            // TODO: Neeed Web Client
+            /*
             if (!string.IsNullOrEmpty(txtSearchUserId.Text))
             {
                 string userId = txtSearchUserId.Text;
@@ -191,6 +203,7 @@ namespace DMT.TA.Windows.Collector.Credit
                     manager.SetUser(user);
                 }
             }
+            */
         }
     }
 }

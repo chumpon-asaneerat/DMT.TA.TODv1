@@ -27,7 +27,8 @@ namespace DMT.TA.Windows.Coupon
             InitializeComponent();
         }
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
 
         private User _user = null;
         private UserShift _userShift = null;
@@ -108,6 +109,8 @@ namespace DMT.TA.Windows.Coupon
             }
             else
             {
+                // TODO: Neeed Web Client
+                /*
                 // Find begin/end of revenue.
                 DateTime begin = DateTime.MinValue;
                 DateTime end = DateTime.MinValue;
@@ -157,6 +160,7 @@ namespace DMT.TA.Windows.Coupon
                 _revenueEntry.SupervisorId = sup.UserId;
                 _revenueEntry.SupervisorNameEN = sup.FullNameEN;
                 _revenueEntry.SupervisorNameTH = sup.FullNameTH;
+                */
             }
         }
 
