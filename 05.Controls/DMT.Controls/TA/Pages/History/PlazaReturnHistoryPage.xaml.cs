@@ -36,7 +36,8 @@ namespace DMT.TA.Pages.History
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private User _user = null;
 
         #region Button Handlers
@@ -58,6 +59,8 @@ namespace DMT.TA.Pages.History
 
         public void RefreshPlazaInfo()
         {
+            // TODO: Neeed Web Client
+            /*
             var tsb = ops.TSB.GetCurrent().Value();
             var tsbCredit = ops.Credits.GetTSBBalance(tsb).Value();
 
@@ -66,6 +69,7 @@ namespace DMT.TA.Pages.History
             tsbCredit.HasRemark = false;
             plaza.IsEnabled = false;
             plaza.DataContext = tsbCredit;
+            */
         }
 
         private void cmdSearch_Click(object sender, RoutedEventArgs e)

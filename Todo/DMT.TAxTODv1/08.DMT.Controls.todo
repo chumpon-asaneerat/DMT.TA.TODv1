@@ -107,21 +107,21 @@ DMT.Controls:
                     ✔ PlazaFundView.xaml.cs checked. @done(20-10-02 01:33)
         Pages:
             Collector:
-                ☐ CollectorFundViewPage.xaml checked.
-                ☐ CollectorFundViewPage.xaml.cs checked.
+                ✔ CollectorFundViewPage.xaml checked. @done(20-10-02 01:43)
+                ✔ CollectorFundViewPage.xaml.cs checked. @done(20-10-02 01:43)
             Coupon:
-                ☐ CouponTSBSalePage.xaml checked.
-                ☐ CouponTSBSalePage.xaml.cs checked.
-                ☐ ReceivedCouponPage.xaml checked.
-                ☐ ReceivedCouponPage.xaml.cs checked.
-                ☐ ReturnCouponPage.xaml checked.
-                ☐ ReturnCouponPage.xaml.cs checked.
+                ✔ CouponTSBSalePage.xaml checked. @done(20-10-02 01:43)
+                ✔ CouponTSBSalePage.xaml.cs checked. @done(20-10-02 01:43)
+                ✔ ReceivedCouponPage.xaml checked. @done(20-10-02 01:43)
+                ✔ ReceivedCouponPage.xaml.cs checked. @done(20-10-02 01:43)
+                ✔ ReturnCouponPage.xaml checked. @done(20-10-02 01:43)
+                ✔ ReturnCouponPage.xaml.cs checked. @done(20-10-02 01:43)
             Exchange:
-                ☐ PlazaRequestExchangePage.xaml checked.
-                ☐ PlazaRequestExchangePage.xaml.cs checked.
+                ✔ PlazaRequestExchangePage.xaml checked. @done(20-10-02 01:43)
+                ✔ PlazaRequestExchangePage.xaml.cs checked. @done(20-10-02 01:43)
             History:
-                ☐ PlazaReturnHistoryPage.xaml checked.
-                ☐ PlazaReturnHistoryPage.xaml.cs checked.
+                ✔ PlazaReturnHistoryPage.xaml checked. @done(20-10-02 01:43)
+                ✔ PlazaReturnHistoryPage.xaml.cs checked. @done(20-10-02 01:43)
             Menu:
                 ✔ MainMenu.xaml checked. @done(20-10-02 01:03)
                 ✔ MainMenu.xaml.cs checked. @done(20-10-02 01:03)

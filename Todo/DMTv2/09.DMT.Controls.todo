@@ -114,21 +114,21 @@ DMT.Controls:
                     ✔ PlazaFundView.xaml.cs ported. @done(20-10-02 01:33)
         Pages:
             Collector:
-                ☐ CollectorFundViewPage.xaml ported.
-                ☐ CollectorFundViewPage.xaml.cs ported.
+                ✔ CollectorFundViewPage.xaml ported. @done(20-10-02 01:43)
+                ✔ CollectorFundViewPage.xaml.cs ported. @done(20-10-02 01:43)
             Coupon:
-                ☐ CouponTSBSalePage.xaml ported.
-                ☐ CouponTSBSalePage.xaml.cs ported.
-                ☐ ReceivedCouponPage.xaml ported.
-                ☐ ReceivedCouponPage.xaml.cs ported.
-                ☐ ReturnCouponPage.xaml ported.
-                ☐ ReturnCouponPage.xaml.cs ported.
+                ✔ CouponTSBSalePage.xaml ported. @done(20-10-02 01:43)
+                ✔ CouponTSBSalePage.xaml.cs ported. @done(20-10-02 01:43)
+                ✔ ReceivedCouponPage.xaml ported. @done(20-10-02 01:43)
+                ✔ ReceivedCouponPage.xaml.cs ported. @done(20-10-02 01:43)
+                ✔ ReturnCouponPage.xaml ported. @done(20-10-02 01:43)
+                ✔ ReturnCouponPage.xaml.cs ported. @done(20-10-02 01:43)
             Exchange:
-                ☐ PlazaRequestExchangePage.xaml ported.
-                ☐ PlazaRequestExchangePage.xaml.cs ported.
+                ✔ PlazaRequestExchangePage.xaml ported. @done(20-10-02 01:43)
+                ✔ PlazaRequestExchangePage.xaml.cs ported. @done(20-10-02 01:43)
             History:
-                ☐ PlazaReturnHistoryPage.xaml ported.
-                ☐ PlazaReturnHistoryPage.xaml.cs ported.
+                ✔ PlazaReturnHistoryPage.xaml ported. @done(20-10-02 01:43)
+                ✔ PlazaReturnHistoryPage.xaml.cs ported. @done(20-10-02 01:43)
             Menu:
                 ✔ MainMenu.xaml ported. @done(20-10-02 01:04)
                 ✔ MainMenu.xaml.cs ported. @done(20-10-02 01:04)

@@ -35,8 +35,9 @@ namespace DMT.TA.Pages.Coupon
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-        private TSBCouponManager manager = new TSBCouponManager();
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private TSBCouponManager manager = new TSBCouponManager();
 
         #region Loaded/Unloaded
 
@@ -79,11 +80,14 @@ namespace DMT.TA.Pages.Coupon
             {
                 // Save
                 Verified(); // set finish flag if sold and return to stock if unsold.
-                manager.Save();
+
+                // TODO: Neeed Web Client
+                //manager.Save();
 
                 var page = new Pages.Reports.CouponSalesReceiptReportPage();
                 page.CallerPage = this;
-                page.Setup(manager);
+                // TODO: Neeed Web Client
+                //page.Setup(manager);
                 PageContentManager.Instance.Current = page;
             }
             
@@ -97,7 +101,8 @@ namespace DMT.TA.Pages.Coupon
             {
                 if (null == item) return;
                 if (item.TransactionType != TSBCouponTransaction.TransactionTypes.Stock) return;
-                manager.SoldByTSB(item);
+                // TODO: Neeed Web Client
+                //manager.SoldByTSB(item);
             }
             RefreshBHT35Coupons();
         }
@@ -109,7 +114,8 @@ namespace DMT.TA.Pages.Coupon
             foreach (TSBCouponTransaction item in items)
             {
                 if (null == item) return;
-                manager.UnsoldByTSB(item);
+                // TODO: Neeed Web Client
+                //manager.UnsoldByTSB(item);
             }
             RefreshBHT35Coupons();
         }
@@ -122,7 +128,8 @@ namespace DMT.TA.Pages.Coupon
             {
                 if (null == item) return;
                 if (item.TransactionType != TSBCouponTransaction.TransactionTypes.Stock) return;
-                manager.SoldByTSB(item);
+                // TODO: Neeed Web Client
+                //manager.SoldByTSB(item);
             }
             RefreshBHT80Coupons();
         }
@@ -134,7 +141,8 @@ namespace DMT.TA.Pages.Coupon
             foreach (TSBCouponTransaction item in items)
             {
                 if (null == item) return;
-                manager.UnsoldByTSB(item);
+                // TODO: Neeed Web Client
+                //manager.UnsoldByTSB(item);
             }
             RefreshBHT80Coupons();
         }
@@ -183,13 +191,15 @@ namespace DMT.TA.Pages.Coupon
 
         public void Setup(User user)
         {
-            manager.User = user;
+            // TODO: Neeed Web Client
+            //manager.User = user;
             LoadCoupons();
         }
 
         private void LoadCoupons()
         {
-            manager.Refresh();
+            // TODO: Neeed Web Client
+            //manager.Refresh();
 
             RefreshBHT35Coupons();
             RefreshBHT80Coupons();
@@ -198,13 +208,18 @@ namespace DMT.TA.Pages.Coupon
         private void RefreshBHT35Coupons()
         {
             lvTSB35.ItemsSource = null;
+
+            // TODO: Neeed Web Client
+            /*
             lvTSB35.ItemsSource = manager.C35Stocks.FindAll(item =>
             {
                 return item.CouponId.Contains(txtFilter35.Text) && item.TransactionType == TSBCouponTransaction.TransactionTypes.Stock;
             });
+            */
 
             lvSold35.ItemsSource = null;
-            lvSold35.ItemsSource = manager.C35TSBSolds;
+            // TODO: Neeed Web Client
+            //lvSold35.ItemsSource = manager.C35TSBSolds;
 
             UpdateCounters();
         }
@@ -212,12 +227,17 @@ namespace DMT.TA.Pages.Coupon
         private void RefreshBHT80Coupons()
         {
             lvTSB80.ItemsSource = null;
+
+            // TODO: Neeed Web Client
+            /*
             lvTSB80.ItemsSource = manager.C80Stocks.FindAll(item =>
             {
                 return item.CouponId.Contains(txtFilter80.Text) && item.TransactionType == TSBCouponTransaction.TransactionTypes.Stock;
             });
+            */
             lvSold80.ItemsSource = null;
-            lvSold80.ItemsSource = manager.C80TSBSolds;
+            // TODO: Neeed Web Client
+            //lvSold80.ItemsSource = manager.C80TSBSolds;
 
             UpdateCounters();
         }

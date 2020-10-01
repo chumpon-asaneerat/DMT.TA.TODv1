@@ -38,8 +38,9 @@ namespace DMT.TA.Pages.Coupon
         #endregion
 
         private DispatcherTimer timer = new DispatcherTimer();
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private User _user = null;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
 
         #region Loaded/Unloaded
 
@@ -135,7 +136,8 @@ namespace DMT.TA.Pages.Coupon
 
         public void RefreshList()
         {
-            TSBCouponManager.Sync();
+            // TODO: Neeed Web Client
+            //TSBCouponManager.Sync();
             grid.RefreshList();
         }
 

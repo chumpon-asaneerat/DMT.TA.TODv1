@@ -46,10 +46,11 @@ namespace DMT.TA.Pages.Exchange
         }
 
         #endregion
-        
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+
         private TSB _tsb = null;
-        private TSBExchangeManager manager = new TSBExchangeManager();
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private TSBExchangeManager manager = new TSBExchangeManager();
 
         #region Grid Update Handler
 
@@ -67,6 +68,8 @@ namespace DMT.TA.Pages.Exchange
             var win = new Windows.Exchange.PlazaCreditRequestExchangeWindow();
             win.Title = "คำร้องขอการแลกเปลี่ยนเงิน";
             win.Owner = Application.Current.MainWindow;
+            // TODO: Neeed Web Client
+            /*
             var exchange = manager.NewRequest();
             win.Setup(Windows.Exchange.ExchangeWindowMode.New, exchange);
             if (win.ShowDialog() == false)
@@ -82,6 +85,7 @@ namespace DMT.TA.Pages.Exchange
             {
                 manager.SaveRequest(exchange);
             }
+            */
             // Request list.
             grid.RefreshList();
             RefreshPlazaInfo();
@@ -98,18 +102,22 @@ namespace DMT.TA.Pages.Exchange
 
         public void Setup()
         {
+            // TODO: Neeed Web Client
+            /*
             _tsb = ops.TSB.GetCurrent().Value();
             // Set TSB and Supervisor.
             manager.TSB = _tsb;
             manager.Supervisor = DMT.Controls.TAApp.User.Current;
 
             grid.Setup(manager);
-
+            */
             RefreshPlazaInfo();
         }
 
         private void RefreshPlazaInfo()
         {
+            // TODO: Neeed Web Client
+            /*
             var tsbCredit = ops.Credits.GetTSBBalance(_tsb).Value();
 
             this.DataContext = tsbCredit;
@@ -121,6 +129,7 @@ namespace DMT.TA.Pages.Exchange
 
             loanEntry.IsEnabled = false;
             loanEntry.DataContext = tsbCredit;
+            */
         }
     }
 }

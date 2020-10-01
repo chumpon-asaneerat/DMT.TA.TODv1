@@ -45,7 +45,8 @@ namespace DMT.TA.Pages.Collector
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private TSB _tsb = null;
 
         #region Button Handlers
@@ -82,6 +83,8 @@ namespace DMT.TA.Pages.Collector
 
         public void RefreshPlazaInfo()
         {
+            // TODO: Neeed Web Client
+            /*
             _tsb = ops.TSB.GetCurrent().Value();
             var tsbCredit = ops.Credits.GetTSBBalance(_tsb).Value();
 
@@ -96,6 +99,7 @@ namespace DMT.TA.Pages.Collector
             loanEntry.DataContext = tsbCredit;
 
             grid.Setup();
+            */
         }
     }
 }
