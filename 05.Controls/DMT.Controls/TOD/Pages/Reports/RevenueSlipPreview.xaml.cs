@@ -33,7 +33,8 @@ namespace DMT.TOD.Pages.Reports
 
         #endregion
 
-        private RevenueEntryManager _manager = new RevenueEntryManager();
+        // TODO: Neeed Web Client
+        //private RevenueEntryManager _manager = new RevenueEntryManager();
 
         #region Button Handlers
 
@@ -46,6 +47,9 @@ namespace DMT.TOD.Pages.Reports
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
+            GoMainMenu(); // TODO: Remove if enable below code.
+            // TODO: Neeed Web Client
+            /*
             if (null == _manager || null == _manager.RevenueEntry)
             {
                 DMT.Windows.MessageBoxWindow msg = new DMT.Windows.MessageBoxWindow();
@@ -92,10 +96,13 @@ namespace DMT.TOD.Pages.Reports
                 this.rptViewer.Print();
                 GoMainMenu();
             }
+            */
         }
 
         private void GoRevenuEntry()
         {
+            // TODO: Neeed Web Client
+            /*
             if (null == _manager || null == _manager.User)
             {
                 GoMainMenu();
@@ -108,6 +115,7 @@ namespace DMT.TOD.Pages.Reports
                 page.Setup(_manager.User);
                 PageContentManager.Instance.Current = page;
             }
+            */
         }
 
         private void GoMainMenu()
@@ -132,6 +140,8 @@ namespace DMT.TOD.Pages.Reports
             // clear reprot datasource.
             inst.DataSources.Clear();
             List<RevenueEntry> items = new List<RevenueEntry>();
+            // TODO: Neeed Web Client
+            /*
             if (null != _manager && null != _manager.RevenueEntry)
             {
                 items.Add(_manager.RevenueEntry);
@@ -148,12 +158,13 @@ namespace DMT.TOD.Pages.Reports
             DateTime today = DateTime.Now;
             string printDate = today.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
             inst.Parameters.Add(RdlcReportParameter.Create("PrintDate", printDate));
-
+            */
             return inst;
         }
 
         private void InitNewReport()
         {
+            /*
             if (null == _manager || !_manager.CanBuildReport)
             {
                 // some of parameter(s) is null.
@@ -163,10 +174,13 @@ namespace DMT.TOD.Pages.Reports
             {
                 _manager.BuildRevenueEntry();
             }
+            */
         }
 
         private bool SaveRevenueEntry()
         {
+            // TODO: Neeed Web Client
+            /*
             if (null == _manager ||
                 _manager.RevenueEntry.RevenueDate == DateTime.MinValue ||
                 _manager.RevenueEntry.EntryDate == DateTime.MinValue)
@@ -181,10 +195,15 @@ namespace DMT.TOD.Pages.Reports
             }
             // Save information.
             return _manager.SaveRevenueEntry();
+            */
+            return false;
         }
 
-        public void Setup(RevenueEntryManager manager)
+        // TODO: Neeed Web Client
+        public void Setup()
+        //public void Setup(RevenueEntryManager manager)
         {
+            /*
             _manager = manager;
 
             if (null != _manager && null != _manager.RevenueEntry)
@@ -220,6 +239,7 @@ namespace DMT.TOD.Pages.Reports
             {
                 this.rptViewer.LoadReport(model);
             }
+            */
         }
     }
 }

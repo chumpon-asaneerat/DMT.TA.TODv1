@@ -33,7 +33,8 @@ namespace DMT.TOD.Pages.Reports
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
 
         private User _user = null;
         private UserShift _userShift = null;
@@ -133,6 +134,8 @@ namespace DMT.TOD.Pages.Reports
             }
             else
             {
+                // TODO: Neeed Web Client
+                /*
                 // Find begin/end of revenue.
                 DateTime begin = DateTime.MinValue;
                 DateTime end = DateTime.MinValue;
@@ -185,6 +188,7 @@ namespace DMT.TOD.Pages.Reports
                     _revenueEntry.SupervisorNameEN = sup.FullNameEN;
                     _revenueEntry.SupervisorNameTH = sup.FullNameTH;
                 }
+                */
             }
         }
 
@@ -204,6 +208,8 @@ namespace DMT.TOD.Pages.Reports
                 }
             }
 
+            // TODO: Neeed Web Client
+            /*
             // update save data
             var revInst = ops.Revenue.SaveRevenue(_revenueEntry).Value();
             string revId = (null != revInst) ? revInst.RevenueId : string.Empty;
@@ -239,6 +245,9 @@ namespace DMT.TOD.Pages.Reports
             {
                 return true;
             }
+            */
+
+            return false;
         }
 
         public void Setup(User user, Models.RevenueEntry revenueEntry)

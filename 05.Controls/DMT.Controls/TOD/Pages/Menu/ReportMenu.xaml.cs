@@ -31,8 +31,9 @@ namespace DMT.TOD.Pages.Menu
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-        private RevenueEntryManager _manager = new RevenueEntryManager();
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private RevenueEntryManager _manager = new RevenueEntryManager();
         private User _user = null;
 
         #region Button Handlers
@@ -63,9 +64,12 @@ namespace DMT.TOD.Pages.Menu
             page.MenuPage = this;
             page.CallerPage = this; // Set CallerPage for click back.
 
+            // TODO: Neeed Web Client
+            /*
             RevenueEntryManager _manager = new RevenueEntryManager();
             _manager.LoadRevenueEntry(revenueEntry);
             page.Setup(_manager);
+            */
 
             PageContentManager.Instance.Current = page;
         }

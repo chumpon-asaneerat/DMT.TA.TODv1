@@ -33,7 +33,8 @@ namespace DMT.TOD.Pages.Reports
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
 
         private List<Models.RevenueEntry> _revenues = null;
 

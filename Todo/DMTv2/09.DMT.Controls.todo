@@ -234,23 +234,23 @@ DMT.Controls:
                     ✔ SlipView.xaml.cs ported. @done(20-10-02 02:20)
         Pages:
             LoginList:
-                ☐ LoginListPage.xaml ported.
-                ☐ LoginListPage.xaml.cs ported.
+                ✔ LoginListPage.xaml ported. @done(20-10-02 02:24)
+                ✔ LoginListPage.xaml.cs ported. @done(20-10-02 02:24)
             Menu:
-                ☐ MainMenu.xaml ported.
-                ☐ MainMenu.xaml.cs ported.
-                ☐ ReportMenu.xaml ported.
-                ☐ ReportMenu.xaml.cs ported.
+                ✔ MainMenu.xaml ported. @done(20-10-02 02:24)
+                ✔ MainMenu.xaml.cs ported. @done(20-10-02 02:24)
+                ✔ ReportMenu.xaml ported. @done(20-10-02 02:24)
+                ✔ ReportMenu.xaml.cs ported. @done(20-10-02 02:24)
             Reports:
-                ☐ DailyRevenueSummaryPreview.xaml ported.
-                ☐ DailyRevenueSummaryPreview.xaml.cs ported.
-                ☐ RevenueSlip.rdlc ported.
-                ☐ RevenueSlipNull.rdlc ported.
-                ☐ RevenueSlipPreview.xaml ported.
-                ☐ RevenueSlipPreview.xaml.cs ported.
-                ☐ RevenueSlipPreviewNull.xaml ported.
-                ☐ RevenueSlipPreviewNull.xaml.cs ported.
-                ☐ RevenueSlipSum.rdlc ported.
+                ✔ DailyRevenueSummaryPreview.xaml ported. @done(20-10-02 02:32)
+                ✔ DailyRevenueSummaryPreview.xaml.cs ported. @done(20-10-02 02:32)
+                ✔ RevenueSlip.rdlc ported. @done(20-10-02 02:32)
+                ✔ RevenueSlipNull.rdlc ported. @done(20-10-02 02:32)
+                ✔ RevenueSlipPreview.xaml ported. @done(20-10-02 02:32)
+                ✔ RevenueSlipPreview.xaml.cs ported. @done(20-10-02 02:32)
+                ✔ RevenueSlipPreviewNull.xaml ported. @done(20-10-02 02:32)
+                ✔ RevenueSlipPreviewNull.xaml.cs ported. @done(20-10-02 02:32)
+                ✔ RevenueSlipSum.rdlc ported. @done(20-10-02 02:32)
             Revenue:
                 Collector:
                     ☐ RevenueDateSelectionPage.xaml ported.

@@ -227,23 +227,23 @@ DMT.Controls:
                     ✔ SlipView.xaml.cs checked. @done(20-10-02 02:20)
         Pages:
             LoginList:
-                ☐ LoginListPage.xaml checked.
-                ☐ LoginListPage.xaml.cs checked.
+                ✔ LoginListPage.xaml checked. @done(20-10-02 02:24)
+                ✔ LoginListPage.xaml.cs checked. @done(20-10-02 02:24)
             Menu:
                 ☐ MainMenu.xaml checked.
                 ☐ MainMenu.xaml.cs checked.
                 ☐ ReportMenu.xaml checked.
                 ☐ ReportMenu.xaml.cs checked.
             Reports:
-                ☐ DailyRevenueSummaryPreview.xaml checked.
-                ☐ DailyRevenueSummaryPreview.xaml.cs checked.
-                ☐ RevenueSlip.rdlc checked.
-                ☐ RevenueSlipNull.rdlc checked.
-                ☐ RevenueSlipPreview.xaml checked.
-                ☐ RevenueSlipPreview.xaml.cs checked.
-                ☐ RevenueSlipPreviewNull.xaml checked.
-                ☐ RevenueSlipPreviewNull.xaml.cs checked.
-                ☐ RevenueSlipSum.rdlc checked.
+                ✔ DailyRevenueSummaryPreview.xaml checked. @done(20-10-02 02:32)
+                ✔ DailyRevenueSummaryPreview.xaml.cs checked. @done(20-10-02 02:32)
+                ✔ RevenueSlip.rdlc checked. @done(20-10-02 02:32)
+                ✔ RevenueSlipNull.rdlc checked. @done(20-10-02 02:32)
+                ✔ RevenueSlipPreview.xaml checked. @done(20-10-02 02:32)
+                ✔ RevenueSlipPreview.xaml.cs checked. @done(20-10-02 02:32)
+                ✔ RevenueSlipPreviewNull.xaml checked. @done(20-10-02 02:32)
+                ✔ RevenueSlipPreviewNull.xaml.cs checked. @done(20-10-02 02:32)
+                ✔ RevenueSlipSum.rdlc checked. @done(20-10-02 02:32)
             Revenue:
                 Collector:
                     ☐ RevenueDateSelectionPage.xaml checked.
