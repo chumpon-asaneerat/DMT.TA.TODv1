@@ -83,35 +83,35 @@ DMT.Controls:
                     ✔ PlazaRequestExchangeView.xaml.cs ported. @done(20-10-02 01:20)
             History:
                 View:
-                    ☐ PlazaFundHistoryView.xaml ported.
-                    ☐ PlazaFundHistoryView.xaml.cs ported.
+                    ✔ PlazaFundHistoryView.xaml ported. @done(20-10-02 01:22)
+                    ✔ PlazaFundHistoryView.xaml.cs ported. @done(20-10-02 01:22)
             Plaza:
                 Entry:
-                    ☐ FundDetailEntry.xaml ported.
-                    ☐ FundDetailEntry.xaml.cs ported.
-                    ☐ LoanMoney2Entry.xaml ported.
-                    ☐ LoanMoney2Entry.xaml.cs ported.
-                    ☐ LoanMoneyEntry.xaml ported.
-                    ☐ LoanMoneyEntry.xaml.cs ported.
-                    ☐ PlazaCouponEntry.xaml ported.
-                    ☐ PlazaCouponEntry.xaml.cs ported.
-                    ☐ PlazaCreditEntry.xaml ported.
-                    ☐ PlazaCreditEntry.xaml.cs ported.
-                    ☐ PlazaCreditEntryOld.xaml ported.
-                    ☐ PlazaCreditEntryOld.xaml.cs ported.
-                    ☐ PlazaCreditEntryTotal.xaml ported.
-                    ☐ PlazaCreditEntryTotal.xaml.cs ported.
+                    ✔ FundDetailEntry.xaml ported. @done(20-10-02 01:28)
+                    ✔ FundDetailEntry.xaml.cs ported. @done(20-10-02 01:28)
+                    ✔ LoanMoney2Entry.xaml ported. @done(20-10-02 01:28)
+                    ✔ LoanMoney2Entry.xaml.cs ported. @done(20-10-02 01:28)
+                    ✔ LoanMoneyEntry.xaml ported. @done(20-10-02 01:28)
+                    ✔ LoanMoneyEntry.xaml.cs ported. @done(20-10-02 01:28)
+                    ✔ PlazaCouponEntry.xaml ported. @done(20-10-02 01:28)
+                    ✔ PlazaCouponEntry.xaml.cs ported. @done(20-10-02 01:28)
+                    ✔ PlazaCreditEntry.xaml ported. @done(20-10-02 01:28)
+                    ✔ PlazaCreditEntry.xaml.cs ported. @done(20-10-02 01:28)
+                    ✘ PlazaCreditEntryOld.xaml removed. @cancelled(20-10-02 01:29)
+                    ✘ PlazaCreditEntryOld.xaml.cs removed. @cancelled(20-10-02 01:29)
+                    ✔ PlazaCreditEntryTotal.xaml ported. @done(20-10-02 01:29)
+                    ✔ PlazaCreditEntryTotal.xaml.cs ported. @done(20-10-02 01:29)
                 View:
-                    ☐ FundPlaza2View.xaml ported.
-                    ☐ FundPlaza2View.xaml.cs ported.
-                    ☐ FundPlaza3View.xaml ported.
-                    ☐ FundPlaza3View.xaml.cs ported.
-                    ☐ PlazaAllCouponView.xaml ported.
-                    ☐ PlazaAllCouponView.xaml.cs ported.
-                    ☐ PlazaCouponView.xaml ported.
-                    ☐ PlazaCouponView.xaml.cs ported.
-                    ☐ PlazaFundView.xaml ported.
-                    ☐ PlazaFundView.xaml.cs ported.
+                    ✔ FundPlaza2View.xaml ported. @done(20-10-02 01:33)
+                    ✔ FundPlaza2View.xaml.cs ported. @done(20-10-02 01:33)
+                    ✔ FundPlaza3View.xaml ported. @done(20-10-02 01:33)
+                    ✔ FundPlaza3View.xaml.cs ported. @done(20-10-02 01:33)
+                    ✔ PlazaAllCouponView.xaml ported. @done(20-10-02 01:33)
+                    ✔ PlazaAllCouponView.xaml.cs ported. @done(20-10-02 01:33)
+                    ✔ PlazaCouponView.xaml ported. @done(20-10-02 01:33)
+                    ✔ PlazaCouponView.xaml.cs ported. @done(20-10-02 01:33)
+                    ✔ PlazaFundView.xaml ported. @done(20-10-02 01:33)
+                    ✔ PlazaFundView.xaml.cs ported. @done(20-10-02 01:33)
         Pages:
             Collector:
                 ☐ CollectorFundViewPage.xaml ported.

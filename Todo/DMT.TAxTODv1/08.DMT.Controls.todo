@@ -76,35 +76,35 @@ DMT.Controls:
                     ✔ PlazaRequestExchangeView.xaml.cs checked. @done(20-10-02 01:19)
             History:
                 View:
-                    ☐ PlazaFundHistoryView.xaml checked.
-                    ☐ PlazaFundHistoryView.xaml.cs checked.
+                    ✔ PlazaFundHistoryView.xaml checked. @done(20-10-02 01:22)
+                    ✔ PlazaFundHistoryView.xaml.cs checked. @done(20-10-02 01:22)
             Plaza:
                 Entry:
-                    ☐ FundDetailEntry.xaml checked.
-                    ☐ FundDetailEntry.xaml.cs checked.
-                    ☐ LoanMoney2Entry.xaml checked.
-                    ☐ LoanMoney2Entry.xaml.cs checked.
-                    ☐ LoanMoneyEntry.xaml checked.
-                    ☐ LoanMoneyEntry.xaml.cs checked.
-                    ☐ PlazaCouponEntry.xaml checked.
-                    ☐ PlazaCouponEntry.xaml.cs checked.
-                    ☐ PlazaCreditEntry.xaml checked.
-                    ☐ PlazaCreditEntry.xaml.cs checked.
-                    ☐ PlazaCreditEntryOld.xaml checked.
-                    ☐ PlazaCreditEntryOld.xaml.cs checked.
-                    ☐ PlazaCreditEntryTotal.xaml checked.
-                    ☐ PlazaCreditEntryTotal.xaml.cs checked.
+                    ✔ FundDetailEntry.xaml checked. @done(20-10-02 01:28)
+                    ✔ FundDetailEntry.xaml.cs checked. @done(20-10-02 01:28)
+                    ✔ LoanMoney2Entry.xaml checked. @done(20-10-02 01:28)
+                    ✔ LoanMoney2Entry.xaml.cs checked. @done(20-10-02 01:28)
+                    ✔ LoanMoneyEntry.xaml checked. @done(20-10-02 01:28)
+                    ✔ LoanMoneyEntry.xaml.cs checked. @done(20-10-02 01:28)
+                    ✔ PlazaCouponEntry.xaml checked. @done(20-10-02 01:28)
+                    ✔ PlazaCouponEntry.xaml.cs checked. @done(20-10-02 01:28)
+                    ✔ PlazaCreditEntry.xaml checked. @done(20-10-02 01:28)
+                    ✔ PlazaCreditEntry.xaml.cs checked. @done(20-10-02 01:28)
+                    ✘ PlazaCreditEntryOld.xaml removed. @cancelled(20-10-02 01:29)
+                    ✘ PlazaCreditEntryOld.xaml.cs removed. @cancelled(20-10-02 01:29)
+                    ✔ PlazaCreditEntryTotal.xaml checked. @done(20-10-02 01:29)
+                    ✔ PlazaCreditEntryTotal.xaml.cs checked. @done(20-10-02 01:29)
                 View:
-                    ☐ FundPlaza2View.xaml checked.
-                    ☐ FundPlaza2View.xaml.cs checked.
-                    ☐ FundPlaza3View.xaml checked.
-                    ☐ FundPlaza3View.xaml.cs checked.
-                    ☐ PlazaAllCouponView.xaml checked.
-                    ☐ PlazaAllCouponView.xaml.cs checked.
-                    ☐ PlazaCouponView.xaml checked.
-                    ☐ PlazaCouponView.xaml.cs checked.
-                    ☐ PlazaFundView.xaml checked.
-                    ☐ PlazaFundView.xaml.cs checked.
+                    ✔ FundPlaza2View.xaml checked. @done(20-10-02 01:32)
+                    ✔ FundPlaza2View.xaml.cs checked. @done(20-10-02 01:32)
+                    ✔ FundPlaza3View.xaml checked. @done(20-10-02 01:32)
+                    ✔ FundPlaza3View.xaml.cs checked. @done(20-10-02 01:32)
+                    ✔ PlazaAllCouponView.xaml checked. @done(20-10-02 01:32)
+                    ✔ PlazaAllCouponView.xaml.cs checked. @done(20-10-02 01:32)
+                    ✔ PlazaCouponView.xaml checked. @done(20-10-02 01:32)
+                    ✔ PlazaCouponView.xaml.cs checked. @done(20-10-02 01:32)
+                    ✔ PlazaFundView.xaml checked. @done(20-10-02 01:33)
+                    ✔ PlazaFundView.xaml.cs checked. @done(20-10-02 01:33)
         Pages:
             Collector:
                 ☐ CollectorFundViewPage.xaml checked.

@@ -158,9 +158,6 @@
     <Compile Include="TA\Controls\Plaza\Entry\PlazaCreditEntry.xaml.cs">
       <DependentUpon>PlazaCreditEntry.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TA\Controls\Plaza\Entry\PlazaCreditEntryOld.xaml.cs">
-      <DependentUpon>PlazaCreditEntryOld.xaml</DependentUpon>
-    </Compile>
     <Compile Include="TA\Controls\Plaza\Entry\PlazaCreditEntryTotal.xaml.cs">
       <DependentUpon>PlazaCreditEntryTotal.xaml</DependentUpon>
     </Compile>
@@ -524,10 +521,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="TA\Controls\Plaza\Entry\PlazaCreditEntry.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="TA\Controls\Plaza\Entry\PlazaCreditEntryOld.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
