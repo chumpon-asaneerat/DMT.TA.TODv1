@@ -156,7 +156,7 @@ namespace Wpf.RabbitMQ.Sample
                 // VirtualHost Note:
                 // "/" -> default
                 // "cbe" -> required on production!!!!
-                VirtualHost = (string.IsNullOrWhiteSpace(this.VirtualHost)) ? this.VirtualHost : "/",
+                VirtualHost = (!string.IsNullOrWhiteSpace(this.VirtualHost)) ? this.VirtualHost : "/",
                 RequestedConnectionTimeout = TimeSpan.FromSeconds(1)
             };
         }
