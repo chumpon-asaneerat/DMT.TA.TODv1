@@ -14,7 +14,9 @@ Operations:
         User (/Credit/User):
     Exchanges:
     Lanes:
-    Master:
+    Master (/Master):
+        ☐ GetCurrencies (/Master/Currency/Gets) checked.
+        ☐ GetCoupons (/Master/Coupon/Gets) checked.
     Revenue:
     Shifts (/Shift):
         ☐ GetShifts (/Shift/Gets) checked.

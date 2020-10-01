@@ -11,6 +11,8 @@ Operations:
     Exchanges:
     Lanes:
     Master:
+        ✔ GetCurrencies ported. @done(20-10-01 21:59)
+        ✔ GetCoupons ported. @done(20-10-01 21:59)
     Revenue:
     Shifts:
         ✔ GetShifts ported. @done(20-10-01 21:18)

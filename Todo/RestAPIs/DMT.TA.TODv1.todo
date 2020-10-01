@@ -11,6 +11,8 @@ Operations:
     Exchanges:
     Lanes:
     Master:
+        ✔ GetCurrencies checked. @done(20-10-01 21:59)
+        ✔ GetCoupons checked. @done(20-10-01 21:59)
     Revenue:
     Shifts:
         ✔ GetShifts checked. @done(20-10-01 21:17)
