@@ -1,5 +1,12 @@
 Operations:
     Coupons:
+        ✔ GetTSBCouponBalance checked. @done(20-10-01 20:54)
+        ✔ GetTSBCouponSummaries checked. @done(20-10-01 20:57)
+        ✔ GetTSBCouponTransactions checked. @done(20-10-01 20:57)
+        ✔ SaveTSBCouponTransaction checked. @done(20-10-01 20:57)
+        ✔ SaveTSBCouponTransactions checked. @done(20-10-01 20:57)
+        ✔ SyncTSBCouponTransaction checked. @done(20-10-01 20:57)
+        ✔ SyncTSBCouponTransactions checked. @done(20-10-01 20:57)
     Credits:
     Exchanges:
     Lanes:

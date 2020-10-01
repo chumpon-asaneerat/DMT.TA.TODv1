@@ -1,5 +1,12 @@
 Operations:
     Coupons:
+        ✔ GetTSBBalance ported. @done(20-10-01 20:54)
+        ✔ GetTSBCouponSummaries ported. @done(20-10-01 20:57)
+        ✔ GetTSBCouponTransactions ported. @done(20-10-01 20:57)
+        ✔ SaveTransaction ported. @done(20-10-01 20:57)
+        ✔ SaveTransactions ported. @done(20-10-01 20:57)
+        ✔ SyncTransaction ported. @done(20-10-01 20:57)
+        ✔ SyncTransactions ported. @done(20-10-01 20:57)
     Credits:
     Exchanges:
     Lanes:
