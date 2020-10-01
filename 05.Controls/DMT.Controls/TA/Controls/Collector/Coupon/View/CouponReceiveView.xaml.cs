@@ -45,7 +45,8 @@ namespace DMT.TA.Controls.Collector.Coupon
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
 
         private void cmdPrint_Click(object sender, RoutedEventArgs e)
         {
@@ -53,6 +54,8 @@ namespace DMT.TA.Controls.Collector.Coupon
             var trans = (null != button) ? button.DataContext as TSBCouponSummary : null;
             if (null == trans) return;
 
+            // TODO: Neeed Web Client
+            /*
             var search = Search.Users.ById.Create(trans.UserId, "TC");
             var user = ops.Users.GetById(search).Value();
             if (null == user) return;
@@ -63,6 +66,7 @@ namespace DMT.TA.Controls.Collector.Coupon
                 Transaction = trans,
                 User = user
             });
+            */
         }
 
         private void cmdEdit_Click(object sender, RoutedEventArgs e)
@@ -71,6 +75,8 @@ namespace DMT.TA.Controls.Collector.Coupon
             var trans = (null != button) ? button.DataContext as TSBCouponSummary : null;
             if (null == trans) return;
 
+            // TODO: Neeed Web Client
+            /*
             var search = Search.Users.ById.Create(trans.UserId, "TC");
             var user = ops.Users.GetById(search).Value();
             if (null == user) return;
@@ -82,15 +88,18 @@ namespace DMT.TA.Controls.Collector.Coupon
             {
                 return;
             }
+            */
             RefreshList();
         }
 
         public void RefreshList()
         {
+            /*
             var tsb = ops.TSB.GetCurrent().Value();
             var ret = ops.Coupons.GetTSBCouponSummaries(tsb);
             var coupons = ret.Value();
             listView.ItemsSource = coupons;
+            */
         }
 
         public event PrintCouponReceivedReportEventHandler OnPrint;

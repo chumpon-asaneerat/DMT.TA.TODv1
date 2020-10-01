@@ -57,13 +57,13 @@ DMT.Controls:
             Collector:
                 Coupon:
                     Entry:
-                        ☐ CollectorCouponBorrowEntry.xaml checked.
-                        ☐ CollectorCouponBorrowEntry.xaml.cs checked.
+                        ✔ CollectorCouponBorrowEntry.xaml checked. @done(20-10-02 01:13)
+                        ✔ CollectorCouponBorrowEntry.xaml.cs checked. @done(20-10-02 01:13)
                     View:
-                        ☐ CouponReceiveView.xaml checked.
-                        ☐ CouponReceiveView.xaml.cs checked.
-                        ☐ CouponReturnView.xaml checked.
-                        ☐ CouponReturnView.xaml.cs checked.
+                        ✔ CouponReceiveView.xaml checked. @done(20-10-02 01:13)
+                        ✔ CouponReceiveView.xaml.cs checked. @done(20-10-02 01:13)
+                        ✔ CouponReturnView.xaml checked. @done(20-10-02 01:13)
+                        ✔ CouponReturnView.xaml.cs checked. @done(20-10-02 01:13)
                 Credit:
                     View:
                         ☐ CollectorCreditSummaryView.xaml checked.
@@ -143,8 +143,8 @@ DMT.Controls:
                 ☐ CollectorFundSummaryRep.rdlc checked.
                 ☐ CollectorFundSummaryReportPage.xaml checked.
                 ☐ CollectorFundSummaryReportPage.xaml.cs checked.
-                ☐ CollectorFundSummaryReportPageOld.xaml checked.
-                ☐ CollectorFundSummaryReportPageOld.xaml.cs checked.
+                ✘ CollectorFundSummaryReportPageOld.xaml removed. @cancelled(20-10-02 01:04)
+                ✘ CollectorFundSummaryReportPageOld.xaml.cs removed. @cancelled(20-10-02 01:04)
                 ☐ CouponSalesReceiptRep.rdlc checked.
                 ☐ CouponSalesReceiptReportPage.xaml checked.
                 ☐ CouponSalesReceiptReportPage.xaml.cs checked.

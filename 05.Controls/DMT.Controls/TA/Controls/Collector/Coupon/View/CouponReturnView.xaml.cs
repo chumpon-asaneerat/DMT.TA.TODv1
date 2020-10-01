@@ -37,7 +37,8 @@ namespace DMT.TA.Controls.Collector.Coupon
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
 
         private void cmdReturn_Click(object sender, RoutedEventArgs e)
         {
@@ -46,6 +47,8 @@ namespace DMT.TA.Controls.Collector.Coupon
             if (null == trans) return;
 
             var search = Search.Users.ById.Create(trans.UserId, "TC");
+            // TODO: Neeed Web Client
+            /*
             var user = ops.Users.GetById(search).Value();
             if (null == user) return;
 
@@ -56,15 +59,19 @@ namespace DMT.TA.Controls.Collector.Coupon
             {
                 return;
             }
+            */
             RefreshList();
         }
 
         public void RefreshList()
         {
+            // TODO: Neeed Web Client
+            /*
             var tsb = ops.TSB.GetCurrent().Value();
             var ret = ops.Coupons.GetTSBCouponSummaries(tsb);
             var coupons = ret.Value();
             listView.ItemsSource = coupons;
+            */
         }
     }
 }

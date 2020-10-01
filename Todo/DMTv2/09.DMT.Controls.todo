@@ -64,13 +64,13 @@ DMT.Controls:
             Collector:
                 Coupon:
                     Entry:
-                        ☐ CollectorCouponBorrowEntry.xaml ported.
-                        ☐ CollectorCouponBorrowEntry.xaml.cs ported.
+                        ✔ CollectorCouponBorrowEntry.xaml ported. @done(20-10-02 01:14)
+                        ✔ CollectorCouponBorrowEntry.xaml.cs ported. @done(20-10-02 01:14)
                     View:
-                        ☐ CouponReceiveView.xaml ported.
-                        ☐ CouponReceiveView.xaml.cs ported.
-                        ☐ CouponReturnView.xaml ported.
-                        ☐ CouponReturnView.xaml.cs ported.
+                        ✔ CouponReceiveView.xaml ported. @done(20-10-02 01:14)
+                        ✔ CouponReceiveView.xaml.cs ported. @done(20-10-02 01:14)
+                        ✔ CouponReturnView.xaml ported. @done(20-10-02 01:14)
+                        ✔ CouponReturnView.xaml.cs ported. @done(20-10-02 01:14)
                 Credit:
                     View:
                         ☐ CollectorCreditSummaryView.xaml ported.
