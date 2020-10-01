@@ -31,7 +31,8 @@ namespace DMT.TOD.Controls.Revenue.View
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        // TODO: Neeed Web Client
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private User _user = null;
 
         private List<UserShift> _userShifts = null;
@@ -65,9 +66,12 @@ namespace DMT.TOD.Controls.Revenue.View
             lstLaneJobs.ItemsSource = null;
             if (null == userShift) return;
 
+            // TODO: Neeed Web Client
+            /*
             var lanes = ops.Lanes.GetAllAttendancesByUserShift(userShift).Value();
 
             lstLaneJobs.ItemsSource = lanes;
+            */
         }
 
         public void RefreshUsers() 
@@ -75,7 +79,8 @@ namespace DMT.TOD.Controls.Revenue.View
             lstLaneJobs.ItemsSource = null;
             lstUsers.ItemsSource = null;
 
-            _userShifts = ops.UserShifts.GetUnCloseUserShifts().Value();
+            // TODO: Neeed Web Client
+            //_userShifts = ops.UserShifts.GetUnCloseUserShifts().Value();
 
             lstUsers.ItemsSource = _userShifts;
         }

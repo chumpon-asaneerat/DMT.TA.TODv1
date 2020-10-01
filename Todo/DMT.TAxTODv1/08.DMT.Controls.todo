@@ -192,39 +192,39 @@ DMT.Controls:
         Controls:
             Revenue:
                 Entry:
-                    ☐ CouponDMTEntry.xaml checked.
-                    ☐ CouponDMTEntry.xaml.cs checked.
-                    ☐ CouponRevenueEntry.xaml checked.
-                    ☐ CouponRevenueEntry.xaml.cs checked.
-                    ☐ CouponUsageEntry.xaml checked.
-                    ☐ CouponUsageEntry.xaml.cs checked.
-                    ☐ EMVEntry.xaml checked.
-                    ☐ EMVEntry.xaml.cs checked.
-                    ☐ OtherEntry.xaml checked.
-                    ☐ OtherEntry.xaml.cs checked.
-                    ☐ QRCodeEntry.xaml checked.
-                    ☐ QRCodeEntry.xaml.cs checked.
-                    ☐ RevenueEntry.xaml checked.
-                    ☐ RevenueEntry.xaml.cs checked.
-                    ☐ TrafficEntry.xaml checked.
-                    ☐ TrafficEntry.xaml.cs checked.
+                    ✔ CouponDMTEntry.xaml checked. @done(20-10-02 02:19)
+                    ✔ CouponDMTEntry.xaml.cs checked. @done(20-10-02 02:19)
+                    ✔ CouponRevenueEntry.xaml checked. @done(20-10-02 02:19)
+                    ✔ CouponRevenueEntry.xaml.cs checked. @done(20-10-02 02:19)
+                    ✔ CouponUsageEntry.xaml checked. @done(20-10-02 02:19)
+                    ✔ CouponUsageEntry.xaml.cs checked. @done(20-10-02 02:19)
+                    ✔ EMVEntry.xaml checked. @done(20-10-02 02:19)
+                    ✔ EMVEntry.xaml.cs checked. @done(20-10-02 02:19)
+                    ✔ OtherEntry.xaml checked. @done(20-10-02 02:19)
+                    ✔ OtherEntry.xaml.cs checked. @done(20-10-02 02:19)
+                    ✔ QRCodeEntry.xaml checked. @done(20-10-02 02:19)
+                    ✔ QRCodeEntry.xaml.cs checked. @done(20-10-02 02:19)
+                    ✔ RevenueEntry.xaml checked. @done(20-10-02 02:19)
+                    ✔ RevenueEntry.xaml.cs checked. @done(20-10-02 02:19)
+                    ✔ TrafficEntry.xaml checked. @done(20-10-02 02:19)
+                    ✔ TrafficEntry.xaml.cs checked. @done(20-10-02 02:19)
                 View:
-                    ☐ EMVQRCodeView.xaml checked.
-                    ☐ EMVQRCodeView.xaml.cs checked.
-                    ☐ Lane2View.xaml checked.
-                    ☐ Lane2View.xaml.cs checked.
-                    ☐ LaneView.xaml checked.
-                    ☐ LaneView.xaml.cs checked.
-                    ☐ SelectLaneView.xaml checked.
-                    ☐ SelectLaneView.xaml.cs checked.
+                    ✔ EMVQRCodeView.xaml checked. @done(20-10-02 02:19)
+                    ✔ EMVQRCodeView.xaml.cs checked. @done(20-10-02 02:19)
+                    ✔ Lane2View.xaml checked. @done(20-10-02 02:19)
+                    ✔ Lane2View.xaml.cs checked. @done(20-10-02 02:19)
+                    ✔ LaneView.xaml checked. @done(20-10-02 02:19)
+                    ✔ LaneView.xaml.cs checked. @done(20-10-02 02:19)
+                    ✔ SelectLaneView.xaml checked. @done(20-10-02 02:20)
+                    ✔ SelectLaneView.xaml.cs checked. @done(20-10-02 02:20)
             Shift:
                 View:
-                    ☐ LoginList2View.xaml checked.
-                    ☐ LoginList2View.xaml.cs checked.
-                    ☐ ShiftView.xaml checked.
-                    ☐ ShiftView.xaml.cs checked.
-                    ☐ SlipView.xaml checked.
-                    ☐ SlipView.xaml.cs checked.
+                    ✔ LoginList2View.xaml checked. @done(20-10-02 02:20)
+                    ✔ LoginList2View.xaml.cs checked. @done(20-10-02 02:20)
+                    ✔ ShiftView.xaml checked. @done(20-10-02 02:20)
+                    ✔ ShiftView.xaml.cs checked. @done(20-10-02 02:20)
+                    ✔ SlipView.xaml checked. @done(20-10-02 02:20)
+                    ✔ SlipView.xaml.cs checked. @done(20-10-02 02:20)
         Pages:
             LoginList:
                 ☐ LoginListPage.xaml checked.

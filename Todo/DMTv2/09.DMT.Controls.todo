@@ -199,39 +199,39 @@ DMT.Controls:
         Controls:
             Revenue:
                 Entry:
-                    ☐ CouponDMTEntry.xaml ported.
-                    ☐ CouponDMTEntry.xaml.cs ported.
-                    ☐ CouponRevenueEntry.xaml ported.
-                    ☐ CouponRevenueEntry.xaml.cs ported.
-                    ☐ CouponUsageEntry.xaml ported.
-                    ☐ CouponUsageEntry.xaml.cs ported.
-                    ☐ EMVEntry.xaml ported.
-                    ☐ EMVEntry.xaml.cs ported.
-                    ☐ OtherEntry.xaml ported.
-                    ☐ OtherEntry.xaml.cs ported.
-                    ☐ QRCodeEntry.xaml ported.
-                    ☐ QRCodeEntry.xaml.cs ported.
-                    ☐ RevenueEntry.xaml ported.
-                    ☐ RevenueEntry.xaml.cs ported.
-                    ☐ TrafficEntry.xaml ported.
-                    ☐ TrafficEntry.xaml.cs ported.
+                    ✔ CouponDMTEntry.xaml ported. @done(20-10-02 02:19)
+                    ✔ CouponDMTEntry.xaml.cs ported. @done(20-10-02 02:19)
+                    ✔ CouponRevenueEntry.xaml ported. @done(20-10-02 02:19)
+                    ✔ CouponRevenueEntry.xaml.cs ported. @done(20-10-02 02:19)
+                    ✔ CouponUsageEntry.xaml ported. @done(20-10-02 02:19)
+                    ✔ CouponUsageEntry.xaml.cs ported. @done(20-10-02 02:19)
+                    ✔ EMVEntry.xaml ported. @done(20-10-02 02:19)
+                    ✔ EMVEntry.xaml.cs ported. @done(20-10-02 02:19)
+                    ✔ OtherEntry.xaml ported. @done(20-10-02 02:19)
+                    ✔ OtherEntry.xaml.cs ported. @done(20-10-02 02:19)
+                    ✔ QRCodeEntry.xaml ported. @done(20-10-02 02:19)
+                    ✔ QRCodeEntry.xaml.cs ported. @done(20-10-02 02:19)
+                    ✔ RevenueEntry.xaml ported. @done(20-10-02 02:19)
+                    ✔ RevenueEntry.xaml.cs ported. @done(20-10-02 02:19)
+                    ✔ TrafficEntry.xaml ported. @done(20-10-02 02:19)
+                    ✔ TrafficEntry.xaml.cs ported. @done(20-10-02 02:19)
                 View:
-                    ☐ EMVQRCodeView.xaml ported.
-                    ☐ EMVQRCodeView.xaml.cs ported.
-                    ☐ Lane2View.xaml ported.
-                    ☐ Lane2View.xaml.cs ported.
-                    ☐ LaneView.xaml ported.
-                    ☐ LaneView.xaml.cs ported.
-                    ☐ SelectLaneView.xaml ported.
-                    ☐ SelectLaneView.xaml.cs ported.
+                    ✔ EMVQRCodeView.xaml ported. @done(20-10-02 02:20)
+                    ✔ EMVQRCodeView.xaml.cs ported. @done(20-10-02 02:20)
+                    ✔ Lane2View.xaml ported. @done(20-10-02 02:20)
+                    ✔ Lane2View.xaml.cs ported. @done(20-10-02 02:20)
+                    ✔ LaneView.xaml ported. @done(20-10-02 02:20)
+                    ✔ LaneView.xaml.cs ported. @done(20-10-02 02:20)
+                    ✔ SelectLaneView.xaml ported. @done(20-10-02 02:20)
+                    ✔ SelectLaneView.xaml.cs ported. @done(20-10-02 02:20)
             Shift:
                 View:
-                    ☐ LoginList2View.xaml ported.
-                    ☐ LoginList2View.xaml.cs ported.
-                    ☐ ShiftView.xaml ported.
-                    ☐ ShiftView.xaml.cs ported.
-                    ☐ SlipView.xaml ported.
-                    ☐ SlipView.xaml.cs ported.
+                    ✔ LoginList2View.xaml ported. @done(20-10-02 02:20)
+                    ✔ LoginList2View.xaml.cs ported. @done(20-10-02 02:20)
+                    ✔ ShiftView.xaml ported. @done(20-10-02 02:20)
+                    ✔ ShiftView.xaml.cs ported. @done(20-10-02 02:20)
+                    ✔ SlipView.xaml ported. @done(20-10-02 02:20)
+                    ✔ SlipView.xaml.cs ported. @done(20-10-02 02:20)
         Pages:
             LoginList:
                 ☐ LoginListPage.xaml ported.
