@@ -30,7 +30,22 @@ Operations:
             ☐ SaveTSBExchangeGroup (/Exchange/Groups/Save) checked.
         Transactions (/Exchange/Transactions:
             ☐ GetTSBExchangeTransactions (/Exchange/Transactions/Gets) checked.
-    Lanes:
+    Job (/Job):
+        Attendances (/Job/Attendances):
+            ☐ Create (/Job/Attendances/Create) checked.
+            ☐ SaveAttendances (/Job/Attendances/Save) checked.
+            Search (/Job/Attendances/Search):
+                ☐ GetAttendancesByDate (/Job/Attendances/Search/Date) checked.
+                ☐ GetAttendancesByUserShifts (/Job/Attendances/Search/Shift) checked.
+                ☐ GetAttendancesByRevenue (/Job/Attendances/Search/Revenue) (has filter no entry) checked.
+                ☐ GetAttendancesByLanes (/Job/Attendances/Search/Lane) checked.
+        Attendances (/Job/Payments):
+            ☐ CreatePayment (/Job/Payments/Create) checked.
+            ☐ SavePayments (/Job/Payments/Save) checked.
+            Search (/Job/Payments/Search):
+                ☐ GetPaymentsByDate (/Job/Payments/Search/Date) checked.
+                ☐ GetPaymentsByUserShifts (/Job/Payments/Search/Shift) checked.
+                ☐ GetPaymentsByLanes (/Job/Payments/Search/Lane) checked.
     Master (/Master):
         ☐ GetCurrencies (/Master/Currency/Gets) checked.
         ☐ GetCoupons (/Master/Coupon/Gets) checked.
