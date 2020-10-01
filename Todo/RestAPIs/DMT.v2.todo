@@ -9,6 +9,11 @@ Operations:
         ✔ SyncTransactions ported. @done(20-10-01 20:57)
     Credits:
     Exchanges:
+        ✔ GetRequestApproveTSBExchangeGroups ported. @done(20-10-01 22:03)
+        ✔ GetTSBExchangeGroups ported. @done(20-10-01 22:05)
+        ✔ SaveTSBExchangeGroup ported. @done(20-10-01 22:05)
+        ✔ GetTSBExchangeTransactions ported. @done(20-10-01 22:05)
+        ✔ GetTSBExchangeTransaction ported. @done(20-10-01 22:05)
     Lanes:
     Master:
         ✔ GetCurrencies ported. @done(20-10-01 21:59)

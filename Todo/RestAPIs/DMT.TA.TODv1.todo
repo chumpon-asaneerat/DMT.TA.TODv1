@@ -9,6 +9,11 @@ Operations:
         ✔ SyncTSBCouponTransactions checked. @done(20-10-01 20:57)
     Credits:
     Exchanges:
+        ✔ GetRequestApproveTSBExchangeGroups checked. @done(20-10-01 22:05)
+        ✔ GetTSBExchangeGroups checked. @done(20-10-01 22:05)
+        ✔ SaveTSBExchangeGroup checked. @done(20-10-01 22:05)
+        ✔ GetTSBExchangeTransactions checked. @done(20-10-01 22:05)
+        ✔ GetTSBExchangeTransaction checked. @done(20-10-01 22:06)
     Lanes:
     Master:
         ✔ GetCurrencies checked. @done(20-10-01 21:59)
