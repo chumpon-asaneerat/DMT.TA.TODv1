@@ -146,6 +146,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{8ADCD558-1C22-49B7-88EA-667E939CE824}"
 	ProjectSection(SolutionItems) = preProject
 		Technical.Documents\Notes\Compile.note.txt = Technical.Documents\Notes\Compile.note.txt
+		Technical.Documents\Notes\evtthai.note.txt = Technical.Documents\Notes\evtthai.note.txt
 		Technical.Documents\Notes\owin.setting.txt = Technical.Documents\Notes\owin.setting.txt
 		Technical.Documents\Notes\RabbitMQ.app.config.txt = Technical.Documents\Notes\RabbitMQ.app.config.txt
 		Technical.Documents\Notes\teamviewer.txt = Technical.Documents\Notes\teamviewer.txt

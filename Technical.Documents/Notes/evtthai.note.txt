@@ -1,0 +1,9 @@
+Url: https://evthai.info/rabbitmq/#/queues
+User: guest
+Password: dmtDmt@2020
+
+// RabbitMQ Client Connection info
+HostName evthai.info
+VirtualHost = / (in production use 'cbe')
+User: guest
+Password: dmtDmt@2020

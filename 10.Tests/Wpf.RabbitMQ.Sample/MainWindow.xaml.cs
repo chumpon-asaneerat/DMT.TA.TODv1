@@ -133,6 +133,7 @@ namespace Wpf.RabbitMQ.Sample
             this.HostName = "evthai.info";
             this.UserName = "guest";
             this.Password = "dmtDmt@2020";
+            this.VirtualHost = "/"; // default
 
             CreateFactory();
         }
