@@ -7,11 +7,23 @@ Operations:
                 ☐ GetTransactions (/Coupon/TSB/Transactions/Gets) checked.
                 ☐ SaveTransactions (/Coupon/TSB/Transactions/Save) checked.
                 ☐ SyncTransactions (/Coupon/TSB/Transactions/Sync) checked.
-        User (/Coupon/Users):
+        User <NEW!> (/Coupon/Users):
+            ☐ GetBalance (/Coupon/Users/GetBalance) checked.
+            ☐ GetSummaries (/Coupon/Users/GetSummaries) checked.
             Transactions (/Coupon/Users/Transactions):
+                ☐ GetTransactions (/Coupon/Users/Transactions/Gets) checked.
+                ☐ SaveTransactions (/Coupon/Users/Transactions/Save) checked.
     Credit (/Credit):
         TSB (/Credit/TSB):
+            ☐ GetBalance (/Credit/TSB/GetBalance) checked.
+            Transactions (/Credit/TSB/Transactions):
+                ☐ GetTransactions (/Credit/TSB/Transactions/Gets) checked.
+                ☐ SaveTransactions (/Credit/TSB/Transactions/Save) checked.
         User (/Credit/Users):
+            ☐ GetBalances (/Credit/Users/GetBalances) checked.
+            ☐ SaveBalance (/Credit/Users/Save) checked.
+            Transactions (/Credit/Users/Transactions):
+                ☐ SaveTransactions (/Credit/Users/Transactions/Save) checked.
     Exchange (/Exchange):
         Groups (/Exchange/Groups):
             ☐ GetTSBExchangeGroups (/Exchange/Groups/Gets) checked.

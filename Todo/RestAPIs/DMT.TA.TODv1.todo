@@ -8,6 +8,14 @@ Operations:
         ✔ SyncTSBCouponTransaction checked. @done(20-10-01 20:57)
         ✔ SyncTSBCouponTransactions checked. @done(20-10-01 20:57)
     Credits:
+        ✔ GetTSBCreditBalance checked. @done(20-10-01 22:51)
+        ✔ GetInitialTSBCreditTransaction checked. @done(20-10-01 22:51)
+        ✔ GetReplaceTSBCreditTransaction checked. @done(20-10-01 22:51)
+        ✔ SaveTSBCreditTransaction checked. @done(20-10-01 22:51)
+        ✔ GetActiveUserCreditBalances checked. @done(20-10-01 22:51)
+        ✔ GetActiveUserCreditBalanceById checked. @done(20-10-01 22:51)
+        ✔ SaveUserCreditBalance checked. @done(20-10-01 22:51)
+        ✔ SaveUserCreditTransaction checked. @done(20-10-01 22:51)
     Exchanges:
         ✔ GetRequestApproveTSBExchangeGroups checked. @done(20-10-01 22:05)
         ✔ GetTSBExchangeGroups checked. @done(20-10-01 22:05)

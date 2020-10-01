@@ -8,6 +8,14 @@ Operations:
         ✔ SyncTransaction ported. @done(20-10-01 20:57)
         ✔ SyncTransactions ported. @done(20-10-01 20:57)
     Credits:
+        ✔ GetTSBBalance ported. @done(20-10-01 22:51)
+        ✔ GetInitialTSBCreditTransaction ported. @done(20-10-01 22:51)
+        ✔ GetReplaceTSBCreditTransaction ported. @done(20-10-01 22:51)
+        ✔ SaveTSBCreditTransaction ported. @done(20-10-01 22:51)
+        ✔ GetActiveUserCreditBalances ported. @done(20-10-01 22:51)
+        ✔ GetActiveUserCreditBalanceById ported. @done(20-10-01 22:51)
+        ✔ SaveUserCreditBalance ported. @done(20-10-01 22:51)
+        ✔ SaveUserCreditTransaction ported. @done(20-10-01 22:51)
     Exchanges:
         ✔ GetRequestApproveTSBExchangeGroups ported. @done(20-10-01 22:03)
         ✔ GetTSBExchangeGroups ported. @done(20-10-01 22:05)
