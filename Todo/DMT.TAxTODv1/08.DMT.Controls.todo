@@ -29,13 +29,13 @@ DMT.Controls:
             ✔ SmartcardManager.cs checked. @done(20-10-01 20:30)
             ✔ UserSearchManager.cs checked. @done(20-10-01 20:31)
         Pages:
-            ☐ SignInPage.xaml checked.
-            ☐ SignInPage.xaml.cs checked.
+            ✔ SignInPage.xaml checked. @done(20-10-02 00:51)
+            ✔ SignInPage.xaml.cs checked. @done(20-10-02 00:51)
         Windows:
             ✔ SignInWindow.xaml checked. @done(20-10-01 20:39)
             ✔ SignInWindow.xaml.cs checked. @done(20-10-01 20:39)
-            ☐ UserFilterWindow.xaml checked.
-            ☐ UserFilterWindow.xaml.cs checked.
+            ✔ UserFilterWindow.xaml checked. @done(20-10-02 00:51)
+            ✔ UserFilterWindow.xaml.cs checked. @done(20-10-02 00:51)
     StatusBar:
         Elements:
             ✔ AppInfoStatus.xaml checked. @done(20-09-30 11:40)

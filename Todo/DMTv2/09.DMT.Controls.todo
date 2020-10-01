@@ -36,13 +36,13 @@ DMT.Controls:
             ✔ SmartcardManager.cs ported. @done(20-10-01 20:30)
             ✔ UserSearchManager.cs ported. @done(20-10-01 20:31)
         Pages:
-            ☐ SignInPage.xaml ported.
-            ☐ SignInPage.xaml.cs ported.
+            ✔ SignInPage.xaml ported. @done(20-10-02 00:51)
+            ✔ SignInPage.xaml.cs ported. @done(20-10-02 00:51)
         Windows:
             ✔ SignInWindow.xaml ported. @done(20-10-01 20:39)
             ✔ SignInWindow.xaml.cs ported. @done(20-10-01 20:39)
-            ☐ UserFilterWindow.xaml ported.
-            ☐ UserFilterWindow.xaml.cs ported.
+            ✔ UserFilterWindow.xaml ported. @done(20-10-02 00:51)
+            ✔ UserFilterWindow.xaml.cs ported. @done(20-10-02 00:51)
     StatusBar:
         Elements:
             ✔ AppInfoStatus.xaml ported. @done(20-09-30 11:40)

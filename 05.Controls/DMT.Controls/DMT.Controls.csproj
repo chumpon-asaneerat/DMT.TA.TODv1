@@ -95,8 +95,14 @@
     </Compile>
     <Compile Include="SignIn\Common\SmartcardManager.cs" />
     <Compile Include="SignIn\Common\UserSearchManager.cs" />
+    <Compile Include="SignIn\Pages\SignInPage.xaml.cs">
+      <DependentUpon>SignInPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SignIn\Windows\SignInWindow.xaml.cs">
       <DependentUpon>SignInWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SignIn\Windows\UserFilterWindow.xaml.cs">
+      <DependentUpon>UserFilterWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="StatusBar\Elements\AppInfoStatus.xaml.cs">
       <DependentUpon>AppInfoStatus.xaml</DependentUpon>
@@ -187,7 +193,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="SignIn\Pages\SignInPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="SignIn\Windows\SignInWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SignIn\Windows\UserFilterWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
