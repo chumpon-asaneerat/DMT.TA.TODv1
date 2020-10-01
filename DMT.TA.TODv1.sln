@@ -163,6 +163,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Design", "Design", "{906ED5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notes", "Notes", "{C4C72E21-C7BC-4D4C-992A-6C16149BA7F8}"
 	ProjectSection(SolutionItems) = preProject
+		Todo\Notes\DMT.Core.todo = Todo\Notes\DMT.Core.todo
 		Todo\Notes\DMT.Models.todo = Todo\Notes\DMT.Models.todo
 	EndProjectSection
 EndProject
