@@ -26,3 +26,13 @@ Operations:
         ✔ GetUnCloseUserShifts checked. @done(20-10-01 21:17)
     TSB:
     Users:
+        ✔ GetRole checked. @done(20-10-01 21:49)
+        ✔ GetRoles checked. @done(20-10-01 21:49)
+        ✔ SaveRole checked. @done(20-10-01 21:49)
+        ✔ GetUsers checked. @done(20-10-01 21:49)
+        ✔ GetById checked. @done(20-10-01 21:49)
+        ✔ SearchByGroupId checked. @done(20-10-01 21:49)
+        ✔ SearchById checked. @done(20-10-01 21:49)
+        ✔ GetByCardId checked. @done(20-10-01 21:49)
+        ✔ GetByLogIn checked. @done(20-10-01 21:49)
+        ✔ SaveUser checked. @done(20-10-01 21:49)

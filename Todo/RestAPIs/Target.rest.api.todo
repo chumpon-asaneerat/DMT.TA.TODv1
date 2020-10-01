@@ -30,4 +30,15 @@ Operations:
             ☐ End (/Shift/User/End) checked.
             ☐ Gets (/Shift/User/Gets) (has filter all/close/unclose ) checked.
     TSB:
-    Users:
+    Users (/User):
+        Role (/User/Role):
+            ☐ GetRoles (/User/Role/Gets) checked.
+            ☐ SaveRole (/User/Role/Save) checked.
+        User (/User/User):
+            ☐ GetUsers (/User/User/Gets) checked.
+            ☐ SaveUser (/User/User/Save) checked.
+            Search (/User/User/Search):
+                ☐ SearchById (/User/User/Search/Id) checked.
+                ☐ SearchByCardNo (/User/User/Search/CardNo) checked.
+                ☐ SearchByLogIn (/User/User/Search/LogIn) checked.
+                ☐ SearchByGroupId (/User/User/Search/GroupId) checked.

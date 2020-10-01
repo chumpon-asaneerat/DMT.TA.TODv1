@@ -20,6 +20,16 @@ Operations:
         ✔ ChangeShift ported. @done(20-10-01 21:18)
     TSB:
     Users:
+        ✔ GetRole ported. @done(20-10-01 21:44)
+        ✔ GetRoles ported. @done(20-10-01 21:44)
+        ✔ SaveRole ported. @done(20-10-01 21:44)
+        ✔ GetUsers ported. @done(20-10-01 21:44)
+        ✔ GetByCardId ported. @done(20-10-01 21:44)
+        ✔ GetById ported. @done(20-10-01 21:44)
+        ✔ SearchByGroupId ported. @done(20-10-01 21:44)
+        ✔ SearchById ported. @done(20-10-01 21:44)
+        ✔ GetByLogIn ported. @done(20-10-01 21:44)
+        ✔ SaveUser ported. @done(20-10-01 21:44)
     UserShifts:
         ✔ Create ported. @done(20-10-01 21:00)
         ✔ GetCurrent ported. @done(20-10-01 21:00)
