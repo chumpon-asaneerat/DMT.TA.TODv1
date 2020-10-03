@@ -51,8 +51,8 @@ Operations:
                 ☐ GetPaymentsByUserShifts (/Job/Payments/Search/Shift) checked.
                 ☐ GetPaymentsByLanes (/Job/Payments/Search/Lane) checked.
     Master (/Master):
-        ☐ GetCurrencies (/Master/Currency/Gets) checked.
-        ☐ GetCoupons (/Master/Coupon/Gets) checked.
+        ✔ GetCurrencies (/Master/Currency/Gets) checked. @done(20-10-03 21:25)
+        ✔ GetCoupons (/Master/Coupon/Gets) checked. @done(20-10-03 21:25)
     Revenue (/Revenue):
         PlazaRevenue:
             ☐ CreatePlazaRevenue (should be merge to Create Revenue instead) checked.

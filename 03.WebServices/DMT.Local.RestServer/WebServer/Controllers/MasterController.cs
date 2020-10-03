@@ -17,9 +17,7 @@ namespace DMT.Services
     /// </summary>
     public class MasterController : ApiController
     {
-        #region MCurrency
-
-        #region GetCurrencies
+        #region GetCurrencies - OK
 
         /// <summary>
         /// Gets all Currencies (master).
@@ -35,11 +33,7 @@ namespace DMT.Services
 
         #endregion
 
-        #endregion
-
-        #region MCoupon
-
-        #region GetCoupons
+        #region GetCoupons - OK
 
         /// <summary>
         /// Gets all Coupons (master).
@@ -52,8 +46,6 @@ namespace DMT.Services
             var results = MCoupon.GetCoupons();
             return results;
         }
-
-        #endregion
 
         #endregion
     }

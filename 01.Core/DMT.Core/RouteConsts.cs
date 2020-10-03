@@ -1895,6 +1895,63 @@ namespace DMT
         }
 
         #endregion
+
+        #region Master - OK
+
+        /// <summary>
+        /// The Master routes class.
+        /// </summary>
+        public static class Master
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base Master api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Master";
+
+            #endregion
+
+            #region MCurrency - OK
+
+            /// <summary>
+            /// Gets all Currencies (master).
+            /// </summary>
+            public static class GetCurrencies
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetCurrencies";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Master.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region MCoupon - OK
+
+            /// <summary>
+            /// Gets all Coupons (master).
+            /// </summary>
+            public static class GetCoupons
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetCoupons";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Master.Url + @"/" + Name;
+            }
+
+            #endregion
+        }
+
+        #endregion
     }
 
     #endregion

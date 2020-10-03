@@ -91,7 +91,7 @@
     <None Include="WebServer\Controllers\CreditController.cs" />
     <None Include="WebServer\Controllers\ExchangeController.cs" />
     <None Include="WebServer\Controllers\LaneController.cs" />
-    <None Include="WebServer\Controllers\MasterController.cs" />
+    <Compile Include="WebServer\Controllers\MasterController.cs" />
     <None Include="WebServer\Controllers\RevenueController.cs" />
     <None Include="WebServer\Controllers\ShiftController.cs" />
     <None Include="WebServer\Controllers\TSBController.cs" />
