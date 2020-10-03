@@ -1,270 +1,270 @@
 DMT.Controls:
     Header:
         Elements:
-            ☐ HeaderDateTime.xaml checked.
-            ☐ HeaderDateTime.xaml.cs checked.
-            ☐ HeaderLogo.xaml checked.
-            ☐ HeaderLogo.xaml.cs checked.
-            ☐ HeaderPlaza.xaml checked.
-            ☐ HeaderPlaza.xaml.cs checked.
-            ☐ HeaderShift.xaml checked.
-            ☐ HeaderShift.xaml.cs checked.
-            ☐ HeaderSupervisor.xaml checked.
-            ☐ HeaderSupervisor.xaml.cs checked.
-            ☐ HeaderUser.xaml checked.
-            ☐ HeaderUser.xaml.cs checked.
-        ☐ CurrentTA.cs checked.
-        ☐ PlazaHeader.xaml checked.
-        ☐ PlazaHeader.xaml.cs checked.
-        ☐ TAHeader.xaml checked (rename from AccountHeader).
-        ☐ TAHeader.xaml.cs checked (rename from AccountHeader).
+            ☐ HeaderDateTime.xaml refactored.
+            ☐ HeaderDateTime.xaml.cs refactored.
+            ☐ HeaderLogo.xaml refactored.
+            ☐ HeaderLogo.xaml.cs refactored.
+            ☐ HeaderPlaza.xaml refactored.
+            ☐ HeaderPlaza.xaml.cs refactored.
+            ☐ HeaderShift.xaml refactored.
+            ☐ HeaderShift.xaml.cs refactored.
+            ☐ HeaderSupervisor.xaml refactored.
+            ☐ HeaderSupervisor.xaml.cs refactored.
+            ☐ HeaderUser.xaml refactored.
+            ☐ HeaderUser.xaml.cs refactored.
+        ☐ CurrentTA.cs refactored.
+        ☐ PlazaHeader.xaml refactored.
+        ☐ PlazaHeader.xaml.cs refactored.
+        ☐ TAHeader.xaml refactored (rename from AccountHeader).
+        ☐ TAHeader.xaml.cs refactored (rename from AccountHeader).
     Images:
-        ☐ Background checked.
-        ☐ Button checked.
-        ☐ Logo checked.
-        ☐ Menu checked.
-        ☐ Reports checked.
+        ☐ Background refactored.
+        ☐ Button refactored.
+        ☐ Logo refactored.
+        ☐ Menu refactored.
+        ☐ Reports refactored.
     SignIn:
         Common:
-            ☐ SmartcardManager.cs checked.
-            ☐ UserSearchManager.cs checked.
+            ☐ SmartcardManager.cs refactored.
+            ☐ UserSearchManager.cs refactored.
         Pages:
-            ☐ SignInPage.xaml checked.
-            ☐ SignInPage.xaml.cs checked.
+            ☐ SignInPage.xaml refactored.
+            ☐ SignInPage.xaml.cs refactored.
         Windows:
-            ☐ SignInWindow.xaml checked.
-            ☐ SignInWindow.xaml.cs checked.
-            ☐ UserFilterWindow.xaml checked.
-            ☐ UserFilterWindow.xaml.cs checked.
+            ☐ SignInWindow.xaml refactored.
+            ☐ SignInWindow.xaml.cs refactored.
+            ☐ UserFilterWindow.xaml refactored.
+            ☐ UserFilterWindow.xaml.cs refactored.
     StatusBar:
         Elements:
-            ☐ AppInfoStatus.xaml checked.
-            ☐ AppInfoStatus.xaml.cs checked.
-            ☐ LocalDbStatus.xaml checked.
-            ☐ LocalDbStatus.xaml.cs checked.
-            ☐ SCWStatus.xaml checked.
-            ☐ SCWStatus.xaml.cs checked.
-            ☐ TAServerStatus.xaml checked.
-            ☐ TAServerStatus.xaml.cs checked.
-        ☐ TAStatusBar.xaml checked.
-        ☐ TAStatusBar.xaml.cs checked.
-        ☐ TODStatusBar.xaml checked.
-        ☐ TODStatusBar.xaml.cs checked.
+            ☐ AppInfoStatus.xaml refactored.
+            ☐ AppInfoStatus.xaml.cs refactored.
+            ☐ LocalDbStatus.xaml refactored.
+            ☐ LocalDbStatus.xaml.cs refactored.
+            ☐ SCWStatus.xaml refactored.
+            ☐ SCWStatus.xaml.cs refactored.
+            ☐ TAServerStatus.xaml refactored.
+            ☐ TAServerStatus.xaml.cs refactored.
+        ☐ TAStatusBar.xaml refactored.
+        ☐ TAStatusBar.xaml.cs refactored.
+        ☐ TODStatusBar.xaml refactored.
+        ☐ TODStatusBar.xaml.cs refactored.
     TA:
         Controls:
             Collector:
                 Coupon:
                     Entry:
-                        ☐ CollectorCouponBorrowEntry.xaml checked.
-                        ☐ CollectorCouponBorrowEntry.xaml.cs checked.
+                        ☐ CollectorCouponBorrowEntry.xaml refactored.
+                        ☐ CollectorCouponBorrowEntry.xaml.cs refactored.
                     View:
-                        ☐ CouponReceiveView.xaml checked.
-                        ☐ CouponReceiveView.xaml.cs checked.
-                        ☐ CouponReturnView.xaml checked.
-                        ☐ CouponReturnView.xaml.cs checked.
+                        ☐ CouponReceiveView.xaml refactored.
+                        ☐ CouponReceiveView.xaml.cs refactored.
+                        ☐ CouponReturnView.xaml refactored.
+                        ☐ CouponReturnView.xaml.cs refactored.
                 Credit:
                     View:
-                        ☐ CollectorCreditSummaryView.xaml checked.
-                        ☐ CollectorCreditSummaryView.xaml.cs checked.
+                        ☐ CollectorCreditSummaryView.xaml refactored.
+                        ☐ CollectorCreditSummaryView.xaml.cs refactored.
             Exchange:
                 View:
-                    ☐ AccountRequestExchangeView.xaml checked.
-                    ☐ AccountRequestExchangeView.xaml.cs checked.
-                    ☐ PlazaRequestExchangeView.xaml checked.
-                    ☐ PlazaRequestExchangeView.xaml.cs checked.
+                    ☐ AccountRequestExchangeView.xaml refactored.
+                    ☐ AccountRequestExchangeView.xaml.cs refactored.
+                    ☐ PlazaRequestExchangeView.xaml refactored.
+                    ☐ PlazaRequestExchangeView.xaml.cs refactored.
             History:
                 View:
-                    ☐ PlazaFundHistoryView.xaml checked.
-                    ☐ PlazaFundHistoryView.xaml.cs checked.
+                    ☐ PlazaFundHistoryView.xaml refactored.
+                    ☐ PlazaFundHistoryView.xaml.cs refactored.
             Plaza:
                 Entry:
-                    ☐ FundDetailEntry.xaml checked.
-                    ☐ FundDetailEntry.xaml.cs checked.
-                    ☐ LoanMoney2Entry.xaml checked.
-                    ☐ LoanMoney2Entry.xaml.cs checked.
-                    ☐ LoanMoneyEntry.xaml checked.
-                    ☐ LoanMoneyEntry.xaml.cs checked.
-                    ☐ PlazaCouponEntry.xaml checked.
-                    ☐ PlazaCouponEntry.xaml.cs checked.
-                    ☐ PlazaCreditEntry.xaml checked.
-                    ☐ PlazaCreditEntry.xaml.cs checked.
-                    ☐ PlazaCreditEntryTotal.xaml checked.
-                    ☐ PlazaCreditEntryTotal.xaml.cs checked.
+                    ☐ FundDetailEntry.xaml refactored.
+                    ☐ FundDetailEntry.xaml.cs refactored.
+                    ☐ LoanMoney2Entry.xaml refactored.
+                    ☐ LoanMoney2Entry.xaml.cs refactored.
+                    ☐ LoanMoneyEntry.xaml refactored.
+                    ☐ LoanMoneyEntry.xaml.cs refactored.
+                    ☐ PlazaCouponEntry.xaml refactored.
+                    ☐ PlazaCouponEntry.xaml.cs refactored.
+                    ☐ PlazaCreditEntry.xaml refactored.
+                    ☐ PlazaCreditEntry.xaml.cs refactored.
+                    ☐ PlazaCreditEntryTotal.xaml refactored.
+                    ☐ PlazaCreditEntryTotal.xaml.cs refactored.
                 View:
-                    ☐ FundPlaza2View.xaml checked.
-                    ☐ FundPlaza2View.xaml.cs checked.
-                    ☐ FundPlaza3View.xaml checked.
-                    ☐ FundPlaza3View.xaml.cs checked.
-                    ☐ PlazaAllCouponView.xaml checked.
-                    ☐ PlazaAllCouponView.xaml.cs checked.
-                    ☐ PlazaCouponView.xaml checked.
-                    ☐ PlazaCouponView.xaml.cs checked.
-                    ☐ PlazaFundView.xaml checked.
-                    ☐ PlazaFundView.xaml.cs checked.
+                    ☐ FundPlaza2View.xaml refactored.
+                    ☐ FundPlaza2View.xaml.cs refactored.
+                    ☐ FundPlaza3View.xaml refactored.
+                    ☐ FundPlaza3View.xaml.cs refactored.
+                    ☐ PlazaAllCouponView.xaml refactored.
+                    ☐ PlazaAllCouponView.xaml.cs refactored.
+                    ☐ PlazaCouponView.xaml refactored.
+                    ☐ PlazaCouponView.xaml.cs refactored.
+                    ☐ PlazaFundView.xaml refactored.
+                    ☐ PlazaFundView.xaml.cs refactored.
         Pages:
             Collector:
-                ☐ CollectorFundViewPage.xaml checked.
-                ☐ CollectorFundViewPage.xaml.cs checked.
+                ☐ CollectorFundViewPage.xaml refactored.
+                ☐ CollectorFundViewPage.xaml.cs refactored.
             Coupon:
-                ☐ CouponTSBSalePage.xaml checked.
-                ☐ CouponTSBSalePage.xaml.cs checked.
-                ☐ ReceivedCouponPage.xaml checked.
-                ☐ ReceivedCouponPage.xaml.cs checked.
-                ☐ ReturnCouponPage.xaml checked.
-                ☐ ReturnCouponPage.xaml.cs checked.
+                ☐ CouponTSBSalePage.xaml refactored.
+                ☐ CouponTSBSalePage.xaml.cs refactored.
+                ☐ ReceivedCouponPage.xaml refactored.
+                ☐ ReceivedCouponPage.xaml.cs refactored.
+                ☐ ReturnCouponPage.xaml refactored.
+                ☐ ReturnCouponPage.xaml.cs refactored.
             Exchange:
-                ☐ PlazaRequestExchangePage.xaml checked.
-                ☐ PlazaRequestExchangePage.xaml.cs checked.
+                ☐ PlazaRequestExchangePage.xaml refactored.
+                ☐ PlazaRequestExchangePage.xaml.cs refactored.
             History:
-                ☐ PlazaReturnHistoryPage.xaml checked.
-                ☐ PlazaReturnHistoryPage.xaml.cs checked.
+                ☐ PlazaReturnHistoryPage.xaml refactored.
+                ☐ PlazaReturnHistoryPage.xaml.cs refactored.
             Menu:
-                ☐ MainMenu.xaml checked.
-                ☐ MainMenu.xaml.cs checked.
-                ☐ ReportMenu.xaml checked.
-                ☐ ReportMenu.xaml.cs checked.
+                ☐ MainMenu.xaml refactored.
+                ☐ MainMenu.xaml.cs refactored.
+                ☐ ReportMenu.xaml refactored.
+                ☐ ReportMenu.xaml.cs refactored.
             Plaza:
-                ☐ PlazaAllCouponPage.xaml checked.
-                ☐ PlazaAllCouponPage.xaml.cs checked.
-                ☐ PlazaCouponReceivedReturnPage.xaml checked.
-                ☐ PlazaCouponReceivedReturnPage.xaml.cs checked.
-                ☐ PlazaInternalCreditExchangePage.xaml checked.
-                ☐ PlazaInternalCreditExchangePage.xaml.cs checked.
-                ☐ PlazaReceivedReturnPage.xaml checked.
-                ☐ PlazaReceivedReturnPage.xaml.cs checked.
+                ☐ PlazaAllCouponPage.xaml refactored.
+                ☐ PlazaAllCouponPage.xaml.cs refactored.
+                ☐ PlazaCouponReceivedReturnPage.xaml refactored.
+                ☐ PlazaCouponReceivedReturnPage.xaml.cs refactored.
+                ☐ PlazaInternalCreditExchangePage.xaml refactored.
+                ☐ PlazaInternalCreditExchangePage.xaml.cs refactored.
+                ☐ PlazaReceivedReturnPage.xaml refactored.
+                ☐ PlazaReceivedReturnPage.xaml.cs refactored.
             Reports:
-                ☐ CollectorCouponReceived.rdlc checked.
-                ☐ CollectorCouponReceivedReportPage.xaml checked.
-                ☐ CollectorCouponReceivedReportPage.xaml.cs checked.
-                ☐ CollectorFundSummaryRep.rdlc checked.
-                ☐ CollectorFundSummaryReportPage.xaml checked.
-                ☐ CollectorFundSummaryReportPage.xaml.cs checked.
-                ☐ CouponSalesReceiptRep.rdlc checked.
-                ☐ CouponSalesReceiptReportPage.xaml checked.
-                ☐ CouponSalesReceiptReportPage.xaml.cs checked.
+                ☐ CollectorCouponReceived.rdlc refactored.
+                ☐ CollectorCouponReceivedReportPage.xaml refactored.
+                ☐ CollectorCouponReceivedReportPage.xaml.cs refactored.
+                ☐ CollectorFundSummaryRep.rdlc refactored.
+                ☐ CollectorFundSummaryReportPage.xaml refactored.
+                ☐ CollectorFundSummaryReportPage.xaml.cs refactored.
+                ☐ CouponSalesReceiptRep.rdlc refactored.
+                ☐ CouponSalesReceiptReportPage.xaml refactored.
+                ☐ CouponSalesReceiptReportPage.xaml.cs refactored.
         Windows:
             Collector:
                 Credit:
-                    ☐ CollectorCreditBorrowWindow.xaml checked.
-                    ☐ CollectorCreditBorrowWindow.xaml.cs checked.
-                    ☐ CollectorCreditReturnWindow.xaml checked.
-                    ☐ CollectorCreditReturnWindow.xaml.cs checked.
-                    ☐ MessageWindow.xaml checked.
-                    ☐ MessageWindow.xaml.cs checked.
-                    ☐ ReceiveMoneyBagWindow.xaml checked.
-                    ☐ ReceiveMoneyBagWindow.xaml.cs checked.
+                    ☐ CollectorCreditBorrowWindow.xaml refactored.
+                    ☐ CollectorCreditBorrowWindow.xaml.cs refactored.
+                    ☐ CollectorCreditReturnWindow.xaml refactored.
+                    ☐ CollectorCreditReturnWindow.xaml.cs refactored.
+                    ☐ MessageWindow.xaml refactored.
+                    ☐ MessageWindow.xaml.cs refactored.
+                    ☐ ReceiveMoneyBagWindow.xaml refactored.
+                    ☐ ReceiveMoneyBagWindow.xaml.cs refactored.
             Coupon:
-                ☐ CouponEditWindow.xaml checked.
-                ☐ CouponEditWindow.xaml.cs checked.
-                ☐ CouponReportWindow.xaml checked.
-                ☐ CouponReportWindow.xaml.cs checked.
-                ☐ CouponReturnWindow.xaml checked.
-                ☐ CouponReturnWindow.xaml.cs checked.
+                ☐ CouponEditWindow.xaml refactored.
+                ☐ CouponEditWindow.xaml.cs refactored.
+                ☐ CouponReportWindow.xaml refactored.
+                ☐ CouponReportWindow.xaml.cs refactored.
+                ☐ CouponReturnWindow.xaml refactored.
+                ☐ CouponReturnWindow.xaml.cs refactored.
             Exchange:
-                ☐ ExchangeWindowMode.cs checked.
-                ☐ PlazaCreditRequestExchangeWindow.xaml checked.
-                ☐ PlazaCreditRequestExchangeWindow.xaml.cs checked.
-                ☐ PlazaCreditUpdateExchangeWindow.xaml checked.
-                ☐ PlazaCreditUpdateExchangeWindow.xaml.cs checked.
+                ☐ ExchangeWindowMode.cs refactored.
+                ☐ PlazaCreditRequestExchangeWindow.xaml refactored.
+                ☐ PlazaCreditRequestExchangeWindow.xaml.cs refactored.
+                ☐ PlazaCreditUpdateExchangeWindow.xaml refactored.
+                ☐ PlazaCreditUpdateExchangeWindow.xaml.cs refactored.
             MessageBox:
-                ☐ MessageBoxYesNoRed2Window.xaml checked.
-                ☐ MessageBoxYesNoRed2Window.xaml.cs checked.
-                ☐ MessageBoxYesNoRed3Window.xaml checked.
-                ☐ MessageBoxYesNoRed3Window.xaml.cs checked.
+                ☐ MessageBoxYesNoRed2Window.xaml refactored.
+                ☐ MessageBoxYesNoRed2Window.xaml.cs refactored.
+                ☐ MessageBoxYesNoRed3Window.xaml refactored.
+                ☐ MessageBoxYesNoRed3Window.xaml.cs refactored.
                 ☐ MessageBoxYesNoRedWindow - Copy.xaml removed.
                 ☐ MessageBoxYesNoRedWindow - Copy.xaml.cs removed.
             Plaza:
-                ☐ PlazaInternalCreditExchangeWindow.xaml checked.
-                ☐ PlazaInternalCreditExchangeWindow.xaml.cs checked.
-                ☐ PlazaReceivedCreditWindow.xaml checked.
-                ☐ PlazaReceivedCreditWindow.xaml.cs checked.
-                ☐ PlazaStockSummaryWindow.xaml checked.
-                ☐ PlazaStockSummaryWindow.xaml.cs checked.
+                ☐ PlazaInternalCreditExchangeWindow.xaml refactored.
+                ☐ PlazaInternalCreditExchangeWindow.xaml.cs refactored.
+                ☐ PlazaReceivedCreditWindow.xaml refactored.
+                ☐ PlazaReceivedCreditWindow.xaml.cs refactored.
+                ☐ PlazaStockSummaryWindow.xaml refactored.
+                ☐ PlazaStockSummaryWindow.xaml.cs refactored.
     Themes:
-        ☐ generic.xaml checked.
+        ☐ generic.xaml refactored.
     TOD:
         Controls:
             Revenue:
                 Entry:
-                    ☐ CouponDMTEntry.xaml checked.
-                    ☐ CouponDMTEntry.xaml.cs checked.
-                    ☐ CouponRevenueEntry.xaml checked.
-                    ☐ CouponRevenueEntry.xaml.cs checked.
-                    ☐ CouponUsageEntry.xaml checked.
-                    ☐ CouponUsageEntry.xaml.cs checked.
-                    ☐ EMVEntry.xaml checked.
-                    ☐ EMVEntry.xaml.cs checked.
-                    ☐ OtherEntry.xaml checked.
-                    ☐ OtherEntry.xaml.cs checked.
-                    ☐ QRCodeEntry.xaml checked.
-                    ☐ QRCodeEntry.xaml.cs checked.
-                    ☐ RevenueEntry.xaml checked.
-                    ☐ RevenueEntry.xaml.cs checked.
-                    ☐ TrafficEntry.xaml checked.
-                    ☐ TrafficEntry.xaml.cs checked.
+                    ☐ CouponDMTEntry.xaml refactored.
+                    ☐ CouponDMTEntry.xaml.cs refactored.
+                    ☐ CouponRevenueEntry.xaml refactored.
+                    ☐ CouponRevenueEntry.xaml.cs refactored.
+                    ☐ CouponUsageEntry.xaml refactored.
+                    ☐ CouponUsageEntry.xaml.cs refactored.
+                    ☐ EMVEntry.xaml refactored.
+                    ☐ EMVEntry.xaml.cs refactored.
+                    ☐ OtherEntry.xaml refactored.
+                    ☐ OtherEntry.xaml.cs refactored.
+                    ☐ QRCodeEntry.xaml refactored.
+                    ☐ QRCodeEntry.xaml.cs refactored.
+                    ☐ RevenueEntry.xaml refactored.
+                    ☐ RevenueEntry.xaml.cs refactored.
+                    ☐ TrafficEntry.xaml refactored.
+                    ☐ TrafficEntry.xaml.cs refactored.
                 View:
-                    ☐ EMVQRCodeView.xaml checked.
-                    ☐ EMVQRCodeView.xaml.cs checked.
-                    ☐ Lane2View.xaml checked.
-                    ☐ Lane2View.xaml.cs checked.
-                    ☐ LaneView.xaml checked.
-                    ☐ LaneView.xaml.cs checked.
-                    ☐ SelectLaneView.xaml checked.
-                    ☐ SelectLaneView.xaml.cs checked.
+                    ☐ EMVQRCodeView.xaml refactored.
+                    ☐ EMVQRCodeView.xaml.cs refactored.
+                    ☐ Lane2View.xaml refactored.
+                    ☐ Lane2View.xaml.cs refactored.
+                    ☐ LaneView.xaml refactored.
+                    ☐ LaneView.xaml.cs refactored.
+                    ☐ SelectLaneView.xaml refactored.
+                    ☐ SelectLaneView.xaml.cs refactored.
             Shift:
                 View:
-                    ☐ LoginList2View.xaml checked.
-                    ☐ LoginList2View.xaml.cs checked.
-                    ☐ ShiftView.xaml checked.
-                    ☐ ShiftView.xaml.cs checked.
-                    ☐ SlipView.xaml checked.
-                    ☐ SlipView.xaml.cs checked.
+                    ☐ LoginList2View.xaml refactored.
+                    ☐ LoginList2View.xaml.cs refactored.
+                    ☐ ShiftView.xaml refactored.
+                    ☐ ShiftView.xaml.cs refactored.
+                    ☐ SlipView.xaml refactored.
+                    ☐ SlipView.xaml.cs refactored.
         Pages:
             LoginList:
-                ☐ LoginListPage.xaml checked.
-                ☐ LoginListPage.xaml.cs checked.
+                ☐ LoginListPage.xaml refactored.
+                ☐ LoginListPage.xaml.cs refactored.
             Menu:
-                ☐ MainMenu.xaml checked.
-                ☐ MainMenu.xaml.cs checked.
-                ☐ ReportMenu.xaml checked.
-                ☐ ReportMenu.xaml.cs checked.
+                ☐ MainMenu.xaml refactored.
+                ☐ MainMenu.xaml.cs refactored.
+                ☐ ReportMenu.xaml refactored.
+                ☐ ReportMenu.xaml.cs refactored.
             Reports:
-                ☐ DailyRevenueSummaryPreview.xaml checked.
-                ☐ DailyRevenueSummaryPreview.xaml.cs checked.
-                ☐ RevenueSlip.rdlc checked.
-                ☐ RevenueSlipNull.rdlc checked.
-                ☐ RevenueSlipPreview.xaml checked.
-                ☐ RevenueSlipPreview.xaml.cs checked.
-                ☐ RevenueSlipPreviewNull.xaml checked.
-                ☐ RevenueSlipPreviewNull.xaml.cs checked.
-                ☐ RevenueSlipSum.rdlc checked.
+                ☐ DailyRevenueSummaryPreview.xaml refactored.
+                ☐ DailyRevenueSummaryPreview.xaml.cs refactored.
+                ☐ RevenueSlip.rdlc refactored.
+                ☐ RevenueSlipNull.rdlc refactored.
+                ☐ RevenueSlipPreview.xaml refactored.
+                ☐ RevenueSlipPreview.xaml.cs refactored.
+                ☐ RevenueSlipPreviewNull.xaml refactored.
+                ☐ RevenueSlipPreviewNull.xaml.cs refactored.
+                ☐ RevenueSlipSum.rdlc refactored.
             Revenue:
                 Collector:
-                    ☐ RevenueDateSelectionPage.xaml checked.
-                    ☐ RevenueDateSelectionPage.xaml.cs checked.
-                    ☐ RevenueEntryPage.xaml checked.
-                    ☐ RevenueEntryPage.xaml.cs checked.
+                    ☐ RevenueDateSelectionPage.xaml refactored.
+                    ☐ RevenueDateSelectionPage.xaml.cs refactored.
+                    ☐ RevenueEntryPage.xaml refactored.
+                    ☐ RevenueEntryPage.xaml.cs refactored.
                 Supervisor:
-                    ☐ SupervisorRevenueDateSelectionPage.xaml checked.
-                    ☐ SupervisorRevenueDateSelectionPage.xaml.cs checked.
-                    ☐ SupervisorRevenueEntryPage.xaml checked.
-                    ☐ SupervisorRevenueEntryPage.xaml.cs checked.
+                    ☐ SupervisorRevenueDateSelectionPage.xaml refactored.
+                    ☐ SupervisorRevenueDateSelectionPage.xaml.cs refactored.
+                    ☐ SupervisorRevenueEntryPage.xaml refactored.
+                    ☐ SupervisorRevenueEntryPage.xaml.cs refactored.
             TollAdmin:
-                ☐ ChangeShiftPage.xaml checked.
-                ☐ ChangeShiftPage.xaml.cs checked.
-                ☐ EMVQRCodePage.xaml checked.
-                ☐ EMVQRCodePage.xaml.cs checked.
+                ☐ ChangeShiftPage.xaml refactored.
+                ☐ ChangeShiftPage.xaml.cs refactored.
+                ☐ EMVQRCodePage.xaml refactored.
+                ☐ EMVQRCodePage.xaml.cs refactored.
         Windows:
             MessageBox:
-                ☐ MessageBoxWindow.xaml checked.
-                ☐ MessageBoxWindow.xaml.cs checked.
-                ☐ MessageBoxYesNoWindow.xaml checked.
-                ☐ MessageBoxYesNoWindow.xaml.cs checked.
+                ☐ MessageBoxWindow.xaml refactored.
+                ☐ MessageBoxWindow.xaml.cs refactored.
+                ☐ MessageBoxYesNoWindow.xaml refactored.
+                ☐ MessageBoxYesNoWindow.xaml.cs refactored.
             Reports:
-                ☐ RevenueSlipSearchWindow.xaml checked.
-                ☐ RevenueSlipSearchWindow.xaml.cs checked.
-                ☐ RevenueSummarySearchWindow.xaml checked.
-                ☐ RevenueSummarySearchWindow.xaml.cs checked.
+                ☐ RevenueSlipSearchWindow.xaml refactored.
+                ☐ RevenueSlipSearchWindow.xaml.cs refactored.
+                ☐ RevenueSummarySearchWindow.xaml refactored.
+                ☐ RevenueSummarySearchWindow.xaml.cs refactored.
             UserShifts:
-                ☐ BOSWindow.xaml checked.
-                ☐ BOSWindow.xaml.cs checked.
+                ☐ BOSWindow.xaml refactored.
+                ☐ BOSWindow.xaml.cs refactored.

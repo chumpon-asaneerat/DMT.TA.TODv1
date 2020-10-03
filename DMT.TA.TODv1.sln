@@ -184,6 +184,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.RabbitMQ.Sample", "10.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.AvalonEdit.Sample", "10.Tests\Wpf.AvalonEdit.Sample\Wpf.AvalonEdit.Sample.csproj", "{CB55364B-5BF8-40F0-B36D-DAAB75F4AE4B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestAPIs", "RestAPIs", "{DCAD136F-079A-44C6-8AB8-E369306490AB}"
+	ProjectSection(SolutionItems) = preProject
+		Todo\RestAPIs\DMT.Controls.todo = Todo\RestAPIs\DMT.Controls.todo
+		Todo\RestAPIs\DMT.TA.TODv1.todo = Todo\RestAPIs\DMT.TA.TODv1.todo
+		Todo\RestAPIs\DMT.v2.todo = Todo\RestAPIs\DMT.v2.todo
+		Todo\RestAPIs\Target.rest.api.todo = Todo\RestAPIs\Target.rest.api.todo
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -306,6 +314,7 @@ Global
 		{C12ED4FB-E831-46B3-9045-9D655AF2B0A0} = {10C5A3B4-B415-4D49-A27D-BC7F232090A0}
 		{4ABA961F-CB90-465F-A23E-09DAE7B2A69E} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 		{CB55364B-5BF8-40F0-B36D-DAAB75F4AE4B} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
+		{DCAD136F-079A-44C6-8AB8-E369306490AB} = {C21033D8-F60F-460C-AF3A-D13A4B27D6B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
