@@ -189,7 +189,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestAPIs", "RestAPIs", "{DC
 		Todo\RestAPIs\DMT.Controls.todo = Todo\RestAPIs\DMT.Controls.todo
 		Todo\RestAPIs\DMT.TA.TODv1.todo = Todo\RestAPIs\DMT.TA.TODv1.todo
 		Todo\RestAPIs\DMT.v2.todo = Todo\RestAPIs\DMT.v2.todo
-		Todo\RestAPIs\Target.rest.api.todo = Todo\RestAPIs\Target.rest.api.todo
+		Todo\RestAPIs\Target.rest.api.design.todo = Todo\RestAPIs\Target.rest.api.design.todo
+		Todo\RestAPIs\Target.rest.api.test.todo = Todo\RestAPIs\Target.rest.api.test.todo
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestAPIs.tests", "RestAPIs.tests", "{6A9C107E-4057-457D-B9AD-4AE74853C52A}"

@@ -1,0 +1,107 @@
+Operations:
+    Notify (/Notify):
+        TSB (/Notify)/TSB:
+            ☐ ActiveChanged refactored.
+            ☐ ShiftChanged refactored.
+    Coupon (/Coupon):
+        TSB (/Coupon/TSB):
+            ☐ GetBalance (/Coupon/TSB/GetBalance) refactored.
+            ☐ GetSummaries (/Coupon/TSB/GetSummaries) refactored.
+            Transactions (/Coupon/TSB/Transactions):
+                ☐ GetTransactions (/Coupon/TSB/Transactions/Gets) refactored.
+                ☐ SaveTransactions (/Coupon/TSB/Transactions/Save) refactored.
+                ☐ SyncTransactions (/Coupon/TSB/Transactions/Sync) refactored.
+        User <NEW!> (/Coupon/Users):
+            ☐ GetBalance (/Coupon/Users/GetBalance) refactored.
+            ☐ GetSummaries (/Coupon/Users/GetSummaries) refactored.
+            Transactions (/Coupon/Users/Transactions):
+                ☐ GetTransactions (/Coupon/Users/Transactions/Gets) refactored.
+                ☐ SaveTransactions (/Coupon/Users/Transactions/Save) refactored.
+    Credit (/Credit):
+        TSB (/Credit/TSB):
+            ☐ GetBalance (/Credit/TSB/GetBalance) refactored.
+            Transactions (/Credit/TSB/Transactions):
+                ☐ GetTransactions (/Credit/TSB/Transactions/Gets) refactored.
+                ☐ SaveTransactions (/Credit/TSB/Transactions/Save) refactored.
+        User (/Credit/Users):
+            ☐ GetBalances (/Credit/Users/GetBalances) refactored.
+            ☐ SaveBalance (/Credit/Users/Save) refactored.
+            Transactions (/Credit/Users/Transactions):
+                ☐ SaveTransactions (/Credit/Users/Transactions/Save) refactored.
+    Exchange (/Exchange):
+        Groups (/Exchange/Groups):
+            ☐ GetTSBExchangeGroups (/Exchange/Groups/Gets) refactored.
+            ☐ SaveTSBExchangeGroup (/Exchange/Groups/Save) refactored.
+        Transactions (/Exchange/Transactions:
+            ☐ GetTSBExchangeTransactions (/Exchange/Transactions/Gets) refactored.
+    Job (/Job):
+        Attendances (/Job/Attendances):
+            ☐ Create (/Job/Attendances/Create) refactored.
+            ☐ SaveAttendances (/Job/Attendances/Save) refactored.
+            Search (/Job/Attendances/Search):
+                ☐ GetAttendancesByDate (/Job/Attendances/Search/Date) refactored.
+                ☐ GetAttendancesByUserShifts (/Job/Attendances/Search/Shift) refactored.
+                ☐ GetAttendancesByRevenue (/Job/Attendances/Search/Revenue) (has filter no entry) refactored.
+                ☐ GetAttendancesByLanes (/Job/Attendances/Search/Lane) refactored.
+        Attendances (/Job/Payments):
+            ☐ CreatePayment (/Job/Payments/Create) refactored.
+            ☐ SavePayments (/Job/Payments/Save) refactored.
+            Search (/Job/Payments/Search):
+                ☐ GetPaymentsByDate (/Job/Payments/Search/Date) refactored.
+                ☐ GetPaymentsByUserShifts (/Job/Payments/Search/Shift) refactored.
+                ☐ GetPaymentsByLanes (/Job/Payments/Search/Lane) refactored.
+    Master (/Master):
+        ☐ GetCurrencies (/Master/Currency/Gets) refactored.
+        ☐ GetCoupons (/Master/Coupon/Gets) refactored.
+    Revenue (/Revenue):
+        PlazaRevenue:
+            ☐ CreatePlazaRevenue (should be merge to Create Revenue instead) refactored.
+            ☐ SavePlazaRevenue (should be merge to Save Revenue instead) refactored.
+            ☐ GetPlazaRevenue (should be removed) refactored.
+        ☐ CreateRevenue (/Revenue/Create) refactored.
+        ☐ SaveRevenue (/Revenue/Save) refactored.
+        ☐ GetRevenues (/Revenue/Gets) (has filter send/unsend to dc) refactored.
+    Shift (/Shift):
+        ☐ GetShifts (/Shift/Gets) refactored.
+        ☐ SaveShift (/Shift/Seve) refactored.
+        TSB (/Shift/TSB):
+            ☐ Create (/Shift/TSB/Create) refactored.
+            ☐ GetCurrent(/Shift/TSB/Current)  refactored.
+            ☐ ChangeShift (/Shift/TSB/Change) refactored.
+        Users (/Shift/User):
+            ☐ Create (/Shift/Users/Create) refactored.
+            ☐ GetCurrent (/Shift/Users/Current) refactored.
+            ☐ Begin (/Shift/Users/Begin) refactored.
+            ☐ End (/Shift/Users/End) refactored.
+            ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose) refactored.
+    TSB (/TSB):
+        TSBs (/TSB/TSBs):
+            ☐ GetTSBs (/TSB/TSBs/Gets) refactored.
+            ☐ GetCurrent (/TSBs/TSB/Current) refactored.
+            ☐ SetActive (/TSBs/TSB/SetActive) refactored.
+            ☐ SaveTSB (/TSBs/TSB/Save) refactored.
+        PlazaGroups (/TSB/PlazaGroups):
+            ☐ SavePlazaGroup (/TSB/PlazaGroups/Save) refactored.
+            Search (/TSB/PlazaGroups/Search):
+                ☐ ByTSB (/TSB/PlazaGroups/Search/TSB) refactored.
+        Plazas (/TSB/Plazas):
+            ☐ SavePlaza (/TSB/Plazas/Save) refactored.
+            Search (/TSB/Plazas/Search):
+                ☐ ByPlazaGroup (/TSB/Plazas/Search/PlazaGroup) refactored.
+        Lanes (/TSB/Lanes):
+            ☐ SaveLane (/TSB/Lanes/Save) refactored.
+            Search (/TSB/Lanes/Search):
+                ☐ ByPlazaGroup (/TSB/Lanes/PlazaGroup) refactored.
+                ☐ ByPlaza (/TSB/Lanes/Plaza) refactored.
+    User (/User):
+        Role (/User/Roles):
+            ☐ GetRoles (/User/Roles/Gets) refactored.
+            ☐ SaveRole (/User/Roles/Save) refactored.
+        User (/User/Users):
+            ☐ GetUsers (/User/Users/Gets) refactored.
+            ☐ SaveUser (/User/Users/Save) refactored.
+            Search (/User/Users/Search):
+                ☐ SearchById (/User/Users/Search/Id) refactored.
+                ☐ SearchByCardNo (/User/Users/Search/CardNo) refactored.
+                ☐ SearchByLogIn (/User/Users/Search/LogIn) refactored.
+                ☐ SearchByGroupId (/User/Users/Search/GroupId) refactored.

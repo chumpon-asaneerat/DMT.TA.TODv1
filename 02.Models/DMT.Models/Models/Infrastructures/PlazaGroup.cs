@@ -313,58 +313,6 @@ namespace DMT.Models
 
 		#region Static Methods
 
-		#region GetPlazaGroups
-		/*
-		/// <summary>
-		/// Gets PlazaGroups.
-		/// </summary>
-		/// <param name="db">The database connection.</param>
-		/// <returns>Returns List of PlazaGroup.</returns>
-		public static NDbResult<List<PlazaGroup>> GetPlazaGroups(SQLiteConnection db)
-		{
-			var result = new NDbResult<List<PlazaGroup>>();
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM PlazaGroupView ";
-
-					var rets = NQuery.Query<FKs>(cmd).ToList();
-					var results = rets.ToModels();
-					result.Success(results);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-
-				return result;
-			}
-		}
-		/// <summary>
-		/// Gets PlazaGroups.
-		/// </summary>
-		/// <returns>Returns List of PlazaGroup.</returns>
-		public static NDbResult<List<PlazaGroup>> GetPlazaGroups()
-		{
-			lock (sync)
-			{
-				SQLiteConnection db = Default;
-				return GetPlazaGroups(db);
-			}
-		}
-		*/
-		#endregion
-
 		#region SearchByTSB
 
 		/// <summary>
@@ -419,6 +367,59 @@ namespace DMT.Models
 
 		#endregion
 
+		#region GetPlazaGroups - Comment out
+		/*
+		/// <summary>
+		/// Gets PlazaGroups.
+		/// </summary>
+		/// <param name="db">The database connection.</param>
+		/// <returns>Returns List of PlazaGroup.</returns>
+		public static NDbResult<List<PlazaGroup>> GetPlazaGroups(SQLiteConnection db)
+		{
+			var result = new NDbResult<List<PlazaGroup>>();
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string cmd = string.Empty;
+					cmd += "SELECT * ";
+					cmd += "  FROM PlazaGroupView ";
+
+					var rets = NQuery.Query<FKs>(cmd).ToList();
+					var results = rets.ToModels();
+					result.Success(results);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+
+				return result;
+			}
+		}
+		/// <summary>
+		/// Gets PlazaGroups.
+		/// </summary>
+		/// <returns>Returns List of PlazaGroup.</returns>
+		public static NDbResult<List<PlazaGroup>> GetPlazaGroups()
+		{
+			lock (sync)
+			{
+				SQLiteConnection db = Default;
+				return GetPlazaGroups(db);
+			}
+		}
+		*/
+		#endregion
+
+		#region GetPlazaGroup - Comment out
 		/*
 		/// <summary>
 		/// Gets PlazaGroup (By PlazaGroupId).
@@ -469,6 +470,9 @@ namespace DMT.Models
 			}
 		}
 		*/
+
+		#endregion
+
 		#endregion
 	}
 

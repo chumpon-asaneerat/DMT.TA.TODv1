@@ -1,0 +1,107 @@
+Operations:
+    Notify (/Notify):
+        TSB (/Notify)/TSB:
+            ☐ ActiveChanged TESTED.
+            ☐ ShiftChanged TESTED.
+    Coupon (/Coupon):
+        TSB (/Coupon/TSB):
+            ☐ GetBalance (/Coupon/TSB/GetBalance) TESTED.
+            ☐ GetSummaries (/Coupon/TSB/GetSummaries) TESTED.
+            Transactions (/Coupon/TSB/Transactions):
+                ☐ GetTransactions (/Coupon/TSB/Transactions/Gets) TESTED.
+                ☐ SaveTransactions (/Coupon/TSB/Transactions/Save) TESTED.
+                ☐ SyncTransactions (/Coupon/TSB/Transactions/Sync) TESTED.
+        User <NEW!> (/Coupon/Users):
+            ☐ GetBalance (/Coupon/Users/GetBalance) TESTED.
+            ☐ GetSummaries (/Coupon/Users/GetSummaries) TESTED.
+            Transactions (/Coupon/Users/Transactions):
+                ☐ GetTransactions (/Coupon/Users/Transactions/Gets) TESTED.
+                ☐ SaveTransactions (/Coupon/Users/Transactions/Save) TESTED.
+    Credit (/Credit):
+        TSB (/Credit/TSB):
+            ☐ GetBalance (/Credit/TSB/GetBalance) TESTED.
+            Transactions (/Credit/TSB/Transactions):
+                ☐ GetTransactions (/Credit/TSB/Transactions/Gets) TESTED.
+                ☐ SaveTransactions (/Credit/TSB/Transactions/Save) TESTED.
+        User (/Credit/Users):
+            ☐ GetBalances (/Credit/Users/GetBalances) TESTED.
+            ☐ SaveBalance (/Credit/Users/Save) TESTED.
+            Transactions (/Credit/Users/Transactions):
+                ☐ SaveTransactions (/Credit/Users/Transactions/Save) TESTED.
+    Exchange (/Exchange):
+        Groups (/Exchange/Groups):
+            ☐ GetTSBExchangeGroups (/Exchange/Groups/Gets) TESTED.
+            ☐ SaveTSBExchangeGroup (/Exchange/Groups/Save) TESTED.
+        Transactions (/Exchange/Transactions:
+            ☐ GetTSBExchangeTransactions (/Exchange/Transactions/Gets) TESTED.
+    Job (/Job):
+        Attendances (/Job/Attendances):
+            ☐ Create (/Job/Attendances/Create) TESTED.
+            ☐ SaveAttendances (/Job/Attendances/Save) TESTED.
+            Search (/Job/Attendances/Search):
+                ☐ GetAttendancesByDate (/Job/Attendances/Search/Date) TESTED.
+                ☐ GetAttendancesByUserShifts (/Job/Attendances/Search/Shift) TESTED.
+                ☐ GetAttendancesByRevenue (/Job/Attendances/Search/Revenue) (has filter no entry) TESTED.
+                ☐ GetAttendancesByLanes (/Job/Attendances/Search/Lane) TESTED.
+        Attendances (/Job/Payments):
+            ☐ CreatePayment (/Job/Payments/Create) TESTED.
+            ☐ SavePayments (/Job/Payments/Save) TESTED.
+            Search (/Job/Payments/Search):
+                ☐ GetPaymentsByDate (/Job/Payments/Search/Date) TESTED.
+                ☐ GetPaymentsByUserShifts (/Job/Payments/Search/Shift) TESTED.
+                ☐ GetPaymentsByLanes (/Job/Payments/Search/Lane) TESTED.
+    Master (/Master):
+        ☐ GetCurrencies (/Master/Currency/Gets) TESTED.
+        ☐ GetCoupons (/Master/Coupon/Gets) TESTED.
+    Revenue (/Revenue):
+        PlazaRevenue:
+            ☐ CreatePlazaRevenue (should be merge to Create Revenue instead) TESTED.
+            ☐ SavePlazaRevenue (should be merge to Save Revenue instead) TESTED.
+            ☐ GetPlazaRevenue (should be removed) TESTED.
+        ☐ CreateRevenue (/Revenue/Create) TESTED.
+        ☐ SaveRevenue (/Revenue/Save) TESTED.
+        ☐ GetRevenues (/Revenue/Gets) (has filter send/unsend to dc) TESTED.
+    Shift (/Shift):
+        ☐ GetShifts (/Shift/Gets) TESTED.
+        ☐ SaveShift (/Shift/Seve) TESTED.
+        TSB (/Shift/TSB):
+            ☐ Create (/Shift/TSB/Create) TESTED.
+            ☐ GetCurrent(/Shift/TSB/Current)  TESTED.
+            ☐ ChangeShift (/Shift/TSB/Change) TESTED.
+        Users (/Shift/User):
+            ☐ Create (/Shift/Users/Create) TESTED.
+            ☐ GetCurrent (/Shift/Users/Current) TESTED.
+            ☐ Begin (/Shift/Users/Begin) TESTED.
+            ☐ End (/Shift/Users/End) TESTED.
+            ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose) TESTED.
+    TSB (/TSB):
+        TSBs (/TSB/TSBs):
+            ☐ GetTSBs (/TSB/TSBs/Gets) TESTED.
+            ☐ GetCurrent (/TSBs/TSB/Current) TESTED.
+            ☐ SetActive (/TSBs/TSB/SetActive) TESTED.
+            ☐ SaveTSB (/TSBs/TSB/Save) TESTED.
+        PlazaGroups (/TSB/PlazaGroups):
+            ☐ SavePlazaGroup (/TSB/PlazaGroups/Save) TESTED.
+            Search (/TSB/PlazaGroups/Search):
+                ☐ ByTSB (/TSB/PlazaGroups/Search/TSB) TESTED.
+        Plazas (/TSB/Plazas):
+            ☐ SavePlaza (/TSB/Plazas/Save) TESTED.
+            Search (/TSB/Plazas/Search):
+                ☐ ByPlazaGroup (/TSB/Plazas/Search/PlazaGroup) TESTED.
+        Lanes (/TSB/Lanes):
+            ☐ SaveLane (/TSB/Lanes/Save) TESTED.
+            Search (/TSB/Lanes/Search):
+                ☐ ByPlazaGroup (/TSB/Lanes/PlazaGroup) TESTED.
+                ☐ ByPlaza (/TSB/Lanes/Plaza) TESTED.
+    User (/User):
+        Role (/User/Roles):
+            ☐ GetRoles (/User/Roles/Gets) TESTED.
+            ☐ SaveRole (/User/Roles/Save) TESTED.
+        User (/User/Users):
+            ☐ GetUsers (/User/Users/Gets) TESTED.
+            ☐ SaveUser (/User/Users/Save) TESTED.
+            Search (/User/Users/Search):
+                ☐ SearchById (/User/Users/Search/Id) TESTED.
+                ☐ SearchByCardNo (/User/Users/Search/CardNo) TESTED.
+                ☐ SearchByLogIn (/User/Users/Search/LogIn) TESTED.
+                ☐ SearchByGroupId (/User/Users/Search/GroupId) TESTED.

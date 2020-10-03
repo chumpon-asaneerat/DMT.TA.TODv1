@@ -220,7 +220,7 @@ namespace DMT.Services
 
         #region Lane
 
-        #region GetPlazaGroupLanes
+        #region SearchLaneByPlazaGroup
 
         /// <summary>
         /// Search Lane(s) By PlazaGroup.

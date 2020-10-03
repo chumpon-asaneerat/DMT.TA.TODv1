@@ -576,6 +576,8 @@ namespace DMT.Models
 
 		#region Static Methods
 
+		#region SearchByPlazaGroup
+
 		/// <summary>
 		/// Search Lanes (By PlazaGroup).
 		/// </summary>
@@ -633,6 +635,11 @@ namespace DMT.Models
 				return result;
 			}
 		}
+
+		#endregion
+
+		#region SearchByPlaza - Comment Out
+		/*
 		/// <summary>
 		/// Search Lanes (By Plaza).
 		/// </summary>
@@ -693,6 +700,8 @@ namespace DMT.Models
 				return result;
 			}
 		}
+		*/
+		#endregion
 
 		#endregion
 
