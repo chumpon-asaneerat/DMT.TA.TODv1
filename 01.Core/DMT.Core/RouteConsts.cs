@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DMT
+namespace DMT.v1
 {
+    #region RouteConsts V1
+
     /// <summary>
     /// The Route (Local dataase) constants class.
     /// </summary>
@@ -1796,4 +1798,28 @@ namespace DMT
 
         #endregion
     }
+
+    #endregion
+}
+
+namespace DMT
+{
+    #region RouteConsts
+
+    /// <summary>
+    /// The Route (Local dataase) constants class.
+    /// </summary>
+    public static class RouteConsts
+    {
+        #region Base Url
+
+        /// <summary>
+        /// Gets base api url.
+        /// </summary>
+        public const string Url = @"api";
+
+        #endregion
+    }
+
+    #endregion
 }
