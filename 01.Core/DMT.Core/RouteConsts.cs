@@ -1843,6 +1843,15 @@ namespace DMT
             /// </summary>
             public static class TSB
             {
+                #region Base route api
+
+                /// <summary>
+                /// Gets base Notify api url.
+                /// </summary>
+                public const string Url = Notify.Url + @"/Notify";
+
+                #endregion
+
                 #region ActiveChanged - OK
 
                 /// <summary>
@@ -1857,7 +1866,7 @@ namespace DMT
                     /// <summary>
                     /// Gets route url.
                     /// </summary>
-                    public const string Url = Notify.Url + @"/" + Name;
+                    public const string Url = TSB.Url + @"/" + Name;
                 }
 
                 #endregion
@@ -1876,7 +1885,7 @@ namespace DMT
                     /// <summary>
                     /// Gets route url.
                     /// </summary>
-                    public const string Url = Notify.Url + @"/" + Name;
+                    public const string Url = TSB.Url + @"/" + Name;
                 }
 
                 #endregion
