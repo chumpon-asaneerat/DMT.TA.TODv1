@@ -1444,9 +1444,9 @@ namespace DMT.v1
     #endregion
 }
 
-namespace DMT
+namespace DMT.v2
 {
-    #region RouteConsts
+    #region RouteConsts V2
 
     /// <summary>
     /// The Route (Local dataase) constants class.
@@ -1936,6 +1936,555 @@ namespace DMT
         }
 
         #endregion
+    }
+
+    #endregion
+}
+
+namespace DMT
+{
+    #region RouteConsts - base
+
+    /// <summary>
+    /// The Route (Local dataase) constants class.
+    /// </summary>
+    public static partial class RouteConsts 
+    {
+        /// <summary>
+        /// Gets base api url.
+        /// </summary>
+        public const string Url = @"api";
+
+        #region Notify
+
+        /// <summary>
+        /// The Notify routes class.
+        /// </summary>
+        public static partial class Notify
+        {
+            /// <summary>
+            /// Gets base Notify api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Notify";
+
+            #region TSB
+
+            /// <summary>
+            /// The Notify's TSB route.
+            /// </summary>
+            public static partial class TSB 
+            {
+                /// <summary>
+                /// Gets base Notify api url.
+                /// </summary>
+                public const string Url = Notify.Url + @"/Notify";
+            }
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Master
+
+        /// <summary>
+        /// The Master routes class.
+        /// </summary>
+        public static partial class Master
+        {
+            /// <summary>
+            /// Gets base Master api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Master";
+        }
+
+        #endregion
+
+        #region TSB
+
+        /// <summary>
+        /// The TSBs routes class.
+        /// </summary>
+        public static partial class TSB
+        {
+            /// <summary>
+            /// Gets base TSB api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/TSB";
+
+            #region TSBs
+
+            /// <summary>
+            /// The TSB's TSBs routes class.
+            /// </summary>
+            public static partial class TSBs
+            {
+                /// <summary>
+                /// Gets base TSB api url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/TSBs";
+                /// <summary>
+                /// The TSBs's Search routes class.
+                /// </summary>
+                public static partial class Search
+                {
+                    /// <summary>
+                    /// Gets base Search api url.
+                    /// </summary>
+                    public const string Url = TSBs.Url + @"/Search";
+                }
+            }
+
+            #endregion
+
+            #region PlazaGroups
+
+            /// <summary>
+            /// The TSB's PlazaGroups routes class.
+            /// </summary>
+            public static partial class PlazaGroups
+            {
+                /// <summary>
+                /// Gets base TSB api url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/PlazaGroups";
+                /// <summary>
+                /// The PlazaGroups's Search routes class.
+                /// </summary>
+                public static partial class Search
+                {
+                    /// <summary>
+                    /// Gets base Search api url.
+                    /// </summary>
+                    public const string Url = PlazaGroups.Url + @"/Search";
+                }
+            }
+
+            #endregion
+
+            #region Plazas
+
+            /// <summary>
+            /// The TSB's Plazas routes class.
+            /// </summary>
+            public static partial class Plazas
+            {
+                /// <summary>
+                /// Gets base TSB api url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/Plazas";
+                /// <summary>
+                /// The Plazas's Search routes class.
+                /// </summary>
+                public static partial class Search
+                {
+                    /// <summary>
+                    /// Gets base Search api url.
+                    /// </summary>
+                    public const string Url = Plazas.Url + @"/Search";
+                }
+            }
+
+            #endregion
+
+            #region Lanes
+
+            /// <summary>
+            /// The TSB's Lanes routes class.
+            /// </summary>
+            public static partial class Lanes
+            {
+                /// <summary>
+                /// Gets base TSB api url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/Lanes";
+                /// <summary>
+                /// The Lanes's Search routes class.
+                /// </summary>
+                public static partial class Search
+                {
+                    /// <summary>
+                    /// Gets base Search api url.
+                    /// </summary>
+                    public const string Url = Lanes.Url + @"/Search";
+                }
+            }
+
+            #endregion
+        }
+
+        #endregion
+    }
+
+    #endregion
+
+    #region Notify
+
+    static partial class RouteConsts
+    {
+        static partial class Notify
+        {
+            static partial class TSB
+            {
+                #region ActiveChanged - OK
+
+                /// <summary>
+                /// Call when active TSB Changed.
+                /// </summary>
+                public static class ActiveChanged
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "ActiveChanged";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSB.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region ShiftChanged - OK
+
+                /// <summary>
+                /// Call when TSB Shift Changed.
+                /// </summary>
+                public static class ShiftChanged
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "ShiftChanged";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSB.Url + @"/" + Name;
+                }
+
+                #endregion
+            }
+        }
+    }
+
+    #endregion
+
+    #region Master
+
+    static partial class RouteConsts
+    {
+        static partial class Master
+        {
+            #region GetCurrencies - OK
+
+            /// <summary>
+            /// Gets all Currencies (master).
+            /// </summary>
+            public static class GetCurrencies
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetCurrencies";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Master.Url + @"/" + Name;
+            }
+
+            #endregion
+
+            #region GetCoupons - OK
+
+            /// <summary>
+            /// Gets all Coupons (master).
+            /// </summary>
+            public static class GetCoupons
+            {
+                /// <summary>
+                /// Gets route name.
+                /// </summary>
+                public const string Name = "GetCoupons";
+                /// <summary>
+                /// Gets route url.
+                /// </summary>
+                public const string Url = Master.Url + @"/" + Name;
+            }
+
+            #endregion
+        }
+    }
+
+    #endregion
+
+    #region TSB - TSBs
+
+    static partial class RouteConsts
+    {
+        static partial class TSB 
+        {
+            static partial class TSBs
+            {
+                #region GetTSBs
+
+                /// <summary>
+                /// Gets all TSBs.
+                /// </summary>
+                public static class GetTSBs
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "Gets";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSBs.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region GetCurrent
+
+                /// <summary>
+                /// Gets Current TSB.
+                /// </summary>
+                public static class GetCurrent
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "Current";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSBs.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region SetActive
+
+                /// <summary>
+                /// Set Active TSB.
+                /// </summary>
+                public static class SetActive
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "SetActive";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSBs.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region SaveTSB
+
+                /// <summary>
+                /// Save TSB.
+                /// </summary>
+                public static class SaveTSB
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "Save";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSBs.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region Search(s)
+
+                static partial class Search
+                {
+
+                }
+
+                #endregion
+            }
+        }
+    }
+
+    #endregion
+
+    #region TSB - PlazaGroups
+
+    static partial class RouteConsts
+    {
+        static partial class TSB
+        {
+            static partial class PlazaGroups
+            {
+                #region SavePlazaGroup
+
+                /// <summary>
+                /// Save PlazaGroup.
+                /// </summary>
+                public static class SavePlazaGroup
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "Save";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = PlazaGroups.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region Search(s)
+
+                static partial class Search
+                {
+                    #region ByTSB
+
+                    /// <summary>
+                    /// Search PlazaGroups by TSB.
+                    /// </summary>
+                    public static class ByTSB
+                    {
+                        /// <summary>
+                        /// Gets route name.
+                        /// </summary>
+                        public const string Name = "TSB";
+                        /// <summary>
+                        /// Gets route url.
+                        /// </summary>
+                        public const string Url = Search.Url + @"/" + Name;
+                    }
+
+                    #endregion
+                }
+
+                #endregion
+            }
+        }
+    }
+
+    #endregion
+
+    #region TSB - Plazas
+
+    static partial class RouteConsts
+    {
+        static partial class TSB 
+        {
+            static partial class Plazas
+            {
+                #region SavePlaza
+
+                /// <summary>
+                /// Save Plaza.
+                /// </summary>
+                public static class SavePlaza
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "SavePlaza";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = Plazas.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region Search(s)
+
+                static partial class Search
+                {
+                    #region ByPlazaGroup
+
+                    /// <summary>
+                    /// Search By PlazaGroup's Plazas.
+                    /// </summary>
+                    public static class ByPlazaGroup
+                    {
+                        /// <summary>
+                        /// Gets route name.
+                        /// </summary>
+                        public const string Name = "PlazaGroup";
+                        /// <summary>
+                        /// Gets route url.
+                        /// </summary>
+                        public const string Url = Search.Url + @"/" + Name;
+                    }
+
+                    #endregion
+                }
+
+                #endregion
+            }
+        }
+    }
+
+    #endregion
+
+    #region TSB - Lanes
+
+    static partial class RouteConsts
+    {
+        static partial class TSB 
+        {
+            static partial class Lanes
+            {
+                #region SaveLane
+
+                /// <summary>
+                /// Save Lane.
+                /// </summary>
+                public static class SaveLane
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "SaveLane";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = Lanes.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region Search(s)
+
+                static partial class Search
+                {
+                    #region ByPlazaGroup
+
+                    /// <summary>
+                    /// Scarch By Plaza Group.
+                    /// </summary>
+                    public static class ByPlazaGroup
+                    {
+                        /// <summary>
+                        /// Gets route name.
+                        /// </summary>
+                        public const string Name = "PlazaGroup";
+                        /// <summary>
+                        /// Gets route url.
+                        /// </summary>
+                        public const string Url = Search.Url + @"/" + Name;
+                    }
+
+                    #endregion
+                }
+
+                #endregion
+            }
+        }
     }
 
     #endregion
