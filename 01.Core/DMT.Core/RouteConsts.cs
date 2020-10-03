@@ -1554,7 +1554,7 @@ namespace DMT
 
             #endregion
 
-            #region MCurrency - OK
+            #region GetCurrencies - OK
 
             /// <summary>
             /// Gets all Currencies (master).
@@ -1573,7 +1573,7 @@ namespace DMT
 
             #endregion
 
-            #region MCoupon - OK
+            #region GetCoupons - OK
 
             /// <summary>
             /// Gets all Coupons (master).

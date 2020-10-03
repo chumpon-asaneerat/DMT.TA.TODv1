@@ -194,6 +194,35 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestAPIs", "RestAPIs", "{DC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestAPIs.tests", "RestAPIs.tests", "{6A9C107E-4057-457D-B9AD-4AE74853C52A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Master", "Master", "{261A3AB8-06C4-418B-A334-81E72558D3B7}"
+	ProjectSection(SolutionItems) = preProject
+		Todo\RestAPIs.tests\Master\GetCoupons.rest = Todo\RestAPIs.tests\Master\GetCoupons.rest
+		Todo\RestAPIs.tests\Master\GetCurrencies.rest = Todo\RestAPIs.tests\Master\GetCurrencies.rest
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructures", "Infrastructures", "{04B6EDFB-4DA0-4A31-8D94-D173BDFE3B00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TSBs", "TSBs", "{EE747B2F-E6FD-46D0-B5E6-4438490F4241}"
+	ProjectSection(SolutionItems) = preProject
+		Todo\RestAPIs.tests\Infrastructures\TSBs\GetCurrent.rest = Todo\RestAPIs.tests\Infrastructures\TSBs\GetCurrent.rest
+		Todo\RestAPIs.tests\Infrastructures\TSBs\GetTSBs.rest = Todo\RestAPIs.tests\Infrastructures\TSBs\GetTSBs.rest
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PlazaGroups", "PlazaGroups", "{DE09804F-97D2-490B-8C12-6787D6045F9F}"
+	ProjectSection(SolutionItems) = preProject
+		Todo\RestAPIs.tests\Infrastructures\PlazaGroups\SearchByTSB.rest = Todo\RestAPIs.tests\Infrastructures\PlazaGroups\SearchByTSB.rest
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plazas", "Plazas", "{EBF93AFC-D1AE-4D59-BD14-5540236AA379}"
+	ProjectSection(SolutionItems) = preProject
+		Todo\RestAPIs.tests\Infrastructures\Plazas\SearchByPlazaGroup.rest = Todo\RestAPIs.tests\Infrastructures\Plazas\SearchByPlazaGroup.rest
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lanes", "Lanes", "{6CAE14C9-8130-46AA-A718-EE4A0D0A568A}"
+	ProjectSection(SolutionItems) = preProject
+		Todo\RestAPIs.tests\Infrastructures\Lanes\SearchByPlazaGroup.rest = Todo\RestAPIs.tests\Infrastructures\Lanes\SearchByPlazaGroup.rest
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -318,6 +347,12 @@ Global
 		{CB55364B-5BF8-40F0-B36D-DAAB75F4AE4B} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 		{DCAD136F-079A-44C6-8AB8-E369306490AB} = {C21033D8-F60F-460C-AF3A-D13A4B27D6B6}
 		{6A9C107E-4057-457D-B9AD-4AE74853C52A} = {C21033D8-F60F-460C-AF3A-D13A4B27D6B6}
+		{261A3AB8-06C4-418B-A334-81E72558D3B7} = {6A9C107E-4057-457D-B9AD-4AE74853C52A}
+		{04B6EDFB-4DA0-4A31-8D94-D173BDFE3B00} = {6A9C107E-4057-457D-B9AD-4AE74853C52A}
+		{EE747B2F-E6FD-46D0-B5E6-4438490F4241} = {04B6EDFB-4DA0-4A31-8D94-D173BDFE3B00}
+		{DE09804F-97D2-490B-8C12-6787D6045F9F} = {04B6EDFB-4DA0-4A31-8D94-D173BDFE3B00}
+		{EBF93AFC-D1AE-4D59-BD14-5540236AA379} = {04B6EDFB-4DA0-4A31-8D94-D173BDFE3B00}
+		{6CAE14C9-8130-46AA-A718-EE4A0D0A568A} = {04B6EDFB-4DA0-4A31-8D94-D173BDFE3B00}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
