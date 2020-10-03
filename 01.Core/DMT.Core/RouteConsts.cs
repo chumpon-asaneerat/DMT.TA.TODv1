@@ -19,307 +19,6 @@ namespace DMT.v1
 
         #endregion
 
-        #region Master - OK
-
-        /// <summary>
-        /// The Master routes class.
-        /// </summary>
-        public static class Master
-        {
-            #region Base route api
-
-            /// <summary>
-            /// Gets base Master api url.
-            /// </summary>
-            public const string Url = RouteConsts.Url + @"/Master";
-
-            #endregion
-
-            #region MCurrency - OK
-
-            /// <summary>
-            /// Gets all Currencies (master).
-            /// </summary>
-            public static class GetCurrencies
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "GetCurrencies";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = Master.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #region MCoupon - OK
-
-            /// <summary>
-            /// Gets all Coupons (master).
-            /// </summary>
-            public static class GetCoupons
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "GetCoupons";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = Master.Url + @"/" + Name;
-            }
-
-            #endregion
-        }
-
-        #endregion
-
-        #region TSB - OK
-
-        /// <summary>
-        /// The TSB routes class.
-        /// </summary>
-        public static class TSB
-        {
-            #region Base route api
-
-            /// <summary>
-            /// Gets base TSB api url.
-            /// </summary>
-            public const string Url = RouteConsts.Url + @"/TSB";
-
-            #endregion
-
-            #region TSB - OK
-
-            #region GetTSBs - OK
-
-            /// <summary>
-            /// Gets all TSBs.
-            /// </summary>
-            public static class GetTSBs
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "GetTSBs";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = TSB.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #region GetCurrent - OK
-
-            /// <summary>
-            /// Gets Current TSB.
-            /// </summary>
-            public static class GetCurrent
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "GetCurrent";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = TSB.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #region SetActive - OK
-
-            /// <summary>
-            /// Set Active TSB.
-            /// </summary>
-            public static class SetActive
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "SetActive";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = TSB.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #region SaveTSB - OK
-
-            /// <summary>
-            /// Save TSB.
-            /// </summary>
-            public static class SaveTSB
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "SaveTSB";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = TSB.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #endregion
-
-            #region PlazaGroup - OK
-
-            #region GetTSBPlazaGroups - OK
-
-            /// <summary>
-            /// Gets PlazaGroups by TSB.
-            /// </summary>
-            public static class GetTSBPlazaGroups
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "GetTSBPlazaGroups";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = TSB.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #region SavePlazaGroup - OK
-
-            /// <summary>
-            /// Save PlazaGroup.
-            /// </summary>
-            public static class SavePlazaGroup
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "SavePlazaGroup";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = TSB.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #endregion
-
-            #region Plaza - OK
-
-            #region GetPlazaGroupPlazas - OK
-
-            /// <summary>
-            /// Get PlazaGroup's Plazas.
-            /// </summary>
-            public static class GetPlazaGroupPlazas
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "GetPlazaGroupPlazas";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = TSB.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #region SavePlaza - OK
-
-            /// <summary>
-            /// Save Plaza.
-            /// </summary>
-            public static class SavePlaza
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "SavePlaza";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = TSB.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #endregion
-
-            #region Lane - OK
-
-            #region GetPlazaGroupLanes - OK
-
-            /// <summary>
-            /// Gets Plaza Group's Lanes.
-            /// </summary>
-            public static class GetPlazaGroupLanes
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "GetPlazaGroupLanes";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = TSB.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #region GetPlazaLanes - OK
-
-            /// <summary>
-            /// Gets Plaza's Lanes.
-            /// </summary>
-            public static class GetPlazaLanes
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "GetPlazaLanes";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = TSB.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #region SaveLane - OK
-
-            /// <summary>
-            /// Save Lane.
-            /// </summary>
-            public static class SaveLane
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "SaveLane";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = TSB.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #endregion
-        }
-
-        #endregion
-
         #region User - OK
 
         /// <User>
@@ -1740,63 +1439,6 @@ namespace DMT.v1
         }
 
         #endregion
-
-        #region Notify - OK
-
-        /// <summary>
-        /// The Notify routes class.
-        /// </summary>
-        public static class Notify
-        {
-            #region Base route api
-
-            /// <summary>
-            /// Gets base Notify api url.
-            /// </summary>
-            public const string Url = RouteConsts.Url + @"/Notify";
-
-            #endregion
-
-            #region ActiveTSBChanged - OK
-
-            /// <summary>
-            /// Call when active TSB Changed.
-            /// </summary>
-            public static class ActiveTSBChanged
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "ActiveTSBChanged";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = Notify.Url + @"/" + Name;
-            }
-
-            #endregion
-
-            #region TSBShiftChanged - OK
-
-            /// <summary>
-            /// Call when TSB Shift Changed.
-            /// </summary>
-            public static class TSBShiftChanged
-            {
-                /// <summary>
-                /// Gets route name.
-                /// </summary>
-                public const string Name = "TSBShiftChanged";
-                /// <summary>
-                /// Gets route url.
-                /// </summary>
-                public const string Url = Notify.Url + @"/" + Name;
-            }
-
-            #endregion
-        }
-
-        #endregion
     }
 
     #endregion
@@ -1946,6 +1588,348 @@ namespace DMT
                 /// Gets route url.
                 /// </summary>
                 public const string Url = Master.Url + @"/" + Name;
+            }
+
+            #endregion
+        }
+
+        #endregion
+
+        #region TSB - OK
+
+        /// <summary>
+        /// The TSBs routes class.
+        /// </summary>
+        public static class TSB
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base TSB api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/TSB";
+
+            #endregion
+
+            #region TSBs - OK
+
+            /// <summary>
+            /// The TSB's TSBs routes class.
+            /// </summary>
+            public static class TSBs
+            {
+                #region Base route api
+
+                /// <summary>
+                /// Gets base TSB api url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/TSBs";
+
+                #endregion
+
+                #region GetTSBs - OK
+
+                /// <summary>
+                /// Gets all TSBs.
+                /// </summary>
+                public static class GetTSBs
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "Gets";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSBs.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region GetCurrent - OK
+
+                /// <summary>
+                /// Gets Current TSB.
+                /// </summary>
+                public static class GetCurrent
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "Current";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSBs.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region SetActive - OK
+
+                /// <summary>
+                /// Set Active TSB.
+                /// </summary>
+                public static class SetActive
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "SetActive";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSBs.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region SaveTSB - OK
+
+                /// <summary>
+                /// Save TSB.
+                /// </summary>
+                public static class SaveTSB
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "Save";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSBs.Url + @"/" + Name;
+                }
+
+                #endregion
+            }
+
+            #endregion
+
+            #region PlazaGroups - OK
+
+            /// <summary>
+            /// The TSB's PlazaGroups routes class.
+            /// </summary>
+            public static class PlazaGroups
+            {
+                #region Base route api
+
+                /// <summary>
+                /// Gets base TSB api url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/PlazaGroups";
+
+                #endregion
+
+                #region SavePlazaGroup - OK
+
+                /// <summary>
+                /// Save PlazaGroup.
+                /// </summary>
+                public static class SavePlazaGroup
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "Save";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = PlazaGroups.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region Search - OK
+
+                /// <summary>
+                /// The PlazaGroups's Search routes class.
+                /// </summary>
+                public static class Search
+                {
+                    #region Base route api
+
+                    /// <summary>
+                    /// Gets base TSB api url.
+                    /// </summary>
+                    public const string Url = PlazaGroups.Url + @"/Search";
+
+                    #endregion
+
+                    #region ByTSB - OK
+
+                    /// <summary>
+                    /// Search PlazaGroups by TSB.
+                    /// </summary>
+                    public static class ByTSB
+                    {
+                        /// <summary>
+                        /// Gets route name.
+                        /// </summary>
+                        public const string Name = "TSB";
+                        /// <summary>
+                        /// Gets route url.
+                        /// </summary>
+                        public const string Url = Search.Url + @"/" + Name;
+                    }
+
+                    #endregion
+                }
+
+                #endregion
+            }
+
+            #endregion
+
+            #region Plazas - OK
+
+            /// <summary>
+            /// The TSB's Plazas routes class.
+            /// </summary>
+            public static class Plazas
+            {
+                #region Base route api
+
+                /// <summary>
+                /// Gets base TSB api url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/Plazas";
+
+                #endregion
+
+                #region SavePlaza - OK
+
+                /// <summary>
+                /// Save Plaza.
+                /// </summary>
+                public static class SavePlaza
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "SavePlaza";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = Plazas.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region Search - OK
+
+                /// <summary>
+                /// The PlazaGroups's Search routes class.
+                /// </summary>
+                public static class Search
+                {
+                    #region Base route api
+
+                    /// <summary>
+                    /// Gets base TSB api url.
+                    /// </summary>
+                    public const string Url = Plazas.Url + @"/Search";
+
+                    #endregion
+
+                    #region ByPlazaGroup - OK
+
+                    /// <summary>
+                    /// Search By PlazaGroup's Plazas.
+                    /// </summary>
+                    public static class ByPlazaGroup
+                    {
+                        /// <summary>
+                        /// Gets route name.
+                        /// </summary>
+                        public const string Name = "PlazaGroup";
+                        /// <summary>
+                        /// Gets route url.
+                        /// </summary>
+                        public const string Url = Search.Url + @"/" + Name;
+                    }
+
+                    #endregion
+                }
+
+                #endregion
+            }
+
+            #endregion
+
+            #region Lanes - OK
+
+            /// <summary>
+            /// The TSB's Lanes routes class.
+            /// </summary>
+            public static class Lanes
+            {
+                #region Base route api
+
+                /// <summary>
+                /// Gets base TSB api url.
+                /// </summary>
+                public const string Url = TSB.Url + @"/Lanes";
+
+                #endregion
+
+                #region SaveLane - OK
+
+                /// <summary>
+                /// Save Lane.
+                /// </summary>
+                public static class SaveLane
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "SaveLane";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = Lanes.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region Search - OK
+
+                /// <summary>
+                /// The PlazaGroups's Search routes class.
+                /// </summary>
+                public static class Search
+                {
+                    #region Base route api
+
+                    /// <summary>
+                    /// Gets base TSB api url.
+                    /// </summary>
+                    public const string Url = Lanes.Url + @"/Search";
+
+                    #endregion
+
+                    #region ByPlazaGroup - OK
+
+                    /// <summary>
+                    /// Scarch By Plaza Group.
+                    /// </summary>
+                    public static class ByPlazaGroup
+                    {
+                        /// <summary>
+                        /// Gets route name.
+                        /// </summary>
+                        public const string Name = "PlazaGroup";
+                        /// <summary>
+                        /// Gets route url.
+                        /// </summary>
+                        public const string Url = Search.Url + @"/" + Name;
+                    }
+
+                    #endregion
+                }
+
+                #endregion
             }
 
             #endregion

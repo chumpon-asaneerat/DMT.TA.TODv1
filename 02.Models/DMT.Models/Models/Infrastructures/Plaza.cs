@@ -427,12 +427,14 @@ namespace DMT.Models
 
 		#region Static Methods
 
+		#region SearchByPlazaGroup
+
 		/// <summary>
-		/// Gets Plazas (By PlazaGroup).
+		/// Search Plazas (By PlazaGroup).
 		/// </summary>
 		/// <param name="value">The PlazaGroup Instance.</param>
 		/// <returns>Returns List of Plaza.</returns>
-		public static NDbResult<List<Plaza>> GetPlazaGroupPlazas(PlazaGroup value)
+		public static NDbResult<List<Plaza>> SearchByPlazaGroup(PlazaGroup value)
 		{
 			var result = new NDbResult<List<Plaza>>();
 			SQLiteConnection db = Default;
@@ -444,16 +446,16 @@ namespace DMT.Models
 
 			lock (sync)
 			{
-				return GetPlazaGroupPlazas(value.TSBId, value.PlazaGroupId);
+				return SearchByPlazaGroup(value.TSBId, value.PlazaGroupId);
 			}
 		}
 		/// <summary>
-		/// Gets Plazas (By PlazaGroup Id).
+		/// Search Plazas (By PlazaGroup Id).
 		/// </summary>
 		/// <param name="tsbId">The TSB Id.</param>
 		/// <param name="plazaGroupId">The PlazaGroup Id.</param>
 		/// <returns>Returns List of Plaza.</returns>
-		public static NDbResult<List<Plaza>> GetPlazaGroupPlazas(
+		public static NDbResult<List<Plaza>> SearchByPlazaGroup(
 			string tsbId,
 			string plazaGroupId)
 		{
@@ -487,6 +489,8 @@ namespace DMT.Models
 				return result;
 			}
 		}
+
+		#endregion
 
 		#endregion
 

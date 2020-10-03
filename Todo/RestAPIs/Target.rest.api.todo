@@ -75,21 +75,24 @@ Operations:
             ☐ End (/Shift/Users/End) checked.
             ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose) checked.
     TSB (/TSB):
-        TSB (/TSB/TSB):
-            ☐ GetTSBs (/TSB/TSB/Gets) checked.
-            ☐ GetCurrent (/TSB/TSB/Current) checked.
-            ☐ SetActive (/TSB/TSB/SetActive) checked.
-            ☐ SaveTSB (/TSB/TSB/Save) checked.
+        TSBs (/TSB/TSBs):
+            ✔ GetTSBs (/TSB/TSBs/Gets) checked. @done(20-10-03 21:47)
+            ✔ GetCurrent (/TSBs/TSB/Current) checked. @done(20-10-03 21:47)
+            ✔ SetActive (/TSBs/TSB/SetActive) checked. @done(20-10-03 21:47)
+            ✔ SaveTSB (/TSBs/TSB/Save) checked. @done(20-10-03 21:47)
         PlazaGroups (/TSB/PlazaGroups):
-            ☐ GetTSBPlazaGroups (/TSB/PlazaGroups/Gets) checked.
-            ☐ SavePlazaGroup (/TSB/PlazaGroups/Save) checked.
+            ✔ SavePlazaGroup (/TSB/PlazaGroups/Save) checked. @done(20-10-03 22:09)
+            Search (/TSB/PlazaGroups/Search):
+                ✔ ByTSB (/TSB/PlazaGroups/Search/TSB) checked. @done(20-10-03 22:25)
         Plazas (/TSB/Plazas):
-            ☐ GetPlazaGroupPlazas (/TSB/Plazas/Gets) checked.
-            ☐ SavePlaza (/TSB/Plazas/Save) checked.
+            ✔ SavePlaza (/TSB/Plazas/Save) checked. @done(20-10-03 22:09)
+            Search (/TSB/Plazas/Search):
+                ✔ ByPlazaGroup (/TSB/Plazas/Search/PlazaGroup) checked. @done(20-10-03 22:25)
         Lanes (/TSB/Lanes):
-            ☐ GetPlazaGroupLanes (/TSB/Lanes/Gets) checked.
-            ☐ GetPlazaLanes (/TSB/Lanes/Gets) checked.
-            ☐ SaveLane (/TSB/Lanes/Save) checked.
+            ✔ SaveLane (/TSB/Lanes/Save) checked. @done(20-10-03 22:25)
+            Search (/TSB/Lanes/Search):
+                ✔ ByPlazaGroup (/TSB/Lanes/PlazaGroup) checked. @done(20-10-03 22:26)
+                ☐ ByPlaza (/TSB/Lanes/Plaza) checked.
     User (/User):
         Role (/User/Roles):
             ☐ GetRoles (/User/Roles/Gets) checked.

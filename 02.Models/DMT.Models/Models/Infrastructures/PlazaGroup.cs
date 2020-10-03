@@ -313,6 +313,8 @@ namespace DMT.Models
 
 		#region Static Methods
 
+		#region GetPlazaGroups
+		/*
 		/// <summary>
 		/// Gets PlazaGroups.
 		/// </summary>
@@ -360,12 +362,17 @@ namespace DMT.Models
 				return GetPlazaGroups(db);
 			}
 		}
+		*/
+		#endregion
+
+		#region SearchByTSB
+
 		/// <summary>
-		/// Gets PlazaGroups (By TSB).
+		/// Search PlazaGroups (By TSB).
 		/// </summary>
 		/// <param name="value">The TSB instance.</param>
 		/// <returns>Returns List of PlazaGroup.</returns>
-		public static NDbResult<List<PlazaGroup>> GetTSBPlazaGroups(TSB value)
+		public static NDbResult<List<PlazaGroup>> SearchByTSB(TSB value)
 		{
 			var result = new NDbResult<List<PlazaGroup>>();
 			SQLiteConnection db = Default;
@@ -376,15 +383,15 @@ namespace DMT.Models
 			}
 			lock (sync)
 			{
-				return GetTSBPlazaGroups(value.TSBId);
+				return SearchByTSB(value.TSBId);
 			}
 		}
 		/// <summary>
-		/// Gets PlazaGroups (By TSBId).
+		/// Search PlazaGroups (By TSBId).
 		/// </summary>
 		/// <param name="tsbId">The TSB Id.</param>
 		/// <returns>Returns List of PlazaGroup.</returns>
-		public static NDbResult<List<PlazaGroup>> GetTSBPlazaGroups(string tsbId)
+		public static NDbResult<List<PlazaGroup>> SearchByTSB(string tsbId)
 		{
 			var result = new NDbResult<List<PlazaGroup>>();
 			lock (sync)
@@ -409,6 +416,10 @@ namespace DMT.Models
 				return result;
 			}
 		}
+
+		#endregion
+
+		/*
 		/// <summary>
 		/// Gets PlazaGroup (By PlazaGroupId).
 		/// </summary>
@@ -457,7 +468,7 @@ namespace DMT.Models
 				return GetPlazaGroup(db, plazaGroupId);
 			}
 		}
-
+		*/
 		#endregion
 	}
 

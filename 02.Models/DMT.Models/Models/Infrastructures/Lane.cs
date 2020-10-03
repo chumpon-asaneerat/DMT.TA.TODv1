@@ -577,11 +577,11 @@ namespace DMT.Models
 		#region Static Methods
 
 		/// <summary>
-		/// Gets Lanes (By PlazaGroup).
+		/// Search Lanes (By PlazaGroup).
 		/// </summary>
 		/// <param name="value">The PlazaGroup instance.</param>
 		/// <returns>Returns List fo Lanes.</returns>
-		public static NDbResult<List<Lane>> GetPlazaGroupLanes(PlazaGroup value)
+		public static NDbResult<List<Lane>> SearchByPlazaGroup(PlazaGroup value)
 		{
 			var result = new NDbResult<List<Lane>>();
 			SQLiteConnection db = Default;
@@ -592,16 +592,16 @@ namespace DMT.Models
 			}
 			lock (sync)
 			{
-				return GetPlazaGroupLanes(value.TSBId, value.PlazaGroupId);
+				return SearchByPlazaGroup(value.TSBId, value.PlazaGroupId);
 			}
 		}
 		/// <summary>
-		/// Gets Lanes (By TSBId, PlazaGroupId)
+		/// Search Lanes (By TSBId, PlazaGroupId)
 		/// </summary>
 		/// <param name="tsbId">The TSB Id.</param>
 		/// <param name="plazaGroupId">The Plaza Group Id.</param>
 		/// <returns>Returns List fo Lanes.</returns>
-		public static NDbResult<List<Lane>> GetPlazaGroupLanes(string tsbId, string plazaGroupId)
+		public static NDbResult<List<Lane>> SearchByPlazaGroup(string tsbId, string plazaGroupId)
 		{
 			var result = new NDbResult<List<Lane>>();
 			SQLiteConnection db = Default;
@@ -634,11 +634,11 @@ namespace DMT.Models
 			}
 		}
 		/// <summary>
-		/// Gets Lanes (By Plaza).
+		/// Search Lanes (By Plaza).
 		/// </summary>
 		/// <param name="value">The Plaza instance.</param>
 		/// <returns>Returns List fo Lanes.</returns>
-		public static NDbResult<List<Lane>> GetPlazaLanes(Plaza value)
+		public static NDbResult<List<Lane>> SearchByPlaza(Plaza value)
 		{
 			var result = new NDbResult<List<Lane>>();
 			SQLiteConnection db = Default;
@@ -649,17 +649,17 @@ namespace DMT.Models
 			}
 			lock (sync)
 			{
-				return GetPlazaLanes(value.TSBId, value.PlazaGroupId, value.PlazaId);
+				return SearchByPlaza(value.TSBId, value.PlazaGroupId, value.PlazaId);
 			}
 		}
 		/// <summary>
-		/// Gets Lanes (By TSBId, PlazaGroupId. PlazaId).
+		/// Search Lanes (By TSBId, PlazaGroupId. PlazaId).
 		/// </summary>
 		/// <param name="tsbId">The TSB Id.</param>
 		/// <param name="plazaGroupId">The Plaza Group Id.</param>
 		/// <param name="plazaId">The Plaza Id.</param>
 		/// <returns>Returns List fo Lanes.</returns>
-		public static NDbResult<List<Lane>> GetPlazaLanes(string tsbId, string plazaGroupId,
+		public static NDbResult<List<Lane>> SearchByPlaza(string tsbId, string plazaGroupId,
 			string plazaId)
 		{
 			var result = new NDbResult<List<Lane>>();

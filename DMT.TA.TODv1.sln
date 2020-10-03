@@ -192,6 +192,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestAPIs", "RestAPIs", "{DC
 		Todo\RestAPIs\Target.rest.api.todo = Todo\RestAPIs\Target.rest.api.todo
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RestAPIs.tests", "RestAPIs.tests", "{6A9C107E-4057-457D-B9AD-4AE74853C52A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -315,6 +317,7 @@ Global
 		{4ABA961F-CB90-465F-A23E-09DAE7B2A69E} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 		{CB55364B-5BF8-40F0-B36D-DAAB75F4AE4B} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 		{DCAD136F-079A-44C6-8AB8-E369306490AB} = {C21033D8-F60F-460C-AF3A-D13A4B27D6B6}
+		{6A9C107E-4057-457D-B9AD-4AE74853C52A} = {C21033D8-F60F-460C-AF3A-D13A4B27D6B6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}

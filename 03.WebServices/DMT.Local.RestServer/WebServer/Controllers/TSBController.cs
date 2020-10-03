@@ -26,7 +26,7 @@ namespace DMT.Services
         /// </summary>
         /// <returns>Returns list of all TSBs.</returns>
         [HttpPost]
-        [ActionName(RouteConsts.TSB.GetTSBs.Name)]
+        [ActionName(RouteConsts.TSB.TSBs.GetTSBs.Name)]
         public NDbResult<List<TSB>> GetTSBs()
         {
             var results = TSB.GetTSBs();
@@ -42,7 +42,7 @@ namespace DMT.Services
         /// </summary>
         /// <returns>Returns Active TSB.</returns>
         [HttpPost]
-        [ActionName(RouteConsts.TSB.GetCurrent.Name)]
+        [ActionName(RouteConsts.TSB.TSBs.GetCurrent.Name)]
         public NDbResult<TSB> GetCurrent()
         {
             var result = TSB.GetCurrent();
@@ -58,7 +58,7 @@ namespace DMT.Services
         /// </summary>
         /// <returns>Returns NDbResult instance.</returns>
         [HttpPost]
-        [ActionName(RouteConsts.TSB.SetActive.Name)]
+        [ActionName(RouteConsts.TSB.TSBs.SetActive.Name)]
         public NDbResult SetActive([FromBody] TSB value)
         {
             NDbResult result;
@@ -86,7 +86,7 @@ namespace DMT.Services
         /// </summary>
         /// <returns>Returns Save TSB.</returns>
         [HttpPost]
-        [ActionName(RouteConsts.TSB.SaveTSB.Name)]
+        [ActionName(RouteConsts.TSB.TSBs.SaveTSB.Name)]
         public NDbResult<TSB> SaveTSB([FromBody] TSB value)
         {
             NDbResult<TSB> result;
@@ -108,16 +108,16 @@ namespace DMT.Services
 
         #region PlazaGroup
 
-        #region GetTSBPlazaGroups
+        #region SearchByTSB
 
         /// <summary>
-        /// Gets TSB's Plaza Groups
+        /// Search PlazaGroup(s) by TSB.
         /// </summary>
         /// <param name="value">The target TSB instance.</param>
         /// <returns>Returns List of Plaza Groups of specificed TSB.</returns>
         [HttpPost]
-        [ActionName(RouteConsts.TSB.GetTSBPlazaGroups.Name)]
-        public NDbResult<List<PlazaGroup>> GetTSBPlazaGroups([FromBody] TSB value)
+        [ActionName(RouteConsts.TSB.PlazaGroups.Search.ByTSB.Name)]
+        public NDbResult<List<PlazaGroup>> SearchPlazaGroupByTSB([FromBody] TSB value)
         {
             NDbResult<List<PlazaGroup>> result;
             if (null == value)
@@ -127,7 +127,7 @@ namespace DMT.Services
             }
             else
             {
-                result = PlazaGroup.GetTSBPlazaGroups(value);
+                result = PlazaGroup.SearchByTSB(value);
             }
             return result;
         }
@@ -142,7 +142,7 @@ namespace DMT.Services
         /// <param name="value">The plaza group instance.</param>
         /// <returns>Returns Save plaza group instance.</returns>
         [HttpPost]
-        [ActionName(RouteConsts.TSB.SavePlazaGroup.Name)]
+        [ActionName(RouteConsts.TSB.PlazaGroups.SavePlazaGroup.Name)]
         public NDbResult<PlazaGroup> SavePlazaGroup([FromBody] PlazaGroup value)
         {
             NDbResult<PlazaGroup> result;
@@ -164,16 +164,16 @@ namespace DMT.Services
 
         #region Plaza
 
-        #region GetPlazaGroupPlazas
+        #region SearchPlazaByPlazaGroup
 
         /// <summary>
-        /// Gets PlazaGroup Plazas.
+        /// Search Plaza(s) By PlazaGroup.
         /// </summary>
         /// <param name="value">The PlazaGroup instance.</param>
         /// <returns>Returns List of Plaza in specificed PlazaGroup.</returns>
         [HttpPost]
-        [ActionName(RouteConsts.TSB.GetPlazaGroupPlazas.Name)]
-        public NDbResult<List<Plaza>> GetPlazaGroupPlazas([FromBody] PlazaGroup value)
+        [ActionName(RouteConsts.TSB.Plazas.Search.ByPlazaGroup.Name)]
+        public NDbResult<List<Plaza>> SearchPlazaByPlazaGroup([FromBody] PlazaGroup value)
         {
             NDbResult<List<Plaza>> result;
             if (null == value)
@@ -183,7 +183,7 @@ namespace DMT.Services
             }
             else
             {
-                result = Plaza.GetPlazaGroupPlazas(value);
+                result = Plaza.SearchByPlazaGroup(value);
             }
             return result;
         }
@@ -198,7 +198,7 @@ namespace DMT.Services
         /// <param name="value">The Plaza Instance.</param>
         /// <returns>Returns save plaza instance.</returns>
         [HttpPost]
-        [ActionName(RouteConsts.TSB.SavePlaza.Name)]
+        [ActionName(RouteConsts.TSB.Plazas.SavePlaza.Name)]
         public NDbResult<Plaza> SavePlaza([FromBody] Plaza value)
         {
             NDbResult<Plaza> result;
@@ -223,13 +223,13 @@ namespace DMT.Services
         #region GetPlazaGroupLanes
 
         /// <summary>
-        /// Gets PlazaGroup's Lanes.
+        /// Search Lane(s) By PlazaGroup.
         /// </summary>
         /// <param name="value">The PlazaGroup instance.</param>
         /// <returns>Returnsl Lane list in PlazaGroup.</returns>
         [HttpPost]
-        [ActionName(RouteConsts.TSB.GetPlazaGroupLanes.Name)]
-        public NDbResult<List<Lane>> GetPlazaGroupLanes([FromBody] PlazaGroup value)
+        [ActionName(RouteConsts.TSB.Lanes.Search.ByPlazaGroup.Name)]
+        public NDbResult<List<Lane>> SearchLaneByPlazaGroup([FromBody] PlazaGroup value)
         {
             NDbResult<List<Lane>> result;
             if (null == value)
@@ -239,7 +239,7 @@ namespace DMT.Services
             }
             else
             {
-                result = Lane.GetPlazaGroupLanes(value);
+                result = Lane.SearchByPlazaGroup(value);
 
             }
             return result;
@@ -247,15 +247,15 @@ namespace DMT.Services
 
         #endregion
 
-        #region GetPlazaLanes
-
+        #region GetPlazaLanes - Comment out
+        /*
         /// <summary>
         /// Gets Plaza's Lanes.
         /// </summary>
         /// <param name="value">The Plaza instance.</param>
         /// <returns>Returnsl Lane list in Plaza.</returns>
         [HttpPost]
-        [ActionName(RouteConsts.TSB.GetPlazaLanes.Name)]
+        [ActionName(RouteConsts.TSB.Lanes.GetPlazaLanes.Name)]
         public NDbResult<List<Lane>> GetPlazaLanes([FromBody] Plaza value)
         {
             NDbResult<List<Lane>> result;
@@ -270,7 +270,7 @@ namespace DMT.Services
             }
             return result;
         }
-
+        */
         #endregion
 
         #region SaveLane
@@ -281,7 +281,7 @@ namespace DMT.Services
         /// <param name="value">The Lane Instance.</param>
         /// <returns>Returns save Lane instance.</returns>
         [HttpPost]
-        [ActionName(RouteConsts.TSB.SaveLane.Name)]
+        [ActionName(RouteConsts.TSB.Lanes.SaveLane.Name)]
         public NDbResult<Lane> SaveLane([FromBody] Lane value)
         {
             NDbResult<Lane> result;
