@@ -17,15 +17,15 @@ namespace DMT.Services
     /// </summary>
     public class NotifyController : ApiController
     {
-        #region ActiveTSBChanged
+        #region ActiveChanged
 
         /// <summary>
         /// Call when set active TSB.
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        [ActionName(RouteConsts.Notify.ActiveTSBChanged.Name)]
-        public NDbResult ActiveTSBChanged()
+        [ActionName(RouteConsts.Notify.TSB.ActiveChanged.Name)]
+        public NDbResult ActiveChanged()
         {
             NDbResult result = new NDbResult();
             result = new NDbResult();
@@ -35,15 +35,15 @@ namespace DMT.Services
 
         #endregion
 
-        #region TSBShiftChanged
+        #region ShiftChanged
 
         /// <summary>
         /// Call when TSB Shift Changed. 
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        [ActionName(RouteConsts.Notify.TSBShiftChanged.Name)]
-        public NDbResult TSBShiftChanged()
+        [ActionName(RouteConsts.Notify.TSB.ShiftChanged.Name)]
+        public NDbResult ShiftChanged()
         {
             NDbResult result = new NDbResult();
             result = new NDbResult();

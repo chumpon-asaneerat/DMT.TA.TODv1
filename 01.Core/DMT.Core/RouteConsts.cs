@@ -1819,6 +1819,73 @@ namespace DMT
         public const string Url = @"api";
 
         #endregion
+
+        #region Notify - OK
+
+        /// <summary>
+        /// The Notify routes class.
+        /// </summary>
+        public static class Notify
+        {
+            #region Base route api
+
+            /// <summary>
+            /// Gets base Notify api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Notify";
+
+            #endregion
+
+            #region TSB
+
+            /// <summary>
+            /// Gets base Notify TSB api url.
+            /// </summary>
+            public static class TSB
+            {
+                #region ActiveChanged - OK
+
+                /// <summary>
+                /// Call when active TSB Changed.
+                /// </summary>
+                public static class ActiveChanged
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "ActiveChanged";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = Notify.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region ShiftChanged - OK
+
+                /// <summary>
+                /// Call when TSB Shift Changed.
+                /// </summary>
+                public static class ShiftChanged
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "ShiftChanged";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = Notify.Url + @"/" + Name;
+                }
+
+                #endregion
+            }
+
+            #endregion
+        }
+
+        #endregion
     }
 
     #endregion

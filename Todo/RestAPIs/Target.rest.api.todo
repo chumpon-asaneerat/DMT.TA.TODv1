@@ -1,4 +1,8 @@
 Operations:
+    Notify (/Notify):
+        TSB (/Notify)/TSB:
+            ✔ ActiveChanged checked. @done(20-10-03 21:19)
+            ✔ ShiftChanged checked. @done(20-10-03 21:19)
     Coupon (/Coupon):
         TSB (/Coupon/TSB):
             ☐ GetBalance (/Coupon/TSB/GetBalance) checked.
