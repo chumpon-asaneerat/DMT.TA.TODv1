@@ -102,11 +102,21 @@ namespace Wpf.Sqlite.Sample
                 items.Add(GetInst(idx));
                 idx++;
             }
-            DateTime dt = DateTime.Now;
-            Stock.SaveAll(db, items);
-            TimeSpan ts = DateTime.Now - dt;
-            string msg = string.Format("operate {0:n0} record(s) in {1:n0} ms.", items.Count, ts.TotalMilliseconds);
-            txtTime.Text = msg;
+
+            Task.Run(() => 
+            {
+                txtTime.Dispatcher.Invoke(() => { txtTime.Text = "Executing...."; });
+
+                DateTime dt = DateTime.Now;
+                Stock.SaveAll(db, items);
+                TimeSpan ts = DateTime.Now - dt;
+                string msg = string.Format("operate {0:n0} record(s) in {1:n0} ms.", items.Count, ts.TotalMilliseconds);
+
+                txtTime.Dispatcher.Invoke(() =>
+                {
+                    txtTime.Text = msg;
+                });
+            });
         }
 
         public List<Stock> InitData()
