@@ -108,7 +108,9 @@ namespace Wpf.Sqlite.Sample
                 txtTime.Dispatcher.Invoke(() => { txtTime.Text = "Executing...."; });
 
                 DateTime dt = DateTime.Now;
-                Stock.SaveAll(db, items);
+
+                Stock.SaveAll(db, items); // Save all.
+                
                 TimeSpan ts = DateTime.Now - dt;
                 string msg = string.Format("operate {0:n0} record(s) in {1:n0} ms.", items.Count, ts.TotalMilliseconds);
 
@@ -170,10 +172,23 @@ namespace Wpf.Sqlite.Sample
         {
             if (null == db || null == values)
                 return;
-            values.ForEach(value => 
+            try
             {
-                Save(db, value);
-            });
+                db.BeginTransaction();
+                values.ForEach(value =>
+                {
+                    Save(db, value);
+                });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Rollback();
+            }
+            finally
+            {
+                db.Commit();
+            }
         }
 
         public static List<Stock> GetAll(SQLiteConnection db)
