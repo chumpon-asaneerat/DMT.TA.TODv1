@@ -2490,8 +2490,13 @@ namespace DMT.v3
     #endregion
 }
 
-
 namespace DMT
 {
+    /// <summary>
+    /// The Rest api routes constants class.
+    /// </summary>
+    public static partial class RouteConsts
+    {
 
+    }
 }

@@ -226,6 +226,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lanes", "Lanes", "{6CAE14C9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.Owin.Rest.Server.Sample", "10.Tests\Wpf.Owin.Rest.Server.Sample\Wpf.Owin.Rest.Server.Sample.csproj", "{26EC6C55-15BC-420F-9ADC-EB8658ABF740}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.TextBlock.Format.Sample", "10.Tests\Wpf.TextBlock.Format.Sample\Wpf.TextBlock.Format.Sample.csproj", "{6FFF61A2-4D49-4A49-B1A4-5BB00F306CBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -316,6 +318,10 @@ Global
 		{26EC6C55-15BC-420F-9ADC-EB8658ABF740}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26EC6C55-15BC-420F-9ADC-EB8658ABF740}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26EC6C55-15BC-420F-9ADC-EB8658ABF740}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FFF61A2-4D49-4A49-B1A4-5BB00F306CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FFF61A2-4D49-4A49-B1A4-5BB00F306CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FFF61A2-4D49-4A49-B1A4-5BB00F306CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FFF61A2-4D49-4A49-B1A4-5BB00F306CBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -361,6 +367,7 @@ Global
 		{EBF93AFC-D1AE-4D59-BD14-5540236AA379} = {04B6EDFB-4DA0-4A31-8D94-D173BDFE3B00}
 		{6CAE14C9-8130-46AA-A718-EE4A0D0A568A} = {04B6EDFB-4DA0-4A31-8D94-D173BDFE3B00}
 		{26EC6C55-15BC-420F-9ADC-EB8658ABF740} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
+		{6FFF61A2-4D49-4A49-B1A4-5BB00F306CBF} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
