@@ -23,6 +23,22 @@
                     Width="100"
                     Click="cmdUpdate_Click"/>
         </StackPanel>
+        <StackPanel DockPanel.Dock="Top" 
+                    Orientation="Horizontal"
+                    Margin="5">
+            <TextBlock Margin="5" 
+                       FontSize="14"
+                       Height="30"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Text="Operation Time: " />
+            <TextBlock x:Name="txtTime" 
+                       Margin="5" 
+                       FontSize="14"
+                       Height="30"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
         <Grid />
     </DockPanel>
 </Window>

@@ -59,6 +59,7 @@ namespace Wpf.Sqlite.Sample
 
         private SQLiteConnection db;
         private Random rand = new Random();
+        private int MaxRecord = 1000;
 
         private void Connect()
         {
@@ -89,26 +90,43 @@ namespace Wpf.Sqlite.Sample
             var items = Stock.GetAll(db);
             if (null == items || items.Count <= 0) items = InitData();
             if (null == items || items.Count <= 0) return;
+            int idx = 0;
             items.ForEach(item => 
             {
                 item.Data = rand.Next(100);
                 item.LastUpdated = DateTime.Now;
+                idx++;
             });
+            while (idx < MaxRecord)
+            {
+                items.Add(GetInst(idx));
+                idx++;
+            }
+            DateTime dt = DateTime.Now;
             Stock.SaveAll(db, items);
+            TimeSpan ts = DateTime.Now - dt;
+            string msg = string.Format("operate {0:n0} record(s) in {1:n0} ms.", items.Count, ts.TotalMilliseconds);
+            txtTime.Text = msg;
         }
 
         public List<Stock> InitData()
         {
             List<Stock> results = new List<Stock>();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < MaxRecord; i++)
             {
-                var inst = new Stock();
-                inst.ItemId = i.ToString("D5");
-                inst.Data = rand.Next(100);
-                inst.LastUpdated = DateTime.Now;
+                var inst = GetInst(i);
                 results.Add(inst);
             }
             return results;
+        }
+
+        public Stock GetInst(int ItemId)
+        {
+            var inst = new Stock();
+            inst.ItemId = ItemId.ToString("D5");
+            inst.Data = rand.Next(100);
+            inst.LastUpdated = DateTime.Now;
+            return inst;
         }
     }
 
