@@ -68,8 +68,6 @@ namespace Wpf.Owin.Rest.Server.Sample
                 //string baseAddress = @"http://localhost:8000";
                 server = WebApp.Start<StartUp>(url: baseAddress);
             }
-            //button1.Enabled = false;
-            //button2.Enabled = true;
         }
 
         private void Shutdown()
@@ -79,8 +77,6 @@ namespace Wpf.Owin.Rest.Server.Sample
                 server.Dispose();
             }
             server = null;
-            //button1.Enabled = true;
-            //button2.Enabled = false;
         }
     }
 
@@ -133,6 +129,9 @@ namespace Wpf.Owin.Rest.Server.Sample
         }
     }
 
+    // url: http://localhost:8000/api/Test/getsample
+    // body: { "name": "Job" }
+
     #region Test
 
     public class TestController : ApiController
@@ -167,6 +166,11 @@ namespace Wpf.Owin.Rest.Server.Sample
     }
 
     #endregion
+
+    // url: http://localhost:8000/api/Calculator/Add
+    // body: { "num1": 1, "num2": 2 }
+    // url: http://localhost:8000/api/Calculator/Sub
+    // body: { "num1": 1, "num2": 2 }
 
     #region Calculator
 
