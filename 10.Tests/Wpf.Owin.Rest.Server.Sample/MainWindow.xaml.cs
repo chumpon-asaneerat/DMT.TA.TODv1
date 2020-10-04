@@ -222,11 +222,9 @@ namespace Wpf.Owin.Rest.Server.Sample
     partial class CalculatorController
     {
         [HttpPost]
-        [ActionName(@"sub")]
+        [ActionName(RouteConsts.Calculator.Sub.Name)]
         public CalcResult sub([FromBody] CalcRequest value)
         {
-            string url = RouteConsts.Calculator.Add.Url;
-            Console.WriteLine(url);
             if (null == value)
                 return new CalcResult() { Result = 0 };
             else return new CalcResult() { Result = value.Num1 - value.Num2 };
