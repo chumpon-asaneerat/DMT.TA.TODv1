@@ -133,6 +133,8 @@ namespace Wpf.Owin.Rest.Server.Sample
         }
     }
 
+    #region Test
+
     public class TestController : ApiController
     {
         [HttpPost]
@@ -162,5 +164,49 @@ namespace Wpf.Owin.Rest.Server.Sample
     public class SampleResult
     {
         public string Greating { get; set; }
+    }
+
+    #endregion
+
+}
+
+namespace Wpf.Owin.Rest.Server.Sample
+{
+    public class CalcRequest
+    {
+        public int Num1 { get; set; }
+        public int Num2 { get; set; }
+    }
+
+    public class CalcResult
+    {
+        public int Result { get; set; }
+    }
+
+
+    public partial class CalculatorController : ApiController { }
+
+    partial class CalculatorController
+    {
+        [HttpPost]
+        [ActionName(@"add")]
+        public CalcResult add([FromBody] CalcRequest value)
+        {
+            if (null == value)
+                return new CalcResult() { Result = 0 };
+            else return new CalcResult() { Result = value.Num1 + value.Num2 };
+        }
+    }
+
+    partial class CalculatorController
+    {
+        [HttpPost]
+        [ActionName(@"sub")]
+        public CalcResult sub([FromBody] CalcRequest value)
+        {
+            if (null == value)
+                return new CalcResult() { Result = 0 };
+            else return new CalcResult() { Result = value.Num1 - value.Num2 };
+        }
     }
 }
