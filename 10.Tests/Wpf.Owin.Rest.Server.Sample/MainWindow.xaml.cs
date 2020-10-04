@@ -170,6 +170,29 @@ namespace Wpf.Owin.Rest.Server.Sample
 
     #region Calculator
 
+    public static class RouteConsts
+    {
+        public const string Url = "api";
+
+        public static class Calculator
+        {
+            public const string Url = RouteConsts.Url + @"/Calculator";
+
+            public static class Add
+            {
+                public const string Name = "Add";
+                public const string Url = Calculator.Url + @"/" + Name;
+            }
+
+            public static class Sub
+            {
+                public const string Name = "Sub";
+                public const string Url = Calculator.Url + @"/" + Name;
+            }
+        }
+    }
+
+
     public class CalcRequest
     {
         public int Num1 { get; set; }
@@ -187,7 +210,7 @@ namespace Wpf.Owin.Rest.Server.Sample
     partial class CalculatorController
     {
         [HttpPost]
-        [ActionName(@"add")]
+        [ActionName(RouteConsts.Calculator.Add.Name)]
         public CalcResult add([FromBody] CalcRequest value)
         {
             if (null == value)
@@ -202,6 +225,8 @@ namespace Wpf.Owin.Rest.Server.Sample
         [ActionName(@"sub")]
         public CalcResult sub([FromBody] CalcRequest value)
         {
+            string url = RouteConsts.Calculator.Add.Url;
+            Console.WriteLine(url);
             if (null == value)
                 return new CalcResult() { Result = 0 };
             else return new CalcResult() { Result = value.Num1 - value.Num2 };
