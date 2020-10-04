@@ -224,6 +224,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lanes", "Lanes", "{6CAE14C9
 		Todo\RestAPIs.tests\Infrastructures\Lanes\SearchByPlazaGroup.rest = Todo\RestAPIs.tests\Infrastructures\Lanes\SearchByPlazaGroup.rest
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.Owin.Rest.Server.Sample", "10.Tests\Wpf.Owin.Rest.Server.Sample\Wpf.Owin.Rest.Server.Sample.csproj", "{26EC6C55-15BC-420F-9ADC-EB8658ABF740}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -310,6 +312,10 @@ Global
 		{CB55364B-5BF8-40F0-B36D-DAAB75F4AE4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB55364B-5BF8-40F0-B36D-DAAB75F4AE4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB55364B-5BF8-40F0-B36D-DAAB75F4AE4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26EC6C55-15BC-420F-9ADC-EB8658ABF740}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26EC6C55-15BC-420F-9ADC-EB8658ABF740}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26EC6C55-15BC-420F-9ADC-EB8658ABF740}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26EC6C55-15BC-420F-9ADC-EB8658ABF740}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -354,6 +360,7 @@ Global
 		{DE09804F-97D2-490B-8C12-6787D6045F9F} = {04B6EDFB-4DA0-4A31-8D94-D173BDFE3B00}
 		{EBF93AFC-D1AE-4D59-BD14-5540236AA379} = {04B6EDFB-4DA0-4A31-8D94-D173BDFE3B00}
 		{6CAE14C9-8130-46AA-A718-EE4A0D0A568A} = {04B6EDFB-4DA0-4A31-8D94-D173BDFE3B00}
+		{26EC6C55-15BC-420F-9ADC-EB8658ABF740} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
