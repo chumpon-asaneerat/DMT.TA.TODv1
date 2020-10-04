@@ -168,10 +168,8 @@ namespace Wpf.Owin.Rest.Server.Sample
 
     #endregion
 
-}
+    #region Calculator
 
-namespace Wpf.Owin.Rest.Server.Sample
-{
     public class CalcRequest
     {
         public int Num1 { get; set; }
@@ -209,4 +207,6 @@ namespace Wpf.Owin.Rest.Server.Sample
             else return new CalcResult() { Result = value.Num1 - value.Num2 };
         }
     }
+
+    #endregion
 }
