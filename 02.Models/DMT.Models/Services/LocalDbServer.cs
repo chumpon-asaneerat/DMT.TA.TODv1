@@ -1791,9 +1791,10 @@ namespace DMT.Services
 					if (!string.IsNullOrEmpty(script))
 					{
 						var ret = Db.Execute(script);
-
-						Console.WriteLine("Returns: {0}", ret);
-
+						if (ret >= 1)
+						{
+							Console.WriteLine("{0} : successfully execyted.", resourceName);
+						}
 						if (null == hist) hist = new ViewHistory();
 						hist.ViewName = viewName;
 						hist.VersionId = HistoryVersion;
