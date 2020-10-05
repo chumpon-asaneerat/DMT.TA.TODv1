@@ -1,7 +1,7 @@
 ﻿#region Using
 
 using System;
-
+using System.Reflection;
 // Owin SelfHost
 using Owin;
 using Microsoft.Owin.Hosting;
@@ -10,10 +10,12 @@ using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 using System.Web.Http;
 using System.Web.Http.Validation;
+// Owin Authentication
+using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Text;
+// Swagger
 using Swashbuckle.Application;
-
-using System.Reflection;
-using NLib;
 
 #endregion
 
