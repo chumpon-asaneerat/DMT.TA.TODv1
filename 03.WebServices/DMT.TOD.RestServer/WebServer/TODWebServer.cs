@@ -4,10 +4,11 @@ using System;
 using System.Reflection;
 // Owin SelfHost
 using Owin;
-using Microsoft.Owin.Hosting;
+using Microsoft.Owin; // for OwinStartup attribute.
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
+using System.Net;
 using System.Web.Http;
 using System.Web.Http.Validation;
 // Owin Authentication
@@ -30,6 +31,14 @@ namespace DMT.Services
         // parameter in the WebApp.Start method.
         public void Configuration(IAppBuilder appBuilder)
         {
+            // Setup Authentication for listener.
+            HttpListener listener =
+                    (HttpListener)appBuilder.Properties["System.Net.HttpListener"];
+            listener.AuthenticationSchemes =
+                AuthenticationSchemes.Basic |
+                //AuthenticationSchemes.IntegratedWindowsAuthentication |
+                AuthenticationSchemes.Anonymous;
+
             // Configure Web API for self-host. 
             HttpConfiguration config = new HttpConfiguration();
 
