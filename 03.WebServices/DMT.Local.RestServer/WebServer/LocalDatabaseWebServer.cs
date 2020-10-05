@@ -10,6 +10,7 @@ using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 using System.Web.Http;
 using System.Web.Http.Validation;
+using Swashbuckle.Application;
 
 using System.Reflection;
 using NLib;
@@ -49,6 +50,13 @@ namespace DMT.Services
             // Replace IBodyModelValidator to Custom Model Validator to prevent
             // Insufficient Stack problem.
             config.Services.Replace(typeof(IBodyModelValidator), new CustomBodyModelValidator());
+
+            // Enable Swashbuckle (swagger) 
+            // for more information see: https://github.com/domaindrivendev/Swashbuckle.WebApi
+            // to see api document goto: http://your-root-url/swagger
+            config
+                .EnableSwagger(c => c.SingleApiVersion("v1", "A title for your API"))
+                .EnableSwaggerUi(x => x.DisableValidator());
 
             appBuilder.UseWebApi(config);
         }
