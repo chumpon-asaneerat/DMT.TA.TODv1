@@ -15,6 +15,7 @@ namespace DMT.Services
     /// <summary>
     /// The controller for manage Shift and TSBShift (Supervisor shift).
     /// </summary>
+    [Authorize]
     public class ShiftController : ApiController
     {
         #region Shift
@@ -25,6 +26,7 @@ namespace DMT.Services
         /// Gets Shifts.
         /// </summary>
         /// <returns>Returns Shift List.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Shift.GetShifts.Name)]
         public NDbResult<List<Shift>> GetShifts()
@@ -42,6 +44,7 @@ namespace DMT.Services
         /// </summary>
         /// <param name="value">The Shift instance.</param>
         /// <returns>Returns save shift instance.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Shift.SaveShift.Name)]
         public NDbResult<Shift> SaveShift([FromBody] Shift value)

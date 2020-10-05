@@ -17,6 +17,7 @@ namespace DMT.Services
     /// <summary>
     /// The controller for handle Lane Attendance (Attendance/Leave).
     /// </summary>
+    [Authorize]
     public class LaneController : ApiController
     {
         #region Lane Attendance

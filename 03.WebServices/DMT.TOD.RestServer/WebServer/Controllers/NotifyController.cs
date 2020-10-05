@@ -15,6 +15,7 @@ namespace DMT.Services
     /// <summary>
     /// The controller for Notify event to application.
     /// </summary>
+    [Authorize]
     public class NotifyController : ApiController
     {
         #region ActiveTSBChanged
@@ -23,6 +24,7 @@ namespace DMT.Services
         /// Call when set active TSB.
         /// </summary>
         /// <returns></returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Notify.TSB.ActiveChanged.Name)]
         public NDbResult ActiveChanged()
@@ -41,6 +43,7 @@ namespace DMT.Services
         /// Call when TSB Shift Changed. 
         /// </summary>
         /// <returns></returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Notify.TSB.ShiftChanged.Name)]
         public NDbResult ShiftChanged()

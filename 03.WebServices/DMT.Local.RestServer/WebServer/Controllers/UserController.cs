@@ -15,6 +15,7 @@ namespace DMT.Services
     /// <summary>
     /// The controller for manage users and roles.
     /// </summary>
+    [Authorize]
     public class UserController : ApiController
     {
         #region Role
@@ -26,6 +27,7 @@ namespace DMT.Services
         /// </summary>
         /// <param name="value">The search instance.</param>
         /// <returns>Returns instance of Role.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.User.GetRole.Name)]
         public NDbResult<Role> GetRole([FromBody] Search.Roles.ById value)
@@ -51,6 +53,7 @@ namespace DMT.Services
         /// Gets Roles.
         /// </summary>
         /// <returns>Returns list of Role.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.User.GetRoles.Name)]
         public NDbResult<List<Role>> GetRoles()

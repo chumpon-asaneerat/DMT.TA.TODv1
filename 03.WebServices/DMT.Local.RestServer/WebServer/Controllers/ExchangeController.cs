@@ -15,6 +15,7 @@ namespace DMT.Services
     /// <summary>
     /// The controller for manage credit exchange transaction TA.
     /// </summary>
+    [Authorize]
     public class ExchangeController : ApiController
     {
         #region Exchange Transaction
@@ -26,6 +27,7 @@ namespace DMT.Services
         /// </summary>
         /// <param name="value">The TSB instance.</param>
         /// <returns>Returns list of TSBExchangeGroup.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Exchange.GetRequestApproveTSBExchangeGroups.Name)]
         public NDbResult<List<TSBExchangeGroup>> GetRequestApproveTSBExchangeGroups(

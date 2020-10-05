@@ -15,6 +15,7 @@ namespace DMT.Services
     /// <summary>
     /// The controller for manage coupon transaction TA.
     /// </summary>
+    [Authorize]
     public class CouponController : ApiController
     {
         #region TSB Coupon Balance
@@ -26,6 +27,7 @@ namespace DMT.Services
         /// </summary>
         /// <param name="value">The TSB instance.</param>
         /// <returns>Returns TSBCouponBalance instance.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Coupon.GetTSBCouponBalance.Name)]
         public NDbResult<TSBCouponBalance> GetTSBCouponBalance([FromBody] TSB value)
@@ -56,6 +58,7 @@ namespace DMT.Services
         /// </summary>
         /// <param name="value">The TSB instance.</param>
         /// <returns>Returns List of TSBCouponSummary.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Coupon.GetTSBCouponSummaries.Name)]
         public NDbResult<List<TSBCouponSummary>> GetTSBCouponSummaries([FromBody] TSB value)

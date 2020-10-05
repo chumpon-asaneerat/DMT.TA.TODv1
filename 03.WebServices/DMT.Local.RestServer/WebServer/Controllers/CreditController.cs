@@ -15,6 +15,7 @@ namespace DMT.Services
     /// <summary>
     /// The controller for manage credit transaction TA.
     /// </summary>
+    [Authorize]
     public class CreditController : ApiController
     {
         #region TSB Balance
@@ -26,6 +27,7 @@ namespace DMT.Services
         /// </summary>
         /// <param name="value">The TSB instance.</param>
         /// <returns>Returns TSBCreditBalance instance.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Credit.GetTSBCreditBalance.Name)]
         public NDbResult<TSBCreditBalance> GetTSBCreditBalance([FromBody] TSB value)
@@ -56,6 +58,7 @@ namespace DMT.Services
         /// </summary>
         /// <param name="value">The TSB instance.</param>
         /// <returns>Returns Initial TSB Credit Transaction instance.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Credit.GetInitialTSBCreditTransaction.Name)]
         public NDbResult<TSBCreditTransaction> GetInitialTSBCreditTransaction([FromBody] TSB value)

@@ -15,6 +15,7 @@ namespace DMT.Services
     /// <summary>
     /// The controller for manage common data on TSB, Plaza and Lane.
     /// </summary>
+    [Authorize]
     public class MasterController : ApiController
     {
         #region GetCurrencies - OK
@@ -23,6 +24,7 @@ namespace DMT.Services
         /// Gets all Currencies (master).
         /// </summary>
         /// <returns>Returns list of all currencies (master).</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Master.GetCurrencies.Name)]
         public NDbResult<List<MCurrency>> GetCurrencies()
@@ -39,6 +41,7 @@ namespace DMT.Services
         /// Gets all Coupons (master).
         /// </summary>
         /// <returns>Returns list of all coupons (master).</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Master.GetCoupons.Name)]
         public NDbResult<List<MCoupon>> GetCoupons()

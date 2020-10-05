@@ -15,6 +15,7 @@ namespace DMT.Services
     /// <summary>
     /// The controller for manage common data on TSB, Plaza and Lane.
     /// </summary>
+    [Authorize]
     public class TSBController : ApiController
     {
         #region TSB
@@ -25,6 +26,7 @@ namespace DMT.Services
         /// Gets all TSBs.
         /// </summary>
         /// <returns>Returns list of all TSBs.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.TSB.TSBs.GetTSBs.Name)]
         public NDbResult<List<TSB>> GetTSBs()
@@ -41,6 +43,7 @@ namespace DMT.Services
         /// Gets Current TSB.
         /// </summary>
         /// <returns>Returns Active TSB.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.TSB.TSBs.GetCurrent.Name)]
         public NDbResult<TSB> GetCurrent()
@@ -57,6 +60,7 @@ namespace DMT.Services
         /// Set Active TSB.
         /// </summary>
         /// <returns>Returns NDbResult instance.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.TSB.TSBs.SetActive.Name)]
         public NDbResult SetActive([FromBody] TSB value)
@@ -85,6 +89,7 @@ namespace DMT.Services
         /// Save TSB.
         /// </summary>
         /// <returns>Returns Save TSB.</returns>
+        //[AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.TSB.TSBs.SaveTSB.Name)]
         public NDbResult<TSB> SaveTSB([FromBody] TSB value)
