@@ -40,6 +40,9 @@ namespace DMT.Services
                 //AuthenticationSchemes.IntegratedWindowsAuthentication |
                 AuthenticationSchemes.Anonymous;
 
+            // used Authentication middleware.
+            appBuilder.Use(typeof(AuthenticationMiddleware));
+
             // Configure Web API for self-host. 
             HttpConfiguration config = new HttpConfiguration();
 
