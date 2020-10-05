@@ -5,6 +5,7 @@ using System.Reflection;
 // Owin SelfHost
 using Owin;
 using Microsoft.Owin; // for OwinStartup attribute.
+using Microsoft.Owin.Hosting;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
@@ -73,7 +74,7 @@ namespace DMT.Services
         }
     }
 
-    public class CustomBodyModelValidator : DefaultBodyModelValidator
+    internal class CustomBodyModelValidator : DefaultBodyModelValidator
     {
         public override bool ShouldValidateType(Type type)
         {
@@ -82,6 +83,67 @@ namespace DMT.Services
             return isDMTModel && base.ShouldValidateType(type);
         }
     }
+
+    internal class AuthenticationMiddleware : OwinMiddleware
+    {
+        public AuthenticationMiddleware(OwinMiddleware next) :
+            base(next)
+        {
+        }
+
+        public async override Task Invoke(IOwinContext context)
+        {
+            var request = context.Request;
+            var response = context.Response;
+
+            response.OnSendingHeaders(state =>
+            {
+                var resp = (OwinResponse)state;
+                if (resp.StatusCode == 401)
+                {
+                    resp.Headers.Add("WWW-Authenticate", new string[] { "Basic" });
+                }
+            }, response);
+
+            var header = request.Headers.Get("Authorization");
+            if (!String.IsNullOrWhiteSpace(header))
+            {
+                var authHeader = System.Net.Http.Headers.AuthenticationHeaderValue.Parse(header);
+
+                if ("Basic".Equals(authHeader.Scheme, StringComparison.OrdinalIgnoreCase))
+                {
+                    string parameter = Encoding.UTF8.GetString(Convert.FromBase64String(authHeader.Parameter));
+                    var parts = parameter.Split(':');
+
+                    string userName = parts[0];
+                    string password = parts[1];
+
+                    if (userName == "DMTUSER" && password == "DMTPASS2")
+                    {
+                        var claims = new[]
+                        {
+                            new Claim(ClaimTypes.Name, userName)
+                        };
+                        var identity = new ClaimsIdentity(claims, "Basic");
+                        request.User = new ClaimsPrincipal(identity);
+                    }
+                    else
+                    {
+                        //Console.WriteLine("Invalid User");
+                        request.User = null;
+                    }
+                }
+                else
+                {
+                    //Console.WriteLine("No Basic Auth");
+                    request.User = null;
+                }
+            }
+
+            await Next.Invoke(context);
+        }
+    }
+
     /// <summary>
     /// Local Database Web Server (Self Host).
     /// </summary>
