@@ -1,29 +1,23 @@
 ﻿#region Using
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 // Owin SelfHost
 using Owin;
+using Microsoft.Owin; // for OwinStartup attribute.
 using Microsoft.Owin.Hosting;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
+using System.Net;
 using System.Web.Http;
 using System.Web.Http.Validation;
-
-using Swashbuckle.Application; // Swagger
+// Owin Authentication
+using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Text;
+// Swagger
+using Swashbuckle.Application;
 
 #endregion
 
@@ -91,11 +85,25 @@ namespace Wpf.Owin.Rest.Server.Sample
         // parameter in the WebApp.Start method.
         public void Configuration(IAppBuilder appBuilder)
         {
+            // Setup Authentication for listener.
+            HttpListener listener =
+                    (HttpListener)appBuilder.Properties["System.Net.HttpListener"];
+            listener.AuthenticationSchemes =
+                AuthenticationSchemes.Basic |
+                //AuthenticationSchemes.IntegratedWindowsAuthentication |
+                AuthenticationSchemes.Anonymous;
+
+            // used Authentication middleware.
+            appBuilder.Use(typeof(AuthenticationMiddleware));
+
             // Configure Web API for self-host. 
             HttpConfiguration config = new HttpConfiguration();
 
-            // Controllers with Actions
+            // Enable Cors and Authorize middleware.
+            config.EnableCors();
+            config.Filters.Add(new AuthorizeAttribute()); // Set Filter for Authorize Attribute.
 
+            // Controllers with Actions
             // To handle routes like `/api/controller/action`
             config.Routes.MapHttpRoute(
                 name: "ControllerAndAction",
@@ -125,7 +133,7 @@ namespace Wpf.Owin.Rest.Server.Sample
         }
     }
 
-    public class CustomBodyModelValidator : DefaultBodyModelValidator
+    internal class CustomBodyModelValidator : DefaultBodyModelValidator
     {
         public override bool ShouldValidateType(Type type)
         {
@@ -135,6 +143,66 @@ namespace Wpf.Owin.Rest.Server.Sample
             return isDMTModel && base.ShouldValidateType(type);
             */
             return base.ShouldValidateType(type);
+        }
+    }
+
+    internal class AuthenticationMiddleware : OwinMiddleware
+    {
+        public AuthenticationMiddleware(OwinMiddleware next) :
+            base(next)
+        {
+        }
+
+        public async override Task Invoke(IOwinContext context)
+        {
+            var request = context.Request;
+            var response = context.Response;
+
+            response.OnSendingHeaders(state =>
+            {
+                var resp = (OwinResponse)state;
+                if (resp.StatusCode == 401)
+                {
+                    resp.Headers.Add("WWW-Authenticate", new string[] { "Basic" });
+                }
+            }, response);
+
+            var header = request.Headers.Get("Authorization");
+            if (!String.IsNullOrWhiteSpace(header))
+            {
+                var authHeader = System.Net.Http.Headers.AuthenticationHeaderValue.Parse(header);
+
+                if ("Basic".Equals(authHeader.Scheme, StringComparison.OrdinalIgnoreCase))
+                {
+                    string parameter = Encoding.UTF8.GetString(Convert.FromBase64String(authHeader.Parameter));
+                    var parts = parameter.Split(':');
+
+                    string userName = parts[0];
+                    string password = parts[1];
+
+                    if (userName == "DMTUSER" && password == "DMTPASS2")
+                    {
+                        var claims = new[]
+                        {
+                            new Claim(ClaimTypes.Name, userName)
+                        };
+                        var identity = new ClaimsIdentity(claims, "Basic");
+                        request.User = new ClaimsPrincipal(identity);
+                    }
+                    else
+                    {
+                        //Console.WriteLine("Invalid User");
+                        request.User = null;
+                    }
+                }
+                else
+                {
+                    //Console.WriteLine("No Basic Auth");
+                    request.User = null;
+                }
+            }
+
+            await Next.Invoke(context);
         }
     }
 
@@ -217,11 +285,12 @@ namespace Wpf.Owin.Rest.Server.Sample
         public int Result { get; set; }
     }
 
-
+    [Authorize] // Authorize Attribute can set here or set in each method(s).
     public partial class CalculatorController : ApiController { }
 
     partial class CalculatorController
     {
+        [AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts.Calculator.Add.Name)]
         public CalcResult add([FromBody] CalcRequest value)
