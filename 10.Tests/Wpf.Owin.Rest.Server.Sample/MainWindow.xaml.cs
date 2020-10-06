@@ -328,6 +328,12 @@ namespace Wpf.Owin.Rest.Server.Sample
     /// </summary>
     internal class AddAuthorizationHeaderParameterOperationFilter : IOperationFilter
     {
+        /// <summary>
+        /// Apply
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="schemaRegistry"></param>
+        /// <param name="apiDescription"></param>
         public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
         {
             var filterPipeline = apiDescription.ActionDescriptor.GetFilterPipeline();
@@ -513,8 +519,8 @@ namespace Wpf.Owin.Rest.Server.Sample
             config
                 .EnableSwagger(c =>
                 {
-                    //c.BasicAuth("basic").Description("Basic HTTP Authentication");
-                    //c.OperationFilter<AddAuthorizationHeaderParameterOperationFilter>();
+                    c.BasicAuth("basic").Description("Basic HTTP Authentication");
+                    c.OperationFilter<AddAuthorizationHeaderParameterOperationFilter>();
                     c.SingleApiVersion(version, title);
                     c.PrettyPrint();
                 })

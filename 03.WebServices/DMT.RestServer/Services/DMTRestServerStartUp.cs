@@ -1,6 +1,7 @@
 ﻿#region Using
 
 using System;
+using System.Linq;
 using System.Reflection;
 using NLib;
 // Owin SelfHost
@@ -18,6 +19,9 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Text;
 // Swagger
+using System.Web.Http.Description;
+using System.Web.Http.Filters;
+using Swashbuckle.Swagger;
 using Swashbuckle.Application;
 
 #endregion
@@ -121,6 +125,44 @@ namespace DMT.Services
             bool isNotDMTModel = !type.IsSubclassOf(typeof(Models.DMTModelBase));
             // Ignore validation on all DMTModelBase subclasses.
             return isNotDMTModel && base.ShouldValidateType(type);
+        }
+    }
+
+    #endregion
+
+    #region AddAuthorizationHeaderParameterOperationFilter
+
+    /// <summary>
+    /// AddAuthorizationHeaderParameterOperationFilter class for swagger.
+    /// </summary>
+    internal class AddAuthorizationHeaderParameterOperationFilter : IOperationFilter
+    {
+        /// <summary>
+        /// Apply
+        /// </summary>
+        /// <param name="operation"></param>
+        /// <param name="schemaRegistry"></param>
+        /// <param name="apiDescription"></param>
+        public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
+        {
+            var filterPipeline = apiDescription.ActionDescriptor.GetFilterPipeline();
+            var isAuthorized = filterPipeline
+                .Select(filterInfo => filterInfo.Instance)
+                .Any(filter => filter is IAuthorizationFilter);
+
+            var allowAnonymous = apiDescription.ActionDescriptor.GetCustomAttributes<AllowAnonymousAttribute>().Any();
+
+            if (isAuthorized && !allowAnonymous)
+            {
+                operation.parameters.Add(new Parameter
+                {
+                    name = "Authorization",
+                    @in = "header",
+                    description = "access token",
+                    required = true,
+                    type = "string"
+                });
+            }
         }
     }
 
@@ -283,7 +325,13 @@ namespace DMT.Services
             // for more information see: https://github.com/domaindrivendev/Swashbuckle.WebApi
             // to see api document goto: http://your-root-url/swagger
             config
-                .EnableSwagger(c => c.SingleApiVersion(version, title))
+                .EnableSwagger(c =>
+                {
+                    c.BasicAuth("basic").Description("Basic HTTP Authentication");
+                    c.OperationFilter<AddAuthorizationHeaderParameterOperationFilter>();
+                    c.SingleApiVersion(version, title);
+                    c.PrettyPrint();
+                })
                 .EnableSwaggerUi(x => x.DisableValidator());
         }
 
