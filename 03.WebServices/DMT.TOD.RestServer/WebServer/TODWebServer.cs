@@ -53,8 +53,20 @@ namespace DMT.Services
             config.EnableCors();
             config.Filters.Add(new AuthorizeAttribute()); // Set Filter for Authorize Attribute.
 
-            // Controllers with Actions
-            // To handle routes like `/api/controller/action`
+            // Handle route by specificed controller (Route Order is important).
+            // Add custom controller here!!
+            //
+            // Calculator2 Controller
+            //config.Routes.MapHttpRoute(
+            //    name: "Calc2ApiAdd",
+            //    routeTemplate: "api/Calc2/Add",
+            //    defaults: new { controller = "Calculator2", action = "Add" });
+            //config.Routes.MapHttpRoute(
+            //    name: "Calc2ApiSub",
+            //    routeTemplate: "api/Calc2/Sub",
+            //    defaults: new { controller = "Calculator2", action = "Sub" });
+            //
+            // Default Setting to handle routes like `/api/controller/action`
             config.Routes.MapHttpRoute(
                 name: "ControllerAndAction",
                 routeTemplate: "api/{controller}/{action}"
