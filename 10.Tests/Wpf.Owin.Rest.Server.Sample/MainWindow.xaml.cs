@@ -470,8 +470,11 @@ namespace Wpf.Owin.Rest.Server.Sample
             if (!EnableSwagger) return;
             string version = (string.IsNullOrEmpty(ApiVersion)) ? "v1" : ApiVersion;
             string title = (string.IsNullOrEmpty(ApiName)) ? "REST Api." : ApiName;
+            // Enable Swashbuckle (swagger) 
+            // for more information see: https://github.com/domaindrivendev/Swashbuckle.WebApi
+            // to see api document goto: http://your-root-url/swagger
             config
-                .EnableSwagger(c => c.SingleApiVersion(version, title))
+                .EnableSwagger("api/docs/{apiVersion}/", c => c.SingleApiVersion(version, title))
                 .EnableSwaggerUi(x => x.DisableValidator());
         }
 
