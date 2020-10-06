@@ -1,6 +1,7 @@
 ﻿#region Using
 
 using System;
+using System.Linq;
 using System.Windows;
 using System.Reflection;
 // Owin SelfHost
@@ -18,6 +19,9 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Text;
 // Swagger
+using System.Web.Http.Description;
+using System.Web.Http.Filters;
+using Swashbuckle.Swagger;
 using Swashbuckle.Application;
 
 #endregion
@@ -317,6 +321,39 @@ namespace Wpf.Owin.Rest.Server.Sample
 
     #endregion
 
+    #region AddAuthorizationHeaderParameterOperationFilter
+
+    /// <summary>
+    /// AddAuthorizationHeaderParameterOperationFilter class for swagger.
+    /// </summary>
+    internal class AddAuthorizationHeaderParameterOperationFilter : IOperationFilter
+    {
+        public void Apply(Operation operation, SchemaRegistry schemaRegistry, ApiDescription apiDescription)
+        {
+            var filterPipeline = apiDescription.ActionDescriptor.GetFilterPipeline();
+            var isAuthorized = filterPipeline
+                .Select(filterInfo => filterInfo.Instance)
+                .Any(filter => filter is IAuthorizationFilter);
+
+            var allowAnonymous = apiDescription.ActionDescriptor.GetCustomAttributes<AllowAnonymousAttribute>().Any();
+
+            if (isAuthorized && !allowAnonymous)
+            {
+                operation.parameters.Add(new Parameter
+                {
+                    name = "Authorization",
+                    @in = "header",
+                    description = "access token",
+                    required = true,
+                    type = "string"
+                });
+            }
+        }
+    }
+
+    #endregion
+
+
     #region DMTRestServerStartUp
 
     /// <summary>
@@ -474,7 +511,13 @@ namespace Wpf.Owin.Rest.Server.Sample
             // for more information see: https://github.com/domaindrivendev/Swashbuckle.WebApi
             // to see api document goto: http://your-root-url/swagger
             config
-                .EnableSwagger("api/docs/{apiVersion}/", c => c.SingleApiVersion(version, title))
+                .EnableSwagger(c =>
+                {
+                    //c.BasicAuth("basic").Description("Basic HTTP Authentication");
+                    //c.OperationFilter<AddAuthorizationHeaderParameterOperationFilter>();
+                    c.SingleApiVersion(version, title);
+                    c.PrettyPrint();
+                })
                 .EnableSwaggerUi(x => x.DisableValidator());
         }
 
