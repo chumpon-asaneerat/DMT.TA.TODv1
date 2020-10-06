@@ -46,6 +46,9 @@ namespace DMT.Services
             // Configure Web API for self-host. 
             HttpConfiguration config = new HttpConfiguration();
 
+            // Enable Attribute routing.
+            config.MapHttpAttributeRoutes();
+
             // Enable Cors and Authorize middleware.
             config.EnableCors();
             config.Filters.Add(new AuthorizeAttribute()); // Set Filter for Authorize Attribute.
