@@ -374,7 +374,7 @@ namespace Wpf.Owin.Rest.Server.Sample
         [AllowAnonymous]
         [HttpPost]
         [ActionName(RouteConsts2.Calculator.Add.Name)]
-        public CalcResult add([FromBody] CalcRequest value)
+        public CalcResult addMe([FromBody] CalcRequest value)
         {
             if (null == value)
                 return new CalcResult() { Result = 0 };
@@ -386,7 +386,7 @@ namespace Wpf.Owin.Rest.Server.Sample
     {
         [HttpPost]
         [ActionName(RouteConsts2.Calculator.Sub.Name)]
-        public CalcResult sub([FromBody] CalcRequest value)
+        public CalcResult subMe([FromBody] CalcRequest value)
         {
             if (null == value)
                 return new CalcResult() { Result = 0 };
