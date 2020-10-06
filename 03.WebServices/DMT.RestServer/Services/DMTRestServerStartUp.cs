@@ -126,6 +126,8 @@ namespace DMT.Services
 
     #endregion
 
+    #region DMTRestServerStartUp
+
     /// <summary>
     /// The DMT Rest Server StartUp class (abstract).
     /// </summary>
@@ -147,6 +149,8 @@ namespace DMT.Services
             {
                 return userName != "" && password != "";
             };
+            // Swagger
+            this.EnableSwagger = true;
         }
 
         #endregion
@@ -236,6 +240,25 @@ namespace DMT.Services
 
         #endregion
 
+        #region Swagger
+
+        /// <summary>
+        /// Init Swagger UI
+        /// </summary>
+        /// <param name="config">The HttpConfiguration instance.</param>
+        protected virtual void InitSwagger(HttpConfiguration config)
+        {
+            if (null == config) return;
+            if (!EnableSwagger) return;
+            string version = (string.IsNullOrEmpty(ApiVersion)) ? "v1" : ApiVersion;
+            string title = (string.IsNullOrEmpty(ApiName)) ? "REST Api." : ApiName;
+            config
+                .EnableSwagger(c => c.SingleApiVersion(version, title))
+                .EnableSwaggerUi(x => x.DisableValidator());
+        }
+
+        #endregion
+
         #endregion
 
         #region Public Methods
@@ -246,15 +269,20 @@ namespace DMT.Services
         /// <param name="app">The IAppBuilder instance.</param>
         public virtual void Configuration(IAppBuilder app)
         {
+            if (null == app) return;
             // Configure Web API for self-host. 
             HttpConfiguration config = GetDefaultHttpConfiguration();
             InitAuthentication(app);
             InitCustomFormatter(config);
+            // set configuration to app builder.
+            app.UseWebApi(config);
         }
 
         #endregion
 
         #region Public Properties
+
+        #region Authentication
 
         /// <summary>
         /// Gets or (protected sets) has authentication.
@@ -266,5 +294,26 @@ namespace DMT.Services
         public AuthenticationSchemes AuthenticationSchemes { get; protected set; }
 
         #endregion
+
+        #region Swagger
+
+        /// <summary>
+        /// Gets or (protected sets) Enable Swagger UI.
+        /// </summary>
+        public bool EnableSwagger { get; protected set; }
+        /// <summary>
+        /// Gets or (protected sets) Server API version.
+        /// </summary>
+        public string ApiVersion { get; protected set; }
+        /// <summary>
+        /// Gets or (protected sets) Server API Name or Title.
+        /// </summary>
+        public string ApiName { get; protected set; }
+
+        #endregion
+
+        #endregion
     }
+
+    #endregion
 }
