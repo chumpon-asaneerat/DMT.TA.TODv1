@@ -24,6 +24,108 @@ using NLib;
 
 namespace DMT.Services
 {
+    #region BasicAuthenticationMiddleware
+
+    /// <summary>
+    /// The Basic Authentication Owin Middleware.
+    /// </summary>
+    internal class BasicAuthenticationMiddleware : OwinMiddleware
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="next">The OwinMiddleware instance.</param>
+        public BasicAuthenticationMiddleware(OwinMiddleware next) : base(next) { }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Invoke.
+        /// </summary>
+        /// <param name="context">The OwinContext.</param>
+        /// <returns>Returns Task instance.</returns>
+        public async override Task Invoke(IOwinContext context)
+        {
+            var request = context.Request;
+            var response = context.Response;
+
+            response.OnSendingHeaders(state =>
+            {
+                var resp = (OwinResponse)state;
+                if (resp.StatusCode == 401)
+                {
+                    resp.Headers.Add("WWW-Authenticate", new string[] { "Basic" });
+                }
+            }, response);
+
+            var header = request.Headers.Get("Authorization");
+            if (!string.IsNullOrWhiteSpace(header))
+            {
+                var authHeader = System.Net.Http.Headers.AuthenticationHeaderValue.Parse(header);
+
+                request.User = null; // set request user
+
+                if ("Basic".Equals(authHeader.Scheme, StringComparison.OrdinalIgnoreCase) &&
+                    null != Validator)
+                {
+                    string parameter = Encoding.UTF8.GetString(Convert.FromBase64String(authHeader.Parameter));
+                    var parts = parameter.Split(':');
+
+                    string userName = parts[0];
+                    string password = parts[1];
+
+                    if (Validator(userName, password))
+                    {
+                        var claims = new[] { new Claim(ClaimTypes.Name, userName) };
+                        var identity = new ClaimsIdentity(claims, "Basic");
+                        request.User = new ClaimsPrincipal(identity);
+                    }
+                }
+            }
+
+            await Next.Invoke(context);
+        }
+
+        #endregion
+
+        #region Static Propertiess
+
+        /// <summary>
+        /// Gets or sets validator function.
+        /// </summary>
+        public static Func<string, string, bool> Validator { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
+    #region CustomBodyModelValidator
+
+    /// <summary>
+    /// The Custom Body Model Validator class.
+    /// </summary>
+    internal class CustomBodyModelValidator : DefaultBodyModelValidator
+    {
+        /// <summary>
+        /// Should Validate Type.
+        /// </summary>
+        /// <param name="type">The target type.</param>
+        /// <returns>Returns true if specificed need to validate.</returns>
+        public override bool ShouldValidateType(Type type)
+        {
+            bool isNotDMTModel = !type.IsSubclassOf(typeof(Models.DMTModelBase));
+            // Ignore validation on all DMTModelBase subclasses.
+            return isNotDMTModel && base.ShouldValidateType(type);
+        }
+    }
+
+    #endregion
+
     /// <summary>
     /// The DMT Rest Server StartUp class (abstract).
     /// </summary>
@@ -41,11 +143,17 @@ namespace DMT.Services
             this.AuthenticationSchemes = AuthenticationSchemes.Basic |
                 //AuthenticationSchemes.IntegratedWindowsAuthentication |
                 AuthenticationSchemes.Anonymous;
+            this.AuthenticationValidator = (string userName, string password) =>
+            {
+                return userName != "" && password != "";
+            };
         }
 
         #endregion
 
         #region Protected Methods
+
+        #region Authentication
 
         /// <summary>
         /// Init Authentication.
@@ -64,6 +172,10 @@ namespace DMT.Services
                 if (null != listener)
                 {
                     listener.AuthenticationSchemes = AuthenticationSchemes;
+                    // setup validate function.
+                    BasicAuthenticationMiddleware.Validator = AuthenticationValidator;
+                    // used Authentication middleware.
+                    app.Use(typeof(BasicAuthenticationMiddleware));
                 }
             }
             catch (Exception ex)
@@ -71,6 +183,58 @@ namespace DMT.Services
                 med.Err(ex);
             }
         }
+        /// <summary>
+        /// Gets or sets Authentication Validator function.
+        /// </summary>
+        protected virtual Func<string, string, bool> AuthenticationValidator { get; set; }
+
+        #endregion
+
+        #region Default Http Configuration
+
+        /// <summary>
+        /// Get Default Http Configuration.
+        /// </summary>
+        /// <returns>Returns default HttpConfiguration instance.</returns>
+        protected virtual HttpConfiguration GetDefaultHttpConfiguration()
+        {
+            // Configure Web API for self-host. 
+            HttpConfiguration config = new HttpConfiguration();
+            // Enable Cors.
+            config.EnableCors();
+            // Enable Attribute routing.
+            config.MapHttpAttributeRoutes();
+            // Add Filter for Authorize Attribute.
+            config.Filters.Add(new AuthorizeAttribute());
+
+            return config;
+        }
+
+        #endregion
+
+        #region Formatter
+
+        /// <summary>
+        /// Init Custom Formatter.
+        /// </summary>
+        /// <param name="config">The HttpConfiguration instance.</param>
+        protected virtual void InitCustomFormatter(HttpConfiguration config)
+        {
+            if (null == config) return;
+            // Add new formatter.
+            config.Formatters.Clear();
+            config.Formatters.Add(new System.Net.Http.Formatting.JsonMediaTypeFormatter());
+            config.Formatters.JsonFormatter.SerializerSettings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+            config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
+
+            // Replace IBodyModelValidator to Custom Model Validator to prevent insufficient stack problem.
+            config.Services.Replace(typeof(IBodyModelValidator), new CustomBodyModelValidator());
+        }
+
+        #endregion
 
         #endregion
 
@@ -82,7 +246,10 @@ namespace DMT.Services
         /// <param name="app">The IAppBuilder instance.</param>
         public virtual void Configuration(IAppBuilder app)
         {
+            // Configure Web API for self-host. 
+            HttpConfiguration config = GetDefaultHttpConfiguration();
             InitAuthentication(app);
+            InitCustomFormatter(config);
         }
 
         #endregion
