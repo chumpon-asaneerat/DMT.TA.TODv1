@@ -108,10 +108,27 @@ namespace Wpf.Owin.Rest.Server.Sample
 
             // Controllers with Actions
             // To handle routes like `/api/controller/action`
+            /*
             config.Routes.MapHttpRoute(
                 name: "ControllerAndAction",
                 routeTemplate: "api/{controller}/{action}"
             );
+            */
+
+            // Handle route by specificed controller (Route Order is important).
+            // Calculator2 Controller
+            config.Routes.MapHttpRoute(
+                name: "Calc2ApiAdd",
+                routeTemplate: "api/Calc2/Add",
+                defaults: new { controller = "Calculator2", action = "Add" });
+            config.Routes.MapHttpRoute(
+                name: "Calc2ApiSub",
+                routeTemplate: "api/Calc2/Sub",
+                defaults: new { controller = "Calculator2", action = "Sub" });
+            // Default Setting to handle routes like `/api/controller/action`
+            config.Routes.MapHttpRoute(
+                name: "ControllerAndAction",
+                routeTemplate: "api/{controller}/{action}");
 
             config.Formatters.Clear();
             config.Formatters.Add(new System.Net.Http.Formatting.JsonMediaTypeFormatter());
@@ -308,6 +325,67 @@ namespace Wpf.Owin.Rest.Server.Sample
     {
         [HttpPost]
         [ActionName(RouteConsts.Calculator.Sub.Name)]
+        public CalcResult sub([FromBody] CalcRequest value)
+        {
+            if (null == value)
+                return new CalcResult() { Result = 0 };
+            else return new CalcResult() { Result = value.Num1 - value.Num2 };
+        }
+    }
+
+    #endregion
+
+    // See MapHttpRoute in Startup class.
+    // url: http://localhost:8000/api/Calc2/Add
+    // body: { "num1": 1, "num2": 2 }
+    // url: http://localhost:8000/api/Calc2/Sub
+    // body: { "num1": 1, "num2": 2 }
+
+    #region Calculator2
+
+    public static class RouteConsts2
+    {
+        public const string Url = "api";
+
+        public static class Calculator
+        {
+            // Match MapHttpRoute in Startup class.
+            public const string Url = RouteConsts2.Url + @"/Calc2";
+
+            public static class Add
+            {
+                public const string Name = "Add";
+                public const string Url = Calculator.Url + @"/" + Name;
+            }
+
+            public static class Sub
+            {
+                public const string Name = "Sub";
+                public const string Url = Calculator.Url + @"/" + Name;
+            }
+        }
+    }
+
+    [Authorize] // Authorize Attribute can set here or set in each method(s).
+    public partial class Calculator2Controller : ApiController { }
+
+    partial class Calculator2Controller
+    {
+        [AllowAnonymous]
+        [HttpPost]
+        [ActionName(RouteConsts2.Calculator.Add.Name)]
+        public CalcResult add([FromBody] CalcRequest value)
+        {
+            if (null == value)
+                return new CalcResult() { Result = 0 };
+            else return new CalcResult() { Result = value.Num1 + value.Num2 };
+        }
+    }
+
+    partial class Calculator2Controller
+    {
+        [HttpPost]
+        [ActionName(RouteConsts2.Calculator.Sub.Name)]
         public CalcResult sub([FromBody] CalcRequest value)
         {
             if (null == value)
