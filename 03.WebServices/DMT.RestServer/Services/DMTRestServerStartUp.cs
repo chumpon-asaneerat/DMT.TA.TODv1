@@ -2,6 +2,7 @@
 
 using System;
 using System.Reflection;
+using NLib;
 // Owin SelfHost
 using Owin;
 using Microsoft.Owin; // for OwinStartup attribute.
@@ -18,7 +19,6 @@ using System.Threading.Tasks;
 using System.Text;
 // Swagger
 using Swashbuckle.Application;
-using NLib;
 
 #endregion
 
@@ -190,7 +190,7 @@ namespace DMT.Services
         /// <summary>
         /// Gets or sets Authentication Validator function.
         /// </summary>
-        protected virtual Func<string, string, bool> AuthenticationValidator { get; set; }
+        protected Func<string, string, bool> AuthenticationValidator { get; set; }
 
         #endregion
 
@@ -240,6 +240,33 @@ namespace DMT.Services
 
         #endregion
 
+        #region Routes
+
+        /// <summary>
+        /// Init Map Routes
+        /// </summary>
+        /// <param name="config">The HttpConfiguration instance.</param>
+        protected virtual void InitMapRoutes(HttpConfiguration config)
+        {
+            if (null == config) return;
+            InitDefaultMapRoute(config);
+        }
+        /// <summary>
+        /// Init Default Map Route.
+        /// </summary>
+        /// <param name="config">The HttpConfiguration instance.</param>
+        protected virtual void InitDefaultMapRoute(HttpConfiguration config)
+        {
+            if (null == config) return;
+            // Default Setting to handle routes like `/api/controller/action`
+            config.Routes.MapHttpRoute(
+                name: "ControllerAndAction",
+                routeTemplate: "api/{controller}/{action}"
+            );
+        }
+
+        #endregion
+
         #region Swagger
 
         /// <summary>
@@ -252,6 +279,9 @@ namespace DMT.Services
             if (!EnableSwagger) return;
             string version = (string.IsNullOrEmpty(ApiVersion)) ? "v1" : ApiVersion;
             string title = (string.IsNullOrEmpty(ApiName)) ? "REST Api." : ApiName;
+            // Enable Swashbuckle (swagger) 
+            // for more information see: https://github.com/domaindrivendev/Swashbuckle.WebApi
+            // to see api document goto: http://your-root-url/swagger
             config
                 .EnableSwagger(c => c.SingleApiVersion(version, title))
                 .EnableSwaggerUi(x => x.DisableValidator());
@@ -274,6 +304,8 @@ namespace DMT.Services
             HttpConfiguration config = GetDefaultHttpConfiguration();
             InitAuthentication(app);
             InitCustomFormatter(config);
+            InitMapRoutes(config);
+            InitSwagger(config);
             // set configuration to app builder.
             app.UseWebApi(config);
         }

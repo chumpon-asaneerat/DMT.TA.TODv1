@@ -2,6 +2,7 @@
 
 using System;
 using System.Windows;
+using System.Reflection;
 // Owin SelfHost
 using Owin;
 using Microsoft.Owin; // for OwinStartup attribute.
@@ -76,6 +77,8 @@ namespace Wpf.Owin.Rest.Server.Sample
         }
     }
 
+    #region Original Code
+    /*
     /// <summary>
     /// Web Server StartUp class.
     /// </summary>
@@ -108,12 +111,10 @@ namespace Wpf.Owin.Rest.Server.Sample
 
             // Controllers with Actions
             // To handle routes like `/api/controller/action`
-            /*
-            config.Routes.MapHttpRoute(
-                name: "ControllerAndAction",
-                routeTemplate: "api/{controller}/{action}"
-            );
-            */
+            //config.Routes.MapHttpRoute(
+            //    name: "ControllerAndAction",
+            //    routeTemplate: "api/{controller}/{action}"
+            //);
 
             // Handle route by specificed controller (Route Order is important).
             // Calculator2 Controller
@@ -158,10 +159,6 @@ namespace Wpf.Owin.Rest.Server.Sample
         public override bool ShouldValidateType(Type type)
         {
             // Ignore validation on all DMTModelBase subclasses.
-            /*
-            bool isDMTModel = !type.IsSubclassOf(typeof(Models.DMTModelBase));
-            return isDMTModel && base.ShouldValidateType(type);
-            */
             return base.ShouldValidateType(type);
         }
     }
@@ -191,7 +188,7 @@ namespace Wpf.Owin.Rest.Server.Sample
             if (!String.IsNullOrWhiteSpace(header))
             {
                 var authHeader = System.Net.Http.Headers.AuthenticationHeaderValue.Parse(header);
-
+                request.User = null;
                 if ("Basic".Equals(authHeader.Scheme, StringComparison.OrdinalIgnoreCase))
                 {
                     string parameter = Encoding.UTF8.GetString(Convert.FromBase64String(authHeader.Parameter));
@@ -209,22 +206,368 @@ namespace Wpf.Owin.Rest.Server.Sample
                         var identity = new ClaimsIdentity(claims, "Basic");
                         request.User = new ClaimsPrincipal(identity);
                     }
-                    else
-                    {
-                        //Console.WriteLine("Invalid User");
-                        request.User = null;
-                    }
-                }
-                else
-                {
-                    //Console.WriteLine("No Basic Auth");
-                    request.User = null;
                 }
             }
 
             await Next.Invoke(context);
         }
     }
+    */
+    #endregion
+
+    #region New Code
+
+    #region BasicAuthenticationMiddleware
+
+    /// <summary>
+    /// The Basic Authentication Owin Middleware.
+    /// </summary>
+    internal class BasicAuthenticationMiddleware : OwinMiddleware
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="next">The OwinMiddleware instance.</param>
+        public BasicAuthenticationMiddleware(OwinMiddleware next) : base(next) { }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Invoke.
+        /// </summary>
+        /// <param name="context">The OwinContext.</param>
+        /// <returns>Returns Task instance.</returns>
+        public async override Task Invoke(IOwinContext context)
+        {
+            var request = context.Request;
+            var response = context.Response;
+
+            response.OnSendingHeaders(state =>
+            {
+                var resp = (OwinResponse)state;
+                if (resp.StatusCode == 401)
+                {
+                    resp.Headers.Add("WWW-Authenticate", new string[] { "Basic" });
+                }
+            }, response);
+
+            var header = request.Headers.Get("Authorization");
+            if (!string.IsNullOrWhiteSpace(header))
+            {
+                var authHeader = System.Net.Http.Headers.AuthenticationHeaderValue.Parse(header);
+
+                request.User = null; // set request user
+
+                if ("Basic".Equals(authHeader.Scheme, StringComparison.OrdinalIgnoreCase) &&
+                    null != Validator)
+                {
+                    string parameter = Encoding.UTF8.GetString(Convert.FromBase64String(authHeader.Parameter));
+                    var parts = parameter.Split(':');
+
+                    string userName = parts[0];
+                    string password = parts[1];
+
+                    if (Validator(userName, password))
+                    {
+                        var claims = new[] { new Claim(ClaimTypes.Name, userName) };
+                        var identity = new ClaimsIdentity(claims, "Basic");
+                        request.User = new ClaimsPrincipal(identity);
+                    }
+                }
+            }
+
+            await Next.Invoke(context);
+        }
+
+        #endregion
+
+        #region Static Propertiess
+
+        /// <summary>
+        /// Gets or sets validator function.
+        /// </summary>
+        public static Func<string, string, bool> Validator { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
+    #region CustomBodyModelValidator
+
+    /// <summary>
+    /// The Custom Body Model Validator class.
+    /// </summary>
+    internal class CustomBodyModelValidator : DefaultBodyModelValidator
+    {
+        /// <summary>
+        /// Should Validate Type.
+        /// </summary>
+        /// <param name="type">The target type.</param>
+        /// <returns>Returns true if specificed need to validate.</returns>
+        public override bool ShouldValidateType(Type type)
+        {
+            return base.ShouldValidateType(type);
+        }
+    }
+
+    #endregion
+
+    #region DMTRestServerStartUp
+
+    /// <summary>
+    /// The DMT Rest Server StartUp class (abstract).
+    /// </summary>
+    public abstract class DMTRestServerStartUp
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public DMTRestServerStartUp() : base()
+        {
+            // Authentication
+            this.HasAuthentication = true;
+            this.AuthenticationSchemes = AuthenticationSchemes.Basic |
+                //AuthenticationSchemes.IntegratedWindowsAuthentication |
+                AuthenticationSchemes.Anonymous;
+            this.AuthenticationValidator = (string userName, string password) =>
+            {
+                return userName != "" && password != "";
+            };
+            // Swagger
+            this.EnableSwagger = true;
+        }
+
+        #endregion
+
+        #region Protected Methods
+
+        #region Authentication
+
+        /// <summary>
+        /// Init Authentication.
+        /// </summary>
+        /// <param name="app">The IAppBuilder instance.</param>
+        protected virtual void InitAuthentication(IAppBuilder app)
+        {
+            if (null == app) return;
+            if (!HasAuthentication) return;
+            // Setup Authentication for listener.
+            HttpListener listener;
+            MethodBase med = MethodBase.GetCurrentMethod();
+            try
+            {
+                listener = app.Properties["System.Net.HttpListener"] as HttpListener;
+                if (null != listener)
+                {
+                    listener.AuthenticationSchemes = AuthenticationSchemes;
+                    // setup validate function.
+                    BasicAuthenticationMiddleware.Validator = AuthenticationValidator;
+                    // used Authentication middleware.
+                    app.Use(typeof(BasicAuthenticationMiddleware));
+                }
+            }
+            catch (Exception ex)
+            {
+                //med.Err(ex);
+            }
+        }
+        /// <summary>
+        /// Gets or sets Authentication Validator function.
+        /// </summary>
+        protected Func<string, string, bool> AuthenticationValidator { get; set; }
+
+        #endregion
+
+        #region Default Http Configuration
+
+        /// <summary>
+        /// Get Default Http Configuration.
+        /// </summary>
+        /// <returns>Returns default HttpConfiguration instance.</returns>
+        protected virtual HttpConfiguration GetDefaultHttpConfiguration()
+        {
+            // Configure Web API for self-host. 
+            HttpConfiguration config = new HttpConfiguration();
+            // Enable Cors.
+            config.EnableCors();
+            // Enable Attribute routing.
+            config.MapHttpAttributeRoutes();
+            // Add Filter for Authorize Attribute.
+            config.Filters.Add(new AuthorizeAttribute());
+
+            return config;
+        }
+
+        #endregion
+
+        #region Formatter
+
+        /// <summary>
+        /// Init Custom Formatter.
+        /// </summary>
+        /// <param name="config">The HttpConfiguration instance.</param>
+        protected virtual void InitCustomFormatter(HttpConfiguration config)
+        {
+            if (null == config) return;
+            // Add new formatter.
+            config.Formatters.Clear();
+            config.Formatters.Add(new System.Net.Http.Formatting.JsonMediaTypeFormatter());
+            config.Formatters.JsonFormatter.SerializerSettings = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+            config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
+
+            // Replace IBodyModelValidator to Custom Model Validator to prevent insufficient stack problem.
+            config.Services.Replace(typeof(IBodyModelValidator), new CustomBodyModelValidator());
+        }
+
+        #endregion
+
+        #region Routes
+
+        /// <summary>
+        /// Init Map Routes
+        /// </summary>
+        /// <param name="config">The HttpConfiguration instance.</param>
+        protected virtual void InitMapRoutes(HttpConfiguration config)
+        {
+            if (null == config) return;
+            InitDefaultMapRoute(config);
+        }
+        /// <summary>
+        /// Init Default Map Route.
+        /// </summary>
+        /// <param name="config">The HttpConfiguration instance.</param>
+        protected virtual void InitDefaultMapRoute(HttpConfiguration config)
+        {
+            if (null == config) return;
+            // Default Setting to handle routes like `/api/controller/action`
+            config.Routes.MapHttpRoute(
+                name: "ControllerAndAction",
+                routeTemplate: "api/{controller}/{action}"
+            );
+        }
+
+        #endregion
+
+        #region Swagger
+
+        /// <summary>
+        /// Init Swagger UI
+        /// </summary>
+        /// <param name="config">The HttpConfiguration instance.</param>
+        protected virtual void InitSwagger(HttpConfiguration config)
+        {
+            if (null == config) return;
+            if (!EnableSwagger) return;
+            string version = (string.IsNullOrEmpty(ApiVersion)) ? "v1" : ApiVersion;
+            string title = (string.IsNullOrEmpty(ApiName)) ? "REST Api." : ApiName;
+            config
+                .EnableSwagger(c => c.SingleApiVersion(version, title))
+                .EnableSwaggerUi(x => x.DisableValidator());
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Configuration.
+        /// </summary>
+        /// <param name="app">The IAppBuilder instance.</param>
+        public virtual void Configuration(IAppBuilder app)
+        {
+            if (null == app) return;
+            // Configure Web API for self-host. 
+            HttpConfiguration config = GetDefaultHttpConfiguration();
+            InitAuthentication(app);
+            InitCustomFormatter(config);
+            InitMapRoutes(config);
+            InitSwagger(config);
+            // set configuration to app builder.
+            app.UseWebApi(config);
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        #region Authentication
+
+        /// <summary>
+        /// Gets or (protected sets) has authentication.
+        /// </summary>
+        public bool HasAuthentication { get; protected set; }
+        /// <summary>
+        /// Gets or (protected sets) Authentication Schemes.
+        /// </summary>
+        public AuthenticationSchemes AuthenticationSchemes { get; protected set; }
+
+        #endregion
+
+        #region Swagger
+
+        /// <summary>
+        /// Gets or (protected sets) Enable Swagger UI.
+        /// </summary>
+        public bool EnableSwagger { get; protected set; }
+        /// <summary>
+        /// Gets or (protected sets) Server API version.
+        /// </summary>
+        public string ApiVersion { get; protected set; }
+        /// <summary>
+        /// Gets or (protected sets) Server API Name or Title.
+        /// </summary>
+        public string ApiName { get; protected set; }
+
+        #endregion
+
+        #endregion
+    }
+
+    #endregion
+
+    public class StartUp : DMTRestServerStartUp
+    {
+        public StartUp() : base()
+        {
+            this.AuthenticationValidator = (string userName, string password) =>
+            {
+                return (userName == "DMTUSER" && password == "DMTPASS2");
+            };
+            this.EnableSwagger = true;
+            this.ApiName = "Owin Sample API";
+            this.ApiVersion = "v1";
+        }
+
+        protected override void InitMapRoutes(HttpConfiguration config)
+        {
+            // Handle route by specificed controller (Route Order is important).
+            // Calculator2 Controller
+            config.Routes.MapHttpRoute(
+                name: "Calc2ApiAdd",
+                routeTemplate: "api/Calc2/Add",
+                defaults: new { controller = "Calculator2", action = "Add" });
+            config.Routes.MapHttpRoute(
+                name: "Calc2ApiSub",
+                routeTemplate: "api/Calc2/Sub",
+                defaults: new { controller = "Calculator2", action = "Sub" });
+
+            InitDefaultMapRoute(config);
+        }
+    }
+
+    #endregion
 
     // url: http://localhost:8000/api/Test/getsample
     // body: { "name": "Job" }
