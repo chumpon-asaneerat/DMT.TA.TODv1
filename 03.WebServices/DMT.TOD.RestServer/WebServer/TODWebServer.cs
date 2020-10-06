@@ -2,22 +2,8 @@
 
 using System;
 using System.Reflection;
-// Owin SelfHost
-using Owin;
-using Microsoft.Owin; // for OwinStartup attribute.
 using Microsoft.Owin.Hosting;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json;
-using System.Net;
 using System.Web.Http;
-using System.Web.Http.Validation;
-// Owin Authentication
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Text;
-// Swagger
-using Swashbuckle.Application;
 
 #endregion
 

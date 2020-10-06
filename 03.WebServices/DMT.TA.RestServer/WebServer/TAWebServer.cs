@@ -2,22 +2,8 @@
 
 using System;
 using System.Reflection;
-// Owin SelfHost
-using Owin;
-using Microsoft.Owin; // for OwinStartup attribute.
 using Microsoft.Owin.Hosting;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
-using Newtonsoft.Json;
-using System.Net;
 using System.Web.Http;
-using System.Web.Http.Validation;
-// Owin Authentication
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Text;
-// Swagger
-using Swashbuckle.Application;
 
 #endregion
 
@@ -26,143 +12,42 @@ namespace DMT.Services
     /// <summary>
     /// Web Server StartUp class.
     /// </summary>
-    public class StartUp
+    public class StartUp : DMTRestServerStartUp
     {
-        // This code configures Web API. The Startup class is specified as a type
-        // parameter in the WebApp.Start method.
-        public void Configuration(IAppBuilder appBuilder)
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public StartUp() : base()
         {
-            // Setup Authentication for listener.
-            HttpListener listener =
-                    (HttpListener)appBuilder.Properties["System.Net.HttpListener"];
-            listener.AuthenticationSchemes =
-                AuthenticationSchemes.Basic |
-                //AuthenticationSchemes.IntegratedWindowsAuthentication |
-                AuthenticationSchemes.Anonymous;
-
-            // used Authentication middleware.
-            appBuilder.Use(typeof(AuthenticationMiddleware));
-
-            // Configure Web API for self-host. 
-            HttpConfiguration config = new HttpConfiguration();
-
-            // Enable Attribute routing.
-            config.MapHttpAttributeRoutes();
-
-            // Enable Cors and Authorize middleware.
-            config.EnableCors();
-            config.Filters.Add(new AuthorizeAttribute()); // Set Filter for Authorize Attribute.
-
-            // Handle route by specificed controller (Route Order is important).
-            // Add custom controller here!!
-            //
-            // Calculator2 Controller
-            //config.Routes.MapHttpRoute(
-            //    name: "Calc2ApiAdd",
-            //    routeTemplate: "api/Calc2/Add",
-            //    defaults: new { controller = "Calculator2", action = "Add" });
-            //config.Routes.MapHttpRoute(
-            //    name: "Calc2ApiSub",
-            //    routeTemplate: "api/Calc2/Sub",
-            //    defaults: new { controller = "Calculator2", action = "Sub" });
-            //
-            // Default Setting to handle routes like `/api/controller/action`
-            config.Routes.MapHttpRoute(
-                name: "ControllerAndAction",
-                routeTemplate: "api/{controller}/{action}"
-            );
-
-            config.Formatters.Clear();
-            config.Formatters.Add(new System.Net.Http.Formatting.JsonMediaTypeFormatter());
-            config.Formatters.JsonFormatter.SerializerSettings =
-            new JsonSerializerSettings
+            this.AuthenticationValidator = (string userName, string password) =>
             {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
+                return (userName == "DMTUSER" && password == "DMTPASS2");
             };
-            config.Formatters.JsonFormatter.SerializerSettings.Converters.Add(new StringEnumConverter());
-            // Replace IBodyModelValidator to Custom Model Validator to prevent
-            // Insufficient Stack problem.
-            config.Services.Replace(typeof(IBodyModelValidator), new CustomBodyModelValidator());
-
-            // Enable Swashbuckle (swagger) 
-            // for more information see: https://github.com/domaindrivendev/Swashbuckle.WebApi
-            // to see api document goto: http://your-root-url/swagger
-            config
-                .EnableSwagger(c => c.SingleApiVersion("v1", "A title for your API"))
-                .EnableSwaggerUi(x => x.DisableValidator());
-
-            appBuilder.UseWebApi(config);
+            this.EnableSwagger = true;
+            this.ApiName = "TA Application API";
+            this.ApiVersion = "v1";
         }
-    }
 
-    internal class CustomBodyModelValidator : DefaultBodyModelValidator
-    {
-        public override bool ShouldValidateType(Type type)
+        #endregion
+
+        #region Override Methods
+
+        /// <summary>
+        /// Init Map Routes.
+        /// </summary>
+        /// <param name="config">The HttpConfiguration instance.</param>
+        protected override void InitMapRoutes(HttpConfiguration config)
         {
-            // Ignore validation on all DMTModelBase subclasses.
-            bool isDMTModel = !type.IsSubclassOf(typeof(Models.DMTModelBase));
-            return isDMTModel && base.ShouldValidateType(type);
-        }
-    }
-
-    internal class AuthenticationMiddleware : OwinMiddleware
-    {
-        public AuthenticationMiddleware(OwinMiddleware next) :
-            base(next)
-        {
+            // Handle route by specificed controller (Route Order is important).
+            // Calculator2 Controller
+            //config.Routes.MapHttpRoute(name: "Calc2ApiAdd", routeTemplate: "api/Calc2/Add", defaults: new { controller = "Calculator2", action = "Add" });
+            //config.Routes.MapHttpRoute(name: "Calc2ApiSub", routeTemplate: "api/Calc2/Sub", defaults: new { controller = "Calculator2", action = "Sub" });
+            InitDefaultMapRoute(config);
         }
 
-        public async override Task Invoke(IOwinContext context)
-        {
-            var request = context.Request;
-            var response = context.Response;
-
-            response.OnSendingHeaders(state =>
-            {
-                var resp = (OwinResponse)state;
-                if (resp.StatusCode == 401)
-                {
-                    resp.Headers.Add("WWW-Authenticate", new string[] { "Basic" });
-                }
-            }, response);
-
-            var header = request.Headers.Get("Authorization");
-            if (!String.IsNullOrWhiteSpace(header))
-            {
-                var authHeader = System.Net.Http.Headers.AuthenticationHeaderValue.Parse(header);
-
-                if ("Basic".Equals(authHeader.Scheme, StringComparison.OrdinalIgnoreCase))
-                {
-                    string parameter = Encoding.UTF8.GetString(Convert.FromBase64String(authHeader.Parameter));
-                    var parts = parameter.Split(':');
-
-                    string userName = parts[0];
-                    string password = parts[1];
-
-                    if (userName == "DMTUSER" && password == "DMTPASS2")
-                    {
-                        var claims = new[]
-                        {
-                            new Claim(ClaimTypes.Name, userName)
-                        };
-                        var identity = new ClaimsIdentity(claims, "Basic");
-                        request.User = new ClaimsPrincipal(identity);
-                    }
-                    else
-                    {
-                        //Console.WriteLine("Invalid User");
-                        request.User = null;
-                    }
-                }
-                else
-                {
-                    //Console.WriteLine("No Basic Auth");
-                    request.User = null;
-                }
-            }
-
-            await Next.Invoke(context);
-        }
+        #endregion
     }
 
     /// <summary>
