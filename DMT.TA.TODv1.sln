@@ -234,6 +234,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMT.RestServer", "03.WebSer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMT.RabbitMQ.Client", "03.WebServices\DMT.RabbitMQ.Client\DMT.RabbitMQ.Client.csproj", "{37616CB2-8712-4767-B165-76F046CFC68B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.IO.Sample", "10.Tests\Wpf.IO.Sample\Wpf.IO.Sample.csproj", "{418228F9-E30D-447D-896D-188F858090C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -340,6 +342,10 @@ Global
 		{37616CB2-8712-4767-B165-76F046CFC68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37616CB2-8712-4767-B165-76F046CFC68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37616CB2-8712-4767-B165-76F046CFC68B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{418228F9-E30D-447D-896D-188F858090C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{418228F9-E30D-447D-896D-188F858090C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{418228F9-E30D-447D-896D-188F858090C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{418228F9-E30D-447D-896D-188F858090C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -389,6 +395,7 @@ Global
 		{CED1E633-22CA-484B-ABB8-C08D558115F7} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 		{53F967F3-9713-43DA-94F5-687DDEC8CF04} = {EBCD7A0A-EB25-4850-88F3-80895FB25E4D}
 		{37616CB2-8712-4767-B165-76F046CFC68B} = {EBCD7A0A-EB25-4850-88F3-80895FB25E4D}
+		{418228F9-E30D-447D-896D-188F858090C6} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
