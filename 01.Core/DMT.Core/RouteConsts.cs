@@ -2492,11 +2492,21 @@ namespace DMT.v3
 
 namespace DMT
 {
+    public class RouteInfo
+    {
+        public string Name { get; set; }
+        public string Url { get; set; }
+        public string Controller { get; set; }
+    }
+
     /// <summary>
     /// The Rest api routes constants class.
     /// </summary>
     public static partial class RouteConsts
     {
-
+        /// <summary>
+        /// Gets base api url.
+        /// </summary>
+        public const string Url = @"api";
     }
 }
