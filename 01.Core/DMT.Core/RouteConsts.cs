@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace DMT.v1
 {
@@ -2508,5 +2509,90 @@ namespace DMT
         /// Gets base api url.
         /// </summary>
         public const string Url = @"api";
+
+        public static partial class Notify 
+        {
+            public static partial class TSB 
+            {
+                /// <summary>
+                /// Gets base Notify api url.
+                /// </summary>
+                public const string Url = Notify.Url + @"/Notify";
+            }
+        }
     }
+
+    static partial class RouteConsts
+    {
+        public static List<RouteInfo> GetRoutes()
+        {
+            List<RouteInfo> results = new List<RouteInfo>();
+
+            var inst = new RouteInfo();
+            inst.Name = Notify.TSB.ActiveChanged.Name;
+            inst.Url = Notify.TSB.ActiveChanged.Url;
+            results.Add(inst);
+
+            return results;
+        }
+    }
+}
+
+namespace DMT
+{
+    #region Notify
+
+    static partial class RouteConsts
+    {
+        static partial class Notify
+        {
+            /// <summary>
+            /// Gets base Notify api url.
+            /// </summary>
+            public const string Url = RouteConsts.Url + @"/Notify";
+
+            static partial class TSB
+            {
+                #region ActiveChanged - OK
+
+                /// <summary>
+                /// Call when active TSB Changed.
+                /// </summary>
+                public static class ActiveChanged
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "ActiveChanged";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSB.Url + @"/" + Name;
+                }
+
+                #endregion
+
+                #region ShiftChanged - OK
+
+                /// <summary>
+                /// Call when TSB Shift Changed.
+                /// </summary>
+                public static class ShiftChanged
+                {
+                    /// <summary>
+                    /// Gets route name.
+                    /// </summary>
+                    public const string Name = "ShiftChanged";
+                    /// <summary>
+                    /// Gets route url.
+                    /// </summary>
+                    public const string Url = TSB.Url + @"/" + Name;
+                }
+
+                #endregion
+            }
+        }
+    }
+
+    #endregion
 }
