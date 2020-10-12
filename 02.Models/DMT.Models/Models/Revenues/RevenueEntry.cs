@@ -41,6 +41,8 @@ namespace DMT.Models
 		private string _BagNo = string.Empty;
 		private string _BeltNo = string.Empty;
 
+		private bool _IsHistorical = false;
+
 		private string _Lanes = string.Empty;
 		private string _PlazaNames = string.Empty;
 
@@ -359,6 +361,26 @@ namespace DMT.Models
 					_BeltNo = value;
 					// Raise event.
 					this.RaiseChanged("BeltNo");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets Is Historical.
+		/// </summary>
+		[Category("Revenue")]
+		[Description("Gets or sets Is Historical.")]
+		[ReadOnly(true)]
+		[PropertyMapName("IsHistorical")]
+		public bool IsHistorical
+		{
+			get { return _IsHistorical; }
+			set
+			{
+				if (_IsHistorical != value)
+				{
+					_IsHistorical = value;
+					// Raise event.
+					this.RaiseChanged("IsHistorical");
 				}
 			}
 		}
