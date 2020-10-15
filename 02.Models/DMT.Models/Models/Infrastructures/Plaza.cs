@@ -35,6 +35,7 @@ namespace DMT.Models
 		#region Intenral Variables
 
 		private string _PlazaId = string.Empty;
+		private int _SCWPlazaId = 0;
 		private string _PlazaNameEN = string.Empty;
 		private string _PlazaNameTH = string.Empty;
 
@@ -84,6 +85,27 @@ namespace DMT.Models
 				{
 					_PlazaId = value;
 					this.RaiseChanged("PlazaId");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets SCWPlazaId.
+		/// </summary>
+		[Category("Plaza")]
+		[Description("Gets or sets SCWPlazaId.")]
+		[PropertyMapName("SCWPlazaId")]
+		public int SCWPlazaId
+		{
+			get
+			{
+				return _SCWPlazaId;
+			}
+			set
+			{
+				if (_SCWPlazaId != value)
+				{
+					_SCWPlazaId = value;
+					this.RaiseChanged("SCWPlazaId");
 				}
 			}
 		}
