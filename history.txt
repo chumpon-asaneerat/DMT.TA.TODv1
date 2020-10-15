@@ -23,7 +23,6 @@
       transaction to used in TSBCreditSummary view later.
     - PlazaOperations.Exchange.cs (Local.WebClient) need to check why save to invalid column.
   - ใบเสร็จขายคูปอง ที่ TA ยังไม่มีจำนวนเงิน แสดง ตอนท้ายรายการ
-  - ป้อนย้อนหลังต้องส่งเวลา declare ไปด้วย
 --------------------------------------------------------------------------------------------
 Ported DMTv2 to DMT.TAxTODv1 #165
 - 
@@ -37,8 +36,12 @@ Ported DMTv2 to DMT.TAxTODv1 #163
 Ported DMTv2 to DMT.TAxTODv1 #162
 - 
 
+[commited]
 Ported DMTv2 to DMT.TAxTODv1 #161
-- 
+- Update Fixed SCW PlazaId to DMT.TAxTODv1 #1.
+  - Update LaneView.sql.
+  - Update LaneAttendanceView.sql.
+  - Update LanePaymentView.sql.
 
 [commited]
 Ported DMTv2 to DMT.TAxTODv1 #160
