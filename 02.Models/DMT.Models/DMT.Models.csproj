@@ -141,6 +141,7 @@
     <Compile Include="Models\Payments\Payment.cs" />
     <Compile Include="Models\Revenues\RevenueEntry.cs" />
     <Compile Include="Models\SCW\Common.cs" />
+    <Compile Include="Models\SCW\SCWCardAllow.cs" />
     <Compile Include="Models\SCW\SCWChiefOfDuty.cs" />
     <Compile Include="Models\SCW\SCWCoupon.cs" />
     <Compile Include="Models\SCW\SCWCurrency.cs" />
