@@ -135,6 +135,7 @@
     <Compile Include="Models\Infrastructures\TSB.cs" />
     <Compile Include="Models\LaneActivities\LaneAttendance.cs" />
     <Compile Include="Models\LaneActivities\LanePayment.cs" />
+    <Compile Include="Models\Master\CardAllow.cs" />
     <Compile Include="Models\Master\Coupon.cs" />
     <Compile Include="Models\Master\Currency.cs" />
     <Compile Include="Models\Payments\Payment.cs" />
