@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Services\Original\RabbitMQClient.cs" />
     <Compile Include="Services\RabbitMQClient.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,5 +82,6 @@
       <Name>NLib</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

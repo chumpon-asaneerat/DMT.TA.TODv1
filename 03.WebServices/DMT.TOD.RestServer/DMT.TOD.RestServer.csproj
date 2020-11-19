@@ -94,6 +94,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="WebServer\Controllers\NotifyController.cs" />
+    <None Include="WebServer\Controllers\Original\NotifyController.cs" />
     <Compile Include="WebServer\TODWebServer.cs" />
   </ItemGroup>
   <ItemGroup>

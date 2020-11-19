@@ -1841,6 +1841,8 @@ namespace DMT.Services
 
 		private void InitView(string viewName, string resourcePrefix = "")
 		{
+			// TODO: InitView Temporary comment out.
+			/*
 			if (null == Db) return;
 
 			var hist = ViewHistory.GetWithChildren(viewName, false).Value();
@@ -1869,16 +1871,6 @@ namespace DMT.Services
 						Db.Rollback();
 					}
 					finally { Db.Commit(); }
-
-					// Recheck
-					/*
-					rets = Db.Query<ViewInfo>(checkViewCmd, viewName);
-					exists = (null != rets && rets.Count > 0);
-					if (exists)
-					{
-						Console.WriteLine("Drop View Failed.");
-					}
-					*/
 
 					string resourceName = viewName + ".sql";
 					// Note: 
@@ -1933,6 +1925,7 @@ namespace DMT.Services
 					Console.WriteLine(script);
 				}
 			}
+			*/
 		}
 
 		private void InitViews()
