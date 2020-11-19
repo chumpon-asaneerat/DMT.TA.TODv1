@@ -419,6 +419,7 @@ namespace Wpf.Owin.Rest.Server.Sample
             catch (Exception ex)
             {
                 //med.Err(ex);
+                Console.WriteLine(ex);
             }
         }
         /// <summary>
@@ -588,6 +589,8 @@ namespace Wpf.Owin.Rest.Server.Sample
     }
 
     #endregion
+
+    // Auth: Basic RE1UVVNFUjpETVRQQVNTMg==
 
     public class StartUp : DMTRestServerStartUp
     {
