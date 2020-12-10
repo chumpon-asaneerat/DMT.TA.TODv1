@@ -1,4 +1,6 @@
-﻿#region Using
+﻿//#define USE_PROGRAM_DATA
+
+#region Using
 
 using System;
 using System.IO;
