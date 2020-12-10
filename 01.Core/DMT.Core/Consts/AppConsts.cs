@@ -18,7 +18,7 @@ namespace DMT
         {
             public static class TA
             {
-                public static string ApplicationName = @"DMT Toll Admin Application";
+                public static string ApplicationName = @"DMT Toll Admin Application (Plaza)";
                 // common
                 public static string Version = AppConsts.Version;
                 public static string Minor = AppConsts.Minor;
@@ -28,24 +28,24 @@ namespace DMT
 
             public static class TOD
             {
-                public static string ApplicationName = @"DMT Toll of Duty Application";
+                public static string ApplicationName = @"DMT Toll of Duty Application (Plaza)";
                 // common
                 public static string Version = AppConsts.Version;
                 public static string Minor = AppConsts.Minor;
                 public static string Build = AppConsts.Build;
                 public static DateTime LastUpdate = AppConsts.LastUpdate;
             }
-            /*
+            
             public static class Account
             {
-                public static string ApplicationName = @"DMT Toll Account Application";
+                public static string ApplicationName = @"DMT Toll Admin Application (Account)";
                 // common
                 public static string Version = AppConsts.Version;
                 public static string Minor = AppConsts.Minor;
                 public static string Build = AppConsts.Build;
                 public static DateTime LastUpdate = AppConsts.LastUpdate;
             }
-            */
+            
             public static class PlazaConfig
             {
                 public static string ApplicationName = @"DMT TOD-TA Plaza Config";
