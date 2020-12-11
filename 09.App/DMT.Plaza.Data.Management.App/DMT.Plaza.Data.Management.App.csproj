@@ -85,6 +85,9 @@
     <Compile Include="UI\Controls\DataManagementSatatusBar.xaml.cs">
       <DependentUpon>DataManagementSatatusBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Controls\Elements\ClientIPInfoBar.xaml.cs">
+      <DependentUpon>ClientIPInfoBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Controls\Elements\LocalDbConnectionStatus.xaml.cs">
       <DependentUpon>LocalDbConnectionStatus.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UI\Controls\DataManagementSatatusBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\Elements\ClientIPInfoBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
