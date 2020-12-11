@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FF8B1C83-92EA-47D8-B4D4-C4E646F1A20C}</ProjectGuid>
+    <ProjectGuid>{C45B8D18-ECA6-410B-81F8-C8044D5165DF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DMT</RootNamespace>
-    <AssemblyName>DMT.Plaza.Simulator.App</AssemblyName>
+    <AssemblyName>DMT.Plaza.Data.Management.App</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -25,7 +25,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,26 +36,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <StartupObject>DMT.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>app.ico</ApplicationIcon>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>DMT.App</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ControlzEx">
-      <HintPath>..\..\References\ControlzEx.dll</HintPath>
-    </Reference>
-    <Reference Include="Fluent">
-      <HintPath>..\..\References\Fluent.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.AvalonEdit">
-      <HintPath>..\..\References\ICSharpCode.AvalonEdit.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xaml.Behaviors">
-      <HintPath>..\..\References\Microsoft.Xaml.Behaviors.dll</HintPath>
+    <Reference Include="Fluent, Version=7.0.0.0, Culture=neutral, PublicKeyToken=3e436e32a8c5546f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DMTv2\References\Fluent.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -65,17 +53,20 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
-    <Reference Include="Xceed.Wpf.AvalonDock">
-      <HintPath>..\..\References\Xceed.Wpf.AvalonDock.dll</HintPath>
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DMTv2\References\Xceed.Wpf.AvalonDock.dll</HintPath>
     </Reference>
-    <Reference Include="Xceed.Wpf.Toolkit">
-      <HintPath>..\..\References\Xceed.Wpf.Toolkit.dll</HintPath>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.8.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DMTv2\References\Xceed.Wpf.Toolkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -83,15 +74,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -109,7 +105,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,47 +112,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="app.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Colors\Gray.png" />
-    <Resource Include="Images\Colors\GrayLarge.png" />
-    <Resource Include="Images\Colors\Green.png" />
-    <Resource Include="Images\Colors\GreenLarge.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UI\Controls\" />
-    <Folder Include="UI\Pages\" />
-    <Folder Include="UI\Windows\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Lanes\toll-clipart.jpg" />
-    <Resource Include="Images\Lanes\tool.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Cards\Card-Black.png" />
-    <Resource Include="Images\Cards\Card-Blue.png" />
-    <Resource Include="Images\Cards\Card-Gray.png" />
-    <Resource Include="Images\Cards\Card-Green.png" />
-    <Resource Include="Images\Cards\Card-Purple.png" />
-    <Resource Include="Images\Cards\Card-Red.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Users\online-user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Users\red-user.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Reports\slip_06.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
@@ -172,10 +126,18 @@
       <Project>{7d584f0a-920f-4be1-8652-3527fd7a5c27}</Project>
       <Name>DMT.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\03.WebServices\DMT.RestClient\DMT.RestClient.csproj">
-      <Project>{26ba4314-6b80-4a59-9e0d-7c29919bbc6f}</Project>
-      <Name>DMT.RestClient</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\Controls\" />
+    <Folder Include="UI\Pages\" />
+    <Folder Include="UI\Windows\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DB_Delete.ico" />
+    <Resource Include="Images\DB_Save.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -166,9 +166,9 @@
     <Resource Include="Images\Networks\plaza_network2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Config\Controls\" />
-    <Folder Include="Config\Pages\" />
-    <Folder Include="Config\Windows\" />
+    <Folder Include="UI\Controls\" />
+    <Folder Include="UI\Pages\" />
+    <Folder Include="UI\Windows\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Clock\clock.png" />

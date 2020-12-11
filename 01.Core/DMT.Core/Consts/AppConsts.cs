@@ -11,8 +11,8 @@ namespace DMT
         // common properties
         public static string Version = "1";
         public static string Minor = "1";
-        public static string Build = "1945";
-        public static DateTime LastUpdate = new DateTime(2020, 11, 16, 16, 30, 00);
+        public static string Build = "2000";
+        public static DateTime LastUpdate = new DateTime(2020, 12, 11, 23, 30, 00);
 
         public static class Application
         {
@@ -59,6 +59,16 @@ namespace DMT
             public static class PlazaSumulator
             {
                 public static string ApplicationName = @"DMT TOD-TA Plaza Simulator";
+                // common
+                public static string Version = AppConsts.Version;
+                public static string Minor = AppConsts.Minor;
+                public static string Build = AppConsts.Build;
+                public static DateTime LastUpdate = AppConsts.LastUpdate;
+            }
+
+            public static class PlazaDataManagement
+            {
+                public static string ApplicationName = @"DMT TOD-TA Plaza Data Management";
                 // common
                 public static string Version = AppConsts.Version;
                 public static string Minor = AppConsts.Minor;
