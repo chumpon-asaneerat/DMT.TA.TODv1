@@ -35,12 +35,12 @@ namespace DMT
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Windows Loaded.");
+            LocalDbServer.Instance.Start();
         }
 
         private void Window_Unloaded(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Windows Unloaded.");
+            LocalDbServer.Instance.Shutdown();
         }
 
         #endregion

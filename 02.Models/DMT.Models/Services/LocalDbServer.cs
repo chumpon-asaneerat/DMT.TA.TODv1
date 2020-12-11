@@ -187,8 +187,13 @@ namespace DMT.Services
 		/// Gets SQLite Connection.
 		/// </summary>
 		public SQLiteConnection Db { get; private set; }
+		/// <summary>
+		/// Gets is database connected.
+		/// </summary>
+		public bool Connected { get { return (null != this.Db); } }
 
 		#endregion
+
 		#region Public Events
 
 		/// <summary>
