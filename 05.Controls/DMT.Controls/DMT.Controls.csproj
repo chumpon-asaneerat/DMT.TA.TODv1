@@ -55,6 +55,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Header\CurrentTA.cs" />
     <Compile Include="Header\Elements\HeaderDateTime.xaml.cs">
       <DependentUpon>HeaderDateTime.xaml</DependentUpon>
     </Compile>
@@ -72,6 +73,12 @@
     </Compile>
     <Compile Include="Header\Elements\HeaderUser.xaml.cs">
       <DependentUpon>HeaderUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\PlazaHeader.xaml.cs">
+      <DependentUpon>PlazaHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\TAHeader.xaml.cs">
+      <DependentUpon>TAHeader.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -146,6 +153,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Header\Elements\HeaderUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\PlazaHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\TAHeader.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
