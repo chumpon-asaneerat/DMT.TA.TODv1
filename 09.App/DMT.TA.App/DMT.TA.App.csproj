@@ -134,5 +134,10 @@
       <Name>DMT.Controls</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\Controls\" />
+    <Folder Include="UI\Pages\Menu\" />
+    <Folder Include="UI\Windows\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
