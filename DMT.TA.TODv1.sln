@@ -238,6 +238,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.IO.Sample", "10.Tests\W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMT.Plaza.Data.Management.App", "09.App\DMT.Plaza.Data.Management.App\DMT.Plaza.Data.Management.App.csproj", "{C45B8D18-ECA6-410B-81F8-C8044D5165DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.ContentPresenter.Sample", "10.Tests\Wpf.ContentPresenter.Sample\Wpf.ContentPresenter.Sample.csproj", "{05F0FE42-126D-43F1-954F-1D43B3FFC970}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -352,6 +354,10 @@ Global
 		{C45B8D18-ECA6-410B-81F8-C8044D5165DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C45B8D18-ECA6-410B-81F8-C8044D5165DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C45B8D18-ECA6-410B-81F8-C8044D5165DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05F0FE42-126D-43F1-954F-1D43B3FFC970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05F0FE42-126D-43F1-954F-1D43B3FFC970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05F0FE42-126D-43F1-954F-1D43B3FFC970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05F0FE42-126D-43F1-954F-1D43B3FFC970}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -403,6 +409,7 @@ Global
 		{37616CB2-8712-4767-B165-76F046CFC68B} = {EBCD7A0A-EB25-4850-88F3-80895FB25E4D}
 		{418228F9-E30D-447D-896D-188F858090C6} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 		{C45B8D18-ECA6-410B-81F8-C8044D5165DF} = {E172C8E1-5AAC-4FAB-91A5-C826BCEA3FBA}
+		{05F0FE42-126D-43F1-954F-1D43B3FFC970} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
