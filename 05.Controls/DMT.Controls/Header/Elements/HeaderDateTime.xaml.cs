@@ -31,7 +31,7 @@ namespace DMT.Controls.Header
         #endregion
 
         private DispatcherTimer timer = null;
-        private NLib.Components.PingManager ping;
+        private NLib.Components.PingManager ping = null;
 
         #region Loaded/Unloaded
 

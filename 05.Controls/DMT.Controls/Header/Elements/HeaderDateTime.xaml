@@ -31,13 +31,13 @@
                    HorizontalAlignment="Center"
                    LastChildFill="True">
             <TextBlock x:Name="txtCurrentDate"
-                       Style="{StaticResource HeaderDateTimeTextBlockCommonStyle}"
                        DockPanel.Dock="Bottom"
                        FontSize="20"
-                       Text="17/03/2020" />
-            <TextBlock x:Name="txtCurrentTime"
                        Style="{StaticResource HeaderDateTimeTextBlockCommonStyle}"
+                       Text="14/12/2020" />
+            <TextBlock x:Name="txtCurrentTime"
                        FontSize="32"
+                       Style="{StaticResource HeaderDateTimeTextBlockCommonStyle}"
                        Text="09:30:00" />
         </DockPanel>
     </Border>
