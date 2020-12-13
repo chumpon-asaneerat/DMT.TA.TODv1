@@ -4,23 +4,23 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 
-using NLib;
+using NLib.Utils;
 
 #endregion
 
 namespace DMT.Controls.StatusBar
 {
     /// <summary>
-    /// Interaction logic for AppInfoStatus.xaml
+    /// Interaction logic for ClientInfoStatus.xaml
     /// </summary>
-    public partial class AppInfoStatus : UserControl
+    public partial class ClientInfoStatus : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public AppInfoStatus()
+        public ClientInfoStatus()
         {
             InitializeComponent();
         }
@@ -38,7 +38,8 @@ namespace DMT.Controls.StatusBar
 
         private void UpdateUI()
         {
-            txtAppInfo.Text = ApplicationManager.Instance.Environments.Options.AppInfo.DisplayText;
+            var ipaddr = NetworkUtils.GetLocalIPAddress();
+            txtStatus.Text = (null != ipaddr) ? ipaddr.ToString() : "0.0.0.0";
         }
     }
 }

@@ -58,6 +58,9 @@
     <Compile Include="StatusBar\Elements\AppInfoStatus.xaml.cs">
       <DependentUpon>AppInfoStatus.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StatusBar\Elements\ClientInfoStatus.xaml.cs">
+      <DependentUpon>ClientInfoStatus.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StatusBar\Elements\LocalDbStatus.xaml.cs">
       <DependentUpon>LocalDbStatus.xaml</DependentUpon>
     </Compile>
@@ -66,6 +69,12 @@
     </Compile>
     <Compile Include="StatusBar\Elements\TAServerStatus.xaml.cs">
       <DependentUpon>TAServerStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBar\TAStatusBar.xaml.cs">
+      <DependentUpon>TAStatusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBar\TODStatusBar.xaml.cs">
+      <DependentUpon>TODStatusBar.xaml</DependentUpon>
     </Compile>
     <None Include="Header\CurrentTA.cs" />
     <Compile Include="Header\Elements\HeaderDateTime.xaml.cs">
@@ -180,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="StatusBar\Elements\ClientInfoStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StatusBar\Elements\LocalDbStatus.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -189,6 +202,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="StatusBar\Elements\TAServerStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusBar\TAStatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusBar\TODStatusBar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
