@@ -55,6 +55,18 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StatusBar\Elements\AppInfoStatus.xaml.cs">
+      <DependentUpon>AppInfoStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBar\Elements\LocalDbStatus.xaml.cs">
+      <DependentUpon>LocalDbStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBar\Elements\SCWStatus.xaml.cs">
+      <DependentUpon>SCWStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBar\Elements\TAServerStatus.xaml.cs">
+      <DependentUpon>TAServerStatus.xaml</DependentUpon>
+    </Compile>
     <None Include="Header\CurrentTA.cs" />
     <Compile Include="Header\Elements\HeaderDateTime.xaml.cs">
       <DependentUpon>HeaderDateTime.xaml</DependentUpon>
@@ -161,6 +173,22 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Header\TAHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusBar\Elements\AppInfoStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusBar\Elements\LocalDbStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusBar\Elements\SCWStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusBar\Elements\TAServerStatus.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

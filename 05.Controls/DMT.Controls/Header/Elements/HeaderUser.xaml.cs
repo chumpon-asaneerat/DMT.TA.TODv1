@@ -49,6 +49,7 @@ namespace DMT.Controls.Header
         {
             if (null != timer)
             {
+                timer.Tick -= timer_Tick;
                 timer.Stop();
             }
             timer = null;
