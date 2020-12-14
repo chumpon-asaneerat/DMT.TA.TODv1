@@ -23,13 +23,17 @@ namespace Wpf.ContentPresenter.Controls
         {
             InitializeComponent();
 
+            // set ItemsControl data context.
             groupItemsControl.DataContext = this;
+            // Init properties
             Groups = new ObservableCollection<MetroUIGroupMenu>();
         }
 
         #endregion
 
         #region Dependency Properties
+
+        #region Groups
 
         public static readonly DependencyProperty GroupsProperty =
                 DependencyProperty.Register("Groups", typeof(ObservableCollection<MetroUIGroupMenu>), typeof(MetroUIMainMenu), new PropertyMetadata(null));
@@ -39,6 +43,8 @@ namespace Wpf.ContentPresenter.Controls
             get { return (ObservableCollection<MetroUIGroupMenu>)GetValue(GroupsProperty); }
             set { SetValue(GroupsProperty, value); }
         }
+
+        #endregion
 
         #endregion
     }

@@ -10,11 +10,15 @@
         mc:Ignorable="d">
     <Grid>
         <ctrl:MetroUIMainMenu>
-            <ctrl:MetroUIGroupMenu>
-                <ctrl:MetroUIMenuButton />
+            <ctrl:MetroUIGroupMenu Header="Home Menu">
+                <ctrl:MetroUIMenuButton Width="250" Height="100" />
             </ctrl:MetroUIGroupMenu>
-            <ctrl:MetroUIGroupMenu>
-                <ctrl:MetroUIMenuButton />
+            <ctrl:MetroUIGroupMenu Header="Other Menu">
+                <ctrl:MetroUIMenuButton Width="250" Height="100" />
+                <ctrl:MetroUIMenuButton Width="250" Height="100" />
+            </ctrl:MetroUIGroupMenu>
+            <ctrl:MetroUIGroupMenu Header="Sub Menu">
+                <ctrl:MetroUIMenuButton Width="250" Height="100" />
             </ctrl:MetroUIGroupMenu>
         </ctrl:MetroUIMainMenu>
     </Grid>

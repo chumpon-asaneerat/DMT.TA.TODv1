@@ -6,49 +6,32 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <!--
-    <UserControl.Template>
-        <ControlTemplate TargetType="{x:Type ContentControl}">
-            <Grid Margin="5,0,5,5"
-                  HorizontalAlignment="Center"
-                  VerticalAlignment="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="75" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0"
-                           HorizontalAlignment="Stretch"
-                           VerticalAlignment="Center"
-                           TextAlignment="Center"
-                           Text="SAMPLE MANU"/>
-                <ContentPresenter x:Name="GroupContainer"
-                                  Grid.Row="1"
-                                  Content = "{TemplateBinding Content}"/>
-            </Grid>
-        </ControlTemplate>
-    </UserControl.Template>
-    -->
-    <Grid Margin="5,0,5,5"
-          HorizontalAlignment="Center"
-          VerticalAlignment="Center">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="75" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <TextBlock Grid.Row="0"
-                   HorizontalAlignment="Stretch"
-                   VerticalAlignment="Center"
-                   Text="SAMPLE MANU"
-                   TextAlignment="Center" />
-        <ItemsControl x:Name="buttonItemsControl" 
+    <Border BorderBrush="Silver" BorderThickness="1">
+        <Grid Margin="5,0,5,5"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Center"
+                       Foreground="{Binding Path=GroupForeground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                       Background="{Binding Path=GroupBackground, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                       Text="{Binding Path=Header, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"
+                       FontSize="20"
+                       TextAlignment="Center" />
+            <ItemsControl x:Name="buttonItemsControl"
                           Grid.Row="1"
                           ItemsSource="{Binding Buttons}">
-            <!-- ItemsPanelTemplate -->
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <WrapPanel />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-        </ItemsControl>
-    </Grid>
+                <!--  ItemsPanelTemplate  -->
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </Grid>
+    </Border>
 </UserControl>
