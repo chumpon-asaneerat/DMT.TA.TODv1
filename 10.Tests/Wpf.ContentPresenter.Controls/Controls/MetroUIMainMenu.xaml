@@ -49,9 +49,31 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="20" />
             </Grid.ColumnDefinitions>
+            <!--
             <ContentPresenter x:Name="MenuContainer"
                               Grid.Row="1"
                               Grid.Column="1"/>
+            -->
+            <ItemsControl x:Name="groupItemsControl" 
+                          Grid.Row="1"
+                          Grid.Column="1"
+                          ItemsSource="{Binding Groups}">
+                <!-- ItemsPanelTemplate -->
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <!-- ItemTemplate -->
+                <!--
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Width="100" Height="100" Content="Test" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+                -->
+            </ItemsControl>
         </Grid>
     </ScrollViewer>
 </UserControl>

@@ -9,8 +9,13 @@
         Height="450"
         mc:Ignorable="d">
     <Grid>
-        <ctrl:MetroUIGroupMenu>
-            <Button Content="XXXX" />
-        </ctrl:MetroUIGroupMenu>
+        <ctrl:MetroUIMainMenu>
+            <ctrl:MetroUIGroupMenu>
+                <Button Width="100" Height="100" />
+            </ctrl:MetroUIGroupMenu>
+            <ctrl:MetroUIGroupMenu>
+                <Button Width="100" Height="100" />
+            </ctrl:MetroUIGroupMenu>
+        </ctrl:MetroUIMainMenu>
     </Grid>
 </Window>
