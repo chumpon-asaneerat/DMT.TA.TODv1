@@ -2491,6 +2491,23 @@ namespace DMT.v3
     #endregion
 }
 
+namespace DMT.v4
+{
+    public static partial class RouteConsts
+    {
+        public static string[] urls = new string[] 
+        { 
+            @"api/",
+            @"api/"
+        };
+        public static string[] names = new string[] 
+        { 
+            @"", 
+            @"" 
+        };
+    }
+}
+
 namespace DMT
 {
     public class RouteInfo
