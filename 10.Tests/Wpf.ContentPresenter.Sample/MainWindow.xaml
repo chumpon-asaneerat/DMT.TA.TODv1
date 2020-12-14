@@ -11,10 +11,10 @@
     <Grid>
         <ctrl:MetroUIMainMenu>
             <ctrl:MetroUIGroupMenu>
-                <Button Width="100" Height="100" />
+                <ctrl:MetroUIMenuButton />
             </ctrl:MetroUIGroupMenu>
             <ctrl:MetroUIGroupMenu>
-                <Button Width="100" Height="100" />
+                <ctrl:MetroUIMenuButton />
             </ctrl:MetroUIGroupMenu>
         </ctrl:MetroUIMainMenu>
     </Grid>

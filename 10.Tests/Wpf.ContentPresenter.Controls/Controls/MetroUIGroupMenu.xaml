@@ -40,7 +40,15 @@
                    VerticalAlignment="Center"
                    Text="SAMPLE MANU"
                    TextAlignment="Center" />
-        <ContentPresenter x:Name="GroupContainer"
-                          Grid.Row="1"/>
+        <ItemsControl x:Name="buttonItemsControl" 
+                          Grid.Row="1"
+                          ItemsSource="{Binding Buttons}">
+            <!-- ItemsPanelTemplate -->
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+        </ItemsControl>
     </Grid>
 </UserControl>
