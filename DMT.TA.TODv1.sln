@@ -240,6 +240,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMT.Plaza.Data.Management.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.ContentPresenter.Sample", "10.Tests\Wpf.ContentPresenter.Sample\Wpf.ContentPresenter.Sample.csproj", "{05F0FE42-126D-43F1-954F-1D43B3FFC970}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf.ContentPresenter.Controls", "10.Tests\Wpf.ContentPresenter.Controls\Wpf.ContentPresenter.Controls.csproj", "{0F3630DE-5CE2-4C71-86E5-8D788EB6C87F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -358,6 +360,10 @@ Global
 		{05F0FE42-126D-43F1-954F-1D43B3FFC970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05F0FE42-126D-43F1-954F-1D43B3FFC970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05F0FE42-126D-43F1-954F-1D43B3FFC970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F3630DE-5CE2-4C71-86E5-8D788EB6C87F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F3630DE-5CE2-4C71-86E5-8D788EB6C87F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F3630DE-5CE2-4C71-86E5-8D788EB6C87F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F3630DE-5CE2-4C71-86E5-8D788EB6C87F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -410,6 +416,7 @@ Global
 		{418228F9-E30D-447D-896D-188F858090C6} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 		{C45B8D18-ECA6-410B-81F8-C8044D5165DF} = {E172C8E1-5AAC-4FAB-91A5-C826BCEA3FBA}
 		{05F0FE42-126D-43F1-954F-1D43B3FFC970} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
+		{0F3630DE-5CE2-4C71-86E5-8D788EB6C87F} = {39FD8B81-C6DF-4EC6-A54B-CE9D8D1E2422}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
