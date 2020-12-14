@@ -58,14 +58,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Controls\MetroUIGroupMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\MetroUIMainMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,12 +65,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Controls\MetroUIGroupMenu.xaml.cs">
-      <DependentUpon>MetroUIGroupMenu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\MetroUIMainMenu.xaml.cs">
-      <DependentUpon>MetroUIMainMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -116,6 +102,9 @@
       <Project>{0f3630de-5ce2-4c71-86e5-8d788eb6c87f}</Project>
       <Name>Wpf.ContentPresenter.Controls</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

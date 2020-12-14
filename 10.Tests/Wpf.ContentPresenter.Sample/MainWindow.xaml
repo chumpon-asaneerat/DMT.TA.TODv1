@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ctrl="clr-namespace:Wpf.ContentPresenter.Sample.Controls"
+        xmlns:ctrl="clr-namespace:Wpf.ContentPresenter.Controls;assembly=Wpf.ContentPresenter.Controls"
         Title="Wpf ContentPresenter Sample"
         Width="800"
         Height="450"

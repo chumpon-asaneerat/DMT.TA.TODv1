@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:Wpf.ContentPresenter.Controls">
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <!--
     <Style TargetType="{x:Type local:CustomControl1}">
         <Setter Property="Template">
             <Setter.Value>
@@ -15,4 +14,5 @@
             </Setter.Value>
         </Setter>
     </Style>
+    -->
 </ResourceDictionary>
