@@ -112,6 +112,7 @@
     <None Include="Original\ExtensionMethods\NullableType.ExtensionMethods.cs" />
     <None Include="Original\ExtensionMethods\SCW.ExtensionMethods.cs" />
     <None Include="Original\ExtensionMethods\TAxTOD.ExtensionMethods.cs" />
+    <Compile Include="Models\RabbitMQ\RabbitMQ.cs" />
     <Compile Include="Services\LocalDbServer.cs" />
     <None Include="Original\Models\Common\DMT.Create.cs" />
     <None Include="Original\Models\Common\NSearch.cs" />

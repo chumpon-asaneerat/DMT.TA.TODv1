@@ -1,13 +1,9 @@
 ﻿#region Using
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Reflection;
-using System.Threading.Tasks;
 using NLib;
-
 // RabbitMQ
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
@@ -129,9 +125,9 @@ namespace DMT.Services
             this._factory = new ConnectionFactory()
             {
                 HostName = this.HostName,
-                Port = this.PortNumber,
                 UserName = this.UserName,
                 Password = this.Password,
+                Port = this.PortNumber,
                 // VirtualHost Note:
                 // "/" -> default
                 // "cbe" -> required on production!!!!
@@ -176,6 +172,8 @@ namespace DMT.Services
         /// </summary>
         public void Disconnect()
         {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
             #region Consumer
 
             if (null != this._consumer)
@@ -188,7 +186,6 @@ namespace DMT.Services
 
             #region Close and Dispose channel
 
-            MethodBase med = MethodBase.GetCurrentMethod();
             if (null != this._channel)
             {
                 try
@@ -225,11 +222,15 @@ namespace DMT.Services
 
             #endregion
 
+            #region Factory
+
             if (null != this._factory)
             {
                 // No close or dispose method.
             }
             this._factory = null;
+
+            #endregion
         }
         /// <summary>
         /// Listen.
@@ -281,7 +282,7 @@ namespace DMT.Services
         /// <summary>
         /// Checks is connected.
         /// </summary>
-        public bool IsConnected { get { return (null != this._channel && null != this._connection); } }
+        public bool Connected { get { return (null != this._channel && null != this._connection); } }
 
         #endregion
 

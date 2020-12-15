@@ -67,6 +67,22 @@ namespace DMT.Services
 
         #endregion
 
+        #region Constructor and Destructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public LocalDatabaseWebServer() : base() { }
+        /// <summary>
+        /// Destructor.
+        /// </summary>
+        ~LocalDatabaseWebServer()
+        {
+            Shutdown();
+        }
+
+        #endregion
+
         #region Private Methods
 
         private void InitOwinFirewall()
@@ -93,9 +109,11 @@ namespace DMT.Services
 
         public void Start()
         {
-            MethodBase med = MethodBase.GetCurrentMethod();
+            //MethodBase med = MethodBase.GetCurrentMethod();
             // Start database server.
             LocalDbServer.Instance.Start();
+            // Start rabbit service.
+            RabbitMQService.Instance.Start();
 
             if (null == server)
             {
@@ -113,6 +131,8 @@ namespace DMT.Services
             server = null;
             ReleaseOwinFirewall();
 
+            // Shutdown Rabbit MQ Service.
+            RabbitMQService.Instance.Shutdown();
             // Shutdown database server.
             LocalDbServer.Instance.Shutdown();
         }

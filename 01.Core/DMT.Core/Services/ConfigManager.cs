@@ -348,138 +348,6 @@ namespace DMT.Services
 
     #endregion
 
-    #region TARabbitServiceConfig
-
-    /// <summary>
-    /// The TARabbitServiceConfig class.
-    /// </summary>
-    [JsonObject(MemberSerialization.OptOut)]
-    public class TARabbitServiceConfig
-    {
-        #region Constructor
-
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        public TARabbitServiceConfig()
-        {
-            this.RabbitMQ = new RabbitMQServiceConfig()
-            {
-                HostName = "192.168.244.252",
-                PortNumber = 15672,
-                VirtualHost = "cbe",
-                QueueName = "qp.parameters.th03x009.taa01",
-                UserName = "taa",
-                Password = "taa123",
-                Enabled = true
-            };
-        }
-
-        #endregion
-
-        #region Public Methods
-
-        /// <summary>
-        /// IsEquals.
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public bool IsEquals(object obj)
-        {
-            if (null == obj || !(obj is TARabbitServiceConfig)) return false;
-            return this.GetString() == (obj as TARabbitServiceConfig).GetString();
-        }
-        /// <summary>
-        /// GetString.
-        /// </summary>
-        /// <returns></returns>
-        public string GetString()
-        {
-            if (null != this.RabbitMQ)
-                return string.Format("{0}", this.RabbitMQ.GetString());
-            else return "TA Rabbit Config is null.";
-        }
-
-        #endregion
-
-        #region Public Properties
-
-        /// <summary>
-        /// Gets or sets Rabbit MQ service.
-        /// </summary>
-        public RabbitMQServiceConfig RabbitMQ { get; set; }
-
-        #endregion
-    }
-
-    #endregion
-
-    #region TODRabbitServiceConfig
-
-    /// <summary>
-    /// The TODRabbitServiceConfig class.
-    /// </summary>
-    [JsonObject(MemberSerialization.OptOut)]
-    public class TODRabbitServiceConfig
-    {
-        #region Constructor
-
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        public TODRabbitServiceConfig()
-        {
-            this.RabbitMQ = new RabbitMQServiceConfig()
-            {
-                HostName = "192.168.244.252",
-                PortNumber = 15672,
-                VirtualHost = "cbe",
-                QueueName = "qp.parameters.th03x009.tod01",
-                UserName = "tod",
-                Password = "tod123",
-                Enabled = true
-            };
-        }
-
-        #endregion
-
-        #region Public Methods
-
-        /// <summary>
-        /// IsEquals.
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public bool IsEquals(object obj)
-        {
-            if (null == obj || !(obj is TODRabbitServiceConfig)) return false;
-            return this.GetString() == (obj as TODRabbitServiceConfig).GetString();
-        }
-        /// <summary>
-        /// GetString.
-        /// </summary>
-        /// <returns></returns>
-        public string GetString()
-        {
-            if (null != this.RabbitMQ)
-                return string.Format("{0}", this.RabbitMQ.GetString());
-            else return "TOD Rabbit Config is null.";
-        }
-
-        #endregion
-
-        #region Public Properties
-
-        /// <summary>
-        /// Gets or sets Rabbit MQ service.
-        /// </summary>
-        public RabbitMQServiceConfig RabbitMQ { get; set; }
-
-        #endregion
-    }
-
-    #endregion
-
     #region TAAppConfig
 
     /// <summary>
@@ -622,8 +490,7 @@ namespace DMT.Services
             this.Local = new LocalWebServiceConfig();
             this.TAxTOD = new TAxTODWebServiceConfig();
             this.SCW = new SCWWebServiceConfig();
-            this.TARabbitMQ = new TARabbitServiceConfig();
-            this.TODRabbitMQ = new TODRabbitServiceConfig();
+            this.RabbitMQ = new RabbitMQServiceConfig();
             this.TAApp = new TAAppConfig();
             this.TODApp = new TODAppConfig();
         }
@@ -676,23 +543,14 @@ namespace DMT.Services
                 code += string.Format("DC: {0}", 
                     this.SCW.GetString()) + Environment.NewLine;
             }
-            if (null == this.TARabbitMQ)
+            if (null == this.RabbitMQ)
             {
-                code += "TARabbitMQ: null" + Environment.NewLine;
+                code += "RabbitMQ: null" + Environment.NewLine;
             }
             else
             {
-                code += string.Format("TARabbitMQ: {0}",
-                    this.TARabbitMQ.GetString()) + Environment.NewLine;
-            }
-            if (null == this.TODRabbitMQ)
-            {
-                code += "TODRabbitMQ: null" + Environment.NewLine;
-            }
-            else
-            {
-                code += string.Format("TODRabbitMQ: {0}",
-                    this.TODRabbitMQ.GetString()) + Environment.NewLine;
+                code += string.Format("RabbitMQ: {0}",
+                    this.RabbitMQ.GetString()) + Environment.NewLine;
             }
             if (null == this.TAApp)
             {
@@ -732,13 +590,9 @@ namespace DMT.Services
         /// </summary>
         public SCWWebServiceConfig SCW { get; set; }
         /// <summary>
-        /// Gets or sets TA Rabbit MQ Service Config.
+        /// Gets or sets Rabbit MQ Service Config.
         /// </summary>
-        public TARabbitServiceConfig TARabbitMQ { get; set; }
-        /// <summary>
-        /// Gets or sets TOD Rabbit MQ Service Config.
-        /// </summary>
-        public TODRabbitServiceConfig TODRabbitMQ { get; set; }
+        public RabbitMQServiceConfig RabbitMQ { get; set; }
         /// <summary>
         /// Gets or sets TA App Service Config (for notify).
         /// </summary>
