@@ -78,8 +78,11 @@ namespace DMT.Models
         /// </summary>
         public string status { get; set; }
 
-        // TODO: Requird User Model class.
-        /*
+        /// <summary>
+        /// Convert to Local database model.
+        /// </summary>
+        /// <param name="values">The RabbitMQStaff instance.</param>
+        /// <returns>Returns convert User model instance.</returns>
         public static User ToLocal(RabbitMQStaff value)
         {
             if (null == value) return null;
@@ -100,7 +103,11 @@ namespace DMT.Models
 
             return ret;
         }
-
+        /// <summary>
+        /// Convert to Local database model.
+        /// </summary>
+        /// <param name="values">The RabbitMQStaff list instance.</param>
+        /// <returns>Returns convert list in User model instance.</returns>
         public static List<User> ToLocals(List<RabbitMQStaff> values)
         {
             List<User> rets = new List<User>();
@@ -129,7 +136,6 @@ namespace DMT.Models
             }
             return rets;
         }
-        */
     }
 
     /// <summary>

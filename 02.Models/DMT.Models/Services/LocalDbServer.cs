@@ -56,6 +56,12 @@ namespace DMT.Services
 
 		#endregion
 
+		#region Internal Variables
+
+		private int HistoryVersion = 2;
+
+		#endregion
+
 		#region Constructor and Destructor
 
 		/// <summary>
@@ -96,6 +102,226 @@ namespace DMT.Services
 					Folders.Create(localFilder);
 				}
 				return localFilder;
+			}
+		}
+
+		#endregion
+
+		#region Private Methods
+
+		private void InitTables()
+		{
+			//Db.CreateTable<Config>();
+			Db.CreateTable<ViewHistory>();
+			//Db.CreateTable<UniqueCode>();
+
+			//Db.CreateTable<MCurrency>();
+			//Db.CreateTable<MCoupon>();
+			//Db.CreateTable<MCardAllow>();
+
+			//Db.CreateTable<TSB>();
+			//Db.CreateTable<PlazaGroup>();
+			//Db.CreateTable<Plaza>();
+			//Db.CreateTable<Lane>();
+
+			//Db.CreateTable<Shift>();
+
+			Db.CreateTable<Role>();
+			Db.CreateTable<User>();
+			//Db.CreateTable<LogInLog>();
+
+			//Db.CreateTable<Payment>();
+
+			//Db.CreateTable<TSBShift>();
+			//Db.CreateTable<UserShift>();
+			//Db.CreateTable<UserShiftRevenue>();
+
+			//Db.CreateTable<LaneAttendance>();
+			//Db.CreateTable<LanePayment>();
+
+			//Db.CreateTable<RevenueEntry>();
+
+			//Db.CreateTable<TSBCreditTransaction>();
+
+			//Db.CreateTable<TSBCouponTransaction>();
+
+			//Db.CreateTable<UserCreditBalance>();
+			//Db.CreateTable<UserCreditTransaction>();
+
+			////Db.CreateTable<UserCouponBalance>();
+			//Db.CreateTable<UserCouponTransaction>();
+
+			//Db.CreateTable<TSBExchangeGroup>();
+			//Db.CreateTable<TSBExchangeTransaction>();
+		}
+
+		private void InitDefaults()
+		{
+
+		}
+
+		private void InitViews()
+		{
+			if (null == Db) return;
+
+			string prefix;
+
+			// Infrastructures - Embeded resource used . instead / to access sub contents.
+			/*
+			prefix = @"Infrastructures";
+			InitView("PlazaGroupView", prefix);
+			InitView("PlazaView", prefix);
+			InitView("LaneView", prefix);
+			*/
+
+			// Users - Embeded resource used . instead / to access sub contents.
+			prefix = @"Users";
+			InitView("UserView", prefix);
+
+			// Shifts - Embeded resource used . instead / to access sub contents.
+			/*
+			prefix = @"Shifts";
+			InitView("TSBShiftView", prefix);
+			InitView("UserShiftView", prefix);
+			InitView("UserShiftRevenueView", prefix);
+			*/
+
+			// LaneActivities - Embeded resource used . instead / to access sub contents.
+			/*
+			prefix = @"LaneActivities";
+			InitView("LaneAttendanceView", prefix);
+			InitView("LanePaymentView", prefix);
+			*/
+
+			// Revenues - Embeded resource used . instead / to access sub contents.
+			/*
+			prefix = @"Revenues";
+			InitView("RevenueEntryView", prefix);
+			*/
+
+			// Credits - Embeded resource used . instead / to access sub contents.
+			/*
+			prefix = @"Credits";
+			InitView("TSBCreditSummarryView", prefix);
+			InitView("TSBCreditTransactionView", prefix);
+			InitView("UserCreditBorrowSummaryView", prefix);
+			InitView("UserCreditReturnSummaryView", prefix);
+			InitView("UserCreditSummaryView", prefix);
+			InitView("UserCreditTransactionView", prefix);
+			*/
+			// Coupons - Embeded resource used . instead / to access sub contents.
+			/*
+			prefix = @"Coupons";
+			InitView("TSBCouponTransactionView", prefix);
+			
+
+			InitView("TSBCouponStockBalanceView", prefix);
+			InitView("TSBCouponLaneBalanceView", prefix);
+			InitView("TSBCouponSoldByLaneBalanceView", prefix);
+			InitView("TSBCouponSoldByTSBBalanceView", prefix);
+			InitView("TSBCouponBalanceView", prefix);
+
+			InitView("TSBCouponSummarryView", prefix);
+			InitView("UserCoupon35SummaryView", prefix);
+			InitView("UserCoupon80SummaryView", prefix);
+			InitView("UserCouponSummaryView", prefix);
+			InitView("UserCouponTransactionView", prefix);
+			*/
+
+			// Exchanges - Embeded resource used . instead / to access sub contents.
+			/*
+			prefix = @"Exchanges";
+			InitView("TSBExchangeGroupView", prefix);
+			InitView("TSBExchangeTransactionView", prefix);
+			*/
+		}
+
+		class ViewInfo
+		{
+			public string Name { get; set; }
+		}
+
+		private void InitView(string viewName, string resourcePrefix = "")
+		{
+			if (null == Db) return;
+
+			var hist = ViewHistory.GetWithChildren(viewName, false).Value();
+
+			string checkViewCmd = "SELECT Name FROM sqlite_master WHERE Type = 'view' AND Name = ?";
+			var rets = Db.Query<ViewInfo>(checkViewCmd, viewName);
+			bool exists = (null != rets && rets.Count > 0);
+
+			//bool exists = (null != info) ? info.Count > 0 : false;
+
+			if (!exists || null == hist || hist.VersionId != HistoryVersion)
+			{
+				string script = string.Empty;
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string dropCmd = string.Empty;
+					dropCmd += "DROP VIEW IF EXISTS " + viewName;
+					Db.BeginTransaction();
+					try { Db.Execute(dropCmd); }
+					catch (Exception dropEx)
+					{
+						med.Err(dropEx);
+						med.Err("Drop Failed:" + Environment.NewLine + viewName);
+						Db.Rollback();
+					}
+					finally { Db.Commit(); }
+
+					string resourceName = viewName + ".sql";
+					// Note: 
+					// -----------------------------------------------------------
+					// Embeded resource used . instead / to access sub contents.
+					// -----------------------------------------------------------
+					string embededResourceName;
+					if (!string.IsNullOrWhiteSpace(resourcePrefix))
+					{
+						// Has prefix
+						if (!resourcePrefix.Trim().EndsWith("."))
+						{
+							// Not end with . so append . and concat full name.
+							embededResourceName = @"DMT.Views.Scripts." + resourcePrefix + "." + resourceName;
+						}
+						else
+						{
+							// Already end with . so concat to full name.
+							embededResourceName = @"DMT.Views.Scripts." + resourcePrefix + resourceName;
+						}
+					}
+					else
+					{
+						// No prefix.
+						embededResourceName = @"DMT.Views.Scripts." + resourceName;
+					}
+
+					script = SqliteScriptManager.GetScript(embededResourceName);
+
+					if (!string.IsNullOrEmpty(script))
+					{
+						var ret = Db.Execute(script);
+
+						Console.WriteLine("Returns: {0}", ret);
+
+						if (null == hist) hist = new ViewHistory();
+						hist.ViewName = viewName;
+						hist.VersionId = HistoryVersion;
+						ViewHistory.Save(hist);
+					}
+					else
+					{
+						Console.WriteLine("{0} Has Empty Scripts.", viewName);
+					}
+				}
+				catch (Exception ex)
+				{
+					//Console.WriteLine(ex);
+					med.Err(ex);
+					med.Err("Script:" + Environment.NewLine + script);
+					//Console.WriteLine(script);
+				}
 			}
 		}
 
@@ -150,10 +376,9 @@ namespace DMT.Services
 
 						NTable.Default = Db;
 						NQuery.Default = Db;
-						/*
-						InitTables();
-						InitDefaults(); // init default data and views
-						*/
+						InitTables(); // Init Tables.
+						InitDefaults(); // init default data.
+						InitViews(); // init views.
 
 						OnConnected.Call(this, EventArgs.Empty);
 					}

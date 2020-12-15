@@ -3,6 +3,7 @@
 using System;
 using System.IO;
 using System.Reflection;
+using NLib;
 
 #endregion
 
@@ -23,6 +24,7 @@ namespace DMT.Views
         /// <returns>Returns load view sql script.</returns>
         public static string GetScript(string resourceName)
         {
+            MethodBase med = MethodBase.GetCurrentMethod();
             string ret = string.Empty;
             if (!string.IsNullOrWhiteSpace(resourceName))
             {
@@ -42,9 +44,9 @@ namespace DMT.Views
                         }
                     }
                 }
-                catch (Exception /*ex*/)
+                catch (Exception ex)
                 {
-                    //Console.WriteLine(ex);
+                    med.Err(ex);
                     ret = string.Empty;
                 }
             }
