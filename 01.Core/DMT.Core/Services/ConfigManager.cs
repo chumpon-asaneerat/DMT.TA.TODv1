@@ -97,6 +97,13 @@ namespace DMT.Services
         /// </summary>
         public RabbitMQServiceConfig()
         {
+            HostName = "172.30.73.11";
+            PortNumber = 5672;
+            VirtualHost = "cbe";
+            QueueName = "qp.parameters.th03x009.taa01";
+            UserName = "taa";
+            Password = "taa123";
+            Enabled = true;
         }
 
         #endregion
@@ -141,6 +148,10 @@ namespace DMT.Services
         /// </summary>
         public string VirtualHost { get; set; }
         /// <summary>
+        /// Gets or sets Queue Name.
+        /// </summary>
+        public string QueueName { get; set; }
+        /// <summary>
         /// Gets or sets User Name.
         /// </summary>
         public string UserName { get; set; }
@@ -148,10 +159,6 @@ namespace DMT.Services
         /// Gets or sets Password.
         /// </summary>
         public string Password { get; set; }
-        /// <summary>
-        /// Gets or sets Queue Name.
-        /// </summary>
-        public string QueueName { get; set; }
         /// <summary>
         /// Gets or sets Enabled.
         /// </summary>
@@ -621,7 +628,7 @@ namespace DMT.Services
         private static ConfigManager _instance = null;
 
         /// <summary>
-        /// Gets DMTAppManager instance access.
+        /// Gets ConfigManager instance access.
         /// </summary>
         public static ConfigManager Instance
         {
@@ -641,10 +648,6 @@ namespace DMT.Services
         #endregion
 
         #region Internal Variables
-
-        //private Thread _th = null;
-        //private DateTime _lastUpdate = DateTime.MinValue;
-        //private int _timeout = 15 * 1000; // timeout in ms.
 
         private string _fileName = NJson.LocalConfigFile("plaza.config.json");
         private PlazaConfig _plazaCfg = new PlazaConfig();
