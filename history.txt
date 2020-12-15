@@ -63,9 +63,12 @@ Ported DMTv2 to DMT.TAxTODv1 #259
 Ported DMTv2 to DMT.TAxTODv1 #258
 - 
 
+[commited]
 Ported DMTv2 to DMT.TAxTODv1 #257
-- 
-
+- DMT.TAxTODv1 Rework #29
+  - DMT.Models project.
+    - Rework all SCW models (ported from DMTv2).
+  
 [commited]
 Ported DMTv2 to DMT.TAxTODv1 #256
 - DMT.TAxTODv1 Rework #28

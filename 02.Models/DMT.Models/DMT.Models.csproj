@@ -111,6 +111,17 @@
     <Compile Include="Models\Common\NTables.cs" />
     <Compile Include="Models\Common\Utils.cs" />
     <Compile Include="Models\Configuration\ViewHistory.cs" />
+    <Compile Include="Models\SCW\Common.cs" />
+    <Compile Include="Models\SCW\SCWCardAllow.cs" />
+    <Compile Include="Models\SCW\SCWChangePassword.cs" />
+    <Compile Include="Models\SCW\SCWChiefOfDuty.cs" />
+    <Compile Include="Models\SCW\SCWCoupon.cs" />
+    <Compile Include="Models\SCW\SCWCurrency.cs" />
+    <Compile Include="Models\SCW\SCWDeclare.cs" />
+    <Compile Include="Models\SCW\SCWEMV.cs" />
+    <Compile Include="Models\SCW\SCWJob.cs" />
+    <Compile Include="Models\SCW\SCWJob2.cs" />
+    <Compile Include="Models\SCW\SCWQRCode.cs" />
     <Compile Include="Views\SqlScriptManager.cs" />
     <None Include="Original\ExtensionMethods\NullableType.ExtensionMethods.cs" />
     <None Include="Original\ExtensionMethods\SCW.ExtensionMethods.cs" />
@@ -147,16 +158,6 @@
     <None Include="Original\Models\Master\Currency.cs" />
     <None Include="Original\Models\Payments\Payment.cs" />
     <None Include="Original\Models\Revenues\RevenueEntry.cs" />
-    <None Include="Original\Models\SCW\Common.cs" />
-    <None Include="Original\Models\SCW\SCWCardAllow.cs" />
-    <None Include="Original\Models\SCW\SCWChiefOfDuty.cs" />
-    <None Include="Original\Models\SCW\SCWCoupon.cs" />
-    <None Include="Original\Models\SCW\SCWCurrency.cs" />
-    <None Include="Original\Models\SCW\SCWDeclare.cs" />
-    <None Include="Original\Models\SCW\SCWEMV.cs" />
-    <None Include="Original\Models\SCW\SCWJob.cs" />
-    <None Include="Original\Models\SCW\SCWJob2.cs" />
-    <None Include="Original\Models\SCW\SCWQRCode.cs" />
     <None Include="Original\Models\Shifts\Shift.cs" />
     <None Include="Original\Models\Shifts\TSBShift.cs" />
     <None Include="Original\Models\Shifts\UserShift.cs" />
@@ -218,7 +219,6 @@
   <ItemGroup>
     <Folder Include="Models\Infrastructures\" />
     <Folder Include="Models\Master\" />
-    <Folder Include="Models\SCW\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Scripts\Users\UserView.sql" />
