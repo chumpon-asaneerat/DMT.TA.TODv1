@@ -311,7 +311,7 @@ namespace DMT.Services
             this.Http = new WebServiceConfig()
             {
                 Protocol = "http",
-                HostName = "192.168.244.252",
+                HostName = "172.30.192.9",
                 PortNumber = 8110
             };
         }
