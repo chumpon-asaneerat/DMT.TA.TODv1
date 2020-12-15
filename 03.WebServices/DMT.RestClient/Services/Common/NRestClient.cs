@@ -449,7 +449,10 @@ namespace DMT.Services
         {
             return new NRestClient(protocol, host, port);
         }
-
+        /// <summary>
+        /// Create Rest Client for local plaza web service.
+        /// </summary>
+        /// <returns>Returns instance of NRestClient for local plaza web service.</returns>
         public static NRestClient CreateLocalClient()
         {
             if (null == ConfigManager.Instance.Plaza) return null;
@@ -464,7 +467,10 @@ namespace DMT.Services
 
             return new NRestClient(protocol, hostName, portNo);
         }
-
+        /// <summary>
+        /// Create Rest Client for TA/TOD node.js server.
+        /// </summary>
+        /// <returns>Returns instance of NRestClient for TA/TOD node.js server.</returns>
         public static NRestClient CreateTAxTODClient()
         {
             if (null == ConfigManager.Instance.Plaza) return null;
@@ -479,8 +485,11 @@ namespace DMT.Services
 
             return new NRestClient(protocol, hostName, portNo);
         }
-
-        public static NRestClient CreateDCClient()
+        /// <summary>
+        /// Create Rest Client for SCW Server.
+        /// </summary>
+        /// <returns>Returns instance of NRestClient for SCW Server.</returns>
+        public static NRestClient CreateSCWClient()
         {
             if (null == ConfigManager.Instance.Plaza) return null;
             if (null == ConfigManager.Instance.Plaza.SCW) return null;

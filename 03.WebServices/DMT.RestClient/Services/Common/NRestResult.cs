@@ -424,12 +424,21 @@ namespace DMT.Services
     {
         #region Public Methods (static)
 
+        /// <summary>
+        /// Gets Default Data instance form type parameter.
+        /// </summary>
+        /// <typeparam name="T">The data type parameter</typeparam>
+        /// <returns>Returns proper instance that match type parameter.</returns>
         public static T DefaultData<T>()
             where T : new()
         {
             return (typeof(T) == typeof(IList)) ? new T() : default(T);
         }
-
+        /// <summary>
+        /// Gets Default Output instance form type parameter.
+        /// </summary>
+        /// <typeparam name="O">The ouput type parameter.</typeparam>
+        /// <returns>Returns proper instance that match type parameter.</returns>
         public static O DefaultOutput<O>()
             where O : new()
         {
@@ -440,6 +449,11 @@ namespace DMT.Services
 
         #region ToRest (from NDbResult)
 
+        /// <summary>
+        /// Convert NDbResult to NRestResult.
+        /// </summary>
+        /// <param name="value">The NDbResult instance.</param>
+        /// <returns>Returns NRestResult instance.</returns>
         public static NRestResult ToRest(this NDbResult value)
         {
             NRestResult ret = new NRestResult();
@@ -456,7 +470,12 @@ namespace DMT.Services
 
             return ret;
         }
-
+        /// <summary>
+        /// Convert NDbResult to NRestResult.
+        /// </summary>
+        /// <typeparam name="T">The result type parameter.</typeparam>
+        /// <param name="value">The NDbResult instance.</param>
+        /// <returns>Returns NRestResult instance.</returns>
         public static NRestResult<T> ToRest<T>(this NDbResult<T> value)
             where T : new()
         {
@@ -475,7 +494,13 @@ namespace DMT.Services
 
             return ret;
         }
-
+        /// <summary>
+        /// Convert NDbResult to NRestResult.
+        /// </summary>
+        /// <typeparam name="T">The result type parameter.</typeparam>
+        /// <typeparam name="O">The ouput type parameter.</typeparam>
+        /// <param name="value">The NDbResult instance.</param>
+        /// <returns>Returns NRestResult instance.</returns>
         public static NRestResult<T, O> ToRest<T, O>(this NDbResult<T, O> value)
             where T : new()
             where O : new()
@@ -501,6 +526,12 @@ namespace DMT.Services
 
         #region Value
 
+        /// <summary>
+        /// Gets Value from NRestResult.
+        /// </summary>
+        /// <typeparam name="T">The Value type parameter.</typeparam>
+        /// <param name="value">The NRestResult instance.</param>
+        /// <returns>Returns value in NRestResult.</returns>
         public static T Value<T>(this NRestResult<T> value)
             where T : new()
         {
@@ -508,7 +539,13 @@ namespace DMT.Services
                 value.data : DefaultData<T>();
             return ret;
         }
-
+        /// <summary>
+        /// Gets Value from NRestResult.
+        /// </summary>
+        /// <typeparam name="T">The Value type parameter.</typeparam>
+        /// <typeparam name="O">The Output type parameter.</typeparam>
+        /// <param name="value">The NRestResult instance.</param>
+        /// <returns>Returns value in NRestResult.</returns>
         public static T Value<T, O>(this NRestResult<T, O> value)
             where T : new()
             where O : new()
@@ -517,7 +554,13 @@ namespace DMT.Services
                 value.data : DefaultData<T>();
             return ret;
         }
-
+        /// <summary>
+        /// Gets Output from NRestResult.
+        /// </summary>
+        /// <typeparam name="T">The Value type parameter.</typeparam>
+        /// <typeparam name="O">The Output type parameter.</typeparam>
+        /// <param name="value">The NRestResult instance.</param>
+        /// <returns>Returns Ouput in NRestResult.</returns>
         public static O Output<T, O>(this NRestResult<T, O> value)
             where T : new()
             where O : new()
@@ -526,10 +569,6 @@ namespace DMT.Services
                 value.output : DefaultOutput<O>();
             return ret;
         }
-
-        #endregion
-
-        #region Functionals
 
         #endregion
     }
