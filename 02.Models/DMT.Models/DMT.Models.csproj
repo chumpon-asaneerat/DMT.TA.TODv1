@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtensionMethods\NullableType.ExtensionMethods.cs" />
+    <Compile Include="Models\Common\DMT.Search.cs" />
     <Compile Include="Models\Common\DMTModelBase.cs" />
     <Compile Include="Models\Common\NDbResult.cs" />
     <Compile Include="Models\Common\NQueries.cs" />
@@ -113,7 +114,6 @@
     <None Include="Original\ExtensionMethods\TAxTOD.ExtensionMethods.cs" />
     <Compile Include="Services\LocalDbServer.cs" />
     <None Include="Original\Models\Common\DMT.Create.cs" />
-    <None Include="Original\Models\Common\DMT.Search.cs" />
     <None Include="Original\Models\Common\NSearch.cs" />
     <None Include="Original\Models\Configuration\Config.cs" />
     <None Include="Original\Models\Configuration\UniqueCode.cs" />
