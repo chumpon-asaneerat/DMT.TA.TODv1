@@ -133,7 +133,11 @@ namespace DMT.Models
 				return GetCurrencies(db);
 			}
 		}
-
+		/// <summary>
+		/// Save all currencies to database.
+		/// </summary>
+		/// <param name="values">The List of MCurrency object.</param>
+		/// <returns>Returns NDbResult instance.</returns>
 		public static NDbResult SaveMCurrencies(List<MCurrency> values)
 		{
 			lock (sync)

@@ -639,6 +639,15 @@ namespace DMT.Models
 			#region Role
 
 			/// <summary>
+			/// Gets or sets GroupId.
+			/// </summary>
+			[PropertyMapName("GroupId")]
+			public override int GroupId
+			{
+				get { return base.GroupId; }
+				set { base.GroupId = value; }
+			}
+			/// <summary>
 			/// Gets or sets Role Name EN.
 			/// </summary>
 			[MaxLength(50)]

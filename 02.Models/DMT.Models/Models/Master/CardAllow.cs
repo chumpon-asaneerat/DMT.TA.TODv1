@@ -112,7 +112,11 @@ namespace DMT.Models
 				return GetCardAllows(db);
 			}
 		}
-
+		/// <summary>
+		/// Save all card alllows to database.
+		/// </summary>
+		/// <param name="values">The List of MCardAllow object.</param>
+		/// <returns>Returns NDbResult instance.</returns>
 		public static NDbResult SaveMCardAllows(List<MCardAllow> values)
 		{
 			lock (sync)

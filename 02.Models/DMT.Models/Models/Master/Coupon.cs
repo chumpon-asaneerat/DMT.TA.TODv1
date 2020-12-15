@@ -120,7 +120,11 @@ namespace DMT.Models
 				return GetCoupons(db);
 			}
 		}
-
+		/// <summary>
+		/// Save all coupons to database.
+		/// </summary>
+		/// <param name="values">The List of MCoupon object.</param>
+		/// <returns>Returns NDbResult instance.</returns>
 		public static NDbResult SaveMCoupons(List<MCoupon> values)
 		{
 			lock (sync)

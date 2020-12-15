@@ -160,8 +160,6 @@
     <None Include="Original\Models\Shifts\UserShift.cs" />
     <None Include="Original\Models\Shifts\UserShiftRevenue.cs" />
     <None Include="Original\Models\Users\LogInLog.cs" />
-    <None Include="Original\Models\Users\Role.cs" />
-    <None Include="Original\Models\Users\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Original\Services\LocalDbServer.cs" />
   </ItemGroup>
