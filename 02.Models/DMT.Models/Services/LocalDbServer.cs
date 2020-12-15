@@ -148,14 +148,12 @@ namespace DMT.Services
 						// for all domain otherwise call static method with user connnection
 						// in each domain class instead omit connection version).
 
-
-						/*
 						NTable.Default = Db;
 						NQuery.Default = Db;
+						/*
 						InitTables();
 						InitDefaults(); // init default data and views
 						*/
-
 
 						OnConnected.Call(this, EventArgs.Empty);
 					}
