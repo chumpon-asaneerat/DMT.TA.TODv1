@@ -123,7 +123,7 @@ namespace DMT.Models
 				try
 				{
 					db.BeginTransaction();
-					values.ForEach(value =>
+					values.ForEach(value => 
 					{
 						MCardAllow.Save(value);
 					});

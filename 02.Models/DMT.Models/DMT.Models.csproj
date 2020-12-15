@@ -111,6 +111,9 @@
     <Compile Include="Models\Common\NTables.cs" />
     <Compile Include="Models\Common\Utils.cs" />
     <Compile Include="Models\Configuration\ViewHistory.cs" />
+    <Compile Include="Models\Master\CardAllow.cs" />
+    <Compile Include="Models\Master\Coupon.cs" />
+    <Compile Include="Models\Master\Currency.cs" />
     <Compile Include="Models\SCW\Common.cs" />
     <Compile Include="Models\SCW\SCWCardAllow.cs" />
     <Compile Include="Models\SCW\SCWChangePassword.cs" />
@@ -122,6 +125,7 @@
     <Compile Include="Models\SCW\SCWJob.cs" />
     <Compile Include="Models\SCW\SCWJob2.cs" />
     <Compile Include="Models\SCW\SCWQRCode.cs" />
+    <Compile Include="Models\Shifts\Shift.cs" />
     <Compile Include="Views\SqlScriptManager.cs" />
     <None Include="Original\ExtensionMethods\NullableType.ExtensionMethods.cs" />
     <None Include="Original\ExtensionMethods\SCW.ExtensionMethods.cs" />
@@ -151,14 +155,7 @@
     <None Include="Original\Models\Infrastructures\Plaza.cs" />
     <None Include="Original\Models\Infrastructures\PlazaGroup.cs" />
     <None Include="Original\Models\Infrastructures\TSB.cs" />
-    <None Include="Original\Models\LaneActivities\LaneAttendance.cs" />
-    <None Include="Original\Models\LaneActivities\LanePayment.cs" />
-    <None Include="Original\Models\Master\CardAllow.cs" />
-    <None Include="Original\Models\Master\Coupon.cs" />
-    <None Include="Original\Models\Master\Currency.cs" />
-    <None Include="Original\Models\Payments\Payment.cs" />
     <None Include="Original\Models\Revenues\RevenueEntry.cs" />
-    <None Include="Original\Models\Shifts\Shift.cs" />
     <None Include="Original\Models\Shifts\TSBShift.cs" />
     <None Include="Original\Models\Shifts\UserShift.cs" />
     <None Include="Original\Models\Shifts\UserShiftRevenue.cs" />
@@ -218,7 +215,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Infrastructures\" />
-    <Folder Include="Models\Master\" />
+    <Folder Include="Views\Scripts\Coupons\" />
+    <Folder Include="Views\Scripts\Credits\" />
+    <Folder Include="Views\Scripts\Infrastructures\" />
+    <Folder Include="Views\Scripts\Shifts\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Scripts\Users\UserView.sql" />
