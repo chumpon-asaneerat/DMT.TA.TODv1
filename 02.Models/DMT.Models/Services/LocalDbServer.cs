@@ -931,9 +931,9 @@ namespace DMT.Services
 			InitView("UserView", 1, prefix);
 
 			// Shifts - Embeded resource used . instead / to access sub contents.
-			/*
 			prefix = @"Shifts";
 			InitView("TSBShiftView", 1, prefix);
+			/*
 			InitView("UserShiftView", 1, prefix);
 			InitView("UserShiftRevenueView", 1, prefix);
 			*/

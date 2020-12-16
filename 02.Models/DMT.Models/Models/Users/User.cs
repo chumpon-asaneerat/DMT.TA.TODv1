@@ -512,6 +512,60 @@ namespace DMT.Models
 			}
 		}
 		/// <summary>
+		/// Gets Password Date String.
+		/// </summary>
+		[Category("Shift")]
+		[Description("Gets Password Date String.")]
+		[ReadOnly(true)]
+		[JsonIgnore]
+		[Ignore]
+		public string PasswordDateString
+		{
+			get
+			{
+				var ret = (!this._PasswordDate.HasValue || this._PasswordDate.Value == DateTime.MinValue) ?
+					"" : this._PasswordDate.Value.ToThaiDateTimeString("dd/MM/yyyy");
+				return ret;
+			}
+			set { }
+		}
+		/// <summary>
+		/// Gets Password Time String.
+		/// </summary>
+		[Category("Shift")]
+		[Description("Gets Password Time String.")]
+		[ReadOnly(true)]
+		[JsonIgnore]
+		[Ignore]
+		public string PasswordTimeString
+		{
+			get
+			{
+				var ret = (!this._PasswordDate.HasValue || this._PasswordDate.Value == DateTime.MinValue) ?
+					"" : this._PasswordDate.Value.ToThaiTimeString();
+				return ret;
+			}
+			set { }
+		}
+		/// <summary>
+		/// Gets or sets Password Date Time String..
+		/// </summary>
+		[Category("Shift")]
+		[Description("Gets or sets Password Date Time String.")]
+		[ReadOnly(true)]
+		[JsonIgnore]
+		[Ignore]
+		public string PasswordDateTimeString
+		{
+			get
+			{
+				var ret = (!this._PasswordDate.HasValue || this._PasswordDate.Value == DateTime.MinValue) ?
+					"" : this._PasswordDate.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+				return ret;
+			}
+			set { }
+		}
+		/// <summary>
 		/// Gets or sets Expire Days.
 		/// </summary>
 		[Category("Expiration")]

@@ -130,6 +130,7 @@
     <Compile Include="Models\SCW\SCWJob2.cs" />
     <Compile Include="Models\SCW\SCWQRCode.cs" />
     <Compile Include="Models\Shifts\Shift.cs" />
+    <Compile Include="Models\Shifts\TSBShift.cs" />
     <Compile Include="Views\SqlScriptManager.cs" />
     <None Include="Original\ExtensionMethods\NullableType.ExtensionMethods.cs" />
     <None Include="Original\ExtensionMethods\SCW.ExtensionMethods.cs" />
@@ -156,7 +157,6 @@
     <None Include="Original\Models\Exchanges\TSBExchangeGroup.cs" />
     <None Include="Original\Models\Exchanges\TSBExchangeTransaction.cs" />
     <None Include="Original\Models\Revenues\RevenueEntry.cs" />
-    <None Include="Original\Models\Shifts\TSBShift.cs" />
     <None Include="Original\Models\Shifts\UserShift.cs" />
     <None Include="Original\Models\Shifts\UserShiftRevenue.cs" />
     <None Include="Original\Models\Users\LogInLog.cs" />
@@ -174,7 +174,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Original\Views\Scripts\Shifts\TSBShiftView.sql" />
     <EmbeddedResource Include="Original\Views\Scripts\Shifts\UserShiftRevenueView.sql" />
     <EmbeddedResource Include="Original\Views\Scripts\Shifts\UserShiftView.sql" />
   </ItemGroup>
@@ -209,7 +208,6 @@
   <ItemGroup>
     <Folder Include="Views\Scripts\Coupons\" />
     <Folder Include="Views\Scripts\Credits\" />
-    <Folder Include="Views\Scripts\Shifts\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Scripts\Users\UserView.sql" />
@@ -222,6 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Scripts\Infrastructures\PlazaView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Scripts\Shifts\TSBShiftView.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

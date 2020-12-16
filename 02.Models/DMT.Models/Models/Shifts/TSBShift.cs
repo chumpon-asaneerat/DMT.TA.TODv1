@@ -48,11 +48,8 @@ namespace DMT.Models
         private string _FullNameEN = string.Empty;
         private string _FullNameTH = string.Empty;
 
-        private DateTime _Begin = DateTime.MinValue;
-        private DateTime _End = DateTime.MinValue;
-
-        private int _Status = 0;
-        private DateTime _LastUpdate = DateTime.MinValue;
+        private DateTime? _Begin = new DateTime?();
+        private DateTime? _End = new DateTime?();
 
         #endregion
 
@@ -325,7 +322,7 @@ namespace DMT.Models
         [Description("Gets or sets Begin Date.")]
         //[ReadOnly(true)]
         [PropertyMapName("Begin")]
-        public DateTime Begin
+        public DateTime? Begin
         {
             get { return _Begin; }
             set
@@ -348,7 +345,7 @@ namespace DMT.Models
         [Description("Gets or sets End Date.")]
         //[ReadOnly(true)]
         [PropertyMapName("End")]
-        public DateTime End
+        public DateTime? End
         {
             get { return _End; }
             set
@@ -376,7 +373,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.Begin == DateTime.MinValue) ? "" : this.Begin.ToThaiDateTimeString("dd/MM/yyyy");
+                var ret = (!this.Begin.HasValue || this.Begin.Value == DateTime.MinValue) ? 
+                    "" : this.Begin.Value.ToThaiDateTimeString("dd/MM/yyyy");
                 return ret;
             }
             set { }
@@ -393,7 +391,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.End == DateTime.MinValue) ? "" : this.End.ToThaiDateTimeString("dd/MM/yyyy");
+                var ret = (!this.End.HasValue || this.End.Value == DateTime.MinValue) ? 
+                    "" : this.End.Value.ToThaiDateTimeString("dd/MM/yyyy");
                 return ret;
             }
             set { }
@@ -410,7 +409,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.Begin == DateTime.MinValue) ? "" : this.Begin.ToThaiTimeString();
+                var ret = (!this.Begin.HasValue || this.Begin.Value == DateTime.MinValue) ? 
+                    "" : this.Begin.Value.ToThaiTimeString();
                 return ret;
             }
             set { }
@@ -427,7 +427,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.End == DateTime.MinValue) ? "" : this.End.ToThaiTimeString();
+                var ret = (!this.End.HasValue || this.End.Value == DateTime.MinValue) ? 
+                    "" : this.End.Value.ToThaiTimeString();
                 return ret;
             }
             set { }
@@ -444,7 +445,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.Begin == DateTime.MinValue) ? "" : this.Begin.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+                var ret = (!this.Begin.HasValue || this.Begin.Value == DateTime.MinValue) ? 
+                    "" : this.Begin.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
                 return ret;
             }
             set { }
@@ -461,59 +463,11 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.End == DateTime.MinValue) ? "" : this.End.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+                var ret = (!this.End.HasValue || this.End.Value == DateTime.MinValue) ? 
+                    "" : this.End.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
                 return ret;
             }
             set { }
-        }
-
-        #endregion
-
-        #region Status (DC)
-
-        /// <summary>
-        /// Gets or sets Status (1 = Sync, 0 = Unsync, etc..)
-        /// </summary>
-        /// 
-        [Category("DataCenter")]
-        [Description("Gets or sets Status (1 = Sync, 0 = Unsync, etc..)")]
-        [ReadOnly(true)]
-        [PropertyMapName("Status", typeof(TSBShift))]
-        [PropertyOrder(10001)]
-        public int Status
-        {
-            get
-            {
-                return _Status;
-            }
-            set
-            {
-                if (_Status != value)
-                {
-                    _Status = value;
-                    this.RaiseChanged("Status");
-                }
-            }
-        }
-        /// <summary>
-        /// Gets or sets LastUpdated (Sync to DC).
-        /// </summary>
-        [Category("DataCenter")]
-        [Description("Gets or sets LastUpdated (Sync to DC).")]
-        [ReadOnly(true)]
-        [PropertyMapName("LastUpdate", typeof(TSBShift))]
-        [PropertyOrder(10002)]
-        public DateTime LastUpdate
-        {
-            get { return _LastUpdate; }
-            set
-            {
-                if (_LastUpdate != value)
-                {
-                    _LastUpdate = value;
-                    this.RaiseChanged("LastUpdate");
-                }
-            }
         }
 
         #endregion
@@ -582,13 +536,15 @@ namespace DMT.Models
 
         #region Static Methods
 
+        #region Create new TSB Shift (not save to database).
+
         /// <summary>
-        /// Create.
+        /// Create new TSB Shift (not save to database).
         /// </summary>
         /// <param name="shift">The Shift instance.</param>
-        /// <param name="supervisor">The User instance.</param>
+        /// <param name="user">The User instance.</param>
         /// <returns>Returns instance of TSBShift.</returns>
-        public static NDbResult<TSBShift> Create(Shift shift, User supervisor)
+        public static NDbResult<TSBShift> Create(Shift shift, User user)
         {
             var result = new NDbResult<TSBShift>();
             SQLiteConnection db = Default;
@@ -599,14 +555,18 @@ namespace DMT.Models
             }
             var tsb = TSB.GetCurrent().Value();
             TSBShift inst = Create();
-            
             if (null != tsb) tsb.AssignTo(inst);
             if (null != shift) shift.AssignTo(inst);
-            if (null != supervisor) supervisor.AssignTo(inst);
+            if (null != user) user.AssignTo(inst);
             result.Success(inst);
 
             return result;
         }
+
+        #endregion
+
+        #region Get TSBShift (Active TSB)
+
         /// <summary>
         /// Gets Current TSB Shift.
         /// </summary>
@@ -629,6 +589,11 @@ namespace DMT.Models
             result = GetTSBShift(tsb.TSBId);
             return result;
         }
+
+        #endregion
+
+        #region Get TSBShift by TSBId
+
         /// <summary>
         /// Gets TSBShift by TSBId.
         /// </summary>
@@ -652,7 +617,7 @@ namespace DMT.Models
                     cmd += "SELECT * ";
                     cmd += "  FROM TSBShiftView ";
                     cmd += " WHERE TSBId = ? ";
-                    cmd += "   AND End = ? ";
+                    cmd += "   AND (End IS NULL OR End = ?)";
 
                     var ret = NQuery.Query<FKs>(cmd,
                         tsbid, DateTime.MinValue).FirstOrDefault();
@@ -667,6 +632,11 @@ namespace DMT.Models
                 return result;
             }
         }
+
+        #endregion
+
+        #region Change Shift
+
         /// <summary>
         /// Change Shift.
         /// </summary>
@@ -699,7 +669,10 @@ namespace DMT.Models
                         Save(last);
                     }
                     // Begin new shift.
-                    value.Begin = DateTime.Now;
+                    if (!value.Begin.HasValue || value.Begin == DateTime.MinValue)
+                    {
+                        value.Begin = DateTime.Now;
+                    }
                     var saveRet = Save(value);
 
                     result.errors = saveRet.errors;
@@ -718,55 +691,28 @@ namespace DMT.Models
         }
 
         #endregion
-    }
-
-    #endregion
-
-    #region Create (TSBShift)
-
-    partial class Create
-    {
-        #region TSBShift
-
-        /// <summary>
-        /// Create TSB Shift By Shift and User instance.
-        /// </summary>
-        public class TSBShift
-        {
-            #region Public Properties
-
-            /// <summary>
-            /// Gets or sets Shift.
-            /// </summary>
-            public Shift Shift { get; set; }
-            /// <summary>
-            /// Gets or sets User.
-            /// </summary>
-            public User User { get; set; }
-
-            #endregion
-
-            #region Static Method (Create)
-
-            /// <summary>
-            /// Create New instance.
-            /// </summary>
-            /// <param name="shift">The Shift Instance.</param>
-            /// <param name="user">The User Instance.</param>
-            /// <returns>Returns New Create instance.</returns>
-            public static TSBShift Create(Shift shift, User user)
-            {
-                var ret = new TSBShift();
-                ret.Shift = shift;
-                ret.User = user;
-                return ret;
-            }
-
-            #endregion
-        }
 
         #endregion
     }
 
+    #endregion
+
+    #region TSBShiftCreate
+    /*
+    /// <summary>
+    /// The TSBShiftCreate class.
+    /// </summary>
+    public class TSBShiftCreate
+    {
+        /// <summary>
+        /// Gets or sets Shift.
+        /// </summary>
+        public Shift Shift { get; set; }
+        /// <summary>
+        /// Gets or sets User.
+        /// </summary>
+        public User User { get; set; }
+    }
+    */
     #endregion
 }
