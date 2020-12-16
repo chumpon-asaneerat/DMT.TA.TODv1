@@ -90,6 +90,9 @@ namespace DMT.Services
 
         #region Public Methods
 
+        /// <summary>
+        /// Start service.
+        /// </summary>
         public void Start()
         {
             MethodBase med = MethodBase.GetCurrentMethod();
@@ -102,7 +105,9 @@ namespace DMT.Services
                 server = WebApp.Start<StartUp>(url: baseAddress);
             }
         }
-
+        /// <summary>
+        /// Shutdown service.
+        /// </summary>
         public void Shutdown()
         {
             if (null != server)
