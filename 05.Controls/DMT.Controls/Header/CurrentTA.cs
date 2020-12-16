@@ -14,8 +14,14 @@ using DMT.Services;
 
 namespace DMT.Controls
 {
+    /// <summary>
+    /// The TAApp class.
+    /// </summary>
     public static class TAApp
     {
+        /// <summary>
+        /// Gets or sets Current TA User.
+        /// </summary>
         public static class User
         {
             public static Models.User Current { get; set; }

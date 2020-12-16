@@ -38,21 +38,19 @@ namespace DMT.Controls.Header
             txtPlazaId.Visibility = Visibility.Collapsed;
 
             UpdateUI();
-            // TODO: Refactor HeaderPlaza event bind
-            //LocalServiceOperations.Instance.OnActiveTSBChanged += Instance_OnActiveTSBChanged;
+            RuntimeManager.Instance.TSBChanged += Instance_TSBChanged;
         }
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
         {
-            // TODO: Refactor HeaderPlaza event unbind
-            //LocalServiceOperations.Instance.OnActiveTSBChanged -= Instance_OnActiveTSBChanged;
+            RuntimeManager.Instance.TSBChanged -= Instance_TSBChanged;
         }
 
         #endregion
 
-        #region LocalServiceOperations Handlers
+        #region RuntimeManager Handlers
 
-        private void Instance_OnActiveTSBChanged(object sender, EventArgs e)
+        private void Instance_TSBChanged(object sender, EventArgs e)
         {
             UpdateUI();
         }
@@ -67,7 +65,6 @@ namespace DMT.Controls.Header
             var tsb = ret.Value();
             if (null != tsb)
             {
-                // TODO: Refactor
                 txtPlazaId.Text = "รหัสด่าน : " + tsb.TSBId;
                 txtPlazaName.Text = "ชื่อด่าน : " + tsb.TSBNameTH;
             }

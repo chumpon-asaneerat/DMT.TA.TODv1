@@ -94,8 +94,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="WebServer\Controllers\NotifyController.cs" />
-    <None Include="WebServer\Controllers\Original\NotifyController.cs" />
+    <Compile Include="WebServer\Controllers\NotifyController.cs" />
+    <Compile Include="WebServer\Controllers\NotifyController.ShiftChanged.cs" />
+    <Compile Include="WebServer\Controllers\NotifyController.TSBChanged.cs" />
     <Compile Include="WebServer\TAWebServer.cs" />
   </ItemGroup>
   <ItemGroup>

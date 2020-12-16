@@ -37,28 +37,26 @@ namespace DMT.Controls.Header
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             UpdateUI();
-            // TODO: Refactor HeaderShift event bind
-            //LocalServiceOperations.Instance.OnChangeShift += Instance_OnChangeShift;
-            //LocalServiceOperations.Instance.OnActiveTSBChanged += Instance_OnActiveTSBChanged;
+            RuntimeManager.Instance.TSBChanged += Instance_TSBChanged;
+            RuntimeManager.Instance.ShiftChanged += Instance_ShiftChanged;
         }
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
         {
-            // TODO: Refactor HeaderShift event unbind
-            //LocalServiceOperations.Instance.OnActiveTSBChanged -= Instance_OnActiveTSBChanged;
-            //LocalServiceOperations.Instance.OnChangeShift -= Instance_OnChangeShift;
+            RuntimeManager.Instance.ShiftChanged -= Instance_ShiftChanged;
+            RuntimeManager.Instance.TSBChanged -= Instance_TSBChanged;
         }
 
         #endregion
 
-        #region LocalServiceOperations Handlers
+        #region RuntimeManager Handlers
 
-        private void Instance_OnActiveTSBChanged(object sender, EventArgs e)
+        private void Instance_TSBChanged(object sender, EventArgs e)
         {
             UpdateUI();
         }
 
-        private void Instance_OnChangeShift(object sender, EventArgs e)
+        private void Instance_ShiftChanged(object sender, EventArgs e)
         {
             UpdateUI();
         }

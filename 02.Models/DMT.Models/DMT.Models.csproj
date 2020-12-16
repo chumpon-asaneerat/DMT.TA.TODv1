@@ -132,6 +132,7 @@
     <Compile Include="Models\SCW\SCWQRCode.cs" />
     <Compile Include="Models\Shifts\Shift.cs" />
     <Compile Include="Models\Shifts\TSBShift.cs" />
+    <Compile Include="Services\RuntimeManager.cs" />
     <Compile Include="Views\SqlScriptManager.cs" />
     <None Include="Original\ExtensionMethods\NullableType.ExtensionMethods.cs" />
     <None Include="Original\ExtensionMethods\SCW.ExtensionMethods.cs" />

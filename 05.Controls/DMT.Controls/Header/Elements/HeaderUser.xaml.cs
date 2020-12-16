@@ -29,8 +29,6 @@ namespace DMT.Controls.Header
 
         #endregion
 
-        // TODO: Refactor HeaderUser elements LocalOperations
-        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private DispatcherTimer timer = null;
 
         #region Loaded/Unloaded
@@ -68,20 +66,16 @@ namespace DMT.Controls.Header
 
         private void UpdateUI()
         {
-            // TODO: Fixed HeaderUser elements to update current user for TA
-            /*
             if (null != TAApp.User.Current)
             {
-                // TODO: Refactor
-                //txtUserId.Text = "รหัสผู้ใช้งาน: " + TAApp.User.Current.UserId;
-                //txtUserame.Text = "ชื่อผู้ใช้งาน: " + TAApp.User.Current.FullNameTH;
+                txtUserId.Text = "รหัสผู้ใช้งาน: " + TAApp.User.Current.UserId;
+                txtUserame.Text = "ชื่อผู้ใช้งาน: " + TAApp.User.Current.FullNameTH;
             }
             else
             {
                 txtUserId.Text = "รหัสผู้ใช้งาน: ";
                 txtUserame.Text = "ชื่อผู้ใช้งาน: ";
             }
-            */
         }
     }
 }

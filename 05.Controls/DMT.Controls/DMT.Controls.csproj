@@ -76,7 +76,7 @@
     <Compile Include="StatusBar\TODStatusBar.xaml.cs">
       <DependentUpon>TODStatusBar.xaml</DependentUpon>
     </Compile>
-    <None Include="Header\CurrentTA.cs" />
+    <Compile Include="Header\CurrentTA.cs" />
     <Compile Include="Header\Elements\HeaderDateTime.xaml.cs">
       <DependentUpon>HeaderDateTime.xaml</DependentUpon>
     </Compile>

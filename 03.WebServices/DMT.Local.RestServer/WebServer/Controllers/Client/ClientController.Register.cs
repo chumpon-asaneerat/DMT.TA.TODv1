@@ -13,10 +13,10 @@ namespace DMT.Services
         [HttpPost]
         [ActionName(RouteConsts.Client.Register.Name)]
         //[AllowAnonymous]
-        public NRestResult Register([FromBody] Client value)
+        public NDbResult Register([FromBody] Client value)
         {
             var ret = Client.Register(value);
-            return ret.ToRest();
+            return ret;
         }
     }
 }
