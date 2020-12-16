@@ -57,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Common\NRestClient.cs" />
     <Compile Include="Services\Common\NRestResult.cs" />
+    <Compile Include="Services\RestAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -64,7 +65,9 @@
   <ItemGroup>
     <Folder Include="Services\Local\" />
     <Folder Include="Services\SCW\" />
+    <Folder Include="Services\TAApp\" />
     <Folder Include="Services\TAxTOD\" />
+    <Folder Include="Services\TODApp\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
