@@ -609,6 +609,7 @@ namespace Wpf.Owin.Rest.Server.Sample
         {
             // Handle route by specificed controller (Route Order is important).
             // Calculator2 Controller
+            /*
             config.Routes.MapHttpRoute(
                 name: "Calc2ApiAdd",
                 routeTemplate: "api/Calc2/Add",
@@ -617,6 +618,16 @@ namespace Wpf.Owin.Rest.Server.Sample
                 name: "Calc2ApiSub",
                 routeTemplate: "api/Calc2/Sub",
                 defaults: new { controller = "Calculator2", action = "Sub" });
+            */
+            // Calculator2 Controller
+            config.Routes.MapHttpRoute(
+                name: "Calc2ApiAdd",
+                routeTemplate: RouteConsts2.Calculator.Add.Url,
+                defaults: new { controller = RouteConsts2.Calculator.ControllerName, action = RouteConsts2.Calculator.Add.Name });
+            config.Routes.MapHttpRoute(
+                name: "Calc2ApiSub",
+                routeTemplate: RouteConsts2.Calculator.Sub.Url,
+                defaults: new { controller = RouteConsts2.Calculator.ControllerName, action = RouteConsts2.Calculator.Sub.Name });
 
             InitDefaultMapRoute(config);
         }
@@ -748,6 +759,7 @@ namespace Wpf.Owin.Rest.Server.Sample
         public static class Calculator
         {
             // Match MapHttpRoute in Startup class.
+            public const string ControllerName = "Calculator2";
             public const string Url = RouteConsts2.Url + @"/Calc2";
 
             public static class Add
