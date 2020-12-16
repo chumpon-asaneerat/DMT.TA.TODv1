@@ -195,7 +195,6 @@ namespace DMT.Models
 				MethodBase med = MethodBase.GetCurrentMethod();
 				try
 				{
-					//TODO: Required check exists before save see SaveUser for implementations.
 					result = Save(value);
 
 				}

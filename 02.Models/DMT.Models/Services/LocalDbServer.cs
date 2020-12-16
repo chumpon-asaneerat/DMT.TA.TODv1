@@ -56,12 +56,6 @@ namespace DMT.Services
 
 		#endregion
 
-		#region Internal Variables
-
-		private int HistoryVersion = 2;
-
-		#endregion
-
 		#region Constructor and Destructor
 
 		/// <summary>
@@ -927,72 +921,70 @@ namespace DMT.Services
 			string prefix;
 
 			// Infrastructures - Embeded resource used . instead / to access sub contents.
-			/*
 			prefix = @"Infrastructures";
-			InitView("PlazaGroupView", prefix);
-			InitView("PlazaView", prefix);
-			InitView("LaneView", prefix);
-			*/
+			InitView("PlazaGroupView", 1, prefix);
+			InitView("PlazaView", 1, prefix);
+			InitView("LaneView", 1, prefix);
 
 			// Users - Embeded resource used . instead / to access sub contents.
 			prefix = @"Users";
-			InitView("UserView", prefix);
+			InitView("UserView", 1, prefix);
 
 			// Shifts - Embeded resource used . instead / to access sub contents.
 			/*
 			prefix = @"Shifts";
-			InitView("TSBShiftView", prefix);
-			InitView("UserShiftView", prefix);
-			InitView("UserShiftRevenueView", prefix);
+			InitView("TSBShiftView", 1, prefix);
+			InitView("UserShiftView", 1, prefix);
+			InitView("UserShiftRevenueView", 1, prefix);
 			*/
 
 			// LaneActivities - Embeded resource used . instead / to access sub contents.
 			/*
 			prefix = @"LaneActivities";
-			InitView("LaneAttendanceView", prefix);
-			InitView("LanePaymentView", prefix);
+			InitView("LaneAttendanceView", 1, prefix);
+			InitView("LanePaymentView", 1, prefix);
 			*/
 
 			// Revenues - Embeded resource used . instead / to access sub contents.
 			/*
 			prefix = @"Revenues";
-			InitView("RevenueEntryView", prefix);
+			InitView("RevenueEntryView", 1, prefix);
 			*/
 
 			// Credits - Embeded resource used . instead / to access sub contents.
 			/*
 			prefix = @"Credits";
-			InitView("TSBCreditSummarryView", prefix);
-			InitView("TSBCreditTransactionView", prefix);
-			InitView("UserCreditBorrowSummaryView", prefix);
-			InitView("UserCreditReturnSummaryView", prefix);
-			InitView("UserCreditSummaryView", prefix);
-			InitView("UserCreditTransactionView", prefix);
+			InitView("TSBCreditSummarryView", 1, prefix);
+			InitView("TSBCreditTransactionView", 1, prefix);
+			InitView("UserCreditBorrowSummaryView", 1, prefix);
+			InitView("UserCreditReturnSummaryView", 1, prefix);
+			InitView("UserCreditSummaryView", 1, prefix);
+			InitView("UserCreditTransactionView", 1, prefix);
 			*/
 			// Coupons - Embeded resource used . instead / to access sub contents.
 			/*
 			prefix = @"Coupons";
-			InitView("TSBCouponTransactionView", prefix);
+			InitView("TSBCouponTransactionView", 1, prefix);
 			
 
-			InitView("TSBCouponStockBalanceView", prefix);
-			InitView("TSBCouponLaneBalanceView", prefix);
-			InitView("TSBCouponSoldByLaneBalanceView", prefix);
-			InitView("TSBCouponSoldByTSBBalanceView", prefix);
-			InitView("TSBCouponBalanceView", prefix);
+			InitView("TSBCouponStockBalanceView", 1, prefix);
+			InitView("TSBCouponLaneBalanceView", 1, prefix);
+			InitView("TSBCouponSoldByLaneBalanceView", 1, prefix);
+			InitView("TSBCouponSoldByTSBBalanceView", 1, prefix);
+			InitView("TSBCouponBalanceView", 1, prefix);
 
-			InitView("TSBCouponSummarryView", prefix);
-			InitView("UserCoupon35SummaryView", prefix);
+			InitView("TSBCouponSummarryView", 1, prefix);
+			InitView("UserCoupon35SummaryView", 1, prefix);
 			InitView("UserCoupon80SummaryView", prefix);
-			InitView("UserCouponSummaryView", prefix);
-			InitView("UserCouponTransactionView", prefix);
+			InitView("UserCouponSummaryView", 1, prefix);
+			InitView("UserCouponTransactionView", 1, prefix);
 			*/
 
 			// Exchanges - Embeded resource used . instead / to access sub contents.
 			/*
 			prefix = @"Exchanges";
-			InitView("TSBExchangeGroupView", prefix);
-			InitView("TSBExchangeTransactionView", prefix);
+			InitView("TSBExchangeGroupView", 1, prefix);
+			InitView("TSBExchangeTransactionView", 1, prefix);
 			*/
 		}
 
@@ -1001,7 +993,7 @@ namespace DMT.Services
 			public string Name { get; set; }
 		}
 
-		private void InitView(string viewName, string resourcePrefix = "")
+		private void InitView(string viewName, int version, string resourcePrefix = "")
 		{
 			if (null == Db) return;
 
@@ -1013,7 +1005,7 @@ namespace DMT.Services
 
 			//bool exists = (null != info) ? info.Count > 0 : false;
 
-			if (!exists || null == hist || hist.VersionId != HistoryVersion)
+			if (!exists || null == hist || hist.VersionId < version)
 			{
 				string script = string.Empty;
 				MethodBase med = MethodBase.GetCurrentMethod();
@@ -1062,13 +1054,16 @@ namespace DMT.Services
 					if (!string.IsNullOrEmpty(script))
 					{
 						var ret = Db.Execute(script);
-
-						Console.WriteLine("Returns: {0}", ret);
+						//Console.WriteLine("Returns: {0}", ret);
 
 						if (null == hist) hist = new ViewHistory();
 						hist.ViewName = viewName;
-						hist.VersionId = HistoryVersion;
+						hist.VersionId = version;
 						ViewHistory.Save(hist);
+
+						string msg = string.Format("Update View {0}, version {1}.", hist.ViewName, hist.VersionId);
+						Console.WriteLine(msg);
+						med.Info(msg);
 					}
 					else
 					{
