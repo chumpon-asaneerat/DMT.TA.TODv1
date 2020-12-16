@@ -45,8 +45,6 @@ namespace DMT
             */
             // Initial Page Content Manager
             PageContentManager.Instance.ContentChanged += new EventHandler(Instance_ContentChanged);
-            PageContentManager.Instance.StatusUpdated += new StatusMessageEventHandler(Instance_StatusUpdated);
-            PageContentManager.Instance.OnTick += new EventHandler(Instance_OnTick);
             PageContentManager.Instance.Start();
         }
 
@@ -54,8 +52,6 @@ namespace DMT
         {
             // Release Page Content Manager
             PageContentManager.Instance.Shutdown();
-            PageContentManager.Instance.OnTick -= new EventHandler(Instance_OnTick);
-            PageContentManager.Instance.StatusUpdated -= new StatusMessageEventHandler(Instance_StatusUpdated);
             PageContentManager.Instance.ContentChanged -= new EventHandler(Instance_ContentChanged);
             // TODO: Refactor
             /*
@@ -67,17 +63,6 @@ namespace DMT
         #endregion
 
         #region Page Content Manager Handlers
-
-        void Instance_OnTick(object sender, EventArgs e)
-        {
-            //UpdateTime();
-            //UpdateConnectionStatus();
-        }
-
-        void Instance_StatusUpdated(object sender, StatusMessageEventArgs e)
-        {
-            //txtStatus.Text = e.Message;
-        }
 
         void Instance_ContentChanged(object sender, EventArgs e)
         {
