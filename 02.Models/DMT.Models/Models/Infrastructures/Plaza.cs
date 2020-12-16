@@ -686,7 +686,7 @@ namespace DMT.Models
 		/// </summary>
 		/// <param name="value">The Plaza instance.</param>
 		/// <returns>Returns Plaza instance.</returns>
-		public static NDbResult<Plaza> SaveTSB(Plaza value)
+		public static NDbResult<Plaza> SavePlaza(Plaza value)
 		{
 			var result = new NDbResult<Plaza>();
 			SQLiteConnection db = Default;

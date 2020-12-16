@@ -898,7 +898,7 @@ namespace DMT.Models
 		/// </summary>
 		/// <param name="value">The Lane instance.</param>
 		/// <returns>Returns Lane instance.</returns>
-		public static NDbResult<Lane> SaveTSB(Lane value)
+		public static NDbResult<Lane> SaveLane(Lane value)
 		{
 			var result = new NDbResult<Lane>();
 			SQLiteConnection db = Default;
@@ -912,6 +912,7 @@ namespace DMT.Models
 				MethodBase med = MethodBase.GetCurrentMethod();
 				try
 				{
+					//TODO: Required check exists before save see SaveUser for implementations.
 					result = Save(value);
 
 				}

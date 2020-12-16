@@ -174,6 +174,42 @@ namespace DMT.Models
 
 		#endregion
 
+		#region Save Shift
+
+		/// <summary>
+		/// Save Shift.
+		/// </summary>
+		/// <param name="value">The Shift instance.</param>
+		/// <returns>Returns Shift instance.</returns>
+		public static NDbResult<Shift> SaveShift(Shift value)
+		{
+			var result = new NDbResult<Shift>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					//TODO: Required check exists before save see SaveUser for implementations.
+					result = Save(value);
+
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+
+		#endregion
+
 		#endregion
 	}
 

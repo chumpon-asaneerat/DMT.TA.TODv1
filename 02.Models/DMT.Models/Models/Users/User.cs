@@ -1078,6 +1078,7 @@ namespace DMT.Models
 						}
 						else
 						{
+							//TODO: Required check more properties to update back to database.
 							match.UserId = user.UserId;
 							match.PrefixEN = user.PrefixEN;
 							match.PrefixTH = user.PrefixTH;

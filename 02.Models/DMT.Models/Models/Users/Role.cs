@@ -248,6 +248,42 @@ namespace DMT.Models
 
 		#endregion
 
+		#region Save Role
+
+		/// <summary>
+		/// Save Role.
+		/// </summary>
+		/// <param name="value">The Role instance.</param>
+		/// <returns>Returns Role instance.</returns>
+		public static NDbResult<Role> SaveRole(Role value)
+		{
+			var result = new NDbResult<Role>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					//TODO: Required check exists before save see SaveUser for implementations.
+					result = Save(value);
+
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+
+		#endregion
+
 		#endregion
 	}
 
