@@ -88,12 +88,8 @@ namespace DMT
             #endregion
 
             // Load Config service.
-            DMT.Services.ConfigManager.Instance.LoadConfig();
-            // TODO: Refactor
-            /*
-            // Enable Web Socket.
-            DMT.Services.LocalServiceOperations.Instance.EnableWebSocket();
-            */
+            Services.ConfigManager.Instance.LoadConfig();
+
             Window window = null;
             window = new MainWindow();
 

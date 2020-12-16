@@ -15,6 +15,81 @@ namespace DMT.Services
 {
     #region Plaza Config and related classes
 
+    #region LocalHostWebServiceConfig
+
+    /// <summary>
+    /// The LocalHostWebServiceConfig class.
+    /// </summary>
+    [JsonObject(MemberSerialization.OptOut)]
+    public class LocalHostWebServiceConfig
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public LocalHostWebServiceConfig()
+        {
+            this.Protocol = "http";
+            this.PortNumber = 9001;
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// IsEquals.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public bool IsEquals(object obj)
+        {
+            if (null == obj || !(obj is LocalHostWebServiceConfig)) return false;
+            return this.GetString() == (obj as LocalHostWebServiceConfig).GetString();
+        }
+        /// <summary>
+        /// GetString.
+        /// </summary>
+        /// <returns></returns>
+        public string GetString()
+        {
+            string code = string.Format("{0}://{1}:{2}",
+                this.Protocol, this.HostName, this.PortNumber);
+            return code;
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets protocol.
+        /// </summary>
+        public string Protocol { get; set; }
+        /// <summary>
+        /// Gets or sets Host Name or IP Address.
+        /// </summary>
+        [JsonIgnore]
+        public string HostName 
+        {
+            get 
+            {
+                var ip = NLib.Utils.NetworkUtils.GetLocalIPAddress();
+                return (null != ip) ? ip.ToString() : "0.0.0.0";
+            }
+            set { }
+        }
+        /// <summary>
+        /// Gets or sets port number.
+        /// </summary>
+        public int PortNumber { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
     #region WebServiceConfig
 
     /// <summary>
@@ -184,7 +259,7 @@ namespace DMT.Services
         /// </summary>
         public LocalWebServiceConfig() 
         {
-            this.Http = new WebServiceConfig()
+            this.Service = new WebServiceConfig()
             {
                 Protocol = "http",
                 HostName = "localhost",
@@ -212,8 +287,8 @@ namespace DMT.Services
         /// <returns></returns>
         public string GetString()
         {
-            if (null != this.Http)
-                return string.Format("{0}", this.Http.GetString());
+            if (null != this.Service)
+                return string.Format("{0}", this.Service.GetString());
             else return "Local http is null.";
         }
         
@@ -224,7 +299,7 @@ namespace DMT.Services
         /// <summary>
         /// Gets or sets Http service.
         /// </summary>
-        public WebServiceConfig Http { get; set; }
+        public WebServiceConfig Service { get; set; }
 
         #endregion
     }
@@ -246,7 +321,7 @@ namespace DMT.Services
         /// </summary>
         public TAxTODWebServiceConfig()
         {
-            this.Http = new WebServiceConfig()
+            this.Service = new WebServiceConfig()
             {
                 Protocol = "http",
                 HostName = "localhost",
@@ -274,8 +349,8 @@ namespace DMT.Services
         /// <returns></returns>
         public string GetString()
         {
-            if (null != this.Http)
-                return string.Format("{0}", this.Http.GetString());
+            if (null != this.Service)
+                return string.Format("{0}", this.Service.GetString());
             else return "TAxTOD http is null.";
         }
         
@@ -286,7 +361,7 @@ namespace DMT.Services
         /// <summary>
         /// Gets or sets Http service.
         /// </summary>
-        public WebServiceConfig Http { get; set; }
+        public WebServiceConfig Service { get; set; }
 
         #endregion
     }
@@ -308,7 +383,7 @@ namespace DMT.Services
         /// </summary>
         public SCWWebServiceConfig()
         {
-            this.Http = new WebServiceConfig()
+            this.Service = new WebServiceConfig()
             {
                 Protocol = "http",
                 HostName = "172.30.192.9",
@@ -336,8 +411,8 @@ namespace DMT.Services
         /// <returns></returns>
         public string GetString()
         {
-            if (null != this.Http)
-                return string.Format("{0}", this.Http.GetString());
+            if (null != this.Service)
+                return string.Format("{0}", this.Service.GetString());
             else return "DC http is null.";
         }
         
@@ -348,7 +423,7 @@ namespace DMT.Services
         /// <summary>
         /// Gets or sets Http service.
         /// </summary>
-        public WebServiceConfig Http { get; set; }
+        public WebServiceConfig Service { get; set; }
 
         #endregion
     }
@@ -370,10 +445,9 @@ namespace DMT.Services
         /// </summary>
         public TAAppConfig()
         {
-            this.Http = new WebServiceConfig()
+            this.Service = new LocalHostWebServiceConfig()
             {
                 Protocol = "http",
-                HostName = "localhost",
                 PortNumber = 9001
             };
         }
@@ -398,8 +472,8 @@ namespace DMT.Services
         /// <returns></returns>
         public string GetString()
         {
-            if (null != this.Http)
-                return string.Format("{0}", this.Http.GetString());
+            if (null != this.Service)
+                return string.Format("{0}", this.Service.GetString());
             else return "TA App http is null.";
         }
 
@@ -410,7 +484,7 @@ namespace DMT.Services
         /// <summary>
         /// Gets or sets Http service.
         /// </summary>
-        public WebServiceConfig Http { get; set; }
+        public LocalHostWebServiceConfig Service { get; set; }
 
         #endregion
     }
@@ -432,10 +506,9 @@ namespace DMT.Services
         /// </summary>
         public TODAppConfig()
         {
-            this.Http = new WebServiceConfig()
+            this.Service = new LocalHostWebServiceConfig()
             {
                 Protocol = "http",
-                HostName = "localhost",
                 PortNumber = 9002
             };
         }
@@ -460,8 +533,8 @@ namespace DMT.Services
         /// <returns></returns>
         public string GetString()
         {
-            if (null != this.Http)
-                return string.Format("{0}", this.Http.GetString());
+            if (null != this.Service)
+                return string.Format("{0}", this.Service.GetString());
             else return "TOD App http is null.";
         }
 
@@ -472,7 +545,7 @@ namespace DMT.Services
         /// <summary>
         /// Gets or sets Http service.
         /// </summary>
-        public WebServiceConfig Http { get; set; }
+        public LocalHostWebServiceConfig Service { get; set; }
 
         #endregion
     }
@@ -688,6 +761,7 @@ namespace DMT.Services
                     // save back to file.
                     if (!NJson.ConfigExists(_fileName))
                     {
+                        // File not exist.
                         if (null == _plazaCfg)
                         {
                             _plazaCfg = new PlazaConfig();
@@ -696,8 +770,21 @@ namespace DMT.Services
                     }
                     else
                     {
-                        // TODO: Check When file is exists but size is zero so config is null.
-                        _plazaCfg = NJson.LoadFromFile<PlazaConfig>(_fileName);
+                        // Check file size.
+                        long len = new FileInfo(_fileName).Length;
+                        if (len <= 0)
+                        {
+                            // File size is zero.
+                            if (null == _plazaCfg)
+                            {
+                                _plazaCfg = new PlazaConfig();
+                            }
+                            NJson.SaveToFile(_plazaCfg, _fileName);
+                        }
+                        else
+                        {
+                            _plazaCfg = NJson.LoadFromFile<PlazaConfig>(_fileName);
+                        }
                     }
                     // Raise event.
                     ConfigChanged.Call(this, EventArgs.Empty);
@@ -753,6 +840,9 @@ namespace DMT.Services
 
         #region Public Events
 
+        /// <summary>
+        /// The ConfigChanged Event Handler.
+        /// </summary>
         public event EventHandler ConfigChanged;
 
         #endregion

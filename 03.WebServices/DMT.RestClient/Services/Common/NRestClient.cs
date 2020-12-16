@@ -457,13 +457,13 @@ namespace DMT.Services
         {
             if (null == ConfigManager.Instance.Plaza) return null;
             if (null == ConfigManager.Instance.Plaza.Local) return null;
-            if (null == ConfigManager.Instance.Plaza.Local.Http) return null;
+            if (null == ConfigManager.Instance.Plaza.Local.Service) return null;
 
             NRestClient.WebProtocol protocol =
-                (ConfigManager.Instance.Plaza.Local.Http.Protocol == "http") ?
+                (ConfigManager.Instance.Plaza.Local.Service.Protocol == "http") ?
                 NRestClient.WebProtocol.http : NRestClient.WebProtocol.https;
-            string hostName = ConfigManager.Instance.Plaza.Local.Http.HostName;
-            int portNo = ConfigManager.Instance.Plaza.Local.Http.PortNumber;
+            string hostName = ConfigManager.Instance.Plaza.Local.Service.HostName;
+            int portNo = ConfigManager.Instance.Plaza.Local.Service.PortNumber;
 
             return new NRestClient(protocol, hostName, portNo);
         }
@@ -475,13 +475,13 @@ namespace DMT.Services
         {
             if (null == ConfigManager.Instance.Plaza) return null;
             if (null == ConfigManager.Instance.Plaza.TAxTOD) return null;
-            if (null == ConfigManager.Instance.Plaza.TAxTOD.Http) return null;
+            if (null == ConfigManager.Instance.Plaza.TAxTOD.Service) return null;
 
             NRestClient.WebProtocol protocol =
-                (ConfigManager.Instance.Plaza.TAxTOD.Http.Protocol == "http") ?
+                (ConfigManager.Instance.Plaza.TAxTOD.Service.Protocol == "http") ?
                 NRestClient.WebProtocol.http : NRestClient.WebProtocol.https;
-            string hostName = ConfigManager.Instance.Plaza.TAxTOD.Http.HostName;
-            int portNo = ConfigManager.Instance.Plaza.TAxTOD.Http.PortNumber;
+            string hostName = ConfigManager.Instance.Plaza.TAxTOD.Service.HostName;
+            int portNo = ConfigManager.Instance.Plaza.TAxTOD.Service.PortNumber;
 
             return new NRestClient(protocol, hostName, portNo);
         }
@@ -493,13 +493,13 @@ namespace DMT.Services
         {
             if (null == ConfigManager.Instance.Plaza) return null;
             if (null == ConfigManager.Instance.Plaza.SCW) return null;
-            if (null == ConfigManager.Instance.Plaza.SCW.Http) return null;
+            if (null == ConfigManager.Instance.Plaza.SCW.Service) return null;
 
             NRestClient.WebProtocol protocol =
-                (ConfigManager.Instance.Plaza.SCW.Http.Protocol == "http") ?
+                (ConfigManager.Instance.Plaza.SCW.Service.Protocol == "http") ?
                 NRestClient.WebProtocol.http : NRestClient.WebProtocol.https;
-            string hostName = ConfigManager.Instance.Plaza.SCW.Http.HostName;
-            int portNo = ConfigManager.Instance.Plaza.SCW.Http.PortNumber;
+            string hostName = ConfigManager.Instance.Plaza.SCW.Service.HostName;
+            int portNo = ConfigManager.Instance.Plaza.SCW.Service.PortNumber;
 
             return new NRestClient(protocol, hostName, portNo);
         }

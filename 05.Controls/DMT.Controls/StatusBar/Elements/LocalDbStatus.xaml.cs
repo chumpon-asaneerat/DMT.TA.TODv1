@@ -38,7 +38,7 @@ namespace DMT.Controls.StatusBar
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             //TODO: Refactor ConfigManager for Local Plaza Service host name.
-            string host = ConfigManager.Instance.Plaza.Local.Http.HostName;
+            string host = ConfigManager.Instance.Plaza.Local.Service.HostName;
 
             ping = new NLib.Components.PingManager();
             ping.OnReply += Ping_OnReply;
