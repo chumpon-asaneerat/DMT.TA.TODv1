@@ -17,8 +17,7 @@ namespace DMT.Services
         {
             NDbResult result = new NDbResult();
             result.Success();
-            //TODO: Fixed TANofifyService
-            //TANofifyService.Instance.RaiseShiftChanged();
+            TANofifyService.Instance.RaiseShiftChanged();
             return result;
         }
     }

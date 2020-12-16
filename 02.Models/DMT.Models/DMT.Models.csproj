@@ -134,36 +134,11 @@
     <Compile Include="Models\Shifts\TSBShift.cs" />
     <Compile Include="Services\RuntimeManager.cs" />
     <Compile Include="Views\SqlScriptManager.cs" />
-    <None Include="Original\ExtensionMethods\NullableType.ExtensionMethods.cs" />
-    <None Include="Original\ExtensionMethods\SCW.ExtensionMethods.cs" />
-    <None Include="Original\ExtensionMethods\TAxTOD.ExtensionMethods.cs" />
     <Compile Include="Models\RabbitMQ\RabbitMQ.cs" />
     <Compile Include="Models\Users\Role.cs" />
     <Compile Include="Models\Users\User.cs" />
     <Compile Include="Services\LocalDbServer.cs" />
-    <None Include="Original\Models\Common\DMT.Create.cs" />
-    <None Include="Original\Models\Common\NSearch.cs" />
-    <None Include="Original\Models\Configuration\Config.cs" />
-    <None Include="Original\Models\Configuration\UniqueCode.cs" />
-    <None Include="Original\Models\Coupons\Common\Enums.cs" />
-    <None Include="Original\Models\Coupons\TAServer\TACouponTransaction.cs" />
-    <None Include="Original\Models\Coupons\TSB\TSBCouponBalance.cs" />
-    <None Include="Original\Models\Coupons\TSB\TSBCouponSummary.cs" />
-    <None Include="Original\Models\Coupons\TSB\TSBCouponTransaction.cs" />
-    <None Include="Original\Models\Coupons\Users\UserCouponBalance.cs" />
-    <None Include="Original\Models\Coupons\Users\UserCouponTransaction.cs" />
-    <None Include="Original\Models\Credits\TSB\TSBCreditBalance.cs" />
-    <None Include="Original\Models\Credits\TSB\TSBCreditTransaction.cs" />
-    <None Include="Original\Models\Credits\Users\UserCreditBalance.cs" />
-    <None Include="Original\Models\Credits\Users\UserCreditTransaction.cs" />
-    <None Include="Original\Models\Exchanges\TSBExchangeGroup.cs" />
-    <None Include="Original\Models\Exchanges\TSBExchangeTransaction.cs" />
-    <None Include="Original\Models\Revenues\RevenueEntry.cs" />
-    <None Include="Original\Models\Shifts\UserShift.cs" />
-    <None Include="Original\Models\Shifts\UserShiftRevenue.cs" />
-    <None Include="Original\Models\Users\LogInLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="Original\Services\LocalDbServer.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
@@ -174,38 +149,6 @@
       <Project>{db7fb4b5-3662-479e-a7da-26b73611bfd4}</Project>
       <Name>DMT.Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Original\Views\Scripts\Shifts\UserShiftRevenueView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Shifts\UserShiftView.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Original\Views\Scripts\LaneActivities\LaneAttendanceView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\LaneActivities\LanePaymentView.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Original\Views\Scripts\Revenues\RevenueEntryView.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Original\Views\Scripts\Coupons\TSBCouponBalanceView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Coupons\TSBCouponLaneBalanceView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Coupons\TSBCouponSoldByLaneBalanceView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Coupons\TSBCouponSoldByTSBBalanceView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Coupons\TSBCouponStockBalanceView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Coupons\TSBCouponSummarryView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Coupons\TSBCouponTransactionView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Coupons\UserCoupon35SummaryView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Coupons\UserCoupon80SummaryView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Coupons\UserCouponSummaryView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Coupons\UserCouponTransactionView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Credits\TSBCreditSummarryView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Credits\TSBCreditTransactionView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Credits\UserCreditBorrowSummaryView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Credits\UserCreditReturnSummaryView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Credits\UserCreditSummaryView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Credits\UserCreditTransactionView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Exchanges\TSBExchangeGroupView.sql" />
-    <EmbeddedResource Include="Original\Views\Scripts\Exchanges\TSBExchangeTransactionView.sql" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\Scripts\Coupons\" />

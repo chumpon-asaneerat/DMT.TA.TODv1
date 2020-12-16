@@ -17,8 +17,7 @@ namespace DMT.Services
         {
             NDbResult result = new NDbResult();
             result.Success();
-            //TODO: Fixed TODNofifyService
-            //TODNofifyService.Instance.RaiseShiftChanged();
+            TODNotifyService.Instance.RaiseShiftChanged();
             return result;
         }
     }

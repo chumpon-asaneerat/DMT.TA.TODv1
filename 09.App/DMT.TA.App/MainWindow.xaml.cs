@@ -33,6 +33,9 @@ namespace DMT
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            TANotifyService.Instance.TSBChanged += Instance_TSBChanged;
+            TANotifyService.Instance.ShiftChanged += Instance_ShiftChanged;
+
             // Initial Page Content Manager
             PageContentManager.Instance.ContentChanged += new EventHandler(Instance_ContentChanged);
             PageContentManager.Instance.Start();
@@ -50,6 +53,9 @@ namespace DMT
             // Release Page Content Manager
             PageContentManager.Instance.Shutdown();
             PageContentManager.Instance.ContentChanged -= new EventHandler(Instance_ContentChanged);
+
+            TANotifyService.Instance.ShiftChanged -= Instance_ShiftChanged;
+            TANotifyService.Instance.TSBChanged -= Instance_TSBChanged;
         }
 
         #endregion
@@ -59,6 +65,20 @@ namespace DMT
         void Instance_ContentChanged(object sender, EventArgs e)
         {
             this.container.Content = PageContentManager.Instance.Current;
+        }
+
+        #endregion
+
+        #region Notify Service Handlers
+
+        private void Instance_TSBChanged(object sender, EventArgs e)
+        {
+            RuntimeManager.Instance.RaiseTSBChanged();
+        }
+
+        private void Instance_ShiftChanged(object sender, EventArgs e)
+        {
+            RuntimeManager.Instance.RaiseShiftChanged();
         }
 
         #endregion

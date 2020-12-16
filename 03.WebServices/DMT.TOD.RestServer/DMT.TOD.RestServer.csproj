@@ -96,6 +96,7 @@
     <Compile Include="WebServer\Controllers\Notify\NotifyController.cs" />
     <Compile Include="WebServer\Controllers\Notify\NotifyController.ShiftChanged.cs" />
     <Compile Include="WebServer\Controllers\Notify\NotifyController.TSBChanged.cs" />
+    <Compile Include="WebServer\TODNotifyService.cs" />
     <Compile Include="WebServer\TODWebServer.cs" />
   </ItemGroup>
   <ItemGroup>
