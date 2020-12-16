@@ -15,6 +15,8 @@ namespace DMT
     /// </summary>
     public partial class App : Application
     {
+        private Services.TAWebServer appServ = null;
+
         /// <summary>
         /// OnStartup.
         /// </summary>
@@ -89,6 +91,9 @@ namespace DMT
 
             // Load Config service.
             Services.ConfigManager.Instance.LoadConfig();
+            // Start App Notify Server.
+            appServ = new Services.TAWebServer();
+            appServ.Start();
 
             Window window = null;
             window = new MainWindow();
@@ -107,6 +112,12 @@ namespace DMT
         /// <param name="e"></param>
         protected override void OnExit(ExitEventArgs e)
         {
+            if (null != appServ)
+            {
+                appServ.Shutdown();
+            }
+            appServ = null;
+
             // Shutdown log manager
             LogManager.Instance.Shutdown();
 

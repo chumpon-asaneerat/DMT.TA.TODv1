@@ -359,7 +359,6 @@ namespace Wpf.Owin.Rest.Server.Sample
 
     #endregion
 
-
     #region DMTRestServerStartUp
 
     /// <summary>
@@ -629,7 +628,8 @@ namespace Wpf.Owin.Rest.Server.Sample
                 routeTemplate: RouteConsts2.Calculator.Sub.Url,
                 defaults: new { controller = RouteConsts2.Calculator.ControllerName, action = RouteConsts2.Calculator.Sub.Name });
 
-            InitDefaultMapRoute(config);
+            // If comment below line the Test Controller and Calculator Controller will not load and cannot access.
+            //InitDefaultMapRoute(config);
         }
     }
 

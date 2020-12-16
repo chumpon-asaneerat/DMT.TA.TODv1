@@ -4,6 +4,7 @@ using System;
 using System.Reflection;
 using Microsoft.Owin.Hosting;
 using System.Web.Http;
+using NLib;
 
 #endregion
 
@@ -96,29 +97,26 @@ namespace DMT.Services
         public void Start()
         {
             MethodBase med = MethodBase.GetCurrentMethod();
-            // Start database server.
-            LocalDbServer.Instance.Start();
-
             if (null == server)
             {
                 InitOwinFirewall();
                 server = WebApp.Start<StartUp>(url: baseAddress);
             }
+            med.Info("TOD App local nofify service start.");
         }
         /// <summary>
         /// Shutdown service.
         /// </summary>
         public void Shutdown()
         {
+            MethodBase med = MethodBase.GetCurrentMethod();
             if (null != server)
             {
                 server.Dispose();
             }
             server = null;
             ReleaseOwinFirewall();
-
-            // Shutdown database server.
-            LocalDbServer.Instance.Shutdown();
+            med.Info("TOD App local nofify service shutdown.");
         }
 
         #endregion
