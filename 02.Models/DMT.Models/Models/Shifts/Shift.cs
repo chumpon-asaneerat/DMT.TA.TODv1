@@ -126,6 +126,8 @@ namespace DMT.Models
 
 		#region Static Methods
 
+		#region Get Shifts
+
 		/// <summary>
 		/// Gets Shifts.
 		/// </summary>
@@ -169,6 +171,8 @@ namespace DMT.Models
 				return GetShifts(db);
 			}
 		}
+
+		#endregion
 
 		#endregion
 	}

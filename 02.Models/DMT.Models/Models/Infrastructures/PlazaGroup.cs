@@ -43,9 +43,6 @@ namespace DMT.Models
 		private string _TSBNameEN = string.Empty;
 		private string _TSBNameTH = string.Empty;
 
-		private int _Status = 0;
-		private DateTime _LastUpdate = DateTime.MinValue;
-
 		#endregion
 
 		#region Constructor
@@ -226,54 +223,6 @@ namespace DMT.Models
 
 		#endregion
 
-		#region Status (DC)
-
-		/// <summary>
-		/// Gets or sets Status (1 = Sync, 0 = Unsync, etc..)
-		/// </summary>
-		[Category("DataCenter")]
-		[Description("Gets or sets Status (1 = Sync, 0 = Unsync, etc..)")]
-		[ReadOnly(true)]
-		[PropertyMapName("Status", typeof(PlazaGroup))]
-		[PropertyOrder(10001)]
-		public int Status
-		{
-			get
-			{
-				return _Status;
-			}
-			set
-			{
-				if (_Status != value)
-				{
-					_Status = value;
-					this.RaiseChanged("Status");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets LastUpdated (Sync to DC).
-		/// </summary>
-		[Category("DataCenter")]
-		[Description("Gets or sets LastUpdated (Sync to DC).")]
-		[ReadOnly(true)]
-		[PropertyMapName("LastUpdate", typeof(PlazaGroup))]
-		[PropertyOrder(10002)]
-		public DateTime LastUpdate
-		{
-			get { return _LastUpdate; }
-			set
-			{
-				if (_LastUpdate != value)
-				{
-					_LastUpdate = value;
-					this.RaiseChanged("LastUpdate");
-				}
-			}
-		}
-
-		#endregion
-
 		#endregion
 
 		#region Internal Class
@@ -313,62 +262,8 @@ namespace DMT.Models
 
 		#region Static Methods
 
-		#region SearchByTSB
+		#region Get PlazaGroups (all TSBs)
 
-		/// <summary>
-		/// Search PlazaGroups (By TSB).
-		/// </summary>
-		/// <param name="value">The TSB instance.</param>
-		/// <returns>Returns List of PlazaGroup.</returns>
-		public static NDbResult<List<PlazaGroup>> SearchByTSB(TSB value)
-		{
-			var result = new NDbResult<List<PlazaGroup>>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				return SearchByTSB(value.TSBId);
-			}
-		}
-		/// <summary>
-		/// Search PlazaGroups (By TSBId).
-		/// </summary>
-		/// <param name="tsbId">The TSB Id.</param>
-		/// <returns>Returns List of PlazaGroup.</returns>
-		public static NDbResult<List<PlazaGroup>> SearchByTSB(string tsbId)
-		{
-			var result = new NDbResult<List<PlazaGroup>>();
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM PlazaGroupView ";
-					cmd += " WHERE TSBId = ? ";
-
-					var rets = NQuery.Query<FKs>(cmd, tsbId).ToList();
-					var results = rets.ToModels();
-					result.Success(results);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
-
-		#endregion
-
-		#region GetPlazaGroups - Comment out
-		/*
 		/// <summary>
 		/// Gets PlazaGroups.
 		/// </summary>
@@ -416,11 +311,11 @@ namespace DMT.Models
 				return GetPlazaGroups(db);
 			}
 		}
-		*/
+
 		#endregion
 
-		#region GetPlazaGroup - Comment out
-		/*
+		#region Get PlazaGroup By PlazaGroupId
+
 		/// <summary>
 		/// Gets PlazaGroup (By PlazaGroupId).
 		/// </summary>
@@ -469,7 +364,95 @@ namespace DMT.Models
 				return GetPlazaGroup(db, plazaGroupId);
 			}
 		}
-		*/
+
+		#endregion
+
+		#region Get PlazaGroups By TSB/TSBId
+
+		/// <summary>
+		/// Gets PlazaGroups (By TSB).
+		/// </summary>
+		/// <param name="value">The TSB instance.</param>
+		/// <returns>Returns List of PlazaGroup.</returns>
+		public static NDbResult<List<PlazaGroup>> GetTSBPlazaGroups(TSB value)
+		{
+			var result = new NDbResult<List<PlazaGroup>>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				return GetTSBPlazaGroups(value.TSBId);
+			}
+		}
+		/// <summary>
+		/// Gets PlazaGroups (By TSBId).
+		/// </summary>
+		/// <param name="tsbId">The TSB Id.</param>
+		/// <returns>Returns List of PlazaGroup.</returns>
+		public static NDbResult<List<PlazaGroup>> GetTSBPlazaGroups(string tsbId)
+		{
+			var result = new NDbResult<List<PlazaGroup>>();
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string cmd = string.Empty;
+					cmd += "SELECT * ";
+					cmd += "  FROM PlazaGroupView ";
+					cmd += " WHERE TSBId = ? ";
+
+					var rets = NQuery.Query<FKs>(cmd, tsbId).ToList();
+					var results = rets.ToModels();
+					result.Success(results);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+
+		#endregion
+
+		#region Save PlazaGroup
+
+		/// <summary>
+		/// Save PlazaGroup.
+		/// </summary>
+		/// <param name="value">The PlazaGroup instance.</param>
+		/// <returns>Returns PlazaGroup instance.</returns>
+		public static NDbResult<PlazaGroup> SaveTSB(PlazaGroup value)
+		{
+			var result = new NDbResult<PlazaGroup>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					result = Save(value);
+
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
 
 		#endregion
 

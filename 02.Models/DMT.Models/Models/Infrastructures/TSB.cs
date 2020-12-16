@@ -39,12 +39,9 @@ namespace DMT.Models
 		private string _TSBNameTH = string.Empty;
 		private string _NetworkId = string.Empty;
 
-		private decimal _MaxCredit = decimal.Zero;
-
 		private bool _Active = false;
 
-		private int _Status = 0;
-		private DateTime _LastUpdate = DateTime.MinValue;
+		private decimal _MaxCredit = decimal.Zero;
 
 		#endregion
 
@@ -150,27 +147,6 @@ namespace DMT.Models
 			}
 		}
 		/// <summary>
-		/// Gets or sets Max TSB Credit.
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets or sets Max TSB Credit.")]
-		[PropertyMapName("MaxCredit")]
-		public decimal MaxCredit
-		{
-			get
-			{
-				return _MaxCredit;
-			}
-			set
-			{
-				if (_MaxCredit != value)
-				{
-					_MaxCredit = value;
-					this.RaiseChanged("MaxCredit");
-				}
-			}
-		}
-		/// <summary>
 		/// Gets or sets is active TSB.
 		/// </summary>
 		[Category("Common")]
@@ -195,48 +171,26 @@ namespace DMT.Models
 
 		#endregion
 
-		#region Status (DC)
+		#region MaxCredit
 
 		/// <summary>
-		/// Gets or sets Status (1 = Sync, 0 = Unsync, etc..)
+		/// Gets or sets Max TSB Credit.
 		/// </summary>
-		[Category("DataCenter")]
-		[Description("Gets or sets Status (1 = Sync, 0 = Unsync, etc..)")]
-		[ReadOnly(true)]
-		[PropertyMapName("Status", typeof(TSB))]
-		[PropertyOrder(10001)]
-		public int Status
+		[Category("Common")]
+		[Description("Gets or sets Max TSB Credit.")]
+		[PropertyMapName("MaxCredit")]
+		public decimal MaxCredit
 		{
 			get
 			{
-				return _Status;
+				return _MaxCredit;
 			}
 			set
 			{
-				if (_Status != value)
+				if (_MaxCredit != value)
 				{
-					_Status = value;
-					this.RaiseChanged("Status");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets LastUpdated (Sync to DC).
-		/// </summary>
-		[Category("DataCenter")]
-		[Description("Gets or sets LastUpdated (Sync to DC).")]
-		[ReadOnly(true)]
-		[PropertyMapName("LastUpdate", typeof(TSB))]
-		[PropertyOrder(10002)]
-		public DateTime LastUpdate
-		{
-			get { return _LastUpdate; }
-			set
-			{
-				if (_LastUpdate != value)
-				{
-					_LastUpdate = value;
-					this.RaiseChanged("LastUpdate");
+					_MaxCredit = value;
+					this.RaiseChanged("MaxCredit");
 				}
 			}
 		}
@@ -246,6 +200,8 @@ namespace DMT.Models
 		#endregion
 
 		#region Static Methods
+
+		#region Get All TSBs
 
 		/// <summary>
 		/// Gets TSBs.
@@ -291,85 +247,11 @@ namespace DMT.Models
 				return GetTSBs(db);
 			}
 		}
-		/// <summary>
-		/// Gets Active TSB.
-		/// </summary>
-		/// <returns>Returns Active TSB instance.</returns>
-		public static NDbResult<TSB> GetCurrent()
-		{
-			var result = new NDbResult<TSB>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					// inactive all TSBs
-					string cmd = string.Empty;
-					cmd += "SELECT * FROM TSB ";
-					cmd += " WHERE Active = 1 ";
-					var results = NQuery.Query<TSB>(cmd);
-					var data = (null != results) ? results.FirstOrDefault() : null;
-					result.Success(data);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
-		/// <summary>
-		/// Set Active by TSB Id.
-		/// </summary>
-		/// <param name="tsbId">The TSB Id.</param>
-		/// <returns>Returns Set Active status.</returns>
-		public static NDbResult SetActive(string tsbId)
-		{
-			var result = new NDbResult();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					// inactive all TSBs
-					string cmd = string.Empty;
-					cmd += "UPDATE TSB ";
-					cmd += "   SET Active = 0";
-					NQuery.Execute(cmd);
-					// Set active TSB
-					cmd = string.Empty;
-					cmd += "UPDATE TSB ";
-					cmd += "   SET Active = 1 ";
-					cmd += " WHERE TSBId = ? ";
-					NQuery.Execute(cmd, tsbId);
-					result.Success();
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
 
 		#endregion
 
-		#region Static Methods - Original
-		/*
+		#region Get TSB By TSBId
+
 		/// <summary>
 		/// Gets TSB By TSB Id.
 		/// </summary>
@@ -416,7 +298,128 @@ namespace DMT.Models
 				return GetTSB(db, tsbId);
 			}
 		}
-		*/
+
+		#endregion
+
+		#region Get Current (Active) TSB
+
+		/// <summary>
+		/// Gets Active TSB.
+		/// </summary>
+		/// <returns>Returns Active TSB instance.</returns>
+		public static NDbResult<TSB> GetCurrent()
+		{
+			var result = new NDbResult<TSB>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					// inactive all TSBs
+					string cmd = string.Empty;
+					cmd += "SELECT * FROM TSB ";
+					cmd += " WHERE Active = 1 ";
+					var results = NQuery.Query<TSB>(cmd);
+					var data = (null != results) ? results.FirstOrDefault() : null;
+					result.Success(data);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+
+		#endregion
+
+		#region Set Active TSB
+
+		/// <summary>
+		/// Set Active by TSB Id.
+		/// </summary>
+		/// <param name="tsbId">The TSB Id.</param>
+		/// <returns>Returns Set Active status.</returns>
+		public static NDbResult SetActive(string tsbId)
+		{
+			var result = new NDbResult();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					// inactive all TSBs
+					string cmd = string.Empty;
+					cmd += "UPDATE TSB ";
+					cmd += "   SET Active = 0";
+					NQuery.Execute(cmd);
+					// Set active TSB
+					cmd = string.Empty;
+					cmd += "UPDATE TSB ";
+					cmd += "   SET Active = 1 ";
+					cmd += " WHERE TSBId = ? ";
+					NQuery.Execute(cmd, tsbId);
+					result.Success();
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+
+		#endregion
+
+		#region Save TSB
+
+		/// <summary>
+		/// Save TSB.
+		/// </summary>
+		/// <param name="value">The TSB instance.</param>
+		/// <returns>Returns TSB instance.</returns>
+		public static NDbResult<TSB> SaveTSB(TSB value)
+		{
+			var result = new NDbResult<TSB>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					result = Save(value);
+
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+
+		#endregion
+
 		#endregion
 	}
 

@@ -119,10 +119,10 @@ namespace DMT.Services
 			Db.CreateTable<MCoupon>();
 			Db.CreateTable<MCardAllow>();
 
-			//Db.CreateTable<TSB>();
-			//Db.CreateTable<PlazaGroup>();
-			//Db.CreateTable<Plaza>();
-			//Db.CreateTable<Lane>();
+			Db.CreateTable<TSB>();
+			Db.CreateTable<PlazaGroup>();
+			Db.CreateTable<Plaza>();
+			Db.CreateTable<Lane>();
 
 			Db.CreateTable<Shift>();
 
@@ -160,7 +160,7 @@ namespace DMT.Services
 			InitMCurrency();
 			InitMCoupon();
 			InitMCardAllow();
-			//InitTSBAndPlazaAndLanes();
+			InitTSBAndPlazaAndLanes();
 			InitShifts();
 			InitRoleAndUsers();
 			//InitPayments();
@@ -358,6 +358,11 @@ namespace DMT.Services
 				description = "บัตร DMT (ป 2)"
 			};
 			if (!MCardAllow.Exists(item)) MCardAllow.Save(item);
+		}
+
+		private void InitTSBAndPlazaAndLanes()
+		{
+
 		}
 
 		private void InitShifts()

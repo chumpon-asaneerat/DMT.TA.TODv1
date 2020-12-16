@@ -54,9 +54,6 @@ namespace DMT.Models
 		private string _PlazaNameEN = string.Empty;
 		private string _PlazaNameTH = string.Empty;
 
-		private int _Status = 0;
-		private DateTime _LastUpdate = DateTime.MinValue;
-
 		#endregion
 
 		#region Constructor
@@ -453,54 +450,6 @@ namespace DMT.Models
 
 		#endregion
 
-		#region Status (DC)
-
-		/// <summary>
-		/// Gets or sets Status (1 = Sync, 0 = Unsync, etc..)
-		/// </summary>
-		[Category("DataCenter")]
-		[Description("Gets or sets Status (1 = Sync, 0 = Unsync, etc..)")]
-		[ReadOnly(true)]
-		[PropertyMapName("Status", typeof(Lane))]
-		[PropertyOrder(10001)]
-		public int Status
-		{
-			get
-			{
-				return _Status;
-			}
-			set
-			{
-				if (_Status != value)
-				{
-					_Status = value;
-					this.RaiseChanged("Status");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets LastUpdated (Sync to DC).
-		/// </summary>
-		[Category("DataCenter")]
-		[Description("Gets or sets LastUpdated (Sync to DC).")]
-		[ReadOnly(true)]
-		[PropertyMapName("LastUpdate", typeof(Lane))]
-		[PropertyOrder(10002)]
-		public DateTime LastUpdate
-		{
-			get { return _LastUpdate; }
-			set
-			{
-				if (_LastUpdate != value)
-				{
-					_LastUpdate = value;
-					this.RaiseChanged("LastUpdate");
-				}
-			}
-		}
-
-		#endregion
-
 		#endregion
 
 		#region Internal Class
@@ -609,137 +558,8 @@ namespace DMT.Models
 
 		#region Static Methods
 
-		#region SearchByPlazaGroup
+		#region Get Lanes (all TSBs)
 
-		/// <summary>
-		/// Search Lanes (By PlazaGroup).
-		/// </summary>
-		/// <param name="value">The PlazaGroup instance.</param>
-		/// <returns>Returns List fo Lanes.</returns>
-		public static NDbResult<List<Lane>> SearchByPlazaGroup(PlazaGroup value)
-		{
-			var result = new NDbResult<List<Lane>>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				return SearchByPlazaGroup(value.TSBId, value.PlazaGroupId);
-			}
-		}
-		/// <summary>
-		/// Search Lanes (By TSBId, PlazaGroupId)
-		/// </summary>
-		/// <param name="tsbId">The TSB Id.</param>
-		/// <param name="plazaGroupId">The Plaza Group Id.</param>
-		/// <returns>Returns List fo Lanes.</returns>
-		public static NDbResult<List<Lane>> SearchByPlazaGroup(string tsbId, string plazaGroupId)
-		{
-			var result = new NDbResult<List<Lane>>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM LaneView ";
-					cmd += " WHERE TSBId = ? ";
-					cmd += "   AND PlazaGroupId = ? ";
-
-					var rets = NQuery.Query<FKs>(cmd, tsbId, plazaGroupId).ToList();
-					var results = rets.ToModels();
-					result.Success(results);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
-
-		#endregion
-
-		#region SearchByPlaza - Comment Out
-		/*
-		/// <summary>
-		/// Search Lanes (By Plaza).
-		/// </summary>
-		/// <param name="value">The Plaza instance.</param>
-		/// <returns>Returns List fo Lanes.</returns>
-		public static NDbResult<List<Lane>> SearchByPlaza(Plaza value)
-		{
-			var result = new NDbResult<List<Lane>>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				return SearchByPlaza(value.TSBId, value.PlazaGroupId, value.PlazaId);
-			}
-		}
-		/// <summary>
-		/// Search Lanes (By TSBId, PlazaGroupId. PlazaId).
-		/// </summary>
-		/// <param name="tsbId">The TSB Id.</param>
-		/// <param name="plazaGroupId">The Plaza Group Id.</param>
-		/// <param name="plazaId">The Plaza Id.</param>
-		/// <returns>Returns List fo Lanes.</returns>
-		public static NDbResult<List<Lane>> SearchByPlaza(string tsbId, string plazaGroupId,
-			string plazaId)
-		{
-			var result = new NDbResult<List<Lane>>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM LaneView ";
-					cmd += " WHERE TSBId = ? ";
-					cmd += "   AND PlazaGroupId = ? ";
-					cmd += "   AND PlazaId = ? ";
-
-					var rets = NQuery.Query<FKs>(cmd, tsbId, plazaGroupId, plazaId).ToList();
-					var results = rets.ToModels();
-					result.Success(results);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
-		*/
-		#endregion
-
-		#endregion
-
-		#region Static Methods - Original
-		/*
 		/// <summary>
 		/// Gets Lanes (all TSBs).
 		/// </summary>
@@ -786,6 +606,11 @@ namespace DMT.Models
 				return GetLanes(db);
 			}
 		}
+
+		#endregion
+
+		#region Get Lane By Land Id
+
 		/// <summary>
 		/// Get Lane.
 		/// </summary>
@@ -835,6 +660,11 @@ namespace DMT.Models
 				return GetLane(db, laneId);
 			}
 		}
+
+		#endregion
+
+		#region Get Lanes by TSB/TSBId
+
 		/// <summary>
 		/// Get Lanes (By TSB).
 		/// </summary>
@@ -889,6 +719,137 @@ namespace DMT.Models
 				return result;
 			}
 		}
+
+		#endregion
+
+		#region Get Lanes by PlazaGroup and by TSBId/PlazaGroupId
+
+		/// <summary>
+		/// Gets Lanes (By PlazaGroup).
+		/// </summary>
+		/// <param name="value">The PlazaGroup instance.</param>
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetPlazaGroupLanes(PlazaGroup value)
+		{
+			var result = new NDbResult<List<Lane>>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				return GetPlazaGroupLanes(value.TSBId, value.PlazaGroupId);
+			}
+		}
+		/// <summary>
+		/// Gets Lanes (By TSBId, PlazaGroupId)
+		/// </summary>
+		/// <param name="tsbId">The TSB Id.</param>
+		/// <param name="plazaGroupId">The Plaza Group Id.</param>
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetPlazaGroupLanes(string tsbId, string plazaGroupId)
+		{
+			var result = new NDbResult<List<Lane>>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string cmd = string.Empty;
+					cmd += "SELECT * ";
+					cmd += "  FROM LaneView ";
+					cmd += " WHERE TSBId = ? ";
+					cmd += "   AND PlazaGroupId = ? ";
+
+					var rets = NQuery.Query<FKs>(cmd, tsbId, plazaGroupId).ToList();
+					var results = rets.ToModels();
+					result.Success(results);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+
+		#endregion
+
+		#region Get Lanes by Plaza and by TSBId/PlazaGroupId/PlazaId
+
+		/// <summary>
+		/// Gets Lanes (By Plaza).
+		/// </summary>
+		/// <param name="value">The Plaza instance.</param>
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetPlazaLanes(Plaza value)
+		{
+			var result = new NDbResult<List<Lane>>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				return GetPlazaLanes(value.TSBId, value.PlazaGroupId, value.PlazaId);
+			}
+		}
+		/// <summary>
+		/// Gets Lanes (By TSBId, PlazaGroupId. PlazaId).
+		/// </summary>
+		/// <param name="tsbId">The TSB Id.</param>
+		/// <param name="plazaGroupId">The Plaza Group Id.</param>
+		/// <param name="plazaId">The Plaza Id.</param>
+		/// <returns>Returns List fo Lanes.</returns>
+		public static NDbResult<List<Lane>> GetPlazaLanes(string tsbId, string plazaGroupId, string plazaId)
+		{
+			var result = new NDbResult<List<Lane>>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string cmd = string.Empty;
+					cmd += "SELECT * ";
+					cmd += "  FROM LaneView ";
+					cmd += " WHERE TSBId = ? ";
+					cmd += "   AND PlazaGroupId = ? ";
+					cmd += "   AND PlazaId = ? ";
+
+					var rets = NQuery.Query<FKs>(cmd, tsbId, plazaGroupId, plazaId).ToList();
+					var results = rets.ToModels();
+					result.Success(results);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+
+		#endregion
+
+		#region Get Lane by PlazaId/LaneNo
+
 		/// <summary>
 		/// Gets Plaza Lane.
 		/// </summary>
@@ -927,7 +888,44 @@ namespace DMT.Models
 				return result;
 			}
 		}
-		*/
+
+		#endregion
+
+		#region Save Lane
+
+		/// <summary>
+		/// Save Lane.
+		/// </summary>
+		/// <param name="value">The Lane instance.</param>
+		/// <returns>Returns Lane instance.</returns>
+		public static NDbResult<Lane> SaveTSB(Lane value)
+		{
+			var result = new NDbResult<Lane>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					result = Save(value);
+
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+
+		#endregion
+
 		#endregion
 	}
 

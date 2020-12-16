@@ -675,6 +675,8 @@ namespace DMT.Models
 
 		#region Static Methods
 
+		#region Get Users
+
 		/// <summary>
 		/// Gets Users.
 		/// </summary>
@@ -721,12 +723,17 @@ namespace DMT.Models
 				return result;
 			}
 		}
+
+		#endregion
+
+		#region Get User by UserId
+
 		/// <summary>
 		/// Get User by User Id (Exact match).
 		/// </summary>
 		/// <param name="userId">The User Id.</param>
 		/// <returns>Returns User instance.</returns>
-		public static NDbResult<User> GetUser(string userId)
+		public static NDbResult<User> GetByUserId(string userId)
 		{
 			lock (sync)
 			{
@@ -771,33 +778,116 @@ namespace DMT.Models
 			}
 		}
 
+		#endregion
 
+		#region Get User By CardId
 
-		/*
 		/// <summary>
-		/// Search By User Id (with SQL Like filter).
+		/// Gets by Card Id
+		/// </summary>
+		/// <param name="cardId">The cardId.</param>
+		/// <returns>Returns User instance.</returns>
+		public static NDbResult<User> GetByCardId(string cardId)
+		{
+			var result = new NDbResult<User>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string cmd = string.Empty;
+					cmd += "SELECT * ";
+					cmd += "  FROM UserView ";
+					cmd += " WHERE CardId = ? ";
+
+					var ret = NQuery.Query<FKs>(cmd, cardId).FirstOrDefault();
+					var data = (null != ret) ? ret.ToModel() : null;
+					result.Success(data);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+
+		#endregion
+
+		#region Get User By LogIn (UserId/Password)
+
+		/// <summary>
+		/// Gets by LogIn (UserId and Password).
+		/// </summary>
+		/// <param name="userId">The UserId.</param>
+		/// /// <param name="password">The password in MD5.</param>
+		/// <returns>Returns User instance.</returns>
+		public static NDbResult<User> GetByLogIn(string userId, string password)
+		{
+			var result = new NDbResult<User>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					string cmd = string.Empty;
+					cmd += "SELECT * ";
+					cmd += "  FROM UserView ";
+					cmd += " WHERE UserId = ? ";
+					cmd += "   AND Password = ? ";
+
+					var ret = NQuery.Query<FKs>(cmd, userId, password).FirstOrDefault();
+					var data = (null != ret) ? ret.ToModel() : null;
+					result.Success(data);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+
+		#endregion
+
+		#region FilterByUserId (For increment search UserId)
+
+		/// <summary>
+		/// Gets Users filter By User Id (with SQL Like filter).
 		/// </summary>
 		/// <param name="userId">The User Id.</param>
 		/// <param name="roles">The roles Id list.</param>
 		/// <returns>Returns List of User.</returns>
-		public static NDbResult<List<User>> SearchById(string userId, 
-			params string[] roles)
+		public static NDbResult<List<User>> FilterByUserId(string userId, string[] roles)
 		{
 			lock (sync)
 			{
 				SQLiteConnection db = Default;
-				return SearchById(db, userId, roles);
+				return FilterByUserId(db, userId, roles);
 			}
 		}
 		/// <summary>
-		/// Search By User Id (with SQL Like filter).
+		/// Gets Users filter By User Id (with SQL Like filter).
 		/// </summary>
 		/// <param name="db">The database connection.</param>
 		/// <param name="userId">The User Id.</param>
 		/// <param name="roles">The roles Id list.</param>
 		/// <returns>Returns List of User.</returns>
-		public static NDbResult<List<User>> SearchById(SQLiteConnection db, 
-			string userId, params string[] roles)
+		public static NDbResult<List<User>> FilterByUserId(SQLiteConnection db, string userId, string[] roles)
 		{
 			var result = new NDbResult<List<User>>();
 			if (null == db)
@@ -839,12 +929,17 @@ namespace DMT.Models
 				return result;
 			}
 		}
+
+		#endregion
+
+		#region Filter By RoleId/GroupId
+
 		/// <summary>
 		/// Find Users by Role Id.
 		/// </summary>
 		/// <param name="roleId">The Role Id.</param>
 		/// <returns>Returns List of User.</returns>
-		public static NDbResult<List<User>> FindByRole(string roleId)
+		public static NDbResult<List<User>> FilterByRoleId(string roleId)
 		{
 			var result = new NDbResult<List<User>>();
 			SQLiteConnection db = Default;
@@ -880,7 +975,7 @@ namespace DMT.Models
 		/// </summary>
 		/// <param name="groupId">The Group Id.</param>
 		/// <returns>Returns List of User.</returns>
-		public static NDbResult<List<User>> FindByGroupId(int groupId)
+		public static NDbResult<List<User>> FilterByGroupId(int groupId)
 		{
 			var result = new NDbResult<List<User>>();
 			SQLiteConnection db = Default;
@@ -911,80 +1006,11 @@ namespace DMT.Models
 				return result;
 			}
 		}
-		/// <summary>
-		/// Gets by UserId and password.
-		/// </summary>
-		/// <param name="userId">The UserId.</param>
-		/// /// <param name="password">The password in MD5.</param>
-		/// <returns>Returns User instance.</returns>
-		public static NDbResult<User> GetByUserId(string userId, string password)
-		{
-			var result = new NDbResult<User>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM UserView ";
-					cmd += " WHERE UserId = ? ";
-					cmd += "   AND Password = ? ";
 
-					var ret = NQuery.Query<FKs>(cmd, userId, password).FirstOrDefault();
-					var data = (null != ret) ? ret.ToModel() : null;
-					result.Success(data);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
-		/// <summary>
-		/// Gets by Card Id
-		/// </summary>
-		/// <param name="cardId">The cardId.</param>
-		/// <returns>Returns User instance.</returns>
-		public static NDbResult<User> GetByCardId(string cardId)
-		{
-			var result = new NDbResult<User>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM UserView ";
-					cmd += " WHERE CardId = ? ";
+		#endregion
 
-					var ret = NQuery.Query<FKs>(cmd, cardId).FirstOrDefault();
-					var data = (null != ret) ? ret.ToModel() : null;
-					result.Success(data);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
+		#region Save User(s)
+
 		/// <summary>
 		/// Save User.
 		/// </summary>
@@ -1015,7 +1041,71 @@ namespace DMT.Models
 				return result;
 			}
 		}
-		*/
+		/// <summary>
+		/// Save Users.
+		/// </summary>
+		/// <param name="users">The User List.</param>
+		/// <returns>Returns NDbResult instance.</returns>
+		public static NDbResult SaveUsers(List<User> users)
+		{
+			var result = new NDbResult();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			if (null == users || users.Count <= 0)
+			{
+				result.ParameterIsNull();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					db.BeginTransaction();
+
+					var roles = Models.Role.GetRoles().Value();
+
+					users.ForEach(user =>
+					{
+						User match = User.GetByUserId(user.UserId).Value();
+						if (null == match)
+						{
+							Save(user); // insert
+						}
+						else
+						{
+							match.UserId = user.UserId;
+							match.PrefixEN = user.PrefixEN;
+							match.PrefixTH = user.PrefixTH;
+							match.FirstNameEN = user.FirstNameEN;
+							match.FirstNameTH = user.FirstNameTH;
+							match.MiddleNameEN = user.MiddleNameEN;
+							match.MiddleNameTH = user.MiddleNameTH;
+							match.LastNameEN = user.LastNameEN;
+							match.LastNameTH = user.LastNameTH;
+							match.Password = user.Password;
+
+							Save(match); // update
+						}
+					});
+					db.Commit();
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					db.Rollback();
+				}
+				return result;
+			}
+
+		}
+
+		#endregion
+
 		#endregion
 	}
 

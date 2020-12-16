@@ -148,7 +148,9 @@ namespace DMT.Models
 		#endregion
 
 		#region Static Methods
-		
+
+		#region Get Rules
+
 		/// <summary>
 		/// Gets Roles.
 		/// </summary>
@@ -193,9 +195,10 @@ namespace DMT.Models
 			}
 		}
 
+		#endregion
 
+		#region Get Role by RoleId
 
-		/*
 		/// <summary>
 		/// Gets Role.
 		/// </summary>
@@ -242,7 +245,9 @@ namespace DMT.Models
 				return GetRole(db, roleId);
 			}
 		}
-		*/
+
+		#endregion
+
 		#endregion
 	}
 

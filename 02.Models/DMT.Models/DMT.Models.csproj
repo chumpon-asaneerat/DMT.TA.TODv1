@@ -111,6 +111,10 @@
     <Compile Include="Models\Common\NTables.cs" />
     <Compile Include="Models\Common\Utils.cs" />
     <Compile Include="Models\Configuration\ViewHistory.cs" />
+    <Compile Include="Models\Infrastructures\Lane.cs" />
+    <Compile Include="Models\Infrastructures\Plaza.cs" />
+    <Compile Include="Models\Infrastructures\PlazaGroup.cs" />
+    <Compile Include="Models\Infrastructures\TSB.cs" />
     <Compile Include="Models\Master\CardAllow.cs" />
     <Compile Include="Models\Master\Coupon.cs" />
     <Compile Include="Models\Master\Currency.cs" />
@@ -151,10 +155,6 @@
     <None Include="Original\Models\Credits\Users\UserCreditTransaction.cs" />
     <None Include="Original\Models\Exchanges\TSBExchangeGroup.cs" />
     <None Include="Original\Models\Exchanges\TSBExchangeTransaction.cs" />
-    <None Include="Original\Models\Infrastructures\Lane.cs" />
-    <None Include="Original\Models\Infrastructures\Plaza.cs" />
-    <None Include="Original\Models\Infrastructures\PlazaGroup.cs" />
-    <None Include="Original\Models\Infrastructures\TSB.cs" />
     <None Include="Original\Models\Revenues\RevenueEntry.cs" />
     <None Include="Original\Models\Shifts\TSBShift.cs" />
     <None Include="Original\Models\Shifts\UserShift.cs" />
@@ -212,7 +212,6 @@
     <EmbeddedResource Include="Original\Views\Scripts\Exchanges\TSBExchangeTransactionView.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Infrastructures\" />
     <Folder Include="Views\Scripts\Coupons\" />
     <Folder Include="Views\Scripts\Credits\" />
     <Folder Include="Views\Scripts\Infrastructures\" />
