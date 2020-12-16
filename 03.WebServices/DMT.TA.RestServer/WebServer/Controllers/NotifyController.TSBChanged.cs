@@ -17,7 +17,7 @@ namespace DMT.Services
         {
             NDbResult result = new NDbResult();
             result.Success();
-            TANofifyService.Instance.RaiseTSBChanged();
+            TANotifyService.Instance.RaiseTSBChanged();
             return result;
         }
     }
