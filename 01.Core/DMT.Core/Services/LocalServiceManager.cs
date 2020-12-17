@@ -120,6 +120,68 @@ namespace DMT.Services
 
         #endregion
 
+        #region Public Methods
+
+        #region Install/Uninstall/CheckInstalled
+
+        /// <summary>
+        /// Install all registered windows services.
+        /// </summary>
+        public void Install()
+        {
+            if (null == ServiceMonitor)
+                return;
+            ServiceMonitor.InstallAll();
+        }
+        /// <summary>
+        /// Uninstall all registered windows services.
+        /// </summary>
+        public void Uninstall()
+        {
+            if (null == ServiceMonitor)
+                return;
+            ServiceMonitor.UninstallAll();
+        }
+        /// <summary>
+        /// Checks services installed status.
+        /// </summary>
+        /// <returns>Returns ServiceStatus instance.</returns>
+        public InstalledStatus CheckInstalled()
+        {
+            InstalledStatus result = new InstalledStatus();
+            result.ServiceCount = 0;
+            result.InstalledCount = 0;
+            result.PlazaLocalServiceInstalled = false;
+            if (null != ServiceMonitor)
+            {
+                try
+                {
+                    NServiceInfo[] srvs = ServiceMonitor.ServiceInformations;
+                    if (null != srvs)
+                    {
+                        result.ServiceCount = srvs.Length;
+                        foreach (NServiceInfo srvInfo in srvs)
+                        {
+                            if (srvInfo.IsInstalled)
+                            {
+                                ++result.InstalledCount;
+                                if (srvInfo.ServiceName == AppConsts.WindowsService.Local.ServiceName)
+                                {
+                                    result.PlazaLocalServiceInstalled = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch { }
+            }
+            return result; // return scan result.
+        }
+
+        #endregion
+
+        #endregion
+
         #region Public Properties
 
         /// <summary>
