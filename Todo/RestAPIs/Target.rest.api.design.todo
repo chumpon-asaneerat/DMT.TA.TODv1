@@ -1,6 +1,6 @@
 Operations:
     Notify (/Notify):
-        TSB (/Notify)/TSB:
+        TSB (/Notify/TSB):
             ☐ ActiveChanged refactored.
             ☐ ShiftChanged refactored.
     Coupon (/Coupon):
@@ -74,25 +74,25 @@ Operations:
             ☐ Begin (/Shift/Users/Begin) refactored.
             ☐ End (/Shift/Users/End) refactored.
             ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose) refactored.
-    TSB (/TSB):
-        TSBs (/TSB/TSBs):
-            ☐ GetTSBs (/TSB/TSBs/Gets) refactored.
-            ☐ GetCurrent (/TSBs/TSB/Current) refactored.
-            ☐ SetActive (/TSBs/TSB/SetActive) refactored.
-            ☐ SaveTSB (/TSBs/TSB/Save) refactored.
-        PlazaGroups (/TSB/PlazaGroups):
-            ☐ SavePlazaGroup (/TSB/PlazaGroups/Save) refactored.
-            Search (/TSB/PlazaGroups/Search):
-                ☐ ByTSB (/TSB/PlazaGroups/Search/TSB) refactored.
-        Plazas (/TSB/Plazas):
-            ☐ SavePlaza (/TSB/Plazas/Save) refactored.
-            Search (/TSB/Plazas/Search):
-                ☐ ByPlazaGroup (/TSB/Plazas/Search/PlazaGroup) refactored.
-        Lanes (/TSB/Lanes):
-            ☐ SaveLane (/TSB/Lanes/Save) refactored.
+    Infrastructure (/Infrastructure):
+        TSBs (/Infrastructure/TSBs):
+            ☐ GetTSBs (/Infrastructure/TSBs/Gets) refactored.
+            ☐ GetCurrent (/Infrastructure/TSBs/Current) refactored.
+            ☐ SetActive (/Infrastructure/TSBs/SetActive) refactored.
+            ☐ SaveTSB (/Infrastructure/TSBs/Save) refactored.
+        PlazaGroups (/Infrastructure/PlazaGroups):
+            ☐ SavePlazaGroup (/Infrastructure/PlazaGroups/Save) refactored.
+            Search (/Infrastructure/PlazaGroups/Search):
+                ☐ ByTSB (/Infrastructure/PlazaGroups/Search/TSB) refactored.
+        Plazas (/Infrastructure/Plazas):
+            ☐ SavePlaza (/Infrastructure/Plazas/Save) refactored.
+            Search (/Infrastructure/Plazas/Search):
+                ☐ ByPlazaGroup (/Infrastructure/Plazas/Search/PlazaGroup) refactored.
+        Lanes (/Infrastructure/Lanes):
+            ☐ SaveLane (/Infrastructure/Lanes/Save) refactored.
             Search (/TSB/Lanes/Search):
-                ☐ ByPlazaGroup (/TSB/Lanes/PlazaGroup) refactored.
-                ☐ ByPlaza (/TSB/Lanes/Plaza) refactored.
+                ☐ ByPlazaGroup (/Infrastructure/Lanes/Search/PlazaGroup) refactored.
+                ☐ ByPlaza (/Infrastructure/Lanes/Search/Plaza) refactored.
     User (/User):
         Role (/User/Roles):
             ☐ GetRoles (/User/Roles/Gets) refactored.

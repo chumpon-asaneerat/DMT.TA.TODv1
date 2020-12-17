@@ -1,6 +1,6 @@
 Operations:
     Notify (/Notify):
-        TSB (/Notify)/TSB:
+        TSB (/Notify/TSB):
             ☐ ActiveChanged TESTED.
             ☐ ShiftChanged TESTED.
     Coupon (/Coupon):
@@ -74,25 +74,25 @@ Operations:
             ☐ Begin (/Shift/Users/Begin) TESTED.
             ☐ End (/Shift/Users/End) TESTED.
             ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose) TESTED.
-    TSB (/TSB):
-        TSBs (/TSB/TSBs):
-            ☐ GetTSBs (/TSB/TSBs/Gets) TESTED.
-            ☐ GetCurrent (/TSBs/TSB/Current) TESTED.
-            ☐ SetActive (/TSBs/TSB/SetActive) TESTED.
-            ☐ SaveTSB (/TSBs/TSB/Save) TESTED.
-        PlazaGroups (/TSB/PlazaGroups):
-            ☐ SavePlazaGroup (/TSB/PlazaGroups/Save) TESTED.
-            Search (/TSB/PlazaGroups/Search):
-                ☐ ByTSB (/TSB/PlazaGroups/Search/TSB) TESTED.
+    Infrastructure (/Infrastructure):
+        TSBs (/Infrastructure/TSBs):
+            ☐ GetTSBs (/Infrastructure/TSBs/Gets) TESTED.
+            ☐ GetCurrent (/Infrastructure/TSBs/Current) TESTED.
+            ☐ SetActive (/Infrastructure/TSB/SetActive) TESTED.
+            ☐ SaveTSB (/Infrastructure/TSBs/Save) TESTED.
+        PlazaGroups (/Infrastructure/PlazaGroups):
+            ☐ SavePlazaGroup (/Infrastructure/PlazaGroups/Save) TESTED.
+            Search (/Infrastructure/PlazaGroups/Search):
+                ☐ ByTSB (/Infrastructure/PlazaGroups/Search/TSB) TESTED.
         Plazas (/TSB/Plazas):
-            ☐ SavePlaza (/TSB/Plazas/Save) TESTED.
-            Search (/TSB/Plazas/Search):
-                ☐ ByPlazaGroup (/TSB/Plazas/Search/PlazaGroup) TESTED.
+            ☐ SavePlaza (/Infrastructure/Plazas/Save) TESTED.
+            Search (/Infrastructure/Plazas/Search):
+                ☐ ByPlazaGroup (/Infrastructure/Plazas/Search/PlazaGroup) TESTED.
         Lanes (/TSB/Lanes):
-            ☐ SaveLane (/TSB/Lanes/Save) TESTED.
+            ☐ SaveLane (/Infrastructure/Lanes/Save) TESTED.
             Search (/TSB/Lanes/Search):
-                ☐ ByPlazaGroup (/TSB/Lanes/PlazaGroup) TESTED.
-                ☐ ByPlaza (/TSB/Lanes/Plaza) TESTED.
+                ☐ ByPlazaGroup (/Infrastructure/Lanes/Search/PlazaGroup) TESTED.
+                ☐ ByPlaza (/Infrastructure/Lanes/Search/Plaza) TESTED.
     User (/User):
         Role (/User/Roles):
             ☐ GetRoles (/User/Roles/Gets) TESTED.
