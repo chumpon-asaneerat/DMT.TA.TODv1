@@ -15,6 +15,73 @@ namespace DMT.Services
 {
     #region Plaza Config and related classes
 
+    #region ApplicationConfig
+
+    /// <summary>
+    /// The DMT Config class.
+    /// </summary>
+    [JsonObject(MemberSerialization.OptOut)]
+    public class DMTConfig
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public DMTConfig()
+        {
+            this.network = "4";
+            this.tsb = "97";
+            this.terminal = "49701";
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// IsEquals.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public bool IsEquals(object obj)
+        {
+            if (null == obj || !(obj is DMTConfig)) return false;
+            return this.GetString() == (obj as DMTConfig).GetString();
+        }
+        /// <summary>
+        /// GetString.
+        /// </summary>
+        /// <returns></returns>
+        public string GetString()
+        {
+            string code = string.Format("network:{0}, tsb:{1}, terminal:{2}",
+                this.network, this.tsb, this.terminal);
+            return code;
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets network.
+        /// </summary>
+        public string network { get; set; }
+        /// <summary>
+        /// Gets or sets tsb.
+        /// </summary>
+        public string tsb { get; set; }
+        /// <summary>
+        /// Gets or sets terminal.
+        /// </summary>
+        public string terminal { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
     #region LocalHostWebServiceConfig
 
     /// <summary>
@@ -84,6 +151,14 @@ namespace DMT.Services
         /// Gets or sets port number.
         /// </summary>
         public int PortNumber { get; set; }
+        /// <summary>
+        /// Gets or sets User Name.
+        /// </summary>
+        public string UserName { get; set; }
+        /// <summary>
+        /// Gets or sets Password.
+        /// </summary>
+        public string Password { get; set; }
 
         #endregion
     }
@@ -151,6 +226,14 @@ namespace DMT.Services
         /// Gets or sets port number.
         /// </summary>
         public int PortNumber { get; set; }
+        /// <summary>
+        /// Gets or sets User Name.
+        /// </summary>
+        public string UserName { get; set; }
+        /// <summary>
+        /// Gets or sets Password.
+        /// </summary>
+        public string Password { get; set; }
 
         #endregion
     }
@@ -263,7 +346,9 @@ namespace DMT.Services
             {
                 Protocol = "http",
                 HostName = "localhost",
-                PortNumber = 9000
+                PortNumber = 9000,
+                UserName = "DMTUSER",
+                Password = "DMTPASS"
             };
         }
 
@@ -325,7 +410,9 @@ namespace DMT.Services
             {
                 Protocol = "http",
                 HostName = "localhost",
-                PortNumber = 3000
+                PortNumber = 3000,
+                UserName = "DMTUSER",
+                Password = "DMTPASS"
             };
         }
 
@@ -387,7 +474,9 @@ namespace DMT.Services
             {
                 Protocol = "http",
                 HostName = "172.30.192.9",
-                PortNumber = 8110
+                PortNumber = 8110,
+                UserName = "DMTUSER",
+                Password = "DMTPASS"
             };
         }
 
@@ -448,7 +537,9 @@ namespace DMT.Services
             this.Service = new LocalHostWebServiceConfig()
             {
                 Protocol = "http",
-                PortNumber = 9001
+                PortNumber = 9001,
+                UserName = "DMTUSER",
+                Password = "DMTPASS"
             };
         }
 
@@ -509,7 +600,9 @@ namespace DMT.Services
             this.Service = new LocalHostWebServiceConfig()
             {
                 Protocol = "http",
-                PortNumber = 9002
+                PortNumber = 9002,
+                UserName = "DMTUSER",
+                Password = "DMTPASS"
             };
         }
 
@@ -567,6 +660,7 @@ namespace DMT.Services
         /// </summary>
         public PlazaConfig() : base()
         {
+            this.DMT = new DMTConfig();
             this.Local = new LocalWebServiceConfig();
             this.TAxTOD = new TAxTODWebServiceConfig();
             this.SCW = new SCWWebServiceConfig();
@@ -596,6 +690,17 @@ namespace DMT.Services
         public string GetString()
         {
             string code = string.Empty;
+            // Application
+            if (null == this.DMT)
+            {
+                code += "DMT: null" + Environment.NewLine;
+            }
+            else
+            {
+                code += string.Format("DMT: {0}",
+                    this.DMT.GetString()) + Environment.NewLine;
+            }
+            // Local
             if (null == this.Local)
             {
                 code += "Local: null" + Environment.NewLine;
@@ -605,6 +710,7 @@ namespace DMT.Services
                 code += string.Format("Local: {0}", 
                     this.Local.GetString()) + Environment.NewLine;
             }
+            // TAxTOD server
             if (null == this.TAxTOD)
             {
                 code += "TAxTOD: null" + Environment.NewLine;
@@ -614,6 +720,7 @@ namespace DMT.Services
                 code += string.Format("TAxTOD: {0}", 
                     this.TAxTOD.GetString()) + Environment.NewLine;
             }
+            // SCW server
             if (null == this.SCW)
             {
                 code += "SCW: null" + Environment.NewLine;
@@ -623,6 +730,7 @@ namespace DMT.Services
                 code += string.Format("DC: {0}", 
                     this.SCW.GetString()) + Environment.NewLine;
             }
+            // RabbitMQ
             if (null == this.RabbitMQ)
             {
                 code += "RabbitMQ: null" + Environment.NewLine;
@@ -632,6 +740,7 @@ namespace DMT.Services
                 code += string.Format("RabbitMQ: {0}",
                     this.RabbitMQ.GetString()) + Environment.NewLine;
             }
+            // TA Application (Plaza)
             if (null == this.TAApp)
             {
                 code += "TAApp: null" + Environment.NewLine;
@@ -641,6 +750,7 @@ namespace DMT.Services
                 code += string.Format("TAApp: {0}",
                     this.TAApp.GetString()) + Environment.NewLine;
             }
+            // TOD Application (Plaza)
             if (null == this.TODApp)
             {
                 code += "TODApp: null" + Environment.NewLine;
@@ -652,11 +762,15 @@ namespace DMT.Services
             }
             return code;
         }
-        
+
         #endregion
 
         #region Public Properties
 
+        /// <summary>
+        /// Gets or sets DMT Config.
+        /// </summary>
+        public DMTConfig DMT { get; set; }
         /// <summary>
         /// Gets or sets Local Service Config.
         /// </summary>

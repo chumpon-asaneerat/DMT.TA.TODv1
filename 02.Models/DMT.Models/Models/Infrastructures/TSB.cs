@@ -41,8 +41,6 @@ namespace DMT.Models
 
 		private bool _Active = false;
 
-		private decimal _MaxCredit = decimal.Zero;
-
 		#endregion
 
 		#region Constructor
@@ -165,32 +163,6 @@ namespace DMT.Models
 				{
 					_Active = value;
 					this.RaiseChanged("Active");
-				}
-			}
-		}
-
-		#endregion
-
-		#region MaxCredit
-
-		/// <summary>
-		/// Gets or sets Max TSB Credit.
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets or sets Max TSB Credit.")]
-		[PropertyMapName("MaxCredit")]
-		public decimal MaxCredit
-		{
-			get
-			{
-				return _MaxCredit;
-			}
-			set
-			{
-				if (_MaxCredit != value)
-				{
-					_MaxCredit = value;
-					this.RaiseChanged("MaxCredit");
 				}
 			}
 		}

@@ -105,7 +105,6 @@ namespace DMT.Services
 
 		private void InitTables()
 		{
-			Db.CreateTable<Config>();
 			Db.CreateTable<ViewHistory>();
 			Db.CreateTable<UniqueCode>();
 
@@ -125,8 +124,6 @@ namespace DMT.Services
 			Db.CreateTable<Role>();
 			Db.CreateTable<User>();
 			//Db.CreateTable<LogInLog>();
-
-			//Db.CreateTable<Payment>();
 
 			Db.CreateTable<TSBShift>();
 			//Db.CreateTable<UserShift>();
@@ -159,8 +156,6 @@ namespace DMT.Services
 			InitTSBAndPlazaAndLanes();
 			InitShifts();
 			InitRoleAndUsers();
-			//InitPayments();
-			InitConfigs();
 		}
 
 		private void InitMCurrency()
@@ -2213,43 +2208,6 @@ namespace DMT.Services
 			if (!Role.Exists(item)) Role.Save(item);
 
 			#endregion
-		}
-		
-		private void InitConfigs()
-		{
-			if (null == Db) return;
-			Config item;
-			// for common used.
-			item = new Config() { Key = ConfigKeys.Common.network, Value = "4" };
-			if (!Config.Exists(item)) Config.Save(item);
-			item = new Config() { Key = ConfigKeys.Common.tsb, Value = "97" };
-			if (!Config.Exists(item)) Config.Save(item);
-			item = new Config() { Key = ConfigKeys.Common.terminal, Value = "49701" };
-			if (!Config.Exists(item)) Config.Save(item);
-
-			// for SCW
-			item = new Config() { Key = ConfigKeys.SCW.username, Value = "DMTUSER" };
-			if (!Config.Exists(item)) Config.Save(item);
-			item = new Config() { Key = ConfigKeys.SCW.password, Value = "DMTPASS" };
-			if (!Config.Exists(item)) Config.Save(item);
-
-			// for TAxTOD
-			item = new Config() { Key = ConfigKeys.TAxTOD.username, Value = "DMTUSER" };
-			if (!Config.Exists(item)) Config.Save(item);
-			item = new Config() { Key = ConfigKeys.TAxTOD.password, Value = "DMTPASS" };
-			if (!Config.Exists(item)) Config.Save(item);
-
-			// for TA App
-			item = new Config() { Key = ConfigKeys.TAApp.username, Value = "DMTUSER" };
-			if (!Config.Exists(item)) Config.Save(item);
-			item = new Config() { Key = ConfigKeys.TAApp.password, Value = "DMTPASS" };
-			if (!Config.Exists(item)) Config.Save(item);
-
-			// for TOD App
-			item = new Config() { Key = ConfigKeys.TODApp.username, Value = "DMTUSER" };
-			if (!Config.Exists(item)) Config.Save(item);
-			item = new Config() { Key = ConfigKeys.TODApp.password, Value = "DMTPASS" };
-			if (!Config.Exists(item)) Config.Save(item);
 		}
 
 		private void InitViews()
