@@ -33,22 +33,29 @@ namespace DMT.Services
 
         #endregion
 
-        #region Private Methods
-
-        private void MapRoute(HttpConfiguration config, string controllerName, string actionName, string actionUrl)
+        internal static class MapControllers
         {
-            if (null == config ||
-                string.IsNullOrWhiteSpace(controllerName) ||
-                string.IsNullOrWhiteSpace(actionName) ||
-                string.IsNullOrWhiteSpace(actionUrl)) return;
+            internal static class Notify
+            {
+                internal static void MapRoutes(HttpConfiguration config)
+                {
+                    string controllerName, actionName, actionUrl;
 
-            config.Routes.MapHttpRoute(
-                name: controllerName + "." + actionName,
-                routeTemplate: actionUrl,
-                defaults: new { controller = controllerName, action = actionName });
+                    // Set Controller Name.
+                    controllerName = RouteConsts.Notify.ControllerName;
+
+                    // TSB Changed
+                    actionName = RouteConsts.Notify.TSBChanged.Name;
+                    actionUrl = RouteConsts.Notify.TSBChanged.Url;
+                    Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                    // Shift Changed
+                    actionName = RouteConsts.Notify.ShiftChanged.Name;
+                    actionUrl = RouteConsts.Notify.ShiftChanged.Url;
+                    Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+                }
+            }
         }
-
-        #endregion
 
         #region Override Methods
 
@@ -59,24 +66,9 @@ namespace DMT.Services
         protected override void InitMapRoutes(HttpConfiguration config)
         {
             // Handle route by specificed controller (Route Order is important).
-            string controllerName, actionName, actionUrl;
 
-            #region Notify Controller
-
-            // Set Controller Name.
-            controllerName = RouteConsts.Notify.ControllerName;
-
-            // TSB Changed
-            actionName = RouteConsts.Notify.TSBChanged.Name;
-            actionUrl = RouteConsts.Notify.TSBChanged.Url;
-            MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
-
-            // Shift Changed
-            actionName = RouteConsts.Notify.ShiftChanged.Name;
-            actionUrl = RouteConsts.Notify.ShiftChanged.Url;
-            MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
-
-            #endregion
+            // Notify
+            MapControllers.Notify.MapRoutes(config);
 
             #region Default Route (do not used)
 

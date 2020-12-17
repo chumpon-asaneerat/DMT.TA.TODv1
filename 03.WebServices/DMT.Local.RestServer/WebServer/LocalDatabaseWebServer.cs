@@ -33,22 +33,92 @@ namespace DMT.Services
 
         #endregion
 
-        #region Private Methods
-
-        private void MapRoute(HttpConfiguration config, string controllerName, string actionName, string actionUrl)
+        internal static class MapControllers
         {
-            if (null == config ||
-                string.IsNullOrWhiteSpace(controllerName) ||
-                string.IsNullOrWhiteSpace(actionName) ||
-                string.IsNullOrWhiteSpace(actionUrl)) return;
+            internal static class Client
+            {
+                internal static void MapRoutes(HttpConfiguration config) 
+                {
+                    string controllerName, actionName, actionUrl;
 
-            config.Routes.MapHttpRoute(
-                name: controllerName + "." + actionName,
-                routeTemplate: actionUrl,
-                defaults: new { controller = controllerName, action = actionName });
+                    // Set Controller Name.
+                    controllerName = RouteConsts.Client.ControllerName;
+
+                    // Register
+                    actionName = RouteConsts.Client.Register.Name;
+                    actionUrl = RouteConsts.Client.Register.Url;
+                    Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                    // Unregister
+                    actionName = RouteConsts.Client.Unregister.Name;
+                    actionUrl = RouteConsts.Client.Unregister.Url;
+                    Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+                }
+            }
+            internal static class Infrastructure 
+            {
+                internal static class TSB 
+                {
+                    internal static void MapRoutes(HttpConfiguration config)
+                    {
+                        string controllerName, actionName, actionUrl;
+
+                        // Set Controller Name.
+                        controllerName = RouteConsts.Infrastructure.TSB.ControllerName;
+
+                        // Gets
+                        actionName = RouteConsts.Infrastructure.TSB.Gets.Name;
+                        actionUrl = RouteConsts.Infrastructure.TSB.Gets.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+                    }
+                }
+                internal static class PlazaGroup 
+                {
+                    internal static void MapRoutes(HttpConfiguration config)
+                    {
+                        string controllerName, actionName, actionUrl;
+
+                        // Set Controller Name.
+                        controllerName = RouteConsts.Infrastructure.PlazaGroup.ControllerName;
+
+                        // Gets
+                        actionName = RouteConsts.Infrastructure.PlazaGroup.Gets.Name;
+                        actionUrl = RouteConsts.Infrastructure.PlazaGroup.Gets.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+                    }
+                }
+                internal static class Plaza 
+                {
+                    internal static void MapRoutes(HttpConfiguration config)
+                    {
+                        string controllerName, actionName, actionUrl;
+
+                        // Set Controller Name.
+                        controllerName = RouteConsts.Infrastructure.Plaza.ControllerName;
+
+                        // Gets
+                        actionName = RouteConsts.Infrastructure.Plaza.Gets.Name;
+                        actionUrl = RouteConsts.Infrastructure.Plaza.Gets.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+                    }
+                }
+                internal static class Lane 
+                {
+                    internal static void MapRoutes(HttpConfiguration config)
+                    {
+                        string controllerName, actionName, actionUrl;
+
+                        // Set Controller Name.
+                        controllerName = RouteConsts.Infrastructure.Lane.ControllerName;
+
+                        // Gets
+                        actionName = RouteConsts.Infrastructure.Lane.Gets.Name;
+                        actionUrl = RouteConsts.Infrastructure.Lane.Gets.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+                    }
+                }
+            }
         }
-
-        #endregion
 
         #region Override Methods
 
@@ -59,24 +129,14 @@ namespace DMT.Services
         protected override void InitMapRoutes(HttpConfiguration config)
         {
             // Handle route by specificed controller (Route Order is important).
-            string controllerName, actionName, actionUrl;
 
-            #region Client Controller
-
-            // Set Controller Name.
-            controllerName = RouteConsts.Client.ControllerName;
-
-            // Register
-            actionName = RouteConsts.Client.Register.Name;
-            actionUrl = RouteConsts.Client.Register.Url;
-            MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
-
-            // Unregister
-            actionName = RouteConsts.Client.Unregister.Name;
-            actionUrl = RouteConsts.Client.Unregister.Url;
-            MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
-
-            #endregion
+            // Client
+            MapControllers.Client.MapRoutes(config);
+            // Infrastructure (TSB/PlazaGroup/Plaza/Lane)
+            MapControllers.Infrastructure.TSB.MapRoutes(config);
+            MapControllers.Infrastructure.PlazaGroup.MapRoutes(config);
+            MapControllers.Infrastructure.Plaza.MapRoutes(config);
+            MapControllers.Infrastructure.Lane.MapRoutes(config);
 
             #region Default Route (do not used)
 

@@ -393,6 +393,36 @@ namespace DMT.Services
         #endregion
 
         #endregion
+
+        #region Static Helper class
+
+        /// <summary>
+        /// The route helper class.
+        /// </summary>
+        public static class Helper
+        {
+            /// <summary>
+            /// Map Route.
+            /// </summary>
+            /// <param name="config">The HttpConfiguration instance.</param>
+            /// <param name="controllerName">The controller class name (without Controller suffix).</param>
+            /// <param name="actionName">The action name.</param>
+            /// <param name="actionUrl">The action url.</param>
+            public static void MapRoute(HttpConfiguration config, string controllerName, string actionName, string actionUrl)
+            {
+                if (null == config ||
+                    string.IsNullOrWhiteSpace(controllerName) ||
+                    string.IsNullOrWhiteSpace(actionName) ||
+                    string.IsNullOrWhiteSpace(actionUrl)) return;
+
+                config.Routes.MapHttpRoute(
+                    name: controllerName + "." + actionName,
+                    routeTemplate: actionUrl,
+                    defaults: new { controller = controllerName, action = actionName });
+            }
+        }
+
+        #endregion
     }
 
     #endregion
