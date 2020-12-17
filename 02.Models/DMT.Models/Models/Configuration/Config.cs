@@ -20,6 +20,63 @@ using Newtonsoft.Json.Bson;
 
 namespace DMT.Models
 {
+	#region Configs(key) constants
+
+	/// <summary>
+	/// The Config key constants.
+	/// </summary>
+	public static class ConfigKeys
+	{
+		/// <summary>
+		/// Common Config key constants.
+		/// </summary>
+		public static class Common
+		{
+			// for common used
+			public static string network = "network";
+			public static string tsb = "tsb";
+			public static string terminal = "terminal";
+		}
+		/// <summary>
+		/// SCW Config key constants.
+		/// </summary>
+		public static class SCW
+		{
+			// for SCW Server
+			public static string username = "scw_username";
+			public static string password = "scw_password";
+		}
+		/// <summary>
+		/// TAxTOD Config key constants.
+		/// </summary>
+		public static class TAxTOD
+		{
+			// for TAxTOD Server
+			public static string username = "taxtod_username";
+			public static string password = "taxtod_password";
+		}
+		/// <summary>
+		/// TAApp Config key constants.
+		/// </summary>
+		public static class TAApp
+		{
+			// for TA app notify callback server
+			public static string username = "taapp_username";
+			public static string password = "taapp_password";
+		}
+		/// <summary>
+		/// TODApp Config key constants.
+		/// </summary>
+		public static class TODApp
+		{
+			// for TOD app notify callback server
+			public static string username = "todapp_username";
+			public static string password = "todapp_password";
+		}
+	}
+
+	#endregion
+
 	#region Config
 
 	/// <summary>

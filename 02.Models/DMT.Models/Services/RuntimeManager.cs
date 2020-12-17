@@ -71,7 +71,7 @@ namespace DMT.Services
         #endregion
 
         #region Public Properties
-
+        /*
         /// <summary>
         /// Gets or sets Network Id.
         /// </summary>
@@ -92,7 +92,7 @@ namespace DMT.Services
 
         public string TODAppUserName { get; set; }
         public string TODAppPassword { get; set; }
-
+        */
         #endregion
 
         #region Public Events
