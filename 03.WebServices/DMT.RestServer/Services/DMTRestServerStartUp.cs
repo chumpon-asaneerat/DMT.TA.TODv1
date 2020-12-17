@@ -1,6 +1,7 @@
 ﻿#region Using
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using NLib;
@@ -154,6 +155,9 @@ namespace DMT.Services
 
             if (isAuthorized && !allowAnonymous)
             {
+                // in some case operation.parameters is null so create new list.
+                if (null == operation.parameters) operation.parameters = new List<Parameter>();
+
                 operation.parameters.Add(new Parameter
                 {
                     name = "Authorization",
