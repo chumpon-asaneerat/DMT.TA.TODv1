@@ -27,12 +27,15 @@
 Ported DMTv2 to DMT.TAxTODv1 #280
 - 
 
+[commited]
 Ported DMTv2 to DMT.TAxTODv1 #279
-- 
+- DMT.TAxTODv1 Rework #48
+  - DMT.Core project.
+    - Add LocalServiceManager.cs for install/uninstall/checkstatus of windows service.
 
 [commited]
 Ported DMTv2 to DMT.TAxTODv1 #278
-- DMT.TAxTODv1 Rework #45
+- DMT.TAxTODv1 Rework #47
   - DMT.RestClient project.
     - Rework for refactor Rest api classes and operations #2.
       - Add Plaza.cs for Local Plaza Service access rest api operations.
