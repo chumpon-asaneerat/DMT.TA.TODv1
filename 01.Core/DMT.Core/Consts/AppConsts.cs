@@ -66,9 +66,9 @@ namespace DMT
                 public static DateTime LastUpdate = AppConsts.LastUpdate;
             }
 
-            public static class PlazaDataManagement
+            public static class PlazaWorkBench
             {
-                public static string ApplicationName = @"DMT TOD-TA Plaza Data Management";
+                public static string ApplicationName = @"DMT TOD-TA Plaza WorkBench";
                 // common
                 public static string Version = AppConsts.Version;
                 public static string Minor = AppConsts.Minor;

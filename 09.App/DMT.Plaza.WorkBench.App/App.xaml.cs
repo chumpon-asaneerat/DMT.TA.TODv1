@@ -46,12 +46,12 @@ namespace DMT
                     /*  This property is required */
                     CompanyName = "DMT",
                     /*  This property is required */
-                    ProductName = AppConsts.Application.PlazaDataManagement.ApplicationName,
+                    ProductName = AppConsts.Application.PlazaWorkBench.ApplicationName,
                     /* For Application Version */
-                    Version = AppConsts.Application.PlazaDataManagement.Version,
-                    Minor = AppConsts.Application.PlazaDataManagement.Minor,
-                    Build = AppConsts.Application.PlazaDataManagement.Build,
-                    LastUpdate = AppConsts.Application.PlazaDataManagement.LastUpdate
+                    Version = AppConsts.Application.PlazaWorkBench.Version,
+                    Minor = AppConsts.Application.PlazaWorkBench.Minor,
+                    Build = AppConsts.Application.PlazaWorkBench.Build,
+                    LastUpdate = AppConsts.Application.PlazaWorkBench.LastUpdate
                 },
                 /* Setup Storage */
                 Storage = new NAppStorage()
