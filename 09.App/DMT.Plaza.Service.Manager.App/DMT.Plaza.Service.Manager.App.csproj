@@ -39,6 +39,9 @@
   <PropertyGroup>
     <StartupObject>DMT.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -109,6 +112,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Images\running.ico" />
     <EmbeddedResource Include="Images\stop.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
