@@ -93,15 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <None Include="WebServer\Controllers\Original\CouponController.cs" />
-    <None Include="WebServer\Controllers\Original\CreditController.cs" />
-    <None Include="WebServer\Controllers\Original\ExchangeController.cs" />
-    <None Include="WebServer\Controllers\Original\LaneController.cs" />
-    <None Include="WebServer\Controllers\Original\MasterController.cs" />
-    <None Include="WebServer\Controllers\Original\RevenueController.cs" />
-    <None Include="WebServer\Controllers\Original\ShiftController.cs" />
-    <None Include="WebServer\Controllers\Original\TSBController.cs" />
-    <None Include="WebServer\Controllers\Original\UserController.cs" />
     <Compile Include="WebServer\Controllers\Client\ClientController.cs" />
     <Compile Include="WebServer\Controllers\Client\ClientController.Register.cs" />
     <Compile Include="WebServer\Controllers\Client\ClientController.Unregister.cs" />
