@@ -72,6 +72,7 @@ namespace DMT.Services
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                     }
                 }
+                
                 internal static class PlazaGroup 
                 {
                     internal static void MapRoutes(HttpConfiguration config)
@@ -87,6 +88,7 @@ namespace DMT.Services
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                     }
                 }
+
                 internal static class Plaza 
                 {
                     internal static void MapRoutes(HttpConfiguration config)

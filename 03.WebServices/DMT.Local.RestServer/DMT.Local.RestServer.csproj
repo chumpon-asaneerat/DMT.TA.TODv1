@@ -97,6 +97,9 @@
     <Compile Include="WebServer\Controllers\Client\Actions\Register.cs" />
     <Compile Include="WebServer\Controllers\Client\Actions\Unregister.cs" />
     <Compile Include="WebServer\Controllers\Infrastructure\Actions\Lane\Gets.cs" />
+    <Compile Include="WebServer\Controllers\Infrastructure\Actions\PlazaGroup\Gets.cs" />
+    <Compile Include="WebServer\Controllers\Infrastructure\Actions\Plaza\Gets.cs" />
+    <Compile Include="WebServer\Controllers\Infrastructure\Actions\TSB\Gets.cs" />
     <Compile Include="WebServer\Controllers\Infrastructure\Infrastructure.Controller.cs" />
     <Compile Include="WebServer\LocalDatabaseWebServer.cs" />
   </ItemGroup>
@@ -129,10 +132,6 @@
       <Name>DMT.RestServer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="WebServer\Controllers\Infrastructure\Actions\PlazaGroup\" />
-    <Folder Include="WebServer\Controllers\Infrastructure\Actions\Plaza\" />
-    <Folder Include="WebServer\Controllers\Infrastructure\Actions\TSB\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
