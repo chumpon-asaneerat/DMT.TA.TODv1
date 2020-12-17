@@ -24,20 +24,28 @@ namespace DMT.Services
         public static partial class TAApp { }
         public static partial class TODApp { }
     }
+}
 
+namespace DMT.Services
+{ 
     static partial class RestAPI
     {
-        static partial class Plaza 
+        static partial class Plaza
         {
             public static void Omega() { }
         }
     }
+}
+
+namespace DMT.Services
+{
+    using ops = RestAPI.Plaza; // reference to static class.
 
     public class XXX
     {
         public void Test()
         {
-            RestAPI.Plaza.Omega();
+            ops.Omega();
         }
     }
 }
