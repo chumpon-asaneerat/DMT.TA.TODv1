@@ -150,6 +150,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Images\" />
     <Folder Include="UI\Controls\" />
     <Folder Include="UI\Windows\" />
   </ItemGroup>

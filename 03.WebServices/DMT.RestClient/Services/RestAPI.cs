@@ -1,18 +1,10 @@
 ﻿#region Usings
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-
-using RestSharp;
-using NLib.ServiceProcess;
-
 using DMT.Models;
-using System.Runtime.InteropServices;
-using System.Security.Permissions;
 
 #endregion
+
 
 namespace DMT.Services
 {
