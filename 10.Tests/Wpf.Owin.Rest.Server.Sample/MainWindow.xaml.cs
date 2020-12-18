@@ -590,6 +590,7 @@ namespace Wpf.Owin.Rest.Server.Sample
     #endregion
 
     // Auth: Basic RE1UVVNFUjpETVRQQVNTMg==
+    // See swagger doc in url: http://localhost:8000/swagger
 
     public class StartUp : DMTRestServerStartUp
     {
@@ -759,7 +760,9 @@ namespace Wpf.Owin.Rest.Server.Sample
         public static class Calculator
         {
             // Match MapHttpRoute in Startup class.
-            public const string ControllerName = "Calculator2";
+            // Trick for export controller we can create new class that inherited from 
+            // the nested controller class for map to route.
+            public const string ControllerName = "CalculatorX";
             public const string Url = RouteConsts2.Url + @"/Calc2";
 
             public static class Add
@@ -776,33 +779,40 @@ namespace Wpf.Owin.Rest.Server.Sample
         }
     }
 
-    [Authorize] // Authorize Attribute can set here or set in each method(s).
-    public partial class Calculator2Controller : ApiController { }
 
-    partial class Calculator2Controller
+    public class NestedControllers
     {
-        [AllowAnonymous]
-        [HttpPost]
-        [ActionName(RouteConsts2.Calculator.Add.Name)]
-        public CalcResult addMe([FromBody] CalcRequest value)
+        [Authorize] // Authorize Attribute can set here or set in each method(s).
+        public partial class Calculator2Controller : ApiController { }
+
+        partial class Calculator2Controller
         {
-            if (null == value)
-                return new CalcResult() { Result = 0 };
-            else return new CalcResult() { Result = value.Num1 + value.Num2 };
+            [AllowAnonymous]
+            [HttpPost]
+            [ActionName(RouteConsts2.Calculator.Add.Name)]
+            public CalcResult addMe([FromBody] CalcRequest value)
+            {
+                if (null == value)
+                    return new CalcResult() { Result = 0 };
+                else return new CalcResult() { Result = value.Num1 + value.Num2 };
+            }
+        }
+
+        partial class Calculator2Controller
+        {
+            [HttpPost]
+            [ActionName(RouteConsts2.Calculator.Sub.Name)]
+            public CalcResult subMe([FromBody] CalcRequest value)
+            {
+                if (null == value)
+                    return new CalcResult() { Result = 0 };
+                else return new CalcResult() { Result = value.Num1 - value.Num2 };
+            }
         }
     }
 
-    partial class Calculator2Controller
-    {
-        [HttpPost]
-        [ActionName(RouteConsts2.Calculator.Sub.Name)]
-        public CalcResult subMe([FromBody] CalcRequest value)
-        {
-            if (null == value)
-                return new CalcResult() { Result = 0 };
-            else return new CalcResult() { Result = value.Num1 - value.Num2 };
-        }
-    }
+    // The Export Controller class.
+    public class CalculatorXController : NestedControllers.Calculator2Controller { }
 
     #endregion
 }
