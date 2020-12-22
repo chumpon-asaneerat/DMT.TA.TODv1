@@ -139,9 +139,9 @@
       <Project>{26ba4314-6b80-4a59-9e0d-7c29919bbc6f}</Project>
       <Name>DMT.RestClient</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\03.WebServices\DMT.TA.RestServer\DMT.TA.RestServer.csproj">
+    <ProjectReference Include="..\..\03.WebServices\DMT.TA.Rest.Server\DMT.TA.Rest.Server.csproj">
       <Project>{d571ea41-a05b-4c3c-8738-d6dd706c6a51}</Project>
-      <Name>DMT.TA.RestServer</Name>
+      <Name>DMT.TA.Rest.Server</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\05.Controls\DMT.Controls\DMT.Controls.csproj">
       <Project>{aeed7b1c-4e56-4d44-bbd1-a936be653d4d}</Project>
