@@ -15,7 +15,9 @@ namespace DMT.Services
 {
     #region Plaza Config and related classes
 
-    #region ApplicationConfig
+    #region Each config class
+
+    #region ApplicationConfig (Common DMT Consts Information)
 
     /// <summary>
     /// The DMT Config class.
@@ -82,7 +84,7 @@ namespace DMT.Services
 
     #endregion
 
-    #region LocalHostWebServiceConfig
+    #region LocalHostWebServiceConfig (???)
 
     /// <summary>
     /// The LocalHostWebServiceConfig class.
@@ -165,7 +167,7 @@ namespace DMT.Services
 
     #endregion
 
-    #region WebServiceConfig
+    #region WebServiceConfig (Common Web Service Config)
 
     /// <summary>
     /// The WebServiceConfig class.
@@ -240,7 +242,7 @@ namespace DMT.Services
 
     #endregion
 
-    #region RabbitMQServiceConfig
+    #region RabbitMQServiceConfig (For RabbitMQ Client)
 
     /// <summary>
     /// The RabbitMQServiceConfig class.
@@ -327,7 +329,7 @@ namespace DMT.Services
 
     #endregion
 
-    #region LocalWebServiceConfig
+    #region LocalWebServiceConfig (For Local Plaza Web Service)
 
     /// <summary>
     /// The LocalWebServiceConfig class.
@@ -391,7 +393,7 @@ namespace DMT.Services
 
     #endregion
 
-    #region TAxTODWebServiceConfig
+    #region TAxTODWebServiceConfig (For TAxTOD Web Service)
 
     /// <summary>
     /// The TAxTODWebServiceConfig class.
@@ -455,7 +457,7 @@ namespace DMT.Services
 
     #endregion
 
-    #region SCWWebServiceConfig
+    #region SCWWebServiceConfig (For SCW Web Service)
 
     /// <summary>
     /// The SCWWebServiceConfig class.
@@ -519,7 +521,7 @@ namespace DMT.Services
 
     #endregion
 
-    #region TAAppConfig
+    #region TAAppConfig (For TA App Web Service)
 
     /// <summary>
     /// The TAAppConfig class.
@@ -582,7 +584,7 @@ namespace DMT.Services
 
     #endregion
 
-    #region TODAppConfig
+    #region TODAppConfig (For TOD App Web Service)
 
     /// <summary>
     /// The TAAppConfig class.
@@ -645,7 +647,9 @@ namespace DMT.Services
 
     #endregion
 
-    #region PlazaConfig
+    #endregion
+
+    #region PlazaConfig (Combine configuration)
 
     /// <summary>
     /// The PlazaConfig class.
