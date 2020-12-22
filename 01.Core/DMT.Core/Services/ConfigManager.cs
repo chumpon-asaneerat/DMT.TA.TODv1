@@ -84,89 +84,6 @@ namespace DMT.Services
 
     #endregion
 
-    #region LocalHostWebServiceConfig (???)
-
-    /// <summary>
-    /// The LocalHostWebServiceConfig class.
-    /// </summary>
-    [JsonObject(MemberSerialization.OptOut)]
-    public class LocalHostWebServiceConfig
-    {
-        #region Constructor
-
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        public LocalHostWebServiceConfig()
-        {
-            this.Protocol = "http";
-            this.PortNumber = 9001;
-        }
-
-        #endregion
-
-        #region Public Methods
-
-        /// <summary>
-        /// IsEquals.
-        /// </summary>
-        /// <param name="obj"></param>
-        /// <returns></returns>
-        public bool IsEquals(object obj)
-        {
-            if (null == obj || !(obj is LocalHostWebServiceConfig)) return false;
-            return this.GetString() == (obj as LocalHostWebServiceConfig).GetString();
-        }
-        /// <summary>
-        /// GetString.
-        /// </summary>
-        /// <returns></returns>
-        public string GetString()
-        {
-            string code = string.Format("{0}://{1}:{2}",
-                this.Protocol, this.HostName, this.PortNumber);
-            return code;
-        }
-
-        #endregion
-
-        #region Public Properties
-
-        /// <summary>
-        /// Gets or sets protocol.
-        /// </summary>
-        public string Protocol { get; set; }
-        /// <summary>
-        /// Gets or sets Host Name or IP Address.
-        /// </summary>
-        [JsonIgnore]
-        public string HostName 
-        {
-            get 
-            {
-                var ip = NLib.Utils.NetworkUtils.GetLocalIPAddress();
-                return (null != ip) ? ip.ToString() : "0.0.0.0";
-            }
-            set { }
-        }
-        /// <summary>
-        /// Gets or sets port number.
-        /// </summary>
-        public int PortNumber { get; set; }
-        /// <summary>
-        /// Gets or sets User Name.
-        /// </summary>
-        public string UserName { get; set; }
-        /// <summary>
-        /// Gets or sets Password.
-        /// </summary>
-        public string Password { get; set; }
-
-        #endregion
-    }
-
-    #endregion
-
     #region WebServiceConfig (Common Web Service Config)
 
     /// <summary>
@@ -521,24 +438,25 @@ namespace DMT.Services
 
     #endregion
 
-    #region TAAppConfig (For TA App Web Service)
+    #region TAAppWebServiceConfig (For TA App Web Service)
 
     /// <summary>
-    /// The TAAppConfig class.
+    /// The TAAppWebServiceConfig class.
     /// </summary>
     [JsonObject(MemberSerialization.OptOut)]
-    public class TAAppConfig
+    public class TAAppWebServiceConfig
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public TAAppConfig()
+        public TAAppWebServiceConfig()
         {
-            this.Service = new LocalHostWebServiceConfig()
+            this.Service = new WebServiceConfig()
             {
                 Protocol = "http",
+                HostName = "localhost",
                 PortNumber = 9001,
                 UserName = "DMTUSER",
                 Password = "DMTPASS"
@@ -556,8 +474,8 @@ namespace DMT.Services
         /// <returns></returns>
         public bool IsEquals(object obj)
         {
-            if (null == obj || !(obj is TAAppConfig)) return false;
-            return this.GetString() == (obj as TAAppConfig).GetString();
+            if (null == obj || !(obj is TAAppWebServiceConfig)) return false;
+            return this.GetString() == (obj as TAAppWebServiceConfig).GetString();
         }
         /// <summary>
         /// GetString.
@@ -577,31 +495,32 @@ namespace DMT.Services
         /// <summary>
         /// Gets or sets Http service.
         /// </summary>
-        public LocalHostWebServiceConfig Service { get; set; }
+        public WebServiceConfig Service { get; set; }
 
         #endregion
     }
 
     #endregion
 
-    #region TODAppConfig (For TOD App Web Service)
+    #region TODAppWebServiceConfig (For TOD App Web Service)
 
     /// <summary>
-    /// The TAAppConfig class.
+    /// The TODAppWebServiceConfig class.
     /// </summary>
     [JsonObject(MemberSerialization.OptOut)]
-    public class TODAppConfig
+    public class TODAppWebServiceConfig
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public TODAppConfig()
+        public TODAppWebServiceConfig()
         {
-            this.Service = new LocalHostWebServiceConfig()
+            this.Service = new WebServiceConfig()
             {
                 Protocol = "http",
+                HostName = "localhost",
                 PortNumber = 9002,
                 UserName = "DMTUSER",
                 Password = "DMTPASS"
@@ -619,8 +538,8 @@ namespace DMT.Services
         /// <returns></returns>
         public bool IsEquals(object obj)
         {
-            if (null == obj || !(obj is TODAppConfig)) return false;
-            return this.GetString() == (obj as TODAppConfig).GetString();
+            if (null == obj || !(obj is TODAppWebServiceConfig)) return false;
+            return this.GetString() == (obj as TODAppWebServiceConfig).GetString();
         }
         /// <summary>
         /// GetString.
@@ -640,7 +559,7 @@ namespace DMT.Services
         /// <summary>
         /// Gets or sets Http service.
         /// </summary>
-        public LocalHostWebServiceConfig Service { get; set; }
+        public WebServiceConfig Service { get; set; }
 
         #endregion
     }
@@ -669,8 +588,8 @@ namespace DMT.Services
             this.TAxTOD = new TAxTODWebServiceConfig();
             this.SCW = new SCWWebServiceConfig();
             this.RabbitMQ = new RabbitMQServiceConfig();
-            this.TAApp = new TAAppConfig();
-            this.TODApp = new TODAppConfig();
+            this.TAApp = new TAAppWebServiceConfig();
+            this.TODApp = new TODAppWebServiceConfig();
         }
 
         #endregion
@@ -794,13 +713,92 @@ namespace DMT.Services
         /// <summary>
         /// Gets or sets TA App Service Config (for notify).
         /// </summary>
-        public TAAppConfig TAApp { get; set; }
+        public TAAppWebServiceConfig TAApp { get; set; }
         /// <summary>
         /// Gets or sets TOD App Service Config (for notify).
         /// </summary>
-        public TODAppConfig TODApp { get; set; }
+        public TODAppWebServiceConfig TODApp { get; set; }
 
         #endregion
+    }
+
+    #endregion
+
+    #endregion
+
+    #region Plaza Config and related interfaces
+
+    #region RabbitMQConfig Interface
+
+    /// <summary>
+    /// The IRabbitMQConfig inferface.
+    /// </summary>
+    public interface IRabbitMQConfig
+    {
+        /// <summary>
+        /// Gets RabbitMQ Config.
+        /// </summary>
+        RabbitMQServiceConfig RabbitMQ { get; }
+    }
+
+    #endregion
+
+    #region ISCWConfig Interface
+
+    /// <summary>
+    /// The ISCWConfig inferface.
+    /// </summary>
+    public interface ISCWConfig
+    {
+        /// <summary>
+        /// Gets SCW Config.
+        /// </summary>
+        SCWWebServiceConfig SCW { get; }
+    }
+
+    #endregion
+
+    #region ITAxTODConfig Interface
+
+    /// <summary>
+    /// The ITAxTODConfig inferface.
+    /// </summary>
+    public interface ITAxTODConfig
+    {
+        /// <summary>
+        /// Gets TAxTOD Config.
+        /// </summary>
+        TAxTODWebServiceConfig TAxTOD { get; }
+    }
+
+    #endregion
+
+    #region ITAAppWebServiceConfig Interface
+
+    /// <summary>
+    /// The ITAAppWebServiceConfig inferface.
+    /// </summary>
+    public interface ITAAppWebServiceConfig
+    {
+        /// <summary>
+        /// Gets TAApp Config.
+        /// </summary>
+        TAAppWebServiceConfig TAApp { get; }
+    }
+
+    #endregion
+
+    #region ITODAppWebServiceConfig Interface
+
+    /// <summary>
+    /// The ITODAppWebServiceConfig inferface.
+    /// </summary>
+    public interface ITODAppWebServiceConfig
+    {
+        /// <summary>
+        /// Gets TODApp Config.
+        /// </summary>
+        TODAppWebServiceConfig TODApp { get; }
     }
 
     #endregion
