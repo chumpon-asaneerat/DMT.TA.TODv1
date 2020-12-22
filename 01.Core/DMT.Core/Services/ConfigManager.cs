@@ -807,6 +807,151 @@ namespace DMT.Services
 
     #endregion
 
+    #region JsonConfigFileManger (abstract)
+
+    /// <summary>
+    /// The JsonConfigFileManger abstract class.
+    /// </summary>
+    /// <typeparam name="T">The Config Class Type.</typeparam>
+    public abstract class JsonConfigFileManger<T>
+        where T : new()
+    {
+        #region Internal Variables
+
+        private T _cfg = new T();
+
+        #endregion
+
+        #region Constructor and Destructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public JsonConfigFileManger() : base()
+        {
+        }
+        /// <summary>
+        /// Destructor.
+        /// </summary>
+        ~JsonConfigFileManger()
+        {
+        }
+
+        #endregion
+
+        #region Protected Methods
+
+        /// <summary>
+        /// Gets Config File Name.
+        /// </summary>
+        public abstract string FileName { get; }
+        /// <summary>
+        /// Raise Config Changed Event.
+        /// </summary>
+        protected void RaiseConfigChanged()
+        {
+            // Raise event.
+            ConfigChanged.Call(this, EventArgs.Empty);
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Load Config from file.
+        /// </summary>
+        public virtual void LoadConfig()
+        {
+            lock (this)
+            {
+                MethodBase med = MethodBase.GetCurrentMethod();
+                try
+                {
+                    // save back to file.
+                    if (!NJson.ConfigExists(FileName))
+                    {
+                        // File not exist.
+                        if (null == _cfg)
+                        {
+                            _cfg = new T();
+                        }
+                        NJson.SaveToFile(_cfg, FileName);
+                    }
+                    else
+                    {
+                        // Check file size.
+                        long len = new FileInfo(FileName).Length;
+                        if (len <= 0)
+                        {
+                            // File size is zero.
+                            if (null == _cfg)
+                            {
+                                _cfg = new T();
+                            }
+                            NJson.SaveToFile(_cfg, FileName);
+                        }
+                        else
+                        {
+                            _cfg = NJson.LoadFromFile<T>(FileName);
+                        }
+                    }
+                    // Raise event.
+                    RaiseConfigChanged();
+                }
+                catch (Exception ex)
+                {
+                    med.Err(ex);
+                }
+            }
+        }
+        /// <summary>
+        /// Save Config to file.
+        /// </summary>
+        public virtual void SaveConfig()
+        {
+            lock (this)
+            {
+                MethodBase med = MethodBase.GetCurrentMethod();
+                try
+                {
+                    // save back to file.
+                    if (null == _cfg)
+                    {
+                        _cfg = new T();
+                    }
+                    NJson.SaveToFile(_cfg, FileName);
+                }
+                catch (Exception ex)
+                {
+                    med.Err(ex);
+                }
+            }
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets current config.
+        /// </summary>
+        public T Value { get { return _cfg; } set { } }
+
+        #endregion
+
+        #region Public Events
+
+        /// <summary>
+        /// The ConfigChanged Event Handler.
+        /// </summary>
+        public event EventHandler ConfigChanged;
+
+        #endregion
+    }
+
+    #endregion
+
     #region ConfigManager
 
     /// <summary>
