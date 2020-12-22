@@ -32,19 +32,19 @@ namespace DMT.Services
 
     // hack for exports nested class to controller(s)
     /// <summary>
-    /// The Infrastructure's TSB Controller class.
+    /// The Infrastructure's TSB Manage Controller class.
     /// </summary>
-    public class InfrastructureTSBController : Infrastructure.TSBController { }
+    public class TSBManageController : Infrastructure.TSBController { }
     /// <summary>
-    /// The Infrastructure's PlazaGroup Controller class.
+    /// The Infrastructure's PlazaGroup Manage Controller class.
     /// </summary>
-    public class InfrastructurePlazaGroupController : Infrastructure.PlazaGroupController { }
+    public class PlazaGroupManageController : Infrastructure.PlazaGroupController { }
     /// <summary>
-    /// The Infrastructure's Plaza Controller class.
+    /// The Infrastructure's Plaza Manage Controller class.
     /// </summary>
-    public class InfrastructurePlazaController : Infrastructure.PlazaController { }
+    public class PlazaManageController : Infrastructure.PlazaController { }
     /// <summary>
-    /// The Infrastructure's Lane Controller class.
+    /// The Infrastructure's Lane Manage Controller class.
     /// </summary>
-    public class InfrastructureLaneController : Infrastructure.LaneController { }
+    public class LaneManageController : Infrastructure.LaneController { }
 }
