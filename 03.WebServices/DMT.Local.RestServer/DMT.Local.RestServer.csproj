@@ -123,13 +123,13 @@
       <Project>{37616cb2-8712-4767-b165-76f046cfc68b}</Project>
       <Name>DMT.RabbitMQ.Client</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DMT.Rest.Server\DMT.Rest.Server.csproj">
+      <Project>{53f967f3-9713-43da-94f5-687ddec8cf04}</Project>
+      <Name>DMT.Rest.Server</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DMT.RestClient\DMT.RestClient.csproj">
       <Project>{26ba4314-6b80-4a59-9e0d-7c29919bbc6f}</Project>
       <Name>DMT.RestClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DMT.RestServer\DMT.RestServer.csproj">
-      <Project>{53f967f3-9713-43da-94f5-687ddec8cf04}</Project>
-      <Name>DMT.RestServer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />
