@@ -103,9 +103,9 @@
       <Project>{6eb3bcea-b7d7-4c5d-812e-e3aab7292aa0}</Project>
       <Name>DMT.Local.RestServer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\03.WebServices\DMT.RestClient\DMT.RestClient.csproj">
+    <ProjectReference Include="..\..\03.WebServices\DMT.Rest.Client\DMT.Rest.Client.csproj">
       <Project>{26ba4314-6b80-4a59-9e0d-7c29919bbc6f}</Project>
-      <Name>DMT.RestClient</Name>
+      <Name>DMT.Rest.Client</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
