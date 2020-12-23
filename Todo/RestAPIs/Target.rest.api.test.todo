@@ -75,33 +75,37 @@ Operations:
             ☐ End (/Shift/Users/End) TESTED.
             ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose) TESTED.
     Infrastructure (/Infrastructure):
-        TSBs (/Infrastructure/TSBs):
-            ☐ GetTSBs (/Infrastructure/TSBs/Gets) TESTED.
-            ☐ GetCurrent (/Infrastructure/TSBs/Current) TESTED.
+        TSB (/Infrastructure/TSB):
+            ☐ Gets (/Infrastructure/TSB/Gets) TESTED.
+            ☐ Current (/Infrastructure/TSB/Current) TESTED.
             ☐ SetActive (/Infrastructure/TSB/SetActive) TESTED.
-            ☐ SaveTSB (/Infrastructure/TSBs/Save) TESTED.
-        PlazaGroups (/Infrastructure/PlazaGroups):
-            ☐ SavePlazaGroup (/Infrastructure/PlazaGroups/Save) TESTED.
-            Search (/Infrastructure/PlazaGroups/Search):
-                ☐ ByTSB (/Infrastructure/PlazaGroups/Search/TSB) TESTED.
-        Plazas (/TSB/Plazas):
-            ☐ SavePlaza (/Infrastructure/Plazas/Save) TESTED.
-            Search (/Infrastructure/Plazas/Search):
-                ☐ ByPlazaGroup (/Infrastructure/Plazas/Search/PlazaGroup) TESTED.
-        Lanes (/TSB/Lanes):
-            ☐ SaveLane (/Infrastructure/Lanes/Save) TESTED.
+            ☐ Save (/Infrastructure/TSB/Save) TESTED.
+        PlazaGroup (/Infrastructure/PlazaGroup):
+            ☐ Gets (/Infrastructure/PlazaGroup/Gets) TESTED.
+            ☐ Save (/Infrastructure/PlazaGroup/Save) TESTED.
+            Search (/Infrastructure/PlazaGroup/Search):
+                ☐ ByTSB (/Infrastructure/PlazaGroup/Search/ByTSB) TESTED.
+        Plaza (/TSB/Plaza):
+            ☐ Gets (/Infrastructure/Plaza/Gets) TESTED.
+            ☐ Save (/Infrastructure/Plaza/Save) TESTED.
+            Search (/Infrastructure/Plaza/Search):
+                ☐ ByTSB (/Infrastructure/Plaza/Search/ByTSB) refactored.
+                ☐ ByPlazaGroup (/Infrastructure/Plaza/Search/ByPlazaGroup) TESTED.
+        Lane (/TSB/Lane):
+            ☐ Gets (/Infrastructure/Lane/Gets) TESTED.
+            ☐ Save (/Infrastructure/Lane/Save) TESTED.
             Search (/TSB/Lanes/Search):
-                ☐ ByPlazaGroup (/Infrastructure/Lanes/Search/PlazaGroup) TESTED.
-                ☐ ByPlaza (/Infrastructure/Lanes/Search/Plaza) TESTED.
-    User (/User):
-        Role (/User/Roles):
-            ☐ GetRoles (/User/Roles/Gets) TESTED.
-            ☐ SaveRole (/User/Roles/Save) TESTED.
-        User (/User/Users):
-            ☐ GetUsers (/User/Users/Gets) TESTED.
-            ☐ SaveUser (/User/Users/Save) TESTED.
-            Search (/User/Users/Search):
-                ☐ SearchById (/User/Users/Search/Id) TESTED.
-                ☐ SearchByCardNo (/User/Users/Search/CardNo) TESTED.
-                ☐ SearchByLogIn (/User/Users/Search/LogIn) TESTED.
-                ☐ SearchByGroupId (/User/Users/Search/GroupId) TESTED.
+                ☐ ByPlazaGroup (/Infrastructure/Lane/Search/ByPlazaGroup) TESTED.
+                ☐ ByPlaza (/Infrastructure/Lane/Search/ByPlaza) TESTED.
+    User (/Security):
+        Role (/Security/Role):
+            ☐ Gets (/Security/Role/Gets) TESTED.
+            ☐ Save (/Security/Role/Save) TESTED.
+        User (/Security/User):
+            ☐ Gets (/Security/User/Gets) TESTED.
+            ☐ Save (/Security/User/Save) TESTED.
+            Search (/Security/User/Search):
+                ☐ ById (/Security/User/Search/ById) TESTED.
+                ☐ ByCardNo (/Security/User/Search/ByCardNo) TESTED.
+                ☐ ByLogIn (/Security/User/Search/ByLogIn) TESTED.
+                ☐ ByGroupId (/Security/User/Search/ByGroupId) TESTED.

@@ -35,6 +35,13 @@
                 public const string Name = "PlazaGroup";
                 /// <summary>Gets route url.</summary>
                 public const string Url = Infrastructure.Url + @"/" + Name;
+
+                /// <summary>The Seacch class.</summary>
+                public static partial class Search
+                {
+                    /// <summary>Gets route url.</summary>
+                    public const string Url = PlazaGroup.Url + @"/Search";
+                }
             }
 
             // Url : api/infrastructure/plaza
@@ -48,6 +55,13 @@
                 public const string Name = "Plaza";
                 /// <summary>Gets route url.</summary>
                 public const string Url = Infrastructure.Url + @"/" + Name;
+
+                /// <summary>The Seacch class.</summary>
+                public static partial class Search
+                {
+                    /// <summary>Gets route url.</summary>
+                    public const string Url = Plaza.Url + @"/Search";
+                }
             }
 
             // Url : api/infrastructure/lane
@@ -61,6 +75,13 @@
                 public const string Name = "Lane";
                 /// <summary>Gets route url.</summary>
                 public const string Url = Infrastructure.Url + @"/" + Name;
+
+                /// <summary>The Seacch class.</summary>
+                public static partial class Search
+                {
+                    /// <summary>Gets route url.</summary>
+                    public const string Url = Lane.Url + @"/Search";
+                }
             }
         }
     }

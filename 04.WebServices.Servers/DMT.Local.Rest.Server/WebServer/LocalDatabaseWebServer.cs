@@ -60,9 +60,20 @@ namespace DMT.Services
                         actionName = RouteConsts.Infrastructure.TSB.Gets.Name;
                         actionUrl = RouteConsts.Infrastructure.TSB.Gets.Url;
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
                         // Current
                         actionName = RouteConsts.Infrastructure.TSB.Current.Name;
                         actionUrl = RouteConsts.Infrastructure.TSB.Current.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // SetActive
+                        actionName = RouteConsts.Infrastructure.TSB.SetActive.Name;
+                        actionUrl = RouteConsts.Infrastructure.TSB.SetActive.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Save
+                        actionName = RouteConsts.Infrastructure.TSB.Save.Name;
+                        actionUrl = RouteConsts.Infrastructure.TSB.Save.Url;
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                     }
                 }
@@ -80,6 +91,16 @@ namespace DMT.Services
                         actionName = RouteConsts.Infrastructure.PlazaGroup.Gets.Name;
                         actionUrl = RouteConsts.Infrastructure.PlazaGroup.Gets.Url;
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Save
+                        actionName = RouteConsts.Infrastructure.PlazaGroup.Save.Name;
+                        actionUrl = RouteConsts.Infrastructure.PlazaGroup.Save.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Search ByTSB
+                        actionName = RouteConsts.Infrastructure.PlazaGroup.Search.ByTSB.Name;
+                        actionUrl = RouteConsts.Infrastructure.PlazaGroup.Search.ByTSB.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                     }
                 }
 
@@ -96,6 +117,21 @@ namespace DMT.Services
                         actionName = RouteConsts.Infrastructure.Plaza.Gets.Name;
                         actionUrl = RouteConsts.Infrastructure.Plaza.Gets.Url;
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Save
+                        actionName = RouteConsts.Infrastructure.Plaza.Save.Name;
+                        actionUrl = RouteConsts.Infrastructure.Plaza.Save.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Search ByTSB
+                        actionName = RouteConsts.Infrastructure.Plaza.Search.ByTSB.Name;
+                        actionUrl = RouteConsts.Infrastructure.Plaza.Search.ByTSB.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Search ByPlazaGroup
+                        actionName = RouteConsts.Infrastructure.Plaza.Search.ByPlazaGroup.Name;
+                        actionUrl = RouteConsts.Infrastructure.Plaza.Search.ByPlazaGroup.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                     }
                 }
 
@@ -111,6 +147,21 @@ namespace DMT.Services
                         // Gets
                         actionName = RouteConsts.Infrastructure.Lane.Gets.Name;
                         actionUrl = RouteConsts.Infrastructure.Lane.Gets.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Save
+                        actionName = RouteConsts.Infrastructure.Lane.Save.Name;
+                        actionUrl = RouteConsts.Infrastructure.Lane.Save.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Search ByPlazaGroup
+                        actionName = RouteConsts.Infrastructure.Lane.Search.ByPlazaGroup.Name;
+                        actionUrl = RouteConsts.Infrastructure.Lane.Search.ByPlazaGroup.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Search ByPlaza
+                        actionName = RouteConsts.Infrastructure.Lane.Search.ByPlaza.Name;
+                        actionUrl = RouteConsts.Infrastructure.Lane.Search.ByPlaza.Url;
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                     }
                 }

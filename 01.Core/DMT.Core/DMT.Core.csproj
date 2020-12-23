@@ -56,10 +56,13 @@
     <Compile Include="Consts\AppConsts.cs" />
     <Compile Include="Consts\ErrorConsts.cs" />
     <Compile Include="Consts\Routes\Infrastructure\Actions\Lane\Save.cs" />
+    <Compile Include="Consts\Routes\Infrastructure\Actions\Lane\Searchs.cs" />
     <Compile Include="Consts\Routes\Infrastructure\Actions\PlazaGroup\Save.cs" />
     <Compile Include="Consts\Routes\Infrastructure\Actions\Plaza\Save.cs" />
+    <Compile Include="Consts\Routes\Infrastructure\Actions\Plaza\Searchs.cs" />
     <Compile Include="Consts\Routes\Infrastructure\Actions\TSB\Current.cs" />
     <Compile Include="Consts\Routes\Infrastructure\Actions\TSB\Save.cs" />
+    <Compile Include="Consts\Routes\Infrastructure\Actions\PlazaGroup\Searchs.cs" />
     <Compile Include="Consts\Routes\Infrastructure\Actions\TSB\SetActive.cs" />
     <Compile Include="Consts\Routes\Notify\Actions\ShiftChanged.cs" />
     <Compile Include="Consts\Routes\Notify\Actions\TSBChanged.cs" />

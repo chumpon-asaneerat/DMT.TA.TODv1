@@ -75,8 +75,7 @@ namespace DMT.Config.Pages
                 TSBItem item = tsb.CloneTo<TSBItem>();
                 items.Add(item);
 
-                /*
-                var plazas = ops.TSB.GetTSBPlazas(tsb).Value();
+                var plazas = ops.Plaza.Search.ByTSB(tsb).Value();
                 if (null != plazas)
                 {
                     plazas.ForEach(plaza =>
@@ -84,7 +83,7 @@ namespace DMT.Config.Pages
                         PlazaItem pItem = plaza.CloneTo<PlazaItem>();
                         item.Plazas.Add(pItem);
 
-                        var lanes = ops.TSB.GetPlazaLanes(plaza).Value();
+                        var lanes = ops.Lane.Search.ByPlaza(plaza).Value();
                         if (null != lanes)
                         {
                             lanes.ForEach(lane =>
@@ -95,7 +94,6 @@ namespace DMT.Config.Pages
                         }
                     });
                 }
-                */
             });
 
             tree.ItemsSource = items;
