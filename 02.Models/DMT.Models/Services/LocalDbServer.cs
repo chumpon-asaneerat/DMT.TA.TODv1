@@ -112,8 +112,6 @@ namespace DMT.Services
 			Db.CreateTable<MCoupon>();
 			Db.CreateTable<MCardAllow>();
 
-			Db.CreateTable<Client>();
-
 			Db.CreateTable<TSB>();
 			Db.CreateTable<PlazaGroup>();
 			Db.CreateTable<Plaza>();

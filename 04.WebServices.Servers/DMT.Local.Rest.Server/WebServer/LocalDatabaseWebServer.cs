@@ -35,26 +35,6 @@ namespace DMT.Services
 
         internal static class MapControllers
         {
-            internal static class Client
-            {
-                internal static void MapRoutes(HttpConfiguration config) 
-                {
-                    string controllerName, actionName, actionUrl;
-
-                    // Set Controller Name.
-                    controllerName = RouteConsts.Client.ControllerName;
-
-                    // Register
-                    actionName = RouteConsts.Client.Register.Name;
-                    actionUrl = RouteConsts.Client.Register.Url;
-                    Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
-
-                    // Unregister
-                    actionName = RouteConsts.Client.Unregister.Name;
-                    actionUrl = RouteConsts.Client.Unregister.Url;
-                    Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
-                }
-            }
             internal static class Infrastructure 
             {
                 internal static class TSB 
@@ -104,6 +84,7 @@ namespace DMT.Services
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                     }
                 }
+
                 internal static class Lane 
                 {
                     internal static void MapRoutes(HttpConfiguration config)
@@ -132,8 +113,6 @@ namespace DMT.Services
         {
             // Handle route by specificed controller (Route Order is important).
 
-            // Client
-            MapControllers.Client.MapRoutes(config);
             // Infrastructure (TSB/PlazaGroup/Plaza/Lane)
             MapControllers.Infrastructure.TSB.MapRoutes(config);
             MapControllers.Infrastructure.PlazaGroup.MapRoutes(config);

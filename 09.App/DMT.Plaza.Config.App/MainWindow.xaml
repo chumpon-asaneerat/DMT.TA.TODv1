@@ -107,33 +107,6 @@
             </Fluent:RibbonTabItem>
             <!-- Tab - System & Device -->
             <Fluent:RibbonTabItem Header="System &amp; Device">
-                <!-- Group - Local Windows Services (installed/uninstalled) -->
-                <Fluent:RibbonGroupBox Header="Services">
-                    <Fluent:Button x:Name="cmdInstall"
-                                   Width="75"
-                                   Header="Start (Install)"
-                                   Click="cmdInstall_Click">
-                        <Fluent:Button.LargeIcon>
-                            <Image Source="Images/Servers/install.png" />
-                        </Fluent:Button.LargeIcon>
-                    </Fluent:Button>
-                    <Fluent:Button x:Name="cmdUninstall"
-                                   Width="75"
-                                   Header="Stop (Uninstall)"
-                                   Click="cmdUninstall_Click">
-                        <Fluent:Button.LargeIcon>
-                            <Image Source="Images/Servers/uninstall.png" />
-                        </Fluent:Button.LargeIcon>
-                    </Fluent:Button>
-                    <Fluent:Button x:Name="cmdCheckWindowServiceStatus"
-                                   Width="75"
-                                   Header="Check Status"
-                                   Click="cmdCheckWindowServiceStatus_Click">
-                        <Fluent:Button.LargeIcon>
-                            <Image Source="Images/Servers/connected.ico" />
-                        </Fluent:Button.LargeIcon>
-                    </Fluent:Button>
-                </Fluent:RibbonGroupBox>
                 <!-- Group - Device (smartcard) -->
                 <Fluent:RibbonGroupBox Header="Smartcard">
                     <Fluent:Button Width="75" Header="Smartcard device">

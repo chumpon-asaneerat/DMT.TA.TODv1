@@ -38,11 +38,6 @@ namespace DMT
         {
             // Load Config service.
             PlazaConfigManager.Instance.LoadConfig();
-            // TODO: Refactor
-            /*
-            LocalServiceOperations.Instance.ServiceMonitor.ScanConpleted += ServiceMonitor_ScanConpleted;
-            LocalServiceOperations.Instance.ServiceMonitor.Start();
-            */
             // Initial Page Content Manager
             PageContentManager.Instance.ContentChanged += new EventHandler(Instance_ContentChanged);
             PageContentManager.Instance.Start();
@@ -53,11 +48,6 @@ namespace DMT
             // Release Page Content Manager
             PageContentManager.Instance.Shutdown();
             PageContentManager.Instance.ContentChanged -= new EventHandler(Instance_ContentChanged);
-            // TODO: Refactor
-            /*
-            LocalServiceOperations.Instance.ServiceMonitor.Shutdown();
-            LocalServiceOperations.Instance.ServiceMonitor.ScanConpleted -= ServiceMonitor_ScanConpleted;
-            */
         }
 
         #endregion
@@ -71,16 +61,6 @@ namespace DMT
         }
 
         #endregion
-
-        class InstallStatus
-        {
-
-        }
-
-        private void ServiceMonitor_ScanConpleted(object sender, EventArgs e)
-        {
-
-        }
 
         #region Button Handlers
 
@@ -122,35 +102,6 @@ namespace DMT
         private void cmdHQSetupUri_Click(object sender, RoutedEventArgs e)
         {
             //PageContentManager.Instance.Current = new Config.Pages.HQSetupUriPage();
-        }
-
-        #endregion
-
-        #region Windows Services (Install/Unstall/CheckStatus)
-
-        private void cmdInstall_Click(object sender, RoutedEventArgs e)
-        {
-            //LocalServiceOperations.Instance.Install();
-        }
-
-        private void cmdUninstall_Click(object sender, RoutedEventArgs e)
-        {
-            //LocalServiceOperations.Instance.Uninstall();
-        }
-
-        private void cmdCheckWindowServiceStatus_Click(object sender, RoutedEventArgs e)
-        {
-            /*
-            var status = LocalServiceOperations.Instance.CheckInstalled();
-            if (status.PlazaLocalServiceInstalled)
-            {
-                MessageBox.Show("Plaza Sercice installed and running", "DMT - Config");
-            }
-            else
-            {
-                MessageBox.Show("Plaza Sercice is not installed or stopped", "DMT - Config");
-            }
-            */
         }
 
         #endregion
