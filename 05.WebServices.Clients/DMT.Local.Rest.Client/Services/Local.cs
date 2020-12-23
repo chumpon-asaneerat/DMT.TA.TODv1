@@ -13,7 +13,11 @@ namespace DMT.Services.Operations
     public static partial class Plaza
     {
         #region Static Properties
-        /*
+
+        /// <summary>
+        /// Gets or sets service config.
+        /// </summary>
+        public static IPlazaConfig Config { get; set; }
         /// <summary>
         /// Gets Base Address.
         /// </summary>
@@ -21,16 +25,17 @@ namespace DMT.Services.Operations
         {
             get
             {
-                if (null == PlazaConfigManager.Instance.Plaza) return string.Empty;
-                if (null == PlazaConfigManager.Instance.Plaza.Service) return string.Empty;
+                if (null == Config) return string.Empty;
+                if (null == Config.Plaza) return string.Empty;
+                if (null == Config.Plaza.Service) return string.Empty;
 
                 return string.Format(@"{0}://{1}:{2}/",
-                    PlazaConfigManager.Instance.Plaza.Service.Protocol,
-                    PlazaConfigManager.Instance.Plaza.Service.HostName,
-                    PlazaConfigManager.Instance.Plaza.Service.PortNumber);
+                    Config.Plaza.Service.Protocol,
+                    Config.Plaza.Service.HostName,
+                    Config.Plaza.Service.PortNumber);
             }
         }
-        */
+
         #endregion
     }
 }
