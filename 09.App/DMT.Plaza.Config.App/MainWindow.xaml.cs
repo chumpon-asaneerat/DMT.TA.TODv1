@@ -72,7 +72,7 @@ namespace DMT
         private void cmdTSBManage_Click(object sender, RoutedEventArgs e)
         {
             //PageContentManager.Instance.Current = new Config.Pages.TSBViewPage();
-            var result = Services.Operations.Plaza.Infrastructure.TSB.GetCurrent();
+            var result = Services.Operations.Plaza.Infrastructure.TSB.Current();
             Console.WriteLine(result.Value());
         }
 
