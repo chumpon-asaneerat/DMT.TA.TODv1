@@ -91,6 +91,10 @@ namespace DMT
 
             // Load Config service.
             Services.TAConfigManager.Instance.LoadConfig();
+            // Setup config reference to all rest client class.
+            Services.Operations.Plaza.Config = Services.TAConfigManager.Instance;
+            Services.Operations.SCW.Config = Services.TAConfigManager.Instance;
+
             // Start App Notify Server.
             appServ = new Services.TAWebServer();
             appServ.Start();

@@ -91,6 +91,10 @@ namespace DMT
 
             // Load Config service.
             Services.TODConfigManager.Instance.LoadConfig();
+            // Setup config reference to all rest client class.
+            Services.Operations.Plaza.Config = Services.TODConfigManager.Instance;
+            Services.Operations.SCW.Config = Services.TODConfigManager.Instance;
+
             // Start App Notify Server.
             appServ = new Services.TODWebServer();
             appServ.Start();

@@ -91,6 +91,12 @@ namespace DMT
 
             #endregion
 
+            // Load Config service.
+            Services.PlazaAppConfigManager.Instance.LoadConfig();
+            // Setup config reference to all rest client class.
+            Services.Operations.Plaza.Config = Services.PlazaAppConfigManager.Instance;
+            Services.Operations.SCW.Config = Services.PlazaAppConfigManager.Instance;
+
             Window window = null;
             window = new MainWindow();
 

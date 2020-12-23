@@ -226,6 +226,11 @@ namespace DMT.Services
                 med.Err("Server Configuration is null.");
                 return;
             }
+            // Setup config reference to all rest client class.
+            Operations.SCW.Config = PlazaServiceConfigManager.Instance;
+            Operations.TA.Config = PlazaServiceConfigManager.Instance;
+            Operations.TAxTOD.Config = PlazaServiceConfigManager.Instance;
+            Operations.TOD.Config = PlazaServiceConfigManager.Instance;
 
             // Start database server.
             LocalDbServer.Instance.Start();
