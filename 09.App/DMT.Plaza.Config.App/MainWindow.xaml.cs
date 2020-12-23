@@ -37,7 +37,7 @@ namespace DMT
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Load Config service.
-            ConfigManager.Instance.LoadConfig();
+            PlazaConfigManager.Instance.LoadConfig();
             // TODO: Refactor
             /*
             LocalServiceOperations.Instance.ServiceMonitor.ScanConpleted += ServiceMonitor_ScanConpleted;

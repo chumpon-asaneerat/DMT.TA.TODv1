@@ -151,6 +151,7 @@ namespace DMT.Services
         #endregion
     }
 
+    //TODO: Need to reimplements code from TAWebServer or TODWebServer.
     /// <summary>
     /// Local Database Web Server (Self Host).
     /// </summary>
@@ -159,9 +160,9 @@ namespace DMT.Services
         #region Internal Variables
 
         private string baseAddress = string.Format(@"{0}://{1}:{2}",
-            ConfigManager.Instance.Plaza.Local.Service.Protocol,
+            PlazaConfigManager.Instance.Plaza.Service.Protocol,
             "+",
-            ConfigManager.Instance.Plaza.Local.Service.PortNumber);
+            PlazaConfigManager.Instance.Plaza.Service.PortNumber);
 
         private IDisposable server = null;
 
@@ -187,7 +188,7 @@ namespace DMT.Services
 
         private void InitOwinFirewall()
         {
-            string portNum = ConfigManager.Instance.Plaza.Local.Service.PortNumber.ToString();
+            string portNum = PlazaConfigManager.Instance.Plaza.Service.PortNumber.ToString();
             string appName = "DMT TODxTA Local Service(REST)";
             var nash = new CommandLine();
             nash.Run("http add urlacl url=http://+:" + portNum + "/ user=Everyone");
@@ -196,7 +197,7 @@ namespace DMT.Services
 
         private void ReleaseOwinFirewall()
         {
-            string portNum = ConfigManager.Instance.Plaza.Local.Service.PortNumber.ToString();
+            string portNum = PlazaConfigManager.Instance.Plaza.Service.PortNumber.ToString();
             string appName = "DMT TODxTA Local Service(REST)";
             var nash = new CommandLine();
             nash.Run("http delete urlacl url=http://+:" + portNum + "/");

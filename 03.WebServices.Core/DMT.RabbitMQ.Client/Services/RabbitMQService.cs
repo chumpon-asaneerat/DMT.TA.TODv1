@@ -278,8 +278,8 @@ namespace DMT.Services
             // Init Rabbit Client
             if (null == rabbitClient)
             {
-                var MQConfig = (null != ConfigManager.Instance.Plaza.RabbitMQ) ?
-                    ConfigManager.Instance.Plaza.RabbitMQ : null;
+                var MQConfig = (null != PlazaConfigManager.Instance.RabbitMQ) ?
+                    PlazaConfigManager.Instance.RabbitMQ : null;
                 if (null != MQConfig && MQConfig.Enabled)
                 {
                     //WriteTAFile("init");

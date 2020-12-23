@@ -38,7 +38,7 @@ namespace DMT.Controls.StatusBar
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             //TODO: Refactor ConfigManager for TA/TOD Server host name.
-            string host = ConfigManager.Instance.Plaza.TAxTOD.Service.HostName;
+            string host = PlazaConfigManager.Instance.TAxTOD.Service.HostName;
 
             ping = new NLib.Components.PingManager();
             ping.OnReply += Ping_OnReply;

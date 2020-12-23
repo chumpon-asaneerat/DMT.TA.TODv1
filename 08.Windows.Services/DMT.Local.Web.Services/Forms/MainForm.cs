@@ -23,15 +23,15 @@ namespace DMT.Forms
             InitializeComponent();
         }
 
-        private Services.LocalDatabaseWebServer server = null;
+        private LocalDatabaseWebServer server = null;
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             // Load Config service.
-            ConfigManager.Instance.LoadConfig();
+            PlazaConfigManager.Instance.LoadConfig();
             if (null == server)
             {
-                server = new Services.LocalDatabaseWebServer();
+                server = new LocalDatabaseWebServer();
                 server.Start();
             }
         }
