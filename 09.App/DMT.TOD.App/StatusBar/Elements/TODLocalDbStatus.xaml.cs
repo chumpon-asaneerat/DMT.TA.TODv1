@@ -67,6 +67,7 @@ namespace DMT.Controls.StatusBar
 
         private void UpdateUI()
         {
+            /*
             isOnline = TODLocalDbServer.Instance.Connected;
             if (isOnline)
             {
@@ -78,6 +79,7 @@ namespace DMT.Controls.StatusBar
                 borderStatus.Background = new SolidColorBrush(Colors.Maroon);
                 txtStatus.Text = "Offline";
             }
+            */
         }
     }
 }

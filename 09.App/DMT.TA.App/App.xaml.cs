@@ -90,7 +90,7 @@ namespace DMT
             #endregion
 
             // Load Config service.
-            Services.TODConfigManager.Instance.LoadConfig();
+            Services.TAConfigManager.Instance.LoadConfig();
             // Start App Notify Server.
             appServ = new Services.TAWebServer();
             appServ.Start();

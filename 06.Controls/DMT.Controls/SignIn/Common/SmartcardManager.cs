@@ -109,6 +109,7 @@ namespace DMT.Controls
             }
             else
             {
+                /*
                 var usr = User.GetByCardId(this.CardId).Value();
                 if (null == this.User && null != usr)
                 {
@@ -128,6 +129,7 @@ namespace DMT.Controls
                         RaiseUserChanged();
                     }
                 }
+                */
             }
         }
 

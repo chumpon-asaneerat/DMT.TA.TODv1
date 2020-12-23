@@ -56,6 +56,7 @@ namespace DMT.Controls.Header
 
         private void UpdateUI()
         {
+            /*
             var tsb = TSB.GetCurrent().Value();
             if (null != tsb)
             {
@@ -67,6 +68,7 @@ namespace DMT.Controls.Header
                 txtPlazaId.Text = "รหัสด่าน : ";
                 txtPlazaName.Text = "ชื่อด่าน : ";
             }
+            */
         }
     }
 }
