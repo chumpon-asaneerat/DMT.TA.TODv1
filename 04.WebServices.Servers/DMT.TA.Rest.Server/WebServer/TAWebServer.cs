@@ -107,7 +107,7 @@ namespace DMT.Services
         private void CheckConfig()
         {
             // Gets TA App local server config.
-            _cfg = (null != TODConfigManager.Instance.TAApp) ? TODConfigManager.Instance.TAApp.Service : null;
+            _cfg = (null != TAConfigManager.Instance.TAApp) ? TAConfigManager.Instance.TAApp.Service : null;
         }
 
         private string BaseAddress
