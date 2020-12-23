@@ -1435,4 +1435,266 @@ namespace DMT.Services
     }
 
     #endregion
+
+
+    #region TAConfigManager
+
+    /// <summary>
+    /// TA Config Manager class.
+    /// </summary>
+    public class TAConfigManager : JsonConfigFileManger<TAAppPlazaConfig>,
+        IRabbitMQConfig, ISCWConfig, ITAxTODConfig, 
+        ITAAppWebServiceConfig, ITODAppWebServiceConfig
+    {
+        #region Static Instance Access
+
+        private static TAConfigManager _instance = null;
+
+        /// <summary>
+        /// Gets ConfigManager instance access.
+        /// </summary>
+        public static TAConfigManager Instance
+        {
+            get
+            {
+                if (null == _instance)
+                {
+                    lock (typeof(TAConfigManager))
+                    {
+                        _instance = new TAConfigManager();
+                    }
+                }
+                return _instance;
+            }
+        }
+
+        #endregion
+
+        #region Internal Variables
+
+        private string _fileName = NJson.LocalConfigFile("TA.app.config.json");
+
+        #endregion
+
+        #region Constructor and Destructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        private TAConfigManager() : base()
+        {
+
+        }
+        /// <summary>
+        /// Destructor.
+        /// </summary>
+        ~TAConfigManager()
+        {
+            //Shutdown();
+        }
+
+        #endregion
+
+        #region Override Methods and Properties
+
+        /// <summary>
+        /// Gets Config File Name.
+        /// </summary>
+        public override string FileName { get { return _fileName; } }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets RabbitMQ Config.
+        /// </summary>
+        public RabbitMQServiceConfig RabbitMQ
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.RabbitMQ : null;
+            }
+        }
+        /// <summary>
+        /// Gets SCW Config.
+        /// </summary>
+        public SCWWebServiceConfig SCW
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.SCW : null;
+            }
+        }
+        /// <summary>
+        /// Gets TAxTOD Config.
+        /// </summary>
+        public TAxTODWebServiceConfig TAxTOD
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.TAxTOD : null;
+            }
+        }
+        /// <summary>
+        /// Gets TAApp Config.
+        /// </summary>
+        public TAAppWebServiceConfig TAApp
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.TAApp : null;
+            }
+        }
+        /// <summary>
+        /// Gets TODApp Config.
+        /// </summary>
+        public TODAppWebServiceConfig TODApp
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.TODApp : null;
+            }
+        }
+
+
+        #endregion
+    }
+
+    #endregion
+
+    #region TODConfigManager
+
+    /// <summary>
+    /// TOD Config Manager class.
+    /// </summary>
+    public class TODConfigManager : JsonConfigFileManger<TODAppPlazaConfig>,
+        IRabbitMQConfig, ISCWConfig, ITAxTODConfig, 
+        ITAAppWebServiceConfig, ITODAppWebServiceConfig
+    {
+        #region Static Instance Access
+
+        private static TODConfigManager _instance = null;
+
+        /// <summary>
+        /// Gets ConfigManager instance access.
+        /// </summary>
+        public static TODConfigManager Instance
+        {
+            get
+            {
+                if (null == _instance)
+                {
+                    lock (typeof(TODConfigManager))
+                    {
+                        _instance = new TODConfigManager();
+                    }
+                }
+                return _instance;
+            }
+        }
+
+        #endregion
+
+        #region Internal Variables
+
+        private string _fileName = NJson.LocalConfigFile("TOD.app.config.json");
+
+        #endregion
+
+        #region Constructor and Destructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        private TODConfigManager() : base()
+        {
+
+        }
+        /// <summary>
+        /// Destructor.
+        /// </summary>
+        ~TODConfigManager()
+        {
+            //Shutdown();
+        }
+
+        #endregion
+
+        #region Override Methods and Properties
+
+        /// <summary>
+        /// Gets Config File Name.
+        /// </summary>
+        public override string FileName { get { return _fileName; } }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets RabbitMQ Config.
+        /// </summary>
+        public RabbitMQServiceConfig RabbitMQ
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.RabbitMQ : null;
+            }
+        }
+        /// <summary>
+        /// Gets SCW Config.
+        /// </summary>
+        public SCWWebServiceConfig SCW
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.SCW : null;
+            }
+        }
+        /// <summary>
+        /// Gets TAxTOD Config.
+        /// </summary>
+        public TAxTODWebServiceConfig TAxTOD
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.TAxTOD : null;
+            }
+        }
+        /// <summary>
+        /// Gets TAApp Config.
+        /// </summary>
+        public TAAppWebServiceConfig TAApp
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.TAApp : null;
+            }
+        }
+        /// <summary>
+        /// Gets TODApp Config.
+        /// </summary>
+        public TODAppWebServiceConfig TODApp
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.TODApp : null;
+            }
+        }
+
+        #endregion
+    }
+
+    #endregion
 }
