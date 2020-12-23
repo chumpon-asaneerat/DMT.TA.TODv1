@@ -13,16 +13,16 @@ using DMT.Services;
 namespace DMT.Controls.StatusBar
 {
     /// <summary>
-    /// Interaction logic for LocalDbStatus.xaml
+    /// Interaction logic for TALocalDbStatus.xaml
     /// </summary>
-    public partial class LocalDbStatus : UserControl
+    public partial class TALocalDbStatus : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public LocalDbStatus()
+        public TALocalDbStatus()
         {
             InitializeComponent();
         }
@@ -30,22 +30,12 @@ namespace DMT.Controls.StatusBar
         #endregion
 
         private DispatcherTimer timer = null;
-        private NLib.Components.PingManager ping = null;
         private bool isOnline = false;
 
         #region Loaded/Unloaded
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            //TODO: Refactor ConfigManager for Local Plaza Service host name.
-            string host = PlazaConfigManager.Instance.Plaza.Service.HostName;
-
-            ping = new NLib.Components.PingManager();
-            ping.OnReply += Ping_OnReply;
-            ping.Add(host);
-            ping.Interval = 1000;
-            ping.Start();
-
             UpdateUI();
 
             timer = new DispatcherTimer();
@@ -56,37 +46,12 @@ namespace DMT.Controls.StatusBar
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
         {
-            if (null != ping)
-            {
-                ping.OnReply -= Ping_OnReply;
-                ping.Stop();
-                ping.Dispose();
-            }
-            ping = null;
-
             if (null != timer)
             {
                 timer.Tick -= timer_Tick;
                 timer.Stop();
             }
             timer = null;
-        }
-
-        #endregion
-
-        #region Ping Reply Handler
-
-        private void Ping_OnReply(object sender, NLib.Networks.PingResponseEventArgs e)
-        {
-            if (null != e.Reply &&
-                e.Reply.Status == System.Net.NetworkInformation.IPStatus.Success)
-            {
-                isOnline = true;
-            }
-            else
-            {
-                isOnline = false;
-            }
         }
 
         #endregion
@@ -102,6 +67,7 @@ namespace DMT.Controls.StatusBar
 
         private void UpdateUI()
         {
+            isOnline = TALocalDbServer.Instance.Connected;
             if (isOnline)
             {
                 borderStatus.Background = new SolidColorBrush(Colors.ForestGreen);
