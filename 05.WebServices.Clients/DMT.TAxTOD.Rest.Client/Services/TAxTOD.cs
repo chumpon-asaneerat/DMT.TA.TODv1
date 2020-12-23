@@ -35,6 +35,38 @@ namespace DMT.Services.Operations
                     Config.TAxTOD.Service.PortNumber);
             }
         }
+        /// <summary>
+        /// Gets default execute timeout.
+        /// </summary>
+        public static int Timeout { get { return 1000; } }
+        /// <summary>
+        /// Gets user name.
+        /// </summary>
+        public static string UserName
+        {
+            get
+            {
+                if (null == Config) return string.Empty;
+                if (null == Config.TAxTOD) return string.Empty;
+                if (null == Config.TAxTOD.Service) return string.Empty;
+
+                return Config.TAxTOD.Service.UserName;
+            }
+        }
+        /// <summary>
+        /// Gets password.
+        /// </summary>
+        public static string Password
+        {
+            get
+            {
+                if (null == Config) return string.Empty;
+                if (null == Config.TAxTOD) return string.Empty;
+                if (null == Config.TAxTOD.Service) return string.Empty;
+
+                return Config.TAxTOD.Service.Password;
+            }
+        }
 
         #endregion
     }

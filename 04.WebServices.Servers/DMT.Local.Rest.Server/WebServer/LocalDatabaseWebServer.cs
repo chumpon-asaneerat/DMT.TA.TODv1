@@ -24,7 +24,17 @@ namespace DMT.Services
         {
             this.AuthenticationValidator = (string userName, string password) =>
             {
-                return (userName == "DMTUSER" && password == "DMTPASS2");
+                var svr = (null != PlazaServiceConfigManager.Instance.Plaza &&
+                           null != PlazaServiceConfigManager.Instance.Plaza.Service) ?
+                    PlazaServiceConfigManager.Instance.Plaza.Service : null;
+                if (null != svr)
+                {
+                    return (userName == svr.UserName && password == svr.Password);
+                }
+                else
+                {
+                    return true;
+                }
             };
             this.EnableSwagger = true;
             this.ApiName = "TOD&TA Local Server API";
@@ -49,6 +59,10 @@ namespace DMT.Services
                         // Gets
                         actionName = RouteConsts.Infrastructure.TSB.Gets.Name;
                         actionUrl = RouteConsts.Infrastructure.TSB.Gets.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+                        // Current
+                        actionName = RouteConsts.Infrastructure.TSB.Current.Name;
+                        actionUrl = RouteConsts.Infrastructure.TSB.Current.Url;
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                     }
                 }

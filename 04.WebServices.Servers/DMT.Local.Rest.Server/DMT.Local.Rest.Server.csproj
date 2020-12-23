@@ -96,6 +96,7 @@
     <Compile Include="WebServer\Controllers\Infrastructure\Actions\Lane\Gets.cs" />
     <Compile Include="WebServer\Controllers\Infrastructure\Actions\PlazaGroup\Gets.cs" />
     <Compile Include="WebServer\Controllers\Infrastructure\Actions\Plaza\Gets.cs" />
+    <Compile Include="WebServer\Controllers\Infrastructure\Actions\TSB\Current.cs" />
     <Compile Include="WebServer\Controllers\Infrastructure\Actions\TSB\Gets.cs" />
     <Compile Include="WebServer\Controllers\Infrastructure\Infrastructure.Controller.cs" />
     <Compile Include="WebServer\LocalDatabaseWebServer.cs" />

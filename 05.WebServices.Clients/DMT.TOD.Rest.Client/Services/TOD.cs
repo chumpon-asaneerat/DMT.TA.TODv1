@@ -35,6 +35,38 @@ namespace DMT.Services.Operations
                     Config.TODApp.Service.PortNumber);
             }
         }
+        /// <summary>
+        /// Gets default execute timeout.
+        /// </summary>
+        public static int Timeout { get { return 1000; } }
+        /// <summary>
+        /// Gets user name.
+        /// </summary>
+        public static string UserName
+        {
+            get
+            {
+                if (null == Config) return string.Empty;
+                if (null == Config.TODApp) return string.Empty;
+                if (null == Config.TODApp.Service) return string.Empty;
+
+                return Config.TODApp.Service.UserName;
+            }
+        }
+        /// <summary>
+        /// Gets password.
+        /// </summary>
+        public static string Password
+        {
+            get
+            {
+                if (null == Config) return string.Empty;
+                if (null == Config.TODApp) return string.Empty;
+                if (null == Config.TODApp.Service) return string.Empty;
+
+                return Config.TODApp.Service.Password;
+            }
+        }
 
         #endregion
     }

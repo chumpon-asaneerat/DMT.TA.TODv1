@@ -35,6 +35,38 @@ namespace DMT.Services.Operations
                     Config.TAApp.Service.PortNumber);
             }
         }
+        /// <summary>
+        /// Gets default execute timeout.
+        /// </summary>
+        public static int Timeout { get { return 1000; } }
+        /// <summary>
+        /// Gets user name.
+        /// </summary>
+        public static string UserName
+        {
+            get
+            {
+                if (null == Config) return string.Empty;
+                if (null == Config.TAApp) return string.Empty;
+                if (null == Config.TAApp.Service) return string.Empty;
+
+                return Config.TAApp.Service.UserName;
+            }
+        }
+        /// <summary>
+        /// Gets password.
+        /// </summary>
+        public static string Password
+        {
+            get
+            {
+                if (null == Config) return string.Empty;
+                if (null == Config.TAApp) return string.Empty;
+                if (null == Config.TAApp.Service) return string.Empty;
+
+                return Config.TAApp.Service.Password;
+            }
+        }
 
         #endregion
     }
