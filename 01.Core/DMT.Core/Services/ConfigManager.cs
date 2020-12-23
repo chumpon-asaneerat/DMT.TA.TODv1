@@ -1063,12 +1063,12 @@ namespace DMT.Services
 
     #endregion
 
-    #region ITAAppWebServiceConfig Interface
+    #region ITAAppConfig Interface
 
     /// <summary>
-    /// The ITAAppWebServiceConfig inferface.
+    /// The ITAAppConfig inferface.
     /// </summary>
-    public interface ITAAppWebServiceConfig
+    public interface ITAAppConfig
     {
         /// <summary>
         /// Gets TAApp Config.
@@ -1078,12 +1078,12 @@ namespace DMT.Services
 
     #endregion
 
-    #region ITODAppWebServiceConfig Interface
+    #region ITODAppConfig Interface
 
     /// <summary>
-    /// The ITODAppWebServiceConfig inferface.
+    /// The ITODAppConfig inferface.
     /// </summary>
-    public interface ITODAppWebServiceConfig
+    public interface ITODAppConfig
     {
         /// <summary>
         /// Gets TODApp Config.
@@ -1247,7 +1247,7 @@ namespace DMT.Services
     /// </summary>
     public class PlazaConfigManager : JsonConfigFileManger<LocalServiceConfig>,
         IRabbitMQConfig, IPlazaConfig, ISCWConfig, ITAxTODConfig,
-        ITAAppWebServiceConfig, ITODAppWebServiceConfig
+        ITAAppConfig, ITODAppConfig
     {
         #region Static Instance Access
 
