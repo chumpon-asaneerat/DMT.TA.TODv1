@@ -84,6 +84,89 @@ namespace DMT.Services
 
     #endregion
 
+    #region LocalHostWebServiceConfig (Local IP Web Service Config) - ?????
+
+    /// <summary>
+    /// The LocalHostWebServiceConfig class.
+    /// </summary>
+    [JsonObject(MemberSerialization.OptOut)]
+    public class LocalHostWebServiceConfig
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public LocalHostWebServiceConfig()
+        {
+            this.Protocol = "http";
+            this.PortNumber = 9001;
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// IsEquals.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public bool IsEquals(object obj)
+        {
+            if (null == obj || !(obj is LocalHostWebServiceConfig)) return false;
+            return this.GetString() == (obj as LocalHostWebServiceConfig).GetString();
+        }
+        /// <summary>
+        /// GetString.
+        /// </summary>
+        /// <returns></returns>
+        public string GetString()
+        {
+            string code = string.Format("{0}://{1}:{2}",
+                this.Protocol, this.HostName, this.PortNumber);
+            return code;
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets protocol.
+        /// </summary>
+        public string Protocol { get; set; }
+        /// <summary>
+        /// Gets or sets Host Name or IP Address.
+        /// </summary>
+        [JsonIgnore]
+        public string HostName
+        {
+            get
+            {
+                var ip = NLib.Utils.NetworkUtils.GetLocalIPAddress();
+                return (null != ip) ? ip.ToString() : "unknown";
+            }
+            set { }
+        }
+        /// <summary>
+        /// Gets or sets port number.
+        /// </summary>
+        public int PortNumber { get; set; }
+        /// <summary>
+        /// Gets or sets User Name.
+        /// </summary>
+        public string UserName { get; set; }
+        /// <summary>
+        /// Gets or sets Password.
+        /// </summary>
+        public string Password { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
     #region WebServiceConfig (Common Web Service Config)
 
     /// <summary>
