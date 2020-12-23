@@ -137,9 +137,6 @@
     <Compile Include="StatusBar\Elements\LocalPlazaStatus.xaml.cs">
       <DependentUpon>LocalPlazaStatus.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StatusBar\Elements\TAServerStatus.xaml.cs">
-      <DependentUpon>TAServerStatus.xaml</DependentUpon>
-    </Compile>
     <Compile Include="StatusBar\TAStatusBar.xaml.cs">
       <DependentUpon>TAStatusBar.xaml</DependentUpon>
     </Compile>
@@ -202,10 +199,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="StatusBar\Elements\LocalPlazaStatus.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="StatusBar\Elements\TAServerStatus.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
