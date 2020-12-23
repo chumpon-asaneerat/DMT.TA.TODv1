@@ -24,7 +24,18 @@ namespace DMT.Services
         {
             this.AuthenticationValidator = (string userName, string password) =>
             {
-                return (userName == "DMTUSER" && password == "DMTPASS2");
+                var svr = (null != TODConfigManager.Instance.TODApp &&
+                           null != TODConfigManager.Instance.TODApp.Service) ?
+                    TODConfigManager.Instance.TODApp.Service : null;
+                if (null != svr)
+                {
+                    //return (userName == svr.UserName && password == svr.Password);
+                    return (userName == svr.UserName && password == Models.Utils.MD5.Encrypt(svr.Password));
+                }
+                else
+                {
+                    return true;
+                }
             };
             this.EnableSwagger = true;
             this.ApiName = "TOD Application API";

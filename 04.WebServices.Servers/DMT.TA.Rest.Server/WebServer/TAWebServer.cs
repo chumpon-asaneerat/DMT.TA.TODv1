@@ -24,7 +24,17 @@ namespace DMT.Services
         {
             this.AuthenticationValidator = (string userName, string password) =>
             {
-                return (userName == "DMTUSER" && password == "DMTPASS2");
+                var svr = (null != TAConfigManager.Instance.TAApp &&
+                           null != TAConfigManager.Instance.TAApp.Service) ?
+                    TAConfigManager.Instance.TAApp.Service : null;
+                if (null != svr)
+                {
+                    return (userName == svr.UserName && password == Models.Utils.MD5.Encrypt(svr.Password));
+                }
+                else
+                {
+                    return true;
+                }
             };
             this.EnableSwagger = true;
             this.ApiName = "TA Application API";

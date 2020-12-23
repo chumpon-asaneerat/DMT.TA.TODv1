@@ -316,7 +316,7 @@ namespace DMT.Services.Operations
                 if (null == Config.Plaza) return string.Empty;
                 if (null == Config.Plaza.Service) return string.Empty;
 
-                return Config.Plaza.Service.Password;
+                return Models.Utils.MD5.Encrypt(Config.Plaza.Service.Password);
             }
         }
 
