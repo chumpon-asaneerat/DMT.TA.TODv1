@@ -99,6 +99,13 @@ namespace DMT.Services
         /// Constructor.
         /// </summary>
         public TAWebServer() : base() { }
+        /// <summary>
+        /// Destructor.
+        /// </summary>
+        ~TAWebServer()
+        {
+            Shutdown();
+        }
 
         #endregion
 
@@ -132,7 +139,7 @@ namespace DMT.Services
                 return;
             }
             string portNum = _cfg.PortNumber.ToString();
-            string appName = "DMT TA App Service(REST)";
+            string appName = "DMT TA App Service (REST)";
             var nash = new CommandLine();
             nash.Run("http add urlacl url=http://+:" + portNum + "/ user=Everyone");
             nash.Run("advfirewall firewall add rule dir=in action=allow protocol=TCP localport=" + portNum + " name=\"" + appName + "\" enable=yes profile=Any");
@@ -147,7 +154,7 @@ namespace DMT.Services
                 return;
             }
             string portNum = _cfg.PortNumber.ToString();
-            string appName = "DMT TA App Service(REST)";
+            string appName = "DMT TA App Service (REST)";
             var nash = new CommandLine();
             nash.Run("http delete urlacl url=http://+:" + portNum + "/");
             nash.Run("advfirewall firewall delete rule name=\"" + appName + "\"");
@@ -173,8 +180,13 @@ namespace DMT.Services
             {
                 InitOwinFirewall();
                 server = WebApp.Start<StartUp>(url: BaseAddress);
+                med.Info("TA App local nofify service started.");
             }
-            med.Info("TA App local nofify service start.");
+            else
+            { 
+                med.Info("TA App local nofify service failed."); 
+            }
+            
         }
         /// <summary>
         /// Shutdown service.

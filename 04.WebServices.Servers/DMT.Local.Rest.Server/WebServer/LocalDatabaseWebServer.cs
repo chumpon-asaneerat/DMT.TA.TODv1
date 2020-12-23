@@ -2,9 +2,9 @@
 
 using System;
 using System.Reflection;
-// Owin SelfHost
 using Microsoft.Owin.Hosting;
 using System.Web.Http;
+using NLib;
 
 #endregion
 
@@ -151,7 +151,6 @@ namespace DMT.Services
         #endregion
     }
 
-    //TODO: Need to reimplements code from TAWebServer or TODWebServer.
     /// <summary>
     /// Local Database Web Server (Self Host).
     /// </summary>
@@ -159,11 +158,7 @@ namespace DMT.Services
     {
         #region Internal Variables
 
-        private string baseAddress = string.Format(@"{0}://{1}:{2}",
-            PlazaConfigManager.Instance.Plaza.Service.Protocol,
-            "+",
-            PlazaConfigManager.Instance.Plaza.Service.PortNumber);
-
+        private WebServiceConfig _cfg = null;
         private IDisposable server = null;
 
         #endregion
@@ -186,10 +181,35 @@ namespace DMT.Services
 
         #region Private Methods
 
+        private void CheckConfig()
+        {
+            // Gets Plaz local service config.
+            _cfg = (null != PlazaConfigManager.Instance.Plaza) ? PlazaConfigManager.Instance.Plaza.Service : null;
+        }
+
+        private string BaseAddress
+        {
+            get
+            {
+                string result = string.Empty;
+                if (null != _cfg)
+                {
+                    result = string.Format(@"{0}://{1}:{2}", _cfg.Protocol, "+", _cfg.PortNumber);
+                }
+                return result;
+            }
+        }
+
         private void InitOwinFirewall()
         {
-            string portNum = PlazaConfigManager.Instance.Plaza.Service.PortNumber.ToString();
-            string appName = "DMT TODxTA Local Service(REST)";
+            MethodBase med = MethodBase.GetCurrentMethod();
+            if (null == _cfg)
+            {
+                med.Err("Server Configuration is null.");
+                return;
+            }
+            string portNum = _cfg.PortNumber.ToString();
+            string appName = "DMT Plaza Local Service (REST)";
             var nash = new CommandLine();
             nash.Run("http add urlacl url=http://+:" + portNum + "/ user=Everyone");
             nash.Run("advfirewall firewall add rule dir=in action=allow protocol=TCP localport=" + portNum + " name=\"" + appName  + "\" enable=yes profile=Any");
@@ -197,8 +217,14 @@ namespace DMT.Services
 
         private void ReleaseOwinFirewall()
         {
-            string portNum = PlazaConfigManager.Instance.Plaza.Service.PortNumber.ToString();
-            string appName = "DMT TODxTA Local Service(REST)";
+            MethodBase med = MethodBase.GetCurrentMethod();
+            if (null == _cfg)
+            {
+                med.Err("Server Configuration is null.");
+                return;
+            }
+            string portNum = _cfg.PortNumber.ToString();
+            string appName = "DMT Plaza Local Service (REST)";
             var nash = new CommandLine();
             nash.Run("http delete urlacl url=http://+:" + portNum + "/");
             nash.Run("advfirewall firewall delete rule name=\"" + appName + "\"");
@@ -213,16 +239,40 @@ namespace DMT.Services
         /// </summary>
         public void Start()
         {
-            //MethodBase med = MethodBase.GetCurrentMethod();
+            MethodBase med = MethodBase.GetCurrentMethod();
+
             // Start database server.
             LocalDbServer.Instance.Start();
-            // Start rabbit service.
-            RabbitMQService.Instance.Start();
+            if (LocalDbServer.Instance.Connected)
+            {
+                med.Info("Plaza local database connected.");
+            }
+            else
+            {
+                med.Info("Plaza local database connect failed.");
+            }
 
+            // Start Local Web Service.
             if (null == server)
             {
                 InitOwinFirewall();
-                server = WebApp.Start<StartUp>(url: baseAddress);
+                server = WebApp.Start<StartUp>(url: BaseAddress);
+                med.Info("Plaza local web service started.");
+            }
+            else
+            {
+                med.Info("Plaza local web service failed.");
+            }
+
+            // Start rabbit service.
+            RabbitMQService.Instance.Start();
+            if (RabbitMQService.Instance.Connected)
+            {
+                med.Info("RabbitMQ Client service connected.");
+            }
+            else
+            {
+                med.Info("RabbitMQ Client service connect failed.");
             }
         }
         /// <summary>
@@ -230,17 +280,24 @@ namespace DMT.Services
         /// </summary>
         public void Shutdown()
         {
+            MethodBase med = MethodBase.GetCurrentMethod();
+
+            // Shutdown Rabbit MQ Service.
+            RabbitMQService.Instance.Shutdown();
+            med.Info("RabbitMQ Client service disconnected.");
+
+            // Shutdown Local Web Service.
             if (null != server)
             {
                 server.Dispose();
             }
             server = null;
             ReleaseOwinFirewall();
+            med.Info("Plaza local web service shutdown.");
 
-            // Shutdown Rabbit MQ Service.
-            RabbitMQService.Instance.Shutdown();
             // Shutdown database server.
             LocalDbServer.Instance.Shutdown();
+            med.Info("Plaza local database disconnected.");
         }
 
         #endregion
