@@ -57,12 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Common\NRestClient.cs" />
     <Compile Include="Services\Common\NRestResult.cs" />
-    <Compile Include="Services\Local\Local.cs" />
     <Compile Include="Services\RestAPI.cs" />
-    <Compile Include="Services\SCW\SCW.cs" />
-    <Compile Include="Services\TAApp\TA.cs" />
-    <Compile Include="Services\TAxTOD\TAxTOD.cs" />
-    <Compile Include="Services\TODApp\TOD.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -10,7 +10,7 @@ namespace DMT.Services.Operations
     /// <summary>
     /// The Plaza Operation class.
     /// </summary>
-    public static partial class Plaza 
+    public static partial class Plaza
     {
         #region Static Properties
 

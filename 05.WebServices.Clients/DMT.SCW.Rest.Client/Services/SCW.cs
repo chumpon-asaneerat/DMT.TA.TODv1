@@ -8,7 +8,7 @@ using DMT.Models;
 namespace DMT.Services.Operations
 {
     /// <summary>
-    /// The TOD Operation class.
+    /// The SCW Operation class.
     /// </summary>
-    public static partial class TA { }
+    public static partial class SCW { }
 }
