@@ -1,7 +1,6 @@
 ﻿#region Usings
 
-using System;
-using DMT.Models;
+using System.Collections.Generic;
 
 #endregion
 
@@ -17,9 +16,10 @@ namespace DMT.Services.Operations
                 /// Gets all PlazaGroups.
                 /// </summary>
                 /// <returns>Returns all PlazaGroups.</returns>
-                public static NRestResult<Models.PlazaGroup> Gets()
+                public static NRestResult<List<Models.PlazaGroup>> Gets()
                 {
-                    var ret = Execute<Models.PlazaGroup>(RouteConsts.Infrastructure.PlazaGroup.Gets.Url);
+                    var ret = Execute<List<Models.PlazaGroup>>(
+                        RouteConsts.Infrastructure.PlazaGroup.Gets.Url);
                     return ret;
                 }
             }

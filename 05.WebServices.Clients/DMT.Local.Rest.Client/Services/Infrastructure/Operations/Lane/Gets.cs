@@ -1,7 +1,6 @@
 ﻿#region Usings
 
-using System;
-using DMT.Models;
+using System.Collections.Generic;
 
 #endregion
 
@@ -17,9 +16,10 @@ namespace DMT.Services.Operations
                 /// Gets all Lanes.
                 /// </summary>
                 /// <returns>Returns all Lanes.</returns>
-                public static NRestResult<Models.Lane> Gets()
+                public static NRestResult<List<Models.Lane>> Gets()
                 {
-                    var ret = Execute<Models.Lane>(RouteConsts.Infrastructure.Lane.Gets.Url);
+                    var ret = Execute< List<Models.Lane>>(
+                        RouteConsts.Infrastructure.Lane.Gets.Url);
                     return ret;
                 }
             }

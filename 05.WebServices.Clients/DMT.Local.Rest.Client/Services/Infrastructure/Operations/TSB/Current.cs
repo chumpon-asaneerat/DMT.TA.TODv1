@@ -1,7 +1,6 @@
 ﻿#region Usings
 
-using System;
-using DMT.Models;
+using System.Collections.Generic;
 
 #endregion
 
@@ -19,7 +18,8 @@ namespace DMT.Services.Operations
                 /// <returns>Returns Active TSB.</returns>
                 public static NRestResult<Models.TSB> Current()
                 {
-                    var ret = Execute<Models.TSB>(RouteConsts.Infrastructure.TSB.Current.Url);
+                    var ret = Execute<Models.TSB>(
+                        RouteConsts.Infrastructure.TSB.Current.Url);
                     return ret;
                 }
             }

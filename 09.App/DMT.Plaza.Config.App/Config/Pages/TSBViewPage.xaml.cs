@@ -27,6 +27,8 @@ using System.Runtime.InteropServices;
 
 namespace DMT.Config.Pages
 {
+    using ops = Services.Operations.Plaza.Infrastructure; // reference to static class.
+
     /// <summary>
     /// Interaction logic for TSBViewPage.xaml
     /// </summary>
@@ -43,8 +45,7 @@ namespace DMT.Config.Pages
         }
 
         #endregion
-
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        
         private List<TSBItem> items = new List<TSBItem>();
 
         #region Loaded/Unloaded
@@ -65,7 +66,7 @@ namespace DMT.Config.Pages
             tree.ItemsSource = null;
 
             items.Clear();
-            var tsbs = ops.TSB.GetTSBs().Value();
+            var tsbs = ops.TSB.Gets().Value();
             if (null == tsbs)
                 return;
 
@@ -74,6 +75,7 @@ namespace DMT.Config.Pages
                 TSBItem item = tsb.CloneTo<TSBItem>();
                 items.Add(item);
 
+                /*
                 var plazas = ops.TSB.GetTSBPlazas(tsb).Value();
                 if (null != plazas)
                 {
@@ -93,6 +95,7 @@ namespace DMT.Config.Pages
                         }
                     });
                 }
+                */
             });
 
             tree.ItemsSource = items;
@@ -129,12 +132,15 @@ namespace DMT.Config.Pages
         {
             Plazas = new ObservableCollection<PlazaItem>();
         }
+
         [ReadOnly(true)]
+        [Browsable(false)]
         public string IsActive 
         {
             get { return (this.Active) ? "[A]" : ""; }
             set { }
         }
+
         [Browsable(false)]
         public ObservableCollection<PlazaItem> Plazas { get; set; }
     }
@@ -145,8 +151,11 @@ namespace DMT.Config.Pages
         {
             Lanes = new ObservableCollection<LaneItem>();
         }
+
+        [Browsable(false)]
         public ObservableCollection<LaneItem> Lanes { get; set; }
     }
+
     [Browsable(false)]
     public class LaneItem : Lane { }
 }
