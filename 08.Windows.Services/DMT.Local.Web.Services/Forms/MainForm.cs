@@ -28,7 +28,7 @@ namespace DMT.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             // Load Config service.
-            PlazaConfigManager.Instance.LoadConfig();
+            PlazaServiceConfigManager.Instance.LoadConfig();
             if (null == server)
             {
                 server = new LocalDatabaseWebServer();

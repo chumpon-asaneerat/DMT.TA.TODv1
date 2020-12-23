@@ -163,7 +163,8 @@ namespace DMT.Services
         private void CheckConfig()
         {
             // Gets Plaz local service config.
-            _cfg = (null != PlazaConfigManager.Instance.Plaza) ? PlazaConfigManager.Instance.Plaza.Service : null;
+            _cfg = (null != PlazaServiceConfigManager.Instance.Plaza) ? 
+                PlazaServiceConfigManager.Instance.Plaza.Service : null;
         }
 
         private string BaseAddress

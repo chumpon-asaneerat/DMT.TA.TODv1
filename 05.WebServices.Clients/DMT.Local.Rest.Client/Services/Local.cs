@@ -13,7 +13,7 @@ namespace DMT.Services.Operations
     public static partial class Plaza
     {
         #region Static Properties
-
+        /*
         /// <summary>
         /// Gets Base Address.
         /// </summary>
@@ -30,7 +30,7 @@ namespace DMT.Services.Operations
                     PlazaConfigManager.Instance.Plaza.Service.PortNumber);
             }
         }
-
+        */
         #endregion
     }
 }

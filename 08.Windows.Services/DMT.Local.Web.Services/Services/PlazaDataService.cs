@@ -55,7 +55,7 @@ namespace DMT.Services
             _running = true;
             _pause = false;
             // Load Config service.
-            PlazaConfigManager.Instance.LoadConfig();
+            PlazaServiceConfigManager.Instance.LoadConfig();
 
             if (null != _server) _server.Start();
         }
@@ -73,7 +73,7 @@ namespace DMT.Services
         {
             _pause = false;
             // Load Config service.
-            PlazaConfigManager.Instance.LoadConfig();
+            PlazaServiceConfigManager.Instance.LoadConfig();
         }
         /// <summary>
         /// OnStop.

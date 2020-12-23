@@ -37,12 +37,7 @@ namespace DMT
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Load Config service.
-            PlazaConfigManager.Instance.LoadConfig();
-            // TODO: Refactor
-            /*
-            LocalServiceOperations.Instance.ServiceMonitor.ScanConpleted += ServiceMonitor_ScanConpleted;
-            LocalServiceOperations.Instance.ServiceMonitor.Start();
-            */
+            PlazaAppConfigManager.Instance.LoadConfig();
             // Initial Page Content Manager
             PageContentManager.Instance.ContentChanged += new EventHandler(Instance_ContentChanged);
             PageContentManager.Instance.Start();
@@ -53,11 +48,6 @@ namespace DMT
             // Release Page Content Manager
             PageContentManager.Instance.Shutdown();
             PageContentManager.Instance.ContentChanged -= new EventHandler(Instance_ContentChanged);
-            // TODO: Refactor
-            /*
-            LocalServiceOperations.Instance.ServiceMonitor.Shutdown();
-            LocalServiceOperations.Instance.ServiceMonitor.ScanConpleted -= ServiceMonitor_ScanConpleted;
-            */
         }
 
         #endregion

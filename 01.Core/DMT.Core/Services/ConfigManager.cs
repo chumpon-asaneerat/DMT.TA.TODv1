@@ -651,20 +651,20 @@ namespace DMT.Services
 
     #endregion
 
-    #region LocalServiceConfig (Combine configuration used in Local Plaza Windows Service)
+    #region PlazaServiceConfig (Combine configuration used in Local Plaza Windows Service)
 
     /// <summary>
-    /// The LocalServiceConfig class.
+    /// The PlazaServiceConfig class.
     /// </summary>
     [JsonObject(MemberSerialization.OptOut)]
-    public class LocalServiceConfig
+    public class PlazaServiceConfig
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public LocalServiceConfig() : base()
+        public PlazaServiceConfig() : base()
         {
             this.DMT = new DMTConfig();
             this.Plaza = new LocalWebServiceConfig();
@@ -686,8 +686,8 @@ namespace DMT.Services
         /// <returns></returns>
         public bool IsEquals(object obj)
         {
-            if (null == obj || !(obj is LocalServiceConfig)) return false;
-            return this.GetString() == (obj as LocalServiceConfig).GetString();
+            if (null == obj || !(obj is PlazaServiceConfig)) return false;
+            return this.GetString() == (obj as PlazaServiceConfig).GetString();
         }
         /// <summary>
         /// GetString.
@@ -807,6 +807,102 @@ namespace DMT.Services
 
     #endregion
 
+    #region PlazaAppPConfig (Combine configuration used in TA Plaza applicaltion)
+
+    /// <summary>
+    /// The PlazaAppPConfig class.
+    /// </summary>
+    [JsonObject(MemberSerialization.OptOut)]
+    public class PlazaAppConfig
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public PlazaAppConfig() : base()
+        {
+            this.DMT = new DMTConfig();
+            this.Plaza = new LocalWebServiceConfig();
+            this.SCW = new SCWWebServiceConfig();
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// IsEquals.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public bool IsEquals(object obj)
+        {
+            if (null == obj || !(obj is PlazaAppConfig)) return false;
+            return this.GetString() == (obj as PlazaAppConfig).GetString();
+        }
+        /// <summary>
+        /// GetString.
+        /// </summary>
+        /// <returns></returns>
+        public string GetString()
+        {
+            string code = string.Empty;
+            // Application
+            if (null == this.DMT)
+            {
+                code += "DMT: null" + Environment.NewLine;
+            }
+            else
+            {
+                code += string.Format("DMT: {0}",
+                    this.DMT.GetString()) + Environment.NewLine;
+            }
+            // Local
+            if (null == this.Plaza)
+            {
+                code += "Plaza null" + Environment.NewLine;
+            }
+            else
+            {
+                code += string.Format("Plaza: {0}",
+                    this.Plaza.GetString()) + Environment.NewLine;
+            }
+            // SCW server
+            if (null == this.SCW)
+            {
+                code += "SCW: null" + Environment.NewLine;
+            }
+            else
+            {
+                code += string.Format("DC: {0}",
+                    this.SCW.GetString()) + Environment.NewLine;
+            }
+            return code;
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets DMT Config.
+        /// </summary>
+        public DMTConfig DMT { get; set; }
+        /// <summary>
+        /// Gets or sets Local Plaza Service Config.
+        /// </summary>
+        public LocalWebServiceConfig Plaza { get; set; }
+        /// <summary>
+        /// Gets or sets SCW Service Config.
+        /// </summary>
+        public SCWWebServiceConfig SCW { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
     #region TAAppPlazaConfig (Combine configuration used in TA Plaza applicaltion)
 
     /// <summary>
@@ -862,7 +958,7 @@ namespace DMT.Services
             // Local
             if (null == this.Plaza)
             {
-                code += "PlazaPlaza null" + Environment.NewLine;
+                code += "Plaza null" + Environment.NewLine;
             }
             else
             {
@@ -1270,31 +1366,31 @@ namespace DMT.Services
 
     #endregion
 
-    #region PlazaConfigManager
+    #region PlazaServiceConfigManager
 
     /// <summary>
-    /// The PlazaConfigManager class.
+    /// The PlazaServiceConfigManager class.
     /// </summary>
-    public class PlazaConfigManager : JsonConfigFileManger<LocalServiceConfig>,
+    public class PlazaServiceConfigManager : JsonConfigFileManger<PlazaServiceConfig>,
         IRabbitMQConfig, IPlazaConfig, ISCWConfig, ITAxTODConfig,
         ITAAppConfig, ITODAppConfig
     {
         #region Static Instance Access
 
-        private static PlazaConfigManager _instance = null;
+        private static PlazaServiceConfigManager _instance = null;
 
         /// <summary>
         /// Gets ConfigManager instance access.
         /// </summary>
-        public static PlazaConfigManager Instance
+        public static PlazaServiceConfigManager Instance
         {
             get
             {
                 if (null == _instance)
                 {
-                    lock (typeof(PlazaConfigManager))
+                    lock (typeof(PlazaServiceConfigManager))
                     {
-                        _instance = new PlazaConfigManager();
+                        _instance = new PlazaServiceConfigManager();
                     }
                 }
                 return _instance;
@@ -1314,14 +1410,14 @@ namespace DMT.Services
         /// <summary>
         /// Constructor.
         /// </summary>
-        private PlazaConfigManager() : base()
+        private PlazaServiceConfigManager() : base()
         {
 
         }
         /// <summary>
         /// Destructor.
         /// </summary>
-        ~PlazaConfigManager()
+        ~PlazaServiceConfigManager()
         {
             //Shutdown();
         }
@@ -1403,6 +1499,102 @@ namespace DMT.Services
             {
                 if (null == Value) LoadConfig();
                 return (null != Value) ? Value.TODApp : null;
+            }
+        }
+
+        #endregion
+    }
+
+    #endregion
+
+    #region PlazaAppConfigManager
+
+    /// <summary>
+    /// Plaza App Config Manager class.
+    /// </summary>
+    public class PlazaAppConfigManager : JsonConfigFileManger<PlazaAppConfig>,
+        IPlazaConfig, ISCWConfig
+    {
+        #region Static Instance Access
+
+        private static PlazaAppConfigManager _instance = null;
+
+        /// <summary>
+        /// Gets ConfigManager instance access.
+        /// </summary>
+        public static PlazaAppConfigManager Instance
+        {
+            get
+            {
+                if (null == _instance)
+                {
+                    lock (typeof(PlazaAppConfigManager))
+                    {
+                        _instance = new PlazaAppConfigManager();
+                    }
+                }
+                return _instance;
+            }
+        }
+
+        #endregion
+
+        #region Internal Variables
+
+        private string _fileName = NJson.LocalConfigFile("plaza.app.config.json");
+
+        #endregion
+
+        #region Constructor and Destructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        private PlazaAppConfigManager() : base()
+        {
+
+        }
+        /// <summary>
+        /// Destructor.
+        /// </summary>
+        ~PlazaAppConfigManager()
+        {
+            //Shutdown();
+        }
+
+        #endregion
+
+        #region Override Methods and Properties
+
+        /// <summary>
+        /// Gets Config File Name.
+        /// </summary>
+        public override string FileName { get { return _fileName; } }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets Plaza Config.
+        /// </summary>
+        public LocalWebServiceConfig Plaza
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.Plaza : null;
+            }
+        }
+        /// <summary>
+        /// Gets SCW Config.
+        /// </summary>
+        public SCWWebServiceConfig SCW
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.SCW : null;
             }
         }
 
