@@ -37,8 +37,8 @@ namespace DMT.Controls.StatusBar
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            string host = (null != TAConfigManager.Instance.SCW && null != TAConfigManager.Instance.SCW.Service) ?
-                TAConfigManager.Instance.SCW.Service.HostName : "unknown";
+            string host = (null != TAConfigManager.Instance.Plaza && null != TAConfigManager.Instance.Plaza.Service) ?
+                TAConfigManager.Instance.Plaza.Service.HostName : "unknown";
 
             ping = new NLib.Components.PingManager();
             ping.OnReply += Ping_OnReply;

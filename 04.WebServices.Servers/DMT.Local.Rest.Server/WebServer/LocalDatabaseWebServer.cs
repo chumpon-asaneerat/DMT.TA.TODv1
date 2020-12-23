@@ -240,6 +240,12 @@ namespace DMT.Services
         public void Start()
         {
             MethodBase med = MethodBase.GetCurrentMethod();
+            CheckConfig(); // Check Config.
+            if (null == _cfg)
+            {
+                med.Err("Server Configuration is null.");
+                return;
+            }
 
             // Start database server.
             LocalDbServer.Instance.Start();
