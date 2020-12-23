@@ -99,11 +99,14 @@
     <Compile Include="StatusBar\Elements\TAServerStatus.xaml.cs">
       <DependentUpon>TAServerStatus.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StatusBar\Elements\TODLocalDbStatus.xaml.cs">
-      <DependentUpon>TODLocalDbStatus.xaml</DependentUpon>
+    <Compile Include="StatusBar\Elements\LocalPlazaStatus.xaml.cs">
+      <DependentUpon>LocalPlazaStatus.xaml</DependentUpon>
     </Compile>
     <Compile Include="StatusBar\TODStatusBar.xaml.cs">
       <DependentUpon>TODStatusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TOD\Pages\JobList\JobListPage.xaml.cs">
+      <DependentUpon>JobListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="TOD\Pages\Menu\ConfigurationMenu.xaml.cs">
       <DependentUpon>ConfigurationMenu.xaml</DependentUpon>
@@ -111,8 +114,8 @@
     <Compile Include="TOD\Pages\Menu\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TOD\Pages\Menu\ReportManu.xaml.cs">
-      <DependentUpon>ReportManu.xaml</DependentUpon>
+    <Compile Include="TOD\Pages\Menu\ReportMenu.xaml.cs">
+      <DependentUpon>ReportMenu.xaml</DependentUpon>
     </Compile>
     <Page Include="Header\Elements\HeaderChief.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -170,11 +173,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="StatusBar\Elements\TODLocalDbStatus.xaml">
+    <Page Include="StatusBar\Elements\LocalPlazaStatus.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="StatusBar\TODStatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TOD\Pages\JobList\JobListPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -186,9 +193,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TOD\Pages\Menu\ReportManu.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="TOD\Pages\Menu\ReportMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +252,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TOD\Controls\" />
+    <Folder Include="TOD\Pages\EMVQRCode\" />
     <Folder Include="TOD\Windows\" />
   </ItemGroup>
   <ItemGroup>

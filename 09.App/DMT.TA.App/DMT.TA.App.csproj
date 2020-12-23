@@ -96,8 +96,8 @@
     <Compile Include="StatusBar\Elements\SCWStatus.xaml.cs">
       <DependentUpon>SCWStatus.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StatusBar\Elements\TALocalDbStatus.xaml.cs">
-      <DependentUpon>TALocalDbStatus.xaml</DependentUpon>
+    <Compile Include="StatusBar\Elements\LocalPlazaStatus.xaml.cs">
+      <DependentUpon>LocalPlazaStatus.xaml</DependentUpon>
     </Compile>
     <Compile Include="StatusBar\Elements\TAServerStatus.xaml.cs">
       <DependentUpon>TAServerStatus.xaml</DependentUpon>
@@ -163,7 +163,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="StatusBar\Elements\TALocalDbStatus.xaml">
+    <Page Include="StatusBar\Elements\LocalPlazaStatus.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

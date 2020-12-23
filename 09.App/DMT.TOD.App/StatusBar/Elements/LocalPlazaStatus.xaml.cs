@@ -13,16 +13,16 @@ using DMT.Services;
 namespace DMT.Controls.StatusBar
 {
     /// <summary>
-    /// Interaction logic for TODLocalDbStatus.xaml
+    /// Interaction logic for LocalPlazaStatus.xaml
     /// </summary>
-    public partial class TODLocalDbStatus : UserControl
+    public partial class LocalPlazaStatus : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public TODLocalDbStatus()
+        public LocalPlazaStatus()
         {
             InitializeComponent();
         }
@@ -30,12 +30,22 @@ namespace DMT.Controls.StatusBar
         #endregion
 
         private DispatcherTimer timer = null;
+        private NLib.Components.PingManager ping = null;
         private bool isOnline = false;
 
         #region Loaded/Unloaded
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            string host = (null != TODConfigManager.Instance.SCW && null != TODConfigManager.Instance.SCW.Service) ?
+                TODConfigManager.Instance.SCW.Service.HostName : "unknown";
+
+            ping = new NLib.Components.PingManager();
+            ping.OnReply += Ping_OnReply;
+            ping.Add(host);
+            ping.Interval = 1000;
+            ping.Start();
+
             UpdateUI();
 
             timer = new DispatcherTimer();
@@ -46,12 +56,37 @@ namespace DMT.Controls.StatusBar
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
         {
+            if (null != ping)
+            {
+                ping.OnReply -= Ping_OnReply;
+                ping.Stop();
+                ping.Dispose();
+            }
+            ping = null;
+
             if (null != timer)
             {
                 timer.Tick -= timer_Tick;
                 timer.Stop();
             }
             timer = null;
+        }
+
+        #endregion
+
+        #region Ping Reply Handler
+
+        private void Ping_OnReply(object sender, NLib.Networks.PingResponseEventArgs e)
+        {
+            if (null != e.Reply &&
+                e.Reply.Status == System.Net.NetworkInformation.IPStatus.Success)
+            {
+                isOnline = true;
+            }
+            else
+            {
+                isOnline = false;
+            }
         }
 
         #endregion
@@ -67,8 +102,6 @@ namespace DMT.Controls.StatusBar
 
         private void UpdateUI()
         {
-            /*
-            isOnline = TODLocalDbServer.Instance.Connected;
             if (isOnline)
             {
                 borderStatus.Background = new SolidColorBrush(Colors.ForestGreen);
@@ -79,7 +112,6 @@ namespace DMT.Controls.StatusBar
                 borderStatus.Background = new SolidColorBrush(Colors.Maroon);
                 txtStatus.Text = "Offline";
             }
-            */
         }
     }
 }
