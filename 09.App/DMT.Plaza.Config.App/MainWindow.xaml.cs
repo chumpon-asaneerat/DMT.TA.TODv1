@@ -64,11 +64,6 @@ namespace DMT
 
         #region Local Uri/TSB Manager/User View
 
-        private void cmdSetupLocalUri_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
         private void cmdTSBManage_Click(object sender, RoutedEventArgs e)
         {
             PageContentManager.Instance.Current = new Config.Pages.TSBViewPage();
@@ -76,12 +71,12 @@ namespace DMT
 
         private void cmdUserView_Click(object sender, RoutedEventArgs e)
         {
-            //PageContentManager.Instance.Current = new Config.Pages.UserViewPage();
+            PageContentManager.Instance.Current = new Config.Pages.UserViewPage();
         }
 
         private void cmdShiftView_Click(object sender, RoutedEventArgs e)
         {
-            //PageContentManager.Instance.Current = new Config.Pages.ShiftViewPage();
+            PageContentManager.Instance.Current = new Config.Pages.ShiftViewPage();
         }
 
         #endregion
@@ -91,15 +86,6 @@ namespace DMT
         private void cmdTSBCreditView_Click(object sender, RoutedEventArgs e)
         {
             //PageContentManager.Instance.Current = new Config.Pages.TSBCreditViewPage();
-        }
-
-        #endregion
-
-        #region Data Center
-
-        private void cmdHQSetupUri_Click(object sender, RoutedEventArgs e)
-        {
-            //PageContentManager.Instance.Current = new Config.Pages.HQSetupUriPage();
         }
 
         #endregion

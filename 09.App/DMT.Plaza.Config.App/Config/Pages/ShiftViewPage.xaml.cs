@@ -26,6 +26,8 @@ using System.Runtime.InteropServices;
 
 namespace DMT.Config.Pages
 {
+    using ops = Services.Operations.Plaza.Shift; // reference to static class.
+
     /// <summary>
     /// Interaction logic for ShiftViewPage.xaml
     /// </summary>
@@ -43,7 +45,6 @@ namespace DMT.Config.Pages
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
 
         #region Loaded/Unloaded
 
@@ -70,7 +71,7 @@ namespace DMT.Config.Pages
 
         private void RefreshList()
         {
-            var shifts = ops.Shifts.GetShifts().Value();
+            var shifts = ops.Gets().Value();
             listView.ItemsSource = shifts;
         }
     }

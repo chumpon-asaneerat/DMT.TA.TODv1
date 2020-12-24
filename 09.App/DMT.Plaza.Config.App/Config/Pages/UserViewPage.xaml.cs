@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,7 @@ using System.Runtime.InteropServices;
 
 namespace DMT.Config.Pages
 {
+    using ops = Services.Operations.Plaza.Security; // reference to static class.
     /// <summary>
     /// Interaction logic for UserViewPage.xaml
     /// </summary>
@@ -43,7 +45,6 @@ namespace DMT.Config.Pages
 
         #endregion
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
         private List<RoleItem> items = new List<RoleItem>();
 
         #region Loaded/Unloaded
@@ -68,14 +69,16 @@ namespace DMT.Config.Pages
 
             items.Clear();
 
-            var roles = ops.Users.GetRoles().Value();
+            var roles = ops.Role.Gets().Value();
             if (null != roles)
             {
                 roles.ForEach(role =>
                 {
                     RoleItem item = role.CloneTo<RoleItem>();
                     items.Add(item);
-                    var users = ops.Users.GetUsers(role).Value();
+
+                    /*
+                    var users = ops.User.Gets(role).Value();
                     if (null != users)
                     {
                         users.ForEach(user =>
@@ -84,6 +87,7 @@ namespace DMT.Config.Pages
                             item.Users.Add(uItem);
                         });
                     }
+                    */
                 });
             }
 
@@ -106,7 +110,7 @@ namespace DMT.Config.Pages
             var user = (pgrid.SelectedObject as User);
             if (null != user)
             {
-                var ret = ops.Users.SaveUser(user);
+                var ret = ops.User.Save(user);
                 if (ret.Failed)
                 {
                     MessageBox.Show("Save User Error.");
@@ -121,6 +125,8 @@ namespace DMT.Config.Pages
         {
             this.Users = new ObservableCollection<UserItem>();
         }
+
+        [Browsable(false)]
         public ObservableCollection<UserItem> Users { get; set; }
     }
 

@@ -62,7 +62,7 @@ Operations:
         ☐ SaveRevenue (/Revenue/Save) TESTED.
         ☐ GetRevenues (/Revenue/Gets) (has filter send/unsend to dc) TESTED.
     Shift (/Shift):
-        ☐ Gets (/Shift/Gets) TESTED.
+        ✔ Gets (/Shift/Gets) TESTED. @done(20-12-24 12:55)
         ☐ Save (/Shift/Seve) TESTED.
         TSB (/Shift/TSB):
             ☐ Create (/Shift/TSB/Create) TESTED.
@@ -70,10 +70,11 @@ Operations:
             ☐ Change (/Shift/TSB/Change) TESTED.
         Users (/Shift/User):
             ☐ Create (/Shift/Users/Create) TESTED.
-            ☐ GetCurrent (/Shift/Users/Current) TESTED.
+            ☐ Current (/Shift/Users/Current) TESTED.
             ☐ Begin (/Shift/Users/Begin) TESTED.
             ☐ End (/Shift/Users/End) TESTED.
-            ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose) TESTED.
+            Search (/Shift/User/Search):
+                ☐ ByStatus (/Shift/Users/Search/ByStatus) (all/close/unclose) TESTED.
     Infrastructure (/Infrastructure):
         TSB (/Infrastructure/TSB):
             ✔ Gets (/Infrastructure/TSB/Gets) TESTED. @done(20-12-24 10:13)
@@ -97,9 +98,9 @@ Operations:
             Search (/TSB/Lanes/Search):
                 ☐ ByPlazaGroup (/Infrastructure/Lane/Search/ByPlazaGroup) TESTED.
                 ✔ ByPlaza (/Infrastructure/Lane/Search/ByPlaza) TESTED. @done(20-12-24 10:13)
-    User (/Security):
+    Security (/Security):
         Role (/Security/Role):
-            ☐ Gets (/Security/Role/Gets) TESTED.
+            ✔ Gets (/Security/Role/Gets) TESTED. @done(20-12-24 12:55)
             ☐ Save (/Security/Role/Save) TESTED.
         User (/Security/User):
             ☐ Gets (/Security/User/Gets) TESTED.

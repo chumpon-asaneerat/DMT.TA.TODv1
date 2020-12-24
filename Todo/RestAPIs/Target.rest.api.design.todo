@@ -69,11 +69,12 @@ Operations:
             ✔ Current(/Shift/TSB/Current)  refactored. @done(20-12-24 10:30)
             ✔ Change (/Shift/TSB/Change) refactored. @done(20-12-24 10:30)
         Users (/Shift/User):
-            ☐ Create (/Shift/Users/Create) refactored.
-            ☐ GetCurrent (/Shift/Users/Current) refactored.
-            ☐ Begin (/Shift/Users/Begin) refactored.
-            ☐ End (/Shift/Users/End) refactored.
-            ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose) refactored.
+            ☐ Create (/Shift/User/Create) refactored.
+            ☐ Current (/Shift/User/Current) refactored.
+            ☐ Begin (/Shift/User/Begin) refactored.
+            ☐ End (/Shift/User/End) refactored.
+            Search (/Shift/User/Search):
+                ☐ ByStatus (/Shift/User/Search/ByStatus) (all/close/unclose) refactored.
     Infrastructure (/Infrastructure):
         TSBs (/Infrastructure/TSB):
             ✔ Gets (/Infrastructure/TSB/Gets) refactored. @done(20-12-23 16:47)
@@ -97,7 +98,7 @@ Operations:
             Search (/TSB/Lane/Search):
                 ✔ ByPlazaGroup (/Infrastructure/Lane/Search/ByPlazaGroup) refactored. @done(20-12-23 17:49)
                 ✔ ByPlaza (/Infrastructure/Lane/Search/ByPlaza) refactored. @done(20-12-23 17:49)
-    User (/Security):
+    Security (/Security):
         Role (/Security/Role):
             ✔ Gets (/User/Role/Gets) refactored. @done(20-12-24 10:13)
             ✔ Save (/User/Role/Save) refactored. @done(20-12-24 10:13)

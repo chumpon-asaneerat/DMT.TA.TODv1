@@ -23,19 +23,6 @@
                        IsQuickAccessToolBarMenuDropDownVisible="False">
             <!-- Tab - Local Data Service -->
             <Fluent:RibbonTabItem Header="Local Data Service">
-                <!-- Group - Local URI -->
-                <!--
-                <Fluent:RibbonGroupBox Header="Data Service">
-                    <Fluent:Button x:Name="cmdSetupLocalUri"
-                                   Header="Setup URI (local)"
-                                   Width="75"
-                                   Click="cmdSetupLocalUri_Click">
-                        <Fluent:Button.LargeIcon>
-                            <Image Source="Images/Configs/config_01.png"/>
-                        </Fluent:Button.LargeIcon>
-                    </Fluent:Button>
-                </Fluent:RibbonGroupBox>
-                -->
                 <!-- Group - Master -->
                 <Fluent:RibbonGroupBox Header="Master Data">
                     <Fluent:Button x:Name="cmdTSBManage"
@@ -82,25 +69,6 @@
                                    Click="cmdTSBCreditView_Click">
                         <Fluent:Button.LargeIcon>
                             <Image Source="Images/Toll/money.ico" />
-                        </Fluent:Button.LargeIcon>
-                    </Fluent:Button>
-                </Fluent:RibbonGroupBox>
-            </Fluent:RibbonTabItem>
-            <!-- Tab - Data Center -->
-            <Fluent:RibbonTabItem Header="Data Center">
-                <!-- Group - Server URI -->
-                <Fluent:RibbonGroupBox Header="Server">
-                    <Fluent:Button x:Name="cmdHQSetupUri"
-                                   Width="75"
-                                   Header="Setup URI (HQ)"
-                                   Click="cmdHQSetupUri_Click">
-                        <Fluent:Button.LargeIcon>
-                            <Image Source="Images/Configs/config_02.png" />
-                        </Fluent:Button.LargeIcon>
-                    </Fluent:Button>
-                    <Fluent:Button Width="75" Header="Connection Status">
-                        <Fluent:Button.LargeIcon>
-                            <Image Source="Images/Networks/Network 1 Information.png" />
                         </Fluent:Button.LargeIcon>
                     </Fluent:Button>
                 </Fluent:RibbonGroupBox>
