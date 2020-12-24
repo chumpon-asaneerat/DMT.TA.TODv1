@@ -13,9 +13,9 @@ namespace DMT.Services
     /// </summary>
     public partial class Shift
     {
-        /// <summary>The Shift Controller class.</summary>
+        /// <summary>The TSB Controller class.</summary>
         [Authorize]
-        public partial class ShiftController : ApiController { }
+        public partial class CommonController : ApiController { }
 
         /// <summary>The TSB Controller class.</summary>
         [Authorize]
@@ -28,9 +28,9 @@ namespace DMT.Services
 
     // hack for exports nested class to controller(s)
     /// <summary>
-    /// The Shift's Shift Manage Controller class.
+    /// The TSB Shift's Manage Controller class.
     /// </summary>
-    public class ShiftManageController : Shift.ShiftController { }
+    public class ShiftController : Shift.CommonController { }
     /// <summary>
     /// The TSB Shift's Manage Controller class.
     /// </summary>

@@ -11,14 +11,14 @@ namespace DMT.Services
 {
     partial class Shift
     {
-        partial class ShiftController
+        partial class TSBController
         {
             [HttpPost]
-            [ActionName(RouteConsts.Shift.Gets.Name)]
+            [ActionName(RouteConsts.Shift.TSB.Current.Name)]
             //[AllowAnonymous]
-            public NDbResult<List<Models.Shift>> Gets()
+            public NDbResult<TSBShift> Current()
             {
-                var ret = Models.Shift.GetShifts();
+                var ret = TSBShift.GetTSBShift();
                 return ret;
             }
         }

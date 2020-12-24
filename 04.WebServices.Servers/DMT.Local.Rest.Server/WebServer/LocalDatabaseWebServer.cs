@@ -184,8 +184,8 @@ namespace DMT.Services
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
 
                         // Save
-                        actionName = RouteConsts.Security.Role.Gets.Name;
-                        actionUrl = RouteConsts.Security.Role.Gets.Url;
+                        actionName = RouteConsts.Security.Role.Save.Name;
+                        actionUrl = RouteConsts.Security.Role.Save.Url;
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                     }
                 }
@@ -204,8 +204,8 @@ namespace DMT.Services
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
 
                         // Save
-                        actionName = RouteConsts.Security.User.Gets.Name;
-                        actionUrl = RouteConsts.Security.User.Gets.Url;
+                        actionName = RouteConsts.Security.User.Save.Name;
+                        actionUrl = RouteConsts.Security.User.Save.Url;
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                     }
                 }
@@ -251,10 +251,12 @@ namespace DMT.Services
                 {
                     internal static void MapRoutes(HttpConfiguration config)
                     {
+                        /*
                         string controllerName, actionName, actionUrl;
 
                         // Set Controller Name.
                         controllerName = RouteConsts.Shift.User.ControllerName;
+                        */
                     }
                 }
             }
