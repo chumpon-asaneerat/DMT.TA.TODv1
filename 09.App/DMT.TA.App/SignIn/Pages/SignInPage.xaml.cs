@@ -72,7 +72,7 @@ namespace DMT.Pages
                 _user = SmartcardManager.Instance.User;
                 if (tabs.SelectedIndex == 0)
                 {
-                    CheckUser();
+                    VerifyUser();
                 }
                 else if (tabs.SelectedIndex == 1)
                 {
@@ -90,7 +90,7 @@ namespace DMT.Pages
         private void cmdOK_Click(object sender, RoutedEventArgs e)
         {
             if (tabs.SelectedIndex != 0) return;
-            CheckUser();
+            CheckInput();
         }
 
         private void cmdChangePwd_Click(object sender, RoutedEventArgs e)
@@ -158,7 +158,7 @@ namespace DMT.Pages
             if (tabs.SelectedIndex != 0) return;
             if (e.Key == Key.Enter || e.Key == Key.Return)
             {
-                CheckUser();
+                CheckInput();
                 e.Handled = true;
             }
         }
@@ -222,7 +222,7 @@ namespace DMT.Pages
             }
         }
 
-        private void CheckUser()
+        private void CheckInput()
         {
             txtMsg.Text = string.Empty;
 
@@ -246,6 +246,12 @@ namespace DMT.Pages
             var md5 = Utils.MD5.Encrypt(pwd);
             var search = Search.User.ByLogIn.Create(userId, md5);
             _user = ops.User.Search.ByLogIn(search).Value();
+
+            VerifyUser();
+        }
+
+        private void VerifyUser()
+        {
             if (null == _user)
             {
                 ShowError("ไม่พบข้อมูลพนักงานตามรหัสพนักงาน และรหัสผ่านที่ระบุ" + Environment.NewLine + "กรุณาป้อนรหัสใหม่");
