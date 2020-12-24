@@ -108,7 +108,7 @@ Operations:
             Search (/Security/User/Search):
                 ☐ ById (/Security/User/Search/ById) TESTED.
                 ☐ ByCardNo (/Security/User/Search/ByCardNo) TESTED.
-                ☐ ByLogIn (/Security/User/Search/ByLogIn) TESTED.
+                ✔ ByLogIn (/Security/User/Search/ByLogIn) TESTED. @done(20-12-24 17:01)
                 ☐ ByGroupId (/Security/User/Search/ByGroupId) TESTED.
-                ☐ ByRoleId (/Security/User/Search/ByRoleId) TESTED.
+                ✔ ByRoleId (/Security/User/Search/ByRoleId) TESTED. @done(20-12-24 17:01)
                 ☐ ByFilter (/Security/User/Search/ByFilter) TESTED.
