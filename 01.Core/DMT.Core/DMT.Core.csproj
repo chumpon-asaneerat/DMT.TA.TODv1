@@ -79,6 +79,8 @@
     <Compile Include="Consts\Routes\Security\Actions\User\Save.cs" />
     <Compile Include="Consts\Routes\Security\Security.Controller.cs" />
     <Compile Include="Consts\Routes\Shift\Actions\Gets.cs" />
+    <Compile Include="Consts\Routes\Shift\Actions\TSB\Change.cs" />
+    <Compile Include="Consts\Routes\Shift\Actions\TSB\Current.cs" />
     <Compile Include="Consts\Routes\Shift\Shift.Controller.cs" />
     <Compile Include="ExtensionMethods\DateTime.cs" />
     <Compile Include="ExtensionMethods\NJson.cs" />
@@ -94,6 +96,8 @@
       <Name>NLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Consts\Routes\Shift\Actions\User\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -66,8 +66,8 @@ Operations:
         ☐ Save (/Shift/Seve) TESTED.
         TSB (/Shift/TSB):
             ☐ Create (/Shift/TSB/Create) TESTED.
-            ☐ GetCurrent(/Shift/TSB/Current)  TESTED.
-            ☐ ChangeShift (/Shift/TSB/Change) TESTED.
+            ☐ Current(/Shift/TSB/Current)  TESTED.
+            ☐ Change (/Shift/TSB/Change) TESTED.
         Users (/Shift/User):
             ☐ Create (/Shift/Users/Create) TESTED.
             ☐ GetCurrent (/Shift/Users/Current) TESTED.

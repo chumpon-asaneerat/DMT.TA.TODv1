@@ -66,8 +66,8 @@ Operations:
         ✔ Save (/Shift/Seve) refactored. @done(20-12-24 10:15)
         TSB (/Shift/TSB):
             ☐ Create (/Shift/TSB/Create) refactored.
-            ☐ GetCurrent(/Shift/TSB/Current)  refactored.
-            ☐ ChangeShift (/Shift/TSB/Change) refactored.
+            ✔ Current(/Shift/TSB/Current)  refactored. @done(20-12-24 10:30)
+            ✔ Change (/Shift/TSB/Change) refactored. @done(20-12-24 10:30)
         Users (/Shift/User):
             ☐ Create (/Shift/Users/Create) refactored.
             ☐ GetCurrent (/Shift/Users/Current) refactored.

@@ -1,6 +1,6 @@
 ﻿namespace DMT
 {
-    // Url: api/Shift
+    // Url: api/shift
     static partial class RouteConsts
     {
         /// <summary>The Shift Controller.</summary>
@@ -8,8 +8,35 @@
         {
             /// <summary>Gets controller name.</summary>
             public const string ControllerName = "Shift";
+
             /// <summary>Gets base controller url.</summary>
             public const string Url = RouteConsts.Url + @"/" + ControllerName;
+
+            // Url: api/shift/tsb
+            /// <summary>The Shift's TSB Controller.</summary>
+            public static partial class TSB
+            {
+                /// <summary>Gets controller name.</summary>
+                public const string ControllerName = "TSBShiftManage";
+
+                /// <summary>Gets route name.</summary>
+                public const string Name = "TSB";
+                /// <summary>Gets route url.</summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
+
+            // Url: api/shift/user
+            /// <summary>The Shift's User Controller.</summary>
+            public static partial class User
+            {
+                /// <summary>Gets controller name.</summary>
+                public const string ControllerName = "UserShiftManage";
+
+                /// <summary>Gets route name.</summary>
+                public const string Name = "TSB";
+                /// <summary>Gets route url.</summary>
+                public const string Url = Shift.Url + @"/" + Name;
+            }
         }
     }
 }
