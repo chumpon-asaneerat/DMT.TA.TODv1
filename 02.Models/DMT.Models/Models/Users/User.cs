@@ -514,7 +514,7 @@ namespace DMT.Models
 		/// <summary>
 		/// Gets Password Date String.
 		/// </summary>
-		[Category("Shift")]
+		[Category("Expiration")]
 		[Description("Gets Password Date String.")]
 		[ReadOnly(true)]
 		[JsonIgnore]
@@ -532,7 +532,7 @@ namespace DMT.Models
 		/// <summary>
 		/// Gets Password Time String.
 		/// </summary>
-		[Category("Shift")]
+		[Category("Expiration")]
 		[Description("Gets Password Time String.")]
 		[ReadOnly(true)]
 		[JsonIgnore]
@@ -550,7 +550,7 @@ namespace DMT.Models
 		/// <summary>
 		/// Gets or sets Password Date Time String..
 		/// </summary>
-		[Category("Shift")]
+		[Category("Expiration")]
 		[Description("Gets or sets Password Date Time String.")]
 		[ReadOnly(true)]
 		[JsonIgnore]

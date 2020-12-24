@@ -106,17 +106,47 @@ namespace DMT.Config.Pages
 
         #endregion
 
-        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        private void SaveRule()
         {
-            var user = (pgrid.SelectedObject as User);
-            if (null != user)
+            var value = (pgrid.SelectedObject as Role);
+            if (null != value)
             {
-                var ret = ops.User.Save(user);
+                var ret = ops.Role.Save(value);
+                if (ret.Failed)
+                {
+                    MessageBox.Show("Save Role Error.");
+                }
+                else
+                {
+                    MessageBox.Show("Save Role Success.");
+                    RefreshTree();
+                }
+            }
+        }
+
+        private void SaveUser()
+        {
+            var value = (pgrid.SelectedObject as User);
+            if (null != value)
+            {
+                var ret = ops.User.Save(value);
                 if (ret.Failed)
                 {
                     MessageBox.Show("Save User Error.");
                 }
+                else
+                {
+                    MessageBox.Show("Save User Success.");
+                    RefreshTree();
+                }
             }
+        }
+
+        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        {
+            if (null == pgrid.SelectedObject) return;
+            if (pgrid.SelectedObject is RoleItem) SaveRule();
+            if (pgrid.SelectedObject is UserItem) SaveUser();
         }
     }
 

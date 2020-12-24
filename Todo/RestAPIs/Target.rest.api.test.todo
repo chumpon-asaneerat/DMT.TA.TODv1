@@ -101,7 +101,7 @@ Operations:
     Security (/Security):
         Role (/Security/Role):
             ✔ Gets (/Security/Role/Gets) TESTED. @done(20-12-24 12:55)
-            ☐ Save (/Security/Role/Save) TESTED.
+            ✔ Save (/Security/Role/Save) TESTED. @done(20-12-24 14:57)
         User (/Security/User):
             ✔ Gets (/Security/User/Gets) TESTED. @done(20-12-24 13:09)
             ✔ Save (/Security/User/Save) TESTED. @done(20-12-24 14:30)
