@@ -207,6 +207,36 @@ namespace DMT.Services
                         actionName = RouteConsts.Security.User.Save.Name;
                         actionUrl = RouteConsts.Security.User.Save.Url;
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Search ById
+                        actionName = RouteConsts.Security.User.Search.ById.Name;
+                        actionUrl = RouteConsts.Security.User.Search.ById.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Search ByCardId
+                        actionName = RouteConsts.Security.User.Search.ByCardId.Name;
+                        actionUrl = RouteConsts.Security.User.Search.ByCardId.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Search ByLogIn
+                        actionName = RouteConsts.Security.User.Search.ByLogIn.Name;
+                        actionUrl = RouteConsts.Security.User.Search.ByLogIn.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Search ByRoleId
+                        actionName = RouteConsts.Security.User.Search.ByRoleId.Name;
+                        actionUrl = RouteConsts.Security.User.Search.ByRoleId.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Search ByGroupId
+                        actionName = RouteConsts.Security.User.Search.ByGroupId.Name;
+                        actionUrl = RouteConsts.Security.User.Search.ByGroupId.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Search ByFilter
+                        actionName = RouteConsts.Security.User.Search.ByFilter.Name;
+                        actionUrl = RouteConsts.Security.User.Search.ByFilter.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                     }
                 }
             }

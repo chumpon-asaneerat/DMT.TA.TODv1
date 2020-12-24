@@ -9,36 +9,10 @@ using DMT.Models;
 
 namespace DMT.Services
 {
-    partial class Infrastructure
+    partial class Shift
     {
-        partial class LaneController
+        partial class UserController
         {
-            /// <summary>
-            /// Gets Lanes By PlazaGroup.
-            /// </summary>
-            /// <param name="value">The PlazaGroup.</param>
-            /// <returns></returns>
-            [HttpPost]
-            [ActionName(RouteConsts.Infrastructure.Lane.Search.ByPlazaGroup.Name)]
-            //[AllowAnonymous]
-            public NDbResult<List<Lane>> ByPlazaGroup([FromBody] PlazaGroup value)
-            {
-                var ret = Lane.GetPlazaGroupLanes(value);
-                return ret;
-            }
-            /// <summary>
-            /// Get Lanes By Plaza.
-            /// </summary>
-            /// <param name="value">The Plaza.</param>
-            /// <returns></returns>
-            [HttpPost]
-            [ActionName(RouteConsts.Infrastructure.Lane.Search.ByPlaza.Name)]
-            //[AllowAnonymous]
-            public NDbResult<List<Lane>> ByTSB([FromBody] Plaza value)
-            {
-                var ret = Lane.GetPlazaLanes(value);
-                return ret;
-            }
         }
     }
 }

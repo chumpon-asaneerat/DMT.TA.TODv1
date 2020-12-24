@@ -110,3 +110,5 @@ Operations:
                 ☐ ByCardNo (/Security/User/Search/ByCardNo) TESTED.
                 ☐ ByLogIn (/Security/User/Search/ByLogIn) TESTED.
                 ☐ ByGroupId (/Security/User/Search/ByGroupId) TESTED.
+                ☐ ByRoleId (/Security/User/Search/ByRoleId) TESTED.
+                ☐ ByFilter (/Security/User/Search/ByFilter) TESTED.

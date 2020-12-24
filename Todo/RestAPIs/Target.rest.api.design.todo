@@ -106,7 +106,9 @@ Operations:
             ✔ Gets (/User/User/Gets) refactored. @done(20-12-24 10:13)
             ✔ Save (/User/User/Save) refactored. @done(20-12-24 10:13)
             Search (/Security/User/Search):
-                ☐ ById (/Security/User/Search/ById) refactored.
-                ☐ ByCardNo (/Security/User/Search/ByCardNo) refactored.
-                ☐ ByLogIn (/Security/User/Search/ByLogIn) refactored.
-                ☐ ByGroupId (/Security/User/Search/ByGroupId) refactored.
+                ✔ ById (/Security/User/Search/ById) refactored. @done(20-12-24 16:17)
+                ✔ ByCardNo (/Security/User/Search/ByCardNo) refactored. @done(20-12-24 16:17)
+                ✔ ByLogIn (/Security/User/Search/ByLogIn) refactored. @done(20-12-24 16:17)
+                ✔ ByGroupId (/Security/User/Search/ByGroupId) refactored. @done(20-12-24 16:17)
+                ✔ ByRoleId (/Security/User/Search/ByRoleId) refactored. @done(20-12-24 16:18)
+                ✔ ByFilter (/Security/User/Search/ByFilter) refactored. @done(20-12-24 16:18)
