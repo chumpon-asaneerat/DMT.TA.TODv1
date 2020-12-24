@@ -122,6 +122,68 @@ namespace DMT.Config.Pages
         }
 
         #endregion
+
+        private void SaveTSB()
+        {
+            var value = (pgrid.SelectedObject as TSB);
+            if (null != value)
+            {
+                var ret = ops.TSB.Save(value);
+                if (ret.Failed)
+                {
+                    MessageBox.Show("Save TSB Error.");
+                }
+                else
+                {
+                    MessageBox.Show("Save TSB Success.");
+                    RefreshTree();
+                }
+            }
+        }
+
+        private void SavePlaza()
+        {
+            var value = (pgrid.SelectedObject as Plaza);
+            if (null != value)
+            {
+                var ret = ops.Plaza.Save(value);
+                if (ret.Failed)
+                {
+                    MessageBox.Show("Save Plaza Error.");
+                }
+                else
+                {
+                    MessageBox.Show("Save Plaza Success.");
+                    RefreshTree();
+                }
+            }
+        }
+
+        private void SaveLane()
+        {
+            var value = (pgrid.SelectedObject as Lane);
+            if (null != value)
+            {
+                var ret = ops.Lane.Save(value);
+                if (ret.Failed)
+                {
+                    MessageBox.Show("Save Lane Error.");
+                }
+                else
+                {
+                    MessageBox.Show("Save Lane Success.");
+                    RefreshTree();
+                }
+            }
+        }
+
+        private void cmdSave_Click(object sender, RoutedEventArgs e)
+        {
+            if (null == pgrid.SelectedObject) return;
+            if (pgrid.SelectedObject is TSBItem) SaveTSB();
+            if (pgrid.SelectedObject is PlazaItem) SavePlaza();
+            if (pgrid.SelectedObject is LaneItem) SaveLane();
+        }
     }
 
     public class TSBItem : TSB

@@ -45,7 +45,6 @@ namespace DMT.Config.Pages
 
         #endregion
 
-
         #region Loaded/Unloaded
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)

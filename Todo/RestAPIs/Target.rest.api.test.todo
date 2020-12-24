@@ -80,21 +80,21 @@ Operations:
             ✔ Gets (/Infrastructure/TSB/Gets) TESTED. @done(20-12-24 10:13)
             ✔ Current (/Infrastructure/TSB/Current) TESTED. @done(20-12-24 10:13)
             ☐ SetActive (/Infrastructure/TSB/SetActive) TESTED.
-            ☐ Save (/Infrastructure/TSB/Save) TESTED.
+            ✔ Save (/Infrastructure/TSB/Save) TESTED. @done(20-12-24 14:30)
         PlazaGroup (/Infrastructure/PlazaGroup):
-            ✔ Gets (/Infrastructure/PlazaGroup/Gets) TESTED. @done(20-12-24 10:13)
-            ☐ Save (/Infrastructure/PlazaGroup/Save) TESTED.
+            ✔ Gets (/Infrastructure/PlazaGroup/Gets) TESTED. @done(20-12-24 14:30)
+            ✔ Save (/Infrastructure/PlazaGroup/Save) TESTED. @done(20-12-24 14:30)
             Search (/Infrastructure/PlazaGroup/Search):
                 ✔ ByTSB (/Infrastructure/PlazaGroup/Search/ByTSB) TESTED. @done(20-12-24 10:13)
         Plaza (/TSB/Plaza):
             ✔ Gets (/Infrastructure/Plaza/Gets) TESTED. @done(20-12-24 10:13)
-            ☐ Save (/Infrastructure/Plaza/Save) TESTED.
+            ✔ Save (/Infrastructure/Plaza/Save) TESTED. @done(20-12-24 14:30)
             Search (/Infrastructure/Plaza/Search):
                 ✔ ByTSB (/Infrastructure/Plaza/Search/ByTSB) refactored. @done(20-12-24 10:13)
                 ☐ ByPlazaGroup (/Infrastructure/Plaza/Search/ByPlazaGroup) TESTED.
         Lane (/TSB/Lane):
             ✔ Gets (/Infrastructure/Lane/Gets) TESTED. @done(20-12-24 10:13)
-            ☐ Save (/Infrastructure/Lane/Save) TESTED.
+            ✔ Save (/Infrastructure/Lane/Save) TESTED. @done(20-12-24 14:30)
             Search (/TSB/Lanes/Search):
                 ☐ ByPlazaGroup (/Infrastructure/Lane/Search/ByPlazaGroup) TESTED.
                 ✔ ByPlaza (/Infrastructure/Lane/Search/ByPlaza) TESTED. @done(20-12-24 10:13)
@@ -104,7 +104,7 @@ Operations:
             ☐ Save (/Security/Role/Save) TESTED.
         User (/Security/User):
             ✔ Gets (/Security/User/Gets) TESTED. @done(20-12-24 13:09)
-            ☐ Save (/Security/User/Save) TESTED.
+            ✔ Save (/Security/User/Save) TESTED. @done(20-12-24 14:30)
             Search (/Security/User/Search):
                 ☐ ById (/Security/User/Search/ById) TESTED.
                 ☐ ByCardNo (/Security/User/Search/ByCardNo) TESTED.
