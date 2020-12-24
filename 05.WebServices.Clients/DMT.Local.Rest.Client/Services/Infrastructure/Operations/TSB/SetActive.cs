@@ -19,7 +19,7 @@ namespace DMT.Services.Operations
                 public static NRestResult SetActive(Models.TSB value)
                 {
                     var ret = Execute(
-                        RouteConsts.Infrastructure.TSB.Save.Url, value);
+                        RouteConsts.Infrastructure.TSB.SetActive.Url, value);
                     return ret;
                 }
             }

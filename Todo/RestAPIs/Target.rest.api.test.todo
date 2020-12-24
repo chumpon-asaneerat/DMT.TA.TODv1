@@ -79,7 +79,7 @@ Operations:
         TSB (/Infrastructure/TSB):
             ✔ Gets (/Infrastructure/TSB/Gets) TESTED. @done(20-12-24 10:13)
             ✔ Current (/Infrastructure/TSB/Current) TESTED. @done(20-12-24 10:13)
-            ☐ SetActive (/Infrastructure/TSB/SetActive) TESTED.
+            ✔ SetActive (/Infrastructure/TSB/SetActive) TESTED. @done(20-12-24 18:40)
             ✔ Save (/Infrastructure/TSB/Save) TESTED. @done(20-12-24 14:30)
         PlazaGroup (/Infrastructure/PlazaGroup):
             ✔ Gets (/Infrastructure/PlazaGroup/Gets) TESTED. @done(20-12-24 14:30)
