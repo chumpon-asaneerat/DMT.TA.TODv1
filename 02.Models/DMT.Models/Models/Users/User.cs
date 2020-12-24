@@ -1167,14 +1167,46 @@ namespace DMT.Models
 	#endregion
 
 	#region Search (User)
-	/*
+
 	partial class Search
 	{
-		/// <summary>
-		/// Search (User).
-		/// </summary>
-		public static class Users
+		public static class User
 		{
+			#region ById
+
+			/// <summary>
+			/// Search By User Id.
+			/// </summary>
+			public class ById : NSearch<ById>
+			{
+				#region Public Properties
+
+				/// <summary>
+				/// Gets or sets User Id.
+				/// </summary>
+				public string UserId { get; set; }
+
+				#endregion
+
+				#region Static Method (Create)
+
+				/// <summary>
+				/// Create Search instance.
+				/// </summary>
+				/// <param name="userId">The User Id.</param>
+				/// <returns>Returns Search instance.</returns>
+				public static ById Create(string userId)
+				{
+					var ret = new ById();
+					ret.UserId = userId;
+					return ret;
+				}
+
+				#endregion
+			}
+
+			#endregion
+
 			#region ByCardId
 
 			/// <summary>
@@ -1251,6 +1283,41 @@ namespace DMT.Models
 
 			#endregion
 
+			#region ByRoleId
+
+			/// <summary>
+			/// Search By Role Id.
+			/// </summary>
+			public class ByRoleId : NSearch<ByRoleId>
+			{
+				#region Public Properties
+
+				/// <summary>
+				/// Gets or sets Role Id.
+				/// </summary>
+				public string RoleId { get; set; }
+
+				#endregion
+
+				#region Static Method (Create)
+
+				/// <summary>
+				/// Create Search instance.
+				/// </summary>
+				/// <param name="roleId">The Role Id.</param>
+				/// <returns>Returns Search instance.</returns>
+				public static ByRoleId Create(string roleId)
+				{
+					var ret = new ByRoleId();
+					ret.RoleId = roleId;
+					return ret;
+				}
+
+				#endregion
+			}
+
+			#endregion
+
 			#region ByGroupId
 
 			/// <summary>
@@ -1286,17 +1353,17 @@ namespace DMT.Models
 
 			#endregion
 
-			#region ById
+			#region FilterById
 
 			/// <summary>
-			/// Search By User Id in various Roles.
+			/// Search By User Id (Partial) in various Roles.
 			/// </summary>
-			public class ById : NSearch<ById>
+			public class FilterById : NSearch<FilterById>
 			{
 				#region Public Properties
 
 				/// <summary>
-				/// Gets or sets User Id.
+				/// Gets or sets User Id (Partial).
 				/// </summary>
 				public string UserId { get; set; }
 				/// <summary>
@@ -1314,9 +1381,9 @@ namespace DMT.Models
 				/// <param name="userId">The User Id.</param>
 				/// <param name="roles">The list of role.</param>
 				/// <returns>Returns Search instance.</returns>
-				public static ById Create(string userId, params string[] roles)
+				public static FilterById Create(string userId, params string[] roles)
 				{
-					var ret = new ById();
+					var ret = new FilterById();
 					ret.UserId = userId;
 					ret.Roles = roles;
 					return ret;
@@ -1328,6 +1395,6 @@ namespace DMT.Models
 			#endregion
 		}
 	}
-	*/
+
 	#endregion
 }
