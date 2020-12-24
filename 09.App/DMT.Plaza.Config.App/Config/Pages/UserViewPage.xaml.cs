@@ -69,6 +69,7 @@ namespace DMT.Config.Pages
 
             items.Clear();
 
+            /*
             var roles = ops.Role.Gets().Value();
             var users = ops.User.Gets().Value();
             if (null != roles)
@@ -91,7 +92,28 @@ namespace DMT.Config.Pages
                     }
                 });
             }
+            */
 
+            var roles = ops.Role.Gets().Value();
+            if (null != roles)
+            {
+                roles.ForEach(role => 
+                {
+                    RoleItem item = role.CloneTo<RoleItem>();
+                    items.Add(item);
+
+                    var search = Search.User.ByRoleId.Create(role.RoleId);
+                    var users = ops.User.Search.ByRoleId(search).Value();
+                    if (null != users)
+                    {
+                        users.ForEach(user =>
+                        {
+                            UserItem uItem = user.CloneTo<UserItem>();
+                            item.Users.Add(uItem);
+                        });
+                    }
+                });
+            }
             tree.ItemsSource = items;
         }
 

@@ -53,7 +53,7 @@ namespace DMT.Services.Operations
                     /// </summary>
                     /// <param name="value">The Search.User.ByRoleId instance.</param>
                     /// <returns>Returns Users list.</returns>
-                    public static NRestResult<List<Models.User>> ByGroupId(Models.Search.User.ByRoleId value)
+                    public static NRestResult<List<Models.User>> ByRoleId(Models.Search.User.ByRoleId value)
                     {
                         var ret = Execute<List<Models.User>>(
                             RouteConsts.Security.User.Search.ByRoleId.Url, value);
