@@ -15,7 +15,11 @@ namespace DMT.Services.Operations
             public static partial class Role { }
 
             /// <summary>The User Operations class.</summary>
-            public static partial class User { }
+            public static partial class User 
+            {
+                /// <summary>The User Search Operations class.</summary>
+                public static partial class Search { }
+            }
         }
     }
 }

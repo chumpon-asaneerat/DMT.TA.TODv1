@@ -72,6 +72,7 @@
     <Compile Include="Services\Security\Operations\Role\Save.cs" />
     <Compile Include="Services\Security\Operations\User\Gets.cs" />
     <Compile Include="Services\Security\Operations\User\Save.cs" />
+    <Compile Include="Services\Security\Operations\User\Searchs.cs" />
     <Compile Include="Services\Security\Security.Operations.cs" />
     <Compile Include="Services\Shift\Operations\Common\Gets.cs" />
     <Compile Include="Services\Shift\Shift.Operations.cs" />
