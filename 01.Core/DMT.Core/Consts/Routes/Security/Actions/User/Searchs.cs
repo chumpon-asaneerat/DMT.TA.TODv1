@@ -58,12 +58,12 @@
                         public const string Url = Search.Url + @"/" + Name;
                     }
 
-                    // Url : api/security/user/search/filterById
-                    /// <summary>The Gets Users filter by User Id (partial) and roles action.</summary>
-                    public static class FilterById
+                    // Url : api/security/user/search/byFilter
+                    /// <summary>The Gets Users filter by User Id (increment search) and roles action.</summary>
+                    public static class ByFilter
                     {
                         /// <summary>Gets route name.</summary>
-                        public const string Name = "FilterById";
+                        public const string Name = "ByFilter";
                         /// <summary>Gets route url.</summary>
                         public const string Url = Search.Url + @"/" + Name;
                     }

@@ -1185,6 +1185,14 @@ namespace DMT.Models
 				/// Gets or sets User Id.
 				/// </summary>
 				public string UserId { get; set; }
+				/// <summary>
+				/// Gets or sets is exact match. Set to False for increment searth.
+				/// </summary>
+				public bool IsExactMatch { get; set; }
+				/// <summary>
+				/// Gets or sets roles array.
+				/// </summary>
+				public string[] Roles { get; set; }
 
 				#endregion
 
@@ -1194,11 +1202,17 @@ namespace DMT.Models
 				/// Create Search instance.
 				/// </summary>
 				/// <param name="userId">The User Id.</param>
+				/// <param name="isExactMatch">Set to False for increment searth.</param>
+				/// <param name="roles">The list of role.</param>
 				/// <returns>Returns Search instance.</returns>
-				public static ById Create(string userId)
+				public static ById Create(string userId, 
+					bool isExactMatch = true, 
+					params string[] roles)
 				{
 					var ret = new ById();
+					ret.IsExactMatch = isExactMatch;
 					ret.UserId = userId;
+					ret.Roles = roles;
 					return ret;
 				}
 
@@ -1353,17 +1367,17 @@ namespace DMT.Models
 
 			#endregion
 
-			#region FilterById
+			#region ByFilter
 
 			/// <summary>
-			/// Search By User Id (Partial) in various Roles.
+			/// Search By Filter.
 			/// </summary>
-			public class FilterById : NSearch<FilterById>
+			public class ByFilter : NSearch<ByFilter>
 			{
 				#region Public Properties
 
 				/// <summary>
-				/// Gets or sets User Id (Partial).
+				/// Gets or sets User Id.
 				/// </summary>
 				public string UserId { get; set; }
 				/// <summary>
@@ -1381,9 +1395,10 @@ namespace DMT.Models
 				/// <param name="userId">The User Id.</param>
 				/// <param name="roles">The list of role.</param>
 				/// <returns>Returns Search instance.</returns>
-				public static FilterById Create(string userId, params string[] roles)
+				public static ByFilter Create(string userId,
+					params string[] roles)
 				{
-					var ret = new FilterById();
+					var ret = new ByFilter();
 					ret.UserId = userId;
 					ret.Roles = roles;
 					return ret;
@@ -1393,6 +1408,7 @@ namespace DMT.Models
 			}
 
 			#endregion
+
 		}
 	}
 
