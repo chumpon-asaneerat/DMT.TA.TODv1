@@ -73,6 +73,9 @@
     <Compile Include="Consts\Routes\Infrastructure\Actions\PlazaGroup\Gets.cs" />
     <Compile Include="Consts\Routes\Infrastructure\Actions\TSB\Gets.cs" />
     <Compile Include="Consts\Routes\Notify\Notify.Controller.cs" />
+    <Compile Include="Consts\Routes\Security\Security.Controller.cs" />
+    <Compile Include="Consts\Routes\Shift\Actions\Gets.cs" />
+    <Compile Include="Consts\Routes\Shift\Shift.Controller.cs" />
     <Compile Include="ExtensionMethods\DateTime.cs" />
     <Compile Include="ExtensionMethods\NJson.cs" />
     <Compile Include="ExtensionMethods\RangeParser.cs" />
@@ -87,6 +90,9 @@
       <Name>NLib</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Consts\Routes\Security\Actions\Role\" />
+    <Folder Include="Consts\Routes\Security\Actions\User\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
