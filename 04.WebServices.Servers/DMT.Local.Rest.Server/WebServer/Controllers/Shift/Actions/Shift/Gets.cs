@@ -9,16 +9,16 @@ using DMT.Models;
 
 namespace DMT.Services
 {
-    partial class Infrastructure
+    partial class Shift
     {
-        partial class PlazaController
+        partial class ShiftController
         {
             [HttpPost]
-            [ActionName(RouteConsts.Infrastructure.Plaza.Save.Name)]
+            [ActionName(RouteConsts.Shift.Gets.Name)]
             //[AllowAnonymous]
-            public NDbResult<Plaza> Save([FromBody] Plaza value)
+            public NDbResult<List<Models.Shift>> Gets()
             {
-                var ret = Models.Plaza.SavePlaza(value);
+                var ret = Models.Shift.GetShifts();
                 return ret;
             }
         }

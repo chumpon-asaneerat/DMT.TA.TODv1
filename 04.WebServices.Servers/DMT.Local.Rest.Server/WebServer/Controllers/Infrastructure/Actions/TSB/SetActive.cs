@@ -18,17 +18,8 @@ namespace DMT.Services
             //[AllowAnonymous]
             public NDbResult SetActive([FromBody] TSB value)
             {
-                NDbResult result;
-                if (null == value)
-                {
-                    result = new NDbResult();
-                    result.ParameterIsNull();
-                }
-                else
-                {
-                    result = TSB.SetActive(value.TSBId);
-                }
-                return result;
+                var ret = TSB.SetActive(value.TSBId);
+                return ret;
             }
         }
     }

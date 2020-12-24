@@ -78,7 +78,7 @@
     <Compile Include="Consts\Routes\Security\Actions\User\Gets.cs" />
     <Compile Include="Consts\Routes\Security\Actions\User\Save.cs" />
     <Compile Include="Consts\Routes\Security\Security.Controller.cs" />
-    <Compile Include="Consts\Routes\Shift\Actions\Gets.cs" />
+    <Compile Include="Consts\Routes\Shift\Actions\Shift\Gets.cs" />
     <Compile Include="Consts\Routes\Shift\Actions\TSB\Change.cs" />
     <Compile Include="Consts\Routes\Shift\Actions\TSB\Current.cs" />
     <Compile Include="Consts\Routes\Shift\Shift.Controller.cs" />

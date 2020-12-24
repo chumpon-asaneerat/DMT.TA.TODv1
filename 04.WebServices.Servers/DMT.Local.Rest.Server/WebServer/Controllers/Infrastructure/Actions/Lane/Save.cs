@@ -18,17 +18,8 @@ namespace DMT.Services
             //[AllowAnonymous]
             public NDbResult<Lane> Save([FromBody] Lane value)
             {
-                NDbResult<Lane> result;
-                if (null == value)
-                {
-                    result = new NDbResult<Lane>();
-                    result.ParameterIsNull();
-                }
-                else
-                {
-                    result = Lane.SaveLane(value);
-                }
-                return result;
+                var ret = Lane.SaveLane(value);
+                return ret;
             }
         }
     }

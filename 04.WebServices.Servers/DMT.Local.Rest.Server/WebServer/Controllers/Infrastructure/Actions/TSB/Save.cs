@@ -18,17 +18,8 @@ namespace DMT.Services
             //[AllowAnonymous]
             public NDbResult<TSB> Save([FromBody] TSB value)
             {
-                NDbResult<TSB> result;
-                if (null == value)
-                {
-                    result = new NDbResult<TSB>();
-                    result.ParameterIsNull();
-                }
-                else
-                {
-                    result = TSB.SaveTSB(value);
-                }
-                return result;
+                var ret = Models.TSB.SaveTSB(value);
+                return ret;
             }
         }
     }

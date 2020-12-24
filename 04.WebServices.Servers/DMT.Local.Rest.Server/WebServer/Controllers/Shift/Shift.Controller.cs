@@ -9,11 +9,14 @@ using DMT.Models;
 namespace DMT.Services
 {
     /// <summary>
-    /// The Security class.
+    /// The Shift class.
     /// </summary>
-    [Authorize]
-    public partial class Shift : ApiController
+    public partial class Shift
     {
+        /// <summary>The Shift Controller class.</summary>
+        [Authorize]
+        public partial class ShiftController : ApiController { }
+
         /// <summary>The TSB Controller class.</summary>
         [Authorize]
         public partial class TSBController : ApiController { }
@@ -25,11 +28,15 @@ namespace DMT.Services
 
     // hack for exports nested class to controller(s)
     /// <summary>
-    /// The Security's Role Manage Controller class.
+    /// The Shift's Shift Manage Controller class.
+    /// </summary>
+    public class ShiftManageController : Shift.ShiftController { }
+    /// <summary>
+    /// The TSB Shift's Manage Controller class.
     /// </summary>
     public class TSBShiftManageController : Shift.TSBController { }
     /// <summary>
-    /// The Security's User Manage Controller class.
+    /// The User Shift's Manage Controller class.
     /// </summary>
     public class UserShiftManageController : Shift.UserController { }
 }

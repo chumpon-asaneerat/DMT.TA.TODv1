@@ -9,16 +9,16 @@ using DMT.Models;
 
 namespace DMT.Services
 {
-    partial class Infrastructure
+    partial class Security
     {
-        partial class PlazaController
+        partial class RoleController
         {
             [HttpPost]
-            [ActionName(RouteConsts.Infrastructure.Plaza.Save.Name)]
+            [ActionName(RouteConsts.Security.Role.Save.Name)]
             //[AllowAnonymous]
-            public NDbResult<Plaza> Save([FromBody] Plaza value)
+            public NDbResult<Models.Role> Save([FromBody] Models.Role value)
             {
-                var ret = Models.Plaza.SavePlaza(value);
+                var ret = Models.Role.SaveRole(value);
                 return ret;
             }
         }

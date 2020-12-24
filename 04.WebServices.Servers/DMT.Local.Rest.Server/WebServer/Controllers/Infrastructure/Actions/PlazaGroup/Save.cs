@@ -18,17 +18,8 @@ namespace DMT.Services
             //[AllowAnonymous]
             public NDbResult<PlazaGroup> Save([FromBody] PlazaGroup value)
             {
-                NDbResult<PlazaGroup> result;
-                if (null == value)
-                {
-                    result = new NDbResult<PlazaGroup>();
-                    result.ParameterIsNull();
-                }
-                else
-                {
-                    result = PlazaGroup.SavePlazaGroup(value);
-                }
-                return result;
+                var ret = Models.PlazaGroup.SavePlazaGroup(value);
+                return ret;
             }
         }
     }
