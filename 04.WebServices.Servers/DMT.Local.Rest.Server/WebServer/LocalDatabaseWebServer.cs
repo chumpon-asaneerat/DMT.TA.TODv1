@@ -166,6 +166,98 @@ namespace DMT.Services
                     }
                 }
             }
+
+            internal static class Security
+            {
+                internal static class Role
+                {
+                    internal static void MapRoutes(HttpConfiguration config)
+                    {
+                        string controllerName, actionName, actionUrl;
+
+                        // Set Controller Name.
+                        controllerName = RouteConsts.Security.Role.ControllerName;
+
+                        // Gets
+                        actionName = RouteConsts.Security.Role.Gets.Name;
+                        actionUrl = RouteConsts.Security.Role.Gets.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Save
+                        actionName = RouteConsts.Security.Role.Gets.Name;
+                        actionUrl = RouteConsts.Security.Role.Gets.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+                    }
+                }
+                internal static class User
+                {
+                    internal static void MapRoutes(HttpConfiguration config)
+                    {
+                        string controllerName, actionName, actionUrl;
+
+                        // Set Controller Name.
+                        controllerName = RouteConsts.Security.User.ControllerName;
+
+                        // Gets
+                        actionName = RouteConsts.Security.User.Gets.Name;
+                        actionUrl = RouteConsts.Security.User.Gets.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Save
+                        actionName = RouteConsts.Security.User.Gets.Name;
+                        actionUrl = RouteConsts.Security.User.Gets.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+                    }
+                }
+            }
+
+            internal static class Shift
+            {
+                internal static void MapRoutes(HttpConfiguration config)
+                {
+                    string controllerName, actionName, actionUrl;
+
+                    // Set Controller Name.
+                    controllerName = RouteConsts.Shift.ControllerName;
+
+                    // Gets
+                    actionName = RouteConsts.Shift.Gets.Name;
+                    actionUrl = RouteConsts.Shift.Gets.Url;
+                    Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+                }
+
+                internal static class TSB
+                {
+                    internal static void MapRoutes(HttpConfiguration config)
+                    {
+                        string controllerName, actionName, actionUrl;
+
+                        // Set Controller Name.
+                        controllerName = RouteConsts.Shift.TSB.ControllerName;
+
+                        // Change
+                        actionName = RouteConsts.Shift.TSB.Change.Name;
+                        actionUrl = RouteConsts.Shift.TSB.Change.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
+                        // Current
+                        actionName = RouteConsts.Shift.TSB.Current.Name;
+                        actionUrl = RouteConsts.Shift.TSB.Current.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+                    }
+                }
+
+                internal static class User
+                {
+                    internal static void MapRoutes(HttpConfiguration config)
+                    {
+                        string controllerName, actionName, actionUrl;
+
+                        // Set Controller Name.
+                        controllerName = RouteConsts.Shift.User.ControllerName;
+                    }
+                }
+            }
         }
 
         #region Override Methods
@@ -183,6 +275,16 @@ namespace DMT.Services
             MapControllers.Infrastructure.PlazaGroup.MapRoutes(config);
             MapControllers.Infrastructure.Plaza.MapRoutes(config);
             MapControllers.Infrastructure.Lane.MapRoutes(config);
+
+            // Security
+            MapControllers.Security.Role.MapRoutes(config);
+            MapControllers.Security.User.MapRoutes(config);
+
+            // Shift
+            MapControllers.Shift.MapRoutes(config);
+            // Shift (TSB/User)
+            MapControllers.Shift.Role.MapRoutes(config);
+            MapControllers.Shift.User.MapRoutes(config);
 
             #region Default Route (do not used)
 
