@@ -62,8 +62,8 @@ Operations:
         ☐ SaveRevenue (/Revenue/Save) refactored.
         ☐ GetRevenues (/Revenue/Gets) (has filter send/unsend to dc) refactored.
     Shift (/Shift):
-        ☐ GetShifts (/Shift/Gets) refactored.
-        ☐ SaveShift (/Shift/Seve) refactored.
+        ✔ Gets (/Shift/Gets) refactored. @done(20-12-24 10:15)
+        ✔ Save (/Shift/Seve) refactored. @done(20-12-24 10:15)
         TSB (/Shift/TSB):
             ☐ Create (/Shift/TSB/Create) refactored.
             ☐ GetCurrent(/Shift/TSB/Current)  refactored.
@@ -99,11 +99,11 @@ Operations:
                 ✔ ByPlaza (/Infrastructure/Lane/Search/ByPlaza) refactored. @done(20-12-23 17:49)
     User (/Security):
         Role (/Security/Role):
-            ☐ Gets (/User/Role/Gets) refactored.
-            ☐ Save (/User/Role/Save) refactored.
+            ✔ Gets (/User/Role/Gets) refactored. @done(20-12-24 10:13)
+            ✔ Save (/User/Role/Save) refactored. @done(20-12-24 10:13)
         User (/Security/User):
-            ☐ Gets (/User/User/Gets) refactored.
-            ☐ Save (/User/User/Save) refactored.
+            ✔ Gets (/User/User/Gets) refactored. @done(20-12-24 10:13)
+            ✔ Save (/User/User/Save) refactored. @done(20-12-24 10:13)
             Search (/Security/User/Search):
                 ☐ ById (/Security/User/Search/ById) refactored.
                 ☐ ByCardNo (/Security/User/Search/ByCardNo) refactored.

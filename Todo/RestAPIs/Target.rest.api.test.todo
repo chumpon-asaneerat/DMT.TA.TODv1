@@ -62,8 +62,8 @@ Operations:
         ☐ SaveRevenue (/Revenue/Save) TESTED.
         ☐ GetRevenues (/Revenue/Gets) (has filter send/unsend to dc) TESTED.
     Shift (/Shift):
-        ☐ GetShifts (/Shift/Gets) TESTED.
-        ☐ SaveShift (/Shift/Seve) TESTED.
+        ☐ Gets (/Shift/Gets) TESTED.
+        ☐ Save (/Shift/Seve) TESTED.
         TSB (/Shift/TSB):
             ☐ Create (/Shift/TSB/Create) TESTED.
             ☐ GetCurrent(/Shift/TSB/Current)  TESTED.
@@ -76,27 +76,27 @@ Operations:
             ☐ Gets (/Shift/Users/Gets) (has filter all/close/unclose) TESTED.
     Infrastructure (/Infrastructure):
         TSB (/Infrastructure/TSB):
-            ☐ Gets (/Infrastructure/TSB/Gets) TESTED.
-            ☐ Current (/Infrastructure/TSB/Current) TESTED.
+            ✔ Gets (/Infrastructure/TSB/Gets) TESTED. @done(20-12-24 10:13)
+            ✔ Current (/Infrastructure/TSB/Current) TESTED. @done(20-12-24 10:13)
             ☐ SetActive (/Infrastructure/TSB/SetActive) TESTED.
             ☐ Save (/Infrastructure/TSB/Save) TESTED.
         PlazaGroup (/Infrastructure/PlazaGroup):
-            ☐ Gets (/Infrastructure/PlazaGroup/Gets) TESTED.
+            ✔ Gets (/Infrastructure/PlazaGroup/Gets) TESTED. @done(20-12-24 10:13)
             ☐ Save (/Infrastructure/PlazaGroup/Save) TESTED.
             Search (/Infrastructure/PlazaGroup/Search):
-                ☐ ByTSB (/Infrastructure/PlazaGroup/Search/ByTSB) TESTED.
+                ✔ ByTSB (/Infrastructure/PlazaGroup/Search/ByTSB) TESTED. @done(20-12-24 10:13)
         Plaza (/TSB/Plaza):
-            ☐ Gets (/Infrastructure/Plaza/Gets) TESTED.
+            ✔ Gets (/Infrastructure/Plaza/Gets) TESTED. @done(20-12-24 10:13)
             ☐ Save (/Infrastructure/Plaza/Save) TESTED.
             Search (/Infrastructure/Plaza/Search):
-                ☐ ByTSB (/Infrastructure/Plaza/Search/ByTSB) refactored.
+                ✔ ByTSB (/Infrastructure/Plaza/Search/ByTSB) refactored. @done(20-12-24 10:13)
                 ☐ ByPlazaGroup (/Infrastructure/Plaza/Search/ByPlazaGroup) TESTED.
         Lane (/TSB/Lane):
-            ☐ Gets (/Infrastructure/Lane/Gets) TESTED.
+            ✔ Gets (/Infrastructure/Lane/Gets) TESTED. @done(20-12-24 10:13)
             ☐ Save (/Infrastructure/Lane/Save) TESTED.
             Search (/TSB/Lanes/Search):
                 ☐ ByPlazaGroup (/Infrastructure/Lane/Search/ByPlazaGroup) TESTED.
-                ☐ ByPlaza (/Infrastructure/Lane/Search/ByPlaza) TESTED.
+                ✔ ByPlaza (/Infrastructure/Lane/Search/ByPlaza) TESTED. @done(20-12-24 10:13)
     User (/Security):
         Role (/Security/Role):
             ☐ Gets (/Security/Role/Gets) TESTED.
