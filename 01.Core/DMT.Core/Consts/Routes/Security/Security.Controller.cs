@@ -35,6 +35,13 @@
                 public const string Name = "User";
                 /// <summary>Gets route url.</summary>
                 public const string Url = Security.Url + @"/" + Name;
+
+                /// <summary>The Seacch class.</summary>
+                public static partial class Search
+                {
+                    /// <summary>Gets route url.</summary>
+                    public const string Url = User.Url + @"/Search";
+                }
             }
         }
     }

@@ -1,6 +1,6 @@
 ﻿namespace DMT
 {
-    // Url : api/infrastructure/tsb/gets
+    // Url : api/security/user/gets
     static partial class RouteConsts
     {
         static partial class Security
