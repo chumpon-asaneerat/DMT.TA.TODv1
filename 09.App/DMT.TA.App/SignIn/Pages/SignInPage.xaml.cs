@@ -17,6 +17,8 @@ using System.Windows.Threading;
 
 namespace DMT.Pages
 {
+    using ops = Services.Operations.Plaza.Security; // reference to static class.
+
     /// <summary>
     /// Interaction logic for SignInPage.xaml
     /// </summary>
@@ -242,11 +244,19 @@ namespace DMT.Pages
             }
 
             var md5 = Utils.MD5.Encrypt(pwd);
-            _user = User.GetByLogIn(userId, md5).Value();
-
-            if (null == _user || _roles.IndexOf(_user.RoleId) == -1)
+            var search = Search.User.ByLogIn.Create(userId, md5);
+            _user = ops.User.Search.ByLogIn(search).Value();
+            if (null == _user)
             {
                 ShowError("ไม่พบข้อมูลพนักงานตามรหัสพนักงาน และรหัสผ่านที่ระบุ" + Environment.NewLine + "กรุณาป้อนรหัสใหม่");
+                txtUserId.SelectAll();
+                txtUserId.Focus();
+                return;
+            }
+
+            if (null != _user && _roles.IndexOf(_user.RoleId) == -1)
+            {
+                ShowError("พนักงานตามรหัสที่ระบุ ไม่มีสิทธิในการเข้าใช้งาน" + Environment.NewLine + "กรุณาป้อนรหัสพนักงานอื่น");
                 txtUserId.SelectAll();
                 txtUserId.Focus();
                 return;

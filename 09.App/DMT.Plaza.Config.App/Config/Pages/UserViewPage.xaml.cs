@@ -28,6 +28,7 @@ using System.Runtime.InteropServices;
 namespace DMT.Config.Pages
 {
     using ops = Services.Operations.Plaza.Security; // reference to static class.
+
     /// <summary>
     /// Interaction logic for UserViewPage.xaml
     /// </summary>
