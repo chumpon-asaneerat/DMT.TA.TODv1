@@ -103,7 +103,7 @@ Operations:
             ✔ Gets (/Security/Role/Gets) TESTED. @done(20-12-24 12:55)
             ☐ Save (/Security/Role/Save) TESTED.
         User (/Security/User):
-            ☐ Gets (/Security/User/Gets) TESTED.
+            ✔ Gets (/Security/User/Gets) TESTED. @done(20-12-24 13:09)
             ☐ Save (/Security/User/Save) TESTED.
             Search (/Security/User/Search):
                 ☐ ById (/Security/User/Search/ById) TESTED.

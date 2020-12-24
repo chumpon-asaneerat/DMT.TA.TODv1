@@ -70,24 +70,25 @@ namespace DMT.Config.Pages
             items.Clear();
 
             var roles = ops.Role.Gets().Value();
+            var users = ops.User.Gets().Value();
             if (null != roles)
             {
                 roles.ForEach(role =>
                 {
                     RoleItem item = role.CloneTo<RoleItem>();
                     items.Add(item);
-
-                    /*
-                    var users = ops.User.Gets(role).Value();
                     if (null != users)
                     {
                         users.ForEach(user =>
                         {
-                            UserItem uItem = user.CloneTo<UserItem>();
-                            item.Users.Add(uItem);
+                            // Add if match role.
+                            if (user.RoleId == role.RoleId)
+                            {
+                                UserItem uItem = user.CloneTo<UserItem>();
+                                item.Users.Add(uItem);
+                            }
                         });
                     }
-                    */
                 });
             }
 
