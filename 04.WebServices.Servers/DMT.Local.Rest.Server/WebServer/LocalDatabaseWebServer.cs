@@ -283,7 +283,7 @@ namespace DMT.Services
             // Shift
             MapControllers.Shift.MapRoutes(config);
             // Shift (TSB/User)
-            MapControllers.Shift.Role.MapRoutes(config);
+            MapControllers.Shift.TSB.MapRoutes(config);
             MapControllers.Shift.User.MapRoutes(config);
 
             #region Default Route (do not used)
