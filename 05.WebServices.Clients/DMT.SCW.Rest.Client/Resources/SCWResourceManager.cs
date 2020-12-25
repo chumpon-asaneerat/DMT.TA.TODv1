@@ -129,6 +129,14 @@ namespace DMT.Services
         /// Gets cheifOnDuty parameter json script.
         /// </summary>
         public static string cheifOnDuty { get { return GetJson("cheifOnDuty"); } }
+        /// <summary>
+        /// Gets changePassword parameter json script.
+        /// </summary>
+        public static string changePassword { get { return GetJson("changePassword"); } }
+        /// <summary>
+        /// Gets passwordExpiresDays parameter json script.
+        /// </summary>
+        public static string passwordExpiresDays { get { return GetJson("passwordExpiresDays"); } }
 
         #endregion
     }

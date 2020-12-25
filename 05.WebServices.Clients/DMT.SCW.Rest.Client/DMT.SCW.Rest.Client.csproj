@@ -91,6 +91,8 @@
     <EmbeddedResource Include="Resources\Json\qrcodeTransactionList.json" />
     <EmbeddedResource Include="Resources\Json\cheifOnDuty.json" />
     <EmbeddedResource Include="Resources\Json\saveCheifDuty.json" />
+    <EmbeddedResource Include="Resources\Json\changePassword.json" />
+    <EmbeddedResource Include="Resources\Json\passwordExpiresDays.json" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
