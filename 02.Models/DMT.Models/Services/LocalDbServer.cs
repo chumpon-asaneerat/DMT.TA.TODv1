@@ -338,16 +338,16 @@ namespace DMT.Services
             {
                 couponBookId = 1,
                 couponBookValue = 665,
-                abbreviation = "30",
-                description = "30 บาท"
+                abbreviation = "35",
+                description = "35 บาท"
             };
             if (!MCouponBook.Exists(item)) MCouponBook.Save(item);
             item = new MCouponBook()
             {
                 couponBookId = 2,
                 couponBookValue = 1520,
-                abbreviation = "35",
-                description = "35 บาท"
+                abbreviation = "80",
+                description = "80 บาท"
             };
             if (!MCouponBook.Exists(item)) MCouponBook.Save(item);
         }
