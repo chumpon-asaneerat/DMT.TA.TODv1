@@ -8,8 +8,6 @@ using NLib.Reflection;
 
 namespace DMT.Models
 {
-    #region Parameter class
-
     /// <summary>The TAServerCouponTransaction class.</summary>
     public class TAServerCouponTransaction
     {
@@ -78,5 +76,66 @@ namespace DMT.Models
         public DateTime? SapChooseDate { get; set; }
     }
 
-    #endregion
+    static partial class Search
+    {
+        public static partial class TAxTOD
+        {
+            public static partial class Coupon
+            {
+                #region Gets
+
+                /// <summary>
+                /// Gets.
+                /// </summary>
+                public class Gets : NSearch<Gets>
+                {
+                    #region Public Properties
+
+                    /// <summary>
+                    /// Gets or sets TSBId.
+                    /// </summary>
+                    public string TSBId { get; set; }
+                    /// <summary>
+                    /// Gets or sets User Id.
+                    /// </summary>
+                    public string UserId { get; set; }
+                    /// <summary>
+                    /// Gets or sets Transaction Type.
+                    /// </summary>
+                    public int? TransactionType { get; set; }
+                    /// <summary>
+                    /// Gets or sets Coupon Type.
+                    /// </summary>
+                    public int? Coupontype { get; set; }
+
+                    #endregion
+
+                    #region Static Method (Create)
+
+                    /// <summary>
+                    /// Create Search instance.
+                    /// </summary>
+                    /// <param name="tsbId">The TSB Id.</param>
+                    /// <param name="userId">The User Id.</param>
+                    /// <param name="transactionType">The Transaction Type.</param>
+                    /// <param name="coupontype">The Coupon Type.</param>
+                    /// <returns>Returns Search instance.</returns>
+                    public static Gets Create(string tsbId, string userId = null, 
+                        int? transactionType = null, int? coupontype = null)
+                    {
+                        var ret = new Gets();
+                        ret.TSBId = tsbId;
+                        ret.UserId = userId;
+                        ret.TransactionType = transactionType;
+                        ret.Coupontype = coupontype;
+                        return ret;
+                    }
+
+                    #endregion
+                }
+
+                #endregion
+            }
+        }
+    }
 }
