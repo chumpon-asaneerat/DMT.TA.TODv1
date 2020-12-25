@@ -17,8 +17,8 @@ namespace DMT.Services.Operations
             /// Execute loginAudit api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWLogInAuditResult> loginAudit(SCWLogInAudit value)
+            /// <returns>Returns instance of SCWLogInAuditResult.</returns>
+            public static SCWLogInAuditResult loginAudit(SCWLogInAudit value)
             {
                 var ret = Execute<SCWLogInAuditResult>(
                     RouteConsts.SCW.Security.loginAudit.Url, value);
@@ -29,8 +29,8 @@ namespace DMT.Services.Operations
             /// Execute changePassword api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWChangePasswordResult> changePassword(SCWChangePassword value)
+            /// <returns>Returns instance of SCWChangePasswordResult.</returns>
+            public static SCWChangePasswordResult changePassword(SCWChangePassword value)
             {
                 var ret = Execute<SCWChangePasswordResult>(
                     RouteConsts.SCW.Security.changePassword.Url, value);
@@ -40,8 +40,8 @@ namespace DMT.Services.Operations
             /// <summary>
             /// Execute passwordExpiresDays api.
             /// </summary>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWPasswordExpiresDaysResult> passwordExpiresDays()
+            /// <returns>Returns instance of SCWPasswordExpiresDaysResult.</returns>
+            public static SCWPasswordExpiresDaysResult passwordExpiresDays()
             {
                 SCWPasswordExpiresDays value = new SCWPasswordExpiresDays();
                 value.networkId = SCW.NetworkId;
@@ -51,8 +51,8 @@ namespace DMT.Services.Operations
             /// Execute passwordExpiresDays api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWPasswordExpiresDaysResult> passwordExpiresDays(SCWPasswordExpiresDays value)
+            /// <returns>Returns instance of SCWPasswordExpiresDaysResult.</returns>
+            public static SCWPasswordExpiresDaysResult passwordExpiresDays(SCWPasswordExpiresDays value)
             {
                 var ret = Execute<SCWPasswordExpiresDaysResult>(
                     RouteConsts.SCW.Security.passwordExpiresDays.Url, value);

@@ -16,8 +16,8 @@ namespace DMT.Services.Operations
             /// <summary>
             /// Execute cardAllowList api.
             /// </summary>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWCardAllowListResult> cardAllowList()
+            /// <returns>Returns instance of SCWCardAllowListResult.</returns>
+            public static SCWCardAllowListResult cardAllowList()
             {
                 SCWCardAllowList value = new SCWCardAllowList();
                 value.networkId = SCW.NetworkId;
@@ -27,8 +27,8 @@ namespace DMT.Services.Operations
             /// Execute cardAllowList api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWCardAllowListResult> cardAllowList(SCWCardAllowList value)
+            /// <returns>Returns instance of SCWCardAllowListResult.</returns>
+            public static SCWCardAllowListResult cardAllowList(SCWCardAllowList value)
             {
                 var ret = Execute<SCWCardAllowListResult>(
                     RouteConsts.SCW.Master.cardAllowList.Url, value);
@@ -38,8 +38,8 @@ namespace DMT.Services.Operations
             /// <summary>
             /// Execute couponList api.
             /// </summary>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWCouponListResult> couponList()
+            /// <returns>Returns instance of SCWCouponListResult.</returns>
+            public static SCWCouponListResult couponList()
             {
                 SCWCouponList value = new SCWCouponList();
                 value.networkId = SCW.NetworkId;
@@ -49,8 +49,8 @@ namespace DMT.Services.Operations
             /// Execute couponList api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWCouponListResult> couponList(SCWCouponList value)
+            /// <returns>Returns instance of SCWCouponListResult.</returns>
+            public static SCWCouponListResult couponList(SCWCouponList value)
             {
                 var ret = Execute<SCWCouponListResult>(
                     RouteConsts.SCW.Master.couponList.Url, value);
@@ -60,8 +60,8 @@ namespace DMT.Services.Operations
             /// <summary>
             /// Execute couponBookList api.
             /// </summary>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWCouponBookListResult> couponBookList()
+            /// <returns>Returns instance of SCWCouponBookListResult.</returns>
+            public static SCWCouponBookListResult couponBookList()
             {
                 SCWCouponBookList value = new SCWCouponBookList();
                 value.networkId = SCW.NetworkId;
@@ -71,8 +71,8 @@ namespace DMT.Services.Operations
             /// Execute couponBookList api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWCouponBookListResult> couponBookList(SCWCouponBookList value)
+            /// <returns>Returns instance of SCWCouponBookListResult.</returns>
+            public static SCWCouponBookListResult couponBookList(SCWCouponBookList value)
             {
                 var ret = Execute<SCWCouponBookListResult>(
                     RouteConsts.SCW.Master.couponBookList.Url, value);
@@ -82,8 +82,8 @@ namespace DMT.Services.Operations
             /// <summary>
             /// Execute currencyDenomList api.
             /// </summary>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWCurrencyDemonListResult> currencyDenomList()
+            /// <returns>Returns instance of SCWCurrencyDemonListResult.</returns>
+            public static SCWCurrencyDemonListResult currencyDenomList()
             {
                 SCWCurrencyDemonList value = new SCWCurrencyDemonList();
                 value.networkId = SCW.NetworkId;
@@ -93,8 +93,8 @@ namespace DMT.Services.Operations
             /// Execute currencyDenomList api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWCurrencyDemonListResult> currencyDenomList(SCWCurrencyDemonList value)
+            /// <returns>Returns instance of SCWCurrencyDemonListResult.</returns>
+            public static SCWCurrencyDemonListResult currencyDenomList(SCWCurrencyDemonList value)
             {
                 var ret = Execute<SCWCurrencyDemonListResult>(
                     RouteConsts.SCW.Master.currencyDenomList.Url, value);

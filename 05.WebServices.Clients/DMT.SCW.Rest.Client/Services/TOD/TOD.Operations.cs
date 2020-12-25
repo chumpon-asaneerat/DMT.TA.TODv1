@@ -17,8 +17,8 @@ namespace DMT.Services.Operations
             /// Execute cheifOnDuty api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWChiefOnDutyResult> cheifOnDuty(SCWChiefOnDuty value)
+            /// <returns>Returns instance of SCWChiefOnDutyResult.</returns>
+            public static SCWChiefOnDutyResult cheifOnDuty(SCWChiefOnDuty value)
             {
                 var ret = Execute<SCWChiefOnDutyResult>(
                     RouteConsts.SCW.TOD.cheifOnDuty.Url, value);
@@ -29,8 +29,8 @@ namespace DMT.Services.Operations
             /// Execute saveCheifDuty api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWSaveChiefDutyResult> saveCheifDuty(SCWSaveChiefDuty value)
+            /// <returns>Returns instance of SCWSaveChiefDutyResult.</returns>
+            public static SCWSaveChiefDutyResult saveCheifDuty(SCWSaveChiefDuty value)
             {
                 var ret = Execute<SCWSaveChiefDutyResult>(
                     RouteConsts.SCW.TOD.saveCheifDuty.Url, value);
@@ -41,8 +41,8 @@ namespace DMT.Services.Operations
             /// Execute jobList api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWJobListResult> jobList(SCWJobList value)
+            /// <returns>Returns instance of SCWJobListResult.</returns>
+            public static SCWJobListResult jobList(SCWJobList value)
             {
                 var ret = Execute<SCWJobListResult>(
                     RouteConsts.SCW.TOD.jobList.Url, value);
@@ -53,8 +53,8 @@ namespace DMT.Services.Operations
             /// Execute jobList2 api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWJobList2Result> jobList2(SCWJobList2 value)
+            /// <returns>Returns instance of SCWJobList2Result.</returns>
+            public static SCWJobList2Result jobList2(SCWJobList2 value)
             {
                 var ret = Execute<SCWJobList2Result>(
                     RouteConsts.SCW.TOD.jobList2.Url, value);
@@ -65,8 +65,8 @@ namespace DMT.Services.Operations
             /// Execute emvTransactionList api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWEMVTransactionListResult> emvTransactionList(
+            /// <returns>Returns instance of SCWEMVTransactionListResult.</returns>
+            public static SCWEMVTransactionListResult emvTransactionList(
                 SCWEMVTransactionList value)
             {
                 var ret = Execute<SCWEMVTransactionListResult>(
@@ -78,8 +78,8 @@ namespace DMT.Services.Operations
             /// Execute qrcodeTransactionList api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWQRCodeTransactionListResult> qrcodeTransactionList(
+            /// <returns>Returns instance of SCWQRCodeTransactionListResult.</returns>
+            public static SCWQRCodeTransactionListResult qrcodeTransactionList(
                 SCWQRCodeTransactionList value)
             {
                 var ret = Execute<SCWQRCodeTransactionListResult>(
@@ -91,8 +91,8 @@ namespace DMT.Services.Operations
             /// Execute declare api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of NRestResult.</returns>
-            public static NRestResult<SCWDeclareResult> declare(SCWDeclare value)
+            /// <returns>Returns instance of SCWDeclareResult.</returns>
+            public static SCWDeclareResult declare(SCWDeclare value)
             {
                 var ret = Execute<SCWDeclareResult>(
                     RouteConsts.SCW.TOD.declare.Url, value);
