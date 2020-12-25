@@ -57,13 +57,41 @@ namespace DMT.Services.Operations
                     RouteConsts.SCW.TOD.jobList2.Url, value);
                 return ret;
             }
-
-            /*
-                  - TOD
-                    - emvTransactionList
-                    - qrcodeTransactionList
-                    - declare
-            */
+            /// <summary>
+            /// Execute emvTransactionList api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of NRestResult.</returns>
+            public static NRestResult<SCWEMVTransactionListResult> emvTransactionList(
+                SCWEMVTransactionList value)
+            {
+                var ret = Execute<SCWEMVTransactionListResult>(
+                    RouteConsts.SCW.TOD.emvTransactionList.Url, value);
+                return ret;
+            }
+            /// <summary>
+            /// Execute qrcodeTransactionList api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of NRestResult.</returns>
+            public static NRestResult<SCWQRCodeTransactionListResult> qrcodeTransactionList(
+                SCWQRCodeTransactionList value)
+            {
+                var ret = Execute<SCWQRCodeTransactionListResult>(
+                    RouteConsts.SCW.TOD.qrcodeTransactionList.Url, value);
+                return ret;
+            }
+            /// <summary>
+            /// Execute declare api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of NRestResult.</returns>
+            public static NRestResult<SCWDeclareResult> declare(SCWDeclare value)
+            {
+                var ret = Execute<SCWDeclareResult>(
+                    RouteConsts.SCW.TOD.declare.Url, value);
+                return ret;
+            }
         }
     }
 }
