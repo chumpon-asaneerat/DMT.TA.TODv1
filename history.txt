@@ -42,8 +42,13 @@ Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #446
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #445
 - 
 
+[commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #444
-- 
+- DMT.TAxTODv1
+  - DMT.Core project
+    - TAxTOD Route Consts.
+      - Add Coupon - Save (/api/users/coupons/save)
+      - Add Coupon - Gets (/api/users/coupons/getlist)
 
 [commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #443
