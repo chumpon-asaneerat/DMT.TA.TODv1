@@ -9,6 +9,28 @@ using Newtonsoft.Json;
 
 namespace DMT.Models
 {
+    #region Parameter
+
+    /// <summary>The SCWJobList (parameter) class.</summary>
+    public class SCWJobList
+    {
+        /// <summary>Gets or sets networkId.</summary>
+        [PropertyMapName("networkId")]
+        public int? networkId { get; set; }
+
+        /// <summary>Gets or sets plazaId.</summary>
+        [PropertyMapName("plazaId")]
+        public int? plazaId { get; set; }
+
+        /// <summary>Gets or sets staffId.</summary>
+        [PropertyMapName("staffId")]
+        public int? staffId { get; set; }
+    }
+
+    #endregion
+
+    #region Result related classes
+
     /// <summary>The SCWJob class.</summary>
     public class SCWJob
     {
@@ -39,15 +61,10 @@ namespace DMT.Models
         /// <summary>Gets or sets eojDateTime.</summary>
         [PropertyMapName("eojDateTime")]
         public DateTime? eojDateTime { get; set; }
-
-        //TODO: Required properties (non json serialization)
-        // FullNameEN/TH
-        // Selected (??? json serialize required?)
-        // boj/eoj Date, Time string.
     }
 
-    /// <summary>The SCWJobList class.</summary>
-    public class SCWJobList
+    /// <summary>The SCWJobListResult class.</summary>
+    public class SCWJobListResult
     {
         /// <summary>Gets or sets list.</summary>
         //[PropertyMapName("list")]
@@ -57,4 +74,6 @@ namespace DMT.Models
         [PropertyMapName("status")]
         public SCWStatus status { get; set; }
     }
+
+    #endregion
 }
