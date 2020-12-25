@@ -95,7 +95,9 @@ namespace DMT
             Services.PlazaAppConfigManager.Instance.LoadConfig();
             // Setup config reference to all rest client class.
             Services.Operations.Plaza.Config = Services.PlazaAppConfigManager.Instance;
+            Services.Operations.Plaza.DMT = Services.PlazaAppConfigManager.Instance; // required for NetworkId
             Services.Operations.SCW.Config = Services.PlazaAppConfigManager.Instance;
+            Services.Operations.SCW.DMT = Services.PlazaAppConfigManager.Instance; // required for NetworkId
 
             Window window = null;
             window = new MainWindow();

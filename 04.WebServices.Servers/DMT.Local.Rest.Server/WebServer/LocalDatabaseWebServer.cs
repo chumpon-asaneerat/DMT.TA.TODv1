@@ -426,10 +426,18 @@ namespace DMT.Services
                 return;
             }
             // Setup config reference to all rest client class.
+            // SCW
             Operations.SCW.Config = PlazaServiceConfigManager.Instance;
+            Operations.SCW.DMT = PlazaServiceConfigManager.Instance; // required for NetworkId
+            // TA
             Operations.TA.Config = PlazaServiceConfigManager.Instance;
+            Operations.TA.DMT = PlazaServiceConfigManager.Instance; // required for NetworkId
+            // TAxTOD
             Operations.TAxTOD.Config = PlazaServiceConfigManager.Instance;
+            Operations.TAxTOD.DMT = PlazaServiceConfigManager.Instance; // required for NetworkId
+            // TOD
             Operations.TOD.Config = PlazaServiceConfigManager.Instance;
+            Operations.TOD.DMT = PlazaServiceConfigManager.Instance; // required for NetworkId
 
             // Start database server.
             LocalDbServer.Instance.Start();

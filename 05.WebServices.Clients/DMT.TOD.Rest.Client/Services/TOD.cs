@@ -267,6 +267,22 @@ namespace DMT.Services.Operations
         #region Static Properties
 
         /// <summary>
+        /// Gets or sets DMT config.
+        /// </summary>
+        public static IDMTConfig DMT { get; set; }
+        /// <summary>
+        /// Gets NetworkId.
+        /// </summary>
+        public static int NetworkId
+        {
+            get
+            {
+                if (null == DMT) return 0;
+                if (null == DMT.DMT) return 0;
+                return DMT.DMT.networkId;
+            }
+        }
+        /// <summary>
         /// Gets or sets service config.
         /// </summary>
         public static ITODAppConfig Config { get; set; }

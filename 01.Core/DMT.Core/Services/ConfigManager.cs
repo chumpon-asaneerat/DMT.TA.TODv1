@@ -17,7 +17,7 @@ namespace DMT.Services
 
     #region Each config class
 
-    #region ApplicationConfig (Common DMT Consts Information)
+    #region DMTConfig (Common DMT Consts Information)
 
     /// <summary>
     /// The DMT Config class.
@@ -35,6 +35,7 @@ namespace DMT.Services
             this.network = "4";
             this.tsb = "97";
             this.terminal = "49701";
+            this.networkId = 31;
         }
 
         #endregion
@@ -57,8 +58,8 @@ namespace DMT.Services
         /// <returns></returns>
         public string GetString()
         {
-            string code = string.Format("network:{0}, tsb:{1}, terminal:{2}",
-                this.network, this.tsb, this.terminal);
+            string code = string.Format("network:{0}, tsb:{1}, terminal:{2}, networkId:{3}",
+                this.network, this.tsb, this.terminal, this.networkId);
             return code;
         }
 
@@ -78,6 +79,10 @@ namespace DMT.Services
         /// Gets or sets terminal.
         /// </summary>
         public string terminal { get; set; }
+        /// <summary>
+        /// Gets or sets networkId.
+        /// </summary>
+        public int networkId { get; set; }
 
         #endregion
     }
@@ -1129,6 +1134,21 @@ namespace DMT.Services
 
     #region Plaza Config and related interfaces
 
+    #region IDMTConfig Interface
+
+    /// <summary>
+    /// The IDMTConfig inferface.
+    /// </summary>
+    public interface IDMTConfig
+    {
+        /// <summary>
+        /// Gets DMT Config.
+        /// </summary>
+        DMTConfig DMT { get; }
+    }
+
+    #endregion
+
     #region IRabbitMQConfig Interface
 
     /// <summary>
@@ -1372,7 +1392,7 @@ namespace DMT.Services
     /// The PlazaServiceConfigManager class.
     /// </summary>
     public class PlazaServiceConfigManager : JsonConfigFileManger<PlazaServiceConfig>,
-        IRabbitMQConfig, IPlazaConfig, ISCWConfig, ITAxTODConfig,
+        IDMTConfig, IRabbitMQConfig, IPlazaConfig, ISCWConfig, ITAxTODConfig,
         ITAAppConfig, ITODAppConfig
     {
         #region Static Instance Access
@@ -1435,6 +1455,17 @@ namespace DMT.Services
 
         #region Public Properties
 
+        /// <summary>
+        /// Gets DMT Config.
+        /// </summary>
+        public DMTConfig DMT 
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.DMT : null;
+            }
+        }
         /// <summary>
         /// Gets RabbitMQ Config.
         /// </summary>
@@ -1513,7 +1544,7 @@ namespace DMT.Services
     /// Plaza App Config Manager class.
     /// </summary>
     public class PlazaAppConfigManager : JsonConfigFileManger<PlazaAppConfig>,
-        IPlazaConfig, ISCWConfig
+        IDMTConfig, IPlazaConfig, ISCWConfig
     {
         #region Static Instance Access
 
@@ -1576,6 +1607,17 @@ namespace DMT.Services
         #region Public Properties
 
         /// <summary>
+        /// Gets DMT Config.
+        /// </summary>
+        public DMTConfig DMT
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.DMT : null;
+            }
+        }
+        /// <summary>
         /// Gets Plaza Config.
         /// </summary>
         public LocalWebServiceConfig Plaza
@@ -1609,7 +1651,7 @@ namespace DMT.Services
     /// TA Config Manager class.
     /// </summary>
     public class TAConfigManager : JsonConfigFileManger<TAAppPlazaConfig>,
-        IPlazaConfig, ISCWConfig
+        IDMTConfig, IPlazaConfig, ISCWConfig
     {
         #region Static Instance Access
 
@@ -1672,6 +1714,17 @@ namespace DMT.Services
         #region Public Properties
 
         /// <summary>
+        /// Gets DMT Config.
+        /// </summary>
+        public DMTConfig DMT
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.DMT : null;
+            }
+        }
+        /// <summary>
         /// Gets Plaza Config.
         /// </summary>
         public LocalWebServiceConfig Plaza
@@ -1716,7 +1769,7 @@ namespace DMT.Services
     /// TOD Config Manager class.
     /// </summary>
     public class TODConfigManager : JsonConfigFileManger<TODAppPlazaConfig>,
-        IPlazaConfig, ISCWConfig
+        IDMTConfig, IPlazaConfig, ISCWConfig
     {
         #region Static Instance Access
 
@@ -1778,6 +1831,17 @@ namespace DMT.Services
 
         #region Public Properties
 
+        /// <summary>
+        /// Gets DMT Config.
+        /// </summary>
+        public DMTConfig DMT
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.DMT : null;
+            }
+        }
         /// <summary>
         /// Gets Plaza Config.
         /// </summary>
