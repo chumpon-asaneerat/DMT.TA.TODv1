@@ -8,6 +8,8 @@ using NLib.Reflection;
 
 namespace DMT.Models
 {
+    #region Parameter class
+
     /// <summary>The SCWChangePassword class.</summary>
     public class SCWChangePassword
     {
@@ -28,6 +30,10 @@ namespace DMT.Models
         public string confirmNewPassword { get; set; }
     }
 
+    #endregion
+
+    #region Result related classes
+
     /// <summary>The SCWChangePasswordResult class.</summary>
     public class SCWChangePasswordResult
     {
@@ -35,4 +41,6 @@ namespace DMT.Models
         [PropertyMapName("status")]
         public SCWStatus status { get; set; }
     }
+
+    #endregion
 }

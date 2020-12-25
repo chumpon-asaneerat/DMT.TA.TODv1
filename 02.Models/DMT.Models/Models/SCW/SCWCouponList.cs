@@ -8,6 +8,20 @@ using NLib.Reflection;
 
 namespace DMT.Models
 {
+    #region Parameter classes
+
+    /// <summary>The SCWCouponList class.</summary>
+    public class SCWCouponList
+    {
+        /// <summary>Gets or sets networkId.</summary>
+        [PropertyMapName("networkId")]
+        public int? networkId { get; set; }
+    }
+
+    #endregion
+
+    #region Result related classes
+
     /// <summary>The SCWCoupon class.</summary>
     public class SCWCoupon
     {
@@ -28,8 +42,8 @@ namespace DMT.Models
         public string description { get; set; }
     }
 
-    /// <summary>The SCWCouponList class.</summary>
-    public class SCWCouponList
+    /// <summary>The SCWCouponListResult class.</summary>
+    public class SCWCouponListResult
     {
         /// <summary>Gets or sets list.</summary>
         //[PropertyMapName("list")]
@@ -39,4 +53,6 @@ namespace DMT.Models
         [PropertyMapName("status")]
         public SCWStatus status { get; set; }
     }
+
+    #endregion
 }

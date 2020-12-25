@@ -120,10 +120,10 @@
     <Compile Include="Models\Master\Coupon.cs" />
     <Compile Include="Models\Master\Currency.cs" />
     <Compile Include="Models\SCW\Common.cs" />
-    <Compile Include="Models\SCW\SCWCardAllow.cs" />
+    <Compile Include="Models\SCW\SCWCardAllowList.cs" />
     <Compile Include="Models\SCW\SCWChangePassword.cs" />
     <Compile Include="Models\SCW\SCWChiefOnDuty.cs" />
-    <Compile Include="Models\SCW\SCWCoupon.cs" />
+    <Compile Include="Models\SCW\SCWCouponList.cs" />
     <Compile Include="Models\SCW\SCWCurrency.cs" />
     <Compile Include="Models\SCW\SCWDeclare.cs" />
     <Compile Include="Models\SCW\SCWEMV.cs" />

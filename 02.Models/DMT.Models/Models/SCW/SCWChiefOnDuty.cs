@@ -8,6 +8,8 @@ using NLib.Reflection;
 
 namespace DMT.Models
 {
+    #region Parameter class
+
     /// <summary>The SCWChiefOnDuty class.</summary>
     public class SCWChiefOnDuty
     {
@@ -33,6 +35,10 @@ namespace DMT.Models
         public DateTime? beginDateTime { get; set; }
     }
 
+    #endregion
+
+    #region Result related classes
+
     /// <summary>The SCWChiefOnDutyResult class.</summary>
     public class SCWChiefOnDutyResult
     {
@@ -40,4 +46,6 @@ namespace DMT.Models
         [PropertyMapName("status")]
         public SCWStatus status { get; set; }
     }
+
+    #endregion
 }

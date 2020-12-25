@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace DMT.Models
 {
-    #region Result related classes
+    #region Parameter class
 
     /// <summary>The SCWJobList2 (parameter) class.</summary>
     public class SCWJobList2

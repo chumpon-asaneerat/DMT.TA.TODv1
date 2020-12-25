@@ -9,6 +9,8 @@ using Newtonsoft.Json;
 
 namespace DMT.Models
 {
+    #region Parameter class
+
     /// <summary>The SCWLogInAudit class.</summary>
     public class SCWLogInAudit
     {
@@ -33,6 +35,10 @@ namespace DMT.Models
         public string description { get; set; } // "invalid staff id", "etc."
     }
 
+    #endregion
+
+    #region Result related classes
+
     /// <summary>The SCWLogInAuditResult class.</summary>
     public class SCWLogInAuditResult
     {
@@ -40,4 +46,6 @@ namespace DMT.Models
         [PropertyMapName("status")]
         public SCWStatus status { get; set; }
     }
+
+    #endregion
 }
