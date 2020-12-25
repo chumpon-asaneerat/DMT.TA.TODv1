@@ -8,6 +8,8 @@ using NLib.Reflection;
 
 namespace DMT.Models.SCW
 {
+    #region Parameter class
+
     /// <summary>The SCWPasswordExpiresDays class.</summary>
     public class SCWPasswordExpiresDays
     {
@@ -15,6 +17,10 @@ namespace DMT.Models.SCW
         [PropertyMapName("networkId")]
         public int? networkId { get; set; }
     }
+
+    #endregion
+
+    #region Result Class
 
     /// <summary>The SCWPasswordExpiresDaysResult class.</summary>
     public class SCWPasswordExpiresDaysResult
@@ -27,4 +33,6 @@ namespace DMT.Models.SCW
         [PropertyMapName("status")]
         public SCWStatus status { get; set; }
     }
+
+    #endregion
 }

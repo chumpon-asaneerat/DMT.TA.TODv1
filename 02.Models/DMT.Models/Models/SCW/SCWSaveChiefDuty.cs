@@ -9,6 +9,8 @@ using Newtonsoft.Json;
 
 namespace DMT.Models
 {
+    #region Parameter class
+
     /// <summary>The SCWSaveChiefDuty class.</summary>
     public class SCWSaveChiefDuty
     {
@@ -33,6 +35,10 @@ namespace DMT.Models
         public DateTime? beginDateTime { get; set; }
     }
 
+    #endregion
+
+    #region Result class
+
     /// <summary>The SCWSaveChiefDutyResult class.</summary>
     public class SCWSaveChiefDutyResult
     {
@@ -40,4 +46,6 @@ namespace DMT.Models
         [PropertyMapName("status")]
         public SCWStatus status { get; set; }
     }
+
+    #endregion
 }

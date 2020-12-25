@@ -8,7 +8,7 @@ using NLib.Reflection;
 
 namespace DMT.Models
 {
-    #region Parameter classes
+    #region Parameter class
 
     /// <summary>The SCWCurrencyDemonList class.</summary>
     public class SCWCurrencyDemonList
