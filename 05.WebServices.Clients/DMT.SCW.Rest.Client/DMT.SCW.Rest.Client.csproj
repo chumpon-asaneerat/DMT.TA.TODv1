@@ -81,6 +81,11 @@
     <None Include="App.config" />
     <EmbeddedResource Include="Resources\Json\loginAudit.json" />
     <EmbeddedResource Include="Resources\Json\cardAllowList.json" />
+    <EmbeddedResource Include="Resources\Json\couponBookList.json" />
+    <EmbeddedResource Include="Resources\Json\currencyDenomList.json" />
+    <EmbeddedResource Include="Resources\Json\couponList.json" />
+    <EmbeddedResource Include="Resources\Json\jobList.json" />
+    <EmbeddedResource Include="Resources\Json\jobList2.json" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

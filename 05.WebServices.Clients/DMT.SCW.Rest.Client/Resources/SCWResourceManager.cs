@@ -85,6 +85,30 @@ namespace DMT.Services
         /// Gets loginAudit parameter json script.
         /// </summary>
         public static string loginAudit { get { return GetJson("loginAudit"); } }
+        /// <summary>
+        /// Gets cardAllowList parameter json script.
+        /// </summary>
+        public static string cardAllowList { get { return GetJson("cardAllowList"); } }
+        /// <summary>
+        /// Gets couponBookList parameter json script.
+        /// </summary>
+        public static string couponBookList { get { return GetJson("couponBookList"); } }
+        /// <summary>
+        /// Gets couponList parameter json script.
+        /// </summary>
+        public static string couponList { get { return GetJson("couponList"); } }
+        /// <summary>
+        /// Gets currencyDenomList parameter json script.
+        /// </summary>
+        public static string currencyDenomList { get { return GetJson("currencyDenomList"); } }
+        /// <summary>
+        /// Gets jobList parameter json script.
+        /// </summary>
+        public static string jobList { get { return GetJson("jobList"); } }
+        /// <summary>
+        /// Gets jobList2 parameter json script.
+        /// </summary>
+        public static string jobList2 { get { return GetJson("jobList2"); } }
 
         #endregion
     }
