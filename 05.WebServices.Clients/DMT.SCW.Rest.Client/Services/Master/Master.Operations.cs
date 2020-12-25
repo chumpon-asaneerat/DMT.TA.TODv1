@@ -13,31 +13,50 @@ namespace DMT.Services.Operations
         /// <summary>The Master Operations class.</summary>
         public static partial class Master
         {
+            /// <summary>
+            /// Execute cardAllowList api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of NRestResult.</returns>
             public static NRestResult<SCWCardAllowListResult> cardAllowList(SCWCardAllowList value)
             {
                 var ret = Execute<SCWCardAllowListResult>(
-                    RouteConsts.SCW.Security.loginAudit.Url, value);
+                    RouteConsts.SCW.Master.cardAllowList.Url, value);
                 return ret;
             }
-            /*
             /// <summary>
-            /// Gets all Shifts.
+            /// Execute couponList api.
             /// </summary>
-            /// <returns>Returns NRestResult instance.</returns>
-            public static NRestResult<List<Models.Shift>> cheifOnDuty()
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of NRestResult.</returns>
+            public static NRestResult<SCWCouponListResult> couponList(SCWCouponList value)
             {
-                var ret = Execute<List<Models.Shift>>(
-                    RouteConsts.Shift.Gets.Url);
+                var ret = Execute<SCWCouponListResult>(
+                    RouteConsts.SCW.Master.couponList.Url, value);
                 return ret;
             }
-            */
-
-            /*
-                  - Master
-                    - couponList
-                    - couponBookList
-                    - currencyDenomList
-            */
+            /// <summary>
+            /// Execute couponBookList api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of NRestResult.</returns>
+            public static NRestResult<SCWCouponBookListResult> couponBookList(SCWCouponBookList value)
+            {
+                var ret = Execute<SCWCouponBookListResult>(
+                    RouteConsts.SCW.Master.couponBookList.Url, value);
+                return ret;
+            }
+            /// <summary>
+            /// Execute currencyDenomList api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of NRestResult.</returns>
+            public static NRestResult<SCWCurrencyDemonListResult> currencyDenomList(SCWCurrencyDemonList value)
+            {
+                var ret = Execute<SCWCurrencyDemonListResult>(
+                    RouteConsts.SCW.Master.currencyDenomList.Url, value);
+                return ret;
+            }
         }
     }
 }

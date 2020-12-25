@@ -13,47 +13,39 @@ namespace DMT.Services.Operations
         /// <summary>The Security Operations class.</summary>
         public static partial class Security
         {
+            /// <summary>
+            /// Execute loginAudit api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of NRestResult.</returns>
             public static NRestResult<SCWLogInAuditResult> loginAudit(SCWLogInAudit value)
             {
                 var ret = Execute<SCWLogInAuditResult>(
                     RouteConsts.SCW.Security.loginAudit.Url, value);
                 return ret;
             }
-
-            /*
             /// <summary>
-            /// Save LogIn Audit.
+            /// Execute changePassword api.
             /// </summary>
-            /// <returns>Returns NRestResult instance.</returns>
-            public static NRestResult<List<Models.Shift>> loginAudit()
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of NRestResult.</returns>
+            public static NRestResult<SCWChangePasswordResult> changePassword(SCWChangePassword value)
             {
-                var ret = Execute<List<Models.Shift>>(
-                    RouteConsts.Shift.Gets.Url);
+                var ret = Execute<SCWChangePasswordResult>(
+                    RouteConsts.SCW.Security.changePassword.Url, value);
                 return ret;
             }
-
             /// <summary>
-            /// Change Password.
+            /// Execute passwordExpiresDays api.
             /// </summary>
-            /// <returns>Returns NRestResult instance.</returns>
-            public static NRestResult<List<Models.Shift>> changePassword()
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of NRestResult.</returns>
+            public static NRestResult<SCWPasswordExpiresDaysResult> passwordExpiresDays(SCWPasswordExpiresDays value)
             {
-                var ret = Execute<List<Models.Shift>>(
-                    RouteConsts.Shift.Gets.Url);
+                var ret = Execute<SCWPasswordExpiresDaysResult>(
+                    RouteConsts.SCW.Security.passwordExpiresDays.Url, value);
                 return ret;
             }
-
-            /// <summary>
-            /// Gets passwordExpiresDays.
-            /// </summary>
-            /// <returns>Returns NRestResult instance.</returns>
-            public static NRestResult<List<Models.Shift>> passwordExpiresDays()
-            {
-                var ret = Execute<List<Models.Shift>>(
-                    RouteConsts.Shift.Gets.Url);
-                return ret;
-            }
-            */
         }
     }
 }
