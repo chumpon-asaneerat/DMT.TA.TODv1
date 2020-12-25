@@ -86,6 +86,11 @@
     <EmbeddedResource Include="Resources\Json\couponList.json" />
     <EmbeddedResource Include="Resources\Json\jobList.json" />
     <EmbeddedResource Include="Resources\Json\jobList2.json" />
+    <EmbeddedResource Include="Resources\Json\declare.json" />
+    <EmbeddedResource Include="Resources\Json\emvTransactionList.json" />
+    <EmbeddedResource Include="Resources\Json\qrcodeTransactionList.json" />
+    <EmbeddedResource Include="Resources\Json\cheifOnDuty.json" />
+    <EmbeddedResource Include="Resources\Json\saveCheifDuty.json" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

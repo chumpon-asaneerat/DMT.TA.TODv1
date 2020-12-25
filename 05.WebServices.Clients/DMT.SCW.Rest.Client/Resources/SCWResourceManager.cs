@@ -109,6 +109,26 @@ namespace DMT.Services
         /// Gets jobList2 parameter json script.
         /// </summary>
         public static string jobList2 { get { return GetJson("jobList2"); } }
+        /// <summary>
+        /// Gets declare parameter json script.
+        /// </summary>
+        public static string declare { get { return GetJson("declare"); } }
+        /// <summary>
+        /// Gets emvTransactionList parameter json script.
+        /// </summary>
+        public static string emvTransactionList { get { return GetJson("emvTransactionList"); } }
+        /// <summary>
+        /// Gets qrcodeTransactionList parameter json script.
+        /// </summary>
+        public static string qrcodeTransactionList { get { return GetJson("qrcodeTransactionList"); } }
+        /// <summary>
+        /// Gets saveCheifDuty parameter json script.
+        /// </summary>
+        public static string saveCheifDuty { get { return GetJson("saveCheifDuty"); } }
+        /// <summary>
+        /// Gets cheifOnDuty parameter json script.
+        /// </summary>
+        public static string cheifOnDuty { get { return GetJson("cheifOnDuty"); } }
 
         #endregion
     }
