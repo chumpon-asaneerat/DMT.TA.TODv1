@@ -55,34 +55,38 @@
   <ItemGroup>
     <Compile Include="Consts\AppConsts.cs" />
     <Compile Include="Consts\ErrorConsts.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\Lane\Save.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\Lane\Searchs.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\PlazaGroup\Save.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\Plaza\Save.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\Plaza\Searchs.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\TSB\Current.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\TSB\Save.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\PlazaGroup\Searchs.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\TSB\SetActive.cs" />
-    <Compile Include="Consts\Routes\Notify\Actions\ShiftChanged.cs" />
-    <Compile Include="Consts\Routes\Notify\Actions\TSBChanged.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\Lane\Save.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\Lane\Searchs.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\PlazaGroup\Save.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\Plaza\Save.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\Plaza\Searchs.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\TSB\Current.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\TSB\Save.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\PlazaGroup\Searchs.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\TSB\SetActive.cs" />
+    <Compile Include="Consts\Routes\Local\Notify\Actions\ShiftChanged.cs" />
+    <Compile Include="Consts\Routes\Local\Notify\Actions\TSBChanged.cs" />
     <Compile Include="Consts\Routes\RouteConsts.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Infrastructure.Controller.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\Lane\Gets.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\Plaza\Gets.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\PlazaGroup\Gets.cs" />
-    <Compile Include="Consts\Routes\Infrastructure\Actions\TSB\Gets.cs" />
-    <Compile Include="Consts\Routes\Notify\Notify.Controller.cs" />
-    <Compile Include="Consts\Routes\Security\Actions\Role\Gets.cs" />
-    <Compile Include="Consts\Routes\Security\Actions\Role\Save.cs" />
-    <Compile Include="Consts\Routes\Security\Actions\User\Gets.cs" />
-    <Compile Include="Consts\Routes\Security\Actions\User\Save.cs" />
-    <Compile Include="Consts\Routes\Security\Actions\User\Searchs.cs" />
-    <Compile Include="Consts\Routes\Security\Security.Controller.cs" />
-    <Compile Include="Consts\Routes\Shift\Actions\Common\Gets.cs" />
-    <Compile Include="Consts\Routes\Shift\Actions\TSB\Change.cs" />
-    <Compile Include="Consts\Routes\Shift\Actions\TSB\Current.cs" />
-    <Compile Include="Consts\Routes\Shift\Shift.Controller.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Infrastructure.Controller.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\Lane\Gets.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\Plaza\Gets.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\PlazaGroup\Gets.cs" />
+    <Compile Include="Consts\Routes\Local\Infrastructure\Actions\TSB\Gets.cs" />
+    <Compile Include="Consts\Routes\Local\Notify\Notify.Controller.cs" />
+    <Compile Include="Consts\Routes\Local\Security\Actions\Role\Gets.cs" />
+    <Compile Include="Consts\Routes\Local\Security\Actions\Role\Save.cs" />
+    <Compile Include="Consts\Routes\Local\Security\Actions\User\Gets.cs" />
+    <Compile Include="Consts\Routes\Local\Security\Actions\User\Save.cs" />
+    <Compile Include="Consts\Routes\Local\Security\Actions\User\Searchs.cs" />
+    <Compile Include="Consts\Routes\Local\Security\Security.Controller.cs" />
+    <Compile Include="Consts\Routes\Local\Shift\Actions\Common\Gets.cs" />
+    <Compile Include="Consts\Routes\Local\Shift\Actions\TSB\Change.cs" />
+    <Compile Include="Consts\Routes\Local\Shift\Actions\TSB\Current.cs" />
+    <Compile Include="Consts\Routes\Local\Shift\Shift.Controller.cs" />
+    <Compile Include="Consts\Routes\SCW\Master\SCW.Master.RouteConsts.cs" />
+    <Compile Include="Consts\Routes\SCW\SCW.RouteConsts.cs" />
+    <Compile Include="Consts\Routes\SCW\Security\SCW.Security.RouteConsts.cs" />
+    <Compile Include="Consts\Routes\SCW\TOD\SCW.TOD.RouteConsts.cs" />
     <Compile Include="ExtensionMethods\DateTime.cs" />
     <Compile Include="ExtensionMethods\NJson.cs" />
     <Compile Include="ExtensionMethods\RangeParser.cs" />
@@ -98,7 +102,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Consts\Routes\Shift\Actions\User\" />
+    <Folder Include="Consts\Routes\Local\Shift\Actions\User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
