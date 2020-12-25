@@ -122,14 +122,16 @@
     <Compile Include="Models\SCW\Common.cs" />
     <Compile Include="Models\SCW\SCWCardAllow.cs" />
     <Compile Include="Models\SCW\SCWChangePassword.cs" />
-    <Compile Include="Models\SCW\SCWChiefOfDuty.cs" />
+    <Compile Include="Models\SCW\SCWChiefOnDuty.cs" />
     <Compile Include="Models\SCW\SCWCoupon.cs" />
     <Compile Include="Models\SCW\SCWCurrency.cs" />
     <Compile Include="Models\SCW\SCWDeclare.cs" />
     <Compile Include="Models\SCW\SCWEMV.cs" />
     <Compile Include="Models\SCW\SCWJob.cs" />
     <Compile Include="Models\SCW\SCWJob2.cs" />
+    <Compile Include="Models\SCW\SCWLogInAudit.cs" />
     <Compile Include="Models\SCW\SCWQRCode.cs" />
+    <Compile Include="Models\SCW\SCWSaveChiefDuty.cs" />
     <Compile Include="Models\Shifts\Shift.cs" />
     <Compile Include="Models\Shifts\TSBShift.cs" />
     <Compile Include="Services\RuntimeManager.cs" />
