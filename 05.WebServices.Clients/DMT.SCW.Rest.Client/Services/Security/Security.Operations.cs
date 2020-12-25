@@ -24,6 +24,7 @@ namespace DMT.Services.Operations
                     RouteConsts.SCW.Security.loginAudit.Url, value);
                 return ret;
             }
+
             /// <summary>
             /// Execute changePassword api.
             /// </summary>
@@ -34,6 +35,17 @@ namespace DMT.Services.Operations
                 var ret = Execute<SCWChangePasswordResult>(
                     RouteConsts.SCW.Security.changePassword.Url, value);
                 return ret;
+            }
+
+            /// <summary>
+            /// Execute passwordExpiresDays api.
+            /// </summary>
+            /// <returns>Returns instance of NRestResult.</returns>
+            public static NRestResult<SCWPasswordExpiresDaysResult> passwordExpiresDays()
+            {
+                SCWPasswordExpiresDays value = new SCWPasswordExpiresDays();
+                value.networkId = SCW.NetworkId;
+                return passwordExpiresDays(value);
             }
             /// <summary>
             /// Execute passwordExpiresDays api.
