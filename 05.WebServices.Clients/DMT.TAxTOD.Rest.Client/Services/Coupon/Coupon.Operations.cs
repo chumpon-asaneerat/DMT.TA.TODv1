@@ -25,6 +25,19 @@ namespace DMT.Services.Operations
                     RouteConsts.TAxTOD.Coupon.Gets.Url, value);
                 return ret;
             }
+
+            /// <summary>
+            /// Execute Save api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of NRestResult.</returns>
+            public static NRestResult Save(
+                TAServerCouponTransaction value)
+            {
+                var ret = Execute<TAServerCouponTransaction>(
+                    RouteConsts.TAxTOD.Coupon.Save.Url, value);
+                return ret;
+            }
         }
     }
 }

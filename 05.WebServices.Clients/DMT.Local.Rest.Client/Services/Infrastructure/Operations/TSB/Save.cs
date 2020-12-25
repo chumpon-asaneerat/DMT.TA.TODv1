@@ -18,7 +18,7 @@ namespace DMT.Services.Operations
                 /// <returns>Returns Saved TSB.</returns>
                 public static NRestResult<Models.TSB> Save(Models.TSB value)
                 {
-                    var ret = Execute<Models.TSB, Models.TSB>(
+                    var ret = Execute<Models.TSB>(
                         RouteConsts.Infrastructure.TSB.Save.Url, value);
                     return ret;
                 }

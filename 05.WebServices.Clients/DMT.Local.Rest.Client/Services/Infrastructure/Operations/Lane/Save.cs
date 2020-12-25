@@ -18,7 +18,7 @@ namespace DMT.Services.Operations
                 /// <returns>Returns Saved Lane.</returns>
                 public static NRestResult<Models.Lane> Save(Models.Lane value)
                 {
-                    var ret = Execute<Models.Lane, Models.Lane>(
+                    var ret = Execute<Models.Lane>(
                         RouteConsts.Infrastructure.Lane.Save.Url, value);
                     return ret;
                 }

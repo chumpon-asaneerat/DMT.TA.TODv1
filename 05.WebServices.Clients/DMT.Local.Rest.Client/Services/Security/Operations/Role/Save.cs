@@ -18,7 +18,7 @@ namespace DMT.Services.Operations
                 /// <returns>Returns Saved Role.</returns>
                 public static NRestResult<Models.Role> Save(Models.Role value)
                 {
-                    var ret = Execute<Models.Role, Models.Role>(
+                    var ret = Execute<Models.Role>(
                         RouteConsts.Security.Role.Save.Url, value);
                     return ret;
                 }

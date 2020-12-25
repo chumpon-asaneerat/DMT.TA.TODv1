@@ -18,7 +18,7 @@ namespace DMT.Services.Operations
                 /// <returns>Returns Saved PlazaGroup.</returns>
                 public static NRestResult<Models.PlazaGroup> Save(Models.PlazaGroup value)
                 {
-                    var ret = Execute<Models.PlazaGroup, Models.PlazaGroup>(
+                    var ret = Execute<Models.PlazaGroup>(
                         RouteConsts.Infrastructure.PlazaGroup.Save.Url, value);
                     return ret;
                 }
