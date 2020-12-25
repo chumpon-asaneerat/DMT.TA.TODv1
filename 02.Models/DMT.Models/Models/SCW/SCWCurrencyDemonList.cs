@@ -8,8 +8,22 @@ using NLib.Reflection;
 
 namespace DMT.Models
 {
-    /// <summary>The SCWCurrency class.</summary>
-    public class SCWCurrency
+    #region Parameter classes
+
+    /// <summary>The SCWCurrencyDemonList class.</summary>
+    public class SCWCurrencyDemonList
+    {
+        /// <summary>Gets or sets networkId.</summary>
+        [PropertyMapName("networkId")]
+        public int? networkId { get; set; }
+    }
+
+    #endregion
+
+    #region Result related classes
+
+    /// <summary>The SCWCurrencyDemon class.</summary>
+    public class SCWCurrencyDemon
     {
         /// <summary>Gets or sets currencyId.</summary>
         [PropertyMapName("currencyId")]
@@ -36,15 +50,17 @@ namespace DMT.Models
         public int denomTypeId { get; set; }
     }
 
-    /// <summary>The SCWCurrencyList class.</summary>
-    public class SCWCurrencyList
+    /// <summary>The SCWCurrencyDemonListResult class.</summary>
+    public class SCWCurrencyDemonListResult
     {
         /// <summary>Gets or sets list.</summary>
         //[PropertyMapName("list")]
-        public List<SCWCurrency> list { get; set; }
+        public List<SCWCurrencyDemon> list { get; set; }
 
         /// <summary>Gets or sets status.</summary>
         [PropertyMapName("status")]
         public SCWStatus status { get; set; }
     }
+
+    #endregion
 }

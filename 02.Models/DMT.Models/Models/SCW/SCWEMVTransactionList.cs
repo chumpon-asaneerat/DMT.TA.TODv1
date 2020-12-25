@@ -9,9 +9,39 @@ using Newtonsoft.Json;
 
 namespace DMT.Models
 {
+    #region Parameter class
+
+    /// <summary>The SCWEMVTransactionList class.</summary>
+    public class SCWEMVTransactionList
+    {
+        /// <summary>Gets or sets networkId.</summary>
+        [PropertyMapName("networkId")]
+        public int? networkId { get; set; }
+
+        /// <summary>Gets or sets plazaId.</summary>
+        [PropertyMapName("plazaId")]
+        public int? plazaId { get; set; }
+
+        /// <summary>Gets or sets staffId.</summary>
+        [PropertyMapName("staffId")]
+        public string staffId { get; set; }
+
+        /// <summary>Gets or sets startDateTime.</summary>
+        [PropertyMapName("startDateTime")]
+        public DateTime? startDateTime { get; set; }
+
+        /// <summary>Gets or sets endDateTime.</summary>
+        [PropertyMapName("endDateTime")]
+        public DateTime? endDateTime { get; set; }
+    }
+
+    #endregion
+
+    #region Result related classes
+
     /// <summary>The SCWEMV class.</summary>
     [JsonObject(MemberSerialization.OptOut)]
-    public class SCWEMV
+    public class SCWEMVTransaction
     {
         /// <summary>Gets or sets trxDateTime.</summary>
         [PropertyMapName("trxDateTime")]
@@ -85,15 +115,17 @@ namespace DMT.Models
         }
     }
 
-    /// <summary>The SCWEMVResult class.</summary>
-    public class SCWEMVResult
+    /// <summary>The SCWEMVTransactionListResult class.</summary>
+    public class SCWEMVTransactionListResult
     {
         /// <summary>Gets or sets list.</summary>
         //[PropertyMapName("list")]
-        public List<SCWEMV> list { get; set; }
+        public List<SCWEMVTransaction> list { get; set; }
 
         /// <summary>Gets or sets status.</summary>
         [PropertyMapName("status")]
         public SCWStatus status { get; set; }
     }
+
+    #endregion
 }

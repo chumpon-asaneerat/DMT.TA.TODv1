@@ -8,6 +8,8 @@ using NLib.Reflection;
 
 namespace DMT.Models
 {
+    #region Parameter related classes
+
     /// <summary>The SCWDeclareCash class.</summary>
     public class SCWDeclareCash
     {
@@ -114,14 +116,6 @@ namespace DMT.Models
         /// <summary>Gets or sets amount.</summary>
         [PropertyMapName("amount")]
         public decimal amount { get; set; }
-    }
-
-    /// <summary>The SCWDeclareResult class.</summary>
-    public class SCWDeclareResult
-    {
-        /// <summary>Gets or sets status.</summary>
-        [PropertyMapName("status")]
-        public SCWStatus status { get; set; }
     }
 
     /// <summary>The SCWDeclare class.</summary>
@@ -247,4 +241,18 @@ namespace DMT.Models
         //[PropertyMapName("emvList")]
         public List<SCWDeclareEMV> emvList { get; set; }
     }
+
+    #endregion
+
+    #region Result class
+
+    /// <summary>The SCWDeclareResult class.</summary>
+    public class SCWDeclareResult
+    {
+        /// <summary>Gets or sets status.</summary>
+        [PropertyMapName("status")]
+        public SCWStatus status { get; set; }
+    }
+
+    #endregion
 }

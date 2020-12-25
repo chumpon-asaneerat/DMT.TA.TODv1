@@ -9,9 +9,39 @@ using Newtonsoft.Json;
 
 namespace DMT.Models
 {
-    /// <summary>The SCWQRCode class.</summary>
+    #region Parameter class
+
+    /// <summary>The SCWQRCodeTransactionList class.</summary>
+    public class SCWQRCodeTransactionList
+    {
+        /// <summary>Gets or sets networkId.</summary>
+        [PropertyMapName("networkId")]
+        public int? networkId { get; set; }
+
+        /// <summary>Gets or sets plazaId.</summary>
+        [PropertyMapName("plazaId")]
+        public int? plazaId { get; set; }
+
+        /// <summary>Gets or sets staffId.</summary>
+        [PropertyMapName("staffId")]
+        public string staffId { get; set; }
+
+        /// <summary>Gets or sets startDateTime.</summary>
+        [PropertyMapName("startDateTime")]
+        public DateTime? startDateTime { get; set; }
+
+        /// <summary>Gets or sets endDateTime.</summary>
+        [PropertyMapName("endDateTime")]
+        public DateTime? endDateTime { get; set; }
+    }
+
+    #endregion
+
+    #region Result related classes
+
+    /// <summary>The SCWQRCodeTransaction class.</summary>
     [JsonObject(MemberSerialization.OptOut)]
-    public class SCWQRCode
+    public class SCWQRCodeTransaction
     {
         /// <summary>Gets or sets trxDateTime.</summary>
         [PropertyMapName("trxDateTime")]
@@ -85,15 +115,17 @@ namespace DMT.Models
         }
     }
 
-    /// <summary>The SCWQRCodeResult class.</summary>
-    public class SCWQRCodeResult
+    /// <summary>The SCWQRCodeTransactionListResult class.</summary>
+    public class SCWQRCodeTransactionListResult
     {
         /// <summary>Gets or sets list.</summary>
         //[PropertyMapName("list")]
-        public List<SCWQRCode> list { get; set; }
+        public List<SCWQRCodeTransaction> list { get; set; }
 
         /// <summary>Gets or sets status.</summary>
         [PropertyMapName("status")]
         public SCWStatus status { get; set; }
     }
+
+    #endregion
 }
