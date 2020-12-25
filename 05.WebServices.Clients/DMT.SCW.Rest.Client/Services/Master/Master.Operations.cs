@@ -13,6 +13,12 @@ namespace DMT.Services.Operations
         /// <summary>The Master Operations class.</summary>
         public static partial class Master
         {
+            public static NRestResult<SCWCardAllowListResult> cardAllowList(SCWCardAllowList value)
+            {
+                var ret = Execute<SCWCardAllowListResult>(
+                    RouteConsts.SCW.Security.loginAudit.Url, value);
+                return ret;
+            }
             /*
             /// <summary>
             /// Gets all Shifts.
@@ -31,7 +37,6 @@ namespace DMT.Services.Operations
                     - couponList
                     - couponBookList
                     - currencyDenomList
-                    - cardAllowList
             */
         }
     }

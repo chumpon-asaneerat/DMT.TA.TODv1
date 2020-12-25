@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\SCWResourceManager.cs" />
     <Compile Include="Services\Master\Master.Operations.cs" />
     <Compile Include="Services\SCW.cs" />
     <Compile Include="Services\Security\Security.Operations.cs" />
@@ -78,6 +79,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EmbeddedResource Include="Resources\Json\loginAudit.json" />
+    <EmbeddedResource Include="Resources\Json\cardAllowList.json" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

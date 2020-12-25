@@ -13,6 +13,13 @@ namespace DMT.Services.Operations
         /// <summary>The Security Operations class.</summary>
         public static partial class Security
         {
+            public static NRestResult<SCWLogInAuditResult> loginAudit(SCWLogInAudit value)
+            {
+                var ret = Execute<SCWLogInAuditResult>(
+                    RouteConsts.SCW.Security.loginAudit.Url, value);
+                return ret;
+            }
+
             /*
             /// <summary>
             /// Save LogIn Audit.

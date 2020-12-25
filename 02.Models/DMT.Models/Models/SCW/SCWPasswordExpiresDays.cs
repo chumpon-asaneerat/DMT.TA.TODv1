@@ -6,7 +6,7 @@ using NLib.Reflection;
 
 #endregion
 
-namespace DMT.Models.SCW
+namespace DMT.Models
 {
     #region Parameter class
 
