@@ -22,8 +22,6 @@ using System.Reflection;
 
 namespace DMT.Models
 {
-	// TODO: UserCreditTransaction Change DateTime to DateTime?
-
 	#region UserCreditTransaction
 
 	/// <summary>
@@ -65,7 +63,7 @@ namespace DMT.Models
 		private bool _hasRemark = false;
 
 		private int _TransactionId = 0;
-		private DateTime _TransactionDate = DateTime.MinValue;
+		private DateTime? _TransactionDate = new DateTime?();
 		private TransactionTypes _TransactionType = TransactionTypes.Borrow;
 
 		private int _RefId = 0; // for undo.
@@ -392,7 +390,7 @@ namespace DMT.Models
 		[Description(" Gets or sets Transaction Date")]
 		[ReadOnly(true)]
 		[PropertyMapName("TransactionDate")]
-		public DateTime TransactionDate
+		public DateTime? TransactionDate
 		{
 			get
 			{
@@ -404,6 +402,9 @@ namespace DMT.Models
 				{
 					_TransactionDate = value;
 					this.RaiseChanged("TransactionDate");
+					this.RaiseChanged("TransactionDateString");
+					this.RaiseChanged("TransactionTimeString");
+					this.RaiseChanged("TransactionDateTimeString");
 				}
 			}
 		}
@@ -419,7 +420,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiDateTimeString("dd/MM/yyyy");
+				var ret = (!this._TransactionDate.HasValue || this._TransactionDate.Value == DateTime.MinValue) ?
+					"" : this._TransactionDate.Value.ToThaiDateTimeString("dd/MM/yyyy");
 				return ret;
 			}
 			set { }
@@ -436,7 +438,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiTimeString();
+				var ret = (!this._TransactionDate.HasValue || this._TransactionDate.Value == DateTime.MinValue) ?
+					"" : this._TransactionDate.Value.ToThaiTimeString();
 				return ret;
 			}
 			set { }
@@ -453,7 +456,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+				var ret = (!this._TransactionDate.HasValue || this._TransactionDate.Value == DateTime.MinValue) ?
+					"" : this._TransactionDate.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
 				return ret;
 			}
 			set { }
