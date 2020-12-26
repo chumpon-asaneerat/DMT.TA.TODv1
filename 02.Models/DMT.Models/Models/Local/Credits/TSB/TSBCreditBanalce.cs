@@ -1641,7 +1641,7 @@ namespace DMT.Models
 				{
 					string cmd = @"
 					SELECT * 
-					  FROM TSBCreditSummarryView
+					  FROM TSBCreditSummaryView
 					 WHERE TSBId = ? ";
 					var ret = NQuery.Query<FKs>(cmd, tsb.TSBId).FirstOrDefault();
 					var data = ret.ToModel();
@@ -1675,7 +1675,7 @@ namespace DMT.Models
 				{
 					string cmd = @"
 					SELECT *
-					  FROM TSBCreditSummarryView ";
+					  FROM TSBCreditSummaryView ";
 					var rets = NQuery.Query<FKs>(cmd).ToList();
 					var results = rets.ToModels();
 					result.Success(results);

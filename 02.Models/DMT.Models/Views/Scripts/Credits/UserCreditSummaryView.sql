@@ -4,7 +4,6 @@ AS
 		 , TSB.TSBNameEN
 		 , TSB.TSBNameTH
 		 , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction 
-		 --, UserView.FullNameEN, UserView.FullNameTH 
 		 , (
 			 SELECT UserCreditBorrowSummaryView.CountST25 - UserCreditReturnSummaryView.CountST25
 			   FROM UserCreditBorrowSummaryView, UserCreditReturnSummaryView 
@@ -138,8 +137,6 @@ AS
 				AND UserCreditReturnSummaryView.UserCreditId = UserCreditBalance.UserCreditId
 			) AS AmountBHT1000
 	  FROM UserCreditBalance, TSB, PlazaGroup
-	     --, UserView
 	 WHERE PlazaGroup.TSBId = TSB.TSBId 
 	   AND UserCreditBalance.TSBId = TSB.TSBId 
 	   AND UserCreditBalance.PlazaGroupId = PlazaGroup.PlazaGroupId 
-	   --AND UserCreditBalance.UserId = UserView.UserId 

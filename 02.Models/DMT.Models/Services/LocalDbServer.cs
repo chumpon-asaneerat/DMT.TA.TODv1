@@ -2274,7 +2274,7 @@ namespace DMT.Services
             // Credits - Embeded resource used . instead / to access sub contents.
             /*
             prefix = @"Credits";
-            InitView("TSBCreditSummarryView", 1, prefix);
+            InitView("TSBCreditSummaryView", 1, prefix);
             InitView("TSBCreditTransactionView", 1, prefix);
             InitView("UserCreditBorrowSummaryView", 1, prefix);
             InitView("UserCreditReturnSummaryView", 1, prefix);

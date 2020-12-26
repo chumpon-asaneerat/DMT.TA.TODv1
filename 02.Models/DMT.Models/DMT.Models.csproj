@@ -182,7 +182,7 @@
     <EmbeddedResource Include="Views\Scripts\Shifts\TSBShiftView.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Scripts\Credits\TSBCreditSummarryView.sql" />
+    <EmbeddedResource Include="Views\Scripts\Credits\TSBCreditSummaryView.sql" />
     <EmbeddedResource Include="Views\Scripts\Credits\TSBCreditTransactionView.sql" />
     <EmbeddedResource Include="Views\Scripts\Credits\UserCreditBorrowSummaryView.sql" />
     <EmbeddedResource Include="Views\Scripts\Credits\UserCreditReturnSummaryView.sql" />
