@@ -21,8 +21,6 @@ using System.Reflection;
 
 namespace DMT.Models
 {
-    // TODO: UserShift Change (Begin/End) DateTime to DateTime?
-    
     #region UserShift
 
     /// <summary>
@@ -50,8 +48,8 @@ namespace DMT.Models
         private string _FullNameEN = string.Empty;
         private string _FullNameTH = string.Empty;
 
-        private DateTime _Begin = DateTime.MinValue;
-        private DateTime _End = DateTime.MinValue;
+        private DateTime? _Begin = new DateTime?();
+        private DateTime? _End = new DateTime?();
 
         #endregion
 
@@ -324,7 +322,7 @@ namespace DMT.Models
         [Description("Gets or sets Begin Date.")]
         //[ReadOnly(true)]
         [PropertyMapName("Begin")]
-        public DateTime Begin
+        public DateTime? Begin
         {
             get { return _Begin; }
             set
@@ -347,7 +345,7 @@ namespace DMT.Models
         [Description("Gets or sets End Date.")]
         //[ReadOnly(true)]
         [PropertyMapName("End")]
-        public DateTime End
+        public DateTime? End
         {
             get { return _End; }
             set
@@ -375,7 +373,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.Begin == DateTime.MinValue) ? "" : this.Begin.ToThaiDateTimeString("dd/MM/yyyy");
+                var ret = (!this.Begin.HasValue || this.Begin.Value == DateTime.MinValue) ?
+                    "" : this.Begin.Value.ToThaiDateTimeString("dd/MM/yyyy");
                 return ret;
             }
             set { }
@@ -392,7 +391,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.End == DateTime.MinValue) ? "" : this.End.ToThaiDateTimeString("dd/MM/yyyy");
+                var ret = (!this.End.HasValue || this.End.Value == DateTime.MinValue) ?
+                    "" : this.End.Value.ToThaiDateTimeString("dd/MM/yyyy");
                 return ret;
             }
             set { }
@@ -409,7 +409,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.Begin == DateTime.MinValue) ? "" : this.Begin.ToThaiTimeString();
+                var ret = (!this.Begin.HasValue || this.Begin.Value == DateTime.MinValue) ?
+                    "" : this.Begin.Value.ToThaiTimeString();
                 return ret;
             }
             set { }
@@ -426,7 +427,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.End == DateTime.MinValue) ? "" : this.End.ToThaiTimeString();
+                var ret = (!this.End.HasValue || this.End.Value == DateTime.MinValue) ?
+                    "" : this.End.Value.ToThaiTimeString();
                 return ret;
             }
             set { }
@@ -443,16 +445,17 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.Begin == DateTime.MinValue) ? "" : this.Begin.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+                var ret = (!this.Begin.HasValue || this.Begin.Value == DateTime.MinValue) ?
+                    "" : this.Begin.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
                 return ret;
             }
             set { }
         }
         /// <summary>
-        /// Gets or sets End Date Time String.
+        /// Gets End Date Time String.
         /// </summary>
         [Category("Shift")]
-        [Description("Gets or sets End Date Time String.")]
+        [Description("Gets End Date Time String.")]
         [ReadOnly(true)]
         [JsonIgnore]
         [Ignore]
@@ -460,7 +463,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.End == DateTime.MinValue) ? "" : this.End.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+                var ret = (!this.End.HasValue || this.End.Value == DateTime.MinValue) ?
+                    "" : this.End.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
                 return ret;
             }
             set { }
@@ -603,7 +607,7 @@ namespace DMT.Models
                     cmd += "  FROM UserShiftView ";
                     cmd += " WHERE TSBId = ? ";
                     cmd += "   AND UserId = ? ";
-                    cmd += "   AND End = ? ";
+                    cmd += "   AND (End IS NULL OR End = ?) ";
 
                     var ret = NQuery.Query<FKs>(cmd,
                         tsbId, userId, DateTime.MinValue).FirstOrDefault();
@@ -818,7 +822,7 @@ namespace DMT.Models
                     cmd += "SELECT * ";
                     cmd += "  FROM UserShiftView ";
                     cmd += " WHERE TSBId = ? ";
-                    cmd += "   AND End = ? ";
+                    cmd += "   AND (End IS NULL OR End = ?) ";
 
                     var rets = NQuery.Query<FKs>(cmd, tsbid, DateTime.MinValue).ToList();
                     var results = rets.ToModels();

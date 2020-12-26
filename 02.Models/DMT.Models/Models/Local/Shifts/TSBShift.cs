@@ -536,8 +536,6 @@ namespace DMT.Models
 
         #region Static Methods
 
-        #region Create new TSB Shift (not save to database).
-
         /// <summary>
         /// Create new TSB Shift (not save to database).
         /// </summary>
@@ -562,11 +560,6 @@ namespace DMT.Models
 
             return result;
         }
-
-        #endregion
-
-        #region Get TSBShift (Active TSB)
-
         /// <summary>
         /// Gets Current TSB Shift.
         /// </summary>
@@ -589,11 +582,6 @@ namespace DMT.Models
             result = GetTSBShift(tsb.TSBId);
             return result;
         }
-
-        #endregion
-
-        #region Get TSBShift by TSBId
-
         /// <summary>
         /// Gets TSBShift by TSBId.
         /// </summary>
@@ -632,11 +620,6 @@ namespace DMT.Models
                 return result;
             }
         }
-
-        #endregion
-
-        #region Change Shift
-
         /// <summary>
         /// Change Shift.
         /// </summary>
@@ -689,8 +672,6 @@ namespace DMT.Models
                 return result;
             }
         }
-
-        #endregion
 
         #endregion
     }
