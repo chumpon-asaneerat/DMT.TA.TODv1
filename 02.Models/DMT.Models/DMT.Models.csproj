@@ -157,6 +157,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Models\Local\Credits\TSB\" />
+    <Folder Include="Models\Local\Credits\User\" />
     <Folder Include="Views\Scripts\Coupons\" />
     <Folder Include="Views\Scripts\Credits\" />
   </ItemGroup>

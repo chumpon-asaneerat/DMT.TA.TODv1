@@ -19,15 +19,15 @@ Operations:
                 ☐ SaveTransactions (/Coupon/Users/Transactions/Save) refactored.
     Credit (/Credit):
         TSB (/Credit/TSB):
-            ☐ GetBalance (/Credit/TSB/GetBalance) refactored.
-            Transactions (/Credit/TSB/Transactions):
-                ☐ GetTransactions (/Credit/TSB/Transactions/Gets) refactored.
-                ☐ SaveTransactions (/Credit/TSB/Transactions/Save) refactored.
-        User (/Credit/Users):
-            ☐ GetBalances (/Credit/Users/GetBalances) refactored.
-            ☐ SaveBalance (/Credit/Users/Save) refactored.
-            Transactions (/Credit/Users/Transactions):
-                ☐ SaveTransactions (/Credit/Users/Transactions/Save) refactored.
+            ☐ Get (/Credit/TSB/Get) refactored.
+            Transaction (/Credit/TSB/Transaction):
+                ☐ Gets (/Credit/TSB/Transaction/Gets) refactored.
+                ☐ Save (/Credit/TSB/Transaction/Save) refactored.
+        User (/Credit/User):
+            ☐ Gets (/Credit/User/Gets) refactored.
+            ☐ Save (/Credit/User/Save) refactored.
+            Transaction (/Credit/User/Transaction):
+                ☐ Save(s) (/Credit/User/Transaction/Save) refactored.
     Exchange (/Exchange):
         Groups (/Exchange/Groups):
             ☐ GetTSBExchangeGroups (/Exchange/Groups/Gets) refactored.

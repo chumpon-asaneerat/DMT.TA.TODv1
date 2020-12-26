@@ -19,15 +19,15 @@ Operations:
                 ☐ SaveTransactions (/Coupon/Users/Transactions/Save) TESTED.
     Credit (/Credit):
         TSB (/Credit/TSB):
-            ☐ GetBalance (/Credit/TSB/GetBalance) TESTED.
-            Transactions (/Credit/TSB/Transactions):
-                ☐ GetTransactions (/Credit/TSB/Transactions/Gets) TESTED.
-                ☐ SaveTransactions (/Credit/TSB/Transactions/Save) TESTED.
-        User (/Credit/Users):
-            ☐ GetBalances (/Credit/Users/GetBalances) TESTED.
-            ☐ SaveBalance (/Credit/Users/Save) TESTED.
-            Transactions (/Credit/Users/Transactions):
-                ☐ SaveTransactions (/Credit/Users/Transactions/Save) TESTED.
+            ☐ Get (/Credit/TSB/Get) TESTED.
+            Transaction (/Credit/TSB/Transaction):
+                ☐ Gets (/Credit/TSB/Transaction/Gets) TESTED.
+                ☐ Save (/Credit/TSB/Transaction/Save) TESTED.
+        User (/Credit/User):
+            ☐ Gets (/Credit/User/Gets) TESTED.
+            ☐ Save (/Credit/User/Save) TESTED.
+            Transaction (/Credit/User/Transaction):
+                ☐ Save(s) (/Credit/User/Transaction/Save) TESTED.
     Exchange (/Exchange):
         Groups (/Exchange/Groups):
             ☐ GetTSBExchangeGroups (/Exchange/Groups/Gets) TESTED.
