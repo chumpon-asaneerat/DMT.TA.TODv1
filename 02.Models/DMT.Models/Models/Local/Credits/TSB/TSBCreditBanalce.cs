@@ -22,9 +22,6 @@ using System.Reflection;
 
 namespace DMT.Models
 {
-	// TODO: UserCreditTransaction Check CreditFlowBHTTotal/BHTTotal
-	// TODO: UserCreditTransaction Check ExchangeBHTTotal/BorrowBHTTotal/AdditionalBHTTotal/UserBHTTotal
-
 	#region TSBCreditBalance (For Query only)
 
 	/// <summary>
@@ -1183,6 +1180,9 @@ namespace DMT.Models
 		}
 
 		#endregion
+
+		// TODO: TSBCreditBalance Check CreditFlowBHTTotal/BHTTotal
+		// TODO: TSBCreditBalance Check ExchangeBHTTotal/BorrowBHTTotal/AdditionalBHTTotal/UserBHTTotal (may be used join to TSBExchange)
 
 		#region Summary
 

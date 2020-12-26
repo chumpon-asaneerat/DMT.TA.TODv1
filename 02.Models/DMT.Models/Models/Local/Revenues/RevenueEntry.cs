@@ -197,6 +197,7 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Revenue")]
 		[Description("Gets or sets Entry Date.")]
+		[NotNull]
 		//[ReadOnly(true)]
 		[PropertyMapName("EntryDate")]
 		public DateTime? EntryDate
@@ -253,6 +254,7 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Revenue")]
 		[Description("Gets or sets Revenue Date.")]
+		[NotNull]
 		//[ReadOnly(true)]
 		[PropertyMapName("RevenueDate")]
 		public DateTime? RevenueDate

@@ -66,8 +66,9 @@ namespace DMT.Models
 		private bool _hasRemark = false;
 
 		private int _UserCreditId = 0;
-		private DateTime _UserCreditDate = DateTime.MinValue;
+		private DateTime? _UserCreditDate = new DateTime?();
 		private StateTypes _State = StateTypes.Initial;
+
 		private string _BagNo = string.Empty;
 		private string _BeltNo = string.Empty;
 		private string _RevenueId = string.Empty;
@@ -403,6 +404,7 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Common")]
 		[Description("Gets or sets UserCredit Date.")]
+		[NotNull]
 		[ReadOnly(true)]
 		[PropertyMapName("UserCreditDate")]
 		public DateTime UserCreditDate
@@ -432,7 +434,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.UserCreditDate == DateTime.MinValue) ? "" : this.UserCreditDate.ToThaiDateTimeString("dd/MM/yyyy");
+				var ret = (!this._UserCreditDate.HasValue || this._UserCreditDate.Value == DateTime.MinValue) ?
+					"" : this._UserCreditDate.Value.ToThaiDateTimeString("dd/MM/yyyy");
 				return ret;
 			}
 			set { }

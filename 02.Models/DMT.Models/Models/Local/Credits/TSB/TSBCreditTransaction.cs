@@ -22,9 +22,6 @@ using System.Reflection;
 
 namespace DMT.Models
 {
-	// TODO: TSBCreditTransaction Change DateTime to DateTime?
-	// TODO: TSBCreditTransaction Check ExchangeBHT/BorrowBHT/AdditionBHT
-
 	#region TSBCreditTransaction
 
 	/// <summary>
@@ -70,8 +67,8 @@ namespace DMT.Models
 		#region Internal Variables
 
 		private int _TransactionId = 0;
-		private Guid _GroupId = Guid.Empty;
-		private DateTime _TransactionDate = DateTime.MinValue;
+		private Guid? _GroupId = new Guid?();
+		private DateTime? _TransactionDate = new DateTime?();
 		private TransactionTypes _TransactionType = TransactionTypes.Initial;
 
 		// TSB
@@ -153,6 +150,8 @@ namespace DMT.Models
 
 		#region Public Properties
 
+		// TODO: TSBCreditBalance Check GroupId (used for what??? may be for clear data)
+
 		#region Common
 
 		/// <summary>
@@ -185,7 +184,7 @@ namespace DMT.Models
 		[Description("Gets or sets Transaction GroupId")]
 		[ReadOnly(true)]
 		[PropertyMapName("GroupId")]
-		public Guid GroupId
+		public Guid? GroupId
 		{
 			get
 			{
@@ -205,9 +204,10 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Common")]
 		[Description(" Gets or sets Transaction Date")]
+		[NotNull]
 		[ReadOnly(true)]
 		[PropertyMapName("TransactionDate")]
-		public DateTime TransactionDate
+		public DateTime? TransactionDate
 		{
 			get
 			{
@@ -234,7 +234,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiDateTimeString("dd/MM/yyyy");
+				var ret = (!this._TransactionDate.HasValue || this._TransactionDate.Value == DateTime.MinValue) ?
+					"" : this._TransactionDate.Value.ToThaiDateTimeString("dd/MM/yyyy");
 				return ret;
 			}
 			set { }
@@ -251,7 +252,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiTimeString();
+				var ret = (!this._TransactionDate.HasValue || this._TransactionDate.Value == DateTime.MinValue) ?
+					"" : this._TransactionDate.Value.ToThaiTimeString();
 				return ret;
 			}
 			set { }
@@ -268,7 +270,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+				var ret = (!this._TransactionDate.HasValue || this._TransactionDate.Value == DateTime.MinValue) ?
+					"" : this._TransactionDate.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
 				return ret;
 			}
 			set { }
@@ -1383,6 +1386,8 @@ namespace DMT.Models
 		}
 
 		#endregion
+
+		// TODO: TSBCreditTransaction Check ExchangeBHT/BorrowBHT/AdditionBHT (may be used join to TSBExchange)
 
 		#region Exchange/Borrow/Additional
 
