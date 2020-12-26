@@ -11,7 +11,7 @@ namespace DMT.Services
     partial class NotifyController
     {
         [HttpPost]
-        [ActionName(RouteConsts.Notify.ShiftChanged.Name)]
+        [ActionName(RouteConsts.TOD.Notify.ShiftChanged.Name)]
         //[AllowAnonymous]
         public NDbResult ShiftChanged()
         {

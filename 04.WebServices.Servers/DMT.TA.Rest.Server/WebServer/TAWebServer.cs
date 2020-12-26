@@ -52,16 +52,16 @@ namespace DMT.Services
                     string controllerName, actionName, actionUrl;
 
                     // Set Controller Name.
-                    controllerName = RouteConsts.Notify.ControllerName;
+                    controllerName = RouteConsts.TA.Notify.ControllerName;
 
                     // TSB Changed
-                    actionName = RouteConsts.Notify.TSBChanged.Name;
-                    actionUrl = RouteConsts.Notify.TSBChanged.Url;
+                    actionName = RouteConsts.TA.Notify.TSBChanged.Name;
+                    actionUrl = RouteConsts.TA.Notify.TSBChanged.Url;
                     Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
 
                     // Shift Changed
-                    actionName = RouteConsts.Notify.ShiftChanged.Name;
-                    actionUrl = RouteConsts.Notify.ShiftChanged.Url;
+                    actionName = RouteConsts.TA.Notify.ShiftChanged.Name;
+                    actionUrl = RouteConsts.TA.Notify.ShiftChanged.Url;
                     Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
                 }
             }

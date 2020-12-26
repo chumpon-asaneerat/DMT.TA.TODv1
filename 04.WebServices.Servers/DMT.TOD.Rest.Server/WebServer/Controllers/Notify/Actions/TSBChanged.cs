@@ -11,7 +11,7 @@ namespace DMT.Services
     partial class NotifyController
     {
         [HttpPost]
-        [ActionName(RouteConsts.Notify.TSBChanged.Name)]
+        [ActionName(RouteConsts.TOD.Notify.TSBChanged.Name)]
         //[AllowAnonymous]
         public NDbResult TSBChanged()
         {
