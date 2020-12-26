@@ -48,7 +48,7 @@ namespace DMT.Models
 		private ResetMode _Mode = ResetMode.Yearly;
 		private string _Prefix = string.Empty;
 		private int _LastNumber = 0;
-		private DateTime _LastUpdate = DateTime.MinValue;
+		private DateTime? _LastUpdate = new DateTime?();
 
 		#endregion
 
@@ -90,6 +90,7 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Common")]
 		[Description("Gets or sets Mode")]
+		[NotNull]
 		[PropertyMapName("Mode")]
 		public ResetMode Mode
 		{
@@ -133,6 +134,7 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Common")]
 		[Description("Gets or sets Last Number")]
+		[NotNull]
 		[PropertyMapName("LastNumber")]
 		public int LastNumber
 		{
@@ -155,8 +157,9 @@ namespace DMT.Models
 		[Category("Common")]
 		[Description("Gets or sets Last Update")]
 		[ReadOnly(true)]
+		[NotNull]
 		[PropertyMapName("LastUpdate")]
-		public DateTime LastUpdate
+		public DateTime? LastUpdate
 		{
 			get
 			{
@@ -223,7 +226,7 @@ namespace DMT.Models
 					if (null != inst)
 					{
 						int year = DateTime.Now.Year;
-						if (inst.LastUpdate.Year != year)
+						if (!inst.LastUpdate.HasValue || inst.LastUpdate.Value.Year != year)
 						{
 							// not same year.
 							inst.LastUpdate = DateTime.Now;
@@ -266,6 +269,7 @@ namespace DMT.Models
 					if (null != inst)
 					{
 						inst.LastNumber = inst.LastNumber + 1;
+						inst.LastUpdate = DateTime.Now;
 						Save(inst);
 
 						result.Success(inst);

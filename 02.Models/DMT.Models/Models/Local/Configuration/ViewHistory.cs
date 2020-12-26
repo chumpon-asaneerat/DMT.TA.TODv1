@@ -76,6 +76,7 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Common")]
 		[Description("Gets or sets VersionId")]
+		[NotNull]
 		[PropertyMapName("VersionId")]
 		public int VersionId
 		{
