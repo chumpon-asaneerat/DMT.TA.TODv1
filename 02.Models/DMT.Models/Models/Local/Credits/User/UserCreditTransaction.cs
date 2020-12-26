@@ -389,6 +389,8 @@ namespace DMT.Models
 		[Category("Common")]
 		[Description(" Gets or sets Transaction Date")]
 		[ReadOnly(true)]
+		[NotNull]
+		[Indexed]
 		[PropertyMapName("TransactionDate")]
 		public DateTime? TransactionDate
 		{
@@ -468,6 +470,7 @@ namespace DMT.Models
 		[Category("Common")]
 		[Description("Gets or sets Transaction Type.")]
 		[ReadOnly(true)]
+		[NotNull]
 		[PropertyMapName("TransactionType")]
 		public TransactionTypes TransactionType
 		{
@@ -486,6 +489,7 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Common")]
 		[Description("Gets or sets RefId")]
+		[Indexed]
 		[ReadOnly(true)]
 		[PropertyMapName("RefId")]
 		public int RefId
@@ -514,6 +518,8 @@ namespace DMT.Models
 		[Category("TSB")]
 		[Description("Gets or sets TSBId.")]
 		[ReadOnly(true)]
+		[NotNull]
+		[Indexed]
 		[MaxLength(10)]
 		[PropertyMapName("TSBId")]
 		public string TSBId
@@ -588,6 +594,8 @@ namespace DMT.Models
 		[Category("Plaza Group")]
 		[Description("Gets or sets Plaza Group Id.")]
 		[ReadOnly(true)]
+		[NotNull]
+		[Indexed]
 		[MaxLength(10)]
 		[PropertyMapName("PlazaGroupId")]
 		public string PlazaGroupId
@@ -685,6 +693,8 @@ namespace DMT.Models
 		[Category("User")]
 		[Description("Gets or sets User Id.")]
 		[ReadOnly(true)]
+		[NotNull]
+		[Indexed]
 		[MaxLength(10)]
 		[PropertyMapName("UserId")]
 		public string UserId
@@ -759,6 +769,7 @@ namespace DMT.Models
 		[Category("UserCredit")]
 		[Description("Gets or sets UserCreditId")]
 		[ReadOnly(true)]
+		[Indexed]
 		[PropertyMapName("UserCreditId")]
 		public int UserCreditId
 		{

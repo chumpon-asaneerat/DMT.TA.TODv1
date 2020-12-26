@@ -205,6 +205,7 @@ namespace DMT.Models
 		[Category("Common")]
 		[Description(" Gets or sets Transaction Date")]
 		[NotNull]
+		[Indexed]
 		[ReadOnly(true)]
 		[PropertyMapName("TransactionDate")]
 		public DateTime? TransactionDate
@@ -285,6 +286,7 @@ namespace DMT.Models
 		[Category("Common")]
 		[Description("Gets or sets Transaction Type.")]
 		[ReadOnly(true)]
+		[NotNull]
 		[PropertyMapName("TransactionType")]
 		public TransactionTypes TransactionType
 		{
@@ -471,6 +473,8 @@ namespace DMT.Models
 		[Category("TSB")]
 		[Description("Gets or sets TSBId.")]
 		[ReadOnly(true)]
+		[NotNull]
+		[Indexed]
 		[MaxLength(10)]
 		[PropertyMapName("TSBId")]
 		public string TSBId
@@ -545,6 +549,8 @@ namespace DMT.Models
 		[Category("Supervisor")]
 		[Description("Gets or sets Supervisor Id.")]
 		[ReadOnly(true)]
+		[NotNull]
+		[Indexed]
 		[MaxLength(10)]
 		[PropertyMapName("SupervisorId")]
 		public string SupervisorId
