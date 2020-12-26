@@ -124,6 +124,7 @@
     <Compile Include="Models\Local\Master\MCoupon.cs" />
     <Compile Include="Models\Local\Master\MCouponBook.cs" />
     <Compile Include="Models\Local\Master\MCurrency.cs" />
+    <Compile Include="Models\Local\Revenues\RevenueEntry.cs" />
     <Compile Include="Models\Local\Shifts\UserShift.cs" />
     <Compile Include="Models\Local\Shifts\UserShiftRevenue.cs" />
     <Compile Include="Models\SCW\Common.cs" />
@@ -193,6 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Scripts\Shifts\UserShiftRevenueView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Scripts\Revenues\RevenueEntryView.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
