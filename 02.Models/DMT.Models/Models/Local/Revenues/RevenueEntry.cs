@@ -21,8 +21,6 @@ using System.Reflection;
 
 namespace DMT.Models
 {
-	// TODO: RevenueEntry Change DateTime to DateTime?
-
 	#region Revenue Entry
 
 	/// <summary>
@@ -37,8 +35,8 @@ namespace DMT.Models
 		#region Intenral Variables
 
 		private Guid _PKId = Guid.NewGuid();
-		private DateTime _EntryDate = DateTime.MinValue;
-		private DateTime _RevenueDate = DateTime.MinValue;
+		private DateTime? _EntryDate = new DateTime?();
+		private DateTime? _RevenueDate = new DateTime?();
 
 		private string _RevenueId = string.Empty;
 		private string _BagNo = string.Empty;
@@ -49,8 +47,8 @@ namespace DMT.Models
 		private string _Lanes = string.Empty;
 		private string _PlazaNames = string.Empty;
 
-		private DateTime _ShiftBegin = DateTime.MinValue;
-		private DateTime _ShiftEnd = DateTime.MinValue;
+		private DateTime? _ShiftBegin = new DateTime?();
+		private DateTime? _ShiftEnd = new DateTime?();
 
 		private string _TSBId = string.Empty;
 		private string _TSBNameEN = string.Empty;
@@ -108,7 +106,7 @@ namespace DMT.Models
 		private decimal _CouponSoldBHTTotal = decimal.Zero;
 
 		private int _Status = 0;
-		private DateTime _LastUpdate = DateTime.MinValue;
+		private DateTime? _LastUpdate = new DateTime?();
 
 		#endregion
 
@@ -201,7 +199,7 @@ namespace DMT.Models
 		[Description("Gets or sets Entry Date.")]
 		//[ReadOnly(true)]
 		[PropertyMapName("EntryDate")]
-		public DateTime EntryDate
+		public DateTime? EntryDate
 		{
 			get { return _EntryDate; }
 			set
@@ -226,7 +224,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this._EntryDate == DateTime.MinValue) ? "" : this._EntryDate.ToThaiDateTimeString("dd/MM/yyyy");
+				var ret = (!this._EntryDate.HasValue || this._EntryDate.Value == DateTime.MinValue) ?
+					"" : this._EntryDate.Value.ToThaiDateTimeString("dd/MM/yyyy");
 				return ret;
 			}
 			set { }
@@ -243,7 +242,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this._EntryDate == DateTime.MinValue) ? "" : this._EntryDate.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+				var ret = (!this._EntryDate.HasValue || this._EntryDate.Value == DateTime.MinValue) ?
+					"" : this._EntryDate.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
 				return ret;
 			}
 			set { }
@@ -255,7 +255,7 @@ namespace DMT.Models
 		[Description("Gets or sets Revenue Date.")]
 		//[ReadOnly(true)]
 		[PropertyMapName("RevenueDate")]
-		public DateTime RevenueDate
+		public DateTime? RevenueDate
 		{
 			get { return _RevenueDate; }
 			set
@@ -282,7 +282,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this._RevenueDate == DateTime.MinValue) ? "" : this._RevenueDate.ToThaiDateTimeString("dd/MM/yyyy");
+				var ret = (!this._RevenueDate.HasValue || this._RevenueDate.Value == DateTime.MinValue) ?
+					"" : this._RevenueDate.Value.ToThaiDateTimeString("dd/MM/yyyy");
 				return ret;
 			}
 			set { }
@@ -299,7 +300,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this._RevenueDate == DateTime.MinValue) ? "" : this._RevenueDate.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+				var ret = (!this._RevenueDate.HasValue || this._RevenueDate.Value == DateTime.MinValue) ?
+					"" : this._RevenueDate.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
 				return ret;
 			}
 			set { }
@@ -453,7 +455,7 @@ namespace DMT.Models
 		[Description("Gets or sets Shift Begin.")]
 		//[ReadOnly(true)]
 		[PropertyMapName("ShiftBegin")]
-		public DateTime ShiftBegin
+		public DateTime? ShiftBegin
 		{
 			get { return _ShiftBegin; }
 			set
@@ -473,7 +475,7 @@ namespace DMT.Models
 		[Description(" Gets or sets Shift End.")]
 		//[ReadOnly(true)]
 		[PropertyMapName("ShiftEnd")]
-		public DateTime ShiftEnd
+		public DateTime? ShiftEnd
 		{
 			get { return _ShiftEnd; }
 			set
@@ -498,7 +500,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.ShiftBegin == DateTime.MinValue) ? "" : this.ShiftBegin.ToThaiDateTimeString("dd/MM/yyyy");
+				var ret = (!this._ShiftBegin.HasValue || this._ShiftBegin.Value == DateTime.MinValue) ?
+					"" : this._ShiftBegin.Value.ToThaiDateTimeString("dd/MM/yyyy");
 				return ret;
 			}
 			set { }
@@ -515,7 +518,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.ShiftEnd == DateTime.MinValue) ? "" : this.ShiftEnd.ToThaiDateTimeString("dd/MM/yyyy");
+				var ret = (!this._ShiftEnd.HasValue || this._ShiftEnd.Value == DateTime.MinValue) ?
+					"" : this._ShiftEnd.Value.ToThaiDateTimeString("dd/MM/yyyy");
 				return ret;
 			}
 			set { }
@@ -532,7 +536,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.ShiftBegin == DateTime.MinValue) ? "" : this.ShiftBegin.ToThaiTimeString();
+				var ret = (!this._ShiftBegin.HasValue || this._ShiftBegin.Value == DateTime.MinValue) ?
+					"" : this._ShiftBegin.Value.ToThaiTimeString();
 				return ret;
 			}
 			set { }
@@ -549,7 +554,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.ShiftEnd == DateTime.MinValue) ? "" : this.ShiftEnd.ToThaiTimeString();
+				var ret = (!this._ShiftEnd.HasValue || this._ShiftEnd.Value == DateTime.MinValue) ?
+					"" : this._ShiftEnd.Value.ToThaiTimeString();
 				return ret;
 			}
 			set { }
@@ -566,7 +572,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.ShiftBegin == DateTime.MinValue) ? "" : this.ShiftBegin.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+				var ret = (!this._ShiftBegin.HasValue || this._ShiftBegin.Value == DateTime.MinValue) ?
+					"" : this._ShiftBegin.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
 				return ret;
 			}
 			set { }
@@ -583,7 +590,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.ShiftEnd == DateTime.MinValue) ? "" : this.ShiftEnd.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+				var ret = (!this._ShiftEnd.HasValue || this._ShiftEnd.Value == DateTime.MinValue) ?
+					"" : this._ShiftEnd.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
 				return ret;
 			}
 			set { }
@@ -1554,7 +1562,7 @@ namespace DMT.Models
 		[ReadOnly(true)]
 		[PropertyMapName("LastUpdate", typeof(RevenueEntry))]
 		[PropertyOrder(10002)]
-		public DateTime LastUpdate
+		public DateTime? LastUpdate
 		{
 			get { return _LastUpdate; }
 			set
