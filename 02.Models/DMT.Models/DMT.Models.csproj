@@ -124,6 +124,7 @@
     <Compile Include="Models\Local\Master\MCoupon.cs" />
     <Compile Include="Models\Local\Master\MCouponBook.cs" />
     <Compile Include="Models\Local\Master\MCurrency.cs" />
+    <Compile Include="Models\Local\Shifts\UserShift.cs" />
     <Compile Include="Models\SCW\Common.cs" />
     <Compile Include="Models\SCW\SCWCardAllowList.cs" />
     <Compile Include="Models\SCW\SCWChangePassword.cs" />
