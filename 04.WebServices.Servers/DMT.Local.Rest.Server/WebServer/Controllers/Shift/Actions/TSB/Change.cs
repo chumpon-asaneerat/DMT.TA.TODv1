@@ -9,6 +9,9 @@ using DMT.Models;
 
 namespace DMT.Services
 {
+    using TAOps = Operations.TA.Notify;
+    using TODOps = Operations.TOD.Notify;
+
     partial class Shift
     {
         partial class TSBController
@@ -19,7 +22,12 @@ namespace DMT.Services
             public NDbResult Change([FromBody] TSBShift value)
             {
                 var ret = TSBShift.ChangeShift(value);
-                //TODO: Need to notify to TA and TOD app for shift changed.
+                if (null != ret && ret.Ok)
+                {
+                    // Notify ShiftChanged to (TAApp and TODApp).
+                    TAOps.ShiftChanged();
+                    TODOps.ShiftChanged();
+                }
                 return ret;
             }
         }
