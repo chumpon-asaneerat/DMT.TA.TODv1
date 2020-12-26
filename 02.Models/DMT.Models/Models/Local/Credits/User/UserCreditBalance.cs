@@ -22,7 +22,6 @@ using System.Reflection;
 
 namespace DMT.Models
 {
-	// TODO: UserCreditBalance Change DateTime to DateTime?
 	// TODO: UserCreditBalance Add RevenueBagNo and RevenueBeltNo
 
 	#region UserCreditBalance
@@ -407,7 +406,7 @@ namespace DMT.Models
 		[NotNull]
 		[ReadOnly(true)]
 		[PropertyMapName("UserCreditDate")]
-		public DateTime UserCreditDate
+		public DateTime? UserCreditDate
 		{
 			get { return _UserCreditDate; }
 			set
@@ -452,7 +451,8 @@ namespace DMT.Models
 		{
 			get
 			{
-				var ret = (this.UserCreditDate == DateTime.MinValue) ? "" : this.UserCreditDate.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+				var ret = (!this._UserCreditDate.HasValue || this._UserCreditDate.Value == DateTime.MinValue) ?
+					"" : this._UserCreditDate.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
 				return ret;
 			}
 			set { }
