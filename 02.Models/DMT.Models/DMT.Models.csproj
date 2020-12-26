@@ -114,6 +114,8 @@
     <Compile Include="Models\Local\Configuration\ViewHistory.cs" />
     <Compile Include="Models\Local\Credits\TSB\TSBCreditBanalce.cs" />
     <Compile Include="Models\Local\Credits\TSB\TSBCreditTransaction.cs" />
+    <Compile Include="Models\Local\Credits\User\UserCreditBalance.cs" />
+    <Compile Include="Models\Local\Credits\User\UserCreditTransaction.cs" />
     <Compile Include="Models\Local\Infrastructures\Lane.cs" />
     <Compile Include="Models\Local\Infrastructures\Plaza.cs" />
     <Compile Include="Models\Local\Infrastructures\PlazaGroup.cs" />
@@ -159,7 +161,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Local\Credits\User\" />
     <Folder Include="Views\Scripts\Coupons\" />
     <Folder Include="Views\Scripts\Credits\" />
   </ItemGroup>

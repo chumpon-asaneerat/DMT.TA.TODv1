@@ -22,66 +22,68 @@ using System.Reflection;
 
 namespace DMT.Models
 {
-	// TODO: TSBCreditTransaction Change DateTime to DateTime?
-	// TODO: TSBCreditTransaction Check ExchangeBHT/BorrowBHT/AdditionBHT
+	// TODO: UserCreditBalance Change DateTime to DateTime?
+	// TODO: UserCreditBalance Add RevenueBagNo and RevenueBeltNo
 
-	#region TSBCreditTransaction
+	#region UserCreditBalance
 
 	/// <summary>
-	/// The TSBCreditTransaction Data Model class.
+	/// The UserCreditBalance Data Model class.
 	/// </summary>
 	[TypeConverter(typeof(PropertySorterSupportExpandableTypeConverter))]
 	[Serializable]
 	[JsonObject(MemberSerialization.OptOut)]
-	//[Table("TSBCreditTransaction")]
-	public class TSBCreditTransaction : NTable<TSBCreditTransaction>
+	//[Table("UserCredit")]
+	public class UserCreditBalance : NTable<UserCreditBalance>
 	{
 		#region Enum
 
 		/// <summary>
-		/// The TSB Credit Transaction Type enum.
+		/// The User Credit Balance State enum.
 		/// </summary>
-		public enum TransactionTypes : int
+		public enum StateTypes : int
 		{
 			/// <summary>
-			/// Initial credit.
+			/// Initial
 			/// </summary>
 			Initial = 0,
 			/// <summary>
-			/// received from account after account approve and plaza received it.
+			/// User Received bag.
 			/// </summary>
 			Received = 1,
 			/// <summary>
-			/// return to account after plaza no longer need or reach due date.
+			/// Returns all credit.
 			/// </summary>
-			Returns = 2,
-			/// <summary>
-			/// Internal Replace (Takeout from TSB)
-			/// </summary>
-			ReplaceOut = 11,
-			/// <summary>
-			/// Internal Replace (Replace in TSB)
-			/// </summary>
-			ReplaceIn = 12
+			Completed = 2
 		}
 
 		#endregion
 
 		#region Internal Variables
 
-		private int _TransactionId = 0;
-		private Guid _GroupId = Guid.Empty;
-		private DateTime _TransactionDate = DateTime.MinValue;
-		private TransactionTypes _TransactionType = TransactionTypes.Initial;
+		// For Runtime Used
+		private string _description = string.Empty;
+		private bool _hasRemark = false;
 
-		// TSB
+		private int _UserCreditId = 0;
+		private DateTime _UserCreditDate = DateTime.MinValue;
+		private StateTypes _State = StateTypes.Initial;
+		private string _BagNo = string.Empty;
+		private string _BeltNo = string.Empty;
+		private string _RevenueId = string.Empty;
+
 		private string _TSBId = string.Empty;
 		private string _TSBNameEN = string.Empty;
 		private string _TSBNameTH = string.Empty;
-		// Supervisor
-		private string _SupervisorId = string.Empty;
-		private string _SupervisorNameEN = string.Empty;
-		private string _SupervisorNameTH = string.Empty;
+
+		private string _PlazaGroupId = string.Empty;
+		private string _PlazaGroupNameEN = string.Empty;
+		private string _PlazaGroupNameTH = string.Empty;
+		private string _Direction = string.Empty;
+
+		private string _UserId = string.Empty;
+		private string _FullNameEN = string.Empty;
+		private string _FullNameTH = string.Empty;
 
 		// Coin/Bill (Count)
 		private int _CntST25 = 0;
@@ -110,12 +112,6 @@ namespace DMT.Models
 
 		private decimal _BHTTotal = decimal.Zero;
 
-		private decimal _ExchangeBHT = decimal.Zero;
-		private decimal _BorrowBHT = decimal.Zero;
-		private decimal _AdditionalBHT = decimal.Zero;
-
-		private string _Remark = string.Empty;
-
 		#endregion
 
 		#region Constructor
@@ -123,7 +119,7 @@ namespace DMT.Models
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		public TSBCreditTransaction() : base() { }
+		public UserCreditBalance() : base() { }
 
 		#endregion
 
@@ -153,159 +149,79 @@ namespace DMT.Models
 
 		#region Public Properties
 
-		#region Common
-
-		/// <summary>
-		/// Gets or sets TransactionId
-		/// </summary>
-		[Category("Common")]
-		[Description(" Gets or sets TransactionId")]
-		[ReadOnly(true)]
-		[PrimaryKey, AutoIncrement]
-		[PropertyMapName("TransactionId")]
-		public int TransactionId
-		{
-			get
-			{
-				return _TransactionId;
-			}
-			set
-			{
-				if (_TransactionId != value)
-				{
-					_TransactionId = value;
-					this.RaiseChanged("TransactionId");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets Transaction GroupId
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets or sets Transaction GroupId")]
-		[ReadOnly(true)]
-		[PropertyMapName("GroupId")]
-		public Guid GroupId
-		{
-			get
-			{
-				return _GroupId;
-			}
-			set
-			{
-				if (_GroupId != value)
-				{
-					_GroupId = value;
-					this.RaiseChanged("GroupId");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets Transaction Date.
-		/// </summary>
-		[Category("Common")]
-		[Description(" Gets or sets Transaction Date")]
-		[ReadOnly(true)]
-		[PropertyMapName("TransactionDate")]
-		public DateTime TransactionDate
-		{
-			get
-			{
-				return _TransactionDate;
-			}
-			set
-			{
-				if (_TransactionDate != value)
-				{
-					_TransactionDate = value;
-					this.RaiseChanged("TransactionDate");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets Transaction Date String.
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets Transaction Date String.")]
-		[ReadOnly(true)]
-		[JsonIgnore]
-		[Ignore]
-		public string TransactionDateString
-		{
-			get
-			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiDateTimeString("dd/MM/yyyy");
-				return ret;
-			}
-			set { }
-		}
-		/// <summary>
-		/// Gets Transaction Time String.
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets Transaction Time String.")]
-		[ReadOnly(true)]
-		[JsonIgnore]
-		[Ignore]
-		public string TransactionTimeString
-		{
-			get
-			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiTimeString();
-				return ret;
-			}
-			set { }
-		}
-		/// <summary>
-		/// Gets Transaction Date Time String.
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets Transaction Date Time String.")]
-		[ReadOnly(true)]
-		[JsonIgnore]
-		[Ignore]
-		public string TransactionDateTimeString
-		{
-			get
-			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
-				return ret;
-			}
-			set { }
-		}
-		/// <summary>
-		/// Gets or sets Transaction Type.
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets or sets Transaction Type.")]
-		[ReadOnly(true)]
-		[PropertyMapName("TransactionType")]
-		public TransactionTypes TransactionType
-		{
-			get { return _TransactionType; }
-			set
-			{
-				if (_TransactionType != value)
-				{
-					_TransactionType = value;
-					this.RaiseChanged("TransactionType");
-				}
-			}
-		}
-
-		#endregion
-
 		#region Runtime
 
 		/// <summary>
-		/// Gets or sets Description (Runtime).
+		/// Gets or sets has remark.
 		/// </summary>
 		[Category("Runtime")]
-		[Description("Gets or sets Description (Runtime).")]
+		[Description("Gets or sets HasRemark.")]
+		[ReadOnly(true)]
+		[Ignore]
+		[PropertyMapName("Description")]
+		public string Description
+		{
+			get { return _description; }
+			set
+			{
+				if (_description != value)
+				{
+					_description = value;
+					// Raise event.
+					this.RaiseChanged("Description");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets has remark.
+		/// </summary>
+		[Category("Runtime")]
+		[Description("Gets or sets HasRemark.")]
+		[ReadOnly(true)]
+		[Ignore]
+		[PropertyMapName("HasRemark")]
+		public bool HasRemark
+		{
+			get { return _hasRemark; }
+			set
+			{
+				if (_hasRemark != value)
+				{
+					_hasRemark = value;
+					// Raise event.
+					this.RaiseChanged("HasRemark");
+					this.RaiseChanged("RemarkVisibility");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets Remark Visibility.
+		/// </summary>
+		[Category("Runtime")]
+		[Description("Gets Remark Visibility.")]
 		[ReadOnly(true)]
 		[JsonIgnore]
 		[Ignore]
-		public string Description { get; set; }
+		[PropertyMapName("RemarkVisibility")]
+		public System.Windows.Visibility RemarkVisibility
+		{
+			get { return (_hasRemark) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed; }
+			set { }
+		}
+		/// <summary>
+		/// Gets Received Bag Visibility.
+		/// </summary>
+		[Category("Runtime")]
+		[Description("Gets Received Bag Visibility.")]
+		[ReadOnly(true)]
+		[JsonIgnore]
+		[Ignore]
+		[PropertyMapName("ReceivedBagVisibility")]
+		public System.Windows.Visibility ReceivedBagVisibility
+		{
+			get { return (_State == StateTypes.Initial) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed; }
+			set { }
+		}
 
 		#endregion
 
@@ -457,6 +373,174 @@ namespace DMT.Models
 
 		#endregion
 
+		#region Common
+
+		/// <summary>
+		/// Gets or sets UserCreditId
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets or sets UserCreditId")]
+		[PrimaryKey, AutoIncrement]
+		[ReadOnly(true)]
+		[PropertyMapName("UserCreditId")]
+		public int UserCreditId
+		{
+			get
+			{
+				return _UserCreditId;
+			}
+			set
+			{
+				if (_UserCreditId != value)
+				{
+					_UserCreditId = value;
+					this.RaiseChanged("UserCreditId");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets UserCredit Date.
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets or sets UserCredit Date.")]
+		[ReadOnly(true)]
+		[PropertyMapName("UserCreditDate")]
+		public DateTime UserCreditDate
+		{
+			get { return _UserCreditDate; }
+			set
+			{
+				if (_UserCreditDate != value)
+				{
+					_UserCreditDate = value;
+					// Raise event.
+					this.RaiseChanged("UserCreditDate");
+					this.RaiseChanged("UserCreditDateString");
+					this.RaiseChanged("UserCreditDateTimeString");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets UserCredit Date String.
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets UserCredit Date String.")]
+		[ReadOnly(true)]
+		[JsonIgnore]
+		[Ignore]
+		public string UserCreditDateString
+		{
+			get
+			{
+				var ret = (this.UserCreditDate == DateTime.MinValue) ? "" : this.UserCreditDate.ToThaiDateTimeString("dd/MM/yyyy");
+				return ret;
+			}
+			set { }
+		}
+		/// <summary>
+		/// Gets UserCredit DateTime String.
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets UserCredit DateTime String.")]
+		[ReadOnly(true)]
+		[JsonIgnore]
+		[Ignore]
+		public string UserCreditDateTimeString
+		{
+			get
+			{
+				var ret = (this.UserCreditDate == DateTime.MinValue) ? "" : this.UserCreditDate.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+				return ret;
+			}
+			set { }
+		}
+		/// <summary>
+		/// Gets or sets State.
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets or sets State.")]
+		[Browsable(false)]
+		[PropertyMapName("State")]
+		public StateTypes State
+		{
+			get { return _State; }
+			set
+			{
+				if (_State != value)
+				{
+					_State = value;
+					// Raise event.
+					this.RaiseChanged("State");
+					this.RaiseChanged("ReceivedBagVisibility");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets Bag Number.
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets or sets Bag Number.")]
+		//[ReadOnly(true)]
+		[MaxLength(10)]
+		[PropertyMapName("BagNo")]
+		public string BagNo
+		{
+			get { return _BagNo; }
+			set
+			{
+				if (_BagNo != value)
+				{
+					_BagNo = value;
+					// Raise event.
+					this.RaiseChanged("BagNo");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets Belt Number.
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets or sets Belt Number.")]
+		//[ReadOnly(true)]
+		[MaxLength(20)]
+		[PropertyMapName("BeltNo")]
+		public string BeltNo
+		{
+			get { return _BeltNo; }
+			set
+			{
+				if (_BeltNo != value)
+				{
+					_BeltNo = value;
+					// Raise event.
+					this.RaiseChanged("BeltNo");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets Revenue Id.
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets or sets Revenue Id.")]
+		//[ReadOnly(true)]
+		[MaxLength(20)]
+		[PropertyMapName("RevenueId")]
+		public string RevenueId
+		{
+			get { return _RevenueId; }
+			set
+			{
+				if (_RevenueId != value)
+				{
+					_RevenueId = value;
+					// Raise event.
+					this.RaiseChanged("RevenueId");
+				}
+			}
+		}
+
+		#endregion
+
 		#region TSB
 
 		/// <summary>
@@ -531,74 +615,171 @@ namespace DMT.Models
 
 		#endregion
 
-		#region Supervisor
+		#region PlazaGroup
 
 		/// <summary>
-		/// Gets or sets Supervisor Id
+		/// Gets or sets Plaza Group Id.
 		/// </summary>
-		[Category("Supervisor")]
-		[Description("Gets or sets Supervisor Id.")]
+		[Category("Plaza Group")]
+		[Description("Gets or sets Plaza Group Id.")]
 		[ReadOnly(true)]
 		[MaxLength(10)]
-		[PropertyMapName("SupervisorId")]
-		public string SupervisorId
+		[PropertyMapName("PlazaGroupId")]
+		public string PlazaGroupId
 		{
 			get
 			{
-				return _SupervisorId;
+				return _PlazaGroupId;
 			}
 			set
 			{
-				if (_SupervisorId != value)
+				if (_PlazaGroupId != value)
 				{
-					_SupervisorId = value;
-					this.RaiseChanged("SupervisorId");
+					_PlazaGroupId = value;
+					this.RaiseChanged("PlazaGroupId");
 				}
 			}
 		}
 		/// <summary>
-		/// Gets or sets Supervisor Name EN.
+		/// Gets or sets Plaza Group Name EN.
 		/// </summary>
-		[Category("Supervisor")]
-		[Description("Gets or sets Supervisor Name EN.")]
+		[Category("Plaza Group")]
+		[Description("Gets or sets Plaza Group Name EN.")]
 		[ReadOnly(true)]
-		[MaxLength(150)]
-		[PropertyMapName("Supervisor Name EN")]
-		public virtual string SupervisorNameEN
+		[Ignore]
+		[PropertyMapName("PlazaGroupNameEN")]
+		public virtual string PlazaGroupNameEN
 		{
 			get
 			{
-				return _SupervisorNameEN;
+				return _PlazaGroupNameEN;
 			}
 			set
 			{
-				if (_SupervisorNameEN != value)
+				if (_PlazaGroupNameEN != value)
 				{
-					_SupervisorNameEN = value;
-					this.RaiseChanged("SupervisorNameEN");
+					_PlazaGroupNameEN = value;
+					this.RaiseChanged("PlazaGroupNameEN");
 				}
 			}
 		}
 		/// <summary>
-		/// Gets or sets Supervisor Name TH.
+		/// Gets or sets Plaza Group Name TH.
 		/// </summary>
-		[Category("Supervisor")]
-		[Description("Gets or sets Supervisor Name TH.")]
+		[Category("Plaza Group")]
+		[Description("Gets or sets Plaza Group Name TH.")]
 		[ReadOnly(true)]
-		[MaxLength(150)]
-		[PropertyMapName("SupervisorNameTH")]
-		public virtual string SupervisorNameTH
+		[Ignore]
+		[PropertyMapName("PlazaGroupNameTH")]
+		public virtual string PlazaGroupNameTH
 		{
 			get
 			{
-				return _SupervisorNameTH;
+				return _PlazaGroupNameTH;
 			}
 			set
 			{
-				if (_SupervisorNameTH != value)
+				if (_PlazaGroupNameTH != value)
 				{
-					_SupervisorNameTH = value;
-					this.RaiseChanged("SupervisorNameTH");
+					_PlazaGroupNameTH = value;
+					this.RaiseChanged("PlazaGroupNameTH");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets Direction.
+		/// </summary>
+		[Category("Plaza Group")]
+		[Description("Gets or sets Direction.")]
+		[ReadOnly(true)]
+		[Ignore]
+		[PropertyMapName("Direction")]
+		public virtual string Direction
+		{
+			get
+			{
+				return _Direction;
+			}
+			set
+			{
+				if (_Direction != value)
+				{
+					_Direction = value;
+					this.RaiseChanged("Direction");
+				}
+			}
+		}
+
+		#endregion
+
+		#region User
+
+		/// <summary>
+		/// Gets or sets User Id
+		/// </summary>
+		[Category("User")]
+		[Description("Gets or sets User Id.")]
+		[ReadOnly(true)]
+		[MaxLength(10)]
+		[PropertyMapName("UserId")]
+		public string UserId
+		{
+			get
+			{
+				return _UserId;
+			}
+			set
+			{
+				if (_UserId != value)
+				{
+					_UserId = value;
+					this.RaiseChanged("UserId");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets User Full Name EN
+		/// </summary>
+		[Category("User")]
+		[Description("Gets or sets User Full Name EN.")]
+		[ReadOnly(true)]
+		[MaxLength(150)]
+		[PropertyMapName("FullNameEN")]
+		public virtual string FullNameEN
+		{
+			get
+			{
+				return _FullNameEN;
+			}
+			set
+			{
+				if (_FullNameEN != value)
+				{
+					_FullNameEN = value;
+					this.RaiseChanged("FullNameEN");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets User Full Name TH
+		/// </summary>
+		[Category("User")]
+		[Description("Gets or sets User Full Name TH.")]
+		[ReadOnly(true)]
+		[MaxLength(150)]
+		[PropertyMapName("FullNameTH")]
+		public virtual string FullNameTH
+		{
+			get
+			{
+				return _FullNameTH;
+			}
+			set
+			{
+				if (_FullNameTH != value)
+				{
+					_FullNameTH = value;
+					this.RaiseChanged("FullNameTH");
 				}
 			}
 		}
@@ -612,6 +793,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of .25 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("CountST25")]
 		[PropertyOrder(10)]
 		public virtual int CountST25
@@ -638,6 +821,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of .50 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("CountST50")]
 		[PropertyOrder(11)]
 		public virtual int CountST50
@@ -654,6 +839,7 @@ namespace DMT.Models
 					this.RaiseChanged("AmountST50");
 					this.RaiseChanged("IsValidST50");
 					this.RaiseChanged("ST50Foreground");
+					this.RaiseChanged("BHT1Foreground");
 
 					CalcTotalAmount();
 				}
@@ -664,6 +850,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 1 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("CountBHT1")]
 		[PropertyOrder(12)]
 		public virtual int CountBHT1
@@ -679,7 +867,7 @@ namespace DMT.Models
 					this.RaiseChanged("CountBHT1");
 					this.RaiseChanged("AmountBHT1");
 					this.RaiseChanged("IsValidBHT1");
-					this.RaiseChanged("BHT1Foreground");
+					this.RaiseChanged("BHT2Foreground");
 
 					CalcTotalAmount();
 				}
@@ -690,6 +878,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 2 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("CountBHT2")]
 		[PropertyOrder(13)]
 		public virtual int CountBHT2
@@ -705,7 +895,7 @@ namespace DMT.Models
 					this.RaiseChanged("CountBHT2");
 					this.RaiseChanged("AmountBHT2");
 					this.RaiseChanged("IsValidBHT2");
-					this.RaiseChanged("BHT2Foreground");
+					this.RaiseChanged("BHT5Foreground");
 
 					CalcTotalAmount();
 				}
@@ -716,6 +906,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 5 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("CountBHT5")]
 		[PropertyOrder(14)]
 		public virtual int CountBHT5
@@ -742,6 +934,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 10 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("CountBHT10")]
 		[PropertyOrder(15)]
 		public virtual int CountBHT10
@@ -768,6 +962,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 20 baht bill.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("CountBHT20")]
 		[PropertyOrder(16)]
 		public virtual int CountBHT20
@@ -794,6 +990,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 50 baht bill.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("CountBHT50")]
 		[PropertyOrder(17)]
 		public virtual int CountBHT50
@@ -820,6 +1018,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 100 baht bill.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("CountBHT100")]
 		[PropertyOrder(18)]
 		public virtual int CountBHT100
@@ -846,6 +1046,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 500 baht bill.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("CountBHT500")]
 		[PropertyOrder(19)]
 		public virtual int CountBHT500
@@ -872,6 +1074,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 1000 baht bill.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("CountBHT1000")]
 		[PropertyOrder(20)]
 		public virtual int CountBHT1000
@@ -903,6 +1107,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of .25 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("AmountST25")]
 		[PropertyOrder(21)]
 		public virtual decimal AmountST25
@@ -918,6 +1124,7 @@ namespace DMT.Models
 					this.RaiseChanged("AmountST25");
 					this.RaiseChanged("CountST25");
 					this.RaiseChanged("IsValidST25");
+					this.RaiseChanged("ST25Foreground");
 
 					CalcTotalAmount();
 				}
@@ -928,6 +1135,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of .50 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("AmountST50")]
 		[PropertyOrder(22)]
 		public virtual decimal AmountST50
@@ -941,7 +1150,7 @@ namespace DMT.Models
 					_CntST50 = Convert.ToInt32(Math.Floor(_AmtST50 / (decimal).50));
 					// Raise event.
 					this.RaiseChanged("AmountST50");
-					this.RaiseChanged("CountST50");
+					this.RaiseChanged("CountST25");
 					this.RaiseChanged("IsValidST50");
 					this.RaiseChanged("ST50Foreground");
 
@@ -954,6 +1163,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 1 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("AmountBHT1")]
 		[PropertyOrder(23)]
 		public virtual decimal AmountBHT1
@@ -980,6 +1191,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 2 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("AmountBHT2")]
 		[PropertyOrder(24)]
 		public virtual decimal AmountBHT2
@@ -1006,6 +1219,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 5 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("AmountBHT5")]
 		[PropertyOrder(25)]
 		public virtual decimal AmountBHT5
@@ -1032,6 +1247,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 10 baht coin.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("AmountBHT10")]
 		[PropertyOrder(26)]
 		public virtual decimal AmountBHT10
@@ -1058,6 +1275,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 20 baht bill.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("AmountBHT20")]
 		[PropertyOrder(27)]
 		public virtual decimal AmountBHT20
@@ -1084,6 +1303,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 50 baht bill.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("AmountBHT50")]
 		[PropertyOrder(28)]
 		public virtual decimal AmountBHT50
@@ -1110,6 +1331,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 100 baht bill.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("AmountBHT100")]
 		[PropertyOrder(29)]
 		public virtual decimal AmountBHT100
@@ -1136,6 +1359,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 500 baht bill.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("AmountBHT500")]
 		[PropertyOrder(30)]
 		public virtual decimal AmountBHT500
@@ -1162,6 +1387,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 1000 baht bill.")]
+		[ReadOnly(true)]
+		[Ignore]
 		[PropertyMapName("AmountBHT1000")]
 		[PropertyOrder(31)]
 		public virtual decimal AmountBHT1000
@@ -1348,10 +1575,10 @@ namespace DMT.Models
 		#region Coin/Bill (Summary)
 
 		/// <summary>
-		/// Gets or sets total value in baht.
+		/// Gets or sets total (coin/bill) value in baht.
 		/// </summary>
 		[Category("Coin/Bill (Summary)")]
-		[Description("Gets or sets total value in baht.")]
+		[Description("Gets or sets total (coin/bill) value in baht.")]
 		[ReadOnly(true)]
 		[JsonIgnore]
 		[Ignore]
@@ -1360,91 +1587,6 @@ namespace DMT.Models
 		{
 			get { return _BHTTotal; }
 			set { }
-		}
-		/// <summary>
-		/// Gets or sets  Remark.
-		/// </summary>
-		[Category("Remark")]
-		[Description("Gets or sets  Remark.")]
-		[MaxLength(255)]
-		[PropertyMapName("Remark")]
-		public string Remark
-		{
-			get { return _Remark; }
-			set
-			{
-				if (_Remark != value)
-				{
-					_Remark = value;
-					// Raise event.
-					this.RaiseChanged("Remark");
-				}
-			}
-		}
-
-		#endregion
-
-		#region Exchange/Borrow/Additional
-
-		/// <summary>
-		/// Gets or sets amount Exchange BHT.
-		/// </summary>
-		[Category("Summary (Amount)")]
-		[Description("Gets or sets amount Exchange BHT.")]
-		[PropertyMapName("ExchangeBHT")]
-		[PropertyOrder(51)]
-		public virtual decimal ExchangeBHT
-		{
-			get { return _ExchangeBHT; }
-			set
-			{
-				if (_ExchangeBHT != value)
-				{
-					_ExchangeBHT = value;
-					// Raise event.
-					this.RaiseChanged("ExchangeBHT");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets amount Borrow BHT.
-		/// </summary>
-		[Category("Summary (Amount)")]
-		[Description("Gets or sets amount Borrow BHT.")]
-		[PropertyMapName("BorrowBHT")]
-		[PropertyOrder(52)]
-		public virtual decimal BorrowBHT
-		{
-			get { return _BorrowBHT; }
-			set
-			{
-				if (_BorrowBHT != value)
-				{
-					_BorrowBHT = value;
-					// Raise event.
-					this.RaiseChanged("BorrowBHT");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets amount Additional BHT.
-		/// </summary>
-		[Category("Summary (Amount)")]
-		[Description("Gets or sets amount Additional BHT.")]
-		[PropertyMapName("AdditionalBHT")]
-		[PropertyOrder(53)]
-		public virtual decimal AdditionalBHT
-		{
-			get { return _AdditionalBHT; }
-			set
-			{
-				if (_AdditionalBHT != value)
-				{
-					_AdditionalBHT = value;
-					// Raise event.
-					this.RaiseChanged("AdditionalBHT");
-				}
-			}
 		}
 
 		#endregion
@@ -1456,7 +1598,7 @@ namespace DMT.Models
 		/// <summary>
 		/// The internal FKs class for query data.
 		/// </summary>
-		public class FKs : TSBCreditTransaction, IFKs<TSBCreditTransaction>
+		public class FKs : UserCreditBalance, IFKs<UserCreditBalance>
 		{
 			#region TSB
 
@@ -1482,6 +1624,249 @@ namespace DMT.Models
 			}
 
 			#endregion
+
+			#region PlazaGroup
+
+			/// <summary>
+			/// Gets or sets Plaza Group Name EN.
+			/// </summary>
+			[MaxLength(100)]
+			[PropertyMapName("PlazaGroupNameEN")]
+			public override string PlazaGroupNameEN
+			{
+				get { return base.PlazaGroupNameEN; }
+				set { base.PlazaGroupNameEN = value; }
+			}
+			/// <summary>
+			/// Gets or sets Plaza Group Name TH.
+			/// </summary>
+			[MaxLength(100)]
+			[PropertyMapName("PlazaGroupNameTH")]
+			public override string PlazaGroupNameTH
+			{
+				get { return base.PlazaGroupNameTH; }
+				set { base.PlazaGroupNameTH = value; }
+			}
+			/// <summary>
+			/// Gets or sets Direction.
+			/// </summary>
+			[MaxLength(10)]
+			[PropertyMapName("Direction")]
+			public override string Direction
+			{
+				get { return base.Direction; }
+				set { base.Direction = value; }
+			}
+
+			#endregion
+
+			#region Coin/Bill (count)
+
+			/// <summary>
+			/// Gets or sets number of .25 baht coin.
+			/// </summary>
+			[PropertyMapName("CountST25")]
+			public override int CountST25
+			{
+				get { return base.CountST25; }
+				set { base.CountST25 = value; }
+			}
+			/// <summary>
+			/// Gets or sets number of .50 baht coin.
+			/// </summary>
+			[PropertyMapName("CountST50")]
+			public override int CountST50
+			{
+				get { return base.CountST50; }
+				set { base.CountST50 = value; }
+			}
+			/// <summary>
+			/// Gets or sets number of 1 baht coin.
+			/// </summary>
+			[PropertyMapName("CountBHT1")]
+			public override int CountBHT1
+			{
+				get { return base.CountBHT1; }
+				set { base.CountBHT1 = value; }
+			}
+			/// <summary>
+			/// Gets or sets number of 2 baht coin.
+			/// </summary>
+			[PropertyMapName("CountBHT2")]
+			public override int CountBHT2
+			{
+				get { return base.CountBHT2; }
+				set { base.CountBHT2 = value; }
+			}
+			/// <summary>
+			/// Gets or sets number of 5 baht coin.
+			/// </summary>
+			[PropertyMapName("CountBHT5")]
+			public override int CountBHT5
+			{
+				get { return base.CountBHT5; }
+				set { base.CountBHT5 = value; }
+			}
+			/// <summary>
+			/// Gets or sets number of 10 baht coin.
+			/// </summary>
+			[PropertyMapName("CountBHT10")]
+			public override int CountBHT10
+			{
+				get { return base.CountBHT10; }
+				set { base.CountBHT10 = value; }
+			}
+			/// <summary>
+			/// Gets or sets number of 20 baht bill.
+			/// </summary>
+			[PropertyMapName("CountBHT20")]
+			public override int CountBHT20
+			{
+				get { return base.CountBHT20; }
+				set { base.CountBHT20 = value; }
+			}
+			/// <summary>
+			/// Gets or sets number of 50 baht bill.
+			/// </summary>
+			[PropertyMapName("CountBHT50")]
+			public override int CountBHT50
+			{
+				get { return base.CountBHT50; }
+				set { base.CountBHT50 = value; }
+			}
+			/// <summary>
+			/// Gets or sets number of 100 baht bill.
+			/// </summary>
+			[PropertyMapName("CountBHT100")]
+			public override int CountBHT100
+			{
+				get { return base.CountBHT100; }
+				set { base.CountBHT100 = value; }
+			}
+			/// <summary>
+			/// Gets or sets number of 500 baht bill.
+			/// </summary>
+			[PropertyMapName("CountBHT500")]
+			public override int CountBHT500
+			{
+				get { return base.CountBHT500; }
+				set { base.CountBHT500 = value; }
+			}
+			/// <summary>
+			/// Gets or sets number of 1000 baht bill.
+			/// </summary>
+			[PropertyMapName("CountBHT1000")]
+			public override int CountBHT1000
+			{
+				get { return base.CountBHT1000; }
+				set { base.CountBHT1000 = value; }
+			}
+
+			#endregion
+
+			#region Coin/Bill (Amount)
+
+			/// <summary>
+			/// Gets or sets amount of .25 baht coin.
+			/// </summary>
+			[PropertyMapName("AmountST25")]
+			public override decimal AmountST25
+			{
+				get { return base.AmountST25; }
+				set { base.AmountST25 = value; }
+			}
+			/// <summary>
+			/// Gets or sets amount of .50 baht coin.
+			/// </summary>
+			[PropertyMapName("AmountST50")]
+			public override decimal AmountST50
+			{
+				get { return base.AmountST50; }
+				set { base.AmountST50 = value; }
+			}
+			/// <summary>
+			/// Gets or sets amount of 1 baht coin.
+			/// </summary>
+			[PropertyMapName("AmountBHT1")]
+			public override decimal AmountBHT1
+			{
+				get { return base.AmountBHT1; }
+				set { base.AmountBHT1 = value; }
+			}
+			/// <summary>
+			/// Gets or sets amount of 2 baht coin.
+			/// </summary>
+			[PropertyMapName("AmountBHT2")]
+			public override decimal AmountBHT2
+			{
+				get { return base.AmountBHT2; }
+				set { base.AmountBHT2 = value; }
+			}
+			/// <summary>
+			/// Gets or sets amount of 5 baht coin.
+			/// </summary>
+			[PropertyMapName("AmountBHT5")]
+			public override decimal AmountBHT5
+			{
+				get { return base.AmountBHT5; }
+				set { base.AmountBHT5 = value; }
+			}
+			/// <summary>
+			/// Gets or sets amount of 10 baht coin.
+			/// </summary>
+			[PropertyMapName("AmountBHT10")]
+			public override decimal AmountBHT10
+			{
+				get { return base.AmountBHT10; }
+				set { base.AmountBHT10 = value; }
+			}
+			/// <summary>
+			/// Gets or sets amount of 20 baht bill.
+			/// </summary>
+			[PropertyMapName("AmountBHT20")]
+			public override decimal AmountBHT20
+			{
+				get { return base.AmountBHT20; }
+				set { base.AmountBHT20 = value; }
+			}
+			/// <summary>
+			/// Gets or sets amount of 50 baht bill.
+			/// </summary>
+			[PropertyMapName("AmountBHT50")]
+			public override decimal AmountBHT50
+			{
+				get { return base.AmountBHT50; }
+				set { base.AmountBHT50 = value; }
+			}
+			/// <summary>
+			/// Gets or sets amount of 100 baht bill.
+			/// </summary>
+			[PropertyMapName("AmountBHT100")]
+			public override decimal AmountBHT100
+			{
+				get { return base.AmountBHT100; }
+				set { base.AmountBHT100 = value; }
+			}
+			/// <summary>
+			/// Gets or sets amount of 500 baht bill.
+			/// </summary>
+			[PropertyMapName("AmountBHT500")]
+			public override decimal AmountBHT500
+			{
+				get { return base.AmountBHT500; }
+				set { base.AmountBHT500 = value; }
+			}
+			/// <summary>
+			/// Gets or sets amount of 1000 baht bill.
+			/// </summary>
+			[PropertyMapName("AmountBHT1000")]
+			public override decimal AmountBHT1000
+			{
+				get { return base.AmountBHT1000; }
+				set { base.AmountBHT1000 = value; }
+			}
+
+			#endregion
 		}
 
 		#endregion
@@ -1489,42 +1874,22 @@ namespace DMT.Models
 		#region Static Methods
 
 		/// <summary>
-		/// Gets Active TSB Credit transactions.
+		/// Gets User Credit Balance (when balance status is not completed).
 		/// </summary>
-		/// <returns>Returns Current Active TSB Credit transactions. If not found returns null.</returns>
-		public static NDbResult<List<TSBCreditTransaction>> GetTransactions()
+		/// <param name="user">The User instance.</param>
+		/// <param name="plazaGroup">The Plaza Group instance.</param>
+		/// <returns>Returns User Credit Balance.</returns>
+		public static NDbResult<UserCreditBalance> GetActiveUserCreditBalance(
+			User user, PlazaGroup plazaGroup)
 		{
-			var result = new NDbResult<List<TSBCreditTransaction>>();
+			var result = new NDbResult<UserCreditBalance>();
 			SQLiteConnection db = Default;
 			if (null == db)
 			{
 				result.DbConenctFailed();
 				return result;
 			}
-			var tsb = TSB.GetCurrent().Value();
-			if (null == tsb)
-			{
-				result.ParameterIsNull();
-				return result;
-			}
-			result = GetTransactions(tsb);
-			return result;
-		}
-		/// <summary>
-		/// Gets TSB Credit transactions.
-		/// </summary>
-		/// <param name="tsb">The target TSB to get transactions.</param>
-		/// <returns>Returns TSB Credit transactions. If TSB not found returns null.</returns>
-		public static NDbResult<List<TSBCreditTransaction>> GetTransactions(TSB tsb)
-		{
-			var result = new NDbResult<List<TSBCreditTransaction>>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			if (null == tsb)
+			if (null == user || null == plazaGroup)
 			{
 				result.ParameterIsNull();
 				return result;
@@ -1534,83 +1899,23 @@ namespace DMT.Models
 				MethodBase med = MethodBase.GetCurrentMethod();
 				try
 				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM TSBCreditTransactionView ";
-					cmd += " WHERE TSBId = ? ";
-
-					var rets = NQuery.Query<FKs>(cmd, tsb.TSBId).ToList();
-					var results = rets.ToModels();
-					result.Success(results);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
-		/// <summary>
-		/// Gets Initial Transaction (Active TSB).
-		/// </summary>
-		/// <returns>Returns Initial TSBCreditTransaction instance.</returns>
-		public static NDbResult<TSBCreditTransaction> GetInitialTransaction()
-		{
-			var result = new NDbResult<TSBCreditTransaction>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			var tsb = TSB.GetCurrent().Value();
-			if (null == tsb)
-			{
-				result.ParameterIsNull();
-				return result;
-			}
-			result = GetInitialTransaction(tsb);
-			return result;
-		}
-		/// <summary>
-		/// Gets Initial Transaction of target TSB.
-		/// </summary>
-		/// <param name="tsb">The targe TSB instance.</param>
-		/// <returns>Returns Initial TSBCreditTransaction instance.</returns>
-		public static NDbResult<TSBCreditTransaction> GetInitialTransaction(TSB tsb)
-		{
-			var result = new NDbResult<TSBCreditTransaction>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			if (null == tsb)
-			{
-				result.ParameterIsNull();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM TSBCreditTransactionView ";
-					cmd += " WHERE TSBId = ? ";
-					cmd += "   AND TransactionType = ? ";
+					string cmd = @"
+					SELECT *
+					  FROM UserCreditSummaryView
+					 WHERE UserId = ?
+					   AND TSBId = ? 
+					   AND (RevenueId IS NULL OR RevenueId = '')
+					   AND State <> ? ";
 
 					var ret = NQuery.Query<FKs>(cmd,
-						tsb.TSBId, TransactionTypes.Initial).FirstOrDefault();
-					TSBCreditTransaction inst;
+						user.UserId, plazaGroup.TSBId, StateTypes.Completed).FirstOrDefault();
+					UserCreditBalance inst;
 					if (null == ret)
 					{
 						inst = Create();
-						tsb.AssignTo(inst);
-						inst.TransactionType = TransactionTypes.Initial;
+						plazaGroup.AssignTo(inst);
+						user.AssignTo(inst);
+						inst.State = StateTypes.Initial;
 					}
 					else
 					{
@@ -1627,20 +1932,109 @@ namespace DMT.Models
 			}
 		}
 		/// <summary>
-		/// Gets Replace Transaction of target TSB.
+		/// Gets User Credit Balance by UserId and PlazaGroupId (when balance status is not completed).
 		/// </summary>
-		/// <param name="value">The Date of Transaction.</param>
-		/// <returns>Returns Initial TSBCreditTransaction instance.</returns>
-		public static NDbResult<List<TSBCreditTransaction>> GetReplaceTransactions(DateTime value)
+		/// <param name="userId">The User Id.</param>
+		/// <param name="plazaGroupId">The Plaza Group Id.</param>
+		/// <returns>Returns User Credit Balance.</returns>
+		public static NDbResult<UserCreditBalance> GetActiveUserCreditBalanceById(
+			string userId, string plazaGroupId)
 		{
-			var result = new NDbResult<List<TSBCreditTransaction>>();
+			var result = new NDbResult<UserCreditBalance>();
 			SQLiteConnection db = Default;
 			if (null == db)
 			{
 				result.DbConenctFailed();
 				return result;
 			}
-			var tsb = TSB.GetCurrent().Value();
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					if (string.IsNullOrWhiteSpace(userId) ||
+						string.IsNullOrWhiteSpace(plazaGroupId)) return null;
+
+					string cmd = @"
+					SELECT *
+					  FROM UserCreditSummaryView
+					 WHERE UserId = ?
+					   AND PlazaGroupId = ? 
+					   AND (RevenueId IS NULL OR RevenueId = '')
+					   AND State <> ? ";
+
+					var ret = NQuery.Query<FKs>(cmd,
+						userId, plazaGroupId, StateTypes.Completed).FirstOrDefault();
+					UserCreditBalance inst = ret.ToModel();
+					result.Success(inst);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+		/// <summary>
+		/// Get No Revenue Entry UserCredit Balance By Id
+		/// </summary>
+		/// <param name="userId">The User Id.</param>
+		/// <param name="plazaGroupId">The Plaza Group Id.</param>
+		/// <returns>Returns User Credit Balance.</returns>
+		public static NDbResult<UserCreditBalance> GetNoRevenueEntryUserCreditBalanceById(
+			string userId, string plazaGroupId)
+		{
+			var result = new NDbResult<UserCreditBalance>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
+			lock (sync)
+			{
+				MethodBase med = MethodBase.GetCurrentMethod();
+				try
+				{
+					if (string.IsNullOrWhiteSpace(userId) ||
+						string.IsNullOrWhiteSpace(plazaGroupId)) return null;
+
+					string cmd = @"
+					SELECT *
+					  FROM UserCreditSummaryView
+					 WHERE UserId = ?
+					   AND PlazaGroupId = ? 
+					   AND (RevenueId IS NULL OR RevenueId = '')
+					   AND State = ? ";
+
+					var ret = NQuery.Query<FKs>(cmd,
+						userId, plazaGroupId, StateTypes.Completed).FirstOrDefault();
+					UserCreditBalance inst = ret.ToModel();
+					result.Success(inst);
+				}
+				catch (Exception ex)
+				{
+					med.Err(ex);
+					result.Error(ex);
+				}
+				return result;
+			}
+		}
+		/// <summary>
+		/// Gets All User Credit Balances (when balance status is not completed).
+		/// </summary>
+		/// <param name="tsb">The TSB instance.</param>
+		/// <returns>Returns List of User Credit Balance.</returns>
+		public static NDbResult<List<UserCreditBalance>> GetActiveUserCreditBalances(TSB tsb)
+		{
+			var result = new NDbResult<List<UserCreditBalance>>();
+			SQLiteConnection db = Default;
+			if (null == db)
+			{
+				result.DbConenctFailed();
+				return result;
+			}
 			if (null == tsb)
 			{
 				result.ParameterIsNull();
@@ -1651,18 +2045,15 @@ namespace DMT.Models
 				MethodBase med = MethodBase.GetCurrentMethod();
 				try
 				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM TSBCreditTransactionView ";
-					cmd += " WHERE TSBId = ? ";
-					cmd += "   AND TransactionDate >= ? ";
-					cmd += "   AND TransactionDate <= ? ";
-					cmd += "   AND TransactionType = ? ";
+					string cmd = @"
+					SELECT *
+					  FROM UserCreditSummaryView
+					 WHERE TSBId = ? 
+					   AND (RevenueId IS NULL OR RevenueId = '')
+					   AND State <> ? ";
 
 					var rets = NQuery.Query<FKs>(cmd,
-						tsb.TSBId,
-						value.Date, value.Date.AddDays(1).AddMilliseconds(-1),
-						TransactionTypes.ReplaceOut).ToList();
+						tsb.TSBId, StateTypes.Completed).ToList();
 					var results = rets.ToModels();
 					result.Success(results);
 				}
@@ -1675,13 +2066,13 @@ namespace DMT.Models
 			}
 		}
 		/// <summary>
-		/// Save Transaction.
+		/// Save User Credit Balance.
 		/// </summary>
-		/// <param name="value">The transaction instance.</param>
-		/// <returns>Returns save transaction instance.</returns>
-		public static NDbResult<TSBCreditTransaction> SaveTransaction(TSBCreditTransaction value)
+		/// <param name="value">The UserCreditBalance instance.</param>
+		/// <returns>Returns save UserCreditBalance instance.</returns>
+		public static NDbResult<UserCreditBalance> SaveUserCreditBalance(UserCreditBalance value)
 		{
-			var result = new NDbResult<TSBCreditTransaction>();
+			NDbResult<UserCreditBalance> result = new NDbResult<UserCreditBalance>();
 			SQLiteConnection db = Default;
 			if (null == db)
 			{
@@ -1693,11 +2084,15 @@ namespace DMT.Models
 				result.ParameterIsNull();
 				return result;
 			}
-			if (value.TransactionDate == DateTime.MinValue)
+			lock (sync)
 			{
-				value.TransactionDate = DateTime.Now;
+				// set date if not assigned.
+				if (value.UserCreditDate == DateTime.MinValue)
+				{
+					value.UserCreditDate = DateTime.Now;
+				}
+				result = Save(value);
 			}
-			result = Save(value);
 			return result;
 		}
 

@@ -22,66 +22,68 @@ using System.Reflection;
 
 namespace DMT.Models
 {
-	// TODO: TSBCreditTransaction Change DateTime to DateTime?
-	// TODO: TSBCreditTransaction Check ExchangeBHT/BorrowBHT/AdditionBHT
+	// TODO: UserCreditTransaction Change DateTime to DateTime?
 
-	#region TSBCreditTransaction
+	#region UserCreditTransaction
 
 	/// <summary>
-	/// The TSBCreditTransaction Data Model class.
+	/// The UserCreditTransaction Data Model class.
 	/// </summary>
 	[TypeConverter(typeof(PropertySorterSupportExpandableTypeConverter))]
 	[Serializable]
 	[JsonObject(MemberSerialization.OptOut)]
-	//[Table("TSBCreditTransaction")]
-	public class TSBCreditTransaction : NTable<TSBCreditTransaction>
+	//[Table("UserCreditTransaction")]
+	public class UserCreditTransaction : NTable<UserCreditTransaction>
 	{
 		#region Enum
 
 		/// <summary>
-		/// The TSB Credit Transaction Type enum.
+		/// The User Credit Transaction Types enum.
 		/// </summary>
-		public enum TransactionTypes : int
+		public enum TransactionTypes
 		{
 			/// <summary>
-			/// Initial credit.
+			/// Borrow
 			/// </summary>
-			Initial = 0,
+			Borrow = 1,
 			/// <summary>
-			/// received from account after account approve and plaza received it.
+			/// Return
 			/// </summary>
-			Received = 1,
+			Return = 2,
 			/// <summary>
-			/// return to account after plaza no longer need or reach due date.
+			/// Undo
 			/// </summary>
-			Returns = 2,
-			/// <summary>
-			/// Internal Replace (Takeout from TSB)
-			/// </summary>
-			ReplaceOut = 11,
-			/// <summary>
-			/// Internal Replace (Replace in TSB)
-			/// </summary>
-			ReplaceIn = 12
+			Undo = 3
 		}
 
 		#endregion
 
 		#region Internal Variables
 
-		private int _TransactionId = 0;
-		private Guid _GroupId = Guid.Empty;
-		private DateTime _TransactionDate = DateTime.MinValue;
-		private TransactionTypes _TransactionType = TransactionTypes.Initial;
+		// For Runtime Used
+		private string _description = string.Empty;
+		private bool _hasRemark = false;
 
-		// TSB
+		private int _TransactionId = 0;
+		private DateTime _TransactionDate = DateTime.MinValue;
+		private TransactionTypes _TransactionType = TransactionTypes.Borrow;
+
+		private int _RefId = 0; // for undo.
+
+		private int _UserCreditId = 0;
+
 		private string _TSBId = string.Empty;
 		private string _TSBNameEN = string.Empty;
 		private string _TSBNameTH = string.Empty;
-		// Supervisor
-		private string _SupervisorId = string.Empty;
-		private string _SupervisorNameEN = string.Empty;
-		private string _SupervisorNameTH = string.Empty;
+
+		private string _PlazaGroupId = string.Empty;
+		private string _PlazaGroupNameEN = string.Empty;
+		private string _PlazaGroupNameTH = string.Empty;
+		private string _Direction = string.Empty;
+
+		private string _UserId = string.Empty;
+		private string _FullNameEN = string.Empty;
+		private string _FullNameTH = string.Empty;
 
 		// Coin/Bill (Count)
 		private int _CntST25 = 0;
@@ -109,11 +111,6 @@ namespace DMT.Models
 		private decimal _AmtBHT1000 = 0;
 
 		private decimal _BHTTotal = decimal.Zero;
-
-		private decimal _ExchangeBHT = decimal.Zero;
-		private decimal _BorrowBHT = decimal.Zero;
-		private decimal _AdditionalBHT = decimal.Zero;
-
 		private string _Remark = string.Empty;
 
 		#endregion
@@ -123,7 +120,7 @@ namespace DMT.Models
 		/// <summary>
 		/// Constructor.
 		/// </summary>
-		public TSBCreditTransaction() : base() { }
+		public UserCreditTransaction() : base() { }
 
 		#endregion
 
@@ -153,159 +150,65 @@ namespace DMT.Models
 
 		#region Public Properties
 
-		#region Common
-
-		/// <summary>
-		/// Gets or sets TransactionId
-		/// </summary>
-		[Category("Common")]
-		[Description(" Gets or sets TransactionId")]
-		[ReadOnly(true)]
-		[PrimaryKey, AutoIncrement]
-		[PropertyMapName("TransactionId")]
-		public int TransactionId
-		{
-			get
-			{
-				return _TransactionId;
-			}
-			set
-			{
-				if (_TransactionId != value)
-				{
-					_TransactionId = value;
-					this.RaiseChanged("TransactionId");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets Transaction GroupId
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets or sets Transaction GroupId")]
-		[ReadOnly(true)]
-		[PropertyMapName("GroupId")]
-		public Guid GroupId
-		{
-			get
-			{
-				return _GroupId;
-			}
-			set
-			{
-				if (_GroupId != value)
-				{
-					_GroupId = value;
-					this.RaiseChanged("GroupId");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets Transaction Date.
-		/// </summary>
-		[Category("Common")]
-		[Description(" Gets or sets Transaction Date")]
-		[ReadOnly(true)]
-		[PropertyMapName("TransactionDate")]
-		public DateTime TransactionDate
-		{
-			get
-			{
-				return _TransactionDate;
-			}
-			set
-			{
-				if (_TransactionDate != value)
-				{
-					_TransactionDate = value;
-					this.RaiseChanged("TransactionDate");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets Transaction Date String.
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets Transaction Date String.")]
-		[ReadOnly(true)]
-		[JsonIgnore]
-		[Ignore]
-		public string TransactionDateString
-		{
-			get
-			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiDateTimeString("dd/MM/yyyy");
-				return ret;
-			}
-			set { }
-		}
-		/// <summary>
-		/// Gets Transaction Time String.
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets Transaction Time String.")]
-		[ReadOnly(true)]
-		[JsonIgnore]
-		[Ignore]
-		public string TransactionTimeString
-		{
-			get
-			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiTimeString();
-				return ret;
-			}
-			set { }
-		}
-		/// <summary>
-		/// Gets Transaction Date Time String.
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets Transaction Date Time String.")]
-		[ReadOnly(true)]
-		[JsonIgnore]
-		[Ignore]
-		public string TransactionDateTimeString
-		{
-			get
-			{
-				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
-				return ret;
-			}
-			set { }
-		}
-		/// <summary>
-		/// Gets or sets Transaction Type.
-		/// </summary>
-		[Category("Common")]
-		[Description("Gets or sets Transaction Type.")]
-		[ReadOnly(true)]
-		[PropertyMapName("TransactionType")]
-		public TransactionTypes TransactionType
-		{
-			get { return _TransactionType; }
-			set
-			{
-				if (_TransactionType != value)
-				{
-					_TransactionType = value;
-					this.RaiseChanged("TransactionType");
-				}
-			}
-		}
-
-		#endregion
-
 		#region Runtime
 
 		/// <summary>
-		/// Gets or sets Description (Runtime).
+		/// Gets or sets has remark.
 		/// </summary>
 		[Category("Runtime")]
-		[Description("Gets or sets Description (Runtime).")]
+		[Description("Gets or sets HasRemark.")]
+		[ReadOnly(true)]
+		[Ignore]
+		[PropertyMapName("Description")]
+		public string Description
+		{
+			get { return _description; }
+			set
+			{
+				if (_description != value)
+				{
+					_description = value;
+					// Raise event.
+					this.RaiseChanged("Description");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets has remark.
+		/// </summary>
+		[Category("Runtime")]
+		[Description("Gets or sets HasRemark.")]
+		[ReadOnly(true)]
+		[Ignore]
+		[PropertyMapName("HasRemark")]
+		public bool HasRemark
+		{
+			get { return _hasRemark; }
+			set
+			{
+				if (_hasRemark != value)
+				{
+					_hasRemark = value;
+					// Raise event.
+					this.RaiseChanged("HasRemark");
+					this.RaiseChanged("RemarkVisibility");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets  Remark Visibility.
+		/// </summary>
+		[Category("Runtime")]
+		[Description("Gets Remark Visibility.")]
 		[ReadOnly(true)]
 		[JsonIgnore]
 		[Ignore]
-		public string Description { get; set; }
+		[PropertyMapName("RemarkVisibility")]
+		public System.Windows.Visibility RemarkVisibility
+		{
+			get { return (_hasRemark) ? System.Windows.Visibility.Visible : System.Windows.Visibility.Collapsed; }
+			set { }
+		}
 
 		#endregion
 
@@ -457,6 +360,148 @@ namespace DMT.Models
 
 		#endregion
 
+		#region Common
+
+		/// <summary>
+		/// Gets or sets TransactionId
+		/// </summary>
+		[Category("Common")]
+		[Description(" Gets or sets TransactionId")]
+		[ReadOnly(true)]
+		[PrimaryKey, AutoIncrement]
+		[PropertyMapName("TransactionId")]
+		public int TransactionId
+		{
+			get
+			{
+				return _TransactionId;
+			}
+			set
+			{
+				if (_TransactionId != value)
+				{
+					_TransactionId = value;
+					this.RaiseChanged("TransactionId");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets Transaction Date.
+		/// </summary>
+		[Category("Common")]
+		[Description(" Gets or sets Transaction Date")]
+		[ReadOnly(true)]
+		[PropertyMapName("TransactionDate")]
+		public DateTime TransactionDate
+		{
+			get
+			{
+				return _TransactionDate;
+			}
+			set
+			{
+				if (_TransactionDate != value)
+				{
+					_TransactionDate = value;
+					this.RaiseChanged("TransactionDate");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets Transaction Date String.
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets Transaction Date String.")]
+		[ReadOnly(true)]
+		[JsonIgnore]
+		[Ignore]
+		public string TransactionDateString
+		{
+			get
+			{
+				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiDateTimeString("dd/MM/yyyy");
+				return ret;
+			}
+			set { }
+		}
+		/// <summary>
+		/// Gets Transaction Time String.
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets Transaction Time String.")]
+		[ReadOnly(true)]
+		[JsonIgnore]
+		[Ignore]
+		public string TransactionTimeString
+		{
+			get
+			{
+				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiTimeString();
+				return ret;
+			}
+			set { }
+		}
+		/// <summary>
+		/// Gets Transaction Date Time String.
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets Transaction Date Time String.")]
+		[ReadOnly(true)]
+		[JsonIgnore]
+		[Ignore]
+		public string TransactionDateTimeString
+		{
+			get
+			{
+				var ret = (this.TransactionDate == DateTime.MinValue) ? "" : this.TransactionDate.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+				return ret;
+			}
+			set { }
+		}
+		/// <summary>
+		/// Gets or sets Transaction Type.
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets or sets Transaction Type.")]
+		[ReadOnly(true)]
+		[PropertyMapName("TransactionType")]
+		public TransactionTypes TransactionType
+		{
+			get { return _TransactionType; }
+			set
+			{
+				if (_TransactionType != value)
+				{
+					_TransactionType = value;
+					this.RaiseChanged("TransactionType");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets RefId
+		/// </summary>
+		[Category("Common")]
+		[Description("Gets or sets RefId")]
+		[ReadOnly(true)]
+		[PropertyMapName("RefId")]
+		public int RefId
+		{
+			get
+			{
+				return _RefId;
+			}
+			set
+			{
+				if (_RefId != value)
+				{
+					_RefId = value;
+					this.RaiseChanged("RefId");
+				}
+			}
+		}
+
+		#endregion
+
 		#region TSB
 
 		/// <summary>
@@ -531,74 +576,198 @@ namespace DMT.Models
 
 		#endregion
 
-		#region Supervisor
+		#region PlazaGroup
 
 		/// <summary>
-		/// Gets or sets Supervisor Id
+		/// Gets or sets Plaza Group Id.
 		/// </summary>
-		[Category("Supervisor")]
-		[Description("Gets or sets Supervisor Id.")]
+		[Category("Plaza Group")]
+		[Description("Gets or sets Plaza Group Id.")]
 		[ReadOnly(true)]
 		[MaxLength(10)]
-		[PropertyMapName("SupervisorId")]
-		public string SupervisorId
+		[PropertyMapName("PlazaGroupId")]
+		public string PlazaGroupId
 		{
 			get
 			{
-				return _SupervisorId;
+				return _PlazaGroupId;
 			}
 			set
 			{
-				if (_SupervisorId != value)
+				if (_PlazaGroupId != value)
 				{
-					_SupervisorId = value;
-					this.RaiseChanged("SupervisorId");
+					_PlazaGroupId = value;
+					this.RaiseChanged("PlazaGroupId");
 				}
 			}
 		}
 		/// <summary>
-		/// Gets or sets Supervisor Name EN.
+		/// Gets or sets Plaza Group Name EN.
 		/// </summary>
-		[Category("Supervisor")]
-		[Description("Gets or sets Supervisor Name EN.")]
+		[Category("Plaza Group")]
+		[Description("Gets or sets Plaza Group Name EN.")]
 		[ReadOnly(true)]
-		[MaxLength(150)]
-		[PropertyMapName("Supervisor Name EN")]
-		public virtual string SupervisorNameEN
+		[Ignore]
+		[PropertyMapName("PlazaGroupNameEN")]
+		public virtual string PlazaGroupNameEN
 		{
 			get
 			{
-				return _SupervisorNameEN;
+				return _PlazaGroupNameEN;
 			}
 			set
 			{
-				if (_SupervisorNameEN != value)
+				if (_PlazaGroupNameEN != value)
 				{
-					_SupervisorNameEN = value;
-					this.RaiseChanged("SupervisorNameEN");
+					_PlazaGroupNameEN = value;
+					this.RaiseChanged("PlazaGroupNameEN");
 				}
 			}
 		}
 		/// <summary>
-		/// Gets or sets Supervisor Name TH.
+		/// Gets or sets Plaza Group Name TH.
 		/// </summary>
-		[Category("Supervisor")]
-		[Description("Gets or sets Supervisor Name TH.")]
+		[Category("Plaza Group")]
+		[Description("Gets or sets Plaza Group Name TH.")]
 		[ReadOnly(true)]
-		[MaxLength(150)]
-		[PropertyMapName("SupervisorNameTH")]
-		public virtual string SupervisorNameTH
+		[Ignore]
+		[PropertyMapName("PlazaGroupNameTH")]
+		public virtual string PlazaGroupNameTH
 		{
 			get
 			{
-				return _SupervisorNameTH;
+				return _PlazaGroupNameTH;
 			}
 			set
 			{
-				if (_SupervisorNameTH != value)
+				if (_PlazaGroupNameTH != value)
 				{
-					_SupervisorNameTH = value;
-					this.RaiseChanged("SupervisorNameTH");
+					_PlazaGroupNameTH = value;
+					this.RaiseChanged("PlazaGroupNameTH");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets Direction.
+		/// </summary>
+		[Category("Plaza Group")]
+		[Description("Gets or sets Direction.")]
+		[ReadOnly(true)]
+		[Ignore]
+		[PropertyMapName("Direction")]
+		public virtual string Direction
+		{
+			get
+			{
+				return _Direction;
+			}
+			set
+			{
+				if (_Direction != value)
+				{
+					_Direction = value;
+					this.RaiseChanged("Direction");
+				}
+			}
+		}
+
+		#endregion
+
+		#region User
+
+		/// <summary>
+		/// Gets or sets User Id
+		/// </summary>
+		[Category("User")]
+		[Description("Gets or sets User Id.")]
+		[ReadOnly(true)]
+		[MaxLength(10)]
+		[PropertyMapName("UserId")]
+		public string UserId
+		{
+			get
+			{
+				return _UserId;
+			}
+			set
+			{
+				if (_UserId != value)
+				{
+					_UserId = value;
+					this.RaiseChanged("UserId");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets User Full Name EN
+		/// </summary>
+		[Category("User")]
+		[Description("Gets or sets User Full Name EN.")]
+		[ReadOnly(true)]
+		[MaxLength(150)]
+		[PropertyMapName("FullNameEN")]
+		public virtual string FullNameEN
+		{
+			get
+			{
+				return _FullNameEN;
+			}
+			set
+			{
+				if (_FullNameEN != value)
+				{
+					_FullNameEN = value;
+					this.RaiseChanged("FullNameEN");
+				}
+			}
+		}
+		/// <summary>
+		/// Gets or sets User Full Name TH
+		/// </summary>
+		[Category("User")]
+		[Description("Gets or sets User Full Name TH.")]
+		[ReadOnly(true)]
+		[MaxLength(150)]
+		[PropertyMapName("FullNameTH")]
+		public virtual string FullNameTH
+		{
+			get
+			{
+				return _FullNameTH;
+			}
+			set
+			{
+				if (_FullNameTH != value)
+				{
+					_FullNameTH = value;
+					this.RaiseChanged("FullNameTH");
+				}
+			}
+		}
+
+		#endregion
+
+		#region UserCredit
+
+		/// <summary>
+		/// Gets or sets UserCreditId
+		/// </summary>
+		[Category("UserCredit")]
+		[Description("Gets or sets UserCreditId")]
+		[ReadOnly(true)]
+		[PropertyMapName("UserCreditId")]
+		public int UserCreditId
+		{
+			get
+			{
+				return _UserCreditId;
+			}
+			set
+			{
+				if (_UserCreditId != value)
+				{
+					_UserCreditId = value;
+					this.RaiseChanged("UserCreditId");
 				}
 			}
 		}
@@ -918,6 +1087,7 @@ namespace DMT.Models
 					this.RaiseChanged("AmountST25");
 					this.RaiseChanged("CountST25");
 					this.RaiseChanged("IsValidST25");
+					this.RaiseChanged("ST25Foreground");
 
 					CalcTotalAmount();
 				}
@@ -1384,71 +1554,6 @@ namespace DMT.Models
 
 		#endregion
 
-		#region Exchange/Borrow/Additional
-
-		/// <summary>
-		/// Gets or sets amount Exchange BHT.
-		/// </summary>
-		[Category("Summary (Amount)")]
-		[Description("Gets or sets amount Exchange BHT.")]
-		[PropertyMapName("ExchangeBHT")]
-		[PropertyOrder(51)]
-		public virtual decimal ExchangeBHT
-		{
-			get { return _ExchangeBHT; }
-			set
-			{
-				if (_ExchangeBHT != value)
-				{
-					_ExchangeBHT = value;
-					// Raise event.
-					this.RaiseChanged("ExchangeBHT");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets amount Borrow BHT.
-		/// </summary>
-		[Category("Summary (Amount)")]
-		[Description("Gets or sets amount Borrow BHT.")]
-		[PropertyMapName("BorrowBHT")]
-		[PropertyOrder(52)]
-		public virtual decimal BorrowBHT
-		{
-			get { return _BorrowBHT; }
-			set
-			{
-				if (_BorrowBHT != value)
-				{
-					_BorrowBHT = value;
-					// Raise event.
-					this.RaiseChanged("BorrowBHT");
-				}
-			}
-		}
-		/// <summary>
-		/// Gets or sets amount Additional BHT.
-		/// </summary>
-		[Category("Summary (Amount)")]
-		[Description("Gets or sets amount Additional BHT.")]
-		[PropertyMapName("AdditionalBHT")]
-		[PropertyOrder(53)]
-		public virtual decimal AdditionalBHT
-		{
-			get { return _AdditionalBHT; }
-			set
-			{
-				if (_AdditionalBHT != value)
-				{
-					_AdditionalBHT = value;
-					// Raise event.
-					this.RaiseChanged("AdditionalBHT");
-				}
-			}
-		}
-
-		#endregion
-
 		#endregion
 
 		#region Internal Class
@@ -1456,7 +1561,7 @@ namespace DMT.Models
 		/// <summary>
 		/// The internal FKs class for query data.
 		/// </summary>
-		public class FKs : TSBCreditTransaction, IFKs<TSBCreditTransaction>
+		public class FKs : UserCreditTransaction, IFKs<UserCreditTransaction>
 		{
 			#region TSB
 
@@ -1482,6 +1587,41 @@ namespace DMT.Models
 			}
 
 			#endregion
+
+			#region PlazaGroup
+
+			/// <summary>
+			/// Gets or sets Plaza Group Name EN.
+			/// </summary>
+			[MaxLength(100)]
+			[PropertyMapName("PlazaGroupNameEN")]
+			public override string PlazaGroupNameEN
+			{
+				get { return base.PlazaGroupNameEN; }
+				set { base.PlazaGroupNameEN = value; }
+			}
+			/// <summary>
+			/// Gets or sets Plaza Group Name TH.
+			/// </summary>
+			[MaxLength(100)]
+			[PropertyMapName("PlazaGroupNameTH")]
+			public override string PlazaGroupNameTH
+			{
+				get { return base.PlazaGroupNameTH; }
+				set { base.PlazaGroupNameTH = value; }
+			}
+			/// <summary>
+			/// Gets or sets Direction.
+			/// </summary>
+			[MaxLength(10)]
+			[PropertyMapName("Direction")]
+			public override string Direction
+			{
+				get { return base.Direction; }
+				set { base.Direction = value; }
+			}
+
+			#endregion
 		}
 
 		#endregion
@@ -1489,12 +1629,15 @@ namespace DMT.Models
 		#region Static Methods
 
 		/// <summary>
-		/// Gets Active TSB Credit transactions.
+		/// Gets Active TSB User Credit transactions.
 		/// </summary>
-		/// <returns>Returns Current Active TSB Credit transactions. If not found returns null.</returns>
-		public static NDbResult<List<TSBCreditTransaction>> GetTransactions()
+		/// <returns>
+		/// Returns Current Active TSB User Credit transactions.
+		/// If not found returns null.
+		/// </returns>
+		public static NDbResult<List<UserCreditTransaction>> GetUserCreditTransactions()
 		{
-			var result = new NDbResult<List<TSBCreditTransaction>>();
+			var result = new NDbResult<List<UserCreditTransaction>>();
 			SQLiteConnection db = Default;
 			if (null == db)
 			{
@@ -1507,17 +1650,19 @@ namespace DMT.Models
 				result.ParameterIsNull();
 				return result;
 			}
-			result = GetTransactions(tsb);
+			result = GetUserCreditTransactions(tsb);
 			return result;
 		}
 		/// <summary>
-		/// Gets TSB Credit transactions.
+		/// Gets User Credit transactions.
 		/// </summary>
 		/// <param name="tsb">The target TSB to get transactions.</param>
-		/// <returns>Returns TSB Credit transactions. If TSB not found returns null.</returns>
-		public static NDbResult<List<TSBCreditTransaction>> GetTransactions(TSB tsb)
+		/// <returns>
+		/// Returns User Credit transactions. If TSB not found returns null.
+		/// </returns>
+		public static NDbResult<List<UserCreditTransaction>> GetUserCreditTransactions(TSB tsb)
 		{
-			var result = new NDbResult<List<TSBCreditTransaction>>();
+			var result = new NDbResult<List<UserCreditTransaction>>();
 			SQLiteConnection db = Default;
 			if (null == db)
 			{
@@ -1536,8 +1681,8 @@ namespace DMT.Models
 				{
 					string cmd = string.Empty;
 					cmd += "SELECT * ";
-					cmd += "  FROM TSBCreditTransactionView ";
-					cmd += " WHERE TSBId = ? ";
+					cmd += "  FROM UserCreditTransactionView ";
+					cmd += " WHERE UserCredit.TSBId = ? ";
 
 					var rets = NQuery.Query<FKs>(cmd, tsb.TSBId).ToList();
 					var results = rets.ToModels();
@@ -1552,136 +1697,14 @@ namespace DMT.Models
 			}
 		}
 		/// <summary>
-		/// Gets Initial Transaction (Active TSB).
-		/// </summary>
-		/// <returns>Returns Initial TSBCreditTransaction instance.</returns>
-		public static NDbResult<TSBCreditTransaction> GetInitialTransaction()
-		{
-			var result = new NDbResult<TSBCreditTransaction>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			var tsb = TSB.GetCurrent().Value();
-			if (null == tsb)
-			{
-				result.ParameterIsNull();
-				return result;
-			}
-			result = GetInitialTransaction(tsb);
-			return result;
-		}
-		/// <summary>
-		/// Gets Initial Transaction of target TSB.
-		/// </summary>
-		/// <param name="tsb">The targe TSB instance.</param>
-		/// <returns>Returns Initial TSBCreditTransaction instance.</returns>
-		public static NDbResult<TSBCreditTransaction> GetInitialTransaction(TSB tsb)
-		{
-			var result = new NDbResult<TSBCreditTransaction>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			if (null == tsb)
-			{
-				result.ParameterIsNull();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM TSBCreditTransactionView ";
-					cmd += " WHERE TSBId = ? ";
-					cmd += "   AND TransactionType = ? ";
-
-					var ret = NQuery.Query<FKs>(cmd,
-						tsb.TSBId, TransactionTypes.Initial).FirstOrDefault();
-					TSBCreditTransaction inst;
-					if (null == ret)
-					{
-						inst = Create();
-						tsb.AssignTo(inst);
-						inst.TransactionType = TransactionTypes.Initial;
-					}
-					else
-					{
-						inst = ret.ToModel();
-					}
-					result.Success(inst);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
-		/// <summary>
-		/// Gets Replace Transaction of target TSB.
-		/// </summary>
-		/// <param name="value">The Date of Transaction.</param>
-		/// <returns>Returns Initial TSBCreditTransaction instance.</returns>
-		public static NDbResult<List<TSBCreditTransaction>> GetReplaceTransactions(DateTime value)
-		{
-			var result = new NDbResult<List<TSBCreditTransaction>>();
-			SQLiteConnection db = Default;
-			if (null == db)
-			{
-				result.DbConenctFailed();
-				return result;
-			}
-			var tsb = TSB.GetCurrent().Value();
-			if (null == tsb)
-			{
-				result.ParameterIsNull();
-				return result;
-			}
-			lock (sync)
-			{
-				MethodBase med = MethodBase.GetCurrentMethod();
-				try
-				{
-					string cmd = string.Empty;
-					cmd += "SELECT * ";
-					cmd += "  FROM TSBCreditTransactionView ";
-					cmd += " WHERE TSBId = ? ";
-					cmd += "   AND TransactionDate >= ? ";
-					cmd += "   AND TransactionDate <= ? ";
-					cmd += "   AND TransactionType = ? ";
-
-					var rets = NQuery.Query<FKs>(cmd,
-						tsb.TSBId,
-						value.Date, value.Date.AddDays(1).AddMilliseconds(-1),
-						TransactionTypes.ReplaceOut).ToList();
-					var results = rets.ToModels();
-					result.Success(results);
-				}
-				catch (Exception ex)
-				{
-					med.Err(ex);
-					result.Error(ex);
-				}
-				return result;
-			}
-		}
-		/// <summary>
 		/// Save Transaction.
 		/// </summary>
-		/// <param name="value">The transaction instance.</param>
-		/// <returns>Returns save transaction instance.</returns>
-		public static NDbResult<TSBCreditTransaction> SaveTransaction(TSBCreditTransaction value)
+		/// <param name="value">The User Credit Transaction instance.</param>
+		/// <returns>Returns save transaction.</returns>
+		public static NDbResult<UserCreditTransaction> SaveUserCreditTransaction(
+			UserCreditTransaction value)
 		{
-			var result = new NDbResult<TSBCreditTransaction>();
+			var result = new NDbResult<UserCreditTransaction>();
 			SQLiteConnection db = Default;
 			if (null == db)
 			{
@@ -1693,11 +1716,14 @@ namespace DMT.Models
 				result.ParameterIsNull();
 				return result;
 			}
-			if (value.TransactionDate == DateTime.MinValue)
+			else
 			{
-				value.TransactionDate = DateTime.Now;
+				if (value.TransactionDate == DateTime.MinValue)
+				{
+					value.TransactionDate = DateTime.Now;
+				}
+				result = Save(value);
 			}
-			result = Save(value);
 			return result;
 		}
 

@@ -22,6 +22,9 @@ using System.Reflection;
 
 namespace DMT.Models
 {
+	// TODO: UserCreditTransaction Check CreditFlowBHTTotal/BHTTotal
+	// TODO: UserCreditTransaction Check ExchangeBHTTotal/BorrowBHTTotal/AdditionalBHTTotal/UserBHTTotal
+
 	#region TSBCreditBalance (For Query only)
 
 	/// <summary>
@@ -1197,7 +1200,6 @@ namespace DMT.Models
 			get { return _AdditionalBHTTotal + _BHTTotal + _UserBHTTotal; }
 			set { }
 		}
-
 		/// <summary>
 		/// Gets or sets total (coin/bill) value in baht.
 		/// </summary>
