@@ -161,6 +161,8 @@ namespace DMT.Models
 		[Category("TSB")]
 		[Description("Gets or sets TSBId.")]
 		[ReadOnly(true)]
+		[NotNull]
+		[Indexed]
 		[MaxLength(10)]
 		[PropertyMapName("TSBId")]
 		public string TSBId
@@ -235,6 +237,8 @@ namespace DMT.Models
 		[Category("Plaza Group")]
 		[Description("Gets or sets Plaza Group Id.")]
 		[ReadOnly(true)]
+		[NotNull]
+		[Indexed]
 		[MaxLength(10)]
 		[PropertyMapName("PlazaGroupId")]
 		public string PlazaGroupId
