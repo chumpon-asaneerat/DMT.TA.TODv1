@@ -99,6 +99,8 @@ namespace DMT.Models
         [Category("Shift")]
         [Description("Gets or sets User Shift Id.")]
         [ReadOnly(true)]
+        [NotNull]
+        [Indexed]
         [PropertyMapName("UserShiftId")]
         public int UserShiftId
         {
@@ -126,6 +128,8 @@ namespace DMT.Models
         [Category("TSB")]
         [Description("Gets or sets TSBId.")]
         [ReadOnly(true)]
+        [NotNull]
+        [Indexed]
         [MaxLength(10)]
         [PropertyMapName("TSBId")]
         public string TSBId
@@ -200,6 +204,8 @@ namespace DMT.Models
         [Category("Plaza Group")]
         [Description("Gets or sets Plaza Group Id.")]
         [ReadOnly(true)]
+        [NotNull]
+        [Indexed]
         [MaxLength(10)]
         [PropertyMapName("PlazaGroupId")]
         public string PlazaGroupId
@@ -297,6 +303,8 @@ namespace DMT.Models
         [Category("User")]
         [Description("Gets or sets User Id.")]
         [ReadOnly(true)]
+        [NotNull]
+        [Indexed]
         [MaxLength(10)]
         [PropertyMapName("UserId")]
         public string UserId
@@ -371,6 +379,8 @@ namespace DMT.Models
         [Category("Shift")]
         [Description("Gets or sets Shift Id.")]
         [ReadOnly(true)]
+        [NotNull]
+        [Indexed]
         [PropertyMapName("ShiftId")]
         public int ShiftId
         {
@@ -444,6 +454,7 @@ namespace DMT.Models
         [Category("Revenue")]
         [Description("Gets or sets RevenueId.")]
         //[ReadOnly(true)]
+        [Indexed]
         [MaxLength(20)]
         [PropertyMapName("RevenueId")]
         public string RevenueId
@@ -465,6 +476,7 @@ namespace DMT.Models
         [Category("Revenue")]
         [Description("Gets or sets Revenue Date.")]
         //[ReadOnly(true)]
+        [Indexed]
         [PropertyMapName("RevenueDate")]
         public DateTime? RevenueDate
         {

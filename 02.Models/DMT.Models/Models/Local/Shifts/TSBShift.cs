@@ -100,6 +100,8 @@ namespace DMT.Models
         [Category("TSB")]
         [Description("Gets or sets TSBId.")]
         [ReadOnly(true)]
+        [NotNull]
+        [Indexed]
         [MaxLength(10)]
         [PropertyMapName("TSBId")]
         public string TSBId
@@ -174,6 +176,8 @@ namespace DMT.Models
         [Category("Shift")]
         [Description("Gets or sets Shift Id.")]
         [ReadOnly(true)]
+        [NotNull]
+        [Indexed]
         [PropertyMapName("ShiftId")]
         public int ShiftId
         {
@@ -247,6 +251,8 @@ namespace DMT.Models
         [Category("User")]
         [Description("Gets or sets User Id.")]
         [ReadOnly(true)]
+        [NotNull]
+        [Indexed]
         [MaxLength(10)]
         [PropertyMapName("UserId")]
         public string UserId
@@ -321,6 +327,7 @@ namespace DMT.Models
         [Category("Shift")]
         [Description("Gets or sets Begin Date.")]
         //[ReadOnly(true)]
+        [Indexed]
         [PropertyMapName("Begin")]
         public DateTime? Begin
         {
@@ -344,6 +351,7 @@ namespace DMT.Models
         [Category("Shift")]
         [Description("Gets or sets End Date.")]
         //[ReadOnly(true)]
+        [Indexed]
         [PropertyMapName("End")]
         public DateTime? End
         {
