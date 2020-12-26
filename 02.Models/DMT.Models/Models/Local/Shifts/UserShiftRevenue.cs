@@ -21,9 +21,6 @@ using System.Reflection;
 
 namespace DMT.Models
 {
-    //TODO: UserShiftRevenue Check is need RevenueDate (should be not required) ?????.
-    //TODO: UserShiftRevenue Change RevenueDate from DateTime to DateTime? if RevenueDate is required.
-
     [TypeConverter(typeof(PropertySorterSupportExpandableTypeConverter))]
     [Serializable]
     [JsonObject(MemberSerialization.OptOut)]
@@ -54,7 +51,7 @@ namespace DMT.Models
         private string _FullNameTH = string.Empty;
 
         private string _RevenueId = string.Empty;
-        private DateTime _RevenueDate = DateTime.MinValue;
+        private DateTime? _RevenueDate = new DateTime?();
 
         #endregion
 
@@ -469,7 +466,7 @@ namespace DMT.Models
         [Description("Gets or sets Revenue Date.")]
         //[ReadOnly(true)]
         [PropertyMapName("RevenueDate")]
-        public DateTime RevenueDate
+        public DateTime? RevenueDate
         {
             get { return _RevenueDate; }
             set
@@ -497,7 +494,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.RevenueDate == DateTime.MinValue) ? "" : this.RevenueDate.ToThaiDateTimeString("dd/MM/yyyy");
+                var ret = (!this.RevenueDate.HasValue || this.RevenueDate.Value == DateTime.MinValue) ?
+                    "" : this.RevenueDate.Value.ToThaiDateTimeString("dd/MM/yyyy");
                 return ret;
             }
             set { }
@@ -514,7 +512,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.RevenueDate == DateTime.MinValue) ? "" : this.RevenueDate.ToThaiTimeString();
+                var ret = (!this.RevenueDate.HasValue || this.RevenueDate.Value == DateTime.MinValue) ?
+                    "" : this.RevenueDate.Value.ToThaiTimeString();
                 return ret;
             }
             set { }
@@ -531,7 +530,8 @@ namespace DMT.Models
         {
             get
             {
-                var ret = (this.RevenueDate == DateTime.MinValue) ? "" : this.RevenueDate.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+                var ret = (!this.RevenueDate.HasValue || this.RevenueDate.Value == DateTime.MinValue) ?
+                    "" : this.RevenueDate.Value.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
                 return ret;
             }
             set { }
