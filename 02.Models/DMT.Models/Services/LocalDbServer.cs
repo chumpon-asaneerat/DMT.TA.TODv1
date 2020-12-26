@@ -125,20 +125,17 @@ namespace DMT.Services
             //Db.CreateTable<LogInLog>();
 
             Db.CreateTable<TSBShift>();
-            //Db.CreateTable<UserShift>();
-            //Db.CreateTable<UserShiftRevenue>();
+            Db.CreateTable<UserShift>();
+            Db.CreateTable<UserShiftRevenue>();
 
-            //Db.CreateTable<LaneAttendance>();
-            //Db.CreateTable<LanePayment>();
+            Db.CreateTable<RevenueEntry>();
 
-            //Db.CreateTable<RevenueEntry>();
-
-            //Db.CreateTable<TSBCreditTransaction>();
+            Db.CreateTable<TSBCreditTransaction>();
 
             //Db.CreateTable<TSBCouponTransaction>();
 
-            //Db.CreateTable<UserCreditBalance>();
-            //Db.CreateTable<UserCreditTransaction>();
+            Db.CreateTable<UserCreditBalance>();
+            Db.CreateTable<UserCreditTransaction>();
 
             ////Db.CreateTable<UserCouponBalance>();
             //Db.CreateTable<UserCouponTransaction>();
@@ -2253,26 +2250,14 @@ namespace DMT.Services
             // Shifts - Embeded resource used . instead / to access sub contents.
             prefix = @"Shifts";
             InitView("TSBShiftView", 1, prefix);
-            /*
             InitView("UserShiftView", 1, prefix);
             InitView("UserShiftRevenueView", 1, prefix);
-            */
-
-            // LaneActivities - Embeded resource used . instead / to access sub contents.
-            /*
-            prefix = @"LaneActivities";
-            InitView("LaneAttendanceView", 1, prefix);
-            InitView("LanePaymentView", 1, prefix);
-            */
 
             // Revenues - Embeded resource used . instead / to access sub contents.
-            /*
             prefix = @"Revenues";
             InitView("RevenueEntryView", 1, prefix);
-            */
 
             // Credits - Embeded resource used . instead / to access sub contents.
-            /*
             prefix = @"Credits";
             InitView("TSBCreditSummaryView", 1, prefix);
             InitView("TSBCreditTransactionView", 1, prefix);
@@ -2280,7 +2265,7 @@ namespace DMT.Services
             InitView("UserCreditReturnSummaryView", 1, prefix);
             InitView("UserCreditSummaryView", 1, prefix);
             InitView("UserCreditTransactionView", 1, prefix);
-            */
+
             // Coupons - Embeded resource used . instead / to access sub contents.
             /*
             prefix = @"Coupons";
