@@ -36,8 +36,14 @@ Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #458
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #457
 - 
 
+[commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #456
-- 
+- DMT.TAxTODv1
+  - DMT.Models project.
+    - Add UserShiftRevenue (ported from DMTv2).
+    - Add Views
+      - UserShiftView.sql
+      - UserShiftRevenueView.sql
 
 [commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #455
