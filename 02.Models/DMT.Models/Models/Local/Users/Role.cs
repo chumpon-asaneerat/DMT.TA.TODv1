@@ -82,6 +82,8 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Role")]
 		[Description("Gets or sets Group Id.")]
+		[NotNull]
+		[Indexed]
 		[PropertyMapName("GroupId")]
 		public int GroupId
 		{

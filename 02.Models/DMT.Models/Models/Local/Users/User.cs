@@ -372,6 +372,7 @@ namespace DMT.Models
 		/// </summary>
 		[Category("User")]
 		[Description("Gets or sets CardId")]
+		[Indexed]
 		[MaxLength(20)]
 		[PropertyMapName("CardId")]
 		public string CardId
@@ -401,6 +402,8 @@ namespace DMT.Models
 		[Category("Role")]
 		[Description("Gets or sets Role Id.")]
 		[ReadOnly(true)]
+		[NotNull]
+		[Indexed]
 		[MaxLength(20)]
 		[PropertyMapName("RoleId")]
 		public string RoleId
