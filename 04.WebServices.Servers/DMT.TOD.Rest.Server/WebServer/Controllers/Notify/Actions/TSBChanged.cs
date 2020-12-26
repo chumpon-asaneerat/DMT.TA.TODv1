@@ -8,7 +8,7 @@ using DMT.Models;
 
 namespace DMT.Services
 {
-    partial class NotifyController
+    partial class TODNotifyController
     {
         [HttpPost]
         [ActionName(RouteConsts.TOD.Notify.TSBChanged.Name)]

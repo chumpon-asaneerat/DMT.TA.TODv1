@@ -9,6 +9,9 @@ using DMT.Models;
 
 namespace DMT.Services
 {
+    using TAOps = Operations.TA.Notify;
+    using TODOps = Operations.TOD.Notify;
+
     partial class Infrastructure
     {
         partial class TSBController
@@ -19,6 +22,12 @@ namespace DMT.Services
             public NDbResult SetActive([FromBody] TSB value)
             {
                 var ret = TSB.SetActive(value.TSBId);
+                if (null != ret && ret.Ok)
+                {
+                    // Notify TSBChanged to (TAApp and TODApp).
+                    TAOps.TSBChanged();
+                    TODOps.TSBChanged();
+                }
                 return ret;
             }
         }

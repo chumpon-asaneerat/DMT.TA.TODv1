@@ -8,7 +8,7 @@ using DMT.Models;
 
 namespace DMT.Services
 {
-    partial class NotifyController
+    partial class TANotifyController
     {
         [HttpPost]
         [ActionName(RouteConsts.TA.Notify.ShiftChanged.Name)]

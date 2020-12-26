@@ -12,5 +12,5 @@ namespace DMT.Services
     /// The Notify Controller class.
     /// </summary>
     [Authorize] // Authorize Attribute can set here or set in each method(s).
-    public partial class NotifyController : ApiController { }
+    public partial class TANotifyController : ApiController { }
 }
