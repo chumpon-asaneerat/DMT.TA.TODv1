@@ -99,6 +99,7 @@
     <Compile Include="Services\Cmd.cs" />
     <Compile Include="Services\ConfigManager.cs" />
     <Compile Include="Services\LocalServiceManager.cs" />
+    <Compile Include="Services\JsonMessageTransferService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
