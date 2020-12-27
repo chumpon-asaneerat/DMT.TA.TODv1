@@ -21,9 +21,16 @@ namespace DMT.Services
     {
         #region Constructor and Destructor
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public JsonMessageTransferService() : base() { }
+        /// <summary>
+        /// Destructor.
+        /// </summary>
         ~JsonMessageTransferService() 
-        { 
+        {
+            this.Shutdown();
         }
 
         #endregion
