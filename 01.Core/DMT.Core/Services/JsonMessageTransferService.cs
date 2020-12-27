@@ -62,7 +62,7 @@ namespace DMT.Services
                     try
                     {
                         string json = File.ReadAllText(file);
-                        ProcessJson(json);
+                        ProcessJson(file, json);
                     }
                     catch (Exception ex2)
                     {
@@ -99,8 +99,9 @@ namespace DMT.Services
         /// <summary>
         /// Process Json (string).
         /// </summary>
+        /// <param name="fullFileName">The json full file name.</param>
         /// <param name="jsonString">The json data in string.</param>
-        protected abstract void ProcessJson(string jsonString);
+        protected abstract void ProcessJson(string fullFileName, string jsonString);
 
         #endregion
 

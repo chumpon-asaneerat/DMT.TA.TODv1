@@ -90,10 +90,55 @@ namespace DMT.Services
         /// <summary>
         /// Process Json (string).
         /// </summary>
+        /// <param name="fullFileName">The json full file name.</param>
         /// <param name="jsonString">The json data in string.</param>
-        protected override void ProcessJson(string jsonString)
+        protected override void ProcessJson(string fullFileName, string jsonString)
         {
+            MethodBase med = MethodBase.GetCurrentMethod();
 
+            // Extract Header.
+            var msg = jsonString.FromJson<Models.RabbitMQMessage>();
+            if (null != msg)
+            {
+                if (msg.parameterName == "STAFF")
+                {
+                    // Update To Local Database.
+                    var mq = jsonString.FromJson<Models.RabbitMQStaffMessage>();
+                    if (null != mq)
+                    {
+                        //TODO: Rabbit ToLocal Need to check PasswordDate?.
+                        var staffs = Models.RabbitMQStaff.ToLocals(mq.staff);
+                        if (null != staffs && staffs.Count > 0)
+                        {
+                            Task.Run(() =>
+                            {
+                                // TODO: Check can save when direct access to database here.
+                                Models.User.SaveUsers(staffs);
+                            });
+                        }
+                        // process success backup file.
+                        MoveToBackup(fullFileName);
+                    }
+                    else
+                    {
+                        // process success error file.
+                        med.Info("Cannot convert to STAFF message.");
+                        MoveToError(fullFileName);
+                    }
+                }
+                else
+                {
+                    // process not staff list so Not Supports file.
+                    med.Info("message is not STAFF message.");
+                    MoveToNotSupports(fullFileName);
+                }
+            }
+            else
+            {
+                // process success error file.
+                med.Info("message is null or cannot convert to json object.");
+                MoveToError(fullFileName);
+            }
         }
         /// <summary>
         /// OnStart.
@@ -109,7 +154,6 @@ namespace DMT.Services
                     PlazaServiceConfigManager.Instance.RabbitMQ : null;
                 if (null != MQConfig && MQConfig.Enabled)
                 {
-                    //WriteTAFile("init");
                     med.Info("Rabbit Host Info: " + MQConfig.GetString());
                     try
                     {
