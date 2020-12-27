@@ -39,6 +39,63 @@ namespace DMT.Services
 
         #region File Managements
 
+        /// <summary>
+        /// Move File to specificed sub folder.
+        /// </summary>
+        /// <param name="file">The target fule (Full File Name).</param>
+        /// <param name="subFolder">The sub folder name.</param>
+        protected void MoveTo(string file, string subFolder)
+        {
+            string parentDir = Path.GetDirectoryName(file);
+            string fileName = Path.GetFileName(file);
+            string targetPath = Path.Combine(parentDir, subFolder);
+            if (!Directory.Exists(targetPath)) Directory.CreateDirectory(targetPath);
+            if (!Directory.Exists(targetPath)) return;
+            string targetFile = Path.Combine(targetPath, fileName);
+            MethodBase med = MethodBase.GetCurrentMethod();
+            try
+            {
+                if (File.Exists(targetFile)) File.Delete(targetFile);
+                File.Move(file, targetFile);
+            }
+            catch (Exception ex)
+            {
+                med.Err(ex);
+            }
+        }
+        /// <summary>
+        /// Move File to 'Backup' sub folder.
+        /// </summary>
+        /// <param name="file">The target fule (Full File Name).</param>
+        protected void MoveToBackup(string file) 
+        {
+            MoveTo(file, "Backup");
+        }
+        /// <summary>
+        /// Move File to 'Invalid' sub folder.
+        /// </summary>
+        /// <param name="file">The target fule (Full File Name).</param>
+        protected void MoveToInvalid(string file) 
+        {
+            MoveTo(file, "Invalid");
+        }
+        /// <summary>
+        /// Move File to 'Error' sub folder.
+        /// </summary>
+        /// <param name="file">The target fule (Full File Name).</param>
+        protected void MoveToError(string file) 
+        {
+            MoveTo(file, "Error");
+        }
+        /// <summary>
+        /// Move File to 'NotSupports' sub folder.
+        /// </summary>
+        /// <param name="file">The target fule (Full File Name).</param>
+        protected void MoveToNotSupports(string file)
+        {
+            MoveTo(file, "NotSupports");
+        }
+
         #endregion
 
         #region Timer Handlers
@@ -59,9 +116,12 @@ namespace DMT.Services
                     try
                     {
                         string json = File.ReadAllText(file);
+                        ProcessJson(json);
                     }
                     catch (Exception ex2)
                     {
+                        // Invalid. Read file error.
+                        MoveToInvalid(file);
                         med.Err(ex2);
                     }
                 });
@@ -75,6 +135,13 @@ namespace DMT.Services
 
         #endregion
 
+        #region Start/Shutdown
+
+        protected virtual void OnStart() { }
+        protected virtual void OnShutdown() { }
+
+        #endregion
+
         #endregion
 
         #region Protected Methods and Properties
@@ -83,6 +150,11 @@ namespace DMT.Services
         /// Gets Folder Name (sub directory name).
         /// </summary>
         protected abstract string FolderName { get; }
+        /// <summary>
+        /// Process Json (string).
+        /// </summary>
+        /// <param name="jsonString">The json data in string.</param>
+        protected abstract void ProcessJson(string jsonString);
 
         #endregion
 
@@ -100,6 +172,8 @@ namespace DMT.Services
             _timer.Interval = 1000;
             _timer.Elapsed += _timer_Elapsed;
             _timer.Start();
+
+            OnStart(); // call virtual method.
         }
         /// <summary>
         /// Shutdown service.
@@ -120,6 +194,8 @@ namespace DMT.Services
             catch { }
             _timer = null;
             _scanning = false;
+
+            OnShutdown(); // call virtual method.
         }
 
         #endregion
