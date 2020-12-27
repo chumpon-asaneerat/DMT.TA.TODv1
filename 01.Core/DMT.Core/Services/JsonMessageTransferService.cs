@@ -142,13 +142,6 @@ namespace DMT.Services
 
         #endregion
 
-        #region Start/Shutdown
-
-        protected virtual void OnStart() { }
-        protected virtual void OnShutdown() { }
-
-        #endregion
-
         #endregion
 
         #region Protected Methods and Properties
@@ -162,6 +155,14 @@ namespace DMT.Services
         /// </summary>
         /// <param name="jsonString">The json data in string.</param>
         protected abstract void ProcessJson(string jsonString);
+        /// <summary>
+        /// OnStart.
+        /// </summary>
+        protected virtual void OnStart() { }
+        /// <summary>
+        /// OnShutdown.
+        /// </summary>
+        protected virtual void OnShutdown() { }
 
         #endregion
 
