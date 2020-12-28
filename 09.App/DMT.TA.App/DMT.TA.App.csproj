@@ -140,6 +140,18 @@
     <Compile Include="StatusBar\TAStatusBar.xaml.cs">
       <DependentUpon>TAStatusBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TA\Pages\Coupon\CouponTSBSalePage.xaml.cs">
+      <DependentUpon>CouponTSBSalePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TA\Pages\Coupon\ReceiveCouponPage.xaml.cs">
+      <DependentUpon>ReceiveCouponPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TA\Pages\Coupon\ReturnCouponPage.xaml.cs">
+      <DependentUpon>ReturnCouponPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TA\Pages\Credit\CollectorCreditManagePage.xaml.cs">
+      <DependentUpon>CollectorCreditManagePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TA\Pages\Menu\ConfigurationMenu.xaml.cs">
       <DependentUpon>ConfigurationMenu.xaml</DependentUpon>
     </Compile>
@@ -205,6 +217,22 @@
     <Page Include="StatusBar\TAStatusBar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TA\Pages\Coupon\CouponTSBSalePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TA\Pages\Coupon\ReceiveCouponPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TA\Pages\Coupon\ReturnCouponPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TA\Pages\Credit\CollectorCreditManagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TA\Pages\Menu\ConfigurationMenu.xaml">
       <SubType>Designer</SubType>
