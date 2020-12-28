@@ -140,6 +140,9 @@
     <Compile Include="StatusBar\TAStatusBar.xaml.cs">
       <DependentUpon>TAStatusBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TA\Pages\Coupon\CouponHistoryViewPage.xaml.cs">
+      <DependentUpon>CouponHistoryViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TA\Pages\Coupon\CouponTSBSalePage.xaml.cs">
       <DependentUpon>CouponTSBSalePage.xaml</DependentUpon>
     </Compile>
@@ -152,11 +155,26 @@
     <Compile Include="TA\Pages\Credit\CollectorCreditManagePage.xaml.cs">
       <DependentUpon>CollectorCreditManagePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TA\Pages\Credit\CreditHistoryViewPage.xaml.cs">
+      <DependentUpon>CreditHistoryViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TA\Pages\Exchange\InternalExchangePage.xaml.cs">
+      <DependentUpon>InternalExchangePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TA\Pages\Exchange\ManageExchangePage.xaml.cs">
+      <DependentUpon>ManageExchangePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TA\Pages\Exchange\RequestExchangePage.xaml.cs">
+      <DependentUpon>RequestExchangePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TA\Pages\Menu\ConfigurationMenu.xaml.cs">
       <DependentUpon>ConfigurationMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="TA\Pages\Menu\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TA\Pages\Menu\ReportMenu.xaml.cs">
+      <DependentUpon>ReportMenu.xaml</DependentUpon>
     </Compile>
     <Page Include="Header\Elements\HeaderChief.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -218,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="TA\Pages\Coupon\CouponHistoryViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TA\Pages\Coupon\CouponTSBSalePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -234,11 +256,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TA\Pages\Credit\CreditHistoryViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TA\Pages\Exchange\InternalExchangePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TA\Pages\Exchange\ManageExchangePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TA\Pages\Exchange\RequestExchangePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TA\Pages\Menu\ConfigurationMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TA\Pages\Menu\MainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TA\Pages\Menu\ReportMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
