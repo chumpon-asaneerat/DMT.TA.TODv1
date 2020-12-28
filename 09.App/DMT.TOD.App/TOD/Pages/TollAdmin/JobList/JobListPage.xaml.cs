@@ -12,7 +12,7 @@ using NLib.Reflection;
 
 #endregion
 
-namespace DMT.TOD.Pages.Jobs
+namespace DMT.TOD.Pages.TollAdmin.Jobs
 {
     /// <summary>
     /// Interaction logic for JobListPage.xaml
