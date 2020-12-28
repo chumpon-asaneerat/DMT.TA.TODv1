@@ -176,6 +176,15 @@
     <Compile Include="TA\Pages\Menu\ReportMenu.xaml.cs">
       <DependentUpon>ReportMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TA\Windows\Exchange\InternalExchangeWindow.xaml.cs">
+      <DependentUpon>InternalExchangeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TA\Windows\Exchange\ReceiveExchangeWindow.xaml.cs">
+      <DependentUpon>ReceiveExchangeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TA\Windows\Plaza\PlazaBalanceSummaryWindow.xaml.cs">
+      <DependentUpon>PlazaBalanceSummaryWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Header\Elements\HeaderChief.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -284,6 +293,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TA\Windows\Exchange\InternalExchangeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TA\Windows\Exchange\ReceiveExchangeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TA\Windows\Plaza\PlazaBalanceSummaryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -355,7 +376,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TA\Controls\" />
-    <Folder Include="TA\Windows\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Background\snartcard.png" />
