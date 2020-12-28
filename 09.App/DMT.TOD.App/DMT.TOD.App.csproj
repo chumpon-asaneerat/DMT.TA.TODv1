@@ -136,7 +136,19 @@
     <Compile Include="StatusBar\TODStatusBar.xaml.cs">
       <DependentUpon>TODStatusBar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TOD\Pages\TollAdmin\JobList\JobListPage.xaml.cs">
+    <Compile Include="TOD\Pages\Revenue\ChiefRevenueEntryPage.xaml.cs">
+      <DependentUpon>ChiefRevenueEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TOD\Pages\Revenue\CollectorRevenueEntryPage.xaml.cs">
+      <DependentUpon>CollectorRevenueEntryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TOD\Pages\TollAdmin\ChangeShiftPage.xaml.cs">
+      <DependentUpon>ChangeShiftPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TOD\Pages\TollAdmin\EMVQRCodeListPage.xaml.cs">
+      <DependentUpon>EMVQRCodeListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TOD\Pages\TollAdmin\JobListPage.xaml.cs">
       <DependentUpon>JobListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="TOD\Pages\Menu\ConfigurationMenu.xaml.cs">
@@ -147,6 +159,9 @@
     </Compile>
     <Compile Include="TOD\Pages\Menu\ReportMenu.xaml.cs">
       <DependentUpon>ReportMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TOD\Windows\UserShifts\BOSWindow.xaml.cs">
+      <DependentUpon>BOSWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Header\Elements\HeaderChief.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -208,7 +223,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="TOD\Pages\TollAdmin\JobList\JobListPage.xaml">
+    <Page Include="TOD\Pages\Revenue\ChiefRevenueEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TOD\Pages\Revenue\CollectorRevenueEntryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TOD\Pages\TollAdmin\ChangeShiftPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TOD\Pages\TollAdmin\EMVQRCodeListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TOD\Pages\TollAdmin\JobListPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -223,6 +254,10 @@
     <Page Include="TOD\Pages\Menu\ReportMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TOD\Windows\UserShifts\BOSWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -295,8 +330,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="TOD\Controls\" />
-    <Folder Include="TOD\Pages\TollAdmin\EMVQRCode\" />
-    <Folder Include="TOD\Windows\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Background\snartcard.png" />
