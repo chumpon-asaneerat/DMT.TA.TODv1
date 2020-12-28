@@ -48,7 +48,14 @@ namespace DMT.TOD.Pages.Menu
             }
             var user = signinWin.User;
 
-            MessageBox.Show("Not Implements");
+            // Begin of Shift Page
+            var jobWindow = new Windows.UserShifts.BOSWindow();
+            jobWindow.Owner = Application.Current.MainWindow;
+            //jobWindow.Setup(user);
+            if (jobWindow.ShowDialog() == false)
+            {
+                return;
+            }
         }
 
         private void cmdCollectorRevenueEntry_Click(object sender, RoutedEventArgs e)
@@ -68,7 +75,10 @@ namespace DMT.TOD.Pages.Menu
             }
             var user = signinWin.User;
 
-            MessageBox.Show("Not Implements");
+            // Collector Revenue Entry Page
+            var page = new Revenue.CollectorRevenueEntryPage();
+            //page.Setup(user);
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdChiefRevenueEntry_Click(object sender, RoutedEventArgs e)
@@ -88,7 +98,10 @@ namespace DMT.TOD.Pages.Menu
             }
             var user = signinWin.User;
 
-            MessageBox.Show("Not Implements");
+            // Chief Revenue Entry Page
+            var page = new Revenue.ChiefRevenueEntryPage();
+            //page.Setup(user);
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdChiefChangeShift_Click(object sender, RoutedEventArgs e)
@@ -108,7 +121,10 @@ namespace DMT.TOD.Pages.Menu
             }
             var user = signinWin.User;
 
-            MessageBox.Show("Not Implements");
+            // Change Shift Page
+            var page = new TollAdmin.ChangeShiftPage();
+            //page.Setup(user);
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdReportMenu_Click(object sender, RoutedEventArgs e)
@@ -152,7 +168,10 @@ namespace DMT.TOD.Pages.Menu
             }
             var user = signinWin.User;
 
-            MessageBox.Show("Not Implements");
+            // EMV/QRCode List Page
+            var page = new TollAdmin.EMVQRCodeListPage();
+            //page.Setup(user);
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdStaffJobs_Click(object sender, RoutedEventArgs e)
@@ -173,7 +192,7 @@ namespace DMT.TOD.Pages.Menu
             var user = signinWin.User;
 
             // Job List Page
-            var page = new Jobs.JobListPage();
+            var page = new TollAdmin.JobListPage();
             page.Setup(user);
             PageContentManager.Instance.Current = page;
         }
