@@ -303,6 +303,34 @@
     <Resource Include="Images\Logo\tollway.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Button\Approve.png" />
+    <Resource Include="Images\Button\Approved.png" />
+    <Resource Include="Images\Button\Approved2.png" />
+    <Resource Include="Images\Button\Approved3.png" />
+    <Resource Include="Images\Button\Approved4.png" />
+    <Resource Include="Images\Button\Approved5.png" />
+    <Resource Include="Images\Button\back.png" />
+    <Resource Include="Images\Button\Back3.png" />
+    <Resource Include="Images\Button\Cancel2.png" />
+    <Resource Include="Images\Button\Clear2.png" />
+    <Resource Include="Images\Button\Edit.png" />
+    <Resource Include="Images\Button\Money.png" />
+    <Resource Include="Images\Button\Money2.png" />
+    <Resource Include="Images\Button\next.png" />
+    <Resource Include="Images\Button\Printer.png" />
+    <Resource Include="Images\Button\Printer2.png" />
+    <Resource Include="Images\Button\Printer3.png" />
+    <Resource Include="Images\Button\Rejected.png" />
+    <Resource Include="Images\Button\Rejected2.png" />
+    <Resource Include="Images\Button\Rejected3.png" />
+    <Resource Include="Images\Button\Rejected4.png" />
+    <Resource Include="Images\Button\Rejected5.png" />
+    <Resource Include="Images\Button\Save.png" />
+    <Resource Include="Images\Button\Save2.png" />
+    <Resource Include="Images\Button\search.png" />
+    <Resource Include="Images\Button\search2.png" />
+    <Resource Include="Images\Button\search3.png" />
+    <Resource Include="Images\Button\User.png" />
     <Content Include="MasterCom.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
