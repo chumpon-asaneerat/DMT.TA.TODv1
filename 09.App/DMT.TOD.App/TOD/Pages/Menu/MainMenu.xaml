@@ -23,38 +23,27 @@
         <SolidColorBrush x:Key="TollAdminBGHover" Color="DarkGreen" />
         <SolidColorBrush x:Key="TollAdminFG" Color="WhiteSmoke" />
         <!--  TEXTBLOCK (GROUP HEADER)  -->
-        <Style x:Key="ShiftHeaderTextStyle" TargetType="TextBlock">
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
-            <Setter Property="VerticalAlignment" Value="Center" />
+        <Style x:Key="ShiftHeaderTextStyle" 
+               BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
+               TargetType="TextBlock">
             <Setter Property="Background" Value="{StaticResource ShiftBG}" />
             <Setter Property="Foreground" Value="{StaticResource ShiftFG}" />
-            <Setter Property="FontSize" Value="48" />
-            <Setter Property="TextAlignment" Value="Center" />
         </Style>
-        <Style x:Key="RevenueHeaderTextStyle" TargetType="TextBlock">
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
-            <Setter Property="VerticalAlignment" Value="Center" />
+        <Style x:Key="RevenueHeaderTextStyle" 
+               BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
+               TargetType="TextBlock">
             <Setter Property="Background" Value="{StaticResource RevenueBG}" />
             <Setter Property="Foreground" Value="{StaticResource RevenueFG}" />
-            <Setter Property="FontSize" Value="48" />
-            <Setter Property="TextAlignment" Value="Center" />
         </Style>
-        <Style x:Key="TollAdminHeaderTextStyle" TargetType="TextBlock">
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
-            <Setter Property="VerticalAlignment" Value="Center" />
+        <Style x:Key="TollAdminHeaderTextStyle" 
+               BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
+               TargetType="TextBlock">
             <Setter Property="Background" Value="{StaticResource TollAdminBG}" />
             <Setter Property="Foreground" Value="{StaticResource TollAdminFG}" />
-            <Setter Property="FontSize" Value="48" />
-            <Setter Property="TextAlignment" Value="Center" />
         </Style>
-        <!--  BUTTON STYLE  -->
-        <Style x:Key="CommonButtonStyle" TargetType="Button">
-            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-            <Setter Property="VerticalContentAlignment" Value="Stretch" />
-            <Setter Property="Cursor" Value="Hand" />
-        </Style>
+        <!--  BUTTON STYLES  -->
         <Style x:Key="ShiftButtonStyle"
-               BasedOn="{StaticResource CommonButtonStyle}"
+               BasedOn="{StaticResource MenuButtonStyle}"
                TargetType="Button">
             <Setter Property="Background" Value="{StaticResource ShiftBG}" />
             <Setter Property="Foreground" Value="{StaticResource ShiftFG}" />
@@ -75,7 +64,7 @@
             </Setter>
         </Style>
         <Style x:Key="RevenueButtonStyle"
-               BasedOn="{StaticResource CommonButtonStyle}"
+               BasedOn="{StaticResource MenuButtonStyle}"
                TargetType="Button">
             <Setter Property="Background" Value="{StaticResource RevenueBG}" />
             <Setter Property="Foreground" Value="{StaticResource RevenueFG}" />
@@ -96,7 +85,7 @@
             </Setter>
         </Style>
         <Style x:Key="TollAdminButtonStyle"
-               BasedOn="{StaticResource CommonButtonStyle}"
+               BasedOn="{StaticResource MenuButtonStyle}"
                TargetType="Button">
             <Setter Property="Background" Value="{StaticResource TollAdminBG}" />
             <Setter Property="Foreground" Value="{StaticResource TollAdminFG}" />
@@ -115,19 +104,6 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
-        <!--  BUTTON TEXT BLOCK STYLES  -->
-        <Style x:Key="CaptionTextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="42" />
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="TextAlignment" Value="Center" />
-            <Setter Property="TextWrapping" Value="Wrap" />
-        </Style>
-        <Style x:Key="SubCaptionTextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="28" />
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="TextAlignment" Value="Center" />
-            <Setter Property="TextWrapping" Value="Wrap" />
         </Style>
     </UserControl.Resources>
     <ScrollViewer HorizontalContentAlignment="Center"
@@ -171,7 +147,7 @@
                         Grid.Column="0"
                         Click="cmdCollectorBOJ_Click"
                         Style="{StaticResource ShiftButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="เปิดกะ" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="เปิดกะ" />
                 </Button>
             </Grid>
             <!--  REVENUE GROUP  -->
@@ -199,7 +175,7 @@
                         Grid.Column="0"
                         Click="cmdCollectorRevenueEntry_Click"
                         Style="{StaticResource RevenueButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="นำส่งรายได้" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="นำส่งรายได้" />
                 </Button>
                 <TextBlock Grid.Row="1"
                            Grid.Column="1"
@@ -210,8 +186,8 @@
                         Click="cmdChiefRevenueEntry_Click"
                         Style="{StaticResource RevenueButtonStyle}">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="นำส่งรายได้ย้อนหลัง" />
-                        <TextBlock Style="{StaticResource SubCaptionTextBlockStyle}" Text="(หัวหน้าด่าน)" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="นำส่งรายได้ย้อนหลัง" />
+                        <TextBlock Style="{StaticResource MenuButtonSubCaptionStyle}" Text="(หัวหน้าด่าน)" />
                     </StackPanel>
                 </Button>
             </Grid>
@@ -245,7 +221,7 @@
                         Grid.Column="0"
                         Click="cmdChiefChangeShift_Click"
                         Style="{StaticResource TollAdminButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="หัวหน้าเปลี่ยนกะ" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="หัวหน้าเปลี่ยนกะ" />
                 </Button>
                 <TextBlock Grid.Row="1"
                            Grid.Column="1"
@@ -255,7 +231,7 @@
                         Grid.Column="2"
                         Click="cmdReportMenu_Click"
                         Style="{StaticResource TollAdminButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="รายงานต่าง ๆ" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="รายงานต่าง ๆ" />
                 </Button>
                 <TextBlock Grid.Row="1"
                            Grid.Column="3"
@@ -265,7 +241,7 @@
                         Grid.Column="4"
                         Click="cmdEMVQRCode_Click"
                         Style="{StaticResource TollAdminButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="EMV / QR Code" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="EMV / QR Code" />
                 </Button>
                 <TextBlock Grid.Row="1"
                            Grid.Column="5"
@@ -275,7 +251,7 @@
                         Grid.Column="6"
                         Click="cmdStaffJobs_Click"
                         Style="{StaticResource TollAdminButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="รายชื่อพนักงานเข้ากะ" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="รายชื่อพนักงานเข้ากะ" />
                 </Button>
             </Grid>
         </Grid>

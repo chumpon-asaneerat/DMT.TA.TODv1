@@ -27,30 +27,21 @@
         <SolidColorBrush x:Key="ConfigAndExitBGHover" Color="Blue" />
         <SolidColorBrush x:Key="ConfigAndExitFG" Color="WhiteSmoke" />
         <!--  TEXTBLOCK (GROUP HEADER)  -->
-        <Style x:Key="ExchangeAndCouponHeaderTextStyle" TargetType="TextBlock">
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
-            <Setter Property="VerticalAlignment" Value="Center" />
+        <Style x:Key="ExchangeAndCouponHeaderTextStyle" 
+               BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
+               TargetType="TextBlock">
             <Setter Property="Background" Value="{StaticResource ExchangeAndCouponBG}" />
             <Setter Property="Foreground" Value="{StaticResource ExchangeAndCouponFG}" />
-            <Setter Property="FontSize" Value="48" />
-            <Setter Property="TextAlignment" Value="Center" />
         </Style>
-        <Style x:Key="CollectorCreditAndCouponHeaderTextStyle" TargetType="TextBlock">
-            <Setter Property="HorizontalAlignment" Value="Stretch" />
-            <Setter Property="VerticalAlignment" Value="Center" />
+        <Style x:Key="CollectorCreditAndCouponHeaderTextStyle" 
+               BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
+               TargetType="TextBlock">
             <Setter Property="Background" Value="{StaticResource CollectorCreditAndCouponBG}" />
             <Setter Property="Foreground" Value="{StaticResource CollectorCreditAndCouponFG}" />
-            <Setter Property="FontSize" Value="48" />
-            <Setter Property="TextAlignment" Value="Center" />
         </Style>
-        <!--  BUTTON STYLE  -->
-        <Style x:Key="CommonButtonStyle" TargetType="Button">
-            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-            <Setter Property="VerticalContentAlignment" Value="Stretch" />
-            <Setter Property="Cursor" Value="Hand" />
-        </Style>
+        <!--  BUTTON STYLES  -->
         <Style x:Key="ExchangeAndCouponButtonStyle"
-               BasedOn="{StaticResource CommonButtonStyle}"
+               BasedOn="{StaticResource MenuButtonStyle}"
                TargetType="Button">
             <Setter Property="Background" Value="{StaticResource ExchangeAndCouponBG}" />
             <Setter Property="Foreground" Value="{StaticResource ExchangeAndCouponFG}" />
@@ -71,7 +62,7 @@
             </Setter>
         </Style>
         <Style x:Key="CollectorCreditAndCouponButtonStyle"
-               BasedOn="{StaticResource CommonButtonStyle}"
+               BasedOn="{StaticResource MenuButtonStyle}"
                TargetType="Button">
             <Setter Property="Background" Value="{StaticResource CollectorCreditAndCouponBG}" />
             <Setter Property="Foreground" Value="{StaticResource CollectorCreditAndCouponFG}" />
@@ -92,7 +83,7 @@
             </Setter>
         </Style>
         <Style x:Key="CheckBalanceButtonStyle"
-               BasedOn="{StaticResource CommonButtonStyle}"
+               BasedOn="{StaticResource MenuButtonStyle}"
                TargetType="Button">
             <Setter Property="Background" Value="{StaticResource CheckBalanceBG}" />
             <Setter Property="Foreground" Value="{StaticResource CheckBalanceFG}" />
@@ -113,7 +104,7 @@
             </Setter>
         </Style>
         <Style x:Key="ConfigAndExitButtonStyle"
-               BasedOn="{StaticResource CommonButtonStyle}"
+               BasedOn="{StaticResource MenuButtonStyle}"
                TargetType="Button">
             <Setter Property="Background" Value="{StaticResource ConfigAndExitBG}" />
             <Setter Property="Foreground" Value="{StaticResource ConfigAndExitFG}" />
@@ -132,19 +123,6 @@
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-        </Style>
-        <!--  BUTTON TEXT BLOCK STYLES  -->
-        <Style x:Key="CaptionTextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="42" />
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="TextAlignment" Value="Center" />
-            <Setter Property="TextWrapping" Value="Wrap" />
-        </Style>
-        <Style x:Key="SubCaptionTextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="28" />
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="TextAlignment" Value="Center" />
-            <Setter Property="TextWrapping" Value="Wrap" />
         </Style>
     </UserControl.Resources>
     <ScrollViewer HorizontalContentAlignment="Center"
@@ -198,8 +176,8 @@
                         Click="cmdRequestExchange_Click"
                         Style="{StaticResource ExchangeAndCouponButtonStyle}">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="ยืม/แลกเงินยืมทอน" />
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="ฝ่ายบัญชี" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="ยืม/แลกเงินยืมทอน" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="ฝ่ายบัญชี" />
                     </StackPanel>
                 </Button>
                 <TextBlock Grid.Row="1"
@@ -211,8 +189,8 @@
                         Click="cmdCouponSoldByPlaza_Click"
                         Style="{StaticResource ExchangeAndCouponButtonStyle}">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="หัวหน้า" />
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="ขายคูปอง" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="หัวหน้า" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="ขายคูปอง" />
                     </StackPanel>
                 </Button>
 
@@ -222,8 +200,8 @@
                         Click="cmdReturnExchange_Click"
                         Style="{StaticResource ExchangeAndCouponButtonStyle}">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="คืนเงินยืมทอน" />
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="ฝ่ายบัญชี" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="คืนเงินยืมทอน" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="ฝ่ายบัญชี" />
                     </StackPanel>
                 </Button>
                 <TextBlock Grid.Row="3"
@@ -235,8 +213,8 @@
                         Click="cmdCouponSoldHistory_Click"
                         Style="{StaticResource ExchangeAndCouponButtonStyle}">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="ประวัติ" />
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="การขายคูปอง" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="ประวัติ" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="การขายคูปอง" />
                     </StackPanel>
                 </Button>
 
@@ -246,8 +224,8 @@
                         Click="cmdInHouseExchange_Click"
                         Style="{StaticResource ExchangeAndCouponButtonStyle}">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="แลกเงินหมุนเวียน" />
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="ภายในด่าน" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="แลกเงินหมุนเวียน" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="ภายในด่าน" />
                     </StackPanel>
                 </Button>
                 <TextBlock Grid.Row="5"
@@ -259,8 +237,8 @@
                         Click="cmdCreditTransactionSummaryReport_Click"
                         Style="{StaticResource ExchangeAndCouponButtonStyle}">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="รายงานสรุปการ" />
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="ยืมเงินทอน" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="รายงานสรุปการ" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="ยืมเงินทอน" />
                     </StackPanel>
                 </Button>
             </Grid>
@@ -295,7 +273,7 @@
                         Grid.Column="0"
                         Click="cmdUserCreditManage_Click"
                         Style="{StaticResource CollectorCreditAndCouponButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="เงินยืมทอน" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="เงินยืมทอน" />
                 </Button>
                 <TextBlock Grid.Row="1"
                            Grid.Column="1"
@@ -305,7 +283,7 @@
                         Grid.Column="2"
                         Click="cmdUserBorrowCoupon_Click"
                         Style="{StaticResource CollectorCreditAndCouponButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="รับคูปอง" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="รับคูปอง" />
                 </Button>
 
                 <Button x:Name="cmdUserCreditHistory"
@@ -314,8 +292,8 @@
                         Click="cmdUserCreditHistory_Click"
                         Style="{StaticResource CollectorCreditAndCouponButtonStyle}">
                     <StackPanel Orientation="Vertical">
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="ประวัติ" />
-                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="แลกเงินยืมทอน" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="ประวัติ" />
+                        <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="แลกเงินยืมทอน" />
                     </StackPanel>
                 </Button>
                 <TextBlock Grid.Row="3"
@@ -326,7 +304,7 @@
                         Grid.Column="2"
                         Click="cmdUserReturnCoupon_Click"
                         Style="{StaticResource CollectorCreditAndCouponButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="คืนคูปอง" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="คืนคูปอง" />
                 </Button>
 
                 <Button x:Name="cmdCheckBalance"
@@ -334,7 +312,7 @@
                         Grid.Column="0"
                         Click="cmdCheckBalance_Click"
                         Style="{StaticResource CheckBalanceButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="เช็คยอดด่าน" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="เช็คยอดด่าน" />
                 </Button>
                 <TextBlock Grid.Row="5"
                            Grid.Column="1"
@@ -344,7 +322,7 @@
                         Grid.Column="2"
                         Click="cmdExit_Click"
                         Style="{StaticResource ConfigAndExitButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="ออกจากระบบ" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="ออกจากระบบ" />
                 </Button>
 
                 <Button x:Name="cmdSetting"
@@ -352,7 +330,7 @@
                         Grid.Column="2"
                         Click="cmdSetting_Click"
                         Style="{StaticResource ConfigAndExitButtonStyle}">
-                    <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Text="ตั้งค่า" />
+                    <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="ตั้งค่า" />
                 </Button>
             </Grid>
         </Grid>

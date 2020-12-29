@@ -3,83 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              d:DesignHeight="400"
              d:DesignWidth="600"
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <!--  IMAGE BUTTON STYLE  -->
+        <sys:Double x:Key="ImageButtonWidth">NaN</sys:Double>
         <SolidColorBrush x:Key="ImageButtonFG" Color="DarkOrange" />
-        <ImageBrush x:Key="BGImage" ImageSource="/DMT.TA.App;component/Images/Button/Button5.png" />
-        <Style x:Key="CommonButtonStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Height" Value="50" />
-            <!--
-            <Setter Property="Width" Value="220" />
-            -->
-            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-            <Setter Property="VerticalContentAlignment" Value="Stretch" />
-            <Setter Property="Cursor" Value="Hand" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border"
-                                Background="{StaticResource BGImage}"
-                                BorderThickness="2"
-                                CornerRadius="8"
-                                Opacity="0.8">
-                            <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="border" Property="Opacity" Value="1" />
-                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource ImageButtonFG}" />
-                                <Setter Property="Foreground" Value="{StaticResource ImageButtonFG}" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style x:Key="CommonGridStyle" TargetType="Grid">
-            <Setter Property="Width" Value="50" />
-            <Setter Property="Height" Value="50" />
-        </Style>
-        <Style x:Key="CommonImageStyle" TargetType="Image">
-            <Setter Property="Width" Value="32" />
-            <Setter Property="Height" Value="32" />
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-        </Style>
-        <Style x:Key="CommonTextBlockStyle" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="20" />
-            <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="TextAlignment" Value="Center" />
-            <Setter Property="TextWrapping" Value="Wrap" />
-        </Style>
-        <!--  INPUT TEXTBOX/PASSWORD STYLE  -->
-        <Style x:Key="CommonLabelStyle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="FontSize" Value="18" />
-        </Style>
-        <Style x:Key="CommonTextBoxStyle" TargetType="TextBox">
-            <Setter Property="FontSize" Value="18" />
-            <Setter Property="TextAlignment" Value="Center" />
-        </Style>
-        <Style x:Key="CommonPwdBoxStyle" TargetType="PasswordBox">
-            <Setter Property="FontSize" Value="18" />
-            <Setter Property="HorizontalContentAlignment" Value="Center" />
-        </Style>
-        <!--  ERROR MESSAGE STYLE  -->
-        <Style x:Key="CommonErrorStyle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="GreenYellow" />
-            <Setter Property="FontSize" Value="20" />
-            <Setter Property="FontWeight" Value="ExtraBold" />
-            <Setter Property="TextAlignment" Value="Center" />
-            <Setter Property="TextWrapping" Value="WrapWithOverflow" />
-        </Style>
     </UserControl.Resources>
     <ScrollViewer HorizontalContentAlignment="Center"
                   VerticalContentAlignment="Center"
@@ -143,14 +75,14 @@
                                 <Grid Height="10" />
                                 <Button x:Name="cmdOK"
                                         Click="cmdOK_Click"
-                                        Style="{StaticResource CommonButtonStyle}">
+                                        Style="{StaticResource ImageButtonStyle}">
                                     <DockPanel Margin="5,0">
                                         <Grid Width="5" />
-                                        <Grid Style="{StaticResource CommonGridStyle}">
-                                            <Image Source="/DMT.TA.App;component/Images/Button/OK.png" Style="{StaticResource CommonImageStyle}" />
+                                        <Grid Style="{StaticResource ImageButtonImageContainerStyle}">
+                                            <Image Source="/DMT.TA.App;component/Images/Button/OK.png" Style="{StaticResource ImageButtonImageStyle}" />
                                         </Grid>
                                         <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                                            <TextBlock Style="{StaticResource CommonTextBlockStyle}" Text="OK" />
+                                            <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="OK" />
                                             <Grid Height="5" />
                                         </StackPanel>
                                     </DockPanel>
@@ -172,14 +104,14 @@
                               Margin="5,0">
                             <Button x:Name="cmdChangePwd"
                                     Click="cmdChangePwd_Click"
-                                    Style="{StaticResource CommonButtonStyle}">
+                                    Style="{StaticResource ImageButtonStyle}">
                                 <DockPanel Margin="5,0">
                                     <Grid Width="5" />
-                                    <Grid Style="{StaticResource CommonGridStyle}">
-                                        <Image Source="/DMT.TA.App;component/Images/Button/Return.png" Style="{StaticResource CommonImageStyle}" />
+                                    <Grid Style="{StaticResource ImageButtonImageContainerStyle}">
+                                        <Image Source="/DMT.TA.App;component/Images/Button/Return.png" Style="{StaticResource ImageButtonImageStyle}" />
                                     </Grid>
                                     <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                                        <TextBlock Style="{StaticResource CommonTextBlockStyle}" Text="Change Password" />
+                                        <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="Change Password" />
                                         <Grid Height="5" />
                                     </StackPanel>
                                 </DockPanel>
@@ -254,14 +186,14 @@
                             <Grid Height="10" />
                             <Button x:Name="cmdOK2"
                                     Click="cmdOK2_Click"
-                                    Style="{StaticResource CommonButtonStyle}">
+                                    Style="{StaticResource ImageButtonStyle}">
                                 <DockPanel Margin="5,0">
                                     <Grid Width="5" />
-                                    <Grid Style="{StaticResource CommonGridStyle}">
-                                        <Image Source="/DMT.TA.App;component/Images/Button/OK.png" Style="{StaticResource CommonImageStyle}" />
+                                    <Grid Style="{StaticResource ImageButtonImageContainerStyle}">
+                                        <Image Source="/DMT.TA.App;component/Images/Button/OK.png" Style="{StaticResource ImageButtonImageStyle}" />
                                     </Grid>
                                     <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                                        <TextBlock Style="{StaticResource CommonTextBlockStyle}" Text="OK" />
+                                        <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="OK" />
                                         <Grid Height="5" />
                                     </StackPanel>
                                 </DockPanel>
@@ -269,14 +201,14 @@
                             <Grid Height="10" />
                             <Button x:Name="cmdCancel2"
                                     Click="cmdCancel2_Click"
-                                    Style="{StaticResource CommonButtonStyle}">
+                                    Style="{StaticResource ImageButtonStyle}">
                                 <DockPanel Margin="5,0">
                                     <Grid Width="5" />
-                                    <Grid Style="{StaticResource CommonGridStyle}">
-                                        <Image Source="/DMT.TA.App;component/Images/Button/Cancel.png" Style="{StaticResource CommonImageStyle}" />
+                                    <Grid Style="{StaticResource ImageButtonImageContainerStyle}">
+                                        <Image Source="/DMT.TA.App;component/Images/Button/Cancel.png" Style="{StaticResource ImageButtonImageStyle}" />
                                     </Grid>
                                     <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                                        <TextBlock Style="{StaticResource CommonTextBlockStyle}" Text="Cancel" />
+                                        <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="Cancel" />
                                         <Grid Height="5" />
                                     </StackPanel>
                                 </DockPanel>
