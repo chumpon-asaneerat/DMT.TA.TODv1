@@ -15,15 +15,14 @@
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
     <Window.Resources>
+        <SolidColorBrush x:Key="ImageButtonFG" Color="ForestGreen" />
         <!--  IMAGE BUTTON STYLE  -->
+        <!--
         <SolidColorBrush x:Key="ImageButtonFG" Color="DarkOrange" />
         <ImageBrush x:Key="BGImage" ImageSource="/DMT.TOD.App;component/Images/Button/Button5.png" />
         <Style x:Key="CommonButtonStyle" TargetType="Button">
             <Setter Property="Foreground" Value="White" />
             <Setter Property="Height" Value="50" />
-            <!--
-            <Setter Property="Width" Value="220" />
-            -->
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
             <Setter Property="VerticalContentAlignment" Value="Stretch" />
             <Setter Property="Cursor" Value="Hand" />
@@ -58,6 +57,8 @@
             <Setter Property="HorizontalAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
+        -->
+
         <Style x:Key="CommonTextBlockStyle" TargetType="TextBlock">
             <Setter Property="FontSize" Value="20" />
             <Setter Property="FontWeight" Value="Bold" />
