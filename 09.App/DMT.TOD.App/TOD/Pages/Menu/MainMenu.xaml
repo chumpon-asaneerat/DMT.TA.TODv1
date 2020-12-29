@@ -23,19 +23,19 @@
         <SolidColorBrush x:Key="TollAdminBGHover" Color="DarkGreen" />
         <SolidColorBrush x:Key="TollAdminFG" Color="WhiteSmoke" />
         <!--  TEXTBLOCK (GROUP HEADER)  -->
-        <Style x:Key="ShiftHeaderTextStyle" 
+        <Style x:Key="ShiftHeaderTextStyle"
                BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
                TargetType="TextBlock">
             <Setter Property="Background" Value="{StaticResource ShiftBG}" />
             <Setter Property="Foreground" Value="{StaticResource ShiftFG}" />
         </Style>
-        <Style x:Key="RevenueHeaderTextStyle" 
+        <Style x:Key="RevenueHeaderTextStyle"
                BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
                TargetType="TextBlock">
             <Setter Property="Background" Value="{StaticResource RevenueBG}" />
             <Setter Property="Foreground" Value="{StaticResource RevenueFG}" />
         </Style>
-        <Style x:Key="TollAdminHeaderTextStyle" 
+        <Style x:Key="TollAdminHeaderTextStyle"
                BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
                TargetType="TextBlock">
             <Setter Property="Background" Value="{StaticResource TollAdminBG}" />

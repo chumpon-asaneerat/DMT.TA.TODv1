@@ -27,13 +27,13 @@
         <SolidColorBrush x:Key="ConfigAndExitBGHover" Color="Blue" />
         <SolidColorBrush x:Key="ConfigAndExitFG" Color="WhiteSmoke" />
         <!--  TEXTBLOCK (GROUP HEADER)  -->
-        <Style x:Key="ExchangeAndCouponHeaderTextStyle" 
+        <Style x:Key="ExchangeAndCouponHeaderTextStyle"
                BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
                TargetType="TextBlock">
             <Setter Property="Background" Value="{StaticResource ExchangeAndCouponBG}" />
             <Setter Property="Foreground" Value="{StaticResource ExchangeAndCouponFG}" />
         </Style>
-        <Style x:Key="CollectorCreditAndCouponHeaderTextStyle" 
+        <Style x:Key="CollectorCreditAndCouponHeaderTextStyle"
                BasedOn="{StaticResource MenuGroupHeaderTextStyle}"
                TargetType="TextBlock">
             <Setter Property="Background" Value="{StaticResource CollectorCreditAndCouponBG}" />

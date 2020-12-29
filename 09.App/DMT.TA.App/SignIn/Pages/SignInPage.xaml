@@ -11,7 +11,6 @@
              mc:Ignorable="d">
     <UserControl.Resources>
         <sys:Double x:Key="ImageButtonWidth">NaN</sys:Double>
-        <SolidColorBrush x:Key="ImageButtonFG" Color="DarkOrange" />
     </UserControl.Resources>
     <ScrollViewer HorizontalContentAlignment="Center"
                   VerticalContentAlignment="Center"

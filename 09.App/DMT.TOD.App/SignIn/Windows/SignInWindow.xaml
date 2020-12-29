@@ -17,7 +17,6 @@
         mc:Ignorable="d">
     <Window.Resources>
         <sys:Double x:Key="ImageButtonWidth">NaN</sys:Double>
-        <SolidColorBrush x:Key="ImageButtonFG" Color="DarkOrange" />
     </Window.Resources>
     <TabControl x:Name="tabs"
                 Background="Transparent"
