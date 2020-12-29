@@ -1,8 +1,7 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!--
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="WpfButtonUISample;component/Styles/ImageButtonStyle.xaml"/>
+        <!--  Image Buttons  -->
+        <ResourceDictionary Source="/DMT.Controls.Application;component/Themes/ImageButtonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
-    -->
 </ResourceDictionary>
