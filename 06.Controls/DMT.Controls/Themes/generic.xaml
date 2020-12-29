@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
         <!--  Image Buttons  -->
-        <ResourceDictionary Source="/DMT.Controls.Application;component/Themes/ImageButtonStyle.xaml" />
+        <ResourceDictionary Source="/DMT.Controls;component/Themes/CommonStyle.xaml" />
+        <ResourceDictionary Source="/DMT.Controls;component/Themes/ImageButtonStyle.xaml" />
+        <ResourceDictionary Source="/DMT.Controls;component/Themes/GroupMenuStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>

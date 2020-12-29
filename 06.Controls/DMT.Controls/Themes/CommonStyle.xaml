@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- LABEL STYLE  -->
+    <Style x:Key="CommonLabelStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="FontSize" Value="18" />
+    </Style>
+    <!-- TEXT BOX STYLE  -->
+    <Style x:Key="CommonTextBoxStyle" TargetType="TextBox">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="TextAlignment" Value="Center" />
+    </Style>
+    <!-- PASSWORD BOX STYLE  -->
+    <Style x:Key="CommonPwdBoxStyle" TargetType="PasswordBox">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+    <!-- ERROR MESSAGE STYLE  -->
+    <Style x:Key="CommonErrorStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="GreenYellow" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="ExtraBold" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+    </Style>
+</ResourceDictionary>

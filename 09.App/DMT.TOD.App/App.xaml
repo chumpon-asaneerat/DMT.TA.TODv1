@@ -5,7 +5,13 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary 
+                  Source="pack://application:,,,/DMT.Controls;component/Themes/CommonStyle.xaml">
+                </ResourceDictionary>
+                <ResourceDictionary 
                   Source="pack://application:,,,/DMT.Controls;component/Themes/ImageButtonStyle.xaml">
+                </ResourceDictionary>
+                <ResourceDictionary 
+                  Source="pack://application:,,,/DMT.Controls;component/Themes/GroupMenuStyle.xaml">
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
