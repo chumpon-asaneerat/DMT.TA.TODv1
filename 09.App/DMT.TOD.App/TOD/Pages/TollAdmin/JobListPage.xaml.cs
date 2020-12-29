@@ -33,14 +33,14 @@ namespace DMT.TOD.Pages.TollAdmin
 
         #region Button Handlers
 
-        private void cmdOk_Click(object sender, RoutedEventArgs e)
+        private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
             // Main Menu Page
             var page = new Menu.MainMenu();
             PageContentManager.Instance.Current = page;
         }
 
-        private void cmdCancel_Click(object sender, RoutedEventArgs e)
+        private void cmdRefresh_Click(object sender, RoutedEventArgs e)
         {
             Refresh();
         }
