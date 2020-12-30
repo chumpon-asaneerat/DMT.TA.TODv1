@@ -81,7 +81,7 @@
                                 <Image Source="/DMT.TA.App;component/Images/Button/User.png" Style="{StaticResource ImageButtonImageStyle}" />
                             </Grid>
                             <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                                <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="ยกเลิก" />
+                                <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="เพิ่มพนักงาน" />
                             </StackPanel>
                         </DockPanel>
                     </Button>
