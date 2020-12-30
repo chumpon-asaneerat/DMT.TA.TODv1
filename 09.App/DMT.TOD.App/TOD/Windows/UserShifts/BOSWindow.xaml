@@ -23,14 +23,14 @@
                   VerticalScrollBarVisibility="Auto">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="{StaticResource PageMargin}" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="{StaticResource PageMargin}" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="20" />
+                <RowDefinition Height="{StaticResource PageMargin}" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="20" />
+                <RowDefinition Height="{StaticResource PageMargin}" />
             </Grid.RowDefinitions>
             <DockPanel Grid.Row="1"
                        Grid.Column="1"
@@ -50,6 +50,19 @@
                            HorizontalAlignment="Stretch"
                            VerticalAlignment="Stretch"
                            DockPanel.Dock="Bottom">
+                    <Grid Width="5" DockPanel.Dock="Left" />
+                    <Button x:Name="cmdCancel"
+                            DockPanel.Dock="Left"
+                            Style="{StaticResource ImageButtonStyle}">
+                        <DockPanel Margin="5,0">
+                            <Grid Style="{StaticResource ImageButtonImageContainerStyle}">
+                                <Image Source="/DMT.TOD.App;component/Images/Button/Cancel2.png" Style="{StaticResource ImageButtonImageStyle}" />
+                            </Grid>
+                            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                                <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="ยกเลิก" />
+                            </StackPanel>
+                        </DockPanel>
+                    </Button>
                     <Grid Width="5" DockPanel.Dock="Right" />
                     <Button x:Name="cmdOk"
                             DockPanel.Dock="Right"
@@ -60,19 +73,6 @@
                             </Grid>
                             <StackPanel VerticalAlignment="Center" Orientation="Vertical">
                                 <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="บันทึก" />
-                            </StackPanel>
-                        </DockPanel>
-                    </Button>
-                    <Grid Width="5" DockPanel.Dock="Right" />
-                    <Button x:Name="cmdCancel"
-                            DockPanel.Dock="Right"
-                            Style="{StaticResource ImageButtonStyle}">
-                        <DockPanel Margin="5,0">
-                            <Grid Style="{StaticResource ImageButtonImageContainerStyle}">
-                                <Image Source="/DMT.TOD.App;component/Images/Button/Cancel2.png" Style="{StaticResource ImageButtonImageStyle}" />
-                            </Grid>
-                            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                                <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="ยกเลิก" />
                             </StackPanel>
                         </DockPanel>
                     </Button>
