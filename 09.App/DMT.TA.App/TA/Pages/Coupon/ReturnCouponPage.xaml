@@ -3,8 +3,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <Grid />
+    <UserControl.Resources>
+        <!--  IMAGE BUTTON STYLE  -->
+        <sys:Double x:Key="ImageButtonWidth">250</sys:Double>
+    </UserControl.Resources>
+    <ScrollViewer HorizontalContentAlignment="Stretch"
+                  VerticalContentAlignment="Stretch"
+                  HorizontalScrollBarVisibility="Auto"
+                  VerticalScrollBarVisibility="Auto">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
+            <DockPanel Grid.Row="1"
+                       Grid.Column="1"
+                       HorizontalAlignment="Stretch"
+                       VerticalAlignment="Stretch">
+                <StackPanel Margin="5"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            DockPanel.Dock="Top"
+                            Orientation="Horizontal">
+                    <Border Background="DimGray"
+                            BorderBrush="DimGray"
+                            BorderThickness="1" />
+                </StackPanel>
+                <!--  BUTTONS  -->
+                <DockPanel Height="60"
+                           HorizontalAlignment="Stretch"
+                           VerticalAlignment="Stretch"
+                           DockPanel.Dock="Bottom">
+                    <Grid Width="5" DockPanel.Dock="Right" />
+                    <Button x:Name="cmdBack"
+                            DockPanel.Dock="Right"
+                            Style="{StaticResource ImageButtonStyle}">
+                        <DockPanel Margin="5,0">
+                            <Grid Style="{StaticResource ImageButtonImageContainerStyle}">
+                                <Image Source="/DMT.TA.App;component/Images/Button/Home.png" Style="{StaticResource ImageButtonImageStyle}" />
+                            </Grid>
+                            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
+                                <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="กลับสู่หน้าจอหลัก" />
+                            </StackPanel>
+                        </DockPanel>
+                    </Button>
+                    <Grid />
+                </DockPanel>
+                <!--  WORK AREA  -->
+                <Grid />
+            </DockPanel>
+        </Grid>
+    </ScrollViewer>
 </UserControl>
