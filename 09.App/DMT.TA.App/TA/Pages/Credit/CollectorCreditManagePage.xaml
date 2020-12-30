@@ -17,21 +17,21 @@
                   VerticalScrollBarVisibility="Auto">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="5" />
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="10" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="5" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="20" />
+                <RowDefinition Height="5" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="20" />
+                <RowDefinition Height="5" />
             </Grid.RowDefinitions>
             <!--  BALANCE AREA  -->
             <Border Grid.Row="1"
                     Grid.Column="1"
-                    Margin="5,10"
+                    Margin="5"
                     BorderBrush="Silver"
                     BorderThickness="1">
                 <DockPanel Width="300"

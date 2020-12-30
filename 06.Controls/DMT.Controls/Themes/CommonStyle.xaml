@@ -1,5 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Thickness x:Key="CommonMargin">5</Thickness>
+    <GridLength x:Key="PageMargin">5</GridLength>
     <!-- LABEL STYLE  -->
     <Style x:Key="CommonLabelStyle" TargetType="TextBlock">
         <Setter Property="Foreground" Value="White" />
