@@ -19,14 +19,14 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{StaticResource PageMargin}" />
                 <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="{StaticResource PageMargin}" />
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="{StaticResource PageMargin}" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="20" />
+                <RowDefinition Height="{StaticResource PageMargin}" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="20" />
+                <RowDefinition Height="{StaticResource PageMargin}" />
             </Grid.RowDefinitions>
             <!--  BALANCE AREA  -->
             <Border Grid.Row="1"
