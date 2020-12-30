@@ -33,7 +33,7 @@ namespace DMT.TA.Pages.Coupon
 
         #region Button Handlers
 
-        private void cmdBack_Click(object sender, RoutedEventArgs e)
+        private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
             GotoMainMenu();
         }

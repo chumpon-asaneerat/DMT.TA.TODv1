@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DMT.TA.Windows.Plaza"
         mc:Ignorable="d"
         Title="PlazaBalanceSummaryWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="DimGray">
         
     </Grid>
 </Window>
