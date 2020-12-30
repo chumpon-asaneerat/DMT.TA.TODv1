@@ -30,5 +30,30 @@ namespace DMT.TOD.Pages.TollAdmin
         }
 
         #endregion
+
+        #region Button Handlers
+
+        private void cmdCancel_Click(object sender, RoutedEventArgs e)
+        {
+            GotoMainMenu();
+        }
+
+        private void cmdOk_Click(object sender, RoutedEventArgs e)
+        {
+            GotoMainMenu();
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void GotoMainMenu()
+        {
+            // Main Menu Page
+            var page = new Menu.MainMenu();
+            PageContentManager.Instance.Current = page;
+        }
+
+        #endregion
     }
 }

@@ -35,14 +35,23 @@ namespace DMT.TOD.Pages.TollAdmin
 
         private void cmdBack_Click(object sender, RoutedEventArgs e)
         {
-            // Main Menu Page
-            var page = new Menu.MainMenu();
-            PageContentManager.Instance.Current = page;
+            GotoMainMenu();
         }
 
         private void cmdRefresh_Click(object sender, RoutedEventArgs e)
         {
             Refresh();
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void GotoMainMenu()
+        {
+            // Main Menu Page
+            var page = new Menu.MainMenu();
+            PageContentManager.Instance.Current = page;
         }
 
         #endregion
