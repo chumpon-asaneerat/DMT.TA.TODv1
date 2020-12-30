@@ -31,6 +31,7 @@
             <!--  BALANCE AREA  -->
             <Border Grid.Row="1"
                     Grid.Column="1"
+                    Margin="5,10"
                     BorderBrush="Silver"
                     BorderThickness="1">
                 <DockPanel Width="300"

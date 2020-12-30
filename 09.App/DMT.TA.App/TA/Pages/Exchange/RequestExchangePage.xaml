@@ -31,6 +31,7 @@
             <!--  BALANCE AREA  -->
             <Border Grid.Row="1"
                     Grid.Column="1"
+                    Margin="5,10"
                     BorderBrush="Silver"
                     BorderThickness="1">
                 <DockPanel Width="300"
@@ -59,7 +60,7 @@
                            VerticalAlignment="Stretch"
                            DockPanel.Dock="Bottom">
                     <Grid Width="5" DockPanel.Dock="Right" />
-                    <Button x:Name="cmdOk"
+                    <Button x:Name="cmdBack"
                             DockPanel.Dock="Right"
                             Style="{StaticResource ImageButtonStyle}">
                         <DockPanel Margin="5,0">
@@ -72,7 +73,7 @@
                         </DockPanel>
                     </Button>
                     <Grid Width="5" DockPanel.Dock="Right" />
-                    <Button x:Name="cmdAddCollector"
+                    <Button x:Name="cmdRequest"
                             DockPanel.Dock="Left"
                             Style="{StaticResource ImageButtonStyle}">
                         <DockPanel Margin="5,0">
@@ -80,7 +81,12 @@
                                 <Image Source="/DMT.TA.App;component/Images/Button/User.png" Style="{StaticResource ImageButtonImageStyle}" />
                             </Grid>
                             <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                                <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="ยกเลิก" />
+                                <TextBlock FontSize="18"
+                                           Style="{StaticResource ImageButtonTextBlockStyle}"
+                                           Text="ส่งคำร้องขอ" />
+                                <TextBlock FontSize="18"
+                                           Style="{StaticResource ImageButtonTextBlockStyle}"
+                                           Text="การแลกเปลี่ยนเงิน" />
                             </StackPanel>
                         </DockPanel>
                     </Button>
