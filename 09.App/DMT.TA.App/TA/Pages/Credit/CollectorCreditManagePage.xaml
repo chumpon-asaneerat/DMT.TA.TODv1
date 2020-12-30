@@ -61,6 +61,7 @@
                            DockPanel.Dock="Bottom">
                     <Grid Width="5" DockPanel.Dock="Right" />
                     <Button x:Name="cmdBack"
+                            Click="cmdBack_Click"
                             DockPanel.Dock="Right"
                             Style="{StaticResource ImageButtonStyle}">
                         <DockPanel Margin="5,0">
@@ -74,6 +75,7 @@
                     </Button>
                     <Grid Width="5" DockPanel.Dock="Right" />
                     <Button x:Name="cmdAddCollector"
+                            Click="cmdAddCollector_Click"
                             DockPanel.Dock="Left"
                             Style="{StaticResource ImageButtonStyle}">
                         <DockPanel Margin="5,0">
