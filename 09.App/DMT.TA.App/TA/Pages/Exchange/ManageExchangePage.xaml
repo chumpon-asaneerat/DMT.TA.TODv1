@@ -13,6 +13,7 @@
     </UserControl.Resources>
     <ScrollViewer HorizontalContentAlignment="Stretch"
                   VerticalContentAlignment="Stretch"
+                  Background="Silver"
                   HorizontalScrollBarVisibility="Auto"
                   VerticalScrollBarVisibility="Auto">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
