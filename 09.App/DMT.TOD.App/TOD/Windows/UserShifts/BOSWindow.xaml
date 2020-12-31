@@ -19,10 +19,10 @@
     </Window.Resources>
     <ScrollViewer HorizontalContentAlignment="Stretch"
                   VerticalContentAlignment="Stretch"
+                  Background="DimGray"
                   HorizontalScrollBarVisibility="Auto"
                   VerticalScrollBarVisibility="Auto">
-        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-              Background="DimGray">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{StaticResource PageMargin}" />
                 <ColumnDefinition Width="*" />
