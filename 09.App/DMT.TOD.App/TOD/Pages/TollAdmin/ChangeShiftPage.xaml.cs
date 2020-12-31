@@ -55,5 +55,18 @@ namespace DMT.TOD.Pages.TollAdmin
         }
 
         #endregion
+
+        #region Public Methods
+
+        public void Setup(User user)
+        {
+            List<SCWJob> jobs = new List<SCWJob>();
+            jobs.Add(new SCWJob() { staffId = "00111", laneId = 1 });
+            jobs.Add(new SCWJob() { staffId = "00111", laneId = 2 });
+            jobs.Add(new SCWJob() { staffId = "00111", laneId = 3 });
+            lvJobs.ItemsSource = jobs;
+        }
+
+        #endregion
     }
 }

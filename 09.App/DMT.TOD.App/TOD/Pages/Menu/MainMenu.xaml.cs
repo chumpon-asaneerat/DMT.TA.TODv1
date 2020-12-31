@@ -123,7 +123,7 @@ namespace DMT.TOD.Pages.Menu
 
             // Change Shift Page
             var page = new TollAdmin.ChangeShiftPage();
-            //page.Setup(user);
+            page.Setup(user);
             PageContentManager.Instance.Current = page;
         }
 

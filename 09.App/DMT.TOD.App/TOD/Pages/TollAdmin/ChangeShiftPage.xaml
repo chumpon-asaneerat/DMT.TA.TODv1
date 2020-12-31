@@ -11,11 +11,7 @@
         <!--  IMAGE BUTTON STYLE  -->
         <sys:Double x:Key="ImageButtonWidth">250</sys:Double>
     </UserControl.Resources>
-    <ScrollViewer HorizontalContentAlignment="Stretch"
-                  VerticalContentAlignment="Stretch"
-                  Background="Silver"
-                  HorizontalScrollBarVisibility="Auto"
-                  VerticalScrollBarVisibility="Auto">
+    <Grid Background="Silver">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{StaticResource PageMargin}" />
@@ -87,14 +83,35 @@
                                    Style="{StaticResource CommonLabelStyle}"
                                    Text="รายการกะที่ยังไม่ได้ทำการป้อนรายได้" />
                     </Border>
-                    <Border Background="Silver"
-                            BorderBrush="Silver"
-                            BorderThickness="1">
-                        <!--  LANE VIEW  -->
-                        <ListView />
-                    </Border>
+                    <!--  LANE VIEW  -->
+                    <ListView x:Name="lvJobs"
+                              FontSize="{StaticResource CommonFontSize}"
+                              ItemsSource="{Binding}"
+                              VirtualizingPanel.IsVirtualizing="True"
+                              VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                              VirtualizingPanel.VirtualizationMode="Recycling">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="220"
+                                                DisplayMemberBinding="{Binding Path=BeginDateTimeString}"
+                                                Header="วัน/เวลา เปิดการทำงาน" />
+                                <GridViewColumn Width="220"
+                                                DisplayMemberBinding="{Binding Path=EndDateTimeString}"
+                                                Header="วัน/เวลา จบการทำงาน" />
+                                <GridViewColumn Width="100"
+                                                DisplayMemberBinding="{Binding Path=staffId}"
+                                                Header="รหัสพนักงาน" />
+                                <GridViewColumn Width="250"
+                                                DisplayMemberBinding="{Binding Path=FullNameEN}"
+                                                Header="ชื่อพนักงาน" />
+                                <GridViewColumn Width="150"
+                                                DisplayMemberBinding="{Binding Path=laneId}"
+                                                Header="เลน" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </DockPanel>
             </DockPanel>
         </Grid>
-    </ScrollViewer>
+    </Grid>
 </UserControl>

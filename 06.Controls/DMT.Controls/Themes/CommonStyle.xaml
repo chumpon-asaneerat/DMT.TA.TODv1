@@ -1,22 +1,24 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
     
     <Thickness x:Key="CommonMargin">5</Thickness>
     <GridLength x:Key="PageMargin">5</GridLength>
+    <sys:Double x:Key="CommonFontSize">18</sys:Double>
     <!-- LABEL STYLE  -->
     <Style x:Key="CommonLabelStyle" TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Foreground" Value="White" />
-        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontSize" Value="{StaticResource CommonFontSize}" />
     </Style>
     <!-- TEXT BOX STYLE  -->
     <Style x:Key="CommonTextBoxStyle" TargetType="TextBox">
-        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontSize" Value="{StaticResource CommonFontSize}" />
         <Setter Property="TextAlignment" Value="Center" />
     </Style>
     <!-- PASSWORD BOX STYLE  -->
     <Style x:Key="CommonPwdBoxStyle" TargetType="PasswordBox">
-        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontSize" Value="{StaticResource CommonFontSize}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
     </Style>
     <!-- ERROR MESSAGE STYLE  -->
@@ -29,7 +31,7 @@
     </Style>
     <!-- COMBO BOX STYLE  -->
     <Style x:Key="CommonComboBoxStyle" TargetType="ComboBox">
-        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontSize" Value="{StaticResource CommonFontSize}" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
