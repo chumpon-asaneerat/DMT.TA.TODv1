@@ -11,11 +11,7 @@
         <!--  IMAGE BUTTON STYLE  -->
         <sys:Double x:Key="ImageButtonWidth">250</sys:Double>
     </UserControl.Resources>
-    <ScrollViewer HorizontalContentAlignment="Stretch"
-                  VerticalContentAlignment="Stretch"
-                  Background="Silver"
-                  HorizontalScrollBarVisibility="Auto"
-                  VerticalScrollBarVisibility="Auto">
+    <Grid Background="Silver">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{StaticResource PageMargin}" />
@@ -70,5 +66,5 @@
                 <Grid />
             </DockPanel>
         </Grid>
-    </ScrollViewer>
+    </Grid>
 </UserControl>
