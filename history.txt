@@ -35,11 +35,12 @@
         - BOJ/EOJ (Lane) Operation.
         - EMV/QRCode (Lane) Operation.
 --------------------------------------------------------------------------------------------
-Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #540
-- 
-
+[commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #539
-- 
+- DMT.TAxTODv1
+  - DMT.TOD.App project.
+    - JobListPage set ScrollViewer background color.
+    - EMVQRCodeListPage set ScrollViewer background color.
 
 [commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #538
