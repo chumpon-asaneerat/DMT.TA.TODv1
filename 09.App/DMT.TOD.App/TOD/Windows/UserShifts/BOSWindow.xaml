@@ -37,15 +37,6 @@
                        Grid.Column="1"
                        HorizontalAlignment="Stretch"
                        VerticalAlignment="Stretch">
-                <StackPanel Margin="5"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            DockPanel.Dock="Top"
-                            Orientation="Horizontal">
-                    <Border Background="DimGray"
-                            BorderBrush="DimGray"
-                            BorderThickness="1" />
-                </StackPanel>
                 <!--  BUTTONS  -->
                 <DockPanel Height="60"
                            HorizontalAlignment="Stretch"
