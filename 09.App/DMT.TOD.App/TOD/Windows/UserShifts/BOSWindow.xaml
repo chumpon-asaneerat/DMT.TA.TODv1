@@ -17,11 +17,7 @@
         <!--  IMAGE BUTTON STYLE  -->
         <sys:Double x:Key="ImageButtonWidth">250</sys:Double>
     </Window.Resources>
-    <ScrollViewer HorizontalContentAlignment="Stretch"
-                  VerticalContentAlignment="Stretch"
-                  Background="DimGray"
-                  HorizontalScrollBarVisibility="Auto"
-                  VerticalScrollBarVisibility="Auto">
+    <Grid Background="DimGray">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="{StaticResource PageMargin}" />
@@ -74,5 +70,5 @@
                 <Grid />
             </DockPanel>
         </Grid>
-    </ScrollViewer>
+    </Grid>
 </Window>
