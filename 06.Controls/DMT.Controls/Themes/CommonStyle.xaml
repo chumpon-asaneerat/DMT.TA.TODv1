@@ -5,6 +5,7 @@
     <GridLength x:Key="PageMargin">5</GridLength>
     <!-- LABEL STYLE  -->
     <Style x:Key="CommonLabelStyle" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="FontSize" Value="18" />
     </Style>
@@ -25,5 +26,14 @@
         <Setter Property="FontWeight" Value="ExtraBold" />
         <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+    </Style>
+    <!-- COMBO BOX STYLE  -->
+    <Style x:Key="CommonComboBoxStyle" TargetType="ComboBox">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
 </ResourceDictionary>

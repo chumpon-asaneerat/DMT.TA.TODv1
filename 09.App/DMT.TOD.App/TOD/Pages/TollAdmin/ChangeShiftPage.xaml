@@ -13,6 +13,7 @@
     </UserControl.Resources>
     <ScrollViewer HorizontalContentAlignment="Stretch"
                   VerticalContentAlignment="Stretch"
+                  Background="Silver"
                   HorizontalScrollBarVisibility="Auto"
                   VerticalScrollBarVisibility="Auto">
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -35,6 +36,17 @@
                            HorizontalAlignment="Stretch"
                            VerticalAlignment="Stretch"
                            DockPanel.Dock="Bottom">
+                    <TextBlock Width="100"
+                               Margin="5,0"
+                               Foreground="Black"
+                               Style="{StaticResource CommonLabelStyle}"
+                               Text="กะถัดไปคือ"
+                               TextAlignment="Right" />
+                    <ComboBox x:Name="cbShifts"
+                              Width="140"
+                              DisplayMemberPath="ShiftNameTH"
+                              SelectedValuePath="ShiftId"
+                              Style="{StaticResource CommonComboBoxStyle}" />
                     <Grid Width="5" DockPanel.Dock="Right" />
                     <Button x:Name="cmdOk"
                             Click="cmdOk_Click"
@@ -66,7 +78,22 @@
                     <Grid />
                 </DockPanel>
                 <!--  WORK AREA  -->
-                <Grid />
+                <DockPanel LastChildFill="True">
+                    <Border Background="CornflowerBlue"
+                            BorderBrush="Silver"
+                            BorderThickness="1"
+                            DockPanel.Dock="Top">
+                        <TextBlock Margin="5"
+                                   Style="{StaticResource CommonLabelStyle}"
+                                   Text="รายการกะที่ยังไม่ได้ทำการป้อนรายได้" />
+                    </Border>
+                    <Border Background="Silver"
+                            BorderBrush="Silver"
+                            BorderThickness="1">
+                        <!--  LANE VIEW  -->
+                        <ListView />
+                    </Border>
+                </DockPanel>
             </DockPanel>
         </Grid>
     </ScrollViewer>
