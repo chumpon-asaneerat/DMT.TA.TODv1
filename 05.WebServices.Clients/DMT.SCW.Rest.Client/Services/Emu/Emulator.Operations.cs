@@ -14,50 +14,50 @@ namespace DMT.Services.Operations
         public static partial class Emulator
         {
             /// <summary>
-            /// Execute cheifOnDuty api.
+            /// Execute boj api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of SCWChiefOnDutyResult.</returns>
-            public static SCWChiefOnDutyResult cheifOnDuty(SCWChiefOnDuty value)
+            /// <returns>Returns instance of SCWBOJResult.</returns>
+            public static SCWBOJResult boj(SCWBOJ value)
             {
-                var ret = Execute<SCWChiefOnDutyResult>(
-                    RouteConsts.SCW.TOD.cheifOnDuty.Url, value);
+                var ret = Execute<SCWBOJResult>(
+                    RouteConsts.SCW.Emulator.boj.Url, value);
                 return ret;
             }
 
             /// <summary>
-            /// Execute saveCheifDuty api.
+            /// Execute eoj api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of SCWSaveChiefDutyResult.</returns>
-            public static SCWSaveChiefDutyResult saveCheifDuty(SCWSaveChiefDuty value)
+            /// <returns>Returns instance of SCWEOJResult.</returns>
+            public static SCWEOJResult eoj(SCWEOJ value)
             {
-                var ret = Execute<SCWSaveChiefDutyResult>(
-                    RouteConsts.SCW.TOD.saveCheifDuty.Url, value);
+                var ret = Execute<SCWEOJResult>(
+                    RouteConsts.SCW.Emulator.eoj.Url, value);
                 return ret;
             }
 
             /// <summary>
-            /// Execute jobList api.
+            /// Execute removeJobs api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of SCWJobListResult.</returns>
-            public static SCWJobListResult jobList(SCWJobList value)
+            /// <returns>Returns instance of SCWRemoveJobsResult.</returns>
+            public static SCWRemoveJobsResult removeJobs(SCWRemoveJobs value)
             {
-                var ret = Execute<SCWJobListResult>(
-                    RouteConsts.SCW.TOD.jobList.Url, value);
+                var ret = Execute<SCWRemoveJobsResult>(
+                    RouteConsts.SCW.Emulator.removeJobs.Url, value);
                 return ret;
             }
 
             /// <summary>
-            /// Execute jobList2 api.
+            /// Execute clearJobs api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of SCWJobList2Result.</returns>
-            public static SCWJobList2Result jobList2(SCWJobList2 value)
+            /// <returns>Returns instance of SCWClearJobsResult.</returns>
+            public static SCWClearJobsResult clearJobs(SCWClearJobs value)
             {
-                var ret = Execute<SCWJobList2Result>(
-                    RouteConsts.SCW.TOD.jobList2.Url, value);
+                var ret = Execute<SCWClearJobsResult>(
+                    RouteConsts.SCW.Emulator.clearJobs.Url, value);
                 return ret;
             }
 
@@ -70,7 +70,7 @@ namespace DMT.Services.Operations
                 SCWEMVTransactionList value)
             {
                 var ret = Execute<SCWEMVTransactionListResult>(
-                    RouteConsts.SCW.TOD.emvTransactionList.Url, value);
+                    RouteConsts.SCW.Emulator.emvTransactionList.Url, value);
                 return ret;
             }
 
@@ -83,7 +83,7 @@ namespace DMT.Services.Operations
                 SCWQRCodeTransactionList value)
             {
                 var ret = Execute<SCWQRCodeTransactionListResult>(
-                    RouteConsts.SCW.TOD.qrcodeTransactionList.Url, value);
+                    RouteConsts.SCW.Emulator.qrcodeTransactionList.Url, value);
                 return ret;
             }
 
@@ -95,7 +95,7 @@ namespace DMT.Services.Operations
             public static SCWDeclareResult declare(SCWDeclare value)
             {
                 var ret = Execute<SCWDeclareResult>(
-                    RouteConsts.SCW.TOD.declare.Url, value);
+                    RouteConsts.SCW.Emulator.declare.Url, value);
                 return ret;
             }
         }
