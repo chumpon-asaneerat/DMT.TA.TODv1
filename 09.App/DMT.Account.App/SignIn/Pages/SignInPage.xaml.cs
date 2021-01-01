@@ -81,6 +81,8 @@ namespace DMT.Pages
             }
             else
             {
+                if (string.IsNullOrWhiteSpace(SmartcardManager.Instance.CardId))
+                    return;
                 ShowError("ไม่พบข้อมูลบัตรพนักงานในระบบ");
             }
         }
