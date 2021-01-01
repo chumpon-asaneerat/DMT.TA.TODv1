@@ -76,8 +76,7 @@
                   HorizontalScrollBarVisibility="Auto"
                   VerticalScrollBarVisibility="Auto">
         <Grid HorizontalAlignment="Center"
-              VerticalAlignment="Center"
-              Background="DimGray">
+              VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="20" />
                 <RowDefinition Height="Auto" />
