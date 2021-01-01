@@ -137,6 +137,7 @@
     <Compile Include="Models\SCW\SCWCouponList.cs" />
     <Compile Include="Models\SCW\SCWCurrencyDemonList.cs" />
     <Compile Include="Models\SCW\SCWDeclare.cs" />
+    <Compile Include="Models\SCW\SCWEmulators.cs" />
     <Compile Include="Models\SCW\SCWEMVTransactionList.cs" />
     <Compile Include="Models\SCW\SCWJobList.cs" />
     <Compile Include="Models\SCW\SCWJobList2.cs" />
