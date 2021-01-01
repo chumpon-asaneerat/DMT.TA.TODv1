@@ -98,6 +98,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="StatusBar\Elements\AppInfoStatus.xaml.cs">
+      <DependentUpon>AppInfoStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBar\Elements\ClientInfoStatus.xaml.cs">
+      <DependentUpon>ClientInfoStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBar\Elements\TAServerStatus.xaml.cs">
+      <DependentUpon>TAServerStatus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBar\AccountStatusBar.xaml.cs">
+      <DependentUpon>AccountStatusBar.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -110,6 +122,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="StatusBar\Elements\AppInfoStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusBar\Elements\ClientInfoStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusBar\Elements\TAServerStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StatusBar\AccountStatusBar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -216,7 +244,6 @@
     <Folder Include="Account\Pages\" />
     <Folder Include="Header\" />
     <Folder Include="SignIn\" />
-    <Folder Include="StatusBar\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
