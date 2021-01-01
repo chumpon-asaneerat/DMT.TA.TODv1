@@ -29,6 +29,36 @@ namespace DMT.Account.Pages.Menu
 
         #region Button Handlers
 
+        private void cmdCreditAndCouponSummary_Click(object sender, RoutedEventArgs e)
+        {
+            // TSB Credit and Coupon Summary
+        }
+
+        private void cndRequestExchangeHistory_Click(object sender, RoutedEventArgs e)
+        {
+            // TSB Request Exchange History
+        }
+
+        private void cmdTSBBalanceSummary_Click(object sender, RoutedEventArgs e)
+        {
+            // TSB Balance Summary
+        }
+
+        private void cndRequestExchangeManage_Click(object sender, RoutedEventArgs e)
+        {
+            // TSB Request Exchange Management
+        }
+
+        private void cndCouponSoldHistory_Click(object sender, RoutedEventArgs e)
+        {
+            // Coupon Sold History
+        }
+
+        private void cndExit_Click(object sender, RoutedEventArgs e)
+        {
+            // Exit
+        }
+
         #endregion
     }
 }
