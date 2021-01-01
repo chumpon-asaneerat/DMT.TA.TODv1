@@ -68,7 +68,7 @@ namespace DMT
 
         private void cmdLaneActivity_Click(object sender, RoutedEventArgs e)
         {
-            //PageContentManager.Instance.Current = new Simulator.Pages.LaneActivityPage();
+            PageContentManager.Instance.Current = new Simulator.Pages.LaneActivityPage();
         }
 
         private void cmdUserView_Click(object sender, RoutedEventArgs e)
