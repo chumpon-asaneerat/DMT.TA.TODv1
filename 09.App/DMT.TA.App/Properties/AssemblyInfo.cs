@@ -7,13 +7,13 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DMT Toll Admin Applicaton")]
-[assembly: AssemblyDescription("The DMT Toll Admin Applicaton.")]
+[assembly: AssemblyTitle("DMT Toll Admin (Plaza) Applicaton")]
+[assembly: AssemblyDescription("The DMT Toll Admin (Plaza) Applicaton.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Softbase Co., Ltd.")]
-[assembly: AssemblyProduct("The DMT Toll Admin Applicaton.")]
+[assembly: AssemblyProduct("The DMT Toll Admin (Plaza) Applicaton.")]
 [assembly: AssemblyCopyright("Copyright ©Softbase Co., Ltd. 2020")]
-[assembly: AssemblyTrademark("The DMT Toll Admin Applicaton.")]
+[assembly: AssemblyTrademark("The DMT Toll Admin (Plaza) Applicaton.")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
