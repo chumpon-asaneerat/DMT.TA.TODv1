@@ -100,12 +100,84 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\Logo\tollway.png" />
+    <Resource Include="Images\Button\User.png" />
+    <Resource Include="Images\Button\search3.png" />
+    <Resource Include="Images\Button\search2.png" />
+    <Resource Include="Images\Button\search.png" />
+    <Resource Include="Images\Button\Save2.png" />
+    <Resource Include="Images\Button\Save.png" />
+    <Resource Include="Images\Button\Return.png" />
+    <Resource Include="Images\Button\Rejected5.png" />
+    <Resource Include="Images\Button\Rejected4.png" />
+    <Resource Include="Images\Button\Rejected3.png" />
+    <Resource Include="Images\Button\Rejected2.png" />
+    <Resource Include="Images\Button\Rejected.png" />
+    <Resource Include="Images\Button\Refresh.png" />
+    <Resource Include="Images\Button\Printer3.png" />
+    <Resource Include="Images\Button\Printer2.png" />
+    <Resource Include="Images\Button\Printer.png" />
+    <Resource Include="Images\Button\OK2.png" />
+    <Resource Include="Images\Button\OK.png" />
+    <Resource Include="Images\Button\next.png" />
+    <Resource Include="Images\Button\Money2.png" />
+    <Resource Include="Images\Button\Money.png" />
+    <Resource Include="Images\Button\Home.png" />
+    <Resource Include="Images\Button\Edit.png" />
+    <Resource Include="Images\Button\Clear2.png" />
+    <Resource Include="Images\Button\Cancel2.png" />
+    <Resource Include="Images\Button\Cancel.png" />
+    <Resource Include="Images\Button\Back3.png" />
+    <Resource Include="Images\Button\back.png" />
+    <Resource Include="Images\Button\Approved5.png" />
+    <Resource Include="Images\Button\Approved4.png" />
+    <Resource Include="Images\Button\Approved3.png" />
+    <Resource Include="Images\Button\Approved2.png" />
+    <Resource Include="Images\Button\Approved.png" />
+    <Resource Include="Images\Button\Approve.png" />
+    <Resource Include="Images\Background\snartcard.png" />
     <Content Include="MasterCom.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="MasterRD.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\00.NLib\NLib.Reports\NLib.Reports.csproj">
+      <Project>{5879d92a-f850-4a70-8d88-99d29f6a46f3}</Project>
+      <Name>NLib.Reports</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\00.NLib\NLib\NLib.csproj">
+      <Project>{41a9d6c0-c833-403f-9bc1-eecdc246a428}</Project>
+      <Name>NLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\01.Core\DMT.Core\DMT.Core.csproj">
+      <Project>{db7fb4b5-3662-479e-a7da-26b73611bfd4}</Project>
+      <Name>DMT.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\02.Models\DMT.Models\DMT.Models.csproj">
+      <Project>{7d584f0a-920f-4be1-8652-3527fd7a5c27}</Project>
+      <Name>DMT.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\03.WebServices.Core\DMT.Rest.Client\DMT.Rest.Client.csproj">
+      <Project>{26ba4314-6b80-4a59-9e0d-7c29919bbc6f}</Project>
+      <Name>DMT.Rest.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\05.WebServices.Clients\DMT.TAxTOD.Rest.Client\DMT.TAxTOD.Rest.Client.csproj">
+      <Project>{78d73003-864f-4c0e-81f2-21f721388f4d}</Project>
+      <Name>DMT.TAxTOD.Rest.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\06.Controls\DMT.Controls\DMT.Controls.csproj">
+      <Project>{aeed7b1c-4e56-4d44-bbd1-a936be653d4d}</Project>
+      <Name>DMT.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Account\" />
+    <Folder Include="Header\" />
+    <Folder Include="SignIn\" />
+    <Folder Include="StatusBar\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
