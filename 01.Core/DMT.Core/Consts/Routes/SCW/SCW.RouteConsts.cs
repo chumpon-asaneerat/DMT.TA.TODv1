@@ -36,6 +36,13 @@ namespace DMT
                 /// <summary>Gets route url.</summary>
                 public const string Url = SCW.Url;
             }
+
+            /// <summary>The Emulator class.</summary>
+            public static partial class Emulator
+            {
+                /// <summary>Gets route url.</summary>
+                public const string Url = @"dmt-scw/api/emu";
+            }
         }
     }
 }

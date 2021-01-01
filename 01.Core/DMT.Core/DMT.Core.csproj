@@ -80,6 +80,7 @@
     <Compile Include="Consts\Routes\Local\Shift\Actions\TSB\Change.cs" />
     <Compile Include="Consts\Routes\Local\Shift\Actions\TSB\Current.cs" />
     <Compile Include="Consts\Routes\Local\Shift\Shift.Controller.cs" />
+    <Compile Include="Consts\Routes\SCW\Emu\SCW.Emulator.RouteConsts.cs" />
     <Compile Include="Consts\Routes\SCW\Master\SCW.Master.RouteConsts.cs" />
     <Compile Include="Consts\Routes\SCW\SCW.RouteConsts.cs" />
     <Compile Include="Consts\Routes\SCW\Security\SCW.Security.RouteConsts.cs" />
