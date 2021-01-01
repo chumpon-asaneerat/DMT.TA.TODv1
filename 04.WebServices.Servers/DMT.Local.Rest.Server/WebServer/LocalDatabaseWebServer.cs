@@ -463,6 +463,7 @@ namespace DMT.Services
             }
 
             // Start rabbit service.
+            RabbitMQService.Instance.RabbitMQ = PlazaServiceConfigManager.Instance.RabbitMQ;
             RabbitMQService.Instance.Start();
             if (RabbitMQService.Instance.Connected)
             {

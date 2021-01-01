@@ -1146,6 +1146,7 @@ namespace DMT.Services
         public AccountAppPlazaConfig() : base()
         {
             this.DMT = new DMTConfig();
+            this.RabbitMQ = new RabbitMQServiceConfig();
             this.SCW = new SCWWebServiceConfig();
             this.TAxTOD = new TAxTODWebServiceConfig();
         }
@@ -1181,6 +1182,16 @@ namespace DMT.Services
                 code += string.Format("DMT: {0}",
                     this.DMT.GetString()) + Environment.NewLine;
             }
+            // RabbitMQ
+            if (null == this.RabbitMQ)
+            {
+                code += "RabbitMQ: null" + Environment.NewLine;
+            }
+            else
+            {
+                code += string.Format("RabbitMQ: {0}",
+                    this.RabbitMQ.GetString()) + Environment.NewLine;
+            }
             // SCW server
             if (null == this.SCW)
             {
@@ -1212,6 +1223,10 @@ namespace DMT.Services
         /// Gets or sets DMT Config.
         /// </summary>
         public DMTConfig DMT { get; set; }
+        /// <summary>
+        /// Gets or sets Rabbit MQ Service Config.
+        /// </summary>
+        public RabbitMQServiceConfig RabbitMQ { get; set; }
         /// <summary>
         /// Gets or sets SCW Service Config.
         /// </summary>
@@ -1983,7 +1998,7 @@ namespace DMT.Services
     /// Account Config Manager class.
     /// </summary>
     public class AccountConfigManager : JsonConfigFileManger<AccountAppPlazaConfig>,
-        IDMTConfig, ITAxTODConfig, ISCWConfig
+        IDMTConfig, IRabbitMQConfig, ITAxTODConfig, ISCWConfig
     {
         #region Static Instance Access
 
@@ -2054,6 +2069,17 @@ namespace DMT.Services
             {
                 if (null == Value) LoadConfig();
                 return (null != Value) ? Value.DMT : null;
+            }
+        }
+        /// <summary>
+        /// Gets RabbitMQ Config.
+        /// </summary>
+        public RabbitMQServiceConfig RabbitMQ
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.RabbitMQ : null;
             }
         }
         /// <summary>

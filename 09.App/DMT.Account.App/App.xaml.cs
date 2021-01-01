@@ -87,6 +87,9 @@ namespace DMT
 
             #endregion
 
+            // Start log manager
+            LogManager.Instance.Start();
+
             // Start local database (account).
             Services.AccountDbServer.Instance.Start();
 
@@ -97,11 +100,12 @@ namespace DMT
             Services.Operations.SCW.Config = Services.AccountConfigManager.Instance;
             Services.Operations.SCW.DMT = Services.AccountConfigManager.Instance; // required for NetworkId
 
+            // Start RabbitMQ
+            Services.RabbitMQService.Instance.RabbitMQ = Services.AccountConfigManager.Instance.RabbitMQ;
+            Services.RabbitMQService.Instance.Start();
+
             Window window = null;
             window = new MainWindow();
-
-            // Start log manager
-            LogManager.Instance.Start();
 
             if (null != window)
             {
@@ -114,6 +118,9 @@ namespace DMT
         /// <param name="e"></param>
         protected override void OnExit(ExitEventArgs e)
         {
+            // Shutdown RabbitMQ.
+            Services.RabbitMQService.Instance.Shutdown();
+
             // Shutdown local database (account).
             Services.AccountDbServer.Instance.Shutdown();
 

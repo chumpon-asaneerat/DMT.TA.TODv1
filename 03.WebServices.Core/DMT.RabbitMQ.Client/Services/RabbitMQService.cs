@@ -150,28 +150,26 @@ namespace DMT.Services
             // Init Rabbit Client
             if (null == rabbitClient)
             {
-                var MQConfig = (null != PlazaServiceConfigManager.Instance.RabbitMQ) ?
-                    PlazaServiceConfigManager.Instance.RabbitMQ : null;
-                if (null != MQConfig && MQConfig.Enabled)
+                if (null != RabbitMQ && RabbitMQ.Enabled)
                 {
-                    med.Info("Rabbit Host Info: " + MQConfig.GetString());
+                    med.Info("Rabbit Host Info: " + RabbitMQ.GetString());
                     try
                     {
                         rabbitClient = new RabbitMQClient();
-                        rabbitClient.HostName = MQConfig.HostName;
-                        rabbitClient.PortNumber = MQConfig.PortNumber;
-                        rabbitClient.VirtualHost = MQConfig.VirtualHost;
-                        rabbitClient.UserName = MQConfig.UserName;
-                        rabbitClient.Password = MQConfig.Password;
+                        rabbitClient.HostName = RabbitMQ.HostName;
+                        rabbitClient.PortNumber = RabbitMQ.PortNumber;
+                        rabbitClient.VirtualHost = RabbitMQ.VirtualHost;
+                        rabbitClient.UserName = RabbitMQ.UserName;
+                        rabbitClient.Password = RabbitMQ.Password;
                         rabbitClient.OnMessageArrived += RabbitClient_OnMessageArrived;
-                        if (rabbitClient.Connect() && rabbitClient.Listen(MQConfig.QueueName))
+                        if (rabbitClient.Connect() && rabbitClient.Listen(RabbitMQ.QueueName))
                         {
-                            med.Info("Success connected to : " + MQConfig.GetString());
-                            med.Info("Listen to Queue: " + MQConfig.QueueName);
+                            med.Info("Success connected to : " + RabbitMQ.GetString());
+                            med.Info("Listen to Queue: " + RabbitMQ.QueueName);
                         }
                         else
                         {
-                            med.Err("failed connected to : " + MQConfig.HostName);
+                            med.Err("failed connected to : " + RabbitMQ.HostName);
                         }
 
                     }
@@ -212,6 +210,10 @@ namespace DMT.Services
         {
             get { return (null != rabbitClient && rabbitClient.Connected); }
         }
+        /// <summary>
+        /// Gets or sets RabbitMQ Service Config.
+        /// </summary>
+        public RabbitMQServiceConfig RabbitMQ { get; set; }
 
         #endregion
     }
