@@ -88,14 +88,10 @@ namespace DMT
             #endregion
 
             // Load Config service.
-            /*
-            Services.TAConfigManager.Instance.LoadConfig();
-            // Setup config reference to all rest client class.
-            Services.Operations.Plaza.Config = Services.TAConfigManager.Instance;
-            Services.Operations.Plaza.DMT = Services.TAConfigManager.Instance; // required for NetworkId
-            Services.Operations.SCW.Config = Services.TAConfigManager.Instance;
-            Services.Operations.SCW.DMT = Services.TAConfigManager.Instance; // required for NetworkId
-            */
+            Services.AccountConfigManager.Instance.LoadConfig();
+            Services.Operations.TAxTOD.Config = Services.AccountConfigManager.Instance;
+            Services.Operations.TAxTOD.DMT = Services.AccountConfigManager.Instance; // required for NetworkId
+
             Window window = null;
             window = new MainWindow();
 

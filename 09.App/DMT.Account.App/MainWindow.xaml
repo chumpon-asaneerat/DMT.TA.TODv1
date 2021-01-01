@@ -5,6 +5,7 @@
         xmlns:ctrl="clr-namespace:DMT.Controls"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="DMT - Toll Admin (Account)"
+        Icon="app.ico"
         Width="1200"
         Height="750"
         Loaded="Window_Loaded"
@@ -14,9 +15,7 @@
         mc:Ignorable="d">
     <Grid Background="DimGray">
         <DockPanel LastChildFill="True">
-            <!--
-            <ctrl:TAHeader Height="100" DockPanel.Dock="Top" />
-            -->
+            <ctrl:AccountHeader Height="100" DockPanel.Dock="Top" />
             <ctrl:AccountStatusBar Height="30" DockPanel.Dock="Bottom" />
             <ContentPresenter x:Name="container" />
         </DockPanel>

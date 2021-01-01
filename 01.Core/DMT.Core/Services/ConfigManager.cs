@@ -1130,6 +1130,87 @@ namespace DMT.Services
 
     #endregion
 
+    #region AccountAppPlazaConfig (Combine configuration used in TA Account applicaltion)
+
+    /// <summary>
+    /// The AccountAppPlazaConfig class.
+    /// </summary>
+    [JsonObject(MemberSerialization.OptOut)]
+    public class AccountAppPlazaConfig
+    {
+        #region Constructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public AccountAppPlazaConfig() : base()
+        {
+            this.DMT = new DMTConfig();
+            this.TAxTOD = new TAxTODWebServiceConfig();
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// IsEquals.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public bool IsEquals(object obj)
+        {
+            if (null == obj || !(obj is TAAppPlazaConfig)) return false;
+            return this.GetString() == (obj as TAAppPlazaConfig).GetString();
+        }
+        /// <summary>
+        /// GetString.
+        /// </summary>
+        /// <returns></returns>
+        public string GetString()
+        {
+            string code = string.Empty;
+            // Application
+            if (null == this.DMT)
+            {
+                code += "DMT: null" + Environment.NewLine;
+            }
+            else
+            {
+                code += string.Format("DMT: {0}",
+                    this.DMT.GetString()) + Environment.NewLine;
+            }
+            // TAxTOD Server
+            if (null == this.TAxTOD)
+            {
+                code += "TAxTOD: null" + Environment.NewLine;
+            }
+            else
+            {
+                code += string.Format("TAxTOD: {0}",
+                    this.TAxTOD.GetString()) + Environment.NewLine;
+            }
+            return code;
+        }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets DMT Config.
+        /// </summary>
+        public DMTConfig DMT { get; set; }
+        /// <summary>
+        /// Gets or sets TAxTOD Service Config.
+        /// </summary>
+        public TAxTODWebServiceConfig TAxTOD { get; set; }
+
+        #endregion
+    }
+
+    #endregion
+
     #endregion
 
     #region Plaza Config and related interfaces
@@ -1873,6 +1954,102 @@ namespace DMT.Services
             {
                 if (null == Value) LoadConfig();
                 return (null != Value) ? Value.TODApp : null;
+            }
+        }
+
+        #endregion
+    }
+
+    #endregion
+
+    #region AccountConfigManager
+
+    /// <summary>
+    /// Account Config Manager class.
+    /// </summary>
+    public class AccountConfigManager : JsonConfigFileManger<AccountAppPlazaConfig>,
+        IDMTConfig, ITAxTODConfig
+    {
+        #region Static Instance Access
+
+        private static AccountConfigManager _instance = null;
+
+        /// <summary>
+        /// Gets ConfigManager instance access.
+        /// </summary>
+        public static AccountConfigManager Instance
+        {
+            get
+            {
+                if (null == _instance)
+                {
+                    lock (typeof(TAConfigManager))
+                    {
+                        _instance = new AccountConfigManager();
+                    }
+                }
+                return _instance;
+            }
+        }
+
+        #endregion
+
+        #region Internal Variables
+
+        private string _fileName = NJson.LocalConfigFile("Account.app.config.json");
+
+        #endregion
+
+        #region Constructor and Destructor
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        private AccountConfigManager() : base()
+        {
+
+        }
+        /// <summary>
+        /// Destructor.
+        /// </summary>
+        ~AccountConfigManager()
+        {
+            //Shutdown();
+        }
+
+        #endregion
+
+        #region Override Methods and Properties
+
+        /// <summary>
+        /// Gets Config File Name.
+        /// </summary>
+        public override string FileName { get { return _fileName; } }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets DMT Config.
+        /// </summary>
+        public DMTConfig DMT
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.DMT : null;
+            }
+        }
+        /// <summary>
+        /// Gets TAxTOD Config.
+        /// </summary>
+        public TAxTODWebServiceConfig TAxTOD
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.TAxTOD : null;
             }
         }
 

@@ -41,6 +41,9 @@
   <PropertyGroup>
     <StartupObject>DMT.App</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Owin">
       <HintPath>..\..\References\Microsoft.Owin.dll</HintPath>
@@ -98,6 +101,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Header\CurrentAccount.cs" />
+    <Compile Include="Header\Elements\HeaderDateTime.xaml.cs">
+      <DependentUpon>HeaderDateTime.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\Elements\HeaderLogo.xaml.cs">
+      <DependentUpon>HeaderLogo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\Elements\HeaderUser.xaml.cs">
+      <DependentUpon>HeaderUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Header\AccountHeader.xaml.cs">
+      <DependentUpon>AccountHeader.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StatusBar\Elements\AppInfoStatus.xaml.cs">
       <DependentUpon>AppInfoStatus.xaml</DependentUpon>
     </Compile>
@@ -110,6 +126,22 @@
     <Compile Include="StatusBar\AccountStatusBar.xaml.cs">
       <DependentUpon>AccountStatusBar.xaml</DependentUpon>
     </Compile>
+    <Page Include="Header\Elements\HeaderDateTime.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\Elements\HeaderLogo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\Elements\HeaderUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Header\AccountHeader.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -167,6 +199,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="app.ico" />
     <Resource Include="Images\Logo\tollway.png" />
     <Resource Include="Images\Button\User.png" />
     <Resource Include="Images\Button\search3.png" />
@@ -242,7 +275,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\Pages\" />
-    <Folder Include="Header\" />
     <Folder Include="SignIn\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

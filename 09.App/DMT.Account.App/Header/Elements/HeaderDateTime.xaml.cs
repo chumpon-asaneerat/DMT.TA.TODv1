@@ -6,23 +6,24 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Threading;
 
-using DMT.Services;
+//using NLib.Services;
+//using DMT.Services;
 
 #endregion
 
-namespace DMT.Controls.StatusBar
+namespace DMT.Controls.Header
 {
     /// <summary>
-    /// Interaction logic for TAServerStatus.xaml
+    /// Interaction logic for HeaderDateTime.xaml
     /// </summary>
-    public partial class TAServerStatus : UserControl
+    public partial class HeaderDateTime : UserControl
     {
         #region Constructor
 
         /// <summary>
         /// Constructor.
         /// </summary>
-        public TAServerStatus()
+        public HeaderDateTime()
         {
             InitializeComponent();
         }
@@ -31,14 +32,14 @@ namespace DMT.Controls.StatusBar
 
         private DispatcherTimer timer = null;
         private NLib.Components.PingManager ping = null;
-        private bool isOnline = false;
 
         #region Loaded/Unloaded
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            string host = (null != AccountConfigManager.Instance.TAxTOD && null != AccountConfigManager.Instance.TAxTOD.Service) ?
-                AccountConfigManager.Instance.TAxTOD.Service.HostName : "unknown";
+            //TODO: Required to load SCW host, user, pwd from Config Manager.
+            string host = @"www.google.com2";
+            //string host = ConfigManager.Instance.Plaza.SCW.Http.HostName;
 
             ping = new NLib.Components.PingManager();
             ping.OnReply += Ping_OnReply;
@@ -78,14 +79,14 @@ namespace DMT.Controls.StatusBar
 
         private void Ping_OnReply(object sender, NLib.Networks.PingResponseEventArgs e)
         {
-            if (null != e.Reply &&
+            if (null != e.Reply && 
                 e.Reply.Status == System.Net.NetworkInformation.IPStatus.Success)
             {
-                isOnline = true;
+                borderDT.Background = new SolidColorBrush(Colors.Transparent);
             }
             else
             {
-                isOnline = false;
+                borderDT.Background = new SolidColorBrush(Colors.Maroon);
             }
         }
 
@@ -102,16 +103,9 @@ namespace DMT.Controls.StatusBar
 
         private void UpdateUI()
         {
-            if (isOnline)
-            {
-                borderStatus.Background = new SolidColorBrush(Colors.ForestGreen);
-                txtStatus.Text = "Online";
-            }
-            else
-            {
-                borderStatus.Background = new SolidColorBrush(Colors.Maroon);
-                txtStatus.Text = "Offline";
-            }
+            DateTime dt = DateTime.Now;
+            txtCurrentDate.Text = dt.ToThaiDateTimeString("dd/MM/yyyy");
+            txtCurrentTime.Text = dt.ToThaiDateTimeString("HH:mm:ss");
         }
     }
 }
