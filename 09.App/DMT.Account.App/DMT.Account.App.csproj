@@ -285,8 +285,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Account\Controls\" />
     <Folder Include="Account\Pages\" />
-    <Folder Include="SignIn\" />
+    <Folder Include="Account\Windows\" />
+    <Folder Include="SignIn\Pages\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

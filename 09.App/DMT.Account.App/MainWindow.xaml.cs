@@ -41,7 +41,7 @@ namespace DMT
             //page.Setup(
             //    "ADMINS",
             //    "ACCOUNT",
-            //    "CTC_MGR", "CTC", /*"TC",*/
+            //    /*"CTC_MGR", "CTC", "TC",*/
             //    "MT_ADMIN", "MT_TECH",
             //    "FINANCE", "SV",
             //    "RAD_MGR", "RAD_SUP");
