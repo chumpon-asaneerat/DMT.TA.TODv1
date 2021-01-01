@@ -204,6 +204,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(SolutionDir)References\runtimes\*.*" "$(TargetDir)\runtimes\*.*" /Y/D/E
-xcopy "$(SolutionDir)References\runtimes\*.*" "$(TargetDir)\..\PlazaService\runtimes\*.*" /Y/D/E</PostBuildEvent>
+xcopy "$(SolutionDir)References\runtimes\*.*" "$(TargetDir)\..\PlazaService\runtimes\*.*" /Y/D/E
+xcopy "$(SolutionDir)References\runtimes\*.*" "$(TargetDir)\..\Account\runtimes\*.*" /Y/D/E</PostBuildEvent>
   </PropertyGroup>
 </Project>

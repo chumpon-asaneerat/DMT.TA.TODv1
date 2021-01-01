@@ -87,6 +87,9 @@ namespace DMT
 
             #endregion
 
+            // Start local database (account).
+            Services.AccountDbServer.Instance.Start();
+
             // Load Config service.
             Services.AccountConfigManager.Instance.LoadConfig();
             Services.Operations.TAxTOD.Config = Services.AccountConfigManager.Instance;
@@ -111,6 +114,9 @@ namespace DMT
         /// <param name="e"></param>
         protected override void OnExit(ExitEventArgs e)
         {
+            // Shutdown local database (account).
+            Services.AccountDbServer.Instance.Shutdown();
+
             // Shutdown log manager
             LogManager.Instance.Shutdown();
 

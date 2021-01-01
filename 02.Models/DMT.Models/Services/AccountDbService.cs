@@ -2331,7 +2331,7 @@ namespace DMT.Services
             MethodBase med = MethodBase.GetCurrentMethod();
             if (null == Db)
             {
-                lock (typeof(LocalDbServer))
+                lock (typeof(AccountDbServer))
                 {
                     try
                     {

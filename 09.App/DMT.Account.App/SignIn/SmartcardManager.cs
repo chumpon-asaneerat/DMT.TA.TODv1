@@ -12,8 +12,6 @@ using DMT.Services;
 
 namespace DMT.Controls
 {
-    using ops = Services.Operations.Plaza.Security; // reference to static class.
-
     /// <summary>
     /// The Smartcard Manager helper controls.
     /// </summary>
@@ -111,8 +109,7 @@ namespace DMT.Controls
             }
             else
             {
-                var search = Models.Search.User.ByCardId.Create(this.CardId);
-                var usr = ops.User.Search.ByCardId(search).Value();
+                var usr = User.GetByCardId(this.CardId).Value();
                 if (null == this.User && null != usr)
                 {
                     this.User = usr;
@@ -130,6 +127,12 @@ namespace DMT.Controls
                         this.User = usr;
                         RaiseUserChanged();
                     }
+                }
+                else
+                {
+                    // CardId Not found  on dataase.
+                    this.User = usr;
+                    RaiseUserChanged();
                 }
             }
         }

@@ -79,6 +79,10 @@ namespace DMT.Windows
                     txtPassword2.Focus();
                 }
             }
+            else
+            {
+                ShowError("ไม่พบข้อมูลบัตรพนักงานในระบบ");
+            }
         }
 
         #endregion
@@ -305,7 +309,8 @@ namespace DMT.Windows
 
             var userId = txtUserId2.Text.Trim();
             var md5 = Utils.MD5.Encrypt(txtPassword2.Password);
-            _user = User.GetByLogIn(userId, md5).Value();
+            var search = Search.User.ByLogIn.Create(userId, md5);
+            _user = ops.User.Search.ByLogIn(search).Value();
 
             if (null == _user)
             {
@@ -334,7 +339,8 @@ namespace DMT.Windows
             }
 
             _user.Password = newPwd; // change password.
-            var saveRet = User.SaveUser(_user);
+            var saveRet = ops.User.Save(_user);
+
             if (!saveRet.Ok)
             {
                 ShowError("บันทึกข้อมูลไม่สำเร็จ" + Environment.NewLine + "กรุณาลองทำการบันทึกข้อมูลใหม่");

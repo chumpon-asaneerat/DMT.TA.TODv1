@@ -17,8 +17,6 @@ using System.Windows.Threading;
 
 namespace DMT.Pages
 {
-    using ops = Services.Operations.Plaza.Security; // reference to static class.
-
     /// <summary>
     /// Interaction logic for SignInPage.xaml
     /// </summary>
@@ -80,6 +78,10 @@ namespace DMT.Pages
                     txtPassword2.SelectAll();
                     txtPassword2.Focus();
                 }
+            }
+            else
+            {
+                ShowError("ไม่พบข้อมูลบัตรพนักงานในระบบ");
             }
         }
 
@@ -244,8 +246,7 @@ namespace DMT.Pages
             }
 
             var md5 = Utils.MD5.Encrypt(pwd);
-            var search = Search.User.ByLogIn.Create(userId, md5);
-            _user = ops.User.Search.ByLogIn(search).Value();
+            _user = User.GetByLogIn(userId, md5).Value();
 
             VerifyUser();
         }
@@ -269,9 +270,9 @@ namespace DMT.Pages
             }
 
             SmartcardManager.Instance.Shutdown();
-            Controls.TAApp.User.Current = _user;
+            Controls.AccountApp.User.Current = _user;
             // Init Main Menu
-            PageContentManager.Instance.Current = new TA.Pages.Menu.MainMenu();
+            PageContentManager.Instance.Current = new Account.Pages.Menu.MainMenu();
         }
 
         private void CheckChangePassword()
