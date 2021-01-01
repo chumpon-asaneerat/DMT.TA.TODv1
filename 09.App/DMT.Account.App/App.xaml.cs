@@ -91,6 +91,8 @@ namespace DMT
             Services.AccountConfigManager.Instance.LoadConfig();
             Services.Operations.TAxTOD.Config = Services.AccountConfigManager.Instance;
             Services.Operations.TAxTOD.DMT = Services.AccountConfigManager.Instance; // required for NetworkId
+            Services.Operations.SCW.Config = Services.AccountConfigManager.Instance;
+            Services.Operations.SCW.DMT = Services.AccountConfigManager.Instance; // required for NetworkId
 
             Window window = null;
             window = new MainWindow();

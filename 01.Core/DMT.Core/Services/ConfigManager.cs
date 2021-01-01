@@ -1146,6 +1146,7 @@ namespace DMT.Services
         public AccountAppPlazaConfig() : base()
         {
             this.DMT = new DMTConfig();
+            this.SCW = new SCWWebServiceConfig();
             this.TAxTOD = new TAxTODWebServiceConfig();
         }
 
@@ -1180,6 +1181,16 @@ namespace DMT.Services
                 code += string.Format("DMT: {0}",
                     this.DMT.GetString()) + Environment.NewLine;
             }
+            // SCW server
+            if (null == this.SCW)
+            {
+                code += "SCW: null" + Environment.NewLine;
+            }
+            else
+            {
+                code += string.Format("DC: {0}",
+                    this.SCW.GetString()) + Environment.NewLine;
+            }
             // TAxTOD Server
             if (null == this.TAxTOD)
             {
@@ -1201,6 +1212,10 @@ namespace DMT.Services
         /// Gets or sets DMT Config.
         /// </summary>
         public DMTConfig DMT { get; set; }
+        /// <summary>
+        /// Gets or sets SCW Service Config.
+        /// </summary>
+        public SCWWebServiceConfig SCW { get; set; }
         /// <summary>
         /// Gets or sets TAxTOD Service Config.
         /// </summary>
@@ -1968,7 +1983,7 @@ namespace DMT.Services
     /// Account Config Manager class.
     /// </summary>
     public class AccountConfigManager : JsonConfigFileManger<AccountAppPlazaConfig>,
-        IDMTConfig, ITAxTODConfig
+        IDMTConfig, ITAxTODConfig, ISCWConfig
     {
         #region Static Instance Access
 
@@ -2039,6 +2054,17 @@ namespace DMT.Services
             {
                 if (null == Value) LoadConfig();
                 return (null != Value) ? Value.DMT : null;
+            }
+        }
+        /// <summary>
+        /// Gets SCW Config.
+        /// </summary>
+        public SCWWebServiceConfig SCW
+        {
+            get
+            {
+                if (null == Value) LoadConfig();
+                return (null != Value) ? Value.SCW : null;
             }
         }
         /// <summary>
