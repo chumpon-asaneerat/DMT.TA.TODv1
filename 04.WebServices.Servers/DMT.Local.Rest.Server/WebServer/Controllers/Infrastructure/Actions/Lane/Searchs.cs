@@ -14,6 +14,19 @@ namespace DMT.Services
         partial class LaneController
         {
             /// <summary>
+            /// Gets Lanes By TSB.
+            /// </summary>
+            /// <param name="value">The TSB.</param>
+            /// <returns></returns>
+            [HttpPost]
+            [ActionName(RouteConsts.Infrastructure.Lane.Search.ByTSB.Name)]
+            //[AllowAnonymous]
+            public NDbResult<List<Lane>> ByTSB([FromBody] TSB value)
+            {
+                var ret = Lane.GetTSBLanes(value);
+                return ret;
+            }
+            /// <summary>
             /// Gets Lanes By PlazaGroup.
             /// </summary>
             /// <param name="value">The PlazaGroup.</param>

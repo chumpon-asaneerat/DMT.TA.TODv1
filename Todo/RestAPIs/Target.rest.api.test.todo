@@ -96,6 +96,7 @@ Operations:
             ✔ Gets (/Infrastructure/Lane/Gets) TESTED. @done(20-12-24 10:13)
             ✔ Save (/Infrastructure/Lane/Save) TESTED. @done(20-12-24 14:30)
             Search (/TSB/Lanes/Search):
+                ☐ ByTSB (/Infrastructure/Lane/Search/ByTSB) TESTED.
                 ☐ ByPlazaGroup (/Infrastructure/Lane/Search/ByPlazaGroup) TESTED.
                 ✔ ByPlaza (/Infrastructure/Lane/Search/ByPlaza) TESTED. @done(20-12-24 10:13)
     Security (/Security):

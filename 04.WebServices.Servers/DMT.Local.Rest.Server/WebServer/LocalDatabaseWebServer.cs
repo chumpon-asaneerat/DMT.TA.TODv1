@@ -154,6 +154,11 @@ namespace DMT.Services
                         actionUrl = RouteConsts.Infrastructure.Lane.Save.Url;
                         Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
 
+                        // Search ByTSB
+                        actionName = RouteConsts.Infrastructure.Lane.Search.ByTSB.Name;
+                        actionUrl = RouteConsts.Infrastructure.Lane.Search.ByTSB.Url;
+                        Helper.MapRoute(config, controllerName, actionName, actionUrl); // Map Route.
+
                         // Search ByPlazaGroup
                         actionName = RouteConsts.Infrastructure.Lane.Search.ByPlazaGroup.Name;
                         actionUrl = RouteConsts.Infrastructure.Lane.Search.ByPlazaGroup.Url;

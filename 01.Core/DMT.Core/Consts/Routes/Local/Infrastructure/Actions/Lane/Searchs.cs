@@ -9,6 +9,15 @@
             {
                 static partial class Search
                 {
+                    /// <summary>The Gets Lane by TSB action.</summary>
+                    public static class ByTSB
+                    {
+                        /// <summary>Gets route name.</summary>
+                        public const string Name = "ByTSB";
+                        /// <summary>Gets route url.</summary>
+                        public const string Url = Search.Url + @"/" + Name;
+                    }
+
                     /// <summary>The Gets Lane by PlazaGroup action.</summary>
                     public static class ByPlazaGroup
                     {

@@ -96,6 +96,7 @@ Operations:
             ✔ Gets (/Infrastructure/Lane/Gets) refactored. @done(20-12-23 16:49)
             ✔ Save (/Infrastructure/Lane/Save) refactored. @done(20-12-23 16:49)
             Search (/TSB/Lane/Search):
+                ✔ ByTSB (/Infrastructure/Lane/Search/ByTSB) refactored. @done(21-01-02 05:08)
                 ✔ ByPlazaGroup (/Infrastructure/Lane/Search/ByPlazaGroup) refactored. @done(20-12-23 17:49)
                 ✔ ByPlaza (/Infrastructure/Lane/Search/ByPlaza) refactored. @done(20-12-23 17:49)
     Security (/Security):

@@ -15,6 +15,17 @@ namespace DMT.Services.Operations
                 static partial class Search
                 {
                     /// <summary>
+                    /// Gets Plazas By TSB.
+                    /// </summary>
+                    /// <param name="value">The TSB.</param>
+                    /// <returns>Returns Lanes by TSB.</returns>
+                    public static NRestResult<List<Models.Lane>> ByTSB(Models.TSB value)
+                    {
+                        var ret = Execute<List<Models.Lane>>(
+                            RouteConsts.Infrastructure.Lane.Search.ByTSB.Url, value);
+                        return ret;
+                    }
+                    /// <summary>
                     /// Gets Plazas By PlazaGroup.
                     /// </summary>
                     /// <param name="value">The PlazaGroup.</param>

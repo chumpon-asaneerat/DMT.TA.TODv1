@@ -82,16 +82,16 @@ namespace DMT.Simulator.Pages
 
         public class LaneItem : Lane
         {
-            private LaneAttendance _Attendance = null;
+            private SCWJob _job = null;
 
             [Category("Activity")]
             [Browsable(false)]
-            public LaneAttendance Attendance
+            public SCWJob Job
             {
-                get { return _Attendance;  }
+                get { return _job;  }
                 set
                 {
-                    _Attendance = value;
+                    _job = value;
                     RaiseChanged("UserId");
                     RaiseChanged("FullNameTH");
                     RaiseChanged("BeginDateString");
@@ -102,33 +102,33 @@ namespace DMT.Simulator.Pages
             [ReadOnly(true)]
             public string UserId 
             {
-                get { return (Attendance != null) ? Attendance.UserId : string.Empty; }
+                get { return (_job != null) ? _job.staffId : string.Empty; }
                 set { }
             }
             [Category("User")]
             [ReadOnly(true)]
             public string FullNameTH 
             {
-                get { return (Attendance != null) ? Attendance.FullNameTH : string.Empty; }
+                get { return (_job != null && !string.IsNullOrEmpty(_job.staffId)) ? "XXXX" : string.Empty; }
                 set { }
             }
             [Category("Lane Job")]
             [ReadOnly(true)]
             public string BeginDateString
             {
-                get { return (Attendance != null) ? Attendance.Begin.ToThaiDateString() : string.Empty; }
+                get { return (_job != null && _job.bojDateTime.HasValue) ? _job.bojDateTime.Value.ToThaiDateString() : string.Empty; }
                 set { }
             }
             [Category("Lane Job")]
             [ReadOnly(true)]
             public string BeginTimeString
             {
-                get { return (Attendance != null) ? Attendance.Begin.ToThaiTimeString() : string.Empty; }
+                get { return (_job != null && _job.bojDateTime.HasValue) ? _job.bojDateTime.Value.ToThaiTimeString() : string.Empty; }
                 set { }
             }
         }
 
-        private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
+        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
 
         private List<Shift> shifts = new List<Shift>();
         private List<UserItem> users = new List<UserItem>();
@@ -179,6 +179,7 @@ namespace DMT.Simulator.Pages
 
         private void RefreshUI()
         {
+            /*
             gridTools.IsEnabled = false;
             if (null == currentUser) return;
             gridTools.IsEnabled = true;
@@ -213,19 +214,23 @@ namespace DMT.Simulator.Pages
                 cmdBeginJob.IsEnabled = (null == currentLane.Attendance) ? true : false;
                 cmdEndJob.IsEnabled = !cmdBeginJob.IsEnabled;
             }
+            */
         }
 
         private void RefreshShifts()
         {
+            /*
             cbShifts.ItemsSource = null;
 
             shifts = ops.Shifts.GetShifts().Value();
 
             cbShifts.ItemsSource = shifts;
+            */
         }
 
         private void RefreshUsers()
         {
+            /*
             lstUsers.ItemsSource = null;
 
             users.Clear();
@@ -249,10 +254,12 @@ namespace DMT.Simulator.Pages
             lstUsers.ItemsSource = users;
 
             RefreshUI();
+            */
         }
 
         private void RefreshLanes()
         {
+            /*
             lvLanes.ItemsSource = null;
 
             lanes.Clear();
@@ -277,10 +284,12 @@ namespace DMT.Simulator.Pages
             lvLanes.ItemsSource = lanes;
 
             RefreshUI();
+            */
         }
 
         private void RefreshLaneAttendances()
         {
+            /*
             if (null == currentLane) return;
 
             lvAttendances.ItemsSource = null;
@@ -288,6 +297,7 @@ namespace DMT.Simulator.Pages
             var search = Search.Lanes.Attendances.ByLane.Create(currentLane);
             var attendances = ops.Lanes.GetAttendancesByLane(search).Value();
             lvAttendances.ItemsSource = attendances;
+            */
         }
 
         private void RefreshLanePayments()
@@ -358,6 +368,7 @@ namespace DMT.Simulator.Pages
 
         private void cmdBeginShift_Click(object sender, RoutedEventArgs e)
         {
+            /*
             if (!shiftDate.Value.HasValue) return;
 
             if (null == currentUser) return;
@@ -372,10 +383,12 @@ namespace DMT.Simulator.Pages
 
             RefreshUsers();
             RefreshUI();
+            */
         }
 
         private void cmdEndShift_Click(object sender, RoutedEventArgs e)
         {
+            /*
             if (null == currentUser) return;
             if (null == currentUser.Shift) return;
 
@@ -389,10 +402,12 @@ namespace DMT.Simulator.Pages
             RefreshUsers();
 
             RefreshUI();
+            */
         }
 
         private void cmdBeginJob_Click(object sender, RoutedEventArgs e)
         {
+            /*
             if (null == currentLane) return;
             if (null == currentUser) return;
             if (!jobDate.Value.HasValue) return;
@@ -412,10 +427,12 @@ namespace DMT.Simulator.Pages
             RefreshLaneAttendances();
             RefreshLanePayments();
             RefreshUI();
+            */
         }
 
         private void cmdEndJob_Click(object sender, RoutedEventArgs e)
         {
+            /*
             if (null == currentLane) return;
             if (!jobDate.Value.HasValue) return;
 
@@ -437,6 +454,7 @@ namespace DMT.Simulator.Pages
             RefreshLanePayments();
 
             RefreshUI();
+            */
         }
 
         #endregion
