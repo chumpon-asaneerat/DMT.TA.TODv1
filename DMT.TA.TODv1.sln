@@ -256,6 +256,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMT.TOD.Rest.Client", "05.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMT.Local.Rest.Client", "05.WebServices.Clients\DMT.Local.Rest.Client\DMT.Local.Rest.Client.csproj", "{EC52608D-CDBB-48D5-9ECC-87D8CFEF52FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMT.Account.App", "09.App\DMT.Account.App\DMT.Account.App.csproj", "{57C7FDC1-1DDF-4C9B-A5AF-C9F518B8EF81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -398,6 +400,10 @@ Global
 		{EC52608D-CDBB-48D5-9ECC-87D8CFEF52FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC52608D-CDBB-48D5-9ECC-87D8CFEF52FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC52608D-CDBB-48D5-9ECC-87D8CFEF52FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C7FDC1-1DDF-4C9B-A5AF-C9F518B8EF81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C7FDC1-1DDF-4C9B-A5AF-C9F518B8EF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C7FDC1-1DDF-4C9B-A5AF-C9F518B8EF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C7FDC1-1DDF-4C9B-A5AF-C9F518B8EF81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -456,6 +462,7 @@ Global
 		{78D73003-864F-4C0E-81F2-21F721388F4D} = {51AC03CB-6D2C-4CE0-B9A4-5EB6DFEEFAED}
 		{CDA29D61-9F4F-46F2-A256-81A32B1D7E52} = {51AC03CB-6D2C-4CE0-B9A4-5EB6DFEEFAED}
 		{EC52608D-CDBB-48D5-9ECC-87D8CFEF52FD} = {51AC03CB-6D2C-4CE0-B9A4-5EB6DFEEFAED}
+		{57C7FDC1-1DDF-4C9B-A5AF-C9F518B8EF81} = {E172C8E1-5AAC-4FAB-91A5-C826BCEA3FBA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9D1A636B-DDF7-45F5-9AAC-248AAB6A804E}
