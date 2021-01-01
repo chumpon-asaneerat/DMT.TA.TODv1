@@ -149,7 +149,6 @@
     <Compile Include="Models\Local\Shifts\TSBShift.cs" />
     <Compile Include="Models\TAxTOD\TACouponTransaction.cs" />
     <Compile Include="Services\AccountDbService.cs" />
-    <Compile Include="Services\RuntimeManager.cs" />
     <Compile Include="Views\SqlScriptManager.cs" />
     <Compile Include="Models\RabbitMQ\RabbitMQ.cs" />
     <Compile Include="Models\Local\Users\Role.cs" />

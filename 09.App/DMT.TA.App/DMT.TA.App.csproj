@@ -122,6 +122,7 @@
     <Compile Include="Header\TAHeader.xaml.cs">
       <DependentUpon>TAHeader.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\RuntimeManager.cs" />
     <Compile Include="SignIn\Pages\SignInPage.xaml.cs">
       <DependentUpon>SignInPage.xaml</DependentUpon>
     </Compile>
