@@ -62,40 +62,74 @@ namespace DMT.Services.Operations
             }
 
             /// <summary>
-            /// Execute emvTransactionList api.
+            /// Execute add EMV api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
             /// <returns>Returns instance of SCWEMVTransactionListResult.</returns>
-            public static SCWEMVTransactionListResult emvTransactionList(
-                SCWEMVTransactionList value)
+            public static SCWAddEMVResult addEMV(SCWAddEMV value)
             {
-                var ret = Execute<SCWEMVTransactionListResult>(
-                    RouteConsts.SCW.Emulator.emvTransactionList.Url, value);
+                var ret = Execute<SCWAddEMVResult>(
+                    RouteConsts.SCW.Emulator.addEMV.Url, value);
                 return ret;
             }
 
             /// <summary>
-            /// Execute qrcodeTransactionList api.
+            /// Execute remove EMV api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
             /// <returns>Returns instance of SCWQRCodeTransactionListResult.</returns>
-            public static SCWQRCodeTransactionListResult qrcodeTransactionList(
-                SCWQRCodeTransactionList value)
+            public static SCWRemoveEMVResult removeEMV(SCWRemoveEMV value)
             {
-                var ret = Execute<SCWQRCodeTransactionListResult>(
-                    RouteConsts.SCW.Emulator.qrcodeTransactionList.Url, value);
+                var ret = Execute<SCWRemoveEMVResult>(
+                    RouteConsts.SCW.Emulator.removeEMV.Url, value);
                 return ret;
             }
 
             /// <summary>
-            /// Execute declare api.
+            /// Execute clear EMVs api.
             /// </summary>
             /// <param name="value">The api parameter.</param>
-            /// <returns>Returns instance of SCWDeclareResult.</returns>
-            public static SCWDeclareResult declare(SCWDeclare value)
+            /// <returns>Returns instance of SCWClearEMVsResult.</returns>
+            public static SCWClearEMVsResult clearEMVs(SCWClearEMVs value)
             {
-                var ret = Execute<SCWDeclareResult>(
-                    RouteConsts.SCW.Emulator.declare.Url, value);
+                var ret = Execute<SCWClearEMVsResult>(
+                    RouteConsts.SCW.Emulator.clearEMVs.Url, value);
+                return ret;
+            }
+
+            /// <summary>
+            /// Execute add QRCode api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of SCWAddQRCodeResult.</returns>
+            public static SCWAddQRCodeResult addQRCode(SCWAddQRCode value)
+            {
+                var ret = Execute<SCWAddQRCodeResult>(
+                    RouteConsts.SCW.Emulator.addQRCode.Url, value);
+                return ret;
+            }
+
+            /// <summary>
+            /// Execute remove QRCode api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of SCWRemoveQRCodeResult.</returns>
+            public static SCWRemoveQRCodeResult removeQRCode(SCWRemoveQRCode value)
+            {
+                var ret = Execute<SCWRemoveQRCodeResult>(
+                    RouteConsts.SCW.Emulator.removeQRCode.Url, value);
+                return ret;
+            }
+
+            /// <summary>
+            /// Execute clear QRCodes api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of SCWClearQRCodesResult.</returns>
+            public static SCWClearQRCodesResult clearQRCodes(SCWClearQRCodes value)
+            {
+                var ret = Execute<SCWClearQRCodesResult>(
+                    RouteConsts.SCW.Emulator.clearQRCodes.Url, value);
                 return ret;
             }
         }
