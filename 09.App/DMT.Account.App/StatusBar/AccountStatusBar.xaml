@@ -9,6 +9,7 @@
              mc:Ignorable="d">
     <DockPanel Background="DimGray" LastChildFill="True">
         <ctrl:TAServerStatus DockPanel.Dock="Left" />
+        <ctrl:SCWStatus DockPanel.Dock="Left" />
         <ctrl:AppInfoStatus DockPanel.Dock="Right" />
         <ctrl:ClientInfoStatus DockPanel.Dock="Right" />
         <Grid />
