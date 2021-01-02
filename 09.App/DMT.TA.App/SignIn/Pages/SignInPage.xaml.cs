@@ -349,20 +349,15 @@ namespace DMT.Pages
                 return ret;
             }
             ret = true;
-            //TODO: Need to implements SCW message to send later.
-            /*
-            // send to server
-            SCWOperations server = SCWServiceOperations.Instance.Plaza;
+
+            // Write to SCW Message Queue
             var inst = new SCWChangePassword();
             inst.staffId = _user.UserId;
             inst.password = oldPwd;
             inst.newPassword = newPwd;
             inst.confirmNewPassword = confPwd;
-            // send.
-            SCWServiceOperations.Instance.UserName = "DMTUSER";
-            SCWServiceOperations.Instance.Password = "DMTPASS";
-            server.TOD.ChangePassword(inst);
-            */
+            SCWMQService.Instance.WriteQueue(inst);
+
             return ret;
         }
 
