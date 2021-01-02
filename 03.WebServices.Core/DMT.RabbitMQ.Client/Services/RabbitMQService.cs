@@ -122,21 +122,21 @@ namespace DMT.Services
                     else
                     {
                         // process success error file.
-                        med.Info("Cannot convert to STAFF message.");
+                        med.Err("Cannot convert to STAFF message.");
                         MoveToError(fullFileName);
                     }
                 }
                 else
                 {
                     // process not staff list so Not Supports file.
-                    med.Info("message is not STAFF message.");
+                    med.Err("message is not STAFF message.");
                     MoveToNotSupports(fullFileName);
                 }
             }
             else
             {
                 // process success error file.
-                med.Info("message is null or cannot convert to json object.");
+                med.Err("message is null or cannot convert to json object.");
                 MoveToError(fullFileName);
             }
         }
