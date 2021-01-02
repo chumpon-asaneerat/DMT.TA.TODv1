@@ -89,6 +89,9 @@ namespace DMT
 
             #endregion
 
+            // Start log manager
+            LogManager.Instance.Start();
+
             // Load Config service.
             Services.TODConfigManager.Instance.LoadConfig();
             // Setup config reference to all rest client class.
@@ -106,9 +109,6 @@ namespace DMT
 
             Window window = null;
             window = new MainWindow();
-
-            // Start log manager
-            LogManager.Instance.Start();
 
             if (null != window)
             {

@@ -75,9 +75,10 @@ namespace DMT
 
             #endregion
 
-            Form form = new MainForm();
             // Start log manager
             LogManager.Instance.Start();
+
+            Form form = new MainForm();
 
             if (null != form)
             {

@@ -110,9 +110,11 @@ namespace DMT
 					Application.EnableVisualStyles();
 					Application.SetCompatibleTextRenderingDefault(false);
 
-					Forms.MainForm form = new Forms.MainForm();
 					// Start log manager
 					LogManager.Instance.Start();
+
+
+					Forms.MainForm form = new Forms.MainForm();
 
 					if (null != form)
 					{
