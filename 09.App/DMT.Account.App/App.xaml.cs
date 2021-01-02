@@ -100,6 +100,9 @@ namespace DMT
             Services.Operations.SCW.Config = Services.AccountConfigManager.Instance;
             Services.Operations.SCW.DMT = Services.AccountConfigManager.Instance; // required for NetworkId
 
+            // Start SCWMQ
+            Services.SCWMQService.Instance.Start();
+
             // Start RabbitMQ
             Services.RabbitMQService.Instance.RabbitMQ = Services.AccountConfigManager.Instance.RabbitMQ;
             Services.RabbitMQService.Instance.Start();
@@ -120,6 +123,9 @@ namespace DMT
         {
             // Shutdown RabbitMQ.
             Services.RabbitMQService.Instance.Shutdown();
+
+            // Shutdown SCWMQ
+            Services.SCWMQService.Instance.Shutdown();
 
             // Shutdown local database (account).
             Services.AccountDbServer.Instance.Shutdown();

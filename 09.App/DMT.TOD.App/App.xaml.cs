@@ -97,6 +97,9 @@ namespace DMT
             Services.Operations.SCW.Config = Services.TODConfigManager.Instance;
             Services.Operations.SCW.DMT = Services.TODConfigManager.Instance; // required for NetworkId
 
+            // Start SCWMQ
+            Services.SCWMQService.Instance.Start();
+
             // Start App Notify Server.
             appServ = new Services.TODWebServer();
             appServ.Start();
@@ -123,6 +126,9 @@ namespace DMT
                 appServ.Shutdown();
             }
             appServ = null;
+
+            // Shutdown SCWMQ
+            Services.SCWMQService.Instance.Shutdown();
 
             // Shutdown log manager
             LogManager.Instance.Shutdown();
