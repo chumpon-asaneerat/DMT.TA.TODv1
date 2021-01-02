@@ -467,6 +467,10 @@ namespace DMT.Services
                 med.Info("Plaza local web service failed.");
             }
 
+            // Start SCWMQ service.
+            SCWMQService.Instance.Start();
+            med.Info("SCWMQ Service start.");
+
             // Start rabbit service.
             RabbitMQService.Instance.RabbitMQ = PlazaServiceConfigManager.Instance.RabbitMQ;
             RabbitMQService.Instance.Start();
@@ -489,6 +493,10 @@ namespace DMT.Services
             // Shutdown Rabbit MQ Service.
             RabbitMQService.Instance.Shutdown();
             med.Info("RabbitMQ Client service disconnected.");
+
+            // Shutdown SCWMQ service.
+            SCWMQService.Instance.Shutdown();
+            med.Info("SCWMQ Service shutdown.");
 
             // Shutdown Local Web Service.
             if (null != server)
