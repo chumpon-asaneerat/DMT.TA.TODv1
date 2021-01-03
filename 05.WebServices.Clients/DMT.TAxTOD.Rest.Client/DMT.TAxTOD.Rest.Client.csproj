@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Coupon\Coupon.Operations.cs" />
+    <Compile Include="Services\TAA\TAA.Operations.cs" />
     <Compile Include="Services\TAxTOD.cs" />
   </ItemGroup>
   <ItemGroup>
