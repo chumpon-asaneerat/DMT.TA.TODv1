@@ -1,8 +1,8 @@
 ﻿<UserControl x:Class="DMT.Simulator.Pages.LaneActivityPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:xceed="http://schemas.xceed.com/wpf/xaml/toolkit"
              d:DesignHeight="450"
              d:DesignWidth="800"
@@ -12,8 +12,6 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="5" />
-            <ColumnDefinition Width="285" />
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
@@ -24,32 +22,32 @@
             <ListView x:Name="lvLanes"
                       Grid.Row="0"
                       FontSize="18"
-                      SelectionMode="Single"
                       ItemsSource="{Binding}"
+                      SelectionChanged="lvLanes_SelectionChanged"
+                      SelectionMode="Single"
                       VirtualizingPanel.IsVirtualizing="True"
-                      VirtualizingPanel.VirtualizationMode="Recycling"
                       VirtualizingPanel.IsVirtualizingWhenGrouping="True"
-                      SelectionChanged="lvLanes_SelectionChanged">
+                      VirtualizingPanel.VirtualizationMode="Recycling">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Width="100"
-                                        Header="เลน"
-                                        DisplayMemberBinding="{Binding Path=LaneId}" />
+                                        DisplayMemberBinding="{Binding Path=LaneId}"
+                                        Header="เลน" />
                         <GridViewColumn Width="100"
-                                        Header="ประเภทเลน"
-                                        DisplayMemberBinding="{Binding Path=LaneType}" />
+                                        DisplayMemberBinding="{Binding Path=LaneType}"
+                                        Header="ประเภทเลน" />
                         <GridViewColumn Width="120"
-                                        Header="วันที่"
-                                        DisplayMemberBinding="{Binding Path=BeginDateString}" />
+                                        DisplayMemberBinding="{Binding Path=BeginDateString}"
+                                        Header="วันที่" />
                         <GridViewColumn Width="120"
-                                        Header="เวลา"
-                                        DisplayMemberBinding="{Binding Path=BeginTimeString}" />
+                                        DisplayMemberBinding="{Binding Path=BeginTimeString}"
+                                        Header="เวลา" />
                         <GridViewColumn Width="120"
-                                        Header="รหัสพนักงาน"
-                                        DisplayMemberBinding="{Binding Path=UserId}" />
+                                        DisplayMemberBinding="{Binding Path=UserId}"
+                                        Header="รหัสพนักงาน" />
                         <GridViewColumn Width="300"
-                                        Header="ชื่อพนักงาน"
-                                        DisplayMemberBinding="{Binding Path=FullNameTH}" />
+                                        DisplayMemberBinding="{Binding Path=FullNameTH}"
+                                        Header="ชื่อพนักงาน" />
                         <!--
                         <GridViewColumn Width="250" Header="User">
                             <GridViewColumn.CellTemplate>
@@ -99,45 +97,45 @@
                                    LastChildFill="True">
                             <Button x:Name="cmdRefreshAttendences"
                                     Margin="3"
+                                    Click="cmdRefreshAttendences_Click"
                                     Content="Refresh"
-                                    FontSize="14"
-                                    Click="cmdRefreshAttendences_Click" />
+                                    FontSize="14" />
                             <Grid />
                         </DockPanel>
                         <ListView x:Name="lvAttendances"
                                   Grid.Row="0"
                                   FontSize="18"
-                                  SelectionMode="Single"
                                   ItemsSource="{Binding}"
+                                  SelectionMode="Single"
                                   VirtualizingPanel.IsVirtualizing="True"
-                                  VirtualizingPanel.VirtualizationMode="Recycling"
-                                  VirtualizingPanel.IsVirtualizingWhenGrouping="True">
+                                  VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                                  VirtualizingPanel.VirtualizationMode="Recycling">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Width="100"
-                                                    Header="เลน"
-                                                    DisplayMemberBinding="{Binding Path=LaneId}" />
+                                                    DisplayMemberBinding="{Binding Path=LaneId}"
+                                                    Header="เลน" />
                                     <GridViewColumn Width="100"
-                                                    Header="เลน"
-                                                    DisplayMemberBinding="{Binding Path=JobId}" />
+                                                    DisplayMemberBinding="{Binding Path=JobId}"
+                                                    Header="เลน" />
                                     <GridViewColumn Width="120"
-                                                    Header="วันที่เริ่ม"
-                                                    DisplayMemberBinding="{Binding Path=BeginDateString}" />
+                                                    DisplayMemberBinding="{Binding Path=BeginDateString}"
+                                                    Header="วันที่เริ่ม" />
                                     <GridViewColumn Width="120"
-                                                    Header="เวลาที่เริ่ม"
-                                                    DisplayMemberBinding="{Binding Path=BeginTimeString}" />
+                                                    DisplayMemberBinding="{Binding Path=BeginTimeString}"
+                                                    Header="เวลาที่เริ่ม" />
                                     <GridViewColumn Width="120"
-                                                    Header="วันที่สิ้นสุด"
-                                                    DisplayMemberBinding="{Binding Path=EndDateString}" />
+                                                    DisplayMemberBinding="{Binding Path=EndDateString}"
+                                                    Header="วันที่สิ้นสุด" />
                                     <GridViewColumn Width="120"
-                                                    Header="เวลาที่สิ้นสุด"
-                                                    DisplayMemberBinding="{Binding Path=EndTimeString}" />
+                                                    DisplayMemberBinding="{Binding Path=EndTimeString}"
+                                                    Header="เวลาที่สิ้นสุด" />
                                     <GridViewColumn Width="120"
-                                                    Header="รหัสพนักงาน"
-                                                    DisplayMemberBinding="{Binding Path=UserId}" />
+                                                    DisplayMemberBinding="{Binding Path=UserId}"
+                                                    Header="รหัสพนักงาน" />
                                     <GridViewColumn Width="300"
-                                                    Header="ชื่อพนักงาน"
-                                                    DisplayMemberBinding="{Binding Path=FullNameTH}" />
+                                                    DisplayMemberBinding="{Binding Path=FullNameTH}"
+                                                    Header="ชื่อพนักงาน" />
                                 </GridView>
                             </ListView.View>
                         </ListView>
@@ -150,262 +148,51 @@
                                    LastChildFill="True">
                             <Button x:Name="cmdRefreshPayments"
                                     Margin="3"
+                                    Click="cmdRefreshPayments_Click"
                                     Content="Refresh"
-                                    FontSize="14"
-                                    Click="cmdRefreshPayments_Click" />
+                                    FontSize="14" />
                             <Grid />
                         </DockPanel>
                         <ListView x:Name="lvPayments"
                                   Grid.Row="0"
                                   FontSize="18"
-                                  SelectionMode="Single"
                                   ItemsSource="{Binding}"
+                                  SelectionMode="Single"
                                   VirtualizingPanel.IsVirtualizing="True"
-                                  VirtualizingPanel.VirtualizationMode="Recycling"
-                                  VirtualizingPanel.IsVirtualizingWhenGrouping="True">
+                                  VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                                  VirtualizingPanel.VirtualizationMode="Recycling">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn Width="100"
-                                                    Header="เลน"
-                                                    DisplayMemberBinding="{Binding Path=LaneId}" />
+                                                    DisplayMemberBinding="{Binding Path=LaneId}"
+                                                    Header="เลน" />
                                     <GridViewColumn Width="100"
-                                                    Header="เลน"
-                                                    DisplayMemberBinding="{Binding Path=JobId}" />
+                                                    DisplayMemberBinding="{Binding Path=JobId}"
+                                                    Header="เลน" />
                                     <GridViewColumn Width="120"
-                                                    Header="วันที่เริ่ม"
-                                                    DisplayMemberBinding="{Binding Path=BeginDateString}" />
+                                                    DisplayMemberBinding="{Binding Path=BeginDateString}"
+                                                    Header="วันที่เริ่ม" />
                                     <GridViewColumn Width="120"
-                                                    Header="เวลาที่เริ่ม"
-                                                    DisplayMemberBinding="{Binding Path=BeginTimeString}" />
+                                                    DisplayMemberBinding="{Binding Path=BeginTimeString}"
+                                                    Header="เวลาที่เริ่ม" />
                                     <GridViewColumn Width="120"
-                                                    Header="วันที่สิ้นสุด"
-                                                    DisplayMemberBinding="{Binding Path=EndDateString}" />
+                                                    DisplayMemberBinding="{Binding Path=EndDateString}"
+                                                    Header="วันที่สิ้นสุด" />
                                     <GridViewColumn Width="120"
-                                                    Header="เวลาที่สิ้นสุด"
-                                                    DisplayMemberBinding="{Binding Path=EndTimeString}" />
+                                                    DisplayMemberBinding="{Binding Path=EndTimeString}"
+                                                    Header="เวลาที่สิ้นสุด" />
                                     <GridViewColumn Width="120"
-                                                    Header="รหัสพนักงาน"
-                                                    DisplayMemberBinding="{Binding Path=UserId}" />
+                                                    DisplayMemberBinding="{Binding Path=UserId}"
+                                                    Header="รหัสพนักงาน" />
                                     <GridViewColumn Width="300"
-                                                    Header="ชื่อพนักงาน"
-                                                    DisplayMemberBinding="{Binding Path=FullNameTH}" />
+                                                    DisplayMemberBinding="{Binding Path=FullNameTH}"
+                                                    Header="ชื่อพนักงาน" />
                                 </GridView>
                             </ListView.View>
                         </ListView>
                     </DockPanel>
                 </TabItem>
             </TabControl>
-        </Grid>
-        <GridSplitter Grid.Column="1"
-                      HorizontalAlignment="Stretch"
-                      VerticalAlignment="Stretch" />
-        <Grid Grid.Column="2">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <ListBox x:Name="lstUsers"
-                     Grid.Row="0"
-                     FontSize="18"
-                     ItemsSource="{Binding}"
-                     Background="Transparent"
-                     SelectionMode="Single"
-                     VirtualizingPanel.IsVirtualizing="True"
-                     VirtualizingPanel.VirtualizationMode="Recycling"
-                     SelectionChanged="lstUsers_SelectionChanged">
-                <ListBox.Resources>
-                    <Style TargetType="{x:Type ListBox}">
-                        <!-- Set the ItemTemplate of the ListBox to a DataTemplate which explains how to display an object of type BitmapImage. -->
-                        <Setter Property="ItemTemplate">
-                            <Setter.Value>
-                                <DataTemplate>
-                                    <Grid Margin="2">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="250" />
-                                        </Grid.ColumnDefinitions>
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="30" />
-                                            <RowDefinition Height="90" />
-                                            <RowDefinition Height="30" />
-                                        </Grid.RowDefinitions>
-                                        <Border x:Name="border"
-                                                Grid.Row="0"
-                                                Grid.RowSpan="3"
-                                                Grid.Column="0"
-                                                Width="250"
-                                                Height="150"
-                                                CornerRadius="1">
-                                            <Border.Background>
-                                                <ImageBrush ImageSource="/DMT.Plaza.Simulator.App;component/Images/Cards/Card-Black.png" />
-                                            </Border.Background>
-                                        </Border>
-                                        <!-- UserId and Full Name -->
-                                        <StackPanel Grid.Row="1"
-                                                    Grid.Column="0"
-                                                    Margin="20,20,0,0"
-                                                    HorizontalAlignment="Stretch"
-                                                    VerticalAlignment="Stretch"
-                                                    Orientation="Vertical">
-                                            <TextBlock Text="{Binding UserId}"
-                                                       FontSize="18"
-                                                       FontWeight="Bold" />
-                                            <TextBlock Text="{Binding FullNameTH}" FontSize="14" />
-                                            <Grid Height="2" />
-                                            <TextBlock FontSize="8">
-                                                <Run Text="วันที่เริ่ม: " />
-                                                <Run Text="{Binding BeginDateString}" />
-                                            </TextBlock>
-                                            <TextBlock FontSize="8">
-                                                <Run Text="เวลาเริ่ม: " />
-                                                <Run Text="{Binding BeginTimeString}" />
-                                            </TextBlock>
-                                        </StackPanel>
-                                        <!-- Role Name -->
-                                        <TextBlock Grid.Row="2"
-                                                   Grid.Column="0"
-                                                   Margin="0,2,0,0"
-                                                   Text="{Binding RoleNameTH}"
-                                                   FontSize="14"
-                                                   FontWeight="Bold"
-                                                   Foreground="WhiteSmoke"
-                                                   TextAlignment="Center" />
-                                    </Grid>
-                                    <DataTemplate.Triggers>
-                                        <DataTrigger Binding="{Binding Path=RoleId}" Value="ADMINS">
-                                            <Setter TargetName="border" Property="Background">
-                                                <Setter.Value>
-                                                    <ImageBrush ImageSource="/DMT.Plaza.Simulator.App;component/Images/Cards/Card-Purple.png" />
-                                                </Setter.Value>
-                                            </Setter>
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{Binding Path=RoleId}" Value="ACCOUNT">
-                                            <Setter TargetName="border" Property="Background">
-                                                <Setter.Value>
-                                                    <ImageBrush ImageSource="/DMT.Plaza.Simulator.App;component/Images/Cards/Card-Red.png" />
-                                                </Setter.Value>
-                                            </Setter>
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{Binding Path=RoleId}" Value="TC">
-                                            <Setter TargetName="border" Property="Background">
-                                                <Setter.Value>
-                                                    <ImageBrush ImageSource="/DMT.Plaza.Simulator.App;component/Images/Cards/Card-Blue.png" />
-                                                </Setter.Value>
-                                            </Setter>
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{Binding Path=RoleId}" Value="CTC">
-                                            <Setter TargetName="border" Property="Background">
-                                                <Setter.Value>
-                                                    <ImageBrush ImageSource="/DMT.Plaza.Simulator.App;component/Images/Cards/Card-Green.png" />
-                                                </Setter.Value>
-                                            </Setter>
-                                        </DataTrigger>
-                                    </DataTemplate.Triggers>
-                                </DataTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <!-- Swap out the default items panel with a WrapPanel so that the images will be arranged with a different layout. -->
-                        <Setter Property="ItemsPanel">
-                            <Setter.Value>
-                                <ItemsPanelTemplate>
-                                    <WrapPanel />
-                                </ItemsPanelTemplate>
-                            </Setter.Value>
-                        </Setter>
-                        <!-- Set this attached property to 'Disabled' so that the ScrollViewer in the ListBox will never show a horizontal scrollbar, and the WrapPanel it contains will be constrained to the width of the ScrollViewer's viewable surface. -->
-                        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
-                    </Style>
-                </ListBox.Resources>
-            </ListBox>
-            <Grid x:Name="gridTools"
-                  Grid.Row="1"
-                  Height="250">
-                <!-- Control center. -->
-                <DockPanel LastChildFill="True">
-                    <!-- Begin/End Shift -->
-                    <Border Margin="2"
-                            Background="CornflowerBlue"
-                            DockPanel.Dock="Top">
-                        <TextBlock Margin="3"
-                                   Text="Shift"
-                                   Foreground="WhiteSmoke"
-                                   FontSize="16" />
-                    </Border>
-                    <StackPanel DockPanel.Dock="Top">
-                        <DockPanel LastChildFill="True">
-                            <TextBlock Margin="3"
-                                       FontSize="16"
-                                       DockPanel.Dock="Left"
-                                       Text="Shift:" />
-                            <ComboBox x:Name="cbShifts"
-                                      Margin="3"
-                                      DisplayMemberPath="ShiftNameTH"
-                                      SelectedValuePath="ShiftId"
-                                      FontSize="12"
-                                      SelectionChanged="cbShifts_SelectionChanged" />
-                        </DockPanel>
-                    </StackPanel>
-                    <StackPanel DockPanel.Dock="Top">
-                        <DockPanel LastChildFill="True">
-                            <TextBlock Margin="3"
-                                       FontSize="16"
-                                       DockPanel.Dock="Left"
-                                       Text="Date:" />
-                            <xceed:DateTimePicker x:Name="shiftDate" Margin="3" />
-                        </DockPanel>
-                    </StackPanel>
-                    <StackPanel Margin="2"
-                                DockPanel.Dock="Top"
-                                Orientation="Horizontal">
-                        <Button x:Name="cmdBeginShift"
-                                Width="100"
-                                Margin="3"
-                                FontSize="14"
-                                Content="Begin"
-                                Click="cmdBeginShift_Click" />
-                        <Button x:Name="cmdEndShift"
-                                Width="100"
-                                Margin="3"
-                                FontSize="14"
-                                Content="End"
-                                Click="cmdEndShift_Click" />
-                    </StackPanel>
-                    <!-- Begin/End Job -->
-                    <Border Margin="2"
-                            Background="CornflowerBlue"
-                            DockPanel.Dock="Top">
-                        <TextBlock Margin="3"
-                                   Text="Job"
-                                   Foreground="WhiteSmoke"
-                                   FontSize="16" />
-                    </Border>
-                    <StackPanel DockPanel.Dock="Top">
-                        <DockPanel LastChildFill="True">
-                            <TextBlock Margin="3"
-                                       FontSize="16"
-                                       DockPanel.Dock="Left"
-                                       Text="Date:" />
-                            <xceed:DateTimePicker x:Name="jobDate" Margin="3" />
-                        </DockPanel>
-                    </StackPanel>
-                    <StackPanel Margin="2"
-                                DockPanel.Dock="Top"
-                                Orientation="Horizontal">
-                        <Button x:Name="cmdBeginJob"
-                                Width="100"
-                                Margin="3"
-                                FontSize="14"
-                                Content="Begin"
-                                Click="cmdBeginJob_Click" />
-                        <Button x:Name="cmdEndJob"
-                                Width="100"
-                                Margin="3"
-                                FontSize="14"
-                                Content="End"
-                                Click="cmdEndJob_Click" />
-                    </StackPanel>
-                    <Grid />
-                </DockPanel>
-            </Grid>
         </Grid>
     </Grid>
 </UserControl>

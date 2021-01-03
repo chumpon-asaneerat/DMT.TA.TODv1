@@ -143,6 +143,7 @@ namespace DMT.Simulator.Pages
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            /*
             shiftDate.CultureInfo = culture;
             shiftDate.Format = Xceed.Wpf.Toolkit.DateTimeFormat.Custom;
             shiftDate.FormatString = "yyyy-MM-dd HH:mm:ss.fff";
@@ -162,7 +163,7 @@ namespace DMT.Simulator.Pages
 
             jobDate.DefaultValue = DateTime.Now;
             jobDate.Value = DateTime.Now;
-
+            */
             RefreshLanes();
             RefreshUsers();
             RefreshShifts();
@@ -311,12 +312,12 @@ namespace DMT.Simulator.Pages
 
         private void ShiftDate_GotFocus(object sender, RoutedEventArgs e)
         {
-            shiftDate.Value = DateTime.Now;
+            //shiftDate.Value = DateTime.Now;
         }
 
         private void JobDate_GotFocus(object sender, RoutedEventArgs e)
         {
-            jobDate.Value = DateTime.Now;
+            //jobDate.Value = DateTime.Now;
         }
 
         #endregion
@@ -339,8 +340,10 @@ namespace DMT.Simulator.Pages
 
         private void lstUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            /*
             currentUser = lstUsers.SelectedItem as UserItem;
             RefreshUI();
+            */
         }
 
         #endregion
