@@ -15,12 +15,32 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
             <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="5" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+            <Border Grid.Row="0"
+                    Margin="1"
+                    BorderBrush="Silver"
+                    BorderThickness="1">
+                <DockPanel LastChildFill="True">
+                    <StackPanel DockPanel.Dock="Left" Margin="5" Orientation="Horizontal">
+                        <TextBlock Text="Job No:" FontSize="18" Margin="5, 0"/>
+                        <TextBox x:Name="txtJobNo" FontSize="18" VerticalAlignment="Center" Width="150" />
+                    </StackPanel>
+                    <Button x:Name="cmdRefresh"
+                            Width="150"
+                            Margin="5"
+                            Click="cmdRefresh_Click"
+                            Content="Refresh"
+                            DockPanel.Dock="Right"
+                            FontSize="18" />
+                    <Grid />
+                </DockPanel>
+            </Border>
             <ListView x:Name="lvLanes"
-                      Grid.Row="0"
+                      Grid.Row="1"
                       FontSize="18"
                       ItemsSource="{Binding}"
                       SelectionChanged="lvLanes_SelectionChanged"
@@ -28,43 +48,85 @@
                       VirtualizingPanel.IsVirtualizing="True"
                       VirtualizingPanel.IsVirtualizingWhenGrouping="True"
                       VirtualizingPanel.VirtualizationMode="Recycling">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Width="100"
-                                        DisplayMemberBinding="{Binding Path=LaneId}"
-                                        Header="รหัสเลน" />
-                        <GridViewColumn Width="100"
-                                        DisplayMemberBinding="{Binding Path=LaneNo}"
-                                        Header="หมายเลขเลน" />
-                        <GridViewColumn Width="100"
-                                        DisplayMemberBinding="{Binding Path=LaneType}"
-                                        Header="ประเภทเลน" />
-                        <GridViewColumn Width="120"
-                                        DisplayMemberBinding="{Binding Path=BeginDateString}"
-                                        Header="วันที่" />
-                        <GridViewColumn Width="120"
-                                        DisplayMemberBinding="{Binding Path=BeginTimeString}"
-                                        Header="เวลา" />
-                        <GridViewColumn Width="120"
-                                        DisplayMemberBinding="{Binding Path=UserId}"
-                                        Header="รหัสพนักงาน" />
-                        <GridViewColumn Width="300"
-                                        DisplayMemberBinding="{Binding Path=FullNameTH}"
-                                        Header="ชื่อพนักงาน" />
+                        <GridViewColumn Width="100" Header="รหัสพลาซ่า">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=SCWPlazaId}" TextAlignment="Center" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="100" Header="รหัสเลน">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=LaneId}" TextAlignment="Center" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="100" Header="หมายเลขเลน">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=LaneNo}" TextAlignment="Center" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="100" Header="ประเภทเลน">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=LaneType}" TextAlignment="Center" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="110" Header="วันที่">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=BeginDateString}" TextAlignment="Center" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="90"
+                                        Header="เวลา">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=BeginTimeString}" TextAlignment="Center" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="120" Header="รหัสพนักงาน">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=UserId}" TextAlignment="Center" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="250" Header="ชื่อพนักงาน">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=FullNameTH}" TextAlignment="Left" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <GridViewColumn Width="250" Header="User">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Margin="3"
+                                                HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"
                                                 Orientation="Horizontal">
                                         <Button x:Name="cmdBOJ"
                                                 Width="100"
-                                                Content="BOJ"
-                                                Click="cmdBOJ_Click" />
+                                                Click="cmdBOJ_Click"
+                                                Content="BOJ" />
                                         <Button x:Name="cmdEOJ"
                                                 Width="100"
-                                                Content="EOJ"
-                                                Click="cmdEOJ_Click" />
+                                                Click="cmdEOJ_Click"
+                                                Content="EOJ" />
                                     </StackPanel>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding HasJob}" Value="True">
@@ -79,149 +141,91 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
-                        <!--
-                        <GridViewColumn Width="250" Header="User">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Margin="3"
-                                                VerticalAlignment="Center"
-                                                Orientation="Horizontal">
-                                        <Grid Width="5" />
-                                        <Button x:Name="cmdEdit"
-                                                Width="100"
-                                                Content="แก้ไข"
-                                                CommandParameter="{Binding}" />
-                                        <Grid Width="5" />
-                                        <Button x:Name="cmdExchange"
-                                                Width="100"
-                                                Content="รับแลก"
-                                                CommandParameter="{Binding}" />
-                                        <Grid Width="5" />
-                                    </StackPanel>
-                                    <DataTemplate.Triggers>
-                                        <DataTrigger Binding="{Binding PositionCode}" Value="QB">
-                                            <Setter TargetName="cmdEdit" Property="Foreground" Value="Blue" />
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{Binding PositionCode}" Value="RB">
-                                            <Setter TargetName="cmdExchange" Property="Foreground" Value="Green" />
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{Binding PositionCode}" Value="WR">
-                                            <Setter TargetName="cmdExchange" Property="Foreground" Value="Red" />
-                                        </DataTrigger>
-                                    </DataTemplate.Triggers>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        -->
                     </GridView>
                 </ListView.View>
             </ListView>
-            <GridSplitter Grid.Row="1"
+            <GridSplitter Grid.Row="2"
                           HorizontalAlignment="Stretch"
                           VerticalAlignment="Stretch"
                           ResizeDirection="Rows" />
-            <TabControl Grid.Row="2">
+            <TabControl Grid.Row="3">
                 <TabItem Header="Attend/Leave">
-                    <DockPanel LastChildFill="True">
-                        <DockPanel Margin="2"
-                                   DockPanel.Dock="Top"
-                                   LastChildFill="True">
-                            <Button x:Name="cmdRefreshAttendences"
-                                    Margin="3"
-                                    Click="cmdRefreshAttendences_Click"
-                                    Content="Refresh"
-                                    FontSize="14" />
-                            <Grid />
-                        </DockPanel>
-                        <ListView x:Name="lvAttendances"
-                                  Grid.Row="0"
-                                  FontSize="18"
-                                  ItemsSource="{Binding}"
-                                  SelectionMode="Single"
-                                  VirtualizingPanel.IsVirtualizing="True"
-                                  VirtualizingPanel.IsVirtualizingWhenGrouping="True"
-                                  VirtualizingPanel.VirtualizationMode="Recycling">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Width="100"
-                                                    DisplayMemberBinding="{Binding Path=LaneId}"
-                                                    Header="เลน" />
-                                    <GridViewColumn Width="100"
-                                                    DisplayMemberBinding="{Binding Path=JobId}"
-                                                    Header="เลน" />
-                                    <GridViewColumn Width="120"
-                                                    DisplayMemberBinding="{Binding Path=BeginDateString}"
-                                                    Header="วันที่เริ่ม" />
-                                    <GridViewColumn Width="120"
-                                                    DisplayMemberBinding="{Binding Path=BeginTimeString}"
-                                                    Header="เวลาที่เริ่ม" />
-                                    <GridViewColumn Width="120"
-                                                    DisplayMemberBinding="{Binding Path=EndDateString}"
-                                                    Header="วันที่สิ้นสุด" />
-                                    <GridViewColumn Width="120"
-                                                    DisplayMemberBinding="{Binding Path=EndTimeString}"
-                                                    Header="เวลาที่สิ้นสุด" />
-                                    <GridViewColumn Width="120"
-                                                    DisplayMemberBinding="{Binding Path=UserId}"
-                                                    Header="รหัสพนักงาน" />
-                                    <GridViewColumn Width="300"
-                                                    DisplayMemberBinding="{Binding Path=FullNameTH}"
-                                                    Header="ชื่อพนักงาน" />
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-                    </DockPanel>
+                    <ListView x:Name="lvAttendances"
+                              Grid.Row="0"
+                              FontSize="18"
+                              ItemsSource="{Binding}"
+                              SelectionMode="Single"
+                              VirtualizingPanel.IsVirtualizing="True"
+                              VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                              VirtualizingPanel.VirtualizationMode="Recycling">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="100"
+                                                DisplayMemberBinding="{Binding Path=LaneId}"
+                                                Header="เลน" />
+                                <GridViewColumn Width="100"
+                                                DisplayMemberBinding="{Binding Path=JobId}"
+                                                Header="Job No" />
+                                <GridViewColumn Width="120"
+                                                DisplayMemberBinding="{Binding Path=BeginDateString}"
+                                                Header="วันที่เริ่ม" />
+                                <GridViewColumn Width="120"
+                                                DisplayMemberBinding="{Binding Path=BeginTimeString}"
+                                                Header="เวลาที่เริ่ม" />
+                                <GridViewColumn Width="120"
+                                                DisplayMemberBinding="{Binding Path=EndDateString}"
+                                                Header="วันที่สิ้นสุด" />
+                                <GridViewColumn Width="120"
+                                                DisplayMemberBinding="{Binding Path=EndTimeString}"
+                                                Header="เวลาที่สิ้นสุด" />
+                                <GridViewColumn Width="120"
+                                                DisplayMemberBinding="{Binding Path=UserId}"
+                                                Header="รหัสพนักงาน" />
+                                <GridViewColumn Width="300"
+                                                DisplayMemberBinding="{Binding Path=FullNameTH}"
+                                                Header="ชื่อพนักงาน" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </TabItem>
                 <TabItem Header="Payment">
-                    <DockPanel LastChildFill="True">
-                        <DockPanel Margin="2"
-                                   DockPanel.Dock="Top"
-                                   LastChildFill="True">
-                            <Button x:Name="cmdRefreshPayments"
-                                    Margin="3"
-                                    Click="cmdRefreshPayments_Click"
-                                    Content="Refresh"
-                                    FontSize="14" />
-                            <Grid />
-                        </DockPanel>
-                        <ListView x:Name="lvPayments"
-                                  Grid.Row="0"
-                                  FontSize="18"
-                                  ItemsSource="{Binding}"
-                                  SelectionMode="Single"
-                                  VirtualizingPanel.IsVirtualizing="True"
-                                  VirtualizingPanel.IsVirtualizingWhenGrouping="True"
-                                  VirtualizingPanel.VirtualizationMode="Recycling">
-                            <ListView.View>
-                                <GridView>
-                                    <GridViewColumn Width="100"
-                                                    DisplayMemberBinding="{Binding Path=LaneId}"
-                                                    Header="เลน" />
-                                    <GridViewColumn Width="100"
-                                                    DisplayMemberBinding="{Binding Path=JobId}"
-                                                    Header="เลน" />
-                                    <GridViewColumn Width="120"
-                                                    DisplayMemberBinding="{Binding Path=BeginDateString}"
-                                                    Header="วันที่เริ่ม" />
-                                    <GridViewColumn Width="120"
-                                                    DisplayMemberBinding="{Binding Path=BeginTimeString}"
-                                                    Header="เวลาที่เริ่ม" />
-                                    <GridViewColumn Width="120"
-                                                    DisplayMemberBinding="{Binding Path=EndDateString}"
-                                                    Header="วันที่สิ้นสุด" />
-                                    <GridViewColumn Width="120"
-                                                    DisplayMemberBinding="{Binding Path=EndTimeString}"
-                                                    Header="เวลาที่สิ้นสุด" />
-                                    <GridViewColumn Width="120"
-                                                    DisplayMemberBinding="{Binding Path=UserId}"
-                                                    Header="รหัสพนักงาน" />
-                                    <GridViewColumn Width="300"
-                                                    DisplayMemberBinding="{Binding Path=FullNameTH}"
-                                                    Header="ชื่อพนักงาน" />
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-                    </DockPanel>
+                    <ListView x:Name="lvPayments"
+                              Grid.Row="0"
+                              FontSize="18"
+                              ItemsSource="{Binding}"
+                              SelectionMode="Single"
+                              VirtualizingPanel.IsVirtualizing="True"
+                              VirtualizingPanel.IsVirtualizingWhenGrouping="True"
+                              VirtualizingPanel.VirtualizationMode="Recycling">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="100"
+                                                DisplayMemberBinding="{Binding Path=LaneId}"
+                                                Header="เลน" />
+                                <GridViewColumn Width="100"
+                                                DisplayMemberBinding="{Binding Path=JobId}"
+                                                Header="Job No" />
+                                <GridViewColumn Width="120"
+                                                DisplayMemberBinding="{Binding Path=BeginDateString}"
+                                                Header="วันที่เริ่ม" />
+                                <GridViewColumn Width="120"
+                                                DisplayMemberBinding="{Binding Path=BeginTimeString}"
+                                                Header="เวลาที่เริ่ม" />
+                                <GridViewColumn Width="120"
+                                                DisplayMemberBinding="{Binding Path=EndDateString}"
+                                                Header="วันที่สิ้นสุด" />
+                                <GridViewColumn Width="120"
+                                                DisplayMemberBinding="{Binding Path=EndTimeString}"
+                                                Header="เวลาที่สิ้นสุด" />
+                                <GridViewColumn Width="120"
+                                                DisplayMemberBinding="{Binding Path=UserId}"
+                                                Header="รหัสพนักงาน" />
+                                <GridViewColumn Width="300"
+                                                DisplayMemberBinding="{Binding Path=FullNameTH}"
+                                                Header="ชื่อพนักงาน" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
                 </TabItem>
             </TabControl>
         </Grid>

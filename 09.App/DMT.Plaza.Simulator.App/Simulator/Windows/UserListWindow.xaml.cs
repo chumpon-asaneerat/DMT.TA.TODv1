@@ -115,6 +115,10 @@ namespace DMT.Simulator.Windows
             {
                 CheckUserSelection();
             }
+            else if (e.Key == Key.Escape)
+            {
+                txtUserId.Text = string.Empty;
+            }
         }
 
         #endregion
@@ -183,6 +187,10 @@ namespace DMT.Simulator.Windows
                 {
                     return !excludes.Contains(usr.UserId);
                 });
+            }
+            else
+            {
+                _users = allusers;
             }
 
             _lastFilter = string.Empty;

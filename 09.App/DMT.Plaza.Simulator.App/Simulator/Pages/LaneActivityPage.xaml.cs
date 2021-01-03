@@ -53,7 +53,26 @@ namespace DMT.Simulator.Pages
 
         private CultureInfo culture = new CultureInfo("th-TH");
 
-        private int jobNo = 1; // Required to stored in config.
+        // Required to stored in config.
+        private int jobNo 
+        { 
+            get 
+            {
+                if (!int.TryParse(txtJobNo.Text, out int val))
+                    return 0;
+                return val;
+            } 
+            set 
+            {
+                string str = value.ToString();
+                if (txtJobNo.Text != str)
+                {
+                    if (!int.TryParse(str, out int val))
+                        return;
+                    txtJobNo.Text = val.ToString();
+                }
+            }
+        }
 
         private List<LaneInfo> lanes = new List<LaneInfo>();
 
@@ -63,14 +82,22 @@ namespace DMT.Simulator.Pages
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            jobNo = 1; // init jobNo.
             RefreshLanes();
-            RefreshUsers();
-            RefreshShifts();
         }
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        #endregion
+
+        #region Button Handler(s)
+
+        private void cmdRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshLanes();
         }
 
         #endregion
@@ -130,6 +157,7 @@ namespace DMT.Simulator.Pages
             param.laneId = value.LaneNo;
             param.plazaId = value.SCWPlazaId;
             param.staffId = user.UserId;
+
             var ret = emuOps.boj(param);
             if (null != ret && null != ret.status && ret.status.code == "S200")
             {
@@ -142,6 +170,19 @@ namespace DMT.Simulator.Pages
             if (null == value) return;
 
             int networkId = PlazaAppConfigManager.Instance.DMT.networkId;
+
+            var param = new SCWEOJ();
+            param.jobNo = value.JobNo;
+            param.networkId = networkId;
+            param.laneId = value.LaneNo;
+            param.plazaId = value.SCWPlazaId;
+            param.staffId = value.UserId;
+
+            var ret = emuOps.eoj(param);
+            if (null != ret && null != ret.status && ret.status.code == "S200")
+            {
+                RefreshLanes();
+            }
         }
 
         private void RefreshLanes()
@@ -180,33 +221,6 @@ namespace DMT.Simulator.Pages
             }
 
             lvLanes.ItemsSource = lanes;
-
-            RefreshUI();
-        }
-
-        private void RefreshUI()
-        {
-
-        }
-
-        private void RefreshShifts()
-        {
-
-        }
-
-        private void RefreshUsers()
-        {
-
-        }
-
-        private void RefreshLaneAttendances()
-        {
-
-        }
-
-        private void RefreshLanePayments()
-        {
-
         }
 
         #endregion
@@ -223,20 +237,6 @@ namespace DMT.Simulator.Pages
 
             RefreshUI();
             */
-        }
-
-        #endregion
-
-        #region Button Handler(s)
-
-        private void cmdRefreshAttendences_Click(object sender, RoutedEventArgs e)
-        {
-            RefreshLaneAttendances();
-        }
-
-        private void cmdRefreshPayments_Click(object sender, RoutedEventArgs e)
-        {
-            RefreshLanePayments();
         }
 
         #endregion

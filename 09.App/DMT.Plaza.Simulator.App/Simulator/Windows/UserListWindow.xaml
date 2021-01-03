@@ -17,7 +17,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="40" />
         </Grid.RowDefinitions>
         <ListBox x:Name="lstUsers"
                  Grid.Row="0"
@@ -151,9 +151,10 @@
                                Text="UserId:" />
                     <TextBlock Width="5" />
                     <TextBox x:Name="txtUserId"
-                             Width="200"
-                             FontSize="18" 
-                             KeyDown="txtUserId_KeyDown"/>
+                             Width="150"
+                             VerticalAlignment="Center"
+                             FontSize="18"
+                             KeyDown="txtUserId_KeyDown" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
