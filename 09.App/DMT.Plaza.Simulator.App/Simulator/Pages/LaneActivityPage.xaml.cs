@@ -80,33 +80,53 @@ namespace DMT.Simulator.Pages
         private void cmdBOJ_Click(object sender, RoutedEventArgs e)
         {
             var button = (sender as Button);
-            var lane = (null != button && null != button.DataContext) ? button.DataContext as LaneJob : null;
+            var lane = (null != button && null != button.DataContext) ? button.DataContext as LaneInfo : null;
             if (null == lane) return;
+
+            // Create exclude users.
+            var excludeUsrs = new List<string>();
+            if (null != lanes)
+            {
+                lanes.ForEach(ln => 
+                {
+                    if (null != ln.User && !excludeUsrs.Contains(ln.User.UserId))
+                    {
+                        // append user that on lane.
+                        excludeUsrs.Add(ln.User.UserId);
+                    }
+                });
+            }
+            // Select User to Begin job.
             var win = new Windows.UserListWindow();
             win.Owner = Application.Current.MainWindow;
-            win.Setup();
+            win.Setup(excludeUsrs.ToArray());
             if (win.ShowDialog() == false) return;
-
-            //BOJ(sender as LaneJob);
+            var usr = win.User;
+            if (null == usr) return; // no user exist.
+            BOJ(lane, usr);
         }
 
         private void cmdEOJ_Click(object sender, RoutedEventArgs e)
         {
             var button = (sender as Button);
-            var lane = (null != button && null != button.DataContext) ? button.DataContext as LaneJob : null;
+            var lane = (null != button && null != button.DataContext) ? button.DataContext as LaneInfo : null;
             if (null == lane) return;
-            //EOJ(sender as LaneJob);
+            EOJ(lane);
         }
 
         #endregion
 
         #region Private Methods
 
-        private void BOJ(LaneJob value, User user)
+        private void BOJ(LaneInfo value, User user)
         {
             if (null == value || null == user) return;
+
+            int networkId = PlazaAppConfigManager.Instance.DMT.networkId;
+
             var param = new SCWBOJ();
             param.jobNo = jobNo++;
+            param.networkId = networkId;
             param.laneId = value.LaneNo;
             param.plazaId = value.SCWPlazaId;
             param.staffId = user.UserId;
@@ -117,9 +137,11 @@ namespace DMT.Simulator.Pages
             }
         }
 
-        private void EOJ(LaneJob value)
+        private void EOJ(LaneInfo value)
         {
             if (null == value) return;
+
+            int networkId = PlazaAppConfigManager.Instance.DMT.networkId;
         }
 
         private void RefreshLanes()

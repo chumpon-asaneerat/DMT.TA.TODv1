@@ -11,7 +11,9 @@ using DMT.Services;
 namespace DMT.Models
 {
     using localOps = Services.Operations.Plaza; // reference to static class.
-    using todOps = Services.Operations.SCW.TOD; // reference to static class.
+    //using todOps = Services.Operations.SCW.TOD; // reference to static class.
+
+    #region UserCache
 
     /// <summary>
     /// The User Cache class.
@@ -90,6 +92,10 @@ namespace DMT.Models
         #endregion
     }
 
+    #endregion
+
+    #region LaneInfo
+
     /// <summary>
     /// The LaneInfo Job class.
     /// </summary>
@@ -112,10 +118,6 @@ namespace DMT.Models
         {
             this.Lane = lane;
         }
-
-        #endregion
-
-        #region Private Methods
 
         #endregion
 
@@ -142,20 +144,11 @@ namespace DMT.Models
 
             var matchJobs = jobs.FindAll(job => 
             {
-                bool ret = job.plazaId.Value == Lane.SCWPlazaId && job.laneId.Value == Lane.LaneNo;
-                if (ret)
-                {
-                    Console.WriteLine("match plazaId and laneId");
-                }
-                return ret;
+                return job.plazaId == Lane.SCWPlazaId && job.laneId == Lane.LaneNo;
             });
             if (null == matchJobs || matchJobs.Count <= 0)
-            {
-                Console.WriteLine("no match lane.");
                 return;
-            }
 
-            Console.WriteLine("match lane.");
             matchJobs.ForEach(job => 
             {
                 var usr = cache[job.staffId];
@@ -426,6 +419,10 @@ namespace DMT.Models
         #endregion
     }
 
+    #endregion
+
+    #region LaneInfo
+
     /// <summary>
     /// The Lane Job class.
     /// </summary>
@@ -691,43 +688,5 @@ namespace DMT.Models
         #endregion
     }
 
-
-
-
-
-
-
-    /// <summary>
-    /// The Lane Job class.
-    /// </summary>
-    public class LaneJob2
-    {
-        #region Static Methods
-
-        /// <summary>
-        /// Gets Jobs.
-        /// </summary>
-        /// <param name="networkId">The network id.</param>
-        /// <param name="plazaId">The plaza id (SCW).</param>
-        /// <param name="staffId">The staff id.</param>
-        /// <returns>Returns List of SCWJob.</returns>
-        public static List<SCWJob> GetJobs(int networkId, int plazaId, string staffId)
-        {
-            List<SCWJob> results = null;
-
-            var param = new SCWJobList();
-            param.networkId = networkId;
-            param.plazaId = plazaId;
-            param.staffId = staffId;
-            var ret = todOps.jobList(param);
-            if (null != ret && null != ret.status && ret.status.code == "S200")
-            {
-                results = ret.list;
-            }
-
-            return results;
-        }
-
-        #endregion
-    }
+    #endregion
 }

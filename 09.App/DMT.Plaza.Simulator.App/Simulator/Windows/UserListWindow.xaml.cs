@@ -173,11 +173,16 @@ namespace DMT.Simulator.Windows
         {
             lstUsers.ItemsSource = null;
             // Load Users.
-            _users = localOps.Security.User.Gets().Value();
-
+            var allusers = localOps.Security.User.Gets().Value();
+            
             if (null != users && users.Length > 0)
             {
+                var excludes = new List<string>(users);
                 // filter out all user on lanes.
+                _users = allusers.FindAll(usr =>
+                {
+                    return !excludes.Contains(usr.UserId);
+                });
             }
 
             _lastFilter = string.Empty;
