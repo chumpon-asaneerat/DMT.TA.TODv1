@@ -38,6 +38,35 @@ namespace DMT.Models
 
         #endregion
 
+        #region Private Methods
+
+        private void SetCurrentJob(SCWJob value)
+        {
+            // assign to current job
+            Job = value; 
+            // Raise related events.
+            RaisePropertyChanged("JobNo");
+            RaisePropertyChanged("Begin");
+            RaisePropertyChanged("BeginDateString");
+            RaisePropertyChanged("Begin");
+            RaisePropertyChanged("EndTimeString");
+            RaisePropertyChanged("EndDateString");
+            RaisePropertyChanged("EndTimeString");
+
+            if (null != Job)
+            {
+                var search = Search.User.ById.Create(Job.staffId);
+                // assign to current user
+                User = localOps.Security.User.Search.ById(search).Value();
+                // Raise related events.
+                RaisePropertyChanged("UserId");
+                RaisePropertyChanged("FirstNameEN");
+                RaisePropertyChanged("FirstNameTH");
+            }
+        }
+
+        #endregion
+
         #region Public Methods
 
         /// <summary>
@@ -49,23 +78,19 @@ namespace DMT.Models
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void Assign(SCWJob value)
+        public void Assign(List<SCWJob> values)
         {
-            if (null == value) return;
-            Job = value;
-            RaisePropertyChanged("JobNo");
-            RaisePropertyChanged("Begin");
-            RaisePropertyChanged("BeginDateString");
-            RaisePropertyChanged("Begin");
-            RaisePropertyChanged("EndTimeString");
-            RaisePropertyChanged("EndDateString");
-            RaisePropertyChanged("EndTimeString");
+            if (null == values) return;
+            Jobs = values;
+            if (null == Lane) return; // No Lane.
+            if (null == Jobs || Jobs.Count <= 0) return; // No Jobs.
+            Jobs.ForEach(job => 
+            {
+                if (job.plazaId != SCWPlazaId || job.laneId != LaneNo) 
+                    return; // mismatch plaza/lane
 
-            var search = Search.User.ById.Create(Job.staffId);
-            User = localOps.Security.User.Search.ById(search).Value();
-            RaisePropertyChanged("UserId");
-            RaisePropertyChanged("FirstNameEN");
-            RaisePropertyChanged("FirstNameTH");
+            });
+            //SetCurrentJob();
         }
 
         #endregion
@@ -77,9 +102,14 @@ namespace DMT.Models
 
         /// <summary>Gets Lane Model instance.</summary>
         public Lane Lane { get; private set; }
-        /// <summary>Gets User Model instance.</summary>
+
+        /// <summary>Gets Current User on lane.</summary>
         public User User { get; private set; }
-        /// <summary>Gets SCWJob Model instance.</summary>
+
+        /// <summary>Gets List of all SCWJob on lane.</summary>
+        public List<SCWJob> Jobs { get; private set; }
+
+        /// <summary>Gets Current SCWJob on lane.</summary>
         public SCWJob Job { get; private set; }
 
         #region TSB
