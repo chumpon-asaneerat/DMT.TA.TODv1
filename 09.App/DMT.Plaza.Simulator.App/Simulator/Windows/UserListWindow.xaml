@@ -24,8 +24,8 @@
                  Background="Transparent"
                  FontSize="18"
                  ItemsSource="{Binding}"
-                 SelectionChanged="lstUsers_SelectionChanged"
                  MouseDoubleClick="lstUsers_MouseDoubleClick"
+                 SelectionChanged="lstUsers_SelectionChanged"
                  SelectionMode="Single"
                  VirtualizingPanel.IsVirtualizing="True"
                  VirtualizingPanel.VirtualizationMode="Recycling">
@@ -143,6 +143,18 @@
                         Content="Cancel"
                         DockPanel.Dock="Right"
                         FontSize="18" />
+                <StackPanel Margin="5"
+                            DockPanel.Dock="Left"
+                            Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center"
+                               FontSize="18"
+                               Text="UserId:" />
+                    <TextBlock Width="5" />
+                    <TextBox x:Name="txtUserId"
+                             Width="200"
+                             FontSize="18" 
+                             KeyDown="txtUserId_KeyDown"/>
+                </StackPanel>
                 <Grid />
             </DockPanel>
         </Border>

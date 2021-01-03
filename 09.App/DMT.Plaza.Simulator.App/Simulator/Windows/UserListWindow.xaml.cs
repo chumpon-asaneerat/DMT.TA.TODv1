@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Threading;
 
 using DMT.Models;
 using DMT.Services;
@@ -36,6 +38,10 @@ namespace DMT.Simulator.Windows
         #region Internal Variables
 
         private List<User> _users = null;
+        private List<User> _filterUsers = null;
+        private string _lastFilter = string.Empty;
+        private bool _onFiltering = false;
+        private DispatcherTimer timer = null;
 
         #endregion
 
@@ -43,12 +49,26 @@ namespace DMT.Simulator.Windows
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            timer = new DispatcherTimer();
+            timer.Tick += Timer_Tick;
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Start();
 
+            // Focus on search textbox.
+            Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
+            {
+                txtUserId.Focus();
+            }));
         }
 
         private void Window_Unloaded(object sender, RoutedEventArgs e)
         {
-
+            if (null != timer)
+            {
+                timer.Tick -= Timer_Tick;
+                timer.Stop();
+            }
+            timer = null;
         }
 
         #endregion
@@ -73,16 +93,72 @@ namespace DMT.Simulator.Windows
         {
             int idx = lstUsers.SelectedIndex;
             if (idx == -1) return;
-            User = _users[idx];
+            User = _filterUsers[idx];
         }
 
         private void lstUsers_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             int idx = lstUsers.SelectedIndex;
             if (idx == -1) return;
-            User = _users[idx];
+            User = _filterUsers[idx];
             if (null == User) return;
             DialogResult = true;
+        }
+
+        #endregion
+
+        #region TextBox Handlers
+
+        private void txtUserId_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                CheckUserSelection();
+            }
+        }
+
+        #endregion
+
+        #region Timer Handler
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (_onFiltering) return;
+            _onFiltering = true;
+
+            if (_lastFilter != txtUserId.Text.Trim())
+            {
+                _lastFilter = txtUserId.Text.Trim();
+                ApplyFilter();
+            }
+
+            _onFiltering = false;
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void ApplyFilter()
+        {
+            lstUsers.ItemsSource = null;
+
+            _filterUsers = _users.FindAll(user =>
+            {
+                return user.UserId.Contains(_lastFilter);
+            });
+
+            lstUsers.ItemsSource = _filterUsers;
+        }
+
+        private void CheckUserSelection()
+        {
+            if (null != _filterUsers && _filterUsers.Count == 1)
+            {
+                // Auto choose user because has only one in filter list.
+                User = _filterUsers[0];
+                DialogResult = true;
+            }
         }
 
         #endregion
@@ -104,7 +180,10 @@ namespace DMT.Simulator.Windows
                 // filter out all user on lanes.
             }
 
-            lstUsers.ItemsSource = _users;
+            _lastFilter = string.Empty;
+            txtUserId.Text = string.Empty;
+            _filterUsers = _users;
+            lstUsers.ItemsSource = _filterUsers;
         }
 
         #endregion
