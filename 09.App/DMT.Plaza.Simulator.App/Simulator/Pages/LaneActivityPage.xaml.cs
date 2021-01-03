@@ -55,7 +55,7 @@ namespace DMT.Simulator.Pages
 
         private int jobNo = 1; // Required to stored in config.
 
-        private List<LaneJob> lanes = new List<LaneJob>();
+        private List<LaneInfo> lanes = new List<LaneInfo>();
 
         #endregion
 
@@ -126,23 +126,36 @@ namespace DMT.Simulator.Pages
         {
             lvLanes.ItemsSource = null;
 
-            lanes = LaneJob.GetLanes();
+            lanes = LaneInfo.GetLanes();
 
             var tsb = localOps.Infrastructure.TSB.Current().Value();
             if (null == tsb) return;
             var plazas = localOps.Infrastructure.Plaza.Search.ByTSB(tsb).Value();
             if (null == plazas || plazas.Count <= 0) return;
+
+            // Read all scw jobs.
+            int networkId = PlazaAppConfigManager.Instance.DMT.networkId;
+            var allJobs = new List<SCWJob>();
             plazas.ForEach(plaza =>
             {
                 var param = new SCWAllJob();
-                param.networkId = PlazaAppConfigManager.Instance.DMT.networkId;
+                param.networkId = networkId;
                 param.plazaId = plaza.SCWPlazaId;
                 var jobs = emuOps.allJobs(param);
-                if (null != lanes)
+                if (null != jobs && null != jobs.list && jobs.list.Count > 0)
                 {
-
+                    allJobs.AddRange(jobs.list.ToArray());
                 }
             });
+
+            // assign scw jobs to lanes.
+            if (null != lanes)
+            {
+                lanes.ForEach(lane => 
+                {
+                    lane.Assign(allJobs);
+                });
+            }
 
             lvLanes.ItemsSource = lanes;
 

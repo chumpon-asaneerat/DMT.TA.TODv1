@@ -87,7 +87,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\LaneJob.cs" />
+    <Compile Include="Models\Lane.Models.cs" />
     <Compile Include="Simulator\Pages\LaneActivityPage.xaml.cs">
       <DependentUpon>LaneActivityPage.xaml</DependentUpon>
     </Compile>

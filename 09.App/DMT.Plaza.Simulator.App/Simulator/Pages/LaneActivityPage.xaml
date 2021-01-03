@@ -32,7 +32,10 @@
                     <GridView>
                         <GridViewColumn Width="100"
                                         DisplayMemberBinding="{Binding Path=LaneId}"
-                                        Header="เลน" />
+                                        Header="รหัสเลน" />
+                        <GridViewColumn Width="100"
+                                        DisplayMemberBinding="{Binding Path=LaneNo}"
+                                        Header="หมายเลขเลน" />
                         <GridViewColumn Width="100"
                                         DisplayMemberBinding="{Binding Path=LaneType}"
                                         Header="ประเภทเลน" />
