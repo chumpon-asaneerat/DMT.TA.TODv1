@@ -38,6 +38,18 @@ namespace DMT.Services.Operations
             }
 
             /// <summary>
+            /// Execute allJobs api.
+            /// </summary>
+            /// <param name="value">The api parameter.</param>
+            /// <returns>Returns instance of SCWAllJobResult.</returns>
+            public static SCWAllJobResult allJobs(SCWAllJob value)
+            {
+                var ret = Execute<SCWAllJobResult>(
+                    RouteConsts.SCW.Emulator.allJobs.Url, value);
+                return ret;
+            }
+
+            /// <summary>
             /// Execute removeJobs api.
             /// </summary>
             /// <param name="value">The api parameter.</param>

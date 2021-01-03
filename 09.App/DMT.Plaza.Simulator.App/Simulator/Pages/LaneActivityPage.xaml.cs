@@ -29,6 +29,7 @@ using System.Net;
 
 namespace DMT.Simulator.Pages
 {
+    using localOps = Services.Operations.Plaza; // reference to static class.
     using emuOps = Services.Operations.SCW.Emulator; // reference to static class.
 
     /// <summary>
@@ -230,6 +231,22 @@ namespace DMT.Simulator.Pages
             lvLanes.ItemsSource = null;
 
             lanes = LaneJob.GetLanes();
+
+            var tsb = localOps.Infrastructure.TSB.Current().Value();
+            if (null == tsb) return;
+            var plazas = localOps.Infrastructure.Plaza.Search.ByTSB(tsb).Value();
+            if (null == plazas || plazas.Count <= 0) return;
+            plazas.ForEach(plaza =>
+            {
+                var param = new SCWAllJob();
+                param.networkId = PlazaAppConfigManager.Instance.DMT.networkId;
+                param.plazaId = plaza.SCWPlazaId;
+                var jobs = emuOps.allJobs(param);
+                if (null != lanes)
+                {
+
+                }
+            });
 
             lvLanes.ItemsSource = lanes;
 

@@ -167,6 +167,46 @@ namespace DMT.Models
 
     #endregion
 
+    #region SCWAllJob/SCWAllJobResult
+
+    #region Parameter class
+
+    /// <summary>
+    /// SCW AllJob class.
+    /// </summary>
+    public class SCWAllJob
+    {
+        /// <summary>Gets or sets networkId.</summary>
+        [PropertyMapName("networkId")]
+        public int? networkId { get; set; }
+
+        /// <summary>Gets or sets plazaId.</summary>
+        [PropertyMapName("plazaId")]
+        public int? plazaId { get; set; }
+    }
+
+    #endregion
+
+    #region Result class
+
+    /// <summary>
+    /// SCW AllJob Result class.
+    /// </summary>
+    public class SCWAllJobResult
+    {
+        /// <summary>Gets or sets list.</summary>
+        //[PropertyMapName("list")]
+        public List<SCWJob> list { get; set; }
+
+        /// <summary>Gets or sets status.</summary>
+        [PropertyMapName("status")]
+        public SCWStatus status { get; set; }
+    }
+
+    #endregion
+
+    #endregion
+
     #endregion
 
     #region EMV

@@ -34,6 +34,16 @@ namespace DMT
                     public const string Url = Emulator.Url + @"/" + Name;
                 }
 
+                // Url: dmt-scw/api/emu/jobs
+                /// <summary>The eoj Class.</summary>
+                public static partial class allJobs
+                {
+                    /// <summary>Gets route name.</summary>
+                    public const string Name = "jobs";
+                    /// <summary>Gets route url.</summary>
+                    public const string Url = Emulator.Url + @"/" + Name;
+                }
+
                 // Url: dmt-scw/api/emu/removes
                 /// <summary>The removeJobs Class.</summary>
                 public static partial class removeJobs
