@@ -49,11 +49,15 @@ namespace DMT.Simulator.Pages
 
         #endregion
 
-        private int jobNo = 1;
+        #region Internal Variables
 
         private CultureInfo culture = new CultureInfo("th-TH");
 
+        private int jobNo = 1; // Required to stored in config.
+
         private List<LaneJob> lanes = new List<LaneJob>();
+
+        #endregion
 
         #region Loaded/Unloaderd
 
@@ -78,6 +82,11 @@ namespace DMT.Simulator.Pages
             var button = (sender as Button);
             var lane = (null != button && null != button.DataContext) ? button.DataContext as LaneJob : null;
             if (null == lane) return;
+            var win = new Windows.UserListWindow();
+            win.Owner = Application.Current.MainWindow;
+            win.Setup();
+            if (win.ShowDialog() == false) return;
+
             //BOJ(sender as LaneJob);
         }
 

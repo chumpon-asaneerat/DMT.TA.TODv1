@@ -219,15 +219,15 @@ namespace DMT.Models
             set { }
         }
         /// <summary>Gets User Full Name EN.</summary>
-        public string FirstNameEN
+        public string FullNameEN
         {
-            get { return (null != User) ? User.FirstNameEN : string.Empty; }
+            get { return (null != User) ? User.FullNameEN : string.Empty; }
             set { }
         }
         /// <summary>Gets User Full Name TH.</summary>
-        public string FirstNameTH
+        public string FullNameTH
         {
-            get { return (null != User) ? User.FirstNameTH : string.Empty; }
+            get { return (null != User) ? User.FullNameTH : string.Empty; }
             set { }
         }
 

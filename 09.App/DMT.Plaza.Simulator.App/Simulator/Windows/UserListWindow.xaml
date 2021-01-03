@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="Avaliable Users"
-        Width="800"
-        Height="450"
+        Width="850"
+        Height="400"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
         Loaded="Window_Loaded"
@@ -25,6 +25,7 @@
                  FontSize="18"
                  ItemsSource="{Binding}"
                  SelectionChanged="lstUsers_SelectionChanged"
+                 MouseDoubleClick="lstUsers_MouseDoubleClick"
                  SelectionMode="Single"
                  VirtualizingPanel.IsVirtualizing="True"
                  VirtualizingPanel.VirtualizationMode="Recycling">
@@ -66,14 +67,6 @@
                                                    Text="{Binding UserId}" />
                                         <TextBlock FontSize="14" Text="{Binding FullNameTH}" />
                                         <Grid Height="2" />
-                                        <TextBlock FontSize="8">
-                                            <Run Text="วันที่เริ่ม: " />
-                                            <Run Text="{Binding BeginDateString}" />
-                                        </TextBlock>
-                                        <TextBlock FontSize="8">
-                                            <Run Text="เวลาเริ่ม: " />
-                                            <Run Text="{Binding BeginTimeString}" />
-                                        </TextBlock>
                                     </StackPanel>
                                     <!--  Role Name  -->
                                     <TextBlock Grid.Row="2"
