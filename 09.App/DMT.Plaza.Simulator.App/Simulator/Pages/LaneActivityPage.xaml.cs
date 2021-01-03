@@ -51,98 +51,6 @@ namespace DMT.Simulator.Pages
 
         private int jobNo = 1;
 
-        /*
-        public class UserItem : User
-        {
-            private UserShift _Shift = null;
-
-            [Category("Shift")]
-            [Browsable(false)]
-            public UserShift Shift 
-            {
-                get { return _Shift;  }
-                set
-                {
-                    _Shift = value;
-                    RaiseChanged("BeginDateString");
-                    RaiseChanged("BeginTimeString");
-                }
-            }
-
-            [Category("Shift")]
-            [ReadOnly(true)]
-            public string BeginDateString
-            {
-                get { return (null != Shift) ? Shift.BeginDateString : string.Empty; }
-                set { }
-            }
-
-            [Category("Shift")]
-            [ReadOnly(true)]
-            public string BeginTimeString
-            {
-                get { return (null != Shift) ? Shift.BeginTimeString : string.Empty; }
-                set { }
-            }
-        }
-
-        public class LaneItem : Lane
-        {
-            private SCWJob _job = null;
-
-            [Category("Activity")]
-            [Browsable(false)]
-            public SCWJob Job
-            {
-                get { return _job;  }
-                set
-                {
-                    _job = value;
-                    RaiseChanged("UserId");
-                    RaiseChanged("FullNameTH");
-                    RaiseChanged("BeginDateString");
-                    RaiseChanged("BeginTimeString");
-                }
-            }
-            [Category("User")]
-            [ReadOnly(true)]
-            public string UserId 
-            {
-                get { return (_job != null) ? _job.staffId : string.Empty; }
-                set { }
-            }
-            [Category("User")]
-            [ReadOnly(true)]
-            public string FullNameTH 
-            {
-                get { return (_job != null && !string.IsNullOrEmpty(_job.staffId)) ? "XXXX" : string.Empty; }
-                set { }
-            }
-            [Category("Lane Job")]
-            [ReadOnly(true)]
-            public string BeginDateString
-            {
-                get { return (_job != null && _job.bojDateTime.HasValue) ? _job.bojDateTime.Value.ToThaiDateString() : string.Empty; }
-                set { }
-            }
-            [Category("Lane Job")]
-            [ReadOnly(true)]
-            public string BeginTimeString
-            {
-                get { return (_job != null && _job.bojDateTime.HasValue) ? _job.bojDateTime.Value.ToThaiTimeString() : string.Empty; }
-                set { }
-            }
-        }
-        */
-        //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-        /*
-        private List<Shift> shifts = new List<Shift>();
-        private List<UserItem> users = new List<UserItem>();
-        private List<LaneItem> lanes = new List<LaneItem>();
-
-        private LaneItem currentLane = null;
-        private UserItem currentUser = null;
-        */
         private CultureInfo culture = new CultureInfo("th-TH");
 
         private List<LaneJob> lanes = new List<LaneJob>();
@@ -151,27 +59,6 @@ namespace DMT.Simulator.Pages
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            /*
-            shiftDate.CultureInfo = culture;
-            shiftDate.Format = Xceed.Wpf.Toolkit.DateTimeFormat.Custom;
-            shiftDate.FormatString = "yyyy-MM-dd HH:mm:ss.fff";
-            shiftDate.TimeFormat = Xceed.Wpf.Toolkit.DateTimeFormat.Custom;
-            shiftDate.TimeFormatString = "HH:mm:ss.fff";
-
-            shiftDate.DefaultValue = DateTime.Now;
-            shiftDate.Value = DateTime.Now;
-            shiftDate.GotFocus += ShiftDate_GotFocus;
-
-            jobDate.CultureInfo = culture;
-            jobDate.Format = Xceed.Wpf.Toolkit.DateTimeFormat.Custom;
-            jobDate.FormatString = "yyyy-MM-dd HH:mm:ss.fff";
-            jobDate.TimeFormat = Xceed.Wpf.Toolkit.DateTimeFormat.Custom;
-            jobDate.TimeFormatString = "HH:mm:ss.fff";
-            jobDate.GotFocus += JobDate_GotFocus;
-
-            jobDate.DefaultValue = DateTime.Now;
-            jobDate.Value = DateTime.Now;
-            */
             RefreshLanes();
             RefreshUsers();
             RefreshShifts();
@@ -251,148 +138,31 @@ namespace DMT.Simulator.Pages
             lvLanes.ItemsSource = lanes;
 
             RefreshUI();
-
-            /*
-            lvLanes.ItemsSource = null;
-
-            lanes.Clear();
-            var tsb = ops.TSB.GetCurrent().Value();
-            if (null != tsb)
-            {
-                var tsbLanes = ops.TSB.GetTSBLanes(tsb).Value();
-                if (null != tsbLanes)
-                {
-                    tsbLanes.ForEach(tsbLane =>
-                    {
-                        var inst = new LaneItem();
-                        tsbLane.AssignTo(inst);
-                        // find Attendance.
-                        var search = Search.Lanes.Current.AttendanceByLane.Create(tsbLane);
-                        inst.Attendance = ops.Lanes.GetCurrentAttendancesByLane(search).Value();
-                        lanes.Add(inst);
-                    });
-                }
-            }
-
-            lvLanes.ItemsSource = lanes;
-
-            RefreshUI();
-            */
         }
-
-
 
         private void RefreshUI()
         {
-            /*
-            gridTools.IsEnabled = false;
-            if (null == currentUser) return;
-            gridTools.IsEnabled = true;
 
-            // Find UserShift.
-            currentUser.Shift = ops.UserShifts.GetCurrent(currentUser).Value();
-
-            if (null == currentUser.Shift)
-            {
-                shiftDate.IsEnabled = true;
-                cmdBeginShift.IsEnabled = true;
-                cmdEndShift.IsEnabled = false;
-
-                jobDate.IsEnabled = false;
-                cmdBeginJob.IsEnabled = false;
-                cmdEndJob.IsEnabled = false;
-            }
-            else
-            {
-                shiftDate.IsEnabled = true;
-                cmdBeginShift.IsEnabled = false;
-                cmdEndShift.IsEnabled = true;
-
-                // Dislable all job begin/end controls.
-                jobDate.IsEnabled = false;
-                cmdBeginJob.IsEnabled = false;
-                cmdEndJob.IsEnabled = false;
-
-                if (null == currentLane) return;
-
-                jobDate.IsEnabled = true;
-                cmdBeginJob.IsEnabled = (null == currentLane.Attendance) ? true : false;
-                cmdEndJob.IsEnabled = !cmdBeginJob.IsEnabled;
-            }
-            */
         }
 
         private void RefreshShifts()
         {
-            /*
-            cbShifts.ItemsSource = null;
 
-            shifts = ops.Shifts.GetShifts().Value();
-
-            cbShifts.ItemsSource = shifts;
-            */
         }
 
         private void RefreshUsers()
         {
-            /*
-            lstUsers.ItemsSource = null;
 
-            users.Clear();
-            var role = ops.Users.GetRole(Search.Roles.ById.Create("TC")).Value();
-            if (null != role)
-            {
-                var usrs = ops.Users.GetUsers(role).Value();
-                if (null != usrs)
-                {
-                    usrs.ForEach(usr =>
-                    {
-                        var inst = new UserItem();
-                        usr.AssignTo(inst);
-                        // load user shift.
-                        inst.Shift = ops.UserShifts.GetCurrent(usr).Value();
-                        users.Add(inst);
-                    });
-                }
-            }
-
-            lstUsers.ItemsSource = users;
-
-            RefreshUI();
-            */
         }
-
 
         private void RefreshLaneAttendances()
         {
-            /*
-            if (null == currentLane) return;
 
-            lvAttendances.ItemsSource = null;
-
-            var search = Search.Lanes.Attendances.ByLane.Create(currentLane);
-            var attendances = ops.Lanes.GetAttendancesByLane(search).Value();
-            lvAttendances.ItemsSource = attendances;
-            */
         }
 
         private void RefreshLanePayments()
         {
 
-        }
-
-        #endregion
-
-        #region DateTimePicker Handlers
-
-        private void ShiftDate_GotFocus(object sender, RoutedEventArgs e)
-        {
-            //shiftDate.Value = DateTime.Now;
-        }
-
-        private void JobDate_GotFocus(object sender, RoutedEventArgs e)
-        {
-            //jobDate.Value = DateTime.Now;
         }
 
         #endregion
@@ -413,27 +183,6 @@ namespace DMT.Simulator.Pages
 
         #endregion
 
-        #region ListBox Handlers
-
-        private void lstUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            /*
-            currentUser = lstUsers.SelectedItem as UserItem;
-            RefreshUI();
-            */
-        }
-
-        #endregion
-
-        #region ComboBox Handler(s)
-
-        private void cbShifts_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        #endregion
-
         #region Button Handler(s)
 
         private void cmdRefreshAttendences_Click(object sender, RoutedEventArgs e)
@@ -444,97 +193,6 @@ namespace DMT.Simulator.Pages
         private void cmdRefreshPayments_Click(object sender, RoutedEventArgs e)
         {
             RefreshLanePayments();
-        }
-
-        private void cmdBeginShift_Click(object sender, RoutedEventArgs e)
-        {
-            /*
-            if (!shiftDate.Value.HasValue) return;
-
-            if (null == currentUser) return;
-            var shift = (cbShifts.SelectedItem as Shift);
-            if (null == shift) return;
-
-            var inst = ops.UserShifts.Create(shift, currentUser).Value();
-
-            DateTime dt = shiftDate.Value.Value;
-            inst.Begin = dt;
-            ops.UserShifts.BeginUserShift(inst);
-
-            RefreshUsers();
-            RefreshUI();
-            */
-        }
-
-        private void cmdEndShift_Click(object sender, RoutedEventArgs e)
-        {
-            /*
-            if (null == currentUser) return;
-            if (null == currentUser.Shift) return;
-
-            if (!shiftDate.Value.HasValue) return;
-
-            DateTime dt = shiftDate.Value.Value;
-            currentUser.Shift.End = dt;
-
-            ops.UserShifts.EndUserShift(currentUser.Shift);
-            
-            RefreshUsers();
-
-            RefreshUI();
-            */
-        }
-
-        private void cmdBeginJob_Click(object sender, RoutedEventArgs e)
-        {
-            /*
-            if (null == currentLane) return;
-            if (null == currentUser) return;
-            if (!jobDate.Value.HasValue) return;
-            if (null != currentLane.Attendance) return; // has attendance.
-
-            var attd = ops.Lanes.CreateAttendance(currentLane, currentUser).Value();
-
-            DateTime dt = jobDate.Value.Value;
-            // Set Begin Job date.
-            attd.Begin = dt;
-
-            ops.Lanes.SaveAttendance(attd);
-            // Set Attendance
-            currentLane.Attendance = attd;
-
-            // update list views
-            RefreshLaneAttendances();
-            RefreshLanePayments();
-            RefreshUI();
-            */
-        }
-
-        private void cmdEndJob_Click(object sender, RoutedEventArgs e)
-        {
-            /*
-            if (null == currentLane) return;
-            if (!jobDate.Value.HasValue) return;
-
-            var attd = currentLane.Attendance;
-            if (null != attd)
-            {
-                DateTime dt = jobDate.Value.Value;
-                // Set End Job date.
-                attd.End = dt;
-
-                // Save to database.
-                ops.Lanes.SaveAttendance(attd);
-            }
-            // Clear Attendance
-            currentLane.Attendance = null;
-
-            // update list views
-            RefreshLaneAttendances();
-            RefreshLanePayments();
-
-            RefreshUI();
-            */
         }
 
         #endregion
