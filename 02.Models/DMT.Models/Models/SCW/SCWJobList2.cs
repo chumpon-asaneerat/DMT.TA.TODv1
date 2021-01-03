@@ -24,7 +24,7 @@ namespace DMT.Models
 
         /// <summary>Gets or sets staffId.</summary>
         [PropertyMapName("staffId")]
-        public int? staffId { get; set; }
+        public string staffId { get; set; }
 
         /// <summary>Gets or sets operationDate.</summary>
         [PropertyMapName("operationDate")]

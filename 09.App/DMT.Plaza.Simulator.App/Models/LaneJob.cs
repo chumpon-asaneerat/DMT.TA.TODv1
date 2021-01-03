@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using NLib.Reflection;
 using DMT.Services;
 
@@ -9,13 +10,13 @@ using DMT.Services;
 
 namespace DMT.Models
 {
-    using localOps = Services.Operations.Plaza.Infrastructure; // reference to static class.
+    using localOps = Services.Operations.Plaza; // reference to static class.
     using todOps = Services.Operations.SCW.TOD; // reference to static class.
 
     /// <summary>
     /// The Lane Job class.
     /// </summary>
-    public class LaneJob
+    public class LaneJob : INotifyPropertyChanged
     {
         #region Constructor
 
@@ -38,6 +39,34 @@ namespace DMT.Models
         #endregion
 
         #region Public Methods
+
+        /// <summary>
+        /// Raise PropertyChanged event.
+        /// </summary>
+        /// <param name="propertyName">The property name.</param>
+        public void RaisePropertyChanged(string propertyName)
+        {
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public void Assign(SCWJob value)
+        {
+            if (null == value) return;
+            Job = value;
+            RaisePropertyChanged("JobNo");
+            RaisePropertyChanged("Begin");
+            RaisePropertyChanged("BeginDateString");
+            RaisePropertyChanged("Begin");
+            RaisePropertyChanged("EndTimeString");
+            RaisePropertyChanged("EndDateString");
+            RaisePropertyChanged("EndTimeString");
+
+            var search = Search.User.ById.Create(Job.staffId);
+            User = localOps.Security.User.Search.ById(search).Value();
+            RaisePropertyChanged("UserId");
+            RaisePropertyChanged("FirstNameEN");
+            RaisePropertyChanged("FirstNameTH");
+        }
 
         #endregion
 
@@ -241,7 +270,19 @@ namespace DMT.Models
             set { }
         }
 
+        /// <summary>Check Has Job.</summary>
+        public bool HasJob { get { return null != Job; } set { } }
+
         #endregion
+
+        #endregion
+
+        #region Public Events
+
+        /// <summary>
+        /// The PropertyChanged event.
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 
@@ -254,18 +295,42 @@ namespace DMT.Models
         public static List<LaneJob> GetLanes()
         {
             List<LaneJob> results = new List<LaneJob>();
-            var tsb = localOps.TSB.Current().Value();
+            var tsb = localOps.Infrastructure.TSB.Current().Value();
             if (null != tsb)
             {
-                var lanes = localOps.Lane.Search.ByTSB(tsb).Value();
+                var lanes = localOps.Infrastructure.Lane.Search.ByTSB(tsb).Value();
                 if (null != lanes && lanes.Count > 0)
                 {
                     lanes.ForEach(lane => 
                     {
-                        results.Add(new LaneJob(lane));
+                        var inst = new LaneJob(lane);
+                        results.Add(inst);
                     });
                 }
             }
+            return results;
+        }
+        /// <summary>
+        /// Gets Jobs.
+        /// </summary>
+        /// <param name="networkId">The network id.</param>
+        /// <param name="plazaId">The plaza id (SCW).</param>
+        /// <param name="staffId">The staff id.</param>
+        /// <returns>Returns List of SCWJob.</returns>
+        public static List<SCWJob> GetJobs(int networkId, int plazaId, string staffId)
+        {
+            List<SCWJob> results = null;
+
+            var param = new SCWJobList();
+            param.networkId = networkId;
+            param.plazaId = plazaId;
+            param.staffId = staffId;
+            var ret = todOps.jobList(param);
+            if (null != ret && null != ret.status && ret.status.code == "S200")
+            {
+                results = ret.list;
+            }
+
             return results;
         }
 

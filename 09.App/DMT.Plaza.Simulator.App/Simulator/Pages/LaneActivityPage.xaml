@@ -48,6 +48,34 @@
                         <GridViewColumn Width="300"
                                         DisplayMemberBinding="{Binding Path=FullNameTH}"
                                         Header="ชื่อพนักงาน" />
+                        <GridViewColumn Width="250" Header="User">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Margin="3"
+                                                VerticalAlignment="Center"
+                                                Orientation="Horizontal">
+                                        <Button x:Name="cmdBOJ"
+                                                Width="100"
+                                                Content="BOJ"
+                                                Click="cmdBOJ_Click" />
+                                        <Button x:Name="cmdEOJ"
+                                                Width="100"
+                                                Content="EOJ"
+                                                Click="cmdEOJ_Click" />
+                                    </StackPanel>
+                                    <DataTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding HasJob}" Value="True">
+                                            <Setter TargetName="cmdBOJ" Property="IsEnabled" Value="False" />
+                                            <Setter TargetName="cmdEOJ" Property="IsEnabled" Value="True" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding HasJob}" Value="False">
+                                            <Setter TargetName="cmdBOJ" Property="IsEnabled" Value="True" />
+                                            <Setter TargetName="cmdEOJ" Property="IsEnabled" Value="False" />
+                                        </DataTrigger>
+                                    </DataTemplate.Triggers>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
                         <!--
                         <GridViewColumn Width="250" Header="User">
                             <GridViewColumn.CellTemplate>

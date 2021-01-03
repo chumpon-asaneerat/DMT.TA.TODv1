@@ -29,6 +29,8 @@ using System.Net;
 
 namespace DMT.Simulator.Pages
 {
+    using emuOps = Services.Operations.SCW.Emulator; // reference to static class.
+
     /// <summary>
     /// Interaction logic for LaneActivityPage.xaml
     /// </summary>
@@ -45,6 +47,8 @@ namespace DMT.Simulator.Pages
         }
 
         #endregion
+
+        private int jobNo = 1;
 
         /*
         public class UserItem : User
@@ -179,7 +183,87 @@ namespace DMT.Simulator.Pages
 
         #endregion
 
+        #region Lane ListView Button Handlers.
+
+        private void cmdBOJ_Click(object sender, RoutedEventArgs e)
+        {
+            var button = (sender as Button);
+            var lane = (null != button && null != button.DataContext) ? button.DataContext as LaneJob : null;
+            if (null == lane) return;
+            //BOJ(sender as LaneJob);
+        }
+
+        private void cmdEOJ_Click(object sender, RoutedEventArgs e)
+        {
+            var button = (sender as Button);
+            var lane = (null != button && null != button.DataContext) ? button.DataContext as LaneJob : null;
+            if (null == lane) return;
+            //EOJ(sender as LaneJob);
+        }
+
+        #endregion
+
         #region Private Methods
+
+        private void BOJ(LaneJob value, User user)
+        {
+            if (null == value || null == user) return;
+            var param = new SCWBOJ();
+            param.jobNo = jobNo++;
+            param.laneId = value.LaneNo;
+            param.plazaId = value.SCWPlazaId;
+            param.staffId = user.UserId;
+            var ret = emuOps.boj(param);
+            if (null != ret && null != ret.status && ret.status.code == "S200")
+            {
+                RefreshLanes();
+            }
+        }
+
+        private void EOJ(LaneJob value)
+        {
+            if (null == value) return;
+        }
+
+        private void RefreshLanes()
+        {
+            lvLanes.ItemsSource = null;
+
+            lanes = LaneJob.GetLanes();
+
+            lvLanes.ItemsSource = lanes;
+
+            RefreshUI();
+
+            /*
+            lvLanes.ItemsSource = null;
+
+            lanes.Clear();
+            var tsb = ops.TSB.GetCurrent().Value();
+            if (null != tsb)
+            {
+                var tsbLanes = ops.TSB.GetTSBLanes(tsb).Value();
+                if (null != tsbLanes)
+                {
+                    tsbLanes.ForEach(tsbLane =>
+                    {
+                        var inst = new LaneItem();
+                        tsbLane.AssignTo(inst);
+                        // find Attendance.
+                        var search = Search.Lanes.Current.AttendanceByLane.Create(tsbLane);
+                        inst.Attendance = ops.Lanes.GetCurrentAttendancesByLane(search).Value();
+                        lanes.Add(inst);
+                    });
+                }
+            }
+
+            lvLanes.ItemsSource = lanes;
+
+            RefreshUI();
+            */
+        }
+
+
 
         private void RefreshUI()
         {
@@ -261,43 +345,6 @@ namespace DMT.Simulator.Pages
             */
         }
 
-        private void RefreshLanes()
-        {
-            lvLanes.ItemsSource = null;
-
-            lanes = LaneJob.GetLanes();
-
-            lvLanes.ItemsSource = lanes;
-
-            RefreshUI();
-
-            /*
-            lvLanes.ItemsSource = null;
-
-            lanes.Clear();
-            var tsb = ops.TSB.GetCurrent().Value();
-            if (null != tsb)
-            {
-                var tsbLanes = ops.TSB.GetTSBLanes(tsb).Value();
-                if (null != tsbLanes)
-                {
-                    tsbLanes.ForEach(tsbLane =>
-                    {
-                        var inst = new LaneItem();
-                        tsbLane.AssignTo(inst);
-                        // find Attendance.
-                        var search = Search.Lanes.Current.AttendanceByLane.Create(tsbLane);
-                        inst.Attendance = ops.Lanes.GetCurrentAttendancesByLane(search).Value();
-                        lanes.Add(inst);
-                    });
-                }
-            }
-
-            lvLanes.ItemsSource = lanes;
-
-            RefreshUI();
-            */
-        }
 
         private void RefreshLaneAttendances()
         {
