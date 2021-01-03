@@ -46,6 +46,7 @@ namespace DMT.Simulator.Pages
 
         #endregion
 
+        /*
         public class UserItem : User
         {
             private UserShift _Shift = null;
@@ -127,17 +128,19 @@ namespace DMT.Simulator.Pages
                 set { }
             }
         }
-
+        */
         //private LocalOperations ops = LocalServiceOperations.Instance.Plaza;
-
+        /*
         private List<Shift> shifts = new List<Shift>();
         private List<UserItem> users = new List<UserItem>();
         private List<LaneItem> lanes = new List<LaneItem>();
 
         private LaneItem currentLane = null;
         private UserItem currentUser = null;
-
+        */
         private CultureInfo culture = new CultureInfo("th-TH");
+
+        private List<LaneJob> lanes = new List<LaneJob>();
 
         #region Loaded/Unloaderd
 
@@ -260,6 +263,14 @@ namespace DMT.Simulator.Pages
 
         private void RefreshLanes()
         {
+            lvLanes.ItemsSource = null;
+
+            lanes = LaneJob.GetLanes();
+
+            lvLanes.ItemsSource = lanes;
+
+            RefreshUI();
+
             /*
             lvLanes.ItemsSource = null;
 
@@ -326,12 +337,14 @@ namespace DMT.Simulator.Pages
 
         private void lvLanes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            /*
             currentLane = lvLanes.SelectedItem as LaneItem;
             
             RefreshLaneAttendances();
             RefreshLanePayments();
 
             RefreshUI();
+            */
         }
 
         #endregion

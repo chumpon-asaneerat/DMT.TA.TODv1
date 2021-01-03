@@ -59,6 +59,15 @@ namespace DMT.Simulator.Windows
 
         #endregion
 
+        #region ListBox Handlers
+
+        private void lstUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        #endregion
+
         #region Public Methods
 
         public void Setup()

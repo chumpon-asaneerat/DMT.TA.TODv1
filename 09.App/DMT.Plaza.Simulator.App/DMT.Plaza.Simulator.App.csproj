@@ -87,6 +87,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\LaneJob.cs" />
     <Compile Include="Simulator\Pages\LaneActivityPage.xaml.cs">
       <DependentUpon>LaneActivityPage.xaml</DependentUpon>
     </Compile>
@@ -183,6 +184,10 @@
     <ProjectReference Include="..\..\02.Models\DMT.Models\DMT.Models.csproj">
       <Project>{7d584f0a-920f-4be1-8652-3527fd7a5c27}</Project>
       <Name>DMT.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\03.WebServices.Core\DMT.Rest.Client\DMT.Rest.Client.csproj">
+      <Project>{26ba4314-6b80-4a59-9e0d-7c29919bbc6f}</Project>
+      <Name>DMT.Rest.Client</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\05.WebServices.Clients\DMT.Local.Rest.Client\DMT.Local.Rest.Client.csproj">
       <Project>{ec52608d-cdbb-48d5-9ecc-87d8cfef52fd}</Project>
