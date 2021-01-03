@@ -22,6 +22,14 @@ namespace DMT
                 /// <summary>Gets route url.</summary>
                 public const string Url = TAxTOD.Url + @"/users/coupons";
             }
+
+            /// <summary>The TAA class.</summary>
+            public static partial class TAA
+            {
+                /// <summary>Gets route url.</summary>
+                public const string Url = TAxTOD.Url + @"/taa";
+            }
+
         }
     }
 }

@@ -86,6 +86,7 @@
     <Compile Include="Consts\Routes\SCW\Security\SCW.Security.RouteConsts.cs" />
     <Compile Include="Consts\Routes\SCW\TOD\SCW.TOD.RouteConsts.cs" />
     <Compile Include="Consts\Routes\TAxTOD\Coupons\TAxTOD.Coupon.RouteConsts.cs" />
+    <Compile Include="Consts\Routes\TAxTOD\TAA\TAxTOD.TAA.RouteConsts.cs" />
     <Compile Include="Consts\Routes\TAxTOD\TAxTOD.RouteConsts.cs" />
     <Compile Include="Consts\Routes\TA\Notify\Actions\ShiftChanged.cs" />
     <Compile Include="Consts\Routes\TA\Notify\Actions\TSBChanged.cs" />
