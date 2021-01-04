@@ -6,7 +6,9 @@
         <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/GroupMenuStyle.xaml" />
         <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/ImageButtonStyle.xaml" />
         <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/TextBlockStyle.xaml" />
-        <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/ListViewStyle.xaml" />
         -->
+        <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/InlineButtonStyle.xaml" />
+        <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/ListViewStyle.xaml" />
+        <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/TreeViewStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
