@@ -1,10 +1,13 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    mc:Ignorable="PresentationOptions">
 
-    <!--  CONST TEXTBLOCK FONT SIZE -->
-    <sys:Double x:Key="TextBlockFontSize18">18</sys:Double>
-    <sys:Double x:Key="TextBlockFontSize20">20</sys:Double>
+    <!--  CONST TEXTBLOCK FONT SIZE  -->
+    <sys:Double x:Key="TextBlockFontSize18" PresentationOptions:Freeze="True">18</sys:Double>
+    <sys:Double x:Key="TextBlockFontSize20" PresentationOptions:Freeze="True">20</sys:Double>
 
     <!--  BUTTON TEXTBLOCK STYLE  -->
     <Style x:Key="ButtonText" TargetType="TextBlock">
@@ -22,14 +25,14 @@
         <Setter Property="TextWrapping" Value="Wrap" />
     </Style>
 
-    <!-- LABEL TEXTBLOCK STYLE  -->
+    <!--  LABEL TEXTBLOCK STYLE  -->
     <Style x:Key="LabelText" TargetType="TextBlock">
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize18}" />
     </Style>
 
-    <!-- ERROR MESSAGE STYLE  -->
+    <!--  ERROR MESSAGE STYLE  -->
     <Style x:Key="ErrorText" TargetType="TextBlock">
         <Setter Property="Foreground" Value="GreenYellow" />
         <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize20}" />
