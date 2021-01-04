@@ -9,7 +9,7 @@
     <sys:Double x:Key="TextBlockFontSize18" PresentationOptions:Freeze="True">18</sys:Double>
     <sys:Double x:Key="TextBlockFontSize20" PresentationOptions:Freeze="True">20</sys:Double>
 
-    <!--  BUTTON TEXTBLOCK STYLE  -->
+    <!--  IMAGE BUTTON TEXTBLOCK STYLE  -->
     <Style x:Key="ButtonText" TargetType="TextBlock">
         <Setter Property="FontSize" Value="{StaticResource TextBlockFontSize20}" />
         <Setter Property="FontWeight" Value="Bold" />
