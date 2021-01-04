@@ -12,13 +12,4 @@
     <ImageBrush x:Key="ImageButtonBGImage"
                 PresentationOptions:Freeze="True"
                 ImageSource="/DMT.Controls;component/Images/Button/Button5.png" />
-
-    <!--  BUTTON TEXT BLOCK STYLE  -->
-    <Style x:Key="ImageButtonTextBlockStyle" TargetType="TextBlock">
-        <Setter Property="FontSize" Value="20" />
-        <Setter Property="FontWeight" Value="Bold" />
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="TextAlignment" Value="Center" />
-        <Setter Property="TextWrapping" Value="Wrap" />
-    </Style>
 </ResourceDictionary>

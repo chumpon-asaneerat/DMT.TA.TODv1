@@ -8,6 +8,9 @@
                   Source="pack://application:,,,/DMT.Controls;component/Themes/CommonStyle.xaml">
                 </ResourceDictionary>
                 <ResourceDictionary 
+                  Source="pack://application:,,,/DMT.Controls;component/Themes/TextBlockStyle.xaml">
+                </ResourceDictionary>
+                <ResourceDictionary 
                   Source="pack://application:,,,/DMT.Controls;component/Themes/ImageButtonStyle.xaml">
                 </ResourceDictionary>
                 <ResourceDictionary 

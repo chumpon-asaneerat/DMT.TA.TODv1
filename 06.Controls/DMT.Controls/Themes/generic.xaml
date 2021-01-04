@@ -5,5 +5,6 @@
         <ResourceDictionary Source="/DMT.Controls;component/Themes/CommonStyle.xaml" />
         <ResourceDictionary Source="/DMT.Controls;component/Themes/ImageButtonStyle.xaml" />
         <ResourceDictionary Source="/DMT.Controls;component/Themes/GroupMenuStyle.xaml" />
+        <ResourceDictionary Source="/DMT.Controls;component/Themes/TextBlockStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
