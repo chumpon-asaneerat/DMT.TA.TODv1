@@ -6,6 +6,7 @@
         <ResourceDictionary Source="/DMT.Controls;component/Themes/ImageButtonStyle.xaml" />
         <ResourceDictionary Source="/DMT.Controls;component/Themes/InlineButtonStyle.xaml" />
         <ResourceDictionary Source="/DMT.Controls;component/Themes/TextBlockStyle.xaml" />
+        <ResourceDictionary Source="/DMT.Controls;component/Themes/ListBoxStyle.xaml" />
         <ResourceDictionary Source="/DMT.Controls;component/Themes/ListViewStyle.xaml" />
         <ResourceDictionary Source="/DMT.Controls;component/Themes/TreeViewStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
