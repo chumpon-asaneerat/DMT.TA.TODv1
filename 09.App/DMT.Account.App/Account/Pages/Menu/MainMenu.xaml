@@ -44,6 +44,10 @@
                                 <Setter Property="Background" Value="{StaticResource TollAdminBGHover}" />
                                 <Setter Property="Foreground" Value="{StaticResource TollAdminFG}" />
                             </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource TollAdminBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource TollAdminFG}" />
+                            </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -62,6 +66,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource ExitBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource ExitFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
                                 <Setter Property="Background" Value="{StaticResource ExitBGHover}" />
                                 <Setter Property="Foreground" Value="{StaticResource ExitFG}" />
                             </Trigger>

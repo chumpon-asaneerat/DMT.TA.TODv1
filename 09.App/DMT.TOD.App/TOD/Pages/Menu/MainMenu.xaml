@@ -58,6 +58,10 @@
                                 <Setter Property="Background" Value="{StaticResource ShiftBGHover}" />
                                 <Setter Property="Foreground" Value="{StaticResource ShiftFG}" />
                             </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource ShiftBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource ShiftFG}" />
+                            </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -79,6 +83,10 @@
                                 <Setter Property="Background" Value="{StaticResource RevenueBGHover}" />
                                 <Setter Property="Foreground" Value="{StaticResource RevenueFG}" />
                             </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource RevenueBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource RevenueFG}" />
+                            </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -97,6 +105,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource TollAdminBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource TollAdminFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
                                 <Setter Property="Background" Value="{StaticResource TollAdminBGHover}" />
                                 <Setter Property="Foreground" Value="{StaticResource TollAdminFG}" />
                             </Trigger>

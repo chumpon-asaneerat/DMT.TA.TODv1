@@ -29,6 +29,7 @@
     <Style x:Key="MenuButtonStyle" TargetType="Button">
         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
         <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
         <Setter Property="Cursor" Value="Hand" />
     </Style>
 

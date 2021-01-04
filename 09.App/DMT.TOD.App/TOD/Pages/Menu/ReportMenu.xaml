@@ -49,6 +49,10 @@
                                 <Setter Property="Background" Value="{StaticResource ReportBGHover}" />
                                 <Setter Property="Foreground" Value="{StaticResource ReportFG}" />
                             </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="{StaticResource ReportBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource ReportFG}" />
+                            </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -67,6 +71,10 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="{StaticResource BackBGHover}" />
+                                <Setter Property="Foreground" Value="{StaticResource BackFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
                                 <Setter Property="Background" Value="{StaticResource BackBGHover}" />
                                 <Setter Property="Foreground" Value="{StaticResource BackFG}" />
                             </Trigger>
