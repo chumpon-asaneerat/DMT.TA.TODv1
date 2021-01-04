@@ -4,18 +4,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary 
-                  Source="pack://application:,,,/DMT.Controls;component/Themes/CommonStyle.xaml">
-                </ResourceDictionary>
-                <ResourceDictionary 
-                  Source="pack://application:,,,/DMT.Controls;component/Themes/TextBlockStyle.xaml">
-                </ResourceDictionary>
-                <ResourceDictionary 
-                  Source="pack://application:,,,/DMT.Controls;component/Themes/ImageButtonStyle.xaml">
-                </ResourceDictionary>
-                <ResourceDictionary 
-                  Source="pack://application:,,,/DMT.Controls;component/Themes/GroupMenuStyle.xaml">
-                </ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/CommonStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/GroupMenuStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/ImageButtonStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/TextBlockStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/ListViewStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
