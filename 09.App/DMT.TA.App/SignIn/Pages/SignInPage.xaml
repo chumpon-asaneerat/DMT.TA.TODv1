@@ -4,6 +4,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:ctrl="clr-namespace:DMT.Controls.Buttons;assembly=DMT.Controls"
              d:DesignHeight="400"
              d:DesignWidth="600"
              Loaded="UserControl_Loaded"
@@ -68,6 +69,10 @@
                           Margin="5">
                         <StackPanel Margin="5,0">
                             <Grid Height="10" />
+                            <ctrl:ImageButton x:Name="cmdOK" ImageSource="/DMT.TA.App;component/Images/Button/OK.png">
+                                <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="OK" />
+                            </ctrl:ImageButton>
+                            <!--
                             <Button x:Name="cmdOK"
                                     Click="cmdOK_Click"
                                     Style="{StaticResource ImageButtonStyle}">
@@ -82,6 +87,7 @@
                                     </StackPanel>
                                 </DockPanel>
                             </Button>
+                            -->
                             <Grid Height="5" />
                         </StackPanel>
                     </Grid>

@@ -1,55 +1,18 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    mc:Ignorable="PresentationOptions">
     <!--  BASIC SIZE, COLORS AND BACKGROUND  -->
     <sys:Double x:Key="ImageButtonWidth">NaN</sys:Double>
-    <SolidColorBrush x:Key="ImageButtonFG" Color="DarkOrange" />
-    <ImageBrush x:Key="ImageButtonBGImage" ImageSource="/DMT.Controls;component/Images/Button/Button5.png" />
+    <SolidColorBrush x:Key="ImageButtonFG"
+                     PresentationOptions:Freeze="True"
+                     Color="DarkOrange" />
+    <ImageBrush x:Key="ImageButtonBGImage"
+                PresentationOptions:Freeze="True"
+                ImageSource="/DMT.Controls;component/Images/Button/Button5.png" />
 
-    <!--  BUTTON STYLE  -->
-    <Style x:Key="ImageButtonStyle" TargetType="Button">
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="Height" Value="50" />
-        <Setter Property="Width" Value="{DynamicResource ImageButtonWidth}" />
-        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-        <Setter Property="VerticalContentAlignment" Value="Stretch" />
-        <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="border"
-                                Background="{DynamicResource ImageButtonBGImage}"
-                                BorderThickness="2"
-                                CornerRadius="8"
-                                Opacity="0.8">
-                        <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-                    </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="Opacity" Value="1" />
-                            <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource ImageButtonFG}" />
-                            <Setter Property="Foreground" Value="{DynamicResource ImageButtonFG}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-    </Style>
-
-    <!--  BUTTON IMAGE CONTAINER (GRID) STYLE  -->
-    <Style x:Key="ImageButtonImageContainerStyle" TargetType="Grid">
-        <Setter Property="Width" Value="50" />
-        <Setter Property="Height" Value="50" />
-    </Style>
-
-    <!--  BUTTON IMAGE STYLE  -->
-    <Style x:Key="ImageButtonImageStyle" TargetType="Image">
-        <Setter Property="Width" Value="32" />
-        <Setter Property="Height" Value="50" />
-        <Setter Property="HorizontalAlignment" Value="Center" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-    </Style>
-    
     <!--  BUTTON TEXT BLOCK STYLE  -->
     <Style x:Key="ImageButtonTextBlockStyle" TargetType="TextBlock">
         <Setter Property="FontSize" Value="20" />
