@@ -5,12 +5,7 @@
     <Thickness x:Key="CommonMargin">5</Thickness>
     <GridLength x:Key="PageMargin">5</GridLength>
     <sys:Double x:Key="CommonFontSize">18</sys:Double>
-    <!-- LABEL STYLE  -->
-    <Style x:Key="CommonLabelStyle" TargetType="TextBlock">
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="FontSize" Value="{StaticResource CommonFontSize}" />
-    </Style>
+
     <!-- TEXT BOX STYLE  -->
     <Style x:Key="CommonTextBoxStyle" TargetType="TextBox">
         <Setter Property="FontSize" Value="{StaticResource CommonFontSize}" />
@@ -20,14 +15,6 @@
     <Style x:Key="CommonPwdBoxStyle" TargetType="PasswordBox">
         <Setter Property="FontSize" Value="{StaticResource CommonFontSize}" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
-    </Style>
-    <!-- ERROR MESSAGE STYLE  -->
-    <Style x:Key="CommonErrorStyle" TargetType="TextBlock">
-        <Setter Property="Foreground" Value="GreenYellow" />
-        <Setter Property="FontSize" Value="20" />
-        <Setter Property="FontWeight" Value="ExtraBold" />
-        <Setter Property="TextAlignment" Value="Center" />
-        <Setter Property="TextWrapping" Value="WrapWithOverflow" />
     </Style>
     <!-- COMBO BOX STYLE  -->
     <Style x:Key="CommonComboBoxStyle" TargetType="ComboBox">
