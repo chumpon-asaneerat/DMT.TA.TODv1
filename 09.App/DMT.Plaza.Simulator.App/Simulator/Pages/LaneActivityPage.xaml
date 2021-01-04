@@ -9,6 +9,14 @@
              Loaded="UserControl_Loaded"
              Unloaded="UserControl_Unloaded"
              mc:Ignorable="d">
+    <UserControl.Resources>
+        <!--
+        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Red" />
+        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="White" />
+        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Yellow" />
+        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="Blue" />
+        -->
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -41,18 +49,10 @@
             </Border>
             <ListView x:Name="lvLanes"
                       Grid.Row="1"
-                      FontSize="18"
                       ItemsSource="{Binding}"
                       SelectionChanged="lvLanes_SelectionChanged"
-                      SelectionMode="Single"
-                      VirtualizingPanel.IsVirtualizing="True"
-                      VirtualizingPanel.IsVirtualizingWhenGrouping="True"
-                      VirtualizingPanel.VirtualizationMode="Recycling">
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                    </Style>
-                </ListView.ItemContainerStyle>
+                      Style="{StaticResource SingleSelectListView}"
+                      ItemContainerStyle="{StaticResource DMTListViewContainerStyle}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Width="100" Header="รหัสพลาซ่า">
@@ -112,6 +112,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
+                        <!-- 
                         <GridViewColumn Width="250" Header="User">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -141,6 +142,7 @@
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
+                        -->
                     </GridView>
                 </ListView.View>
             </ListView>
