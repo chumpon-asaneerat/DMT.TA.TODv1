@@ -1,6 +1,7 @@
 ﻿<UserControl x:Class="DMT.TOD.Pages.TollAdmin.ChangeShiftPage"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:ctrl="clr-namespace:DMT.Controls.Buttons;assembly=DMT.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -35,42 +36,28 @@
                     <TextBlock Width="100"
                                Margin="5,0"
                                Foreground="Black"
-                               Style="{StaticResource CommonLabelStyle}"
+                               Style="{StaticResource LabelText}"
                                Text="กะถัดไปคือ"
                                TextAlignment="Right" />
                     <ComboBox x:Name="cbShifts"
                               Width="140"
                               DisplayMemberPath="ShiftNameTH"
                               SelectedValuePath="ShiftId"
-                              Style="{StaticResource CommonComboBoxStyle}" />
+                              Style="{StaticResource CommonComboBox}" />
                     <Grid Width="5" DockPanel.Dock="Right" />
-                    <Button x:Name="cmdOk"
-                            Click="cmdOk_Click"
-                            DockPanel.Dock="Right"
-                            Style="{StaticResource ImageButtonStyle}">
-                        <DockPanel Margin="5,0">
-                            <Grid Style="{StaticResource ImageButtonImageContainerStyle}">
-                                <Image Source="/DMT.TOD.App;component/Images/Button/Approved2.png" Style="{StaticResource ImageButtonImageStyle}" />
-                            </Grid>
-                            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                                <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="ยืนยันการเปลี่ยนกะ" />
-                            </StackPanel>
-                        </DockPanel>
-                    </Button>
+                    <ctrl:ImageButton x:Name="cmdOk"
+                                      Click="cmdOk_Click"
+                                      DockPanel.Dock="Right"
+                                      ImageSource="/DMT.TOD.App;component/Images/Button/Approved2.png">
+                        <TextBlock Style="{StaticResource ButtonText}" Text="ยืนยันการเปลี่ยนกะ" />
+                    </ctrl:ImageButton>
                     <Grid Width="5" DockPanel.Dock="Right" />
-                    <Button x:Name="cmdCancel"
-                            Click="cmdCancel_Click"
-                            DockPanel.Dock="Right"
-                            Style="{StaticResource ImageButtonStyle}">
-                        <DockPanel Margin="5,0">
-                            <Grid Style="{StaticResource ImageButtonImageContainerStyle}">
-                                <Image Source="/DMT.TOD.App;component/Images/Button/Rejected4.png" Style="{StaticResource ImageButtonImageStyle}" />
-                            </Grid>
-                            <StackPanel VerticalAlignment="Center" Orientation="Vertical">
-                                <TextBlock Style="{StaticResource ImageButtonTextBlockStyle}" Text="ยกเลิกการเปลี่ยนกะ" />
-                            </StackPanel>
-                        </DockPanel>
-                    </Button>
+                    <ctrl:ImageButton x:Name="cmdCancel"
+                                      Click="cmdCancel_Click"
+                                      DockPanel.Dock="Right"
+                                      ImageSource="/DMT.TOD.App;component/Images/Button/Rejected4.png">
+                        <TextBlock Style="{StaticResource ButtonText}" Text="ยกเลิกการเปลี่ยนกะ" />
+                    </ctrl:ImageButton>
                     <Grid />
                 </DockPanel>
                 <!--  WORK AREA  -->
@@ -80,12 +67,12 @@
                             BorderThickness="1"
                             DockPanel.Dock="Top">
                         <TextBlock Margin="5"
-                                   Style="{StaticResource CommonLabelStyle}"
+                                   Style="{StaticResource LabelText}"
                                    Text="รายการกะที่ยังไม่ได้ทำการป้อนรายได้" />
                     </Border>
                     <!--  LANE VIEW  -->
                     <ListView x:Name="lvJobs"
-                              FontSize="{StaticResource CommonFontSize}"
+                              FontSize="{StaticResource InputFontSize18}"
                               ItemsSource="{Binding}"
                               VirtualizingPanel.IsVirtualizing="True"
                               VirtualizingPanel.IsVirtualizingWhenGrouping="True"

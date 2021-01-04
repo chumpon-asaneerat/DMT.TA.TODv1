@@ -30,5 +30,19 @@ namespace DMT.TOD.Windows.UserShifts
         }
 
         #endregion
+
+        #region Button Handlers
+
+        private void cmdCancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
+
+        private void cmdOk_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+
+        #endregion
     }
 }
