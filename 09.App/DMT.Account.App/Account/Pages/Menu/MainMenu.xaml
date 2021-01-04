@@ -75,8 +75,7 @@
                   VerticalContentAlignment="Center"
                   HorizontalScrollBarVisibility="Auto"
                   VerticalScrollBarVisibility="Auto">
-        <Grid HorizontalAlignment="Center"
-              VerticalAlignment="Center">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="20" />
                 <RowDefinition Height="Auto" />
@@ -141,8 +140,8 @@
                 </Button>
                 <Button x:Name="cndRequestExchangeManage"
                         Grid.Row="4"
-                        Click="cndRequestExchangeManage_Click"
                         Grid.Column="0"
+                        Click="cndRequestExchangeManage_Click"
                         Style="{StaticResource TollAdminButtonStyle}">
                     <StackPanel Orientation="Vertical">
                         <TextBlock Style="{StaticResource MenuButtonCaptionStyle}" Text="คำร้องขอแลก/ยืม" />
