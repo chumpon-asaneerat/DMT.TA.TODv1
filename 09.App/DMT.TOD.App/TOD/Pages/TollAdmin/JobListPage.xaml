@@ -38,14 +38,14 @@
                                       Click="cmdBack_Click"
                                       DockPanel.Dock="Right"
                                       ImageSource="/DMT.TOD.App;component/Images/Button/Home.png">
-                        <TextBlock Style="{StaticResource ButtonText}" Text="กลับสู่หน้าจอหลัก" />
+                        <TextBlock Style="{StaticResource ImageButtonText}" Text="กลับสู่หน้าจอหลัก" />
                     </ctrl:ImageButton>
                     <Grid Width="5" DockPanel.Dock="Right" />
                     <ctrl:ImageButton x:Name="cmdRefresh"
                                       Click="cmdRefresh_Click"
                                       DockPanel.Dock="Left"
                                       ImageSource="/DMT.TOD.App;component/Images/Button/Refresh.png">
-                        <TextBlock Style="{StaticResource ButtonText}" Text="เริ่มใหม่ (Refresh)" />
+                        <TextBlock Style="{StaticResource ImageButtonText}" Text="เริ่มใหม่ (Refresh)" />
                     </ctrl:ImageButton>
                     <Grid />
                 </DockPanel>

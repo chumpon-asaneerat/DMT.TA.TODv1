@@ -72,7 +72,7 @@
                             <ctrl:ImageButton x:Name="cmdOK"
                                               Click="cmdOK_Click"
                                               ImageSource="/DMT.TA.App;component/Images/Button/OK.png">
-                                <TextBlock Style="{StaticResource ButtonText}" Text="OK" />
+                                <TextBlock Style="{StaticResource ImageButtonText}" Text="OK" />
                             </ctrl:ImageButton>
                             <Grid Height="5" />
                         </StackPanel>
@@ -92,7 +92,7 @@
                         <ctrl:ImageButton x:Name="cmdChangePwd"
                                           Click="cmdChangePwd_Click"
                                           ImageSource="/DMT.TA.App;component/Images/Button/Return.png">
-                            <TextBlock Style="{StaticResource ButtonText}" Text="Change Password" />
+                            <TextBlock Style="{StaticResource ImageButtonText}" Text="Change Password" />
                         </ctrl:ImageButton>
                     </Grid>
                 </Grid>
@@ -165,13 +165,13 @@
                         <ctrl:ImageButton x:Name="cmdOK2"
                                           Click="cmdOK2_Click"
                                           ImageSource="/DMT.TA.App;component/Images/Button/OK.png">
-                            <TextBlock Style="{StaticResource ButtonText}" Text="OK" />
+                            <TextBlock Style="{StaticResource ImageButtonText}" Text="OK" />
                         </ctrl:ImageButton>
                         <Grid Height="10" />
                         <ctrl:ImageButton x:Name="cmdCancel2"
                                           Click="cmdCancel2_Click"
                                           ImageSource="/DMT.TA.App;component/Images/Button/Cancel.png">
-                            <TextBlock Style="{StaticResource ButtonText}" Text="Cancel" />
+                            <TextBlock Style="{StaticResource ImageButtonText}" Text="Cancel" />
                         </ctrl:ImageButton>
                         <Grid Height="5" />
                     </StackPanel>

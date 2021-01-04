@@ -49,14 +49,14 @@
                                       Click="cmdOk_Click"
                                       DockPanel.Dock="Right"
                                       ImageSource="/DMT.TOD.App;component/Images/Button/Approved2.png">
-                        <TextBlock Style="{StaticResource ButtonText}" Text="ยืนยันการเปลี่ยนกะ" />
+                        <TextBlock Style="{StaticResource ImageButtonText}" Text="ยืนยันการเปลี่ยนกะ" />
                     </ctrl:ImageButton>
                     <Grid Width="5" DockPanel.Dock="Right" />
                     <ctrl:ImageButton x:Name="cmdCancel"
                                       Click="cmdCancel_Click"
                                       DockPanel.Dock="Right"
                                       ImageSource="/DMT.TOD.App;component/Images/Button/Rejected4.png">
-                        <TextBlock Style="{StaticResource ButtonText}" Text="ยกเลิกการเปลี่ยนกะ" />
+                        <TextBlock Style="{StaticResource ImageButtonText}" Text="ยกเลิกการเปลี่ยนกะ" />
                     </ctrl:ImageButton>
                     <Grid />
                 </DockPanel>

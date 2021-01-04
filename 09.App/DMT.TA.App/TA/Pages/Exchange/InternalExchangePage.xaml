@@ -53,14 +53,14 @@
                                       Click="cmdBack_Click"
                                       DockPanel.Dock="Right"
                                       ImageSource="/DMT.TA.App;component/Images/Button/Home.png">
-                        <TextBlock Style="{StaticResource ButtonText}" Text="กลับสู่หน้าจอหลัก" />
+                        <TextBlock Style="{StaticResource ImageButtonText}" Text="กลับสู่หน้าจอหลัก" />
                     </ctrl:ImageButton>
                     <Grid Width="5" DockPanel.Dock="Right" />
                     <ctrl:ImageButton x:Name="cmdExchange"
                                       Click="cmdExchange_Click"
                                       DockPanel.Dock="Left"
                                       ImageSource="/DMT.TA.App;component/Images/Button/Money2.png">
-                        <TextBlock Style="{StaticResource ButtonText}" Text="แลกเงินหมุนเวียน" />
+                        <TextBlock Style="{StaticResource ImageButtonText}" Text="แลกเงินหมุนเวียน" />
                     </ctrl:ImageButton>
                     <Grid />
                 </DockPanel>

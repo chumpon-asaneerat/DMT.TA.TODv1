@@ -38,7 +38,7 @@
                                       Click="cmdBack_Click"
                                       DockPanel.Dock="Right"
                                       ImageSource="/DMT.TOD.App;component/Images/Button/Home.png">
-                        <TextBlock Style="{StaticResource ButtonText}" Text="กลับสู่หน้าจอหลัก" />
+                        <TextBlock Style="{StaticResource ImageButtonText}" Text="กลับสู่หน้าจอหลัก" />
                     </ctrl:ImageButton>
                     <Grid />
                 </DockPanel>

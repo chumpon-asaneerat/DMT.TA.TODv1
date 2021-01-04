@@ -53,14 +53,14 @@
                                       Click="cmdBack_Click"
                                       DockPanel.Dock="Right"
                                       ImageSource="/DMT.TA.App;component/Images/Button/Home.png">
-                        <TextBlock Style="{StaticResource ButtonText}" Text="กลับสู่หน้าจอหลัก" />
+                        <TextBlock Style="{StaticResource ImageButtonText}" Text="กลับสู่หน้าจอหลัก" />
                     </ctrl:ImageButton>
                     <Grid Width="5" DockPanel.Dock="Right" />
                     <ctrl:ImageButton x:Name="cmdAddCollector"
                                       Click="cmdAddCollector_Click"
                                       DockPanel.Dock="Left"
                                       ImageSource="/DMT.TA.App;component/Images/Button/User.png">
-                        <TextBlock Style="{StaticResource ButtonText}" Text="เพิ่มพนักงาน" />
+                        <TextBlock Style="{StaticResource ImageButtonText}" Text="เพิ่มพนักงาน" />
                     </ctrl:ImageButton>
                     <Grid />
                 </DockPanel>
