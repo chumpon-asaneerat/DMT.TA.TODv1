@@ -5,8 +5,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
+using System.Windows.Threading;
 
 #endregion
 
@@ -35,12 +37,11 @@ namespace DMT.Controls.Buttons
 
         #endregion
 
-        #region Private Methods
+        #region Loaded
 
-        private void RaiseClickEvent(object sender, RoutedEventArgs e)
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            RoutedEventArgs newEventArgs = new RoutedEventArgs(ImageButton.ClickEvent, sender);
-            RaiseEvent(newEventArgs);
+
         }
 
         #endregion
@@ -50,6 +51,16 @@ namespace DMT.Controls.Buttons
         private void _Button_Click(object sender, RoutedEventArgs e)
         {
             RaiseClickEvent(sender, e);
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void RaiseClickEvent(object sender, RoutedEventArgs e)
+        {
+            RoutedEventArgs newEventArgs = new RoutedEventArgs(ImageButton.ClickEvent, sender);
+            RaiseEvent(newEventArgs);
         }
 
         #endregion

@@ -5,6 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              d:DesignHeight="50"
              d:DesignWidth="220"
+             Focusable="False"
+             IsTabStop="False"
+             Loaded="UserControl_Loaded"
              mc:Ignorable="d">
     <UserControl.Resources>
         <!--  BUTTON STYLE  -->
@@ -14,6 +17,11 @@
             <Setter Property="Width" Value="{DynamicResource ImageButtonWidth}" />
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
             <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            <!--
+            <Setter Property="Focusable" Value="True" />
+            <Setter Property="IsTabStop" Value="True" />
+            -->
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
             <Setter Property="Cursor" Value="Hand" />
             <Setter Property="Template">
                 <Setter.Value>
@@ -27,6 +35,11 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="1" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource ImageButtonFG}" />
+                                <Setter Property="Foreground" Value="{DynamicResource ImageButtonFG}" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
                                 <Setter TargetName="border" Property="Opacity" Value="1" />
                                 <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource ImageButtonFG}" />
                                 <Setter Property="Foreground" Value="{DynamicResource ImageButtonFG}" />
@@ -49,18 +62,22 @@
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
     </UserControl.Resources>
-    <Button x:Name="_Button" Style="{StaticResource ImageButtonStyle}"
-            Click="_Button_Click">
+    <Button x:Name="_Button"
+            Click="_Button_Click"
+            Style="{StaticResource ImageButtonStyle}">
         <DockPanel Margin="5,0">
             <Grid Width="5" />
-            <Grid Style="{StaticResource ImageButtonImageContainerStyle}"
+            <Grid HorizontalAlignment="Center"
                   VerticalAlignment="Center"
-                  HorizontalAlignment="Center">
+                  Style="{StaticResource ImageButtonImageContainerStyle}">
                 <Image x:Name="_Image"
                        Source="{Binding ImageSource}"
                        Style="{StaticResource ImageButtonImageStyle}" />
             </Grid>
-            <ItemsControl x:Name="_ItemsControl" ItemsSource="{Binding Items}">
+            <ItemsControl x:Name="_ItemsControl"
+                          Focusable="False"
+                          IsTabStop="False"
+                          ItemsSource="{Binding Items}">
                 <!--  ItemsPanelTemplate  -->
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>

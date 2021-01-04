@@ -23,5 +23,12 @@
         <Setter Property="FontWeight" Value="ExtraBold" />
         <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+        <!--
+        <Style.Triggers>
+            <Trigger Property ="IsFocused" Value="True">
+                <Setter Property= "Foreground" Value="Red"/>
+            </Trigger>
+        </Style.Triggers>
+        -->
     </Style>
 </ResourceDictionary>
