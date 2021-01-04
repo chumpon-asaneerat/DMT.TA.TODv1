@@ -28,7 +28,7 @@ namespace DMT.Models
 
         /// <summary>Gets or sets staffTypeId.</summary>
         [PropertyMapName("staffTypeId")]
-        public string staffTypeId { get; set; }
+        public int? staffTypeId { get; set; } // ประเภทพนักงาน 1 = chief, 2 = sup
 
         /// <summary>Gets or sets beginDateTime.</summary>
         [PropertyMapName("beginDateTime")]

@@ -21,18 +21,9 @@ namespace DMT.Models
         [PropertyMapName("plazaId")]
         public int? plazaId { get; set; }
 
-        /// <summary>Gets or sets staffId.</summary>
-        [PropertyMapName("staffId")]
-        public string staffId { get; set; }
-
-        // ประเภทพนักงาน 1=chief, 2=sup
         /// <summary>Gets or sets staffTypeId.</summary>
         [PropertyMapName("staffTypeId")]
-        public int? staffTypeId { get; set; } // always 1
-
-        /// <summary>Gets or sets beginDateTime.</summary>
-        [PropertyMapName("beginDateTime")]
-        public DateTime? beginDateTime { get; set; }
+        public int? staffTypeId { get; set; } // ประเภทพนักงาน 1 = chief, 2 = sup
     }
 
     #endregion

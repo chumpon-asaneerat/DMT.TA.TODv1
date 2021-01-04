@@ -143,7 +143,7 @@
     <Compile Include="Models\SCW\SCWJobList2.cs" />
     <Compile Include="Models\SCW\SCWLogInAudit.cs" />
     <Compile Include="Models\SCW\SCWPasswordExpiresDays.cs" />
-    <Compile Include="Models\SCW\SCWQRCode.cs" />
+    <Compile Include="Models\SCW\SCWQRCodeTransactionList.cs" />
     <Compile Include="Models\SCW\SCWSaveChiefDuty.cs" />
     <Compile Include="Models\Local\Shifts\Shift.cs" />
     <Compile Include="Models\Local\Shifts\TSBShift.cs" />

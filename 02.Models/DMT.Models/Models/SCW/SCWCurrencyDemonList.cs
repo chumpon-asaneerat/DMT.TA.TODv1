@@ -43,7 +43,7 @@ namespace DMT.Models
 
         /// <summary>Gets or sets denomValue.</summary>
         [PropertyMapName("denomValue")]
-        public decimal denomValue { get; set; }
+        public decimal denomValue { get; set; } // ประเภทค่าเงิน 1 = ธนบัตร, 2 = เหรียญ
 
         /// <summary>Gets or sets denomTypeId.</summary>
         [PropertyMapName("denomTypeId")]

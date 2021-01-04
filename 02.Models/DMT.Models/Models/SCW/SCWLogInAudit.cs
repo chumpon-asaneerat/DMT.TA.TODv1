@@ -28,7 +28,7 @@ namespace DMT.Models
 
         /// <summary>Gets or sets status.</summary>
         [PropertyMapName("status")]
-        public string status { get; set; } // "fail", "success", "etc."
+        public string status { get; set; } // "fail", "success"
 
         /// <summary>Gets or sets description.</summary>
         [PropertyMapName("description")]
