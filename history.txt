@@ -30,17 +30,165 @@
         - BOJ/EOJ (Lane) Operation.
         - EMV/QRCode (Lane) Operation.
 --------------------------------------------------------------------------------------------
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #630
+- 
+
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #629
+- 
+
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #628
+- 
+
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #627
+- 
+
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #626
+- 
+
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #625
+- 
+
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #624
+- 
+
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #623
+- 
+
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #622
+- 
+
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #621
+- 
+
+[commited]
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #620
+- Prepare history.txt
+
+[commited]
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #619
+- DMT.TAxTODv1
+  - DMT.Core project.
+    - Update app version.
+
+[commited]
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #618
+- DMT.TAxTODv1
+  - DMT.Plaza.Config.App project.
+    - Add Generic.xaml
+  - DMT.Plaza.Simulator.App project.
+    - Add Generic.xaml
+
+[commited]
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #617
+- DMT.TAxTODv1
+  - DMT.Controls project.
+    - Update ListViewStyle.xaml #1
+    - Update GroupMenuStyle.xaml
+
+[commited]
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #616
+- DMT.TAxTODv1
+  - DMT.Controls project.
+    - Add ListViewStyle.cs
+  - DMT.Account.App project.
+    - App.xaml.cs - Add ListViewStyle
+  - DMT.TA.App project.
+    - App.xaml.cs - Add ListViewStyle
+  - DMT.TOD.App project.
+    - App.xaml.cs - Add ListViewStyle
+
+[commited]
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #615
+- DMT.TAxTODv1
+  - DMT.TOD.App project.
+    - Replace Button with ImageButton
+      - ChangeShiftPage
+      - EMVQRCodeListPage
+      - JobListPage
+      - BOSWindow
+
+[commited]
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #614
+- DMT.TAxTODv1
+  - DMT.TA.App project.
+    - Replace Button with ImageButton
+      - InternalExchangePage
+      - ManageExchangePage
+      - RequestExchangePage
+
+[commited]
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #613
+- DMT.TAxTODv1
+  - DMT.TA.App project.
+    - Replace Button with ImageButton
+      - CollectorCreditManagePage
+      - CreditHistoryViewPage
+
+[commited]
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #612
+- DMT.TAxTODv1
+  - DMT.Account.App project.
+    - Recheck Pages
+      - MainMenu.
+  - DMT.TA.App project.
+    - Recheck Pages
+      - MainMenu.
+    - Replace Button with ImageButton
+      - CouponHistoryViewPage
+      - CouponTSBSalePage
+      - ReceiveCouponPage
+      - ReturnCouponPage
+  - DMT.TOD.App project.
+    - Recheck Pages
+      - MainMenu.
+      - ReportMenu.
+
+[commited]
+Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #611
+- DMT.TAxTODv1
+  - DMT.Controls project.
+    - Update TextBlockStyle.cs
+    - Rename Style -> CommonStyle.cs.
+  - DMT.Account.App project.
+    - Replace Button with ImageButton
+      - SignInPage.
+  - DMT.TA.App project.
+    - Replace Button with ImageButton
+      - SignInPage.
+  - DMT.TOD.App project.
+    - Replace Button with ImageButton
+      - SignInWindow.
+
+[commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #610
-- 
+- Prepare history.txt
 
+[commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #609
-- 
+- DMT.TAxTODv1
+  - DMT.Controls project.
+    - Add TextBlockStyle.cs
+    - Move and rename all TextBlock Style from Another Styles.
+  - DMT.Account.App project.
+    - App.xaml.cs - Add TextBlockStyle
+  - DMT.TA.App project.
+    - App.xaml.cs - Add TextBlockStyle
+  - DMT.TOD.App project.
+    - App.xaml.cs - Add TextBlockStyle
 
+[commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #608
-- 
+- DMT.TAxTODv1
+  - DMT.TA.App project.
+    - Replace Button with ImageButton
+      - SignInPage.
 
+[commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #607
-- 
+- DMT.TAxTODv1
+  - DMT.Controls project.
+    - Add ImageButton control.
+    - Remove ImageButton style (used internal in ImageButton control).
 
 [commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #606
@@ -1429,7 +1577,7 @@ Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #442
 [commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #441
 - DMT.TAxTODv1
-  - DMT.SCW.Rest.Client project
+  - DMT.SCW.Rest.Client project.
     - Update SCW - Master Operations class
       - Add cardAllowList overload method (omit parameter).
       - Add couponList overload method (omit parameter).
@@ -1882,7 +2030,7 @@ Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #403
       - Map export controller - RoleManage -> Security.Role
       - Map export controller - UserManage -> Security.User 
     - Add Shift.Controller.cs
-      - Map export controller - ShiftManage -> Shift.Shift
+      - Add Shift Controller class (inherited from ApiController)
       - Map export controller - TSBShiftManage -> Shift.TSB
       - Map export controller - UserShiftManage -> Shift.User
 
@@ -2704,6 +2852,7 @@ Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #332
 
 [commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #331
+- DMT.TAxTODv2
   - DMT.Controls project.
     - Remove LocalDbStatus StatusBar element.
     - Add TALocalDbStatus StatusBar element.
@@ -2976,7 +3125,7 @@ Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #302
   - Rename DMT.TA.RestServer project to DMT.TA.Rest.Server.
   - Rename DMT.RestClient project to DMT.Rest.Client.
   - Add DMT.SCW.Rest.Client project.
-
+  
 [commited]
 Ported DMTv2 to DMT.TA.TODv1, DMT.TA.TODv2 #301
 - DMT.TAxTODv2 add projects
