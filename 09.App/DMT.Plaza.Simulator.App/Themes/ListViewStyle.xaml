@@ -39,9 +39,14 @@
 
     <!--  LISTVIEW STYLES  -->
     <Style x:Key="DMTListView" TargetType="ListView">
+        <!--  Common  -->
         <Setter Property="FontSize" Value="{StaticResource ListViewFontSize18}" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="Margin" Value="0" />
         <Setter Property="AlternationCount" Value="2" />
+        <!--  Synchronized  -->
+        <Setter Property="IsSynchronizedWithCurrentItem" Value="True" />
+        <!--  VirtualizingPanel  -->
         <Setter Property="VirtualizingPanel.IsVirtualizing" Value="True" />
         <Setter Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="True" />
         <Setter Property="VirtualizingPanel.VirtualizationMode" Value="Recycling" />
