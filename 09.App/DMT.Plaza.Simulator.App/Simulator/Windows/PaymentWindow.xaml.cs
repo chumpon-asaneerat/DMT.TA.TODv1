@@ -33,16 +33,37 @@ namespace DMT.Simulator.Windows
 
         #endregion
 
+        #region Internal Variables
+
+        private LaneInfo _lane = null;
+
+        #endregion
+
         #region Button Handlers
 
         private void cmdOk_Click(object sender, RoutedEventArgs e)
         {
+            if (null == _lane || null == _lane.User) return;
             DialogResult = true;
         }
 
         private void cmdCancel_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
+        }
+
+        #endregion
+
+        #region Public Methods
+
+        /// <summary>
+        /// Setup.
+        /// </summary>
+        /// <param name="value">The LaneInfo instance.</param>
+        public void Setup(LaneInfo value)
+        {
+            _lane = value;
+            if (null == _lane || null == _lane.User) cmdOk.IsEnabled = false;
         }
 
         #endregion
