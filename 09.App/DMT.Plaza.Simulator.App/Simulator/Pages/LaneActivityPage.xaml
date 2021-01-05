@@ -96,7 +96,7 @@
                         <GridViewColumn Width="250"
                                         CellTemplate="{StaticResource FullNameTH}"
                                         Header="ชื่อพนักงาน" />
-                        <GridViewColumn Width="250" Header="Operations">
+                        <GridViewColumn Width="330" Header="Operations">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Margin="3"
@@ -116,17 +116,19 @@
                                         <Button x:Name="cmdPayment"
                                                 Click="cmdPayment_Click"
                                                 Width="100"
-                                                Content="EOJ"
+                                                Content="Payment"
                                                 Style="{DynamicResource InlineButton}" />
                                     </StackPanel>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding HasJob}" Value="True">
                                             <Setter TargetName="cmdBOJ" Property="IsEnabled" Value="False" />
                                             <Setter TargetName="cmdEOJ" Property="IsEnabled" Value="True" />
+                                            <Setter TargetName="cmdPayment" Property="IsEnabled" Value="True" />
                                         </DataTrigger>
                                         <DataTrigger Binding="{Binding HasJob}" Value="False">
                                             <Setter TargetName="cmdBOJ" Property="IsEnabled" Value="True" />
                                             <Setter TargetName="cmdEOJ" Property="IsEnabled" Value="False" />
+                                            <Setter TargetName="cmdPayment" Property="IsEnabled" Value="False" />
                                         </DataTrigger>
                                     </DataTemplate.Triggers>
                                 </DataTemplate>

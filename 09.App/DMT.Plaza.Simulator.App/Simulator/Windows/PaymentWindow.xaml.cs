@@ -53,23 +53,71 @@ namespace DMT.Simulator.Windows
 
             if (string.IsNullOrEmpty(txtApproveCode.Text))
             {
-
+                ShowError("Please Enter Approve Code.");
+                txtApproveCode.Focus();
                 return;
             }
 
             if (string.IsNullOrEmpty(txtRefCode.Text))
             {
-
+                ShowError("Please Enter Ref Code.");
+                txtRefCode.Focus();
                 return;
             }
 
             if (string.IsNullOrEmpty(txtAmount.Text))
             {
-
+                ShowError("Please Enter Amount.");
+                txtAmount.Focus();
                 return;
             }
 
-            //emuOps
+            decimal val = decimal.Zero;
+            if (!decimal.TryParse(txtAmount.Text, out val))
+            {
+                ShowError("The Amount must be numeric.");
+                txtAmount.Focus();
+                return;
+            }
+            if (val <= 0)
+            {
+                ShowError("The Amount not zero or negative value.");
+                txtAmount.Focus();
+                return;
+            }
+
+            int networkId = PlazaAppConfigManager.Instance.DMT.networkId;
+            if (rbEMV.IsChecked == true)
+            {
+                SCWAddEMV inst = new SCWAddEMV();
+                inst.laneId = _lane.LaneNo;
+                inst.staffId = _lane.UserId;
+                inst.staffNameEn = _lane.FullNameEN;
+                inst.staffNameTh = _lane.FullNameTH;
+                inst.trxDateTime = DateTime.Now;
+                inst.approvalCode = txtApproveCode.Text;
+                inst.refNo = txtRefCode.Text;
+                inst.amount = val;
+                emuOps.addEMV(inst);
+            }
+            else if (rbQRCode.IsChecked == true)
+            {
+                SCWAddQRCode inst = new SCWAddQRCode();
+                inst.laneId = _lane.LaneNo;
+                inst.staffId = _lane.UserId;
+                inst.staffNameEn = _lane.FullNameEN;
+                inst.staffNameTh = _lane.FullNameTH;
+                inst.trxDateTime = DateTime.Now;
+                inst.approvalCode = txtApproveCode.Text;
+                inst.refNo = txtRefCode.Text;
+                inst.amount = val;
+                emuOps.addQRCode(inst);
+            }
+            else
+            {
+                ShowError("Please select payment type.");
+                return;
+            }
             DialogResult = true;
         }
 
@@ -81,6 +129,11 @@ namespace DMT.Simulator.Windows
         #endregion
 
         #region Private Methods
+
+        private void ShowError(string msg)
+        {
+            txtErrMsg.Text = msg;
+        }
 
         private string GenerateRandomChar(int length)
         {
