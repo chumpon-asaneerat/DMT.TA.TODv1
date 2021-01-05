@@ -12,16 +12,24 @@
                      PresentationOptions:Freeze="True"
                      Color="Black" />
 
+    <SolidColorBrush x:Key="InlineButtonPressedForground"
+                     PresentationOptions:Freeze="True"
+                     Color="WhiteSmoke" />
+
+    <SolidColorBrush x:Key="InlineButtonDisableForground"
+                     PresentationOptions:Freeze="True"
+                     Color="DimGray" />
+
     <SolidColorBrush x:Key="InlineButtonOuterBorderBrush"
                      PresentationOptions:Freeze="True"
-                     Color="#FFFFFFFF" />
+                     Color="#7FFFFFFF" />
 
     <SolidColorBrush x:Key="InlineButtonInnerBackground"
                      PresentationOptions:Freeze="True"
-                     Color="#7FAAAAAA" />
+                     Color="#EEAAAAAA" />
     <SolidColorBrush x:Key="InlineButtonInnerBorderBrush"
                      PresentationOptions:Freeze="True"
-                     Color="#FFAAAAAA" />
+                     Color="#FF555555" />
 
     <SolidColorBrush x:Key="InlineButtonFocusedBorderBrush"
                      PresentationOptions:Freeze="True"
@@ -36,6 +44,10 @@
     <SolidColorBrush x:Key="InlineButtonPressBorderBackgound"
                      PresentationOptions:Freeze="True"
                      Color="#CC000000" />
+
+    <SolidColorBrush x:Key="InlineButtonDisableBorderBackgound"
+                     PresentationOptions:Freeze="True"
+                     Color="#7FAAAAAA" />
 
     <!--  CONST BUTTON CONTROL TEMPLATE  -->
     <ControlTemplate x:Key="InlineButtonTemplate" TargetType="{x:Type Button}">
@@ -55,8 +67,9 @@
                 </DoubleAnimationUsingKeyFrames>
             </Storyboard>
         </ControlTemplate.Resources>
-        <Border BorderBrush="{StaticResource InlineButtonOuterBorderBrush}"
-                BorderThickness="1"
+        <Border Padding="1"
+                BorderBrush="{StaticResource InlineButtonOuterBorderBrush}"
+                BorderThickness="0"
                 CornerRadius="4">
             <Border x:Name="border"
                     Background="{StaticResource InlineButtonInnerBackground}"
@@ -113,6 +126,7 @@
                 <Setter TargetName="shine" Property="Opacity" Value="0.4" />
                 <Setter TargetName="border" Property="Background" Value="{StaticResource InlineButtonPressBorderBackgound}" />
                 <Setter TargetName="glow" Property="Visibility" Value="Hidden" />
+                <Setter Property="Foreground" Value="{StaticResource InlineButtonPressedForground}" />
             </Trigger>
             <Trigger Property="IsFocused" Value="True">
                 <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource InlineButtonFocusedBorderBrush}" />
@@ -124,6 +138,13 @@
                 <Trigger.ExitActions>
                     <BeginStoryboard x:Name="MouseOver_BeginStoryboard" Storyboard="{StaticResource Timeline2}" />
                 </Trigger.ExitActions>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="shine" Property="Visibility" Value="Hidden" />
+                <Setter TargetName="border" Property="Background" Value="{StaticResource InlineButtonDisableBorderBackgound}" />
+                <Setter TargetName="glow" Property="Visibility" Value="Hidden" />
+                <Setter Property="Foreground" Value="{StaticResource InlineButtonDisableForground}" />
+                <Setter Property="Cursor" Value="Arrow" />
             </Trigger>
         </ControlTemplate.Triggers>
     </ControlTemplate>

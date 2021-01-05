@@ -106,11 +106,13 @@
                                         <Button x:Name="cmdBOJ"
                                                 Width="100"
                                                 Click="cmdBOJ_Click"
-                                                Content="BOJ" />
+                                                Content="BOJ"
+                                                Style="{DynamicResource InlineButton}" />
                                         <Button x:Name="cmdEOJ"
                                                 Width="100"
                                                 Click="cmdEOJ_Click"
-                                                Content="EOJ" />
+                                                Content="EOJ"
+                                                Style="{DynamicResource InlineButton}" />
                                     </StackPanel>
                                     <DataTemplate.Triggers>
                                         <DataTrigger Binding="{Binding HasJob}" Value="True">
