@@ -18,24 +18,25 @@
 
     <SolidColorBrush x:Key="ListViewItemSelectedForground"
                      PresentationOptions:Freeze="True"
-                     Color="WhiteSmoke" />
+                     Color="WhiteSmoke"/>
     <SolidColorBrush x:Key="ListViewItemSelectedBackground"
                      PresentationOptions:Freeze="True"
-                     Color="CornflowerBlue" />
+                     Color="Orange"/>
 
     <SolidColorBrush x:Key="ListViewItemMouseOverForground"
                      PresentationOptions:Freeze="True"
-                     Color="WhiteSmoke" />
+                     Color="WhiteSmoke"/>
     <SolidColorBrush x:Key="ListViewItemMouseOverBackground"
                      PresentationOptions:Freeze="True"
-                     Color="Orange" />
+                     Color="CornflowerBlue"
+                     Opacity=".75"/>
 
     <SolidColorBrush x:Key="ListViewItemDisableForground"
                      PresentationOptions:Freeze="True"
                      Color="White" />
     <SolidColorBrush x:Key="ListViewItemDisableBackground"
                      PresentationOptions:Freeze="True"
-                     Color="Silver" />
+                     Color="Silver"/>
 
     <!--  LISTVIEW STYLES  -->
     <Style x:Key="DMTListView" TargetType="ListView">
@@ -109,4 +110,145 @@
             </MultiTrigger>
         </Style.Triggers>
     </Style>
+
+
+    <!--  LISTVIEW ITEM CELL DATA TEMPLATES  -->
+
+    <!--  Common for TSB/PlazaGroup/Plaza/Lane  -->
+    <DataTemplate x:Key="TSBId">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding TSBId}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="TSBNameEN">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding TSBNameEN}"
+                   TextAlignment="Left" />
+    </DataTemplate>
+    <DataTemplate x:Key="TSBNameTH">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding TSBNameTH}"
+                   TextAlignment="Left" />
+    </DataTemplate>
+
+    <!--  Common for PlazaGroup/Plaza/Lane  -->
+    <DataTemplate x:Key="PlazaGroupId">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding PlazaGroupId}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="PlazaGroupNameEN">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding PlazaGroupNameEN}"
+                   TextAlignment="Left" />
+    </DataTemplate>
+    <DataTemplate x:Key="PlazaGroupNameTH">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding PlazaGroupNameTH}"
+                   TextAlignment="Left" />
+    </DataTemplate>
+    <DataTemplate x:Key="Direction">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding Direction}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+
+    <!--  Common for Plaza/Lane  -->
+    <DataTemplate x:Key="PlazaId">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding PlazaId}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="SCWPlazaId">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding SCWPlazaId}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="PlazaNameEN">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding PlazaNameEN}"
+                   TextAlignment="Left" />
+    </DataTemplate>
+    <DataTemplate x:Key="PlazaNameTH">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding PlazaNameTH}"
+                   TextAlignment="Left" />
+    </DataTemplate>
+
+    <!--  Common for Lane  -->
+    <DataTemplate x:Key="LaneId">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding LaneId}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="LaneNo">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding LaneNo}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="LaneType">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding LaneType}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+
+    <!--  Common for DATE/TIME  -->
+    <DataTemplate x:Key="BeginDateString">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding BeginDateString}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="BeginTimeString">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding BeginTimeString}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="EndDateString">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding EndDateString}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="EndTimeString">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding EndTimeString}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+
+    <!--  Common for User/Role  -->
+    <DataTemplate x:Key="RoleId">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding RoleId}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="GroupId">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding GroupId}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="RoleNameEN">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding RoleNameEN}"
+                   TextAlignment="Left" />
+    </DataTemplate>
+    <DataTemplate x:Key="RoleNameTH">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding RoleNameTH}"
+                   TextAlignment="Left" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="UserId">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding UserId}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="FullNameEN">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding FullNameEN}"
+                   TextAlignment="Left" />
+    </DataTemplate>
+    <DataTemplate x:Key="FullNameTH">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding FullNameTH}"
+                   TextAlignment="Left" />
+    </DataTemplate>
 </ResourceDictionary>

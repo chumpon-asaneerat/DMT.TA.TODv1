@@ -25,9 +25,16 @@
                     BorderBrush="Silver"
                     BorderThickness="1">
                 <DockPanel LastChildFill="True">
-                    <StackPanel DockPanel.Dock="Left" Margin="5" Orientation="Horizontal">
-                        <TextBlock Text="Job No:" FontSize="18" Margin="5, 0"/>
-                        <TextBox x:Name="txtJobNo" FontSize="18" VerticalAlignment="Center" Width="150" />
+                    <StackPanel Margin="5"
+                                DockPanel.Dock="Left"
+                                Orientation="Horizontal">
+                        <TextBlock Margin="5,0"
+                                   FontSize="18"
+                                   Text="Job No:" />
+                        <TextBox x:Name="txtJobNo"
+                                 Width="150"
+                                 VerticalAlignment="Center"
+                                 FontSize="18" />
                     </StackPanel>
                     <Button x:Name="cmdRefresh"
                             Width="150"
@@ -41,69 +48,53 @@
             </Border>
             <ListView x:Name="lvLanes"
                       Grid.Row="1"
+                      ItemContainerStyle="{StaticResource DMTListViewContainerStyle}"
                       ItemsSource="{Binding}"
                       SelectionChanged="lvLanes_SelectionChanged"
-                      Style="{StaticResource SingleSelectListView}"
-                      ItemContainerStyle="{StaticResource DMTListViewContainerStyle}">
+                      Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Width="100" Header="รหัสพลาซ่า">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=SCWPlazaId}" TextAlignment="Center" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Width="100" Header="รหัสเลน">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=LaneId}" TextAlignment="Center" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Width="100" Header="หมายเลขเลน">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=LaneNo}" TextAlignment="Center" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Width="100" Header="ประเภทเลน">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=LaneType}" TextAlignment="Center" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Width="110" Header="วันที่">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=BeginDateString}" TextAlignment="Center" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
+                        <!--
+                        <GridViewColumn Width="100"
+                                        CellTemplate="{StaticResource TSBId}"
+                                        Header="รหัสด่าน" />
+                        <GridViewColumn Width="100"
+                                        CellTemplate="{StaticResource TSBNameTH}"
+                                        Header="ชื่อด่าน" />
+                        <GridViewColumn Width="100"
+                                        CellTemplate="{StaticResource PlazaGroupNameTH}"
+                                        Header="ชื่อกลุ่มพลาซ่า" />
+                        <GridViewColumn Width="100"
+                                        CellTemplate="{StaticResource PlazaNameTH}"
+                                        Header="ชื่อพลาซ่า" />
+                        -->
+                        <GridViewColumn Width="100"
+                                        CellTemplate="{StaticResource PlazaId}"
+                                        Header="รหัสพลาซ่า" />
+                        <GridViewColumn Width="100"
+                                        CellTemplate="{StaticResource SCWPlazaId}"
+                                        Header="พลาซ่า (Id)" />
+                        <GridViewColumn Width="100"
+                                        CellTemplate="{StaticResource LaneId}"
+                                        Header="รหัสเลน" />
+                        <GridViewColumn Width="100"
+                                        CellTemplate="{StaticResource LaneNo}"
+                                        Header="หมายเลขเลน" />
+                        <GridViewColumn Width="100"
+                                        CellTemplate="{StaticResource LaneType}"
+                                        Header="ประเภทเลน" />
+                        <GridViewColumn Width="110"
+                                        CellTemplate="{StaticResource BeginDateString}"
+                                        Header="วันที่" />
                         <GridViewColumn Width="90"
-                                        Header="เวลา">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=BeginTimeString}" TextAlignment="Center" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Width="120" Header="รหัสพนักงาน">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=UserId}" TextAlignment="Center" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                        <GridViewColumn Width="250" Header="ชื่อพนักงาน">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Path=FullNameTH}" TextAlignment="Left" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
+                                        CellTemplate="{StaticResource BeginTimeString}"
+                                        Header="เวลา" />
+                        <GridViewColumn Width="120"
+                                        CellTemplate="{StaticResource UserId}"
+                                        Header="รหัสพนักงาน" />
+                        <GridViewColumn Width="250"
+                                        CellTemplate="{StaticResource FullNameTH}"
+                                        Header="ชื่อพนักงาน" />
                         <GridViewColumn Width="250" Header="User">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
