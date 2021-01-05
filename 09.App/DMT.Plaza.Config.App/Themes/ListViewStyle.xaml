@@ -71,7 +71,7 @@
             <!--  For auto adjust column size to fit by it's cell content  -->
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
             <!--  For auto adjust column height to fit by it's cell content  -->
-            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="VerticalAlignment" Value="Stretch" />
 
             <Setter Property="Margin" Value="0" />
