@@ -8,10 +8,8 @@
         Height="300"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
-        Loaded="Window_Loaded"
         ResizeMode="NoResize"
         ShowInTaskbar="False"
-        Unloaded="Window_Unloaded"
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
     <Grid>
