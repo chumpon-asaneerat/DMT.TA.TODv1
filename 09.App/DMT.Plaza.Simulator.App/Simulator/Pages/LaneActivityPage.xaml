@@ -96,7 +96,7 @@
                         <GridViewColumn Width="250"
                                         CellTemplate="{StaticResource FullNameTH}"
                                         Header="ชื่อพนักงาน" />
-                        <GridViewColumn Width="250" Header="User">
+                        <GridViewColumn Width="250" Header="Operations">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Margin="3"
@@ -111,6 +111,11 @@
                                         <Button x:Name="cmdEOJ"
                                                 Width="100"
                                                 Click="cmdEOJ_Click"
+                                                Content="EOJ"
+                                                Style="{DynamicResource InlineButton}" />
+                                        <Button x:Name="cmdPayment"
+                                                Click="cmdPayment_Click"
+                                                Width="100"
                                                 Content="EOJ"
                                                 Style="{DynamicResource InlineButton}" />
                                     </StackPanel>

@@ -142,6 +142,17 @@ namespace DMT.Simulator.Pages
             EOJ(lane);
         }
 
+        private void cmdPayment_Click(object sender, RoutedEventArgs e)
+        {
+            var button = (sender as Button);
+            var lane = (null != button && null != button.DataContext) ? button.DataContext as LaneInfo : null;
+            if (null == lane) return;
+            var win = new Windows.PaymentWindow();
+            win.Owner = Application.Current.MainWindow;
+            win.Setup(lane);
+            if (win.ShowDialog() == false) return;
+        }
+
         #endregion
 
         #region ListView Handlers
