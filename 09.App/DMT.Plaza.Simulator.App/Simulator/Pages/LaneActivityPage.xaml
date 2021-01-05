@@ -37,18 +37,19 @@
                                  FontSize="18" />
                     </StackPanel>
                     <Button x:Name="cmdRefresh"
-                            Width="150"
+                            Width="120"
                             Margin="5"
                             Click="cmdRefresh_Click"
-                            Content="Refresh"
                             DockPanel.Dock="Right"
-                            FontSize="18" />
+                            Style="{DynamicResource InlineButton}">
+                        Refresh
+                    </Button>
                     <Grid />
                 </DockPanel>
             </Border>
             <ListView x:Name="lvLanes"
                       Grid.Row="1"
-                      ItemContainerStyle="{StaticResource DMTListViewContainerStyle}"
+                      ItemContainerStyle="{StaticResource DMTListViewItemContainer}"
                       ItemsSource="{Binding}"
                       SelectionChanged="lvLanes_SelectionChanged"
                       Style="{StaticResource SingleSelectListView}">

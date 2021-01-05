@@ -72,7 +72,7 @@
     </Style>
 
     <!--  LISTVIEW ITEM CONTAINER STYLES  -->
-    <Style x:Key="DMTListViewContainerStyle" TargetType="{x:Type ListViewItem}">
+    <Style x:Key="DMTListViewItemContainer" TargetType="{x:Type ListViewItem}">
         <Style.Setters>
             <!--  For auto adjust column size to fit by it's cell content  -->
             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -109,6 +109,56 @@
                 <Setter Property="Background" Value="{StaticResource ListViewItemDisableBackground}" />
             </MultiTrigger>
         </Style.Triggers>
+    </Style>
+
+    <!--  LISTVIEW GROUP CONTAINER STYLES  -->
+    <Style x:Key="DMTListViewGroupContainer" TargetType="{x:Type GroupItem}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Expander IsExpanded="True"                              
+                              BorderBrush="#FFA4B97F" 
+                              BorderThickness="0,0,0,1">
+                        <Expander.Header>
+                            <DockPanel LastChildFill="True">
+                                <TextBlock Text="{Binding Name}" 
+                                           DockPanel.Dock="Left"
+                                           FontWeight="Bold" 
+                                           Foreground="CornflowerBlue" 
+                                           FontSize="14" 
+                                           HorizontalAlignment="Stretch"
+                                           VerticalAlignment="Bottom" />
+                                <TextBlock Text="{Binding ItemCount}" 
+                                           DockPanel.Dock="Left"
+                                           FontSize="14" 
+                                           Foreground="Green" 
+                                           FontWeight="Bold" 
+                                           FontStyle="Italic" 
+                                           Margin="10,0,0,0" 
+                                           HorizontalAlignment="Stretch"
+                                           VerticalAlignment="Bottom" />
+                                <TextBlock Text=" item(s)" 
+                                           DockPanel.Dock="Left"
+                                           FontSize="14" 
+                                           Foreground="Black" 
+                                           FontStyle="Italic" 
+                                           HorizontalAlignment="Stretch"
+                                           VerticalAlignment="Bottom" />
+                                <Grid />
+                            </DockPanel>
+                        </Expander.Header>
+                        <Expander.Content>
+                            <Border Background="White"
+                                    Margin="1"
+                                    BorderBrush="Silver"
+                                    BorderThickness="1">
+                                <ItemsPresenter />
+                            </Border>
+                        </Expander.Content>
+                    </Expander>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
 

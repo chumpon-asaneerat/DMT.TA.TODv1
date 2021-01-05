@@ -70,9 +70,6 @@
     <Compile Include="Controls\MetroUIMainMenu.xaml.cs">
       <DependentUpon>MetroUIMainMenu.xaml</DependentUpon>
     </Compile>
-    <None Include="CustomControl1.cs">
-      <SubType>Code</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\MetroUIMenuButton.xaml.cs">
