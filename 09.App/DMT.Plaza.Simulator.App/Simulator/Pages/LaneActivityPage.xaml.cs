@@ -74,6 +74,7 @@ namespace DMT.Simulator.Pages
             }
         }
 
+        private LaneInfo currentLane = null;
         private List<LaneInfo> lanes = new List<LaneInfo>();
 
         #endregion
@@ -139,6 +140,17 @@ namespace DMT.Simulator.Pages
             var lane = (null != button && null != button.DataContext) ? button.DataContext as LaneInfo : null;
             if (null == lane) return;
             EOJ(lane);
+        }
+
+        #endregion
+
+        #region ListView Handlers
+
+        private void lvLanes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            currentLane = lvLanes.SelectedItem as LaneInfo;
+            RefreshLaneAttendances();
+            RefreshLanePayments();
         }
 
         #endregion
@@ -223,20 +235,15 @@ namespace DMT.Simulator.Pages
             lvLanes.ItemsSource = lanes;
         }
 
-        #endregion
-
-        #region ListView Handlers
-
-        private void lvLanes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void RefreshLaneAttendances()
         {
-            /*
-            currentLane = lvLanes.SelectedItem as LaneItem;
-            
-            RefreshLaneAttendances();
-            RefreshLanePayments();
+            if (null == currentLane) return;
+            lvAttendances.ItemsSource = currentLane.Jobs;
+        }
 
-            RefreshUI();
-            */
+        private void RefreshLanePayments()
+        {
+            if (null == currentLane) return;
         }
 
         #endregion

@@ -18,25 +18,25 @@
 
     <SolidColorBrush x:Key="ListViewItemSelectedForground"
                      PresentationOptions:Freeze="True"
-                     Color="WhiteSmoke"/>
+                     Color="WhiteSmoke" />
     <SolidColorBrush x:Key="ListViewItemSelectedBackground"
                      PresentationOptions:Freeze="True"
-                     Color="Orange"/>
+                     Color="Orange" />
 
     <SolidColorBrush x:Key="ListViewItemMouseOverForground"
                      PresentationOptions:Freeze="True"
-                     Color="WhiteSmoke"/>
+                     Color="WhiteSmoke" />
     <SolidColorBrush x:Key="ListViewItemMouseOverBackground"
                      PresentationOptions:Freeze="True"
-                     Color="CornflowerBlue"
-                     Opacity=".75"/>
+                     Opacity=".75"
+                     Color="CornflowerBlue" />
 
     <SolidColorBrush x:Key="ListViewItemDisableForground"
                      PresentationOptions:Freeze="True"
                      Color="White" />
     <SolidColorBrush x:Key="ListViewItemDisableBackground"
                      PresentationOptions:Freeze="True"
-                     Color="Silver"/>
+                     Color="Silver" />
 
     <!--  LISTVIEW STYLES  -->
     <Style x:Key="DMTListView" TargetType="ListView">
@@ -116,40 +116,40 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Expander IsExpanded="True"                              
-                              BorderBrush="#FFA4B97F" 
-                              BorderThickness="0,0,0,1">
+                    <Expander BorderBrush="#FFA4B97F"
+                              BorderThickness="0,0,0,1"
+                              IsExpanded="True">
                         <Expander.Header>
                             <DockPanel LastChildFill="True">
-                                <TextBlock Text="{Binding Name}" 
+                                <TextBlock HorizontalAlignment="Stretch"
+                                           VerticalAlignment="Bottom"
                                            DockPanel.Dock="Left"
-                                           FontWeight="Bold" 
-                                           Foreground="CornflowerBlue" 
-                                           FontSize="14" 
+                                           FontSize="14"
+                                           FontWeight="Bold"
+                                           Foreground="CornflowerBlue"
+                                           Text="{Binding Name}" />
+                                <TextBlock Margin="10,0,0,0"
                                            HorizontalAlignment="Stretch"
-                                           VerticalAlignment="Bottom" />
-                                <TextBlock Text="{Binding ItemCount}" 
+                                           VerticalAlignment="Bottom"
                                            DockPanel.Dock="Left"
-                                           FontSize="14" 
-                                           Foreground="Green" 
-                                           FontWeight="Bold" 
-                                           FontStyle="Italic" 
-                                           Margin="10,0,0,0" 
-                                           HorizontalAlignment="Stretch"
-                                           VerticalAlignment="Bottom" />
-                                <TextBlock Text=" item(s)" 
+                                           FontSize="14"
+                                           FontStyle="Italic"
+                                           FontWeight="Bold"
+                                           Foreground="Green"
+                                           Text="{Binding ItemCount}" />
+                                <TextBlock HorizontalAlignment="Stretch"
+                                           VerticalAlignment="Bottom"
                                            DockPanel.Dock="Left"
-                                           FontSize="14" 
-                                           Foreground="Black" 
-                                           FontStyle="Italic" 
-                                           HorizontalAlignment="Stretch"
-                                           VerticalAlignment="Bottom" />
+                                           FontSize="14"
+                                           FontStyle="Italic"
+                                           Foreground="Black"
+                                           Text=" item(s)" />
                                 <Grid />
                             </DockPanel>
                         </Expander.Header>
                         <Expander.Content>
-                            <Border Background="White"
-                                    Margin="1"
+                            <Border Margin="1"
+                                    Background="White"
                                     BorderBrush="Silver"
                                     BorderThickness="1">
                                 <ItemsPresenter />
@@ -300,5 +300,12 @@
         <TextBlock HorizontalAlignment="Stretch"
                    Text="{Binding FullNameTH}"
                    TextAlignment="Left" />
+    </DataTemplate>
+
+    <!--  Common for JobList  -->
+    <DataTemplate x:Key="JobNo">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding JobNo}"
+                   TextAlignment="Center" />
     </DataTemplate>
 </ResourceDictionary>

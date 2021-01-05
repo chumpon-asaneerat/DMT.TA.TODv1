@@ -138,38 +138,38 @@
                 <TabItem Header="Attend/Leave">
                     <ListView x:Name="lvAttendances"
                               Grid.Row="0"
-                              FontSize="18"
+                              ItemContainerStyle="{StaticResource DMTListViewItemContainer}"
                               ItemsSource="{Binding}"
-                              SelectionMode="Single"
-                              VirtualizingPanel.IsVirtualizing="True"
-                              VirtualizingPanel.IsVirtualizingWhenGrouping="True"
-                              VirtualizingPanel.VirtualizationMode="Recycling">
+                              Style="{StaticResource SingleSelectListView}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="100"
-                                                DisplayMemberBinding="{Binding Path=LaneId}"
-                                                Header="เลน" />
+                                        CellTemplate="{StaticResource LaneId}"
+                                        Header="รหัสเลน" />
                                 <GridViewColumn Width="100"
-                                                DisplayMemberBinding="{Binding Path=JobId}"
-                                                Header="Job No" />
+                                        CellTemplate="{StaticResource LaneNo}"
+                                        Header="หมายเลขเลน" />
+                                <GridViewColumn Width="100"
+                                        CellTemplate="{StaticResource JobNo}"
+                                        Header="Job No" />
+                                <GridViewColumn Width="110"
+                                        CellTemplate="{StaticResource BeginDateString}"
+                                        Header="เวลาที่เริ่ม" />
+                                <GridViewColumn Width="90"
+                                        CellTemplate="{StaticResource BeginTimeString}"
+                                        Header="เวลาที่เริ่ม" />
+                                <GridViewColumn Width="110"
+                                        CellTemplate="{StaticResource EndDateString}"
+                                        Header="วันที่สิ้นสุด" />
+                                <GridViewColumn Width="90"
+                                        CellTemplate="{StaticResource EndTimeString}"
+                                        Header="เวลาที่สิ้นสุด" />
                                 <GridViewColumn Width="120"
-                                                DisplayMemberBinding="{Binding Path=BeginDateString}"
-                                                Header="วันที่เริ่ม" />
-                                <GridViewColumn Width="120"
-                                                DisplayMemberBinding="{Binding Path=BeginTimeString}"
-                                                Header="เวลาที่เริ่ม" />
-                                <GridViewColumn Width="120"
-                                                DisplayMemberBinding="{Binding Path=EndDateString}"
-                                                Header="วันที่สิ้นสุด" />
-                                <GridViewColumn Width="120"
-                                                DisplayMemberBinding="{Binding Path=EndTimeString}"
-                                                Header="เวลาที่สิ้นสุด" />
-                                <GridViewColumn Width="120"
-                                                DisplayMemberBinding="{Binding Path=UserId}"
-                                                Header="รหัสพนักงาน" />
-                                <GridViewColumn Width="300"
-                                                DisplayMemberBinding="{Binding Path=FullNameTH}"
-                                                Header="ชื่อพนักงาน" />
+                                        CellTemplate="{StaticResource UserId}"
+                                        Header="รหัสพนักงาน" />
+                                <GridViewColumn Width="250"
+                                        CellTemplate="{StaticResource FullNameTH}"
+                                        Header="ชื่อพนักงาน" />
                             </GridView>
                         </ListView.View>
                     </ListView>
@@ -177,12 +177,9 @@
                 <TabItem Header="Payment">
                     <ListView x:Name="lvPayments"
                               Grid.Row="0"
-                              FontSize="18"
+                              ItemContainerStyle="{StaticResource DMTListViewItemContainer}"
                               ItemsSource="{Binding}"
-                              SelectionMode="Single"
-                              VirtualizingPanel.IsVirtualizing="True"
-                              VirtualizingPanel.IsVirtualizingWhenGrouping="True"
-                              VirtualizingPanel.VirtualizationMode="Recycling">
+                              Style="{StaticResource SingleSelectListView}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="100"
