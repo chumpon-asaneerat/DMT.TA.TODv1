@@ -90,6 +90,8 @@ namespace DMT.Simulator.Windows
             if (rbEMV.IsChecked == true)
             {
                 SCWAddEMV inst = new SCWAddEMV();
+                inst.networkId = networkId;
+                inst.plazaId = _lane.SCWPlazaId;
                 inst.laneId = _lane.LaneNo;
                 inst.staffId = _lane.UserId;
                 inst.staffNameEn = _lane.FullNameEN;
@@ -103,6 +105,8 @@ namespace DMT.Simulator.Windows
             else if (rbQRCode.IsChecked == true)
             {
                 SCWAddQRCode inst = new SCWAddQRCode();
+                inst.networkId = networkId;
+                inst.plazaId = _lane.SCWPlazaId;
                 inst.laneId = _lane.LaneNo;
                 inst.staffId = _lane.UserId;
                 inst.staffNameEn = _lane.FullNameEN;
@@ -166,6 +170,7 @@ namespace DMT.Simulator.Windows
             _lane = value;
             if (null == _lane || null == _lane.User) cmdOk.IsEnabled = false;
             GenerateRandomCode();
+            txtAmount.Focus();
         }
 
         #endregion

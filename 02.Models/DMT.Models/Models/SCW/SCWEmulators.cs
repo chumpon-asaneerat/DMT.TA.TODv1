@@ -220,6 +220,14 @@ namespace DMT.Models
     /// </summary>
     public class SCWAddEMV
     {
+        /// <summary>Gets or sets networkId.</summary>
+        [PropertyMapName("networkId")]
+        public int? networkId { get; set; }
+
+        /// <summary>Gets or sets plazaId.</summary>
+        [PropertyMapName("plazaId")]
+        public int? plazaId { get; set; }
+
         /// <summary>Gets or sets laneId.</summary>
         [PropertyMapName("laneId")]
         public int? laneId { get; set; }
@@ -341,6 +349,14 @@ namespace DMT.Models
     /// </summary>
     public class SCWAddQRCode
     {
+        /// <summary>Gets or sets networkId.</summary>
+        [PropertyMapName("networkId")]
+        public int? networkId { get; set; }
+
+        /// <summary>Gets or sets plazaId.</summary>
+        [PropertyMapName("plazaId")]
+        public int? plazaId { get; set; }
+
         /// <summary>Gets or sets laneId.</summary>
         [PropertyMapName("laneId")]
         public int? laneId { get; set; }
