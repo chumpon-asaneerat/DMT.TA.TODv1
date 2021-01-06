@@ -308,7 +308,7 @@
                    Text="{Binding JobNo}"
                    TextAlignment="Center" />
     </DataTemplate>
-    
+
     <!--  Common for EMV/QRCode  -->
     <DataTemplate x:Key="TrxDateString">
         <TextBlock HorizontalAlignment="Stretch"
