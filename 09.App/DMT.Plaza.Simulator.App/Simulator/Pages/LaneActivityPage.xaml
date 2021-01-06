@@ -192,6 +192,12 @@
                                 <GridViewColumn Width="100"
                                                 CellTemplate="{StaticResource LaneNo}"
                                                 Header="เลน" />
+                                <GridViewColumn Width="110"
+                                                CellTemplate="{StaticResource TrxDateString}"
+                                                Header="วันที่" />
+                                <GridViewColumn Width="110"
+                                                CellTemplate="{StaticResource TrxTimeString}"
+                                                Header="เวลา" />
                                 <GridViewColumn Width="150"
                                                 CellTemplate="{StaticResource ApproveCode}"
                                                 Header="Approve Code" />
@@ -222,6 +228,12 @@
                                 <GridViewColumn Width="100"
                                                 CellTemplate="{StaticResource LaneNo}"
                                                 Header="เลน" />
+                                <GridViewColumn Width="110"
+                                                CellTemplate="{StaticResource TrxDateString}"
+                                                Header="วันที่" />
+                                <GridViewColumn Width="110"
+                                                CellTemplate="{StaticResource TrxTimeString}"
+                                                Header="เวลา" />
                                 <GridViewColumn Width="150"
                                                 CellTemplate="{StaticResource ApproveCode}"
                                                 Header="Approve Code" />
