@@ -14,6 +14,16 @@
         Unloaded="Window_Unloaded"
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Padding" Value="2,0" />
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="2" />
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -152,7 +162,6 @@
                     <TextBlock Width="5" />
                     <TextBox x:Name="txtUserId"
                              Width="150"
-                             VerticalAlignment="Center"
                              FontSize="18"
                              KeyDown="txtUserId_KeyDown" />
                 </StackPanel>
