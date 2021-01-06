@@ -9,6 +9,7 @@
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
         Loaded="Window_Loaded"
+        PreviewKeyDown="Window_PreviewKeyDown"
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         Unloaded="Window_Unloaded"
@@ -25,7 +26,7 @@
                 </Style>
             </Style.Resources>
         </Style>
-        
+
         <ControlTemplate x:Key="RedTextBoxTemplate" TargetType="{x:Type TextBox}">
             <Border x:Name="border"
                     Background="{TemplateBinding Background}"
@@ -232,11 +233,11 @@
                     <TextBlock Width="5" />
                     <TextBox x:Name="txtUserId"
                              Width="150"
+                             BorderBrush="Silver"
                              FontSize="18"
                              IsEnabled="True"
-                             BorderBrush="Silver"
-                             Style="{DynamicResource DMTTextBox}"
-                             KeyDown="txtUserId_KeyDown"/>
+                             KeyDown="txtUserId_KeyDown"
+                             Style="{DynamicResource DMTTextBox}" />
                 </StackPanel>
                 <Grid />
             </DockPanel>

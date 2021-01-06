@@ -51,7 +51,7 @@ namespace DMT.Simulator.Windows
         {
             timer = new DispatcherTimer();
             timer.Tick += Timer_Tick;
-            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Interval = TimeSpan.FromSeconds(.25);
             timer.Start();
 
             // Focus on search textbox.
@@ -69,6 +69,26 @@ namespace DMT.Simulator.Windows
                 timer.Stop();
             }
             timer = null;
+        }
+
+        #endregion
+
+        #region PreviewKeyDown
+
+        private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Escape)
+            {
+                if (!string.IsNullOrEmpty(txtUserId.Text))
+                {
+                    txtUserId.Text = string.Empty;
+                    txtUserId.Focus();
+                }
+                else
+                {
+                    DialogResult = false;
+                }
+            }
         }
 
         #endregion
