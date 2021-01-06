@@ -181,8 +181,8 @@
                         </ListView.View>
                     </ListView>
                 </TabItem>
-                <TabItem Header="Payment">
-                    <ListView x:Name="lvPayments"
+                <TabItem Header="EMV">
+                    <ListView x:Name="lvEMVs"
                               Grid.Row="0"
                               ItemContainerStyle="{StaticResource DMTListViewItemContainer}"
                               ItemsSource="{Binding}"
@@ -190,28 +190,52 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="100"
-                                                DisplayMemberBinding="{Binding Path=LaneId}"
+                                                CellTemplate="{StaticResource LaneNo}"
                                                 Header="เลน" />
+                                <GridViewColumn Width="150"
+                                                CellTemplate="{StaticResource ApproveCode}"
+                                                Header="Approve Code" />
+                                <GridViewColumn Width="150"
+                                                CellTemplate="{StaticResource RefNo}"
+                                                Header="Ref. No" />
                                 <GridViewColumn Width="100"
-                                                DisplayMemberBinding="{Binding Path=JobId}"
-                                                Header="Job No" />
+                                                CellTemplate="{StaticResource Amount}"
+                                                Header="จำนวนเงิน" />
                                 <GridViewColumn Width="120"
-                                                DisplayMemberBinding="{Binding Path=BeginDateString}"
-                                                Header="วันที่เริ่ม" />
-                                <GridViewColumn Width="120"
-                                                DisplayMemberBinding="{Binding Path=BeginTimeString}"
-                                                Header="เวลาที่เริ่ม" />
-                                <GridViewColumn Width="120"
-                                                DisplayMemberBinding="{Binding Path=EndDateString}"
-                                                Header="วันที่สิ้นสุด" />
-                                <GridViewColumn Width="120"
-                                                DisplayMemberBinding="{Binding Path=EndTimeString}"
-                                                Header="เวลาที่สิ้นสุด" />
-                                <GridViewColumn Width="120"
-                                                DisplayMemberBinding="{Binding Path=UserId}"
+                                                CellTemplate="{StaticResource UserId}"
                                                 Header="รหัสพนักงาน" />
                                 <GridViewColumn Width="300"
-                                                DisplayMemberBinding="{Binding Path=FullNameTH}"
+                                                CellTemplate="{StaticResource FullNameTH}"
+                                                Header="ชื่อพนักงาน" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </TabItem>
+                <TabItem Header="QR Code">
+                    <ListView x:Name="lvQRCodes"
+                              Grid.Row="0"
+                              ItemContainerStyle="{StaticResource DMTListViewItemContainer}"
+                              ItemsSource="{Binding}"
+                              Style="{StaticResource SingleSelectListView}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Width="100"
+                                                CellTemplate="{StaticResource LaneNo}"
+                                                Header="เลน" />
+                                <GridViewColumn Width="150"
+                                                CellTemplate="{StaticResource ApproveCode}"
+                                                Header="Approve Code" />
+                                <GridViewColumn Width="150"
+                                                CellTemplate="{StaticResource RefNo}"
+                                                Header="Ref. No" />
+                                <GridViewColumn Width="100"
+                                                CellTemplate="{StaticResource Amount}"
+                                                Header="จำนวนเงิน" />
+                                <GridViewColumn Width="120"
+                                                CellTemplate="{StaticResource UserId}"
+                                                Header="รหัสพนักงาน" />
+                                <GridViewColumn Width="300"
+                                                CellTemplate="{StaticResource FullNameTH}"
                                                 Header="ชื่อพนักงาน" />
                             </GridView>
                         </ListView.View>

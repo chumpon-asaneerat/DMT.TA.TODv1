@@ -30,6 +30,7 @@ using System.Net;
 namespace DMT.Simulator.Pages
 {
     using localOps = Services.Operations.Plaza; // reference to static class.
+    using todOps = Services.Operations.SCW.TOD;
     using emuOps = Services.Operations.SCW.Emulator; // reference to static class.
 
     /// <summary>
@@ -255,6 +256,54 @@ namespace DMT.Simulator.Pages
         private void RefreshLanePayments()
         {
             if (null == currentLane) return;
+
+            int networkId = PlazaAppConfigManager.Instance.DMT.networkId;
+
+
+            // EMV
+            lvEMVs.ItemsSource = null;
+
+            var emvParam = new SCWEMVTransactionList();
+            emvParam.networkId = networkId;
+            emvParam.plazaId = currentLane.SCWPlazaId;
+            emvParam.staffId = currentLane.UserId;
+            emvParam.startDateTime = null;
+            emvParam.endDateTime = null;
+
+            var emvItems = new List<LaneEMV>();
+            var emvResults = todOps.emvTransactionList(emvParam);
+            if (null != emvResults && null != emvResults.list)
+            {
+                emvResults.list.ForEach(item => 
+                {
+                    emvItems.Add(new LaneEMV(item));
+                });
+            }
+
+            lvEMVs.ItemsSource = emvItems;
+
+            // QR Code
+
+            lvQRCodes.ItemsSource = null;
+
+            var qrcodeParam = new SCWQRCodeTransactionList();
+            qrcodeParam.networkId = networkId;
+            qrcodeParam.plazaId = currentLane.SCWPlazaId;
+            qrcodeParam.staffId = currentLane.UserId;
+            qrcodeParam.startDateTime = null;
+            qrcodeParam.endDateTime = null;
+
+            var qrcodeItems = new List<LaneQRCode>();
+            var qrcodeResults = todOps.qrcodeTransactionList(qrcodeParam);
+            if (null != qrcodeResults && null != qrcodeResults.list) 
+            {
+                qrcodeResults.list.ForEach(item =>
+                {
+                    qrcodeItems.Add(new LaneQRCode(item));
+                });
+            }
+
+            lvQRCodes.ItemsSource = qrcodeItems;
         }
 
         #endregion

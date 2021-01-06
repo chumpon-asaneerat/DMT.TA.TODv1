@@ -308,4 +308,32 @@
                    Text="{Binding JobNo}"
                    TextAlignment="Center" />
     </DataTemplate>
+    
+    <!--  Common for EMV/QRCode  -->
+    <DataTemplate x:Key="TrxDateString">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding TrxDateString}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="TrxTimeString">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding TrxTimeString}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="ApproveCode">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding ApproveCode}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="RefNo">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding RefNo}"
+                   TextAlignment="Center" />
+    </DataTemplate>
+    <DataTemplate x:Key="Amount">
+        <TextBlock HorizontalAlignment="Stretch"
+                   Text="{Binding Amount}"
+                   TextAlignment="Right" />
+    </DataTemplate>
+
 </ResourceDictionary>
