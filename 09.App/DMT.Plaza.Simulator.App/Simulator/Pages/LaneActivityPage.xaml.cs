@@ -169,6 +169,20 @@ namespace DMT.Simulator.Pages
 
         #region Private Methods
 
+        private void RunTask(Action init, Action process, Action finished)
+        {
+            if (null != init) init();
+            Task task = Task.Factory.StartNew(() => 
+            { 
+                process(); 
+            });
+
+            Task UITask = task.ContinueWith(antecedent => 
+            {
+                finished();
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+        }
+
         private void BOJ(LaneInfo value, User user)
         {
             if (null == value || null == user) return;
@@ -211,40 +225,47 @@ namespace DMT.Simulator.Pages
 
         private void RefreshLanes()
         {
-            lvLanes.ItemsSource = null;
-
-            lanes = LaneInfo.GetLanes();
-
-            var tsb = localOps.Infrastructure.TSB.Current().Value();
-            if (null == tsb) return;
-            var plazas = localOps.Infrastructure.Plaza.Search.ByTSB(tsb).Value();
-            if (null == plazas || plazas.Count <= 0) return;
-
-            // Read all scw jobs.
-            int networkId = PlazaAppConfigManager.Instance.DMT.networkId;
-            var allJobs = new List<SCWJob>();
-            plazas.ForEach(plaza =>
+            RunTask(() => 
             {
-                var param = new SCWAllJob();
-                param.networkId = networkId;
-                param.plazaId = plaza.SCWPlazaId;
-                var jobs = emuOps.allJobs(param);
-                if (null != jobs && null != jobs.list && jobs.list.Count > 0)
-                {
-                    allJobs.AddRange(jobs.list.ToArray());
-                }
-            });
-
-            // assign scw jobs to lanes.
-            if (null != lanes)
+                this.IsEnabled = false;
+                lvLanes.ItemsSource = null;
+            }, () => 
             {
-                lanes.ForEach(lane => 
+                lanes = LaneInfo.GetLanes();
+
+                var tsb = localOps.Infrastructure.TSB.Current().Value();
+                if (null == tsb) return;
+                var plazas = localOps.Infrastructure.Plaza.Search.ByTSB(tsb).Value();
+                if (null == plazas || plazas.Count <= 0) return;
+
+                // Read all scw jobs.
+                int networkId = PlazaAppConfigManager.Instance.DMT.networkId;
+                var allJobs = new List<SCWJob>();
+                plazas.ForEach(plaza =>
                 {
-                    lane.Assign(allJobs);
+                    var param = new SCWAllJob();
+                    param.networkId = networkId;
+                    param.plazaId = plaza.SCWPlazaId;
+                    var jobs = emuOps.allJobs(param);
+                    if (null != jobs && null != jobs.list && jobs.list.Count > 0)
+                    {
+                        allJobs.AddRange(jobs.list.ToArray());
+                    }
                 });
-            }
 
-            lvLanes.ItemsSource = lanes;
+                // assign scw jobs to lanes.
+                if (null != lanes)
+                {
+                    lanes.ForEach(lane =>
+                    {
+                        lane.Assign(allJobs);
+                    });
+                }
+            }, () => 
+            {
+                lvLanes.ItemsSource = lanes;
+                this.IsEnabled = true;
+            });
         }
 
         private void RefreshLaneAttendances()
@@ -258,53 +279,59 @@ namespace DMT.Simulator.Pages
             if (null == currentLane) return;
 
             int networkId = PlazaAppConfigManager.Instance.DMT.networkId;
-
-            // EMV
-            lvEMVs.ItemsSource = null;
-
-            var emvParam = new SCWEMVTransactionList();
-            emvParam.networkId = networkId;
-            emvParam.plazaId = currentLane.SCWPlazaId;
-            emvParam.staffId = null;
-            emvParam.startDateTime = null;
-            emvParam.endDateTime = null;
-
-            var emvItems = new List<LaneEMV>();
-            var emvResults = todOps.emvTransactionList(emvParam);
-            if (null != emvResults && null != emvResults.list)
+            List<LaneEMV> emvItems = null;
+            List<LaneQRCode> qrcodeItems = null;
+            RunTask(() => 
             {
-                emvResults.list.ForEach(item => 
-                {
-                    if (item.laneId != currentLane.LaneNo) return;
-                    emvItems.Add(new LaneEMV(item));
-                });
-            }
-
-            lvEMVs.ItemsSource = emvItems;
-
-            // QR Code
-
-            lvQRCodes.ItemsSource = null;
-
-            var qrcodeParam = new SCWQRCodeTransactionList();
-            qrcodeParam.networkId = networkId;
-            qrcodeParam.plazaId = currentLane.SCWPlazaId;
-            qrcodeParam.staffId = null;
-            qrcodeParam.startDateTime = null;
-            qrcodeParam.endDateTime = null;
-
-            var qrcodeItems = new List<LaneQRCode>();
-            var qrcodeResults = todOps.qrcodeTransactionList(qrcodeParam);
-            if (null != qrcodeResults && null != qrcodeResults.list) 
+                // EMV
+                lvEMVs.ItemsSource = null;
+                // QR Code
+                lvQRCodes.ItemsSource = null;
+            }, () => 
             {
-                qrcodeResults.list.ForEach(item =>
-                {
-                    if (item.laneId != currentLane.LaneNo) return;
-                    qrcodeItems.Add(new LaneQRCode(item));
-                });
-            }
+                // EMV
+                var emvParam = new SCWEMVTransactionList();
+                emvParam.networkId = networkId;
+                emvParam.plazaId = currentLane.SCWPlazaId;
+                emvParam.staffId = null;
+                emvParam.startDateTime = null;
+                emvParam.endDateTime = null;
 
-            lvQRCodes.ItemsSource = qrcodeItems;
+                emvItems = new List<LaneEMV>();
+                var emvResults = todOps.emvTransactionList(emvParam);
+                if (null != emvResults && null != emvResults.list)
+                {
+                    emvResults.list.ForEach(item =>
+                    {
+                        if (item.laneId != currentLane.LaneNo) return;
+                        emvItems.Add(new LaneEMV(item));
+                    });
+                }
+                // QR Code
+                var qrcodeParam = new SCWQRCodeTransactionList();
+                qrcodeParam.networkId = networkId;
+                qrcodeParam.plazaId = currentLane.SCWPlazaId;
+                qrcodeParam.staffId = null;
+                qrcodeParam.startDateTime = null;
+                qrcodeParam.endDateTime = null;
+
+                qrcodeItems = new List<LaneQRCode>();
+                var qrcodeResults = todOps.qrcodeTransactionList(qrcodeParam);
+                if (null != qrcodeResults && null != qrcodeResults.list)
+                {
+                    qrcodeResults.list.ForEach(item =>
+                    {
+                        if (item.laneId != currentLane.LaneNo) return;
+                        qrcodeItems.Add(new LaneQRCode(item));
+                    });
+                }
+            }, () => 
+            {
+                // EMV
+                lvEMVs.ItemsSource = emvItems;
+                // QR Code
+                lvQRCodes.ItemsSource = qrcodeItems;
+            });
         }
 
         #endregion
