@@ -259,14 +259,13 @@ namespace DMT.Simulator.Pages
 
             int networkId = PlazaAppConfigManager.Instance.DMT.networkId;
 
-
             // EMV
             lvEMVs.ItemsSource = null;
 
             var emvParam = new SCWEMVTransactionList();
             emvParam.networkId = networkId;
             emvParam.plazaId = currentLane.SCWPlazaId;
-            emvParam.staffId = currentLane.UserId;
+            emvParam.staffId = null;
             emvParam.startDateTime = null;
             emvParam.endDateTime = null;
 
@@ -276,6 +275,7 @@ namespace DMT.Simulator.Pages
             {
                 emvResults.list.ForEach(item => 
                 {
+                    if (item.laneId != currentLane.LaneNo) return;
                     emvItems.Add(new LaneEMV(item));
                 });
             }
@@ -289,7 +289,7 @@ namespace DMT.Simulator.Pages
             var qrcodeParam = new SCWQRCodeTransactionList();
             qrcodeParam.networkId = networkId;
             qrcodeParam.plazaId = currentLane.SCWPlazaId;
-            qrcodeParam.staffId = currentLane.UserId;
+            qrcodeParam.staffId = null;
             qrcodeParam.startDateTime = null;
             qrcodeParam.endDateTime = null;
 
@@ -299,6 +299,7 @@ namespace DMT.Simulator.Pages
             {
                 qrcodeResults.list.ForEach(item =>
                 {
+                    if (item.laneId != currentLane.LaneNo) return;
                     qrcodeItems.Add(new LaneQRCode(item));
                 });
             }

@@ -332,7 +332,7 @@
     </DataTemplate>
     <DataTemplate x:Key="Amount">
         <TextBlock HorizontalAlignment="Stretch"
-                   Text="{Binding Amount}"
+                   Text="{Binding Amount, StringFormat={}{0:n0}}"
                    TextAlignment="Right" />
     </DataTemplate>
 
