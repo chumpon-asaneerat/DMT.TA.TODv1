@@ -15,8 +15,9 @@
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
     <Window.Resources>
-        <Style TargetType="{x:Type TextBox}">
-            <Setter Property="Padding" Value="2,0" />
+        <Style x:Key="DMTTextBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Padding" Value="1,0" />
+            <Setter Property="BorderThickness" Value="1" />
             <Style.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="2" />
@@ -163,6 +164,7 @@
                     <TextBox x:Name="txtUserId"
                              Width="150"
                              FontSize="18"
+                             Style="{StaticResource DMTTextBox}"
                              KeyDown="txtUserId_KeyDown" />
                 </StackPanel>
                 <Grid />
