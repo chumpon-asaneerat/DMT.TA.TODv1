@@ -34,6 +34,8 @@ namespace DMT.Models
     /// </summary>
     public class TSBItem : TSB
     {
+        #region Constructor
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -50,6 +52,10 @@ namespace DMT.Models
             if (null != value) value.AssignTo(this);
         }
 
+        #endregion
+
+        #region Public Properties
+
         /// <summary>Gets Is Active in string.</summary>
         [Browsable(false)]
         public string IsActive { get { return (Active) ? "[A]" : string.Empty; } set { } }
@@ -57,17 +63,7 @@ namespace DMT.Models
         [Browsable(false)]
         public ObservableCollection<PlazaItem> Plazas { get; set; }
 
-        /// <summary>
-        /// Route Command for Change Active TSB.
-        /// </summary>
-        public static readonly RoutedUICommand ChangeActiveTSB = new RoutedUICommand(
-            "ChangeActiveTSB",
-            "ChangeActiveTSB",
-            typeof(TSBItem),
-            new InputGestureCollection() 
-            { 
-                //new KeyGesture(Key.F4, ModifierKeys.Alt) 
-            });
+        #endregion
     }
 
     #endregion
@@ -79,6 +75,8 @@ namespace DMT.Models
     /// </summary>
     public class PlazaItem : Plaza
     {
+        #region Constructor
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -94,9 +92,16 @@ namespace DMT.Models
         {
             if (null != value) value.AssignTo(this);
         }
+
+        #endregion
+
+        #region Public Properties
+
         /// <summary>Gets Lanes</summary>
         [Browsable(false)]
         public ObservableCollection<LaneItem> Lanes { get; set; }
+
+        #endregion
     }
 
     #endregion
@@ -109,6 +114,8 @@ namespace DMT.Models
     //[Browsable(false)]
     public class LaneItem : Lane 
     {
+        #region Constructor
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -121,9 +128,46 @@ namespace DMT.Models
         {
             if (null != value) value.AssignTo(this);
         }
+
+        #endregion
     }
 
     #endregion
+
+    #endregion
+
+    #region UICommands - Infrastructure class.
+
+    static partial class UICommands
+    {
+        /// <summary>
+        /// Infrastructure UI Command.
+        /// </summary>
+        public static partial class Infrastructure
+        {
+            /// <summary>
+            /// ChangeActiveTSB Command.
+            /// </summary>
+            public static partial class ChangeActiveTSB
+            {
+                /// <summary>The Command Name.</summary>
+                public static readonly string Name = "ChangeActiveTSB";
+                /// <summary>The Command Text.</summary>
+                public static readonly string Text = "Change Active TSB";
+                /// <summary>
+                /// Route Command for Change Active TSB.
+                /// </summary>
+                public static readonly RoutedUICommand Command = new RoutedUICommand(
+                    Text, 
+                    Name,
+                    typeof(ChangeActiveTSB),
+                    new InputGestureCollection()
+                    {
+                        //new KeyGesture(Key.F4, ModifierKeys.Alt) 
+                    });
+            }
+        }
+    }
 
     #endregion
 }
