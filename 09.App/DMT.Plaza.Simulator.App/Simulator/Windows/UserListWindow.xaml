@@ -208,7 +208,7 @@
                              FontSize="18"
                              IsEnabled="True"
                              KeyDown="txtUserId_KeyDown"
-                             Style="{StaticResource DMTTextBox}"
+                             Style="{StaticResource ColorBorderStyle}"
                              Text="" />
                 </StackPanel>
                 <Grid />
