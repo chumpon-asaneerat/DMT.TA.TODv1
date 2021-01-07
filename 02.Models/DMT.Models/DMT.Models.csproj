@@ -122,6 +122,7 @@
     <Compile Include="Models\Local\Infrastructures\Plaza.cs" />
     <Compile Include="Models\Local\Infrastructures\PlazaGroup.cs" />
     <Compile Include="Models\Local\Infrastructures\TSB.cs" />
+    <Compile Include="Models\Local\Infrastructures\UIModels.cs" />
     <Compile Include="Models\Local\Master\MCardAllow.cs" />
     <Compile Include="Models\Local\Master\MCoupon.cs" />
     <Compile Include="Models\Local\Master\MCouponBook.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="Models\SCW\SCWSaveChiefDuty.cs" />
     <Compile Include="Models\Local\Shifts\Shift.cs" />
     <Compile Include="Models\Local\Shifts\TSBShift.cs" />
+    <Compile Include="Models\SCW\UIModels.cs" />
     <Compile Include="Models\TAxTOD\TACouponTransaction.cs" />
     <Compile Include="Services\AccountDbService.cs" />
     <Compile Include="Views\SqlScriptManager.cs" />
