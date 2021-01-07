@@ -23,6 +23,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <OutputPath>..\..\Executables\Samples\CreatingTheGlassButton\</OutputPath>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>CreatingTheGlassButton.App</StartupObject>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Reference Include="PresentationCore" />

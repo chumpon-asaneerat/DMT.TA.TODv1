@@ -56,6 +56,18 @@ namespace DMT.Models
         /// <summary>Gets Plazas</summary>
         [Browsable(false)]
         public ObservableCollection<PlazaItem> Plazas { get; set; }
+
+        /// <summary>
+        /// Route Command for Change Active TSB.
+        /// </summary>
+        public static readonly RoutedUICommand ChangeActiveTSB = new RoutedUICommand(
+            "ChangeActiveTSB",
+            "ChangeActiveTSB",
+            typeof(TSBItem),
+            new InputGestureCollection() 
+            { 
+                //new KeyGesture(Key.F4, ModifierKeys.Alt) 
+            });
     }
 
     #endregion

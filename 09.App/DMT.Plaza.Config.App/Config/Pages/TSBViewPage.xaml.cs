@@ -184,6 +184,22 @@ namespace DMT.Config.Pages
             if (pgrid.SelectedObject is PlazaItem) SavePlaza();
             if (pgrid.SelectedObject is LaneItem) SaveLane();
         }
+
+        private void cmdChangeActiveTSB_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            // Set Active.
+            var item = (e.OriginalSource as Button).DataContext;
+            if (null != item && item is TSBItem)
+            {
+                ops.TSB.SetActive(item as TSB);
+                RefreshTree();
+            }
+        }
+
+        private void cmdChangeActiveTSB_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = true;
+        }
     }
 
     /*
