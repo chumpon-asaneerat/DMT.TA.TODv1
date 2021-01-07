@@ -94,11 +94,56 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+
+        <Style x:Key="ColorBorderStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="AllowDrop" Value="true" />
+            <!--
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="bg"
+                                Margin="0"
+                                Padding="1"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="3"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                            <ScrollViewer x:Name="PART_ContentHost"
+                                          Margin="0"
+                                          Padding="0"
+                                          Background="{TemplateBinding Background}"
+                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bg" Property="BorderBrush" Value="#7F2222FF" />
+                            </Trigger>
+
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="bg" Property="BorderBrush" Value="CornflowerBlue" />
+                            </Trigger>
+
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="bg" Property="Opacity" Value=".5" />
+                                <Setter Property="Foreground" Value="DimGray" />
+                                <Setter Property="Opacity" Value=".9" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="45" />
         </Grid.RowDefinitions>
         <ListBox x:Name="lstUsers"
                  Grid.Row="0"
@@ -210,34 +255,40 @@
                 BorderBrush="Silver"
                 BorderThickness="1">
             <DockPanel LastChildFill="True">
-                <Button x:Name="cmdOk"
-                        Width="120"
-                        Margin="5"
-                        Click="cmdOk_Click"
-                        Content="Ok"
-                        DockPanel.Dock="Right"
-                        Style="{DynamicResource InlineButton}" />
-                <Button x:Name="cmdCancel"
-                        Width="120"
-                        Margin="5"
-                        Click="cmdCancel_Click"
-                        Content="Cancel"
-                        DockPanel.Dock="Right"
-                        Style="{DynamicResource InlineButton}" />
+                <DockPanel DockPanel.Dock="Right">
+                    <Button x:Name="cmdCancel"
+                            Width="120"
+                            Margin="5"
+                            Click="cmdCancel_Click"
+                            Content="Cancel"
+                            DockPanel.Dock="Left"
+                            Focusable="False"
+                            IsTabStop="False"
+                            Style="{DynamicResource InlineButton}" />
+                    <Button x:Name="cmdOk"
+                            Width="120"
+                            Margin="5"
+                            Click="cmdOk_Click"
+                            Content="Ok"
+                            DockPanel.Dock="Left"
+                            Style="{DynamicResource InlineButton}" />
+                </DockPanel>
                 <StackPanel Margin="5"
+                            VerticalAlignment="Center"
                             DockPanel.Dock="Left"
                             Orientation="Horizontal">
                     <TextBlock VerticalAlignment="Center"
                                FontSize="18"
                                Text="UserId:" />
-                    <TextBlock Width="5" />
+                    <TextBlock Width="10" />
                     <TextBox x:Name="txtUserId"
                              Width="150"
-                             BorderBrush="Silver"
+                             VerticalAlignment="Center"
                              FontSize="18"
                              IsEnabled="True"
                              KeyDown="txtUserId_KeyDown"
-                             Style="{DynamicResource DMTTextBox}" />
+                             Style="{StaticResource DMTTextBox}"
+                             Text="" />
                 </StackPanel>
                 <Grid />
             </DockPanel>
