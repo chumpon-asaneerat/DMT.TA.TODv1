@@ -81,6 +81,9 @@ namespace DMT
         private void cmdTSBCouponView_Click(object sender, RoutedEventArgs e)
         {
             //PageContentManager.Instance.Current = new Simulator.Pages.TSBCouponViewPage();
+            var page = new Simulator.Pages.BankNotEntryPage();
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdTSBLaneSoldCoupon_Click(object sender, RoutedEventArgs e)

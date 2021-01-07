@@ -19,7 +19,10 @@
                      Color="CornflowerBlue" />
     <SolidColorBrush x:Key="TextBoxDisableForeground"
                      PresentationOptions:Freeze="True"
-                     Color="CornflowerBlue" />
+                     Color="Black" />
+    <SolidColorBrush x:Key="TextBoxDisableBackground"
+                     PresentationOptions:Freeze="True"
+                     Color="#7FFFFFFF" />
 
     <!--  TEXT BOX STYLE  -->
     <Style x:Key="CommonTextBox" TargetType="TextBox">
@@ -57,10 +60,18 @@
                             <Setter TargetName="bg" Property="BorderBrush" Value="{StaticResource TextBoxFocusedBorderBrush}" />
                         </Trigger>
 
-                        <Trigger Property="IsEnabled" Value="False">
+                        <Trigger Property="IsReadOnly" Value="True">
                             <Setter TargetName="bg" Property="Opacity" Value=".5" />
+                            <Setter TargetName="bg" Property="Background" Value="{StaticResource TextBoxDisableBackground}" />
                             <Setter Property="Foreground" Value="{StaticResource TextBoxDisableForeground}" />
                             <Setter Property="Opacity" Value=".9" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="bg" Property="Opacity" Value=".5" />
+                            <Setter TargetName="bg" Property="Background" Value="{StaticResource TextBoxDisableBackground}" />
+                            <Setter Property="Foreground" Value="{StaticResource TextBoxDisableForeground}" />
+                            <Setter Property="Opacity" Value="1" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -106,6 +117,7 @@
 
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="bg" Property="Opacity" Value=".5" />
+                            <Setter TargetName="bg" Property="Background" Value="{StaticResource TextBoxDisableBackground}" />
                             <Setter Property="Foreground" Value="{StaticResource TextBoxDisableForeground}" />
                             <Setter Property="Opacity" Value=".9" />
                         </Trigger>
