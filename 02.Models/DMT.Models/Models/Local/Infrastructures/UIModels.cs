@@ -6,6 +6,9 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 
+// Required for custom command in UI
+using System.Windows.Input;
+
 using NLib;
 using NLib.Design;
 using NLib.Reflection;
