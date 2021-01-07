@@ -13,7 +13,7 @@
     <UserControl.CommandBindings>
         <CommandBinding x:Name="cmdChangeActiveTSB"
                         CanExecute="cmdChangeActiveTSB_CanExecute"
-                        Command="{x:Static self:TSBItem.ChangeActiveTSB}"
+                        Command="{x:Static self:UICommands+Infrastructure+ChangeActiveTSB.Command}"
                         Executed="cmdChangeActiveTSB_Executed" />
     </UserControl.CommandBindings>
     <Grid>
@@ -29,12 +29,9 @@
             <TreeView.Resources>
                 <HierarchicalDataTemplate DataType="{x:Type self:TSBItem}" ItemsSource="{Binding Plazas}">
                     <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                        <!--
-                        <Image Source="/WpfTutorialSamples;component/Images/group.png" Margin="0,0,5,0" />
-                        -->
                         <Button x:Name="cmdSetActiveTSB"
                                 Margin="2,0"
-                                Command="self:TSBItem.ChangeActiveTSB">
+                                Command="{x:Static self:UICommands+Infrastructure+ChangeActiveTSB.Command}">
                             Active
                         </Button>
                         <TextBlock Width="20"
@@ -52,9 +49,6 @@
                 </HierarchicalDataTemplate>
                 <HierarchicalDataTemplate DataType="{x:Type self:PlazaItem}" ItemsSource="{Binding Lanes}">
                     <StackPanel Orientation="Horizontal">
-                        <!--
-                        <Image Source="/WpfTutorialSamples;component/Images/user.png" Margin="0,0,5,0" />
-                        -->
                         <TextBlock>
                             <Run Text="{Binding PlazaId}" />
                             <Run Text=" - " />
@@ -69,9 +63,6 @@
                 </HierarchicalDataTemplate>
                 <DataTemplate DataType="{x:Type self:LaneItem}">
                     <StackPanel Orientation="Horizontal">
-                        <!--
-                        <Image Source="/WpfTutorialSamples;component/Images/user.png" Margin="0,0,5,0" />
-                        -->
                         <TextBlock>
                             <Run Text="{Binding LaneId}" />
                             <Run Text=" - " />

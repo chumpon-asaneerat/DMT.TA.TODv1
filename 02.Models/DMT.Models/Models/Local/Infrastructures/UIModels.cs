@@ -64,6 +64,22 @@ namespace DMT.Models
         public ObservableCollection<PlazaItem> Plazas { get; set; }
 
         #endregion
+
+        #region UI Command
+
+        /// <summary>
+        /// Route Command for Change Active TSB.
+        /// </summary>
+        public static readonly RoutedUICommand ChangeActiveTSB = new RoutedUICommand(
+            "ChangeActiveTSB",
+            "ChangeActiveTSB",
+            typeof(TSBItem),
+            new InputGestureCollection()
+            {
+                //new KeyGesture(Key.F4, ModifierKeys.Alt) 
+            });
+
+        #endregion
     }
 
     #endregion
@@ -136,31 +152,18 @@ namespace DMT.Models
 
     #endregion
 
-    #region UICommands - Infrastructure class.
-
     static partial class UICommands
     {
-        /// <summary>
-        /// Infrastructure UI Command.
-        /// </summary>
         public static partial class Infrastructure
         {
-            /// <summary>
-            /// ChangeActiveTSB Command.
-            /// </summary>
-            public static partial class ChangeActiveTSB
+            public static class ChangeActiveTSB
             {
-                /// <summary>The Command Name.</summary>
                 public static readonly string Name = "ChangeActiveTSB";
-                /// <summary>The Command Text.</summary>
                 public static readonly string Text = "Change Active TSB";
-                /// <summary>
-                /// Route Command for Change Active TSB.
-                /// </summary>
                 public static readonly RoutedUICommand Command = new RoutedUICommand(
-                    Text, 
+                    Text,
                     Name,
-                    typeof(ChangeActiveTSB),
+                    typeof(TSBItem),
                     new InputGestureCollection()
                     {
                         //new KeyGesture(Key.F4, ModifierKeys.Alt) 
@@ -168,6 +171,4 @@ namespace DMT.Models
             }
         }
     }
-
-    #endregion
 }
