@@ -227,12 +227,14 @@ namespace DMT.Simulator.Pages
         {
             RunTask(() => 
             {
+                // Init (in UI thread)
                 this.IsEnabled = false;
                 lvLanes.ItemsSource = null;
             }, () => 
             {
-                lanes = LaneInfo.GetLanes();
+                // Process (in another thread)
 
+                lanes = LaneInfo.GetLanes();
                 var tsb = localOps.Infrastructure.TSB.Current().Value();
                 if (null == tsb) return;
                 var plazas = localOps.Infrastructure.Plaza.Search.ByTSB(tsb).Value();
@@ -263,6 +265,7 @@ namespace DMT.Simulator.Pages
                 }
             }, () => 
             {
+                // Finished (in UI thread)
                 lvLanes.ItemsSource = lanes;
                 this.IsEnabled = true;
             });
