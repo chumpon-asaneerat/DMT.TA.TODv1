@@ -72,23 +72,23 @@ namespace DMT.Config.Pages
 
             tsbs.ForEach(tsb =>
             {
-                TSBItem item = tsb.CloneTo<TSBItem>();
-                items.Add(item);
+                var tItem = new TSBItem(tsb);
+                items.Add(tItem);
 
                 var plazas = ops.Plaza.Search.ByTSB(tsb).Value();
                 if (null != plazas)
                 {
                     plazas.ForEach(plaza =>
                     {
-                        PlazaItem pItem = plaza.CloneTo<PlazaItem>();
-                        item.Plazas.Add(pItem);
+                        var pItem = new PlazaItem(plaza);
+                        tItem.Plazas.Add(pItem);
 
                         var lanes = ops.Lane.Search.ByPlaza(plaza).Value();
                         if (null != lanes)
                         {
                             lanes.ForEach(lane =>
                             {
-                                var lItem = lane.CloneTo<LaneItem>();
+                                var lItem = new LaneItem(lane);
                                 pItem.Lanes.Add(lItem);
                             });
                         }
@@ -186,6 +186,7 @@ namespace DMT.Config.Pages
         }
     }
 
+    /*
     public class TSBItem : TSB
     {
         public TSBItem()
@@ -218,4 +219,5 @@ namespace DMT.Config.Pages
 
     [Browsable(false)]
     public class LaneItem : Lane { }
+    */
 }
