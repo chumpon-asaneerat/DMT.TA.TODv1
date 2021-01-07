@@ -59,16 +59,13 @@ namespace DMT
 
         #endregion
 
-        private void ServiceMonitor_ScanConpleted(object sender, EventArgs e)
-        {
-
-        }
-
         #region Button Handlers
 
         private void cmdLaneActivity_Click(object sender, RoutedEventArgs e)
         {
-            PageContentManager.Instance.Current = new Simulator.Pages.LaneActivityPage();
+            var page = new Simulator.Pages.LaneActivityPage();
+            page.Setup();
+            PageContentManager.Instance.Current = page;
         }
 
         private void cmdUserView_Click(object sender, RoutedEventArgs e)

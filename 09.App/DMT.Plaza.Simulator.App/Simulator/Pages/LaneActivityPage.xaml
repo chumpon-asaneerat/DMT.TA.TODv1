@@ -55,20 +55,6 @@
                       Style="{StaticResource SingleSelectListView}">
                 <ListView.View>
                     <GridView>
-                        <!--
-                        <GridViewColumn Width="100"
-                                        CellTemplate="{StaticResource TSBId}"
-                                        Header="รหัสด่าน" />
-                        <GridViewColumn Width="100"
-                                        CellTemplate="{StaticResource TSBNameTH}"
-                                        Header="ชื่อด่าน" />
-                        <GridViewColumn Width="100"
-                                        CellTemplate="{StaticResource PlazaGroupNameTH}"
-                                        Header="ชื่อกลุ่มพลาซ่า" />
-                        <GridViewColumn Width="100"
-                                        CellTemplate="{StaticResource PlazaNameTH}"
-                                        Header="ชื่อพลาซ่า" />
-                        -->
                         <GridViewColumn Width="100"
                                         CellTemplate="{StaticResource PlazaId}"
                                         Header="รหัสพลาซ่า" />
@@ -114,8 +100,8 @@
                                                 Content="EOJ"
                                                 Style="{DynamicResource InlineButton}" />
                                         <Button x:Name="cmdPayment"
-                                                Click="cmdPayment_Click"
                                                 Width="100"
+                                                Click="cmdPayment_Click"
                                                 Content="Payment"
                                                 Style="{DynamicResource InlineButton}" />
                                     </StackPanel>
@@ -140,8 +126,10 @@
             <GridSplitter Grid.Row="2"
                           HorizontalAlignment="Stretch"
                           VerticalAlignment="Stretch"
+                          Focusable="False"
+                          IsTabStop="False"
                           ResizeDirection="Rows" />
-            <TabControl Grid.Row="3">
+            <TabControl x:Name="tabSubItem" Grid.Row="3">
                 <TabItem Header="Attend/Leave">
                     <ListView x:Name="lvAttendances"
                               Grid.Row="0"
@@ -151,32 +139,32 @@
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="100"
-                                        CellTemplate="{StaticResource LaneId}"
-                                        Header="รหัสเลน" />
+                                                CellTemplate="{StaticResource LaneId}"
+                                                Header="รหัสเลน" />
                                 <GridViewColumn Width="100"
-                                        CellTemplate="{StaticResource LaneNo}"
-                                        Header="หมายเลขเลน" />
+                                                CellTemplate="{StaticResource LaneNo}"
+                                                Header="หมายเลขเลน" />
                                 <GridViewColumn Width="100"
-                                        CellTemplate="{StaticResource JobNo}"
-                                        Header="Job No" />
+                                                CellTemplate="{StaticResource JobNo}"
+                                                Header="Job No" />
                                 <GridViewColumn Width="110"
-                                        CellTemplate="{StaticResource BeginDateString}"
-                                        Header="เวลาที่เริ่ม" />
+                                                CellTemplate="{StaticResource BeginDateString}"
+                                                Header="เวลาที่เริ่ม" />
                                 <GridViewColumn Width="90"
-                                        CellTemplate="{StaticResource BeginTimeString}"
-                                        Header="เวลาที่เริ่ม" />
+                                                CellTemplate="{StaticResource BeginTimeString}"
+                                                Header="เวลาที่เริ่ม" />
                                 <GridViewColumn Width="110"
-                                        CellTemplate="{StaticResource EndDateString}"
-                                        Header="วันที่สิ้นสุด" />
+                                                CellTemplate="{StaticResource EndDateString}"
+                                                Header="วันที่สิ้นสุด" />
                                 <GridViewColumn Width="90"
-                                        CellTemplate="{StaticResource EndTimeString}"
-                                        Header="เวลาที่สิ้นสุด" />
+                                                CellTemplate="{StaticResource EndTimeString}"
+                                                Header="เวลาที่สิ้นสุด" />
                                 <GridViewColumn Width="120"
-                                        CellTemplate="{StaticResource UserId}"
-                                        Header="รหัสพนักงาน" />
+                                                CellTemplate="{StaticResource UserId}"
+                                                Header="รหัสพนักงาน" />
                                 <GridViewColumn Width="250"
-                                        CellTemplate="{StaticResource FullNameTH}"
-                                        Header="ชื่อพนักงาน" />
+                                                CellTemplate="{StaticResource FullNameTH}"
+                                                Header="ชื่อพนักงาน" />
                             </GridView>
                         </ListView.View>
                     </ListView>

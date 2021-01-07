@@ -2,24 +2,19 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+using System.Windows.Threading;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Globalization;
 
 using DMT.Models;
 using DMT.Services;
-using System.Collections.ObjectModel;
 using NLib.Reflection;
 using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 using System.Runtime.InteropServices;
@@ -85,7 +80,6 @@ namespace DMT.Simulator.Pages
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             jobNo = 1; // init jobNo.
-            RefreshLanes();
         }
 
         private void UserControl_Unloaded(object sender, RoutedEventArgs e)
@@ -100,6 +94,8 @@ namespace DMT.Simulator.Pages
         private void cmdRefresh_Click(object sender, RoutedEventArgs e)
         {
             RefreshLanes();
+            // focus on current button.
+            cmdRefresh.Focus();
         }
 
         #endregion
@@ -225,6 +221,8 @@ namespace DMT.Simulator.Pages
 
         private void RefreshLanes()
         {
+            currentLane = null;
+
             RunTask(() => 
             {
                 // Init (in UI thread)
@@ -269,16 +267,24 @@ namespace DMT.Simulator.Pages
                 lvLanes.ItemsSource = lanes;
                 this.IsEnabled = true;
             });
+
+            RefreshLaneAttendances();
+            RefreshLanePayments();
         }
 
         private void RefreshLaneAttendances()
         {
+            lvAttendances.ItemsSource = null;
+            
             if (null == currentLane) return;
             lvAttendances.ItemsSource = currentLane.Jobs;
         }
 
         private void RefreshLanePayments()
         {
+            lvEMVs.ItemsSource = null;
+            lvQRCodes.ItemsSource = null;
+
             if (null == currentLane) return;
 
             int networkId = PlazaAppConfigManager.Instance.DMT.networkId;
@@ -335,6 +341,25 @@ namespace DMT.Simulator.Pages
                 // QR Code
                 lvQRCodes.ItemsSource = qrcodeItems;
             });
+        }
+
+        #endregion
+
+        #region Public Method
+
+        /// <summary>
+        /// Setup.
+        /// </summary>
+        public void Setup()
+        {
+            RefreshLanes();
+
+            // Focus on search textbox.
+            Dispatcher.BeginInvoke(DispatcherPriority.Background, new Action(() =>
+            {
+                txtJobNo.SelectAll();
+                txtJobNo.Focus();
+            }));
         }
 
         #endregion
