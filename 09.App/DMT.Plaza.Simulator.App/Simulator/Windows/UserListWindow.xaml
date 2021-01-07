@@ -15,52 +15,6 @@
         Unloaded="Window_Unloaded"
         WindowStartupLocation="CenterOwner"
         mc:Ignorable="d">
-    <Window.Resources>
-        <Style x:Key="ColorBorderStyle" TargetType="{x:Type TextBox}">
-            <Setter Property="Margin" Value="0" />
-            <Setter Property="Padding" Value="0" />
-            <Setter Property="AllowDrop" Value="true" />
-            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-            <!--
-            -->
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Border x:Name="bg"
-                                Margin="0"
-                                Padding="1"
-                                Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="3"
-                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
-                            <ScrollViewer x:Name="PART_ContentHost"
-                                          Margin="0"
-                                          Padding="0"
-                                          Background="{TemplateBinding Background}"
-                                          SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="bg" Property="BorderBrush" Value="#7F2222FF" />
-                            </Trigger>
-
-                            <Trigger Property="IsFocused" Value="True">
-                                <Setter TargetName="bg" Property="BorderBrush" Value="CornflowerBlue" />
-                            </Trigger>
-
-                            <Trigger Property="IsEnabled" Value="False">
-                                <Setter TargetName="bg" Property="Opacity" Value=".5" />
-                                <Setter Property="Foreground" Value="DimGray" />
-                                <Setter Property="Opacity" Value=".9" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -208,7 +162,7 @@
                              FontSize="18"
                              IsEnabled="True"
                              KeyDown="txtUserId_KeyDown"
-                             Style="{StaticResource ColorBorderStyle}"
+                             Style="{StaticResource CommonTextBox}"
                              Text="" />
                 </StackPanel>
                 <Grid />
