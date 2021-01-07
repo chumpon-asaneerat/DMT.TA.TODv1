@@ -1,25 +1,13 @@
 ﻿#region Using
 
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 
 // Required for custom command in UI
 using System.Windows.Input;
 
-using NLib;
-using NLib.Design;
 using NLib.Reflection;
-
-using SQLite;
-using SQLiteNetExtensions.Attributes;
-using SQLiteNetExtensions.Extensions;
-// required for JsonIgnore attribute.
-using Newtonsoft.Json;
-using Newtonsoft.Json.Bson;
-using System.Reflection;
 
 #endregion
 
@@ -154,12 +142,18 @@ namespace DMT.Models
 
     static partial class UICommands
     {
+        /// <summary>The Infrastructure's commands class</summary>
         public static partial class Infrastructure
         {
+            /// <summary>The ChangeActiveTSB commands class</summary>
             public static class ChangeActiveTSB
             {
+                /// <summary>The Command Name.</summary>
                 public static readonly string Name = "ChangeActiveTSB";
+                /// <summary>The Command Text.</summary>
                 public static readonly string Text = "Change Active TSB";
+
+                /// <summary>The RouteUICommand instance.</summary>
                 public static readonly RoutedUICommand Command = new RoutedUICommand(
                     Text,
                     Name,
