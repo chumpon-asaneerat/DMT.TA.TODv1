@@ -47,6 +47,9 @@ namespace DMT.Models
             if (null != value) value.AssignTo(this);
         }
 
+        /// <summary>Gets Is Active in string.</summary>
+        [Browsable(false)]
+        public string IsActive { get { return (Active) ? "[A]" : string.Empty; } set { } }
         /// <summary>Gets Plazas</summary>
         [Browsable(false)]
         public ObservableCollection<PlazaItem> Plazas { get; set; }
