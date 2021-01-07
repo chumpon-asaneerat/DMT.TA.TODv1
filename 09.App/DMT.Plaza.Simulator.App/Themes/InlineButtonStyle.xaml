@@ -33,17 +33,17 @@
 
     <SolidColorBrush x:Key="InlineButtonFocusedBorderBrush"
                      PresentationOptions:Freeze="True"
-                     Color="#FF000000" />
+                     Color="#FF222222" />
 
-    <Color x:Key="InlineButtonGlowColor1">#B24488FF</Color>
-    <Color x:Key="InlineButtonGlowColor2">#334488FF</Color>
+    <Color x:Key="InlineButtonGlowColor1">#334488FF</Color>
+    <Color x:Key="InlineButtonGlowColor2">#B24488FF</Color>
 
     <Color x:Key="InlineButtonShineColor1">#99FFFFFF</Color>
     <Color x:Key="InlineButtonShineColor2">#33FFFFFF</Color>
 
     <SolidColorBrush x:Key="InlineButtonPressBorderBackgound"
                      PresentationOptions:Freeze="True"
-                     Color="#CC000000" />
+                     Color="#CC555555" />
 
     <SolidColorBrush x:Key="InlineButtonDisableBorderBackgound"
                      PresentationOptions:Freeze="True"
@@ -72,6 +72,7 @@
                 BorderThickness="0"
                 CornerRadius="4">
             <Border x:Name="border"
+                    Padding="1"
                     Background="{StaticResource InlineButtonInnerBackground}"
                     BorderBrush="{StaticResource InlineButtonInnerBorderBrush}"
                     BorderThickness="1"
@@ -129,6 +130,8 @@
                 <Setter Property="Foreground" Value="{StaticResource InlineButtonPressedForground}" />
             </Trigger>
             <Trigger Property="IsFocused" Value="True">
+                <Setter TargetName="border" Property="Padding" Value="0" />
+                <Setter TargetName="border" Property="BorderThickness" Value="2" />
                 <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource InlineButtonFocusedBorderBrush}" />
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
