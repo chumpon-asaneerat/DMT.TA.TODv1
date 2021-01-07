@@ -2,7 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                    xmlns:models="clr-namespace:DMT.Models;assembly=DMT.Models"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
     <!--  CONST TREEVIEW FONT SIZE  -->
     <sys:Double x:Key="TreeViewFontSize18" PresentationOptions:Freeze="True">18</sys:Double>
