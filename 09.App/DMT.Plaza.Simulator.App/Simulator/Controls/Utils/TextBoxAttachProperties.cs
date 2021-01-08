@@ -10,117 +10,233 @@ using System.Windows.Media;
 
 namespace DMT.Controls
 {
-    public class SelectTextOnFocus
+    #region FocusOptions
+
+    /// <summary>
+    /// The Focus Options class.
+    /// </summary>
+    public class FocusOptions
     {
-        #region Select All when Focus
+        #region SelectAll
 
-        public static readonly DependencyProperty ActiveProperty = DependencyProperty.RegisterAttached(
-            "Active",
+        /// <summary>The SelectAllProperty variable</summary>
+        public static readonly DependencyProperty SelectAllProperty = DependencyProperty.RegisterAttached(
+            "SelectAll",
             typeof(bool),
-            typeof(SelectTextOnFocus),
-            new PropertyMetadata(false, ActivePropertyChanged));
+            typeof(FocusOptions),
+            new PropertyMetadata(false, SelectAllPropertyChanged));
 
-        //[AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        /// <summary>
+        /// Gets SelectAll Value.
+        /// </summary>
+        /// <param name="obj">The target object.</param>
+        /// <returns>Returns current proeprty value.</returns>
+        [AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
         [AttachedPropertyBrowsableForType(typeof(TextBox))]
-        public static bool GetActive(DependencyObject obj)
+        [AttachedPropertyBrowsableForType(typeof(PasswordBox))]
+        public static bool GetSelectAll(DependencyObject obj)
         {
-            return (bool)obj.GetValue(ActiveProperty);
+            return (bool)obj.GetValue(SelectAllProperty);
+        }
+        /// <summary>
+        /// Sets SelectAll Value.
+        /// </summary>
+        /// <param name="obj">The target object.</param>
+        /// <param name="value">The new value.</param>
+        public static void SetSelectAll(DependencyObject obj, bool value)
+        {
+            obj.SetValue(SelectAllProperty, value);
         }
 
-        public static void SetActive(DependencyObject obj, bool value)
-        {
-            obj.SetValue(ActiveProperty, value);
-        }
+        #endregion
 
-        private static void ActivePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        #region SelectAll Changed Handler
+
+        private static void SelectAllPropertyChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
-            if (d is TextBox)
+            if (obj is TextBox || obj is PasswordBox)
             {
-                TextBox textBox = d as TextBox;
                 if ((e.NewValue as bool?).GetValueOrDefault(false))
                 {
-                    textBox.GotKeyboardFocus += OnKeyboardFocusSelectText;
-                    textBox.PreviewMouseLeftButtonDown += OnMouseLeftButtonDown;
+                    HookEvents(obj as TextBox);
+                    HookEvents(obj as PasswordBox);
                 }
                 else
                 {
-                    textBox.GotKeyboardFocus -= OnKeyboardFocusSelectText;
-                    textBox.PreviewMouseLeftButtonDown -= OnMouseLeftButtonDown;
+                    UnhookEvents(obj as TextBox);
+                    UnhookEvents(obj as PasswordBox);
                 }
             }
         }
 
-        private static DependencyObject GetParentFromVisualTree(object source)
-        {
-            DependencyObject parent = source as UIElement;
-            while (parent != null && !(parent is TextBox))
-            {
-                parent = VisualTreeHelper.GetParent(parent);
-            }
+        #region TextBox
 
-            return parent;
+        private static void HookEvents(TextBox ctrl) 
+        {
+            if (null == ctrl) return;
+            ctrl.GotKeyboardFocus += OnGotKeyboardFocus;
+            ctrl.PreviewMouseLeftButtonDown += OnPreviewMouseLeftButtonDown;
+        }
+        private static void UnhookEvents(TextBox ctrl) 
+        {
+            if (null == ctrl) return;
+            ctrl.GotKeyboardFocus -= OnGotKeyboardFocus;
+            ctrl.PreviewMouseLeftButtonDown -= OnPreviewMouseLeftButtonDown;
         }
 
-        private static void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        #endregion
+
+        #region PasswordBox
+
+        private static void HookEvents(PasswordBox ctrl) 
         {
-            //DependencyObject dependencyObject = GetParentFromVisualTree(e.OriginalSource);
-            var textBox = e.OriginalSource as TextBox;
+            if (null == ctrl) return;
+            ctrl.GotKeyboardFocus += OnGotKeyboardFocus;
+            ctrl.PreviewMouseLeftButtonDown += OnPreviewMouseLeftButtonDown;
+        }
+        private static void UnhookEvents(PasswordBox ctrl) 
+        {
+            if (null == ctrl) return;
+            ctrl.GotKeyboardFocus -= OnGotKeyboardFocus;
+            ctrl.PreviewMouseLeftButtonDown -= OnPreviewMouseLeftButtonDown;
+        }
 
-            if (textBox == null)
+        #endregion
+
+        #endregion
+
+        #region Control Event Handlers
+
+        private static void OnGotKeyboardFocus(object sender, KeyboardFocusChangedEventArgs e)
+        {
+            if (e.OriginalSource is TextBox || e.OriginalSource is PasswordBox)
             {
-                return;
+                KeyboardFocusSelectText(e.OriginalSource as TextBox, e);
+                KeyboardFocusSelectText(e.OriginalSource as PasswordBox, e);
             }
+        }
 
-            if (!textBox.IsFocused)
+        private static void OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.OriginalSource is TextBox || e.OriginalSource is PasswordBox)
             {
-                textBox.Dispatcher.BeginInvoke(new Action(() =>
+                MouseLeftButtonDownFocus(e.OriginalSource as TextBox, e);
+                MouseLeftButtonDownFocus(e.OriginalSource as PasswordBox, e);
+            }
+        }
+
+        #region TextBox
+
+        private static void KeyboardFocusSelectText(TextBox ctrl, KeyboardFocusChangedEventArgs e)
+        {
+            if (null != ctrl && ctrl.IsKeyboardFocusWithin)
+            {
+                ctrl.Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    textBox.Focus();
-                    //textBox.ReleaseMouseCapture();
+                    ctrl.SelectAll();
+                }));
+            }
+        }
+
+        private static void MouseLeftButtonDownFocus(TextBox ctrl, MouseButtonEventArgs e)
+        {
+            if (ctrl == null) return;
+            if (!ctrl.IsFocused)
+            {
+                ctrl.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    ctrl.Focus();
+                    ctrl.ReleaseMouseCapture();
                 }));
                 e.Handled = true;
             }
         }
 
-        private static void OnKeyboardFocusSelectText(object sender, KeyboardFocusChangedEventArgs e)
+        #endregion
+
+        #region PasswordBox
+
+        private static void KeyboardFocusSelectText(PasswordBox ctrl, KeyboardFocusChangedEventArgs e)
         {
-            TextBox textBox = e.OriginalSource as TextBox;
-            if (null != textBox && textBox.IsKeyboardFocusWithin)
+            if (null != ctrl && ctrl.IsKeyboardFocusWithin)
             {
-                textBox.Dispatcher.BeginInvoke(new Action(() =>
+                ctrl.Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    textBox.SelectAll();
+                    ctrl.SelectAll();
                 }));
             }
         }
 
+        private static void MouseLeftButtonDownFocus(PasswordBox ctrl, MouseButtonEventArgs e)
+        {
+            if (null == ctrl) return;
+            if (!ctrl.IsFocused)
+            {
+                ctrl.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    ctrl.Focus();
+                    ctrl.ReleaseMouseCapture();
+                }));
+                e.Handled = true;
+            }
+        }
+
+        #endregion
+
         #endregion
     }
 
-    public class EnterKeyTraversal
+    #endregion
+
+    #region KeyboardOptions
+
+    /// <summary>
+    /// The Keyboard Options class.
+    /// </summary>
+    public class KeyboardOptions
     {
         #region Enter As Tab
 
-        public static readonly DependencyProperty IsEnabledProperty = DependencyProperty.RegisterAttached(
-            "IsEnabled", 
+        #region Public Dependency Properties and methods
+
+        /// <summary>The EnterAsTabProperty variable</summary>
+        public static readonly DependencyProperty EnterAsTabProperty = DependencyProperty.RegisterAttached(
+            "EnterAsTab",
             typeof(bool),
-            typeof(EnterKeyTraversal), 
-            new UIPropertyMetadata(false, IsEnabledChanged));
-
-        //[AttachedPropertyBrowsableForType(typeof(TextBox))]
-        public static bool GetIsEnabled(DependencyObject obj)
+            typeof(KeyboardOptions),
+            new UIPropertyMetadata(false, EnterAsTabChanged));
+        /// <summary>
+        /// Gets EnterAsTab Value.
+        /// </summary>
+        /// <param name="obj">The target object.</param>
+        /// <returns>Returns current proeprty value.</returns>
+        [AttachedPropertyBrowsableForType(typeof(TextBox))]
+        [AttachedPropertyBrowsableForType(typeof(PasswordBox))]
+        public static bool GetEnterAsTab(DependencyObject obj)
         {
-            return (bool)obj.GetValue(IsEnabledProperty);
+            return (bool)obj.GetValue(EnterAsTabProperty);
+        }
+        /// <summary>
+        /// Sets EnterAsTab Value.
+        /// </summary>
+        /// <param name="obj">The target object.</param>
+        /// <param name="value">The new value.</param>
+        public static void SetEnterAsTab(DependencyObject obj, bool value)
+        {
+            obj.SetValue(EnterAsTabProperty, value);
         }
 
-        public static void SetIsEnabled(DependencyObject obj, bool value)
-        {
-            obj.SetValue(IsEnabledProperty, value);
-        }
+        #endregion
 
-        static void IsEnabledChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        #region EnterAsTab Changed Handler
+
+        private static void EnterAsTabChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
-            var ue = d as FrameworkElement;
+            var ue = obj as FrameworkElement;
+
+            if (!(ue is TextBox) || !(ue is PasswordBox)) return; // only TextBox, PasswordBox
+            if ((ue as TextBox).AcceptsReturn) return; // TextBox has AcceptsReturn property = true so ignore it. 
+
             if (ue == null) return;
 
             if ((bool)e.NewValue)
@@ -134,14 +250,21 @@ namespace DMT.Controls
             }
         }
 
-        private static void ue_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        #endregion
+
+        #region Control Event Handlers
+
+        private static void ue_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             var ue = e.OriginalSource as FrameworkElement;
 
             if (e.Key == Key.Enter)
             {
-                e.Handled = true;
-                ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+                if (ue is TextBox || ue is PasswordBox)
+                {
+                    e.Handled = true;
+                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+                }
             }
         }
 
@@ -155,10 +278,9 @@ namespace DMT.Controls
         }
 
         #endregion
+
+        #endregion
     }
 
-    public class KeyboardOptions
-    {
-
-    }
+    #endregion
 }
