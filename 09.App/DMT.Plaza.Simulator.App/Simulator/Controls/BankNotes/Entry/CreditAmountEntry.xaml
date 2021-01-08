@@ -53,6 +53,23 @@
             <Setter Property="Margin" Value="5,2" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
+
+        <!--  BANK NOTE UNIT  -->
+        <Style x:Key="ConinUnitStyle"
+               BasedOn="{StaticResource UnitStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="บาท" />
+        </Style>
+        <Style x:Key="BillUnitStyle"
+               BasedOn="{StaticResource UnitStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="บาท" />
+        </Style>
+        <Style x:Key="TotalUnitStyle"
+               BasedOn="{StaticResource UnitStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="บาท" />
+        </Style>
     </UserControl.Resources>
     <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
         <DockPanel LastChildFill="False">
@@ -75,7 +92,7 @@
                 <TextBox Foreground="{Binding BHT1Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT1, StringFormat=N0}" />
-                <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
+                <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  2 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
@@ -83,7 +100,7 @@
                 <TextBox Foreground="{Binding BHT2Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT2, StringFormat=N0}" />
-                <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
+                <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  5 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
@@ -91,7 +108,7 @@
                 <TextBox Foreground="{Binding BHT5Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT5, StringFormat=N0}" />
-                <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
+                <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  10 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
@@ -99,7 +116,7 @@
                 <TextBox Foreground="{Binding BHT10Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT10, StringFormat=N0}" />
-                <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
+                <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  20 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
@@ -107,7 +124,7 @@
                 <TextBox Foreground="{Binding BHT20Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT20, StringFormat=N0}" />
-                <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
+                <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  50 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
@@ -115,7 +132,7 @@
                 <TextBox Foreground="{Binding BHT50Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT50, StringFormat=N0}" />
-                <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
+                <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  100 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
@@ -123,7 +140,7 @@
                 <TextBox Foreground="{Binding BHT100Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT100, StringFormat=N0}" />
-                <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
+                <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  500 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
@@ -131,7 +148,7 @@
                 <TextBox Foreground="{Binding BHT500Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT500, StringFormat=N0}" />
-                <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
+                <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  1000 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
@@ -139,7 +156,7 @@
                 <TextBox Foreground="{Binding BHT1000Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT1000, StringFormat=N0}" />
-                <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
+                <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  TOTAL BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
@@ -147,7 +164,7 @@
                 <TextBox IsEnabled="False"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding BHTTotal, StringFormat=N0}" />
-                <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
+                <TextBlock Style="{StaticResource TotalUnitStyle}" />
             </StackPanel>
             <!--  REMARK  -->
             <TextBlock Margin="10,2"
