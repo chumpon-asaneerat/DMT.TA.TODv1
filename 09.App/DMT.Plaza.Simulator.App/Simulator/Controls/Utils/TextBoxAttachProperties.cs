@@ -10,7 +10,7 @@ using System.Windows.Media;
 
 namespace DMT.Controls
 {
-    public class SelectTextOnFocus : DependencyObject
+    public class SelectTextOnFocus
     {
         #region Select All when Focus
 
@@ -97,7 +97,7 @@ namespace DMT.Controls
         #endregion
     }
 
-    public class EnterKeyTraversal : DependencyObject
+    public class EnterKeyTraversal
     {
         #region Enter As Tab
 
@@ -155,5 +155,10 @@ namespace DMT.Controls
         }
 
         #endregion
+    }
+
+    public class KeyboardOptions
+    {
+
     }
 }
