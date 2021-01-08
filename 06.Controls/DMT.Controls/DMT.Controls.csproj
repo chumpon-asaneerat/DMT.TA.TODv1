@@ -58,6 +58,7 @@
     <Compile Include="Controls\Buttons\ImageButton.xaml.cs">
       <DependentUpon>ImageButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Utils\AttachProperties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
