@@ -1,5 +1,6 @@
 ﻿#region Using
 
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -19,6 +20,18 @@ namespace DMT.Controls
             typeof(SelectTextOnFocus),
             new PropertyMetadata(false, ActivePropertyChanged));
 
+        //[AttachedPropertyBrowsableForChildren(IncludeDescendants = false)]
+        [AttachedPropertyBrowsableForType(typeof(TextBox))]
+        public static bool GetActive(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(ActiveProperty);
+        }
+
+        public static void SetActive(DependencyObject obj, bool value)
+        {
+            obj.SetValue(ActiveProperty, value);
+        }
+
         private static void ActivePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (d is TextBox)
@@ -37,23 +50,6 @@ namespace DMT.Controls
             }
         }
 
-        private static void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            DependencyObject dependencyObject = GetParentFromVisualTree(e.OriginalSource);
-
-            if (dependencyObject == null)
-            {
-                return;
-            }
-
-            var textBox = (TextBox)dependencyObject;
-            if (!textBox.IsKeyboardFocusWithin)
-            {
-                textBox.Focus();
-                e.Handled = true;
-            }
-        }
-
         private static DependencyObject GetParentFromVisualTree(object source)
         {
             DependencyObject parent = source as UIElement;
@@ -65,25 +61,37 @@ namespace DMT.Controls
             return parent;
         }
 
-        private static void OnKeyboardFocusSelectText(object sender, KeyboardFocusChangedEventArgs e)
+        private static void OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            TextBox textBox = e.OriginalSource as TextBox;
-            if (textBox != null)
+            //DependencyObject dependencyObject = GetParentFromVisualTree(e.OriginalSource);
+            var textBox = e.OriginalSource as TextBox;
+
+            if (textBox == null)
             {
-                textBox.SelectAll();
+                return;
+            }
+
+            if (!textBox.IsFocused)
+            {
+                textBox.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    textBox.Focus();
+                    //textBox.ReleaseMouseCapture();
+                }));
+                e.Handled = true;
             }
         }
 
-        [AttachedPropertyBrowsableForChildrenAttribute(IncludeDescendants = false)]
-        [AttachedPropertyBrowsableForType(typeof(TextBox))]
-        public static bool GetActive(DependencyObject @object)
+        private static void OnKeyboardFocusSelectText(object sender, KeyboardFocusChangedEventArgs e)
         {
-            return (bool)@object.GetValue(ActiveProperty);
-        }
-
-        public static void SetActive(DependencyObject @object, bool value)
-        {
-            @object.SetValue(ActiveProperty, value);
+            TextBox textBox = e.OriginalSource as TextBox;
+            if (null != textBox && textBox.IsKeyboardFocusWithin)
+            {
+                textBox.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    textBox.SelectAll();
+                }));
+            }
         }
 
         #endregion
@@ -93,6 +101,13 @@ namespace DMT.Controls
     {
         #region Enter As Tab
 
+        public static readonly DependencyProperty IsEnabledProperty = DependencyProperty.RegisterAttached(
+            "IsEnabled", 
+            typeof(bool),
+            typeof(EnterKeyTraversal), 
+            new UIPropertyMetadata(false, IsEnabledChanged));
+
+        //[AttachedPropertyBrowsableForType(typeof(TextBox))]
         public static bool GetIsEnabled(DependencyObject obj)
         {
             return (bool)obj.GetValue(IsEnabledProperty);
@@ -103,7 +118,23 @@ namespace DMT.Controls
             obj.SetValue(IsEnabledProperty, value);
         }
 
-        static void ue_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        static void IsEnabledChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var ue = d as FrameworkElement;
+            if (ue == null) return;
+
+            if ((bool)e.NewValue)
+            {
+                ue.Unloaded += ue_Unloaded;
+                ue.PreviewKeyDown += ue_PreviewKeyDown;
+            }
+            else
+            {
+                ue.PreviewKeyDown -= ue_PreviewKeyDown;
+            }
+        }
+
+        private static void ue_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             var ue = e.OriginalSource as FrameworkElement;
 
@@ -121,27 +152,6 @@ namespace DMT.Controls
 
             ue.Unloaded -= ue_Unloaded;
             ue.PreviewKeyDown -= ue_PreviewKeyDown;
-        }
-
-        public static readonly DependencyProperty IsEnabledProperty =
-            DependencyProperty.RegisterAttached("IsEnabled", typeof(bool),
-
-            typeof(EnterKeyTraversal), new UIPropertyMetadata(false, IsEnabledChanged));
-
-        static void IsEnabledChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var ue = d as FrameworkElement;
-            if (ue == null) return;
-
-            if ((bool)e.NewValue)
-            {
-                ue.Unloaded += ue_Unloaded;
-                ue.PreviewKeyDown += ue_PreviewKeyDown;
-            }
-            else
-            {
-                ue.PreviewKeyDown -= ue_PreviewKeyDown;
-            }
         }
 
         #endregion
