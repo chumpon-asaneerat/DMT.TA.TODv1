@@ -282,30 +282,51 @@ namespace DMT.Controls
             {
                 // UP Arrow
                 e.Handled = true;
-                // Move focus to another focusable element upwards from the currently focused element.
-                if (!ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Up)))
+                // Get the element which would receive focus if focus were changed.
+                var obj = ue.PredictFocus(FocusNavigationDirection.Up);
+                var next = (obj is TextBox || obj is PasswordBox) ? obj as Control : null;
+                if (null != next)
+                {
+                    // Move focus to another focusable element upwards from the currently focused element.
+                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Up));
+                }
+                else
                 {
                     // Move to previous tab order.
-                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Previous));
+                    //ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Previous));
                 }
             }
             else if (e.Key == Key.Down && GetUpDownNavigation(ue))
             {
                 // DOWN Arrow
                 e.Handled = true;
-                // Move focus to another focusable element downwards from the currently focused element.
-                if (!ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Down)))
+                // Get the element which would receive focus if focus were changed.
+                var obj = ue.PredictFocus(FocusNavigationDirection.Down);
+                var next = (obj is TextBox || obj is PasswordBox) ? obj as Control : null;
+                if (null != next)
+                {
+                    // Move focus to another focusable element downwards from the currently focused element.
+                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Down));
+                }
+                else
                 {
                     // Move to next tab order.
-                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+                    //ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
                 }
             }
             else if (e.Key == Key.Left && GetUpDownNavigation(ue) && CanMoveLeft(ue))
             {
                 // LEFT Arrow
                 e.Handled = true;
-                // Move focus to another focusable element to the left of the currently focused element.
-                if (!ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Left)))
+                // Get the element which would receive focus if focus were changed.
+                var obj = ue.PredictFocus(FocusNavigationDirection.Left);
+                var next = (obj is TextBox || obj is PasswordBox) ? obj as Control : null;
+                if (null != next)
+                {
+                    // Move focus to another focusable element to the left of the currently focused element.
+                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Left));
+                }
+                else
                 {
                     // Move focus to another focusable element upwards from the currently focused element.
                     ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Up));
@@ -315,8 +336,15 @@ namespace DMT.Controls
             {
                 // RIGHT Arrow
                 e.Handled = true;
-                // Move focus to another focusable element to the right of the currently focused element.
-                if (!ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Right)))
+                // Get the element which would receive focus if focus were changed.
+                var obj = ue.PredictFocus(FocusNavigationDirection.Right);
+                var next = (obj is TextBox || obj is PasswordBox) ? obj as Control : null;
+                if (null != next)
+                {
+                    // Move focus to another focusable element to the right of the currently focused element.
+                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Right));
+                }
+                else
                 {
                     // Move focus to another focusable element downwards from the currently focused element.
                     ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Down));
