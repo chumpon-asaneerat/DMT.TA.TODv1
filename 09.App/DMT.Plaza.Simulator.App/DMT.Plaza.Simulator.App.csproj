@@ -91,7 +91,7 @@
     <Compile Include="Simulator\Controls\BankNotes\Entry\CreditAmountEntry.xaml.cs">
       <DependentUpon>CreditAmountEntry.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Simulator\Controls\Utils\TextBoxAttachProperties.cs" />
+    <Compile Include="Simulator\Controls\Utils\AttachProperties.cs" />
     <Compile Include="Simulator\Pages\BankNotEntryPage.xaml.cs">
       <DependentUpon>BankNotEntryPage.xaml</DependentUpon>
     </Compile>
