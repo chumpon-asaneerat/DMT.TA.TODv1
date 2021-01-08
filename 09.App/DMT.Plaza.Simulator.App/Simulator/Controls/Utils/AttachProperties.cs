@@ -376,7 +376,14 @@ namespace DMT.Controls
         {
             bool ret = false;
             if (null == ctrl) return ret;
+
+            // Select All so cursor position is not matter.
+            if (ctrl.SelectionLength == ctrl.Text.Length &&
+                (ctrl.CaretIndex == 0 || ctrl.CaretIndex == ctrl.Text.Length)) ret = true;
+
+            // No selection need to check cusror position at left most.
             if (ctrl.SelectionLength == 0 && ctrl.CaretIndex == 0) ret = true;
+
             return ret;
         }
 
@@ -405,7 +412,14 @@ namespace DMT.Controls
         {
             bool ret = false;
             if (null == ctrl) return ret;
+
+            // Select All so cursor position is not matter.
+            if (ctrl.SelectionLength == ctrl.Text.Length &&
+                (ctrl.CaretIndex == 0 || ctrl.CaretIndex == ctrl.Text.Length)) ret = true;
+
+            // No selection need to check cusror position at right most.
             if (ctrl.SelectionLength == 0 && ctrl.CaretIndex == ctrl.Text.Length) ret = true;
+
             return ret;
         }
 
