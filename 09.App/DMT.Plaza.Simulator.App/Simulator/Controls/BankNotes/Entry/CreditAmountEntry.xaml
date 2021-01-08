@@ -80,6 +80,11 @@
                TargetType="TextBlock">
             <Setter Property="Text" Value="1000 บาท" />
         </Style>
+        <Style x:Key="BHTTotalDescription"
+               BasedOn="{StaticResource DescriptionStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="ยอดรวม" />
+        </Style>
 
         <!--  BANK NOTE AMOUNT (TEXTBOX)  -->
         <Style x:Key="AmountStyle"
@@ -92,6 +97,66 @@
             <Setter Property="Margin" Value="0,2" />
         </Style>
         <!--  EACH NOTE AMOUNT (TEXTBOX)  -->
+        <Style x:Key="BHT1Amount"
+               BasedOn="{StaticResource AmountStyle}"
+               TargetType="TextBox">
+            <Setter Property="Foreground" Value="{Binding BHT1Foreground}" />
+            <Setter Property="Text" Value="{Binding AmountBHT1, StringFormat=N0}" />
+        </Style>
+        <Style x:Key="BHT2Amount"
+               BasedOn="{StaticResource AmountStyle}"
+               TargetType="TextBox">
+            <Setter Property="Foreground" Value="{Binding BHT2Foreground}" />
+            <Setter Property="Text" Value="{Binding AmountBHT2, StringFormat=N0}" />
+        </Style>
+        <Style x:Key="BHT5Amount"
+               BasedOn="{StaticResource AmountStyle}"
+               TargetType="TextBox">
+            <Setter Property="Foreground" Value="{Binding BHT5Foreground}" />
+            <Setter Property="Text" Value="{Binding AmountBHT5, StringFormat=N0}" />
+        </Style>
+        <Style x:Key="BHT10Amount"
+               BasedOn="{StaticResource AmountStyle}"
+               TargetType="TextBox">
+            <Setter Property="Foreground" Value="{Binding BHT10Foreground}" />
+            <Setter Property="Text" Value="{Binding AmountBHT10, StringFormat=N0}" />
+        </Style>
+        <Style x:Key="BHT20Amount"
+               BasedOn="{StaticResource AmountStyle}"
+               TargetType="TextBox">
+            <Setter Property="Foreground" Value="{Binding BHT20Foreground}" />
+            <Setter Property="Text" Value="{Binding AmountBHT20, StringFormat=N0}" />
+        </Style>
+        <Style x:Key="BHT50Amount"
+               BasedOn="{StaticResource AmountStyle}"
+               TargetType="TextBox">
+            <Setter Property="Foreground" Value="{Binding BHT50Foreground}" />
+            <Setter Property="Text" Value="{Binding AmountBHT50, StringFormat=N0}" />
+        </Style>
+        <Style x:Key="BHT100Amount"
+               BasedOn="{StaticResource AmountStyle}"
+               TargetType="TextBox">
+            <Setter Property="Foreground" Value="{Binding BHT100Foreground}" />
+            <Setter Property="Text" Value="{Binding AmountBHT100, StringFormat=N0}" />
+        </Style>
+        <Style x:Key="BHT500Amount"
+               BasedOn="{StaticResource AmountStyle}"
+               TargetType="TextBox">
+            <Setter Property="Foreground" Value="{Binding BHT500Foreground}" />
+            <Setter Property="Text" Value="{Binding AmountBHT500, StringFormat=N0}" />
+        </Style>
+        <Style x:Key="BHT1000Amount"
+               BasedOn="{StaticResource AmountStyle}"
+               TargetType="TextBox">
+            <Setter Property="Foreground" Value="{Binding BHT1000Foreground}" />
+            <Setter Property="Text" Value="{Binding AmountBHT1000, StringFormat=N0}" />
+        </Style>
+        <Style x:Key="BHTTotalAmount"
+               BasedOn="{StaticResource AmountStyle}"
+               TargetType="TextBox">
+            <Setter Property="Foreground" Value="{Binding BHT1000Foreground}" />
+            <Setter Property="Text" Value="{Binding BHTTotal, StringFormat=N0}" />
+        </Style>
 
         <!--  BANK NOTE UNIT  -->
         <Style x:Key="UnitStyle" TargetType="TextBlock">
@@ -137,81 +202,61 @@
             <!--  1 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT1Description}" />
-                <TextBox Foreground="{Binding BHT1Foreground}"
-                         Style="{StaticResource AmountStyle}"
-                         Text="{Binding AmountBHT1, StringFormat=N0}" />
+                <TextBox Style="{StaticResource BHT1Amount}" />
                 <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  2 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT2Description}" />
-                <TextBox Foreground="{Binding BHT2Foreground}"
-                         Style="{StaticResource AmountStyle}"
-                         Text="{Binding AmountBHT2, StringFormat=N0}" />
+                <TextBox Style="{StaticResource BHT2Amount}" />
                 <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  5 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT5Description}" />
-                <TextBox Foreground="{Binding BHT5Foreground}"
-                         Style="{StaticResource AmountStyle}"
-                         Text="{Binding AmountBHT5, StringFormat=N0}" />
+                <TextBox Style="{StaticResource BHT5Amount}" />
                 <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  10 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT10Description}" />
-                <TextBox Foreground="{Binding BHT10Foreground}"
-                         Style="{StaticResource AmountStyle}"
-                         Text="{Binding AmountBHT10, StringFormat=N0}" />
+                <TextBox Style="{StaticResource BHT10Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  20 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT20Description}" />
-                <TextBox Foreground="{Binding BHT20Foreground}"
-                         Style="{StaticResource AmountStyle}"
-                         Text="{Binding AmountBHT20, StringFormat=N0}" />
+                <TextBox Style="{StaticResource BHT20Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  50 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT50Description}" />
-                <TextBox Foreground="{Binding BHT50Foreground}"
-                         Style="{StaticResource AmountStyle}"
-                         Text="{Binding AmountBHT50, StringFormat=N0}" />
+                <TextBox Style="{StaticResource BHT50Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  100 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT100Description}" />
-                <TextBox Foreground="{Binding BHT100Foreground}"
-                         Style="{StaticResource AmountStyle}"
-                         Text="{Binding AmountBHT100, StringFormat=N0}" />
+                <TextBox Style="{StaticResource BHT100Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  500 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT500Description}" />
-                <TextBox Foreground="{Binding BHT500Foreground}"
-                         Style="{StaticResource AmountStyle}"
-                         Text="{Binding AmountBHT500, StringFormat=N0}" />
+                <TextBox Style="{StaticResource BHT500Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  1000 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT1000Description}" />
-                <TextBox Foreground="{Binding BHT1000Foreground}"
-                         Style="{StaticResource AmountStyle}"
-                         Text="{Binding AmountBHT1000, StringFormat=N0}" />
+                <TextBox Style="{StaticResource BHT1000Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  TOTAL BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
-                <TextBlock Style="{StaticResource DescriptionStyle}" Text="ยอดรวม" />
-                <TextBox IsEnabled="False"
-                         Style="{StaticResource AmountStyle}"
-                         Text="{Binding BHTTotal, StringFormat=N0}" />
+                <TextBlock Style="{StaticResource BHTTotalDescription}" />
+                <TextBox IsEnabled="False" Style="{StaticResource BHTTotalAmount}" />
                 <TextBlock Style="{StaticResource TotalUnitStyle}" />
             </StackPanel>
             <!--  REMARK  -->
