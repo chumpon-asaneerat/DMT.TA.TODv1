@@ -5,6 +5,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:util="clr-namespace:DMT.Controls.Utils;assembly=DMT.Controls"
         Title="Sign In"
         Width="600"
         Height="420"
