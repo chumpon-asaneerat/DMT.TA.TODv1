@@ -80,25 +80,29 @@
             <!--  2 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource DescriptionStyle}" Text="2 บาท" />
-                <TextBox Style="{StaticResource AmountStyle}" Text="{Binding AmountBHT2, StringFormat=N0}" />
+                <TextBox Foreground="{Binding BHT2Foreground}"
+                         Style="{StaticResource AmountStyle}" Text="{Binding AmountBHT2, StringFormat=N0}" />
                 <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
             </StackPanel>
             <!--  5 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource DescriptionStyle}" Text="5 บาท" />
-                <TextBox Style="{StaticResource AmountStyle}" Text="{Binding AmountBHT5, StringFormat=N0}" />
+                <TextBox Foreground="{Binding BHT5Foreground}"
+                         Style="{StaticResource AmountStyle}" Text="{Binding AmountBHT5, StringFormat=N0}" />
                 <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
             </StackPanel>
             <!--  10 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource DescriptionStyle}" Text="10 บาท" />
-                <TextBox Style="{StaticResource AmountStyle}" Text="{Binding AmountBHT10, StringFormat=N0}" />
+                <TextBox Foreground="{Binding BHT10Foreground}"
+                         Style="{StaticResource AmountStyle}" Text="{Binding AmountBHT10, StringFormat=N0}" />
                 <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
             </StackPanel>
             <!--  20 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource DescriptionStyle}" Text="20 บาท" />
-                <TextBox Style="{StaticResource AmountStyle}" Text="{Binding AmountBHT20, StringFormat=N0}" />
+                <TextBox Foreground="{Binding BHT20Foreground}"
+                         Style="{StaticResource AmountStyle}" Text="{Binding AmountBHT20, StringFormat=N0}" />
                 <TextBlock Style="{StaticResource UnitStyle}" Text="บาท" />
             </StackPanel>
             <!--  50 BHT  -->
