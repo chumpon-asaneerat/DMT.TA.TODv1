@@ -146,56 +146,12 @@ namespace DMT.Pages
 
         #region TextBox Keydown
 
-        private void txtUserId_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (tabs.SelectedIndex != 0) return;
-            if (e.Key == Key.Enter || e.Key == System.Windows.Input.Key.Return)
-            {
-                txtPassword.SelectAll();
-                txtPassword.Focus();
-                e.Handled = true;
-            }
-        }
-
         private void txtPassword_KeyDown(object sender, KeyEventArgs e)
         {
             if (tabs.SelectedIndex != 0) return;
             if (e.Key == Key.Enter || e.Key == Key.Return)
             {
                 CheckInput();
-                e.Handled = true;
-            }
-        }
-
-        private void txtUserId2_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (tabs.SelectedIndex != 1) return;
-            if (e.Key == Key.Enter || e.Key == Key.Return)
-            {
-                txtPassword2.SelectAll();
-                txtPassword2.Focus();
-                e.Handled = true;
-            }
-        }
-
-        private void txtPassword2_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (tabs.SelectedIndex != 1) return;
-            if (e.Key == Key.Enter || e.Key == Key.Return)
-            {
-                txtNewPassword.SelectAll();
-                txtNewPassword.Focus();
-                e.Handled = true;
-            }
-        }
-
-        private void txtNewPassword_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (tabs.SelectedIndex != 1) return;
-            if (e.Key == Key.Enter || e.Key == Key.Return)
-            {
-                txtConfirmPassword.SelectAll();
-                txtConfirmPassword.Focus();
                 e.Handled = true;
             }
         }
