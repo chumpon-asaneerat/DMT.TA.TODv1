@@ -102,6 +102,7 @@
             <Setter Property="ctrl:KeyboardOptions.Enabled" Value="True" />
             <Setter Property="ctrl:KeyboardOptions.EnterAsTab" Value="True" />
             <Setter Property="ctrl:KeyboardOptions.UpDownNavigation" Value="True" />
+            <Setter Property="ctrl:KeyboardOptions.LeftRightNavigation" Value="True" />
         </Style>
         <!--  EACH NOTE AMOUNT (TEXTBOX)  -->
         <Style x:Key="BHT1Amount"

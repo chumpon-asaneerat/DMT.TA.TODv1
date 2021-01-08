@@ -314,7 +314,7 @@ namespace DMT.Controls
                     //ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
                 }
             }
-            else if (e.Key == Key.Left && GetUpDownNavigation(ue) && CanMoveLeft(ue))
+            else if (e.Key == Key.Left && GetLeftRightNavigation(ue) && CanMoveLeft(ue))
             {
                 // LEFT Arrow
                 e.Handled = true;
@@ -329,10 +329,10 @@ namespace DMT.Controls
                 else
                 {
                     // Move focus to another focusable element upwards from the currently focused element.
-                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Up));
+                    //ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Up));
                 }
             }
-            else if (e.Key == Key.Right && GetUpDownNavigation(ue) && CanMoveRight(ue))
+            else if (e.Key == Key.Right && GetLeftRightNavigation(ue) && CanMoveRight(ue))
             {
                 // RIGHT Arrow
                 e.Handled = true;
@@ -347,7 +347,7 @@ namespace DMT.Controls
                 else
                 {
                     // Move focus to another focusable element downwards from the currently focused element.
-                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Down));
+                    //ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Down));
                 }
             }
         }
@@ -501,6 +501,41 @@ namespace DMT.Controls
         public static void SetUpDownNavigation(DependencyObject obj, bool value)
         {
             obj.SetValue(UpDownNavigationProperty, value);
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Left/Right Navigation
+
+        #region Public Dependency Properties and methods
+
+        /// <summary>The LeftRightNavigationProperty variable</summary>
+        public static readonly DependencyProperty LeftRightNavigationProperty = DependencyProperty.RegisterAttached(
+            "LeftRightNavigation",
+            typeof(bool),
+            typeof(KeyboardOptions),
+            null);
+        /// <summary>
+        /// Gets UpDownNavigation Value.
+        /// </summary>
+        /// <param name="obj">The target object.</param>
+        /// <returns>Returns current proeprty value.</returns>
+        [AttachedPropertyBrowsableForType(typeof(TextBox))]
+        [AttachedPropertyBrowsableForType(typeof(PasswordBox))]
+        public static bool GetLeftRightNavigation(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(LeftRightNavigationProperty);
+        }
+        /// <summary>
+        /// Sets UpDownNavigation Value.
+        /// </summary>
+        /// <param name="obj">The target object.</param>
+        /// <param name="value">The new value.</param>
+        public static void SetLeftRightNavigation(DependencyObject obj, bool value)
+        {
+            obj.SetValue(LeftRightNavigationProperty, value);
         }
 
         #endregion
