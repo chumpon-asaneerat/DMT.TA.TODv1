@@ -99,7 +99,9 @@
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="0,2" />
             <Setter Property="ctrl:FocusOptions.SelectAll" Value="True" />
+            <Setter Property="ctrl:KeyboardOptions.Enabled" Value="True" />
             <Setter Property="ctrl:KeyboardOptions.EnterAsTab" Value="True" />
+            <Setter Property="ctrl:KeyboardOptions.UpDownNavigation" Value="True" />
         </Style>
         <!--  EACH NOTE AMOUNT (TEXTBOX)  -->
         <Style x:Key="BHT1Amount"

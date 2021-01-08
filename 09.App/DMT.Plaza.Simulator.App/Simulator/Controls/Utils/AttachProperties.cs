@@ -6,6 +6,8 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 
+using NLib.Reflection;
+
 #endregion
 
 namespace DMT.Controls
@@ -195,42 +197,42 @@ namespace DMT.Controls
     /// </summary>
     public class KeyboardOptions
     {
-        #region Enter As Tab
+        #region Enabled
 
         #region Public Dependency Properties and methods
 
-        /// <summary>The EnterAsTabProperty variable</summary>
-        public static readonly DependencyProperty EnterAsTabProperty = DependencyProperty.RegisterAttached(
-            "EnterAsTab",
+        /// <summary>The EnabledProperty variable</summary>
+        public static readonly DependencyProperty EnabledProperty = DependencyProperty.RegisterAttached(
+            "Enabled",
             typeof(bool),
             typeof(KeyboardOptions),
-            new UIPropertyMetadata(false, EnterAsTabChanged));
+            new UIPropertyMetadata(false, EnabledChanged));
         /// <summary>
-        /// Gets EnterAsTab Value.
+        /// Gets Enabled Value.
         /// </summary>
         /// <param name="obj">The target object.</param>
         /// <returns>Returns current proeprty value.</returns>
         [AttachedPropertyBrowsableForType(typeof(TextBox))]
         [AttachedPropertyBrowsableForType(typeof(PasswordBox))]
-        public static bool GetEnterAsTab(DependencyObject obj)
+        public static bool GetEnabled(DependencyObject obj)
         {
-            return (bool)obj.GetValue(EnterAsTabProperty);
+            return (bool)obj.GetValue(EnabledProperty);
         }
         /// <summary>
-        /// Sets EnterAsTab Value.
+        /// Sets Enabled Value.
         /// </summary>
         /// <param name="obj">The target object.</param>
         /// <param name="value">The new value.</param>
-        public static void SetEnterAsTab(DependencyObject obj, bool value)
+        public static void SetEnabled(DependencyObject obj, bool value)
         {
-            obj.SetValue(EnterAsTabProperty, value);
+            obj.SetValue(EnabledProperty, value);
         }
 
         #endregion
 
-        #region EnterAsTab Changed Handler
+        #region Enabled Changed Handler
 
-        private static void EnterAsTabChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
+        private static void EnabledChanged(DependencyObject obj, DependencyPropertyChangedEventArgs e)
         {
             var ue = obj as FrameworkElement;
 
@@ -258,15 +260,66 @@ namespace DMT.Controls
         {
             var ue = e.OriginalSource as FrameworkElement;
 
-            if (e.Key == Key.Enter)
+            if (!(ue is TextBox || ue is PasswordBox)) return;
+
+            var sys = Keyboard.IsKeyDown(Key.System);
+            var alt = Keyboard.IsKeyDown(Key.LeftAlt) || Keyboard.IsKeyDown(Key.RightAlt);
+            var ctrl = Keyboard.IsKeyDown(Key.LeftCtrl) || Keyboard.IsKeyDown(Key.RightCtrl);
+            var shf = Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift);
+
+            if (sys || alt || ctrl || shf) return; // ignore if Ctrl/Alt/Shift/System key hold.
+
+            if (e.Key == Key.Enter && GetEnterAsTab(ue))
             {
-                if (ue is TextBox || ue is PasswordBox)
+                e.Handled = true;
+                // Move to next tab order.
+                if (!ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next)))
                 {
-                    e.Handled = true;
-                    if (!ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next)))
-                    {
-                        //ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.First));
-                    }
+                    //ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.First));
+                }
+            }
+            else if (e.Key == Key.Up && GetUpDownNavigation(ue))
+            {
+                // UP Arrow
+                e.Handled = true;
+                // Move focus to another focusable element upwards from the currently focused element.
+                if (!ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Up)))
+                {
+                    // Move to previous tab order.
+                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Previous));
+                }
+            }
+            else if (e.Key == Key.Down && GetUpDownNavigation(ue))
+            {
+                // DOWN Arrow
+                e.Handled = true;
+                // Move focus to another focusable element downwards from the currently focused element.
+                if (!ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Down)))
+                {
+                    // Move to next tab order.
+                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+                }
+            }
+            else if (e.Key == Key.Left && GetUpDownNavigation(ue) && CanMoveLeft(ue))
+            {
+                // LEFT Arrow
+                e.Handled = true;
+                // Move focus to another focusable element to the left of the currently focused element.
+                if (!ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Left)))
+                {
+                    // Move focus to another focusable element upwards from the currently focused element.
+                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Up));
+                }
+            }
+            else if (e.Key == Key.Right && GetUpDownNavigation(ue) && CanMoveRight(ue))
+            {
+                // RIGHT Arrow
+                e.Handled = true;
+                // Move focus to another focusable element to the right of the currently focused element.
+                if (!ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Right)))
+                {
+                    // Move focus to another focusable element downwards from the currently focused element.
+                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Down));
                 }
             }
         }
@@ -278,6 +331,134 @@ namespace DMT.Controls
 
             ue.Unloaded -= ue_Unloaded;
             ue.PreviewKeyDown -= ue_PreviewKeyDown;
+        }
+
+        #region CanMoveLeft
+
+        private static bool CanMoveLeft(FrameworkElement ctrl)
+        {
+            bool ret = false;
+            if (null == ctrl) return ret;
+            if (!ret) ret = CanMoveLeft(ctrl as TextBox);
+            if (!ret) ret = CanMoveLeft(ctrl as PasswordBox);
+            return ret;
+        }
+
+        private static bool CanMoveLeft(TextBox ctrl)
+        {
+            bool ret = false;
+            if (null == ctrl) return ret;
+            if (ctrl.SelectionLength == 0 && ctrl.CaretIndex == 0) ret = true;
+            return ret;
+        }
+
+        private static bool CanMoveLeft(PasswordBox ctrl)
+        {
+            bool ret = false;
+            if (null == ctrl) return ret;
+            // Password Has No API to get Selection Text.
+            return ret;
+        }
+
+        #endregion
+
+        #region CanMoveRight
+
+        private static bool CanMoveRight(FrameworkElement ctrl)
+        {
+            bool ret = false;
+            if (null == ctrl) return ret;
+            if (!ret) ret = CanMoveRight(ctrl as TextBox);
+            if (!ret) ret = CanMoveRight(ctrl as PasswordBox);
+            return ret;
+        }
+
+        private static bool CanMoveRight(TextBox ctrl)
+        {
+            bool ret = false;
+            if (null == ctrl) return ret;
+            if (ctrl.SelectionLength == 0 && ctrl.CaretIndex == ctrl.Text.Length) ret = true;
+            return ret;
+        }
+
+        private static bool CanMoveRight(PasswordBox ctrl)
+        {
+            bool ret = false;
+            if (null == ctrl) return ret;
+            // Password Has No API to get Selection Text.
+            return ret;
+        }
+
+        #endregion
+
+        #endregion
+
+        #endregion
+
+        #region Enter As Tab
+
+        #region Public Dependency Properties and methods
+
+        /// <summary>The EnterAsTabProperty variable</summary>
+        public static readonly DependencyProperty EnterAsTabProperty = DependencyProperty.RegisterAttached(
+            "EnterAsTab",
+            typeof(bool),
+            typeof(KeyboardOptions),
+            null);
+        /// <summary>
+        /// Gets EnterAsTab Value.
+        /// </summary>
+        /// <param name="obj">The target object.</param>
+        /// <returns>Returns current proeprty value.</returns>
+        [AttachedPropertyBrowsableForType(typeof(TextBox))]
+        [AttachedPropertyBrowsableForType(typeof(PasswordBox))]
+        public static bool GetEnterAsTab(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(EnterAsTabProperty);
+        }
+        /// <summary>
+        /// Sets EnterAsTab Value.
+        /// </summary>
+        /// <param name="obj">The target object.</param>
+        /// <param name="value">The new value.</param>
+        public static void SetEnterAsTab(DependencyObject obj, bool value)
+        {
+            obj.SetValue(EnterAsTabProperty, value);
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Up/Down Navigation
+
+        #region Public Dependency Properties and methods
+
+        /// <summary>The UpDownNavigationProperty variable</summary>
+        public static readonly DependencyProperty UpDownNavigationProperty = DependencyProperty.RegisterAttached(
+            "UpDownNavigation",
+            typeof(bool),
+            typeof(KeyboardOptions),
+            null);
+        /// <summary>
+        /// Gets UpDownNavigation Value.
+        /// </summary>
+        /// <param name="obj">The target object.</param>
+        /// <returns>Returns current proeprty value.</returns>
+        [AttachedPropertyBrowsableForType(typeof(TextBox))]
+        [AttachedPropertyBrowsableForType(typeof(PasswordBox))]
+        public static bool GetUpDownNavigation(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(UpDownNavigationProperty);
+        }
+        /// <summary>
+        /// Sets UpDownNavigation Value.
+        /// </summary>
+        /// <param name="obj">The target object.</param>
+        /// <param name="value">The new value.</param>
+        public static void SetUpDownNavigation(DependencyObject obj, bool value)
+        {
+            obj.SetValue(UpDownNavigationProperty, value);
         }
 
         #endregion
