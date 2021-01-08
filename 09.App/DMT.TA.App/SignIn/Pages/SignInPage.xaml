@@ -59,7 +59,6 @@
                                      util:KeyboardOptions.EnterAsTab="True"
                                      util:KeyboardOptions.LeftRightNavigation="False"
                                      util:KeyboardOptions.UpDownNavigation="True"
-                                     KeyDown="txtUserId_KeyDown"
                                      Style="{StaticResource CommonTextBox}" />
                             <Grid Height="5" />
                             <TextBlock Style="{StaticResource LabelText}" Text="กรุณาป้อนรหัสผ่าน" />
@@ -67,7 +66,7 @@
                             <PasswordBox x:Name="txtPassword"
                                          util:FocusOptions.SelectAll="True"
                                          util:KeyboardOptions.Enabled="True"
-                                         util:KeyboardOptions.EnterAsTab="True"
+                                         util:KeyboardOptions.EnterAsTab="False"
                                          util:KeyboardOptions.LeftRightNavigation="False"
                                          util:KeyboardOptions.UpDownNavigation="True"
                                          KeyDown="txtPassword_KeyDown"
@@ -149,7 +148,6 @@
                                  util:KeyboardOptions.EnterAsTab="True"
                                  util:KeyboardOptions.LeftRightNavigation="False"
                                  util:KeyboardOptions.UpDownNavigation="True"
-                                 KeyDown="txtUserId2_KeyDown"
                                  Style="{StaticResource CommonTextBox}" />
                         <Grid Height="5" />
                         <TextBlock Style="{StaticResource LabelText}" Text="กรุณาป้อนรหัสผ่าน" />
@@ -160,7 +158,6 @@
                                      util:KeyboardOptions.EnterAsTab="True"
                                      util:KeyboardOptions.LeftRightNavigation="False"
                                      util:KeyboardOptions.UpDownNavigation="True"
-                                     KeyDown="txtPassword2_KeyDown"
                                      Style="{StaticResource CommonPwdBox}" />
                         <Grid Height="5" />
                         <TextBlock Style="{StaticResource LabelText}" Text="กรุณาป้อนรหัสผ่านใหม่" />
@@ -171,7 +168,6 @@
                                      util:KeyboardOptions.EnterAsTab="True"
                                      util:KeyboardOptions.LeftRightNavigation="False"
                                      util:KeyboardOptions.UpDownNavigation="True"
-                                     KeyDown="txtNewPassword_KeyDown"
                                      Style="{StaticResource CommonPwdBox}" />
                         <Grid Height="5" />
                         <TextBlock Style="{StaticResource LabelText}" Text="กรุณายืนยันรหัสผ่านใหม่" />
@@ -179,7 +175,7 @@
                         <PasswordBox x:Name="txtConfirmPassword"
                                      util:FocusOptions.SelectAll="True"
                                      util:KeyboardOptions.Enabled="True"
-                                     util:KeyboardOptions.EnterAsTab="True"
+                                     util:KeyboardOptions.EnterAsTab="False"
                                      util:KeyboardOptions.LeftRightNavigation="False"
                                      util:KeyboardOptions.UpDownNavigation="True"
                                      KeyDown="txtConfirmPassword_KeyDown"
