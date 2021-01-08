@@ -34,6 +34,53 @@
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="5,2" />
         </Style>
+        <!--  EACH BANK NOTE DESCRIPTION  -->
+        <Style x:Key="BHT1Description"
+               BasedOn="{StaticResource DescriptionStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="1 บาท" />
+        </Style>
+        <Style x:Key="BHT2Description"
+               BasedOn="{StaticResource DescriptionStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="2 บาท" />
+        </Style>
+        <Style x:Key="BHT5Description"
+               BasedOn="{StaticResource DescriptionStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="5 บาท" />
+        </Style>
+        <Style x:Key="BHT10Description"
+               BasedOn="{StaticResource DescriptionStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="10 บาท" />
+        </Style>
+        <Style x:Key="BHT20Description"
+               BasedOn="{StaticResource DescriptionStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="20 บาท" />
+        </Style>
+        <Style x:Key="BHT50Description"
+               BasedOn="{StaticResource DescriptionStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="50 บาท" />
+        </Style>
+        <Style x:Key="BHT100Description"
+               BasedOn="{StaticResource DescriptionStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="100 บาท" />
+        </Style>
+        <Style x:Key="BHT500Description"
+               BasedOn="{StaticResource DescriptionStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="500 บาท" />
+        </Style>
+        <Style x:Key="BHT1000Description"
+               BasedOn="{StaticResource DescriptionStyle}"
+               TargetType="TextBlock">
+            <Setter Property="Text" Value="1000 บาท" />
+        </Style>
+
         <!--  BANK NOTE AMOUNT (TEXTBOX)  -->
         <Style x:Key="AmountStyle"
                BasedOn="{StaticResource CommonTextBox}"
@@ -44,6 +91,8 @@
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="0,2" />
         </Style>
+        <!--  EACH NOTE AMOUNT (TEXTBOX)  -->
+
         <!--  BANK NOTE UNIT  -->
         <Style x:Key="UnitStyle" TargetType="TextBlock">
             <Setter Property="Width" Value="60" />
@@ -53,8 +102,7 @@
             <Setter Property="Margin" Value="5,2" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
-
-        <!--  BANK NOTE UNIT  -->
+        <!--  EACH BANK NOTE UNIT  -->
         <Style x:Key="ConinUnitStyle"
                BasedOn="{StaticResource UnitStyle}"
                TargetType="TextBlock">
@@ -82,13 +130,13 @@
                 </Border.Background>
                 <TextBlock DockPanel.Dock="Left"
                            Style="{StaticResource CaptionStyle}"
-                           Text="XXX" />
+                           Text="" />
             </Border>
             <!--  SEPERATOR  -->
             <TextBlock Height="5" DockPanel.Dock="Top" />
             <!--  1 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
-                <TextBlock Style="{StaticResource DescriptionStyle}" Text="1 บาท" />
+                <TextBlock Style="{StaticResource BHT1Description}" />
                 <TextBox Foreground="{Binding BHT1Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT1, StringFormat=N0}" />
@@ -96,7 +144,7 @@
             </StackPanel>
             <!--  2 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
-                <TextBlock Style="{StaticResource DescriptionStyle}" Text="2 บาท" />
+                <TextBlock Style="{StaticResource BHT2Description}" />
                 <TextBox Foreground="{Binding BHT2Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT2, StringFormat=N0}" />
@@ -104,7 +152,7 @@
             </StackPanel>
             <!--  5 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
-                <TextBlock Style="{StaticResource DescriptionStyle}" Text="5 บาท" />
+                <TextBlock Style="{StaticResource BHT5Description}" />
                 <TextBox Foreground="{Binding BHT5Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT5, StringFormat=N0}" />
@@ -112,7 +160,7 @@
             </StackPanel>
             <!--  10 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
-                <TextBlock Style="{StaticResource DescriptionStyle}" Text="10 บาท" />
+                <TextBlock Style="{StaticResource BHT10Description}" />
                 <TextBox Foreground="{Binding BHT10Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT10, StringFormat=N0}" />
@@ -120,7 +168,7 @@
             </StackPanel>
             <!--  20 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
-                <TextBlock Style="{StaticResource DescriptionStyle}" Text="20 บาท" />
+                <TextBlock Style="{StaticResource BHT20Description}" />
                 <TextBox Foreground="{Binding BHT20Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT20, StringFormat=N0}" />
@@ -128,7 +176,7 @@
             </StackPanel>
             <!--  50 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
-                <TextBlock Style="{StaticResource DescriptionStyle}" Text="50 บาท" />
+                <TextBlock Style="{StaticResource BHT50Description}" />
                 <TextBox Foreground="{Binding BHT50Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT50, StringFormat=N0}" />
@@ -136,7 +184,7 @@
             </StackPanel>
             <!--  100 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
-                <TextBlock Style="{StaticResource DescriptionStyle}" Text="100 บาท" />
+                <TextBlock Style="{StaticResource BHT100Description}" />
                 <TextBox Foreground="{Binding BHT100Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT100, StringFormat=N0}" />
@@ -144,7 +192,7 @@
             </StackPanel>
             <!--  500 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
-                <TextBlock Style="{StaticResource DescriptionStyle}" Text="500 บาท" />
+                <TextBlock Style="{StaticResource BHT500Description}" />
                 <TextBox Foreground="{Binding BHT500Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT500, StringFormat=N0}" />
@@ -152,7 +200,7 @@
             </StackPanel>
             <!--  1000 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
-                <TextBlock Style="{StaticResource DescriptionStyle}" Text="1,000 บาท" />
+                <TextBlock Style="{StaticResource BHT1000Description}" />
                 <TextBox Foreground="{Binding BHT1000Foreground}"
                          Style="{StaticResource AmountStyle}"
                          Text="{Binding AmountBHT1000, StringFormat=N0}" />
