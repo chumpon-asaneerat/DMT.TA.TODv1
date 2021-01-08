@@ -243,7 +243,7 @@ namespace DMT.Controls.Utils
 
             if ((bool)e.NewValue)
             {
-                ue.Unloaded += ue_Unloaded;
+                //ue.Unloaded += ue_Unloaded;
                 ue.PreviewKeyDown += ue_PreviewKeyDown;
             }
             else
@@ -352,6 +352,7 @@ namespace DMT.Controls.Utils
             }
         }
 
+        /*
         private static void ue_Unloaded(object sender, RoutedEventArgs e)
         {
             var ue = sender as FrameworkElement;
@@ -360,6 +361,7 @@ namespace DMT.Controls.Utils
             ue.Unloaded -= ue_Unloaded;
             ue.PreviewKeyDown -= ue_PreviewKeyDown;
         }
+        */
 
         #region CanMoveLeft
 
