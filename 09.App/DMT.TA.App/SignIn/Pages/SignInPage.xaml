@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:util="clr-namespace:DMT.Controls.Utils;assembly=DMT.Controls"
              d:DesignHeight="400"
              d:DesignWidth="600"
              Loaded="UserControl_Loaded"
@@ -53,12 +54,22 @@
                             <TextBlock Style="{StaticResource LabelText}" Text="กรุณาระบุรหัสพนักงาน 5 หลัก" />
                             <Grid Height="5" />
                             <TextBox x:Name="txtUserId"
+                                     util:FocusOptions.SelectAll="True"
+                                     util:KeyboardOptions.Enabled="True"
+                                     util:KeyboardOptions.EnterAsTab="True"
+                                     util:KeyboardOptions.LeftRightNavigation="False"
+                                     util:KeyboardOptions.UpDownNavigation="True"
                                      KeyDown="txtUserId_KeyDown"
                                      Style="{StaticResource CommonTextBox}" />
                             <Grid Height="5" />
                             <TextBlock Style="{StaticResource LabelText}" Text="กรุณาป้อนรหัสผ่าน" />
                             <Grid Height="5" />
                             <PasswordBox x:Name="txtPassword"
+                                         util:FocusOptions.SelectAll="True"
+                                         util:KeyboardOptions.Enabled="True"
+                                         util:KeyboardOptions.EnterAsTab="True"
+                                         util:KeyboardOptions.LeftRightNavigation="False"
+                                         util:KeyboardOptions.UpDownNavigation="True"
                                          KeyDown="txtPassword_KeyDown"
                                          Style="{StaticResource CommonPwdBox}" />
                             <Grid Height="5" />
@@ -133,24 +144,44 @@
                         <TextBlock Style="{StaticResource LabelText}" Text="กรุณาระบุรหัสพนักงาน 5 หลัก" />
                         <Grid Height="5" />
                         <TextBox x:Name="txtUserId2"
+                                 util:FocusOptions.SelectAll="True"
+                                 util:KeyboardOptions.Enabled="True"
+                                 util:KeyboardOptions.EnterAsTab="True"
+                                 util:KeyboardOptions.LeftRightNavigation="False"
+                                 util:KeyboardOptions.UpDownNavigation="True"
                                  KeyDown="txtUserId2_KeyDown"
                                  Style="{StaticResource CommonTextBox}" />
                         <Grid Height="5" />
                         <TextBlock Style="{StaticResource LabelText}" Text="กรุณาป้อนรหัสผ่าน" />
                         <Grid Height="5" />
                         <PasswordBox x:Name="txtPassword2"
+                                     util:FocusOptions.SelectAll="True"
+                                     util:KeyboardOptions.Enabled="True"
+                                     util:KeyboardOptions.EnterAsTab="True"
+                                     util:KeyboardOptions.LeftRightNavigation="False"
+                                     util:KeyboardOptions.UpDownNavigation="True"
                                      KeyDown="txtPassword2_KeyDown"
                                      Style="{StaticResource CommonPwdBox}" />
                         <Grid Height="5" />
                         <TextBlock Style="{StaticResource LabelText}" Text="กรุณาป้อนรหัสผ่านใหม่" />
                         <Grid Height="5" />
                         <PasswordBox x:Name="txtNewPassword"
+                                     util:FocusOptions.SelectAll="True"
+                                     util:KeyboardOptions.Enabled="True"
+                                     util:KeyboardOptions.EnterAsTab="True"
+                                     util:KeyboardOptions.LeftRightNavigation="False"
+                                     util:KeyboardOptions.UpDownNavigation="True"
                                      KeyDown="txtNewPassword_KeyDown"
                                      Style="{StaticResource CommonPwdBox}" />
                         <Grid Height="5" />
                         <TextBlock Style="{StaticResource LabelText}" Text="กรุณายืนยันรหัสผ่านใหม่" />
                         <Grid Height="5" />
                         <PasswordBox x:Name="txtConfirmPassword"
+                                     util:FocusOptions.SelectAll="True"
+                                     util:KeyboardOptions.Enabled="True"
+                                     util:KeyboardOptions.EnterAsTab="True"
+                                     util:KeyboardOptions.LeftRightNavigation="False"
+                                     util:KeyboardOptions.UpDownNavigation="True"
                                      KeyDown="txtConfirmPassword_KeyDown"
                                      Style="{StaticResource CommonPwdBox}" />
                         <Grid Height="5" />

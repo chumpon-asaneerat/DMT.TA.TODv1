@@ -10,7 +10,7 @@ using NLib.Reflection;
 
 #endregion
 
-namespace DMT.Controls
+namespace DMT.Controls.Utils
 {
     #region FocusOptions
 
@@ -237,7 +237,7 @@ namespace DMT.Controls
             var ue = obj as FrameworkElement;
 
             if (!(ue is TextBox || ue is PasswordBox)) return; // only TextBox, PasswordBox
-            if ((ue as TextBox).AcceptsReturn) return; // TextBox has AcceptsReturn property = true so ignore it. 
+            if (null != (ue as TextBox) && (ue as TextBox).AcceptsReturn) return; // TextBox has AcceptsReturn property = true so ignore it. 
 
             if (ue == null) return;
 
@@ -269,7 +269,7 @@ namespace DMT.Controls
 
             if (sys || alt || ctrl || shf) return; // ignore if Ctrl/Alt/Shift/System key hold.
 
-            if (e.Key == Key.Enter && GetEnterAsTab(ue))
+            if ((e.Key == Key.Enter || e.Key == Key.Return) && GetEnterAsTab(ue))
             {
                 e.Handled = true;
                 // Move to next tab order.

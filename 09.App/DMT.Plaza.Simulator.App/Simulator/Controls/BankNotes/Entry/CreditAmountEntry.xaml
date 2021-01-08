@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="DMT.Controls.Credits.Entry.CreditAmountEntry"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:ctrl="clr-namespace:DMT.Controls"
+             xmlns:util="clr-namespace:DMT.Controls.Utils"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
@@ -98,11 +98,11 @@
             <Setter Property="TextAlignment" Value="Right" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="0,2" />
-            <Setter Property="ctrl:FocusOptions.SelectAll" Value="True" />
-            <Setter Property="ctrl:KeyboardOptions.Enabled" Value="True" />
-            <Setter Property="ctrl:KeyboardOptions.EnterAsTab" Value="True" />
-            <Setter Property="ctrl:KeyboardOptions.UpDownNavigation" Value="True" />
-            <Setter Property="ctrl:KeyboardOptions.LeftRightNavigation" Value="True" />
+            <Setter Property="util:FocusOptions.SelectAll" Value="True" />
+            <Setter Property="util:KeyboardOptions.Enabled" Value="True" />
+            <Setter Property="util:KeyboardOptions.EnterAsTab" Value="True" />
+            <Setter Property="util:KeyboardOptions.UpDownNavigation" Value="True" />
+            <Setter Property="util:KeyboardOptions.LeftRightNavigation" Value="True" />
         </Style>
         <!--  EACH NOTE AMOUNT (TEXTBOX)  -->
         <Style x:Key="BHT1Amount"
