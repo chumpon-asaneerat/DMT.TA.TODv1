@@ -234,7 +234,7 @@ namespace DMT.Controls
         {
             var ue = obj as FrameworkElement;
 
-            if (!(ue is TextBox) || !(ue is PasswordBox)) return; // only TextBox, PasswordBox
+            if (!(ue is TextBox || ue is PasswordBox)) return; // only TextBox, PasswordBox
             if ((ue as TextBox).AcceptsReturn) return; // TextBox has AcceptsReturn property = true so ignore it. 
 
             if (ue == null) return;
@@ -263,7 +263,10 @@ namespace DMT.Controls
                 if (ue is TextBox || ue is PasswordBox)
                 {
                     e.Handled = true;
-                    ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+                    if (!ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next)))
+                    {
+                        //ue.MoveFocus(new TraversalRequest(FocusNavigationDirection.First));
+                    }
                 }
             }
         }

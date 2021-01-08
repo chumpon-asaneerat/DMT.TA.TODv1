@@ -5,12 +5,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:entry="clr-namespace:DMT.Controls.Credits.Entry"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <DockPanel LastChildFill="True" Background="Orange">
-        <entry:CreditAmountEntry x:Name="entry" DockPanel.Dock="Left" />
+             d:DesignHeight="500" 
+             d:DesignWidth="800">
+    <DockPanel LastChildFill="True">
         <DockPanel DockPanel.Dock="Bottom" Height="50">
 
         </DockPanel>
+        <entry:CreditAmountEntry x:Name="entry"  Background="Orange" DockPanel.Dock="Left" />
+        <Grid Width="5" DockPanel.Dock="Left" />
+        <entry:CreditAmountEntry x:Name="entry2"  Background="Purple" DockPanel.Dock="Left" />
+        <Grid Width="5" DockPanel.Dock="Left" />
+        <entry:CreditAmountEntry x:Name="entry3"  Background="ForestGreen" DockPanel.Dock="Left" />
+        <Grid Width="5" DockPanel.Dock="Left" />
         <Grid />
     </DockPanel>
 </UserControl>

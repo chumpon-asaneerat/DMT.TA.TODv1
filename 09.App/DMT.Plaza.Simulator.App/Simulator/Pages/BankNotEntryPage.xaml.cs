@@ -34,8 +34,14 @@ namespace DMT.Simulator.Pages
 
         public void Setup()
         {
-            var trans = new Models.TSBCreditTransaction();
-            entry.DataContext = trans;
+            var tran = new Models.TSBCreditTransaction();
+            entry.DataContext = tran;
+
+            var tran2 = new Models.TSBCreditTransaction();
+            entry2.DataContext = tran2;
+
+            var tran3 = new Models.TSBCreditTransaction();
+            entry3.DataContext = tran3;
         }
     }
 }

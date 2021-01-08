@@ -7,6 +7,8 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              d:DesignHeight="430"
              d:DesignWidth="240"
+             Focusable="False"
+             IsTabStop="False"
              mc:Ignorable="d">
     <UserControl.Resources>
         <sys:Double x:Key="CommonFontSize">16</sys:Double>
@@ -96,6 +98,8 @@
             <Setter Property="TextAlignment" Value="Right" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="0,2" />
+            <Setter Property="ctrl:FocusOptions.SelectAll" Value="True" />
+            <Setter Property="ctrl:KeyboardOptions.EnterAsTab" Value="True" />
         </Style>
         <!--  EACH NOTE AMOUNT (TEXTBOX)  -->
         <Style x:Key="BHT1Amount"
@@ -203,33 +207,25 @@
             <!--  1 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT1Description}" />
-                <TextBox ctrl:EnterKeyTraversal.IsEnabled="True"
-                         ctrl:SelectTextOnFocus.Active="True"
-                         Style="{StaticResource BHT1Amount}" />
+                <TextBox Style="{StaticResource BHT1Amount}" />
                 <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  2 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT2Description}" />
-                <TextBox ctrl:EnterKeyTraversal.IsEnabled="True"
-                         ctrl:SelectTextOnFocus.Active="True"
-                         Style="{StaticResource BHT2Amount}" />
+                <TextBox Style="{StaticResource BHT2Amount}" />
                 <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  5 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT5Description}" />
-                <TextBox ctrl:EnterKeyTraversal.IsEnabled="True"
-                         ctrl:SelectTextOnFocus.Active="True"
-                         Style="{StaticResource BHT5Amount}" />
+                <TextBox Style="{StaticResource BHT5Amount}" />
                 <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  10 BHT  -->
             <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
                 <TextBlock Style="{StaticResource BHT10Description}" />
-                <TextBox ctrl:EnterKeyTraversal.IsEnabled="True"
-                         ctrl:SelectTextOnFocus.Active="True"
-                         Style="{StaticResource BHT10Amount}" />
+                <TextBox Style="{StaticResource BHT10Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  20 BHT  -->
@@ -279,11 +275,12 @@
             <TextBox Width="220"
                      Height="70"
                      Margin="10,2"
+                     IsTabStop="False"
                      VerticalAlignment="Top"
                      AcceptsReturn="True"
                      TextAlignment="Left"
                      TextWrapping="Wrap"
-                     VerticalScrollBarVisibility="Auto" />
+                     VerticalScrollBarVisibility="Auto"/>
         </DockPanel>
     </ScrollViewer>
 </UserControl>
