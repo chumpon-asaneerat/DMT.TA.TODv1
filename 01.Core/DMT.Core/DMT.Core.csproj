@@ -55,9 +55,13 @@
   <ItemGroup>
     <Compile Include="Consts\AppConsts.cs" />
     <Compile Include="Consts\ErrorConsts.cs" />
+    <Compile Include="Consts\Routes\Local\Coupon\Actions\TSB\Transaction\Gets.cs" />
+    <Compile Include="Consts\Routes\Local\Coupon\Actions\TSB\Transaction\Save.cs" />
     <Compile Include="Consts\Routes\Local\Coupon\Actions\User\Transaction\Gets.cs" />
     <Compile Include="Consts\Routes\Local\Coupon\Actions\User\Transaction\Save.cs" />
     <Compile Include="Consts\Routes\Local\Coupon\Coupon.Controller.cs" />
+    <Compile Include="Consts\Routes\Local\Credit\Actions\TSB\Transaction\Gets.cs" />
+    <Compile Include="Consts\Routes\Local\Credit\Actions\TSB\Transaction\Save.cs" />
     <Compile Include="Consts\Routes\Local\Credit\Actions\User\Transaction\Gets.cs" />
     <Compile Include="Consts\Routes\Local\Credit\Actions\User\Transaction\Save.cs" />
     <Compile Include="Consts\Routes\Local\Credit\Credit.Controller.cs" />
@@ -116,8 +120,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Consts\Routes\Local\Coupon\Actions\TSB\Transaction\" />
-    <Folder Include="Consts\Routes\Local\Credit\Actions\TSB\Transaction\" />
     <Folder Include="Consts\Routes\Local\Shift\Actions\User\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
