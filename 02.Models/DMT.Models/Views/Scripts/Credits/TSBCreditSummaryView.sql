@@ -4,40 +4,7 @@ AS
 		 , TSB.TSBNameEN
 		 , TSB.TSBNameTH
 		 /* User Credit Borrow (1) - Return (2) */
-		 , ((
-			 SELECT (IFNULL(SUM(UserCreditTransaction.AmountST25), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountST50), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT1), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT2), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT5), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT10), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT20), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT50), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT100), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT500), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT1000), 0))
-			   FROM UserCreditTransaction, UserCreditBalance
-			  WHERE UserCreditTransaction.TransactionType = 1 -- Borrow = 1
-				AND UserCreditTransaction.UserCreditId = UserCreditBalance.UserCreditId
-				AND UserCreditBalance.TSBId = TSB.TSBId
-			) -
-			(
-			 SELECT (IFNULL(SUM(UserCreditTransaction.AmountST25), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountST50), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT1), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT2), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT5), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT10), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT20), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT50), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT100), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT500), 0) +
-					 IFNULL(SUM(UserCreditTransaction.AmountBHT1000), 0))
-			   FROM UserCreditTransaction, UserCreditBalance 
-			  WHERE UserCreditTransaction.TransactionType = 2 -- Returns = 2
-				AND UserCreditTransaction.UserCreditId = UserCreditBalance.UserCreditId
-				AND UserCreditBalance.TSBId = TSB.TSBId
-			)) AS UserBHTTotal
+		 , USER_TOTAL.UserBHTTotal
 		 /* TSB Credit Initial (0) + Received (1) +  ReplaceIn (12) - Exchange (2) - Return (3) - ReplaceOut (11) */
 		 , AMT_ST25.AmountST25
 		 , AMT_ST50.AmountST50
@@ -103,6 +70,7 @@ AS
 				AND TSBCreditTransaction.TSBId = TSB.TSBId
 			)) AS AdditionalBHTTotal
 	  FROM TSB
+	     , TSBCreditUserBHTTotalSummaryView AS USER_TOTAL
 	     , TSBCreditST25SummaryView AS AMT_ST25
 		 , TSBCreditST50SummaryView AS AMT_ST50
 		 , TSBCreditBHT1SummaryView AS AMT_BHT1
@@ -114,7 +82,8 @@ AS
 		 , TSBCreditBHT100SummaryView AS AMT_BHT100
 		 , TSBCreditBHT500SummaryView AS AMT_BHT500
 		 , TSBCreditBHT1000SummaryView AS AMT_BHT1000
-	 WHERE AMT_ST25.TSBId = TSB.TSBId
+	 WHERE USER_TOTAL.TSBId = TSB.TSBId
+	   AND AMT_ST25.TSBId = TSB.TSBId
 	   AND AMT_ST50.TSBId = TSB.TSBId
 	   AND AMT_BHT1.TSBId = TSB.TSBId
 	   AND AMT_BHT2.TSBId = TSB.TSBId

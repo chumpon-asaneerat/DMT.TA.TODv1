@@ -242,6 +242,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Views\Scripts\Credits\TSBCreditBHT500SummaryView.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Scripts\Credits\TSBCreditUserBHTTotalSummaryView.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(SolutionDir)References\runtimes\*.*" "$(TargetDir)\runtimes\*.*" /Y/D/E
