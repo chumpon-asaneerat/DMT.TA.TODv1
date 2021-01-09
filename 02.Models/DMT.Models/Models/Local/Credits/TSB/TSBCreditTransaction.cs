@@ -1,6 +1,6 @@
 ﻿//#define STORE_COUNT_FIELD
 //#define HAS_COUNT_PROPERTIES
-//#define HAS_EXTRA_FIELDS
+#define HAS_EXTRA_FIELDS
 
 #region Using
 
@@ -113,9 +113,14 @@ namespace DMT.Models
 
 		private decimal _BHTTotal = decimal.Zero;
 #if HAS_EXTRA_FIELDS
-		private decimal _ExchangeBHT = decimal.Zero;
-		private decimal _BorrowBHT = decimal.Zero;
+		// วงเงินอนุมัติ เป็นวงเงินที่ บ/ช กำหนดให้แต่ละด่าน เป็นค่าสูงสุดที่แต่ละด่านจะมีได้ โดยยอดนี้จะต้อง มากกว่าหรือเท่ากับ ยอดรวม + เงินยืมเพิ่ม
+		//private decimal _MaxAllowBHT = decimal.Zero;
+		// วงเงินขอเพิ่ม เป็นเงินที่ ขอเพิ่มไปยัง บ/ช โดย เมื่อรวมกับยอดรวม ต้องไม่เกิน ยอดวงเงินอนุมัติ
 		private decimal _AdditionalBHT = decimal.Zero;
+		// เงินยืมเพิ่ม ไม่จำกัด เพราะต้องคืน เท่ากับที่ยืมมา
+		private decimal _BorrowBHT = decimal.Zero;
+
+		private decimal _ExchangeBHT = decimal.Zero;
 #endif
 		private string _Remark = string.Empty;
 
@@ -1488,6 +1493,28 @@ namespace DMT.Models
 		#region Exchange/Borrow/Additional
 
 #if HAS_EXTRA_FIELDS
+		/*
+		/// <summary>
+		/// Gets or sets amount TSB Max BHT.
+		/// </summary>
+		[Category("Summary (Amount)")]
+		[Description("Gets or sets amount TSB Max BHT.")]
+		[PropertyMapName("MaxAllowBHT")]
+		[PropertyOrder(50)]
+		public virtual decimal MaxAllowBHT
+		{
+			get { return _MaxAllowBHT; }
+			set
+			{
+				if (_MaxAllowBHT != value)
+				{
+					_MaxAllowBHT = value;
+					// Raise event.
+					this.RaiseChanged("MaxAllowBHT");
+				}
+			}
+		}
+		*/
 		/// <summary>
 		/// Gets or sets amount Exchange BHT.
 		/// </summary>
