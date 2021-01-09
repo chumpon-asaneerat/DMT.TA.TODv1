@@ -1,4 +1,8 @@
-﻿#region Using
+﻿//#define STORE_COUNT_FIELD
+//#define HAS_COUNT_PROPERTIES
+#define HAS_EXTRA_FIELDS
+
+#region Using
 
 using System;
 using System.Collections.Generic;
@@ -112,6 +116,7 @@ namespace DMT.Models
 		private DateTime _UserReceivedDate = DateTime.MinValue;
 
 		// Coin/Bill (Count)
+#if HAS_COUNT_PROPERTIES
 		private int _CntST25 = 0;
 		private int _CntST50 = 0;
 		private int _CntBHT1 = 0;
@@ -123,6 +128,7 @@ namespace DMT.Models
 		private int _CntBHT100 = 0;
 		private int _CntBHT500 = 0;
 		private int _CntBHT1000 = 0;
+#endif
 		// Coin/Bill (Amount)
 		private decimal _AmtST25 = 0;
 		private decimal _AmtST50 = 0;

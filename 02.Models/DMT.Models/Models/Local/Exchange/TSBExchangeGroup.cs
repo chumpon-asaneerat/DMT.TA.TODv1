@@ -1,4 +1,6 @@
-﻿#region Using
+﻿#define HAS_EXTRA_FIELDS
+
+#region Using
 
 using System;
 using System.Collections.Generic;
