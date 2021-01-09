@@ -26,6 +26,8 @@ using System.Reflection;
 
 namespace DMT.Models
 {
+	//TODO: ค่า max และ limit ต้องมี table เพิ่ม
+
 	#region TSBCreditTransaction
 
 	/// <summary>
@@ -38,6 +40,14 @@ namespace DMT.Models
 	public class TSBCreditTransaction : NTable<TSBCreditTransaction>
 	{
 		#region Enum
+
+		//TODO: May requreid new TransactionTypes in case
+		// Initialize (0) -> ยอดตั้งต้น (+)
+		// Received (1) -> กรณีรับเงินจาก บ/ช (+)
+		// Exchange (2) -> กรณีแลกเงิน เกิดขึ้นตอนรับเงินจาก บ/ช ซึ่งต้องทำคืนเงิน ในจำนวนเท่า ๆ กันด้วย (-)
+		// Returns (3) -> กรณีคืนเงินกลับ บ/ช (-)
+		// ReplaceOut (11) -> เงินแลกเปลี่ยนภายใน รับเขา (+)
+		// ReplaceIn (12)-> เงินแลกเปลี่ยนภายใน จ่ายออก (-)
 
 		/// <summary>
 		/// The TSB Credit Transaction Type enum.
@@ -119,7 +129,7 @@ namespace DMT.Models
 		private decimal _AdditionalBHT = decimal.Zero;
 		// เงินยืมเพิ่ม ไม่จำกัด เพราะต้องคืน เท่ากับที่ยืมมา
 		private decimal _BorrowBHT = decimal.Zero;
-
+		// เงินขอแลกเปลี่ยน 
 		private decimal _ExchangeBHT = decimal.Zero;
 #endif
 		private string _Remark = string.Empty;
