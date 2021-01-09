@@ -19,12 +19,12 @@ Operations:
                 ☐ Save (/Coupon/User/Transaction/Save) TESTED.
     Credit (/Credit):
         TSB (/Credit/TSB):
-            ☐ Gets (/Credit/TSB/Gets) TESTED.
+            ☐ Current (/Credit/TSB/Current) TESTED.
             Transaction (/Credit/TSB/Transaction):
                 ☐ Gets (/Credit/TSB/Transaction/Gets) TESTED.
                 ☐ Save (/Credit/TSB/Transaction/Save) TESTED.
         User (/Credit/User):
-            ☐ Gets (/Credit/User/Gets) TESTED.
+            ☐ Current (/Credit/User/Current) TESTED.
             ☐ Cancel (/Credit/User/Cancel) TESTED.
             ☐ Save (/Credit/User/Save) TESTED.
             Transaction (/Credit/User/Transaction):

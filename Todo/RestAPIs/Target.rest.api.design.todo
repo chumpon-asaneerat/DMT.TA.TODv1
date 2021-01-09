@@ -19,12 +19,12 @@ Operations:
                 ✔ Save (/Coupon/User/Transaction/Save) refactored. @done(21-01-09 21:53)
     Credit (/Credit):
         TSB (/Credit/TSB):
-            ✔ Gets (/Credit/TSB/Gets) refactored. @done(21-01-09 22:10)
+            ✔ Current (/Credit/TSB/Current) refactored. @done(21-01-09 22:10)
             Transaction (/Credit/TSB/Transaction):
                 ✔ Gets (/Credit/TSB/Transaction/Gets) refactored. @done(21-01-09 21:53)
                 ✔ Save (/Credit/TSB/Transaction/Save) refactored. @done(21-01-09 21:53)
         User (/Credit/User):
-            ✔ Gets (/Credit/User/Gets) refactored. @done(21-01-09 22:10)
+            ✔ Current (/Credit/User/Current) refactored. @done(21-01-09 22:10)
             ✔ Cancel (/Credit/User/Cancel) refactored. @done(21-01-09 22:10)
             ✔ Save (/Credit/User/Save) refactored. @done(21-01-09 22:12)
             Transaction (/Credit/User/Transaction):

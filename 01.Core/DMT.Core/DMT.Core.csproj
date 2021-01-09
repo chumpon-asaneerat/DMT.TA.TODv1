@@ -60,11 +60,11 @@
     <Compile Include="Consts\Routes\Local\Coupon\Actions\User\Transaction\Gets.cs" />
     <Compile Include="Consts\Routes\Local\Coupon\Actions\User\Transaction\Save.cs" />
     <Compile Include="Consts\Routes\Local\Coupon\Coupon.Controller.cs" />
-    <Compile Include="Consts\Routes\Local\Credit\Actions\TSB\Gets.cs" />
+    <Compile Include="Consts\Routes\Local\Credit\Actions\TSB\Current.cs" />
     <Compile Include="Consts\Routes\Local\Credit\Actions\TSB\Transaction\Gets.cs" />
     <Compile Include="Consts\Routes\Local\Credit\Actions\TSB\Transaction\Save.cs" />
     <Compile Include="Consts\Routes\Local\Credit\Actions\User\Cancel.cs" />
-    <Compile Include="Consts\Routes\Local\Credit\Actions\User\Gets.cs" />
+    <Compile Include="Consts\Routes\Local\Credit\Actions\User\Current.cs" />
     <Compile Include="Consts\Routes\Local\Credit\Actions\User\Save.cs" />
     <Compile Include="Consts\Routes\Local\Credit\Actions\User\Transaction\Gets.cs" />
     <Compile Include="Consts\Routes\Local\Credit\Actions\User\Transaction\Save.cs" />
