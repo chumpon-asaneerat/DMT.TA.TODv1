@@ -1818,6 +1818,8 @@ namespace DMT.Models
 			DateTime end = date.Date.AddDays(1).AddMilliseconds(-1);
 			return FindByRevnueDate(begin, end);
 		}
+
+		/*
 		/// <summary>
 		/// Find Unsend Revenue Enties by date.
 		/// </summary>
@@ -1854,6 +1856,7 @@ namespace DMT.Models
 				return result;
 			}
 		}
+		*/
 
 		#endregion
 	}
