@@ -49,17 +49,17 @@ namespace DMT.Models
         private DateTime? _UpdateDate = new DateTime?();
 
         private decimal _MaxCredit = decimal.Zero;
-        private decimal _ST25LowLimit = decimal.Zero;
-        private decimal _ST50LowLimit = decimal.Zero;
-        private decimal _BHT1LowLimit = decimal.Zero;
-        private decimal _BHT2LowLimit = decimal.Zero;
-        private decimal _BHT5LowLimit = decimal.Zero;
-        private decimal _BHT10LowLimit = decimal.Zero;
-        private decimal _BHT20LowLimit = decimal.Zero;
-        private decimal _BHT50LowLimit = decimal.Zero;
-        private decimal _BHT100LowLimit = decimal.Zero;
-        private decimal _BHT500LowLimit = decimal.Zero;
-        private decimal _BHT1000LowLimit = decimal.Zero;
+        private decimal _LowLimitST25 = decimal.Zero;
+        private decimal _LowLimitST50 = decimal.Zero;
+        private decimal _LowLimitBHT1 = decimal.Zero;
+        private decimal _LowLimitBHT2 = decimal.Zero;
+        private decimal _LowLimitBHT5 = decimal.Zero;
+        private decimal _LowLimitBHT10 = decimal.Zero;
+        private decimal _LowLimitBHT20 = decimal.Zero;
+        private decimal _LowLimitBHT50 = decimal.Zero;
+        private decimal _LowLimitBHT100 = decimal.Zero;
+        private decimal _LowLimitBHT500 = decimal.Zero;
+        private decimal _LowLimitBHT1000 = decimal.Zero;
 
         #endregion
 
@@ -317,20 +317,20 @@ namespace DMT.Models
         /// </summary>
         [Category("Credits")]
         [Description("Gets or sets Low Limit for ST25.")]
-        [PropertyMapName("ST25LowLimit")]
-        public decimal ST25LowLimit
+        [PropertyMapName("LowLimitST25")]
+        public decimal LowLimitST25
         {
             get
             {
-                return _ST25LowLimit;
+                return _LowLimitST25;
             }
             set
             {
                 if (value < decimal.Zero) return;
-                if (_ST25LowLimit != value)
+                if (_LowLimitST25 != value)
                 {
-                    _ST25LowLimit = value;
-                    this.RaiseChanged("ST25LowLimit");
+                    _LowLimitST25 = value;
+                    this.RaiseChanged("LowLimitST25");
                 }
             }
         }
@@ -339,20 +339,20 @@ namespace DMT.Models
         /// </summary>
         [Category("Credits")]
         [Description("Gets or sets Low Limit for ST50.")]
-        [PropertyMapName("ST50LowLimit")]
-        public decimal ST50LowLimit
+        [PropertyMapName("LowLimitST50")]
+        public decimal LowLimitST50
         {
             get
             {
-                return _ST50LowLimit;
+                return _LowLimitST50;
             }
             set
             {
                 if (value < decimal.Zero) return;
-                if (_ST50LowLimit != value)
+                if (_LowLimitST50 != value)
                 {
-                    _ST50LowLimit = value;
-                    this.RaiseChanged("ST50LowLimit");
+                    _LowLimitST50 = value;
+                    this.RaiseChanged("LowLimitST50");
                 }
             }
         }
@@ -361,20 +361,20 @@ namespace DMT.Models
         /// </summary>
         [Category("Credits")]
         [Description("Gets or sets Low Limit for BHT1.")]
-        [PropertyMapName("BHT1LowLimit")]
-        public decimal BHT1LowLimit
+        [PropertyMapName("LowLimitBHT1")]
+        public decimal LowLimitBHT1
         {
             get
             {
-                return _BHT1LowLimit;
+                return _LowLimitBHT1;
             }
             set
             {
                 if (value < decimal.Zero) return;
-                if (_BHT1LowLimit != value)
+                if (_LowLimitBHT1 != value)
                 {
-                    _BHT1LowLimit = value;
-                    this.RaiseChanged("BHT1LowLimit");
+                    _LowLimitBHT1 = value;
+                    this.RaiseChanged("LowLimitBHT1");
                 }
             }
         }
@@ -383,20 +383,20 @@ namespace DMT.Models
         /// </summary>
         [Category("Credits")]
         [Description("Gets or sets Low Limit for BHT2.")]
-        [PropertyMapName("BHT2LowLimit")]
+        [PropertyMapName("LowLimitBHT2")]
         public decimal BHT2LowLimit
         {
             get
             {
-                return _BHT2LowLimit;
+                return _LowLimitBHT2;
             }
             set
             {
                 if (value < decimal.Zero) return;
-                if (_BHT2LowLimit != value)
+                if (_LowLimitBHT2 != value)
                 {
-                    _BHT2LowLimit = value;
-                    this.RaiseChanged("BHT2LowLimit");
+                    _LowLimitBHT2 = value;
+                    this.RaiseChanged("LowLimitBHT2");
                 }
             }
         }
@@ -405,20 +405,20 @@ namespace DMT.Models
         /// </summary>
         [Category("Credits")]
         [Description("Gets or sets Low Limit for BHT5.")]
-        [PropertyMapName("BHT5LowLimit")]
-        public decimal BHT5LowLimit
+        [PropertyMapName("LowLimitBHT5")]
+        public decimal LowLimitBHT5
         {
             get
             {
-                return _BHT5LowLimit;
+                return _LowLimitBHT5;
             }
             set
             {
                 if (value < decimal.Zero) return;
-                if (_BHT5LowLimit != value)
+                if (_LowLimitBHT5 != value)
                 {
-                    _BHT5LowLimit = value;
-                    this.RaiseChanged("BHT5LowLimit");
+                    _LowLimitBHT5 = value;
+                    this.RaiseChanged("LowLimitBHT5");
                 }
             }
         }
@@ -427,20 +427,20 @@ namespace DMT.Models
         /// </summary>
         [Category("Credits")]
         [Description("Gets or sets Low Limit for BHT10.")]
-        [PropertyMapName("BHT10LowLimit")]
-        public decimal BHT10LowLimit
+        [PropertyMapName("LowLimitBHT10")]
+        public decimal LowLimitBHT10
         {
             get
             {
-                return _BHT10LowLimit;
+                return _LowLimitBHT10;
             }
             set
             {
                 if (value < decimal.Zero) return;
-                if (_BHT10LowLimit != value)
+                if (_LowLimitBHT10 != value)
                 {
-                    _BHT10LowLimit = value;
-                    this.RaiseChanged("BHT10LowLimit");
+                    _LowLimitBHT10 = value;
+                    this.RaiseChanged("LowLimitBHT10");
                 }
             }
         }
@@ -449,20 +449,20 @@ namespace DMT.Models
         /// </summary>
         [Category("Credits")]
         [Description("Gets or sets Low Limit for BHT20.")]
-        [PropertyMapName("BHT20LowLimit")]
-        public decimal BHT20LowLimit
+        [PropertyMapName("LowLimitBHT20")]
+        public decimal LowLimitBHT20
         {
             get
             {
-                return _BHT20LowLimit;
+                return _LowLimitBHT20;
             }
             set
             {
                 if (value < decimal.Zero) return;
-                if (_BHT20LowLimit != value)
+                if (_LowLimitBHT20 != value)
                 {
-                    _BHT20LowLimit = value;
-                    this.RaiseChanged("BHT20LowLimit");
+                    _LowLimitBHT20 = value;
+                    this.RaiseChanged("LowLimitBHT20");
                 }
             }
         }
@@ -471,20 +471,20 @@ namespace DMT.Models
         /// </summary>
         [Category("Credits")]
         [Description("Gets or sets Low Limit for BHT50.")]
-        [PropertyMapName("BHT50LowLimit")]
-        public decimal BHT50LowLimit
+        [PropertyMapName("LowLimitBHT50")]
+        public decimal LowLimitBHT50
         {
             get
             {
-                return _BHT50LowLimit;
+                return _LowLimitBHT50;
             }
             set
             {
                 if (value < decimal.Zero) return;
-                if (_BHT50LowLimit != value)
+                if (_LowLimitBHT50 != value)
                 {
-                    _BHT50LowLimit = value;
-                    this.RaiseChanged("BHT50LowLimit");
+                    _LowLimitBHT50 = value;
+                    this.RaiseChanged("LowLimitBHT50");
                 }
             }
         }
@@ -493,20 +493,20 @@ namespace DMT.Models
         /// </summary>
         [Category("Credits")]
         [Description("Gets or sets Low Limit for BHT100.")]
-        [PropertyMapName("BHT100LowLimit")]
-        public decimal BHT100LowLimit
+        [PropertyMapName("LowLimitBHT100")]
+        public decimal LowLimitBHT100
         {
             get
             {
-                return _BHT100LowLimit;
+                return _LowLimitBHT100;
             }
             set
             {
                 if (value < decimal.Zero) return;
-                if (_BHT100LowLimit != value)
+                if (_LowLimitBHT100 != value)
                 {
-                    _BHT100LowLimit = value;
-                    this.RaiseChanged("BHT100LowLimit");
+                    _LowLimitBHT100 = value;
+                    this.RaiseChanged("LowLimitBHT100");
                 }
             }
         }
@@ -515,20 +515,20 @@ namespace DMT.Models
         /// </summary>
         [Category("Credits")]
         [Description("Gets or sets Low Limit for BHT500.")]
-        [PropertyMapName("BHT500LowLimit")]
-        public decimal BHT500LowLimit
+        [PropertyMapName("LowLimitBHT500")]
+        public decimal LowLimitBHT500
         {
             get
             {
-                return _BHT500LowLimit;
+                return _LowLimitBHT500;
             }
             set
             {
                 if (value < decimal.Zero) return;
-                if (_BHT500LowLimit != value)
+                if (_LowLimitBHT500 != value)
                 {
-                    _BHT500LowLimit = value;
-                    this.RaiseChanged("BHT500LowLimit");
+                    _LowLimitBHT500 = value;
+                    this.RaiseChanged("LowLimitBHT500");
                 }
             }
         }
@@ -537,20 +537,20 @@ namespace DMT.Models
         /// </summary>
         [Category("Credits")]
         [Description("Gets or sets Low Limit for BHT1.")]
-        [PropertyMapName("BHT1000LowLimit")]
-        public decimal BHT1000LowLimit
+        [PropertyMapName("LowLimitBHT1000")]
+        public decimal LowLimitBHT1000
         {
             get
             {
-                return _BHT1000LowLimit;
+                return _LowLimitBHT1000;
             }
             set
             {
                 if (value < decimal.Zero) return;
-                if (_BHT1000LowLimit != value)
+                if (_LowLimitBHT1000 != value)
                 {
-                    _BHT1000LowLimit = value;
-                    this.RaiseChanged("BHT1000LowLimit");
+                    _LowLimitBHT1000 = value;
+                    this.RaiseChanged("LowLimitBHT1000");
                 }
             }
         }
