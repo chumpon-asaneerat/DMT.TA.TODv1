@@ -136,9 +136,16 @@ namespace DMT.Models
 		private string _FullNameEN = string.Empty;
 		private string _FullNameTH = string.Empty;
 		// Request Amounts (runtime)
-		private decimal _ExchangeBHT = decimal.Zero;
-		private decimal _BorrowBHT = decimal.Zero;
+#if HAS_EXTRA_FIELDS
+		// วงเงินอนุมัติ เป็นวงเงินที่ บ/ช กำหนดให้แต่ละด่าน เป็นค่าสูงสุดที่แต่ละด่านจะมีได้ โดยยอดนี้จะต้อง มากกว่าหรือเท่ากับ ยอดรวม + เงินยืมเพิ่ม
+		//private decimal _MaxAllowBHT = decimal.Zero;
+		// วงเงินขอเพิ่ม เป็นเงินที่ ขอเพิ่มไปยัง บ/ช โดย เมื่อรวมกับยอดรวม ต้องไม่เกิน ยอดวงเงินอนุมัติ
 		private decimal _AdditionalBHT = decimal.Zero;
+		// เงินยืมเพิ่ม ไม่จำกัด เพราะต้องคืน เท่ากับที่ยืมมา
+		private decimal _BorrowBHT = decimal.Zero;
+		// เงินขอแลกเปลี่ยน 
+		private decimal _ExchangeBHT = decimal.Zero;
+#endif
 		// Request Period (runtime)
 		private DateTime? _PeriodBegin = new DateTime?();
 		private DateTime? _PeriodEnd = new DateTime?();
@@ -440,7 +447,7 @@ namespace DMT.Models
 		[Ignore]
 		public bool CanEdit
 		{
-			get { return (_State == StateTypes.Request);  }
+			get { return (_State == StateTypes.Request); }
 			set { }
 		}
 		/// <summary>
@@ -654,7 +661,28 @@ namespace DMT.Models
 		#endregion
 
 		#region Exchange/Borrow/Additional
-
+#if HAS_EXTRA_FIELDS
+		/*
+		/// <summary>
+		/// Gets or sets amount TSB Max BHT.
+		/// </summary>
+		[Category("Summary (Amount)")]
+		[Description("Gets or sets amount TSB Max BHT.")]
+		[PropertyMapName("MaxAllowBHT")]
+		public virtual decimal MaxAllowBHT
+		{
+			get { return _MaxAllowBHT; }
+			set
+			{
+				if (_MaxAllowBHT != value)
+				{
+					_MaxAllowBHT = value;
+					// Raise event.
+					this.RaiseChanged("MaxAllowBHT");
+				}
+			}
+		}
+		*/
 		/// <summary>
 		/// Gets or sets amount Exchange BHT.
 		/// </summary>
@@ -735,7 +763,7 @@ namespace DMT.Models
 			}
 			set { }
 		}
-
+#endif
 		#endregion
 
 		#region Period
@@ -1097,7 +1125,7 @@ namespace DMT.Models
 			#endregion
 
 			#region Exchange/Borrow/Additional
-
+#if HAS_EXTRA_FIELDS
 			[PropertyMapName("ExchangeBHT")]
 			public override decimal ExchangeBHT
 			{
@@ -1116,7 +1144,7 @@ namespace DMT.Models
 				get { return base.AdditionalBHT; }
 				set { base.AdditionalBHT = value; }
 			}
-
+#endif
 			#endregion
 
 			#region Period
@@ -1197,7 +1225,7 @@ namespace DMT.Models
 			}
 		}
 
-		public static NDbResult<List<TSBExchangeGroup>> GetTSBExchangeGroups(TSB tsb, 
+		public static NDbResult<List<TSBExchangeGroup>> GetTSBExchangeGroups(TSB tsb,
 			StateTypes state, FinishedFlags flag, DateTime reqBegin, DateTime reqEnd)
 		{
 			var result = new NDbResult<List<TSBExchangeGroup>>();

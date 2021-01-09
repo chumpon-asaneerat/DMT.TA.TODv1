@@ -105,7 +105,7 @@ namespace DMT.Models
 		private TransactionTypes _TransactionType = TransactionTypes.Request;
 
 		private Guid _GroupId = Guid.Empty; // Exchange group Id.
-		// TSB
+											// TSB
 		private string _TSBId = string.Empty;
 		private string _TSBNameEN = string.Empty;
 		private string _TSBNameTH = string.Empty;
@@ -144,9 +144,16 @@ namespace DMT.Models
 
 		private decimal _BHTTotal = decimal.Zero;
 
-		private decimal _ExchangeBHT = decimal.Zero;
-		private decimal _BorrowBHT = decimal.Zero;
+#if HAS_EXTRA_FIELDS
+		// วงเงินอนุมัติ เป็นวงเงินที่ บ/ช กำหนดให้แต่ละด่าน เป็นค่าสูงสุดที่แต่ละด่านจะมีได้ โดยยอดนี้จะต้อง มากกว่าหรือเท่ากับ ยอดรวม + เงินยืมเพิ่ม
+		//private decimal _MaxAllowBHT = decimal.Zero;
+		// วงเงินขอเพิ่ม เป็นเงินที่ ขอเพิ่มไปยัง บ/ช โดย เมื่อรวมกับยอดรวม ต้องไม่เกิน ยอดวงเงินอนุมัติ
 		private decimal _AdditionalBHT = decimal.Zero;
+		// เงินยืมเพิ่ม ไม่จำกัด เพราะต้องคืน เท่ากับที่ยืมมา
+		private decimal _BorrowBHT = decimal.Zero;
+		// เงินขอแลกเปลี่ยน 
+		private decimal _ExchangeBHT = decimal.Zero;
+#endif
 
 		private DateTime? _PeriodBegin = new DateTime?();
 		private DateTime? _PeriodEnd = new DateTime?();
@@ -673,12 +680,15 @@ namespace DMT.Models
 		#endregion
 
 		#region Coin/Bill (Count)
-
+#if HAS_COUNT_PROPERTIES
 		/// <summary>
 		/// Gets or sets number of .25 baht coin.
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of .25 baht coin.")]
+#if !STORE_COUNT_FIELD
+		[Ignore]
+#endif
 		[PropertyMapName("CountST25")]
 		[PropertyOrder(10)]
 		public virtual int CountST25
@@ -705,6 +715,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of .50 baht coin.")]
+#if !STORE_COUNT_FIELD
+		[Ignore]
+#endif
 		[PropertyMapName("CountST50")]
 		[PropertyOrder(11)]
 		public virtual int CountST50
@@ -731,6 +744,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 1 baht coin.")]
+#if !STORE_COUNT_FIELD
+		[Ignore]
+#endif
 		[PropertyMapName("CountBHT1")]
 		[PropertyOrder(12)]
 		public virtual int CountBHT1
@@ -757,6 +773,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 2 baht coin.")]
+#if !STORE_COUNT_FIELD
+		[Ignore]
+#endif
 		[PropertyMapName("CountBHT2")]
 		[PropertyOrder(13)]
 		public virtual int CountBHT2
@@ -783,6 +802,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 5 baht coin.")]
+#if !STORE_COUNT_FIELD
+		[Ignore]
+#endif
 		[PropertyMapName("CountBHT5")]
 		[PropertyOrder(14)]
 		public virtual int CountBHT5
@@ -809,6 +831,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 10 baht coin.")]
+#if !STORE_COUNT_FIELD
+		[Ignore]
+#endif
 		[PropertyMapName("CountBHT10")]
 		[PropertyOrder(15)]
 		public virtual int CountBHT10
@@ -835,6 +860,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 20 baht bill.")]
+#if !STORE_COUNT_FIELD
+		[Ignore]
+#endif
 		[PropertyMapName("CountBHT20")]
 		[PropertyOrder(16)]
 		public virtual int CountBHT20
@@ -861,6 +889,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 50 baht bill.")]
+#if !STORE_COUNT_FIELD
+		[Ignore]
+#endif
 		[PropertyMapName("CountBHT50")]
 		[PropertyOrder(17)]
 		public virtual int CountBHT50
@@ -887,6 +918,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 100 baht bill.")]
+#if !STORE_COUNT_FIELD
+		[Ignore]
+#endif
 		[PropertyMapName("CountBHT100")]
 		[PropertyOrder(18)]
 		public virtual int CountBHT100
@@ -913,6 +947,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 500 baht bill.")]
+#if !STORE_COUNT_FIELD
+		[Ignore]
+#endif
 		[PropertyMapName("CountBHT500")]
 		[PropertyOrder(19)]
 		public virtual int CountBHT500
@@ -939,6 +976,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 1000 baht bill.")]
+#if !STORE_COUNT_FIELD
+		[Ignore]
+#endif
 		[PropertyMapName("CountBHT1000")]
 		[PropertyOrder(20)]
 		public virtual int CountBHT1000
@@ -960,7 +1000,7 @@ namespace DMT.Models
 				}
 			}
 		}
-
+#endif
 		#endregion
 
 		#region Coin/Bill (Amount)
@@ -980,10 +1020,14 @@ namespace DMT.Models
 				if (_AmtST25 != value)
 				{
 					_AmtST25 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntST25 = Convert.ToInt32(Math.Floor(_AmtST25 / (decimal).25));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountST25");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountST25");
+#endif
 					this.RaiseChanged("IsValidST25");
 
 					CalcTotalAmount();
@@ -1005,10 +1049,14 @@ namespace DMT.Models
 				if (_AmtST50 != value)
 				{
 					_AmtST50 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntST50 = Convert.ToInt32(Math.Floor(_AmtST50 / (decimal).50));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountST50");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountST50");
+#endif
 					this.RaiseChanged("IsValidST50");
 					this.RaiseChanged("ST50Foreground");
 
@@ -1031,10 +1079,14 @@ namespace DMT.Models
 				if (_AmtBHT1 != value)
 				{
 					_AmtBHT1 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT1 = Convert.ToInt32(_AmtBHT1);
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT1");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT1");
+#endif
 					this.RaiseChanged("IsValidBHT1");
 					this.RaiseChanged("BHT1Foreground");
 
@@ -1057,10 +1109,14 @@ namespace DMT.Models
 				if (_AmtBHT2 != value)
 				{
 					_AmtBHT2 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT2 = Convert.ToInt32(Math.Floor(_AmtBHT2 / 2));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT2");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT2");
+#endif
 					this.RaiseChanged("IsValidBHT2");
 					this.RaiseChanged("BHT2Foreground");
 
@@ -1083,10 +1139,14 @@ namespace DMT.Models
 				if (_AmtBHT5 != value)
 				{
 					_AmtBHT5 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT5 = Convert.ToInt32(Math.Floor(_AmtBHT5 / 5));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT5");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT5");
+#endif
 					this.RaiseChanged("IsValidBHT5");
 					this.RaiseChanged("BHT5Foreground");
 
@@ -1109,10 +1169,14 @@ namespace DMT.Models
 				if (_AmtBHT10 != value)
 				{
 					_AmtBHT10 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT10 = Convert.ToInt32(Math.Floor(_AmtBHT10 / 10));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT10");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT10");
+#endif
 					this.RaiseChanged("IsValidBHT10");
 					this.RaiseChanged("BHT10Foreground");
 
@@ -1135,10 +1199,14 @@ namespace DMT.Models
 				if (_AmtBHT20 != value)
 				{
 					_AmtBHT20 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT20 = Convert.ToInt32(Math.Floor(_AmtBHT20 / 20));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT20");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT20");
+#endif
 					this.RaiseChanged("IsValidBHT20");
 					this.RaiseChanged("BHT20Foreground");
 
@@ -1161,10 +1229,14 @@ namespace DMT.Models
 				if (_AmtBHT50 != value)
 				{
 					_AmtBHT50 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT50 = Convert.ToInt32(Math.Floor(_AmtBHT50 / 50));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT50");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT50");
+#endif
 					this.RaiseChanged("IsValidBHT50");
 					this.RaiseChanged("BHT50Foreground");
 
@@ -1187,10 +1259,14 @@ namespace DMT.Models
 				if (_AmtBHT100 != value)
 				{
 					_AmtBHT100 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT100 = Convert.ToInt32(Math.Floor(_AmtBHT100 / 100));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT100");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT100");
+#endif
 					this.RaiseChanged("IsValidBHT100");
 					this.RaiseChanged("BHT100Foreground");
 
@@ -1213,10 +1289,14 @@ namespace DMT.Models
 				if (_AmtBHT500 != value)
 				{
 					_AmtBHT500 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT500 = Convert.ToInt32(Math.Floor(_AmtBHT500 / 500));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT500");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT500");
+#endif
 					this.RaiseChanged("IsValidBHT500");
 					this.RaiseChanged("BHT500Foreground");
 
@@ -1239,10 +1319,14 @@ namespace DMT.Models
 				if (_AmtBHT1000 != value)
 				{
 					_AmtBHT1000 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT1000 = Convert.ToInt32(Math.Floor(_AmtBHT1000 / 1000));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT1000");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT1000");
+#endif
 					this.RaiseChanged("IsValidBHT1000");
 					this.RaiseChanged("BHT1000Foreground");
 
@@ -1294,7 +1378,11 @@ namespace DMT.Models
 		[PropertyOrder(34)]
 		public virtual bool IsValidBHT1
 		{
+#if HAS_COUNT_PROPERTIES
 			get { return _AmtBHT1 == _CntBHT1; }
+#else
+			get { return true; }
+#endif
 			set { }
 		}
 		/// <summary>
@@ -1432,7 +1520,29 @@ namespace DMT.Models
 		#endregion
 
 		#region Exchange/Borrow/Additional
-
+#if HAS_EXTRA_FIELDS
+		/*
+		/// <summary>
+		/// Gets or sets amount TSB Max BHT.
+		/// </summary>
+		[Category("Summary (Amount)")]
+		[Description("Gets or sets amount TSB Max BHT.")]
+		[PropertyMapName("MaxAllowBHT")]
+		[PropertyOrder(50)]
+		public virtual decimal MaxAllowBHT
+		{
+			get { return _MaxAllowBHT; }
+			set
+			{
+				if (_MaxAllowBHT != value)
+				{
+					_MaxAllowBHT = value;
+					// Raise event.
+					this.RaiseChanged("MaxAllowBHT");
+				}
+			}
+		}
+		*/
 		/// <summary>
 		/// Gets or sets amount Exchange BHT.
 		/// </summary>
@@ -1508,13 +1618,13 @@ namespace DMT.Models
 		//[PropertyMapName("GrandTotalBHT")]
 		public decimal GrandTotalBHT
 		{
-			get 
+			get
 			{
-				return _ExchangeBHT + _BorrowBHT + _AdditionalBHT; 
+				return _ExchangeBHT + _BorrowBHT + _AdditionalBHT;
 			}
 			set { }
 		}
-
+#endif
 		#endregion
 
 		#region Period
@@ -1791,7 +1901,7 @@ namespace DMT.Models
 		/// Gets TSB Exchange Transactions (Active TSB).
 		/// </summary>
 		/// <returns>Returns List of TSB Exchange Transactions.</returns>
-		public static NDbResult<List<TSBExchangeTransaction>> GetTransactions() 
+		public static NDbResult<List<TSBExchangeTransaction>> GetTransactions()
 		{
 			var result = new NDbResult<List<TSBExchangeTransaction>>();
 			SQLiteConnection db = Default;

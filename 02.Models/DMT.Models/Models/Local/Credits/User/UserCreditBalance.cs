@@ -1,6 +1,5 @@
 ﻿//#define STORE_COUNT_FIELD
 //#define HAS_COUNT_PROPERTIES
-#define HAS_EXTRA_FIELDS
 
 #region Using
 
@@ -808,14 +807,15 @@ namespace DMT.Models
 		#endregion
 
 		#region Coin/Bill (Count)
-
+#if HAS_COUNT_PROPERTIES
 		/// <summary>
 		/// Gets or sets number of .25 baht coin.
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of .25 baht coin.")]
-		[ReadOnly(true)]
+#if !STORE_COUNT_FIELD
 		[Ignore]
+#endif
 		[PropertyMapName("CountST25")]
 		[PropertyOrder(10)]
 		public virtual int CountST25
@@ -842,8 +842,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of .50 baht coin.")]
-		[ReadOnly(true)]
+#if !STORE_COUNT_FIELD
 		[Ignore]
+#endif
 		[PropertyMapName("CountST50")]
 		[PropertyOrder(11)]
 		public virtual int CountST50
@@ -860,7 +861,6 @@ namespace DMT.Models
 					this.RaiseChanged("AmountST50");
 					this.RaiseChanged("IsValidST50");
 					this.RaiseChanged("ST50Foreground");
-					this.RaiseChanged("BHT1Foreground");
 
 					CalcTotalAmount();
 				}
@@ -871,8 +871,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 1 baht coin.")]
-		[ReadOnly(true)]
+#if !STORE_COUNT_FIELD
 		[Ignore]
+#endif
 		[PropertyMapName("CountBHT1")]
 		[PropertyOrder(12)]
 		public virtual int CountBHT1
@@ -888,7 +889,7 @@ namespace DMT.Models
 					this.RaiseChanged("CountBHT1");
 					this.RaiseChanged("AmountBHT1");
 					this.RaiseChanged("IsValidBHT1");
-					this.RaiseChanged("BHT2Foreground");
+					this.RaiseChanged("BHT1Foreground");
 
 					CalcTotalAmount();
 				}
@@ -899,8 +900,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 2 baht coin.")]
-		[ReadOnly(true)]
+#if !STORE_COUNT_FIELD
 		[Ignore]
+#endif
 		[PropertyMapName("CountBHT2")]
 		[PropertyOrder(13)]
 		public virtual int CountBHT2
@@ -916,7 +918,7 @@ namespace DMT.Models
 					this.RaiseChanged("CountBHT2");
 					this.RaiseChanged("AmountBHT2");
 					this.RaiseChanged("IsValidBHT2");
-					this.RaiseChanged("BHT5Foreground");
+					this.RaiseChanged("BHT2Foreground");
 
 					CalcTotalAmount();
 				}
@@ -927,8 +929,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 5 baht coin.")]
-		[ReadOnly(true)]
+#if !STORE_COUNT_FIELD
 		[Ignore]
+#endif
 		[PropertyMapName("CountBHT5")]
 		[PropertyOrder(14)]
 		public virtual int CountBHT5
@@ -955,8 +958,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 10 baht coin.")]
-		[ReadOnly(true)]
+#if !STORE_COUNT_FIELD
 		[Ignore]
+#endif
 		[PropertyMapName("CountBHT10")]
 		[PropertyOrder(15)]
 		public virtual int CountBHT10
@@ -983,8 +987,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 20 baht bill.")]
-		[ReadOnly(true)]
+#if !STORE_COUNT_FIELD
 		[Ignore]
+#endif
 		[PropertyMapName("CountBHT20")]
 		[PropertyOrder(16)]
 		public virtual int CountBHT20
@@ -1011,8 +1016,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 50 baht bill.")]
-		[ReadOnly(true)]
+#if !STORE_COUNT_FIELD
 		[Ignore]
+#endif
 		[PropertyMapName("CountBHT50")]
 		[PropertyOrder(17)]
 		public virtual int CountBHT50
@@ -1039,8 +1045,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 100 baht bill.")]
-		[ReadOnly(true)]
+#if !STORE_COUNT_FIELD
 		[Ignore]
+#endif
 		[PropertyMapName("CountBHT100")]
 		[PropertyOrder(18)]
 		public virtual int CountBHT100
@@ -1067,8 +1074,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 500 baht bill.")]
-		[ReadOnly(true)]
+#if !STORE_COUNT_FIELD
 		[Ignore]
+#endif
 		[PropertyMapName("CountBHT500")]
 		[PropertyOrder(19)]
 		public virtual int CountBHT500
@@ -1095,8 +1103,9 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Count)")]
 		[Description("Gets or sets number of 1000 baht bill.")]
-		[ReadOnly(true)]
+#if !STORE_COUNT_FIELD
 		[Ignore]
+#endif
 		[PropertyMapName("CountBHT1000")]
 		[PropertyOrder(20)]
 		public virtual int CountBHT1000
@@ -1118,7 +1127,7 @@ namespace DMT.Models
 				}
 			}
 		}
-
+#endif
 		#endregion
 
 		#region Coin/Bill (Amount)
@@ -1128,8 +1137,6 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of .25 baht coin.")]
-		[ReadOnly(true)]
-		[Ignore]
 		[PropertyMapName("AmountST25")]
 		[PropertyOrder(21)]
 		public virtual decimal AmountST25
@@ -1140,12 +1147,15 @@ namespace DMT.Models
 				if (_AmtST25 != value)
 				{
 					_AmtST25 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntST25 = Convert.ToInt32(Math.Floor(_AmtST25 / (decimal).25));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountST25");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountST25");
+#endif
 					this.RaiseChanged("IsValidST25");
-					this.RaiseChanged("ST25Foreground");
 
 					CalcTotalAmount();
 				}
@@ -1156,8 +1166,6 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of .50 baht coin.")]
-		[ReadOnly(true)]
-		[Ignore]
 		[PropertyMapName("AmountST50")]
 		[PropertyOrder(22)]
 		public virtual decimal AmountST50
@@ -1168,10 +1176,14 @@ namespace DMT.Models
 				if (_AmtST50 != value)
 				{
 					_AmtST50 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntST50 = Convert.ToInt32(Math.Floor(_AmtST50 / (decimal).50));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountST50");
-					this.RaiseChanged("CountST25");
+#if HAS_COUNT_PROPERTIES
+					this.RaiseChanged("CountST50");
+#endif
 					this.RaiseChanged("IsValidST50");
 					this.RaiseChanged("ST50Foreground");
 
@@ -1184,8 +1196,6 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 1 baht coin.")]
-		[ReadOnly(true)]
-		[Ignore]
 		[PropertyMapName("AmountBHT1")]
 		[PropertyOrder(23)]
 		public virtual decimal AmountBHT1
@@ -1196,10 +1206,14 @@ namespace DMT.Models
 				if (_AmtBHT1 != value)
 				{
 					_AmtBHT1 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT1 = Convert.ToInt32(_AmtBHT1);
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT1");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT1");
+#endif
 					this.RaiseChanged("IsValidBHT1");
 					this.RaiseChanged("BHT1Foreground");
 
@@ -1212,8 +1226,6 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 2 baht coin.")]
-		[ReadOnly(true)]
-		[Ignore]
 		[PropertyMapName("AmountBHT2")]
 		[PropertyOrder(24)]
 		public virtual decimal AmountBHT2
@@ -1224,10 +1236,14 @@ namespace DMT.Models
 				if (_AmtBHT2 != value)
 				{
 					_AmtBHT2 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT2 = Convert.ToInt32(Math.Floor(_AmtBHT2 / 2));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT2");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT2");
+#endif
 					this.RaiseChanged("IsValidBHT2");
 					this.RaiseChanged("BHT2Foreground");
 
@@ -1240,8 +1256,6 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 5 baht coin.")]
-		[ReadOnly(true)]
-		[Ignore]
 		[PropertyMapName("AmountBHT5")]
 		[PropertyOrder(25)]
 		public virtual decimal AmountBHT5
@@ -1252,10 +1266,14 @@ namespace DMT.Models
 				if (_AmtBHT5 != value)
 				{
 					_AmtBHT5 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT5 = Convert.ToInt32(Math.Floor(_AmtBHT5 / 5));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT5");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT5");
+#endif
 					this.RaiseChanged("IsValidBHT5");
 					this.RaiseChanged("BHT5Foreground");
 
@@ -1268,8 +1286,6 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 10 baht coin.")]
-		[ReadOnly(true)]
-		[Ignore]
 		[PropertyMapName("AmountBHT10")]
 		[PropertyOrder(26)]
 		public virtual decimal AmountBHT10
@@ -1280,10 +1296,14 @@ namespace DMT.Models
 				if (_AmtBHT10 != value)
 				{
 					_AmtBHT10 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT10 = Convert.ToInt32(Math.Floor(_AmtBHT10 / 10));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT10");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT10");
+#endif
 					this.RaiseChanged("IsValidBHT10");
 					this.RaiseChanged("BHT10Foreground");
 
@@ -1296,8 +1316,6 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 20 baht bill.")]
-		[ReadOnly(true)]
-		[Ignore]
 		[PropertyMapName("AmountBHT20")]
 		[PropertyOrder(27)]
 		public virtual decimal AmountBHT20
@@ -1308,10 +1326,14 @@ namespace DMT.Models
 				if (_AmtBHT20 != value)
 				{
 					_AmtBHT20 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT20 = Convert.ToInt32(Math.Floor(_AmtBHT20 / 20));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT20");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT20");
+#endif
 					this.RaiseChanged("IsValidBHT20");
 					this.RaiseChanged("BHT20Foreground");
 
@@ -1324,8 +1346,6 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 50 baht bill.")]
-		[ReadOnly(true)]
-		[Ignore]
 		[PropertyMapName("AmountBHT50")]
 		[PropertyOrder(28)]
 		public virtual decimal AmountBHT50
@@ -1336,10 +1356,14 @@ namespace DMT.Models
 				if (_AmtBHT50 != value)
 				{
 					_AmtBHT50 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT50 = Convert.ToInt32(Math.Floor(_AmtBHT50 / 50));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT50");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT50");
+#endif
 					this.RaiseChanged("IsValidBHT50");
 					this.RaiseChanged("BHT50Foreground");
 
@@ -1352,8 +1376,6 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 100 baht bill.")]
-		[ReadOnly(true)]
-		[Ignore]
 		[PropertyMapName("AmountBHT100")]
 		[PropertyOrder(29)]
 		public virtual decimal AmountBHT100
@@ -1364,10 +1386,14 @@ namespace DMT.Models
 				if (_AmtBHT100 != value)
 				{
 					_AmtBHT100 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT100 = Convert.ToInt32(Math.Floor(_AmtBHT100 / 100));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT100");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT100");
+#endif
 					this.RaiseChanged("IsValidBHT100");
 					this.RaiseChanged("BHT100Foreground");
 
@@ -1380,8 +1406,6 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 500 baht bill.")]
-		[ReadOnly(true)]
-		[Ignore]
 		[PropertyMapName("AmountBHT500")]
 		[PropertyOrder(30)]
 		public virtual decimal AmountBHT500
@@ -1392,10 +1416,14 @@ namespace DMT.Models
 				if (_AmtBHT500 != value)
 				{
 					_AmtBHT500 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT500 = Convert.ToInt32(Math.Floor(_AmtBHT500 / 500));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT500");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT500");
+#endif
 					this.RaiseChanged("IsValidBHT500");
 					this.RaiseChanged("BHT500Foreground");
 
@@ -1408,8 +1436,6 @@ namespace DMT.Models
 		/// </summary>
 		[Category("Coin/Bill (Amount)")]
 		[Description("Gets or sets amount of 1000 baht bill.")]
-		[ReadOnly(true)]
-		[Ignore]
 		[PropertyMapName("AmountBHT1000")]
 		[PropertyOrder(31)]
 		public virtual decimal AmountBHT1000
@@ -1420,10 +1446,14 @@ namespace DMT.Models
 				if (_AmtBHT1000 != value)
 				{
 					_AmtBHT1000 = value;
+#if HAS_COUNT_PROPERTIES
 					_CntBHT1000 = Convert.ToInt32(Math.Floor(_AmtBHT1000 / 1000));
+#endif
 					// Raise event.
 					this.RaiseChanged("AmountBHT1000");
+#if HAS_COUNT_PROPERTIES
 					this.RaiseChanged("CountBHT1000");
+#endif
 					this.RaiseChanged("IsValidBHT1000");
 					this.RaiseChanged("BHT1000Foreground");
 
@@ -1475,7 +1505,11 @@ namespace DMT.Models
 		[PropertyOrder(34)]
 		public virtual bool IsValidBHT1
 		{
+#if HAS_COUNT_PROPERTIES
 			get { return _AmtBHT1 == _CntBHT1; }
+#else
+			get { return true; }
+#endif
 			set { }
 		}
 		/// <summary>
@@ -1682,7 +1716,7 @@ namespace DMT.Models
 			#endregion
 
 			#region Coin/Bill (count)
-
+#if HAS_COUNT_PROPERTIES
 			/// <summary>
 			/// Gets or sets number of .25 baht coin.
 			/// </summary>
@@ -1782,7 +1816,7 @@ namespace DMT.Models
 				get { return base.CountBHT1000; }
 				set { base.CountBHT1000 = value; }
 			}
-
+#endif
 			#endregion
 
 			#region Coin/Bill (Amount)
