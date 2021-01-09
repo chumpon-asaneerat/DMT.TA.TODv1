@@ -4,6 +4,7 @@ AS
 		 , TSB.TSBNameEN
 		 , TSB.TSBNameTH
 		 , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction 
+		 /*
 		 , (
 			 SELECT IFNULL(SUM(CountST25), 0) 
 			   FROM UserCreditTransaction 
@@ -70,6 +71,7 @@ AS
 			  WHERE UserCreditTransaction.TransactionType = 2 -- Returns = 2
 				AND UserCreditTransaction.UserCreditId = UserCreditBalance.UserCreditId
 			) AS CountBHT1000
+		 */
 		 , (
 			 SELECT IFNULL(SUM(AmountST25), 0) 
 			   FROM UserCreditTransaction 

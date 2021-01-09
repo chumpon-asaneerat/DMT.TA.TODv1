@@ -37,6 +37,7 @@ AS
 				AND UserCreditTransaction.UserCreditId = UserCreditBalance.UserCreditId
 				AND UserCreditBalance.TSBId = TSB.TSBId
 			)) AS UserBHTTotal
+		 /*
 		 , ((
 			 SELECT IFNULL(SUM(CountST25), 0) 
 			   FROM TSBCreditTransaction 
@@ -378,6 +379,7 @@ AS
 				AND UserCreditTransaction.TransactionType = 2 -- Return
 				AND UserCreditTransaction.UserCreditId = UserCreditBalance.UserCreditId
 			)) AS CountBHT1000
+		 */
 		 , ((
 			 SELECT IFNULL(SUM(AmountST25), 0) 
 			   FROM TSBCreditTransaction 
