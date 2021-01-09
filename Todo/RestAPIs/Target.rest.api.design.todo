@@ -8,26 +8,28 @@ Operations:
             ☐ GetBalance (/Coupon/TSB/GetBalance) refactored.
             ☐ GetSummaries (/Coupon/TSB/GetSummaries) refactored.
             Transaction (/Coupon/TSB/Transaction):
-                ☐ Gets (/Coupon/TSB/Transaction/Gets) refactored.
-                ☐ Save (/Coupon/TSB/Transaction/Save) refactored.
+                ✔ Gets (/Coupon/TSB/Transaction/Gets) refactored. @done(21-01-09 21:53)
+                ✔ Save (/Coupon/TSB/Transaction/Save) refactored. @done(21-01-09 21:53)
                 ☐ Sync (/Coupon/TSB/Transaction/Sync) refactored.
         User <NEW!> (/Coupon/User):
             ☐ GetBalance (/Coupon/User/GetBalance) refactored.
             ☐ GetSummaries (/Coupon/User/GetSummaries) refactored.
             Transaction (/Coupon/User/Transaction):
-                ☐ Gets (/Coupon/User/Transaction/Gets) refactored.
-                ☐ Save (/Coupon/User/Transaction/Save) refactored.
+                ✔ Gets (/Coupon/User/Transaction/Gets) refactored. @done(21-01-09 21:53)
+                ✔ Save (/Coupon/User/Transaction/Save) refactored. @done(21-01-09 21:53)
     Credit (/Credit):
         TSB (/Credit/TSB):
-            ☐ Get (/Credit/TSB/Get) refactored.
+            ✔ Gets (/Credit/TSB/Gets) refactored. @done(21-01-09 22:10)
             Transaction (/Credit/TSB/Transaction):
-                ☐ Gets (/Credit/TSB/Transaction/Gets) refactored.
-                ☐ Save (/Credit/TSB/Transaction/Save) refactored.
+                ✔ Gets (/Credit/TSB/Transaction/Gets) refactored. @done(21-01-09 21:53)
+                ✔ Save (/Credit/TSB/Transaction/Save) refactored. @done(21-01-09 21:53)
         User (/Credit/User):
-            ☐ Gets (/Credit/User/Gets) refactored.
-            ☐ Save (/Credit/User/Save) refactored.
+            ✔ Gets (/Credit/User/Gets) refactored. @done(21-01-09 22:10)
+            ✔ Cancel (/Credit/User/Cancel) refactored. @done(21-01-09 22:10)
+            ✔ Save (/Credit/User/Save) refactored. @done(21-01-09 22:12)
             Transaction (/Credit/User/Transaction):
-                ☐ Save(s) (/Credit/User/Transaction/Save) refactored.
+                ✔ Gets (/Credit/User/Transaction/Gets) refactored. @done(21-01-09 21:54)
+                ✔ Save (/Credit/User/Transaction/Save) refactored. @done(21-01-09 21:53)
     Exchange (/Exchange):
         Groups (/Exchange/Groups):
             ☐ Gets (/Exchange/Groups/Gets) refactored.
