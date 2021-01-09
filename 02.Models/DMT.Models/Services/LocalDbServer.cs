@@ -394,6 +394,8 @@ namespace DMT.Services
             item.TSBNameTH = "ดินแดง";
             item.Active = true;
             if (!TSB.Exists(item)) TSB.Save(item);
+            // init default credit value.
+            InitTSBCreditInitializeTransaction(item);
 
             #endregion
 
@@ -596,6 +598,8 @@ namespace DMT.Services
             item.TSBNameTH = "สุทธิสาร";
             item.Active = false;
             if (!TSB.Exists(item)) TSB.Save(item);
+            // init default credit value.
+            InitTSBCreditInitializeTransaction(item);
 
             #endregion
 
@@ -680,6 +684,8 @@ namespace DMT.Services
             item.TSBNameTH = "ลาดพร้าว";
             item.Active = false;
             if (!TSB.Exists(item)) TSB.Save(item);
+            // init default credit value.
+            InitTSBCreditInitializeTransaction(item);
 
             #endregion
 
@@ -843,6 +849,8 @@ namespace DMT.Services
             item.TSBNameTH = "รัชดาภิเษก";
             item.Active = false;
             if (!TSB.Exists(item)) TSB.Save(item);
+            // init default credit value.
+            InitTSBCreditInitializeTransaction(item);
 
             #endregion
 
@@ -979,6 +987,8 @@ namespace DMT.Services
             item.TSBNameTH = "บางเขน";
             item.Active = false;
             if (!TSB.Exists(item)) TSB.Save(item);
+            // init default credit value.
+            InitTSBCreditInitializeTransaction(item);
 
             #endregion
 
@@ -1051,6 +1061,8 @@ namespace DMT.Services
             item.TSBNameTH = "แจ้งวัฒนะ";
             item.Active = false;
             if (!TSB.Exists(item)) TSB.Save(item);
+            // init default credit value.
+            InitTSBCreditInitializeTransaction(item);
 
             #endregion
 
@@ -1176,6 +1188,8 @@ namespace DMT.Services
             item.TSBNameTH = "หลักสี่";
             item.Active = false;
             if (!TSB.Exists(item)) TSB.Save(item);
+            // init default credit value.
+            InitTSBCreditInitializeTransaction(item);
 
             #endregion
 
@@ -1326,6 +1340,8 @@ namespace DMT.Services
             item.TSBNameTH = "ดอนเมือง";
             item.Active = false;
             if (!TSB.Exists(item)) TSB.Save(item);
+            // init default credit value.
+            InitTSBCreditInitializeTransaction(item);
 
             #endregion
 
@@ -1506,6 +1522,8 @@ namespace DMT.Services
             item.TSBNameTH = "อนุสรน์สถาน";
             item.Active = false;
             if (!TSB.Exists(item)) TSB.Save(item);
+            // init default credit value.
+            InitTSBCreditInitializeTransaction(item);
 
             #endregion
 
@@ -2231,6 +2249,22 @@ namespace DMT.Services
             #endregion
         }
 
+        private void InitTSBCreditInitializeTransaction(TSB value)
+        {
+            TSBCreditTransaction tran;
+            tran = TSBCreditTransaction.GetInitialTransaction().Value();
+            if (null == tran)
+            {
+                tran = new TSBCreditTransaction();
+                tran.TSBId = value.TSBId;
+                tran.TSBNameEN = value.TSBNameEN;
+                tran.TSBNameTH = value.TSBNameTH;
+                tran.TransactionDate = DateTime.Now;
+                tran.TransactionType = TSBCreditTransaction.TransactionTypes.Initial;
+                TSBCreditTransaction.SaveTransaction(tran);
+            }
+        }
+
         private void InitViews()
         {
             if (null == Db) return;
@@ -2259,13 +2293,29 @@ namespace DMT.Services
 
             // Credits - Embeded resource used . instead / to access sub contents.
             prefix = @"Credits";
-            InitView("TSBCreditTransactionView", 1, prefix);
-            InitView("TSBCreditSummaryView", 1, prefix);
-            
             InitView("UserCreditBorrowSummaryView", 1, prefix);
             InitView("UserCreditReturnSummaryView", 1, prefix);
             // !!! Required UserCreditBorrowSummaryView and UserCreditBorrowSummaryView
             InitView("UserCreditSummaryView", 1, prefix);
+
+            InitView("TSBCreditTransactionView", 1, prefix);
+            // User Total.
+            InitView("TSBCreditUserBHTTotalSummaryView", 1, prefix);
+            // TSB Amount(s).
+            InitView("TSBCreditST25SummaryView", 1, prefix);
+            InitView("TSBCreditST50SummaryView", 1, prefix);
+            InitView("TSBCreditBHT1SummaryView", 1, prefix);
+            InitView("TSBCreditBHT2SummaryView", 1, prefix);
+            InitView("TSBCreditBHT5SummaryView", 1, prefix);
+            InitView("TSBCreditBHT10SummaryView", 1, prefix);
+            InitView("TSBCreditBHT20SummaryView", 1, prefix);
+            InitView("TSBCreditBHT50SummaryView", 1, prefix);
+            InitView("TSBCreditBHT100SummaryView", 1, prefix);
+            InitView("TSBCreditBHT500SummaryView", 1, prefix);
+            InitView("TSBCreditBHT1000SummaryView", 1, prefix);
+            // !!! Required Above views
+            InitView("TSBCreditSummaryView", 1, prefix);
+
 
             InitView("UserCreditTransactionView", 1, prefix);
 
