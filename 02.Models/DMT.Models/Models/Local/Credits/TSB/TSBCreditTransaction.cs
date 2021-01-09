@@ -940,7 +940,7 @@ namespace DMT.Models
         [PropertyOrder(34)]
         public virtual bool IsValidBHT1
         {
-            get { return (_AmtBHT2 % 1) == 0; }
+            get { return (_AmtBHT1 % 1) == 0; }
             set { }
         }
         /// <summary>
