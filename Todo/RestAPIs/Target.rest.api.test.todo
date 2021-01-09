@@ -8,15 +8,15 @@ Operations:
             ☐ GetBalance (/Coupon/TSB/GetBalance) TESTED.
             ☐ GetSummaries (/Coupon/TSB/GetSummaries) TESTED.
             Transactions (/Coupon/TSB/Transaction):
-                ☐ GetTransactions (/Coupon/TSB/Transaction/Gets) TESTED.
-                ☐ SaveTransactions (/Coupon/TSB/Transaction/Save) TESTED.
-                ☐ SyncTransactions (/Coupon/TSB/Transaction/Sync) TESTED.
+                ☐ Gets (/Coupon/TSB/Transaction/Gets) TESTED.
+                ☐ Save (/Coupon/TSB/Transaction/Save) TESTED.
+                ☐ Sync (/Coupon/TSB/Transaction/Sync) TESTED.
         User <NEW!> (/Coupon/Users):
             ☐ GetBalance (/Coupon/Users/GetBalance) TESTED.
             ☐ GetSummaries (/Coupon/Users/GetSummaries) TESTED.
             Transactions (/Coupon/User/Transaction):
-                ☐ GetTransactions (/Coupon/User/Transaction/Gets) TESTED.
-                ☐ SaveTransactions (/Coupon/User/Transaction/Save) TESTED.
+                ☐ Gets (/Coupon/User/Transaction/Gets) TESTED.
+                ☐ Save (/Coupon/User/Transaction/Save) TESTED.
     Credit (/Credit):
         TSB (/Credit/TSB):
             ☐ Get (/Credit/TSB/Get) TESTED.
@@ -30,8 +30,8 @@ Operations:
                 ☐ Save(s) (/Credit/User/Transaction/Save) TESTED.
     Exchange (/Exchange):
         Groups (/Exchange/Groups):
-            ☐ GetTSBExchangeGroups (/Exchange/Groups/Gets) TESTED.
-            ☐ SaveTSBExchangeGroup (/Exchange/Groups/Save) TESTED.
+            ☐ Gets (/Exchange/Groups/Gets) TESTED.
+            ☐ Save (/Exchange/Groups/Save) TESTED.
         Transaction (/Exchange/Transaction):
             ☐ GetTSBExchangeTransactions (/Exchange/Transaction/Gets) TESTED.
     Job (/Job):

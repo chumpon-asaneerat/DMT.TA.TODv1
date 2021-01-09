@@ -8,15 +8,15 @@ Operations:
             ☐ GetBalance (/Coupon/TSB/GetBalance) refactored.
             ☐ GetSummaries (/Coupon/TSB/GetSummaries) refactored.
             Transaction (/Coupon/TSB/Transaction):
-                ☐ GetTransactions (/Coupon/TSB/Transaction/Gets) refactored.
-                ☐ SaveTransactions (/Coupon/TSB/Transaction/Save) refactored.
-                ☐ SyncTransactions (/Coupon/TSB/Transaction/Sync) refactored.
+                ☐ Gets (/Coupon/TSB/Transaction/Gets) refactored.
+                ☐ Save (/Coupon/TSB/Transaction/Save) refactored.
+                ☐ Sync (/Coupon/TSB/Transaction/Sync) refactored.
         User <NEW!> (/Coupon/User):
             ☐ GetBalance (/Coupon/User/GetBalance) refactored.
             ☐ GetSummaries (/Coupon/User/GetSummaries) refactored.
             Transaction (/Coupon/User/Transaction):
-                ☐ GetTransactions (/Coupon/User/Transaction/Gets) refactored.
-                ☐ SaveTransactions (/Coupon/User/Transaction/Save) refactored.
+                ☐ Gets (/Coupon/User/Transaction/Gets) refactored.
+                ☐ Save (/Coupon/User/Transaction/Save) refactored.
     Credit (/Credit):
         TSB (/Credit/TSB):
             ☐ Get (/Credit/TSB/Get) refactored.
@@ -30,8 +30,8 @@ Operations:
                 ☐ Save(s) (/Credit/User/Transaction/Save) refactored.
     Exchange (/Exchange):
         Groups (/Exchange/Groups):
-            ☐ GetTSBExchangeGroups (/Exchange/Groups/Gets) refactored.
-            ☐ SaveTSBExchangeGroup (/Exchange/Groups/Save) refactored.
+            ☐ Gets (/Exchange/Groups/Gets) refactored.
+            ☐ Save (/Exchange/Groups/Save) refactored.
         Transaction (/Exchange/Transaction):
             ☐ GetTSBExchangeTransactions (/Exchange/Transaction/Gets) refactored.
     Job (/Job):
