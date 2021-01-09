@@ -130,7 +130,7 @@ namespace DMT.Services
 
             Db.CreateTable<RevenueEntry>();
 
-            //Db.CreateTable<TSBCreditTransaction>();
+            Db.CreateTable<TSBCreditTransaction>();
 
             ////Db.CreateTable<TSBCouponTransaction>();
 

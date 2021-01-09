@@ -1339,6 +1339,8 @@ namespace DMT.Models
 				TSBExchangeTransaction.Save(value.Received);
 				if (updateCredit)
 				{
+					//TODO: Update TSBCreditTransaction Remove Temporary
+					/*
 					TSBCreditTransaction tran = CloneTransaction(value.Received);
 					// Set property here.
 					tran.TransactionType = TSBCreditTransaction.TransactionTypes.Received;
@@ -1346,6 +1348,7 @@ namespace DMT.Models
 					tran.AdditionalBHT = value.Received.AdditionalBHT;
 					// Save.
 					TSBCreditTransaction.Save(tran);
+					*/
 				}
 			}
 			if (null != value.Exchange)
@@ -1356,11 +1359,14 @@ namespace DMT.Models
 				TSBExchangeTransaction.Save(value.Exchange);
 				if (updateCredit)
 				{
+					//TODO: Update TSBCreditTransaction Remove Temporary
+					/*
 					TSBCreditTransaction tran = CloneTransaction(value.Exchange, true);
 					// Set property here.
 					tran.TransactionType = TSBCreditTransaction.TransactionTypes.Received;
 					// Save.
 					TSBCreditTransaction.Save(tran);
+					*/
 				}
 			}
 			if (null != value.Return)
