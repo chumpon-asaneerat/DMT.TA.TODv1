@@ -37,7 +37,6 @@ namespace DMT.Models
     {
         #region Enum
 
-        //TODO: May requreid new TransactionTypes in case
         // Initialize (0) -> ยอดตั้งต้น (+)
         // Received (1) -> กรณีรับเงินจาก บ/ช (+)
         // Exchange (2) -> กรณีแลกเงิน เกิดขึ้นตอนรับเงินจาก บ/ช ซึ่งต้องทำคืนเงิน ในจำนวนเท่า ๆ กันด้วย (-)
@@ -59,9 +58,13 @@ namespace DMT.Models
             /// </summary>
             Received = 1,
             /// <summary>
+            /// exchange to account after account approve and plaza received it.
+            /// </summary>
+            Exchange = 2,
+            /// <summary>
             /// return to account after plaza no longer need or reach due date.
             /// </summary>
-            Returns = 2,
+            Returns = 3,
             /// <summary>
             /// Internal Replace (Takeout from TSB)
             /// </summary>

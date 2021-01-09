@@ -3,6 +3,7 @@ AS
 	SELECT TSB.TSBId
 		 , TSB.TSBNameEN
 		 , TSB.TSBNameTH
+		 /* User Credit Borrow (1) - Return (2) */
 		 , ((
 			 SELECT (IFNULL(SUM(UserCreditTransaction.AmountST25), 0) +
 					 IFNULL(SUM(UserCreditTransaction.AmountST50), 0) +
@@ -37,6 +38,7 @@ AS
 				AND UserCreditTransaction.UserCreditId = UserCreditBalance.UserCreditId
 				AND UserCreditBalance.TSBId = TSB.TSBId
 			)) AS UserBHTTotal
+		 /* TSB Credit Initial (0) + Received (1) +  ReplaceIn (12) - Exchange (2) - Return (3) - ReplaceOut (11) */
 		 , ((
 			 SELECT IFNULL(SUM(AmountST25), 0) 
 			   FROM TSBCreditTransaction 
@@ -50,8 +52,9 @@ AS
 			 SELECT IFNULL(SUM(AmountST25), 0) 
 			   FROM TSBCreditTransaction 
 			  WHERE (   TSBCreditTransaction.TransactionType = 2
+					 OR TSBCreditTransaction.TransactionType = 3
 					 OR TSBCreditTransaction.TransactionType = 11
-			        ) -- Returns = 2, Replace Out = 11
+			        ) -- Exchange = 2, Returns = 3, Replace Out = 11
 				AND TSBCreditTransaction.TSBId = TSB.TSBId
 			) - 
 			(

@@ -132,16 +132,16 @@ namespace DMT.Services
 
             Db.CreateTable<TSBCreditTransaction>();
 
-            //Db.CreateTable<TSBCouponTransaction>();
-
             Db.CreateTable<UserCreditBalance>();
             Db.CreateTable<UserCreditTransaction>();
 
+            Db.CreateTable<TSBExchangeGroup>();
+            Db.CreateTable<TSBExchangeTransaction>();
+
+            //Db.CreateTable<TSBCouponTransaction>();
+
             ////Db.CreateTable<UserCouponBalance>();
             //Db.CreateTable<UserCouponTransaction>();
-
-            //Db.CreateTable<TSBExchangeGroup>();
-            //Db.CreateTable<TSBExchangeTransaction>();
         }
 
         private void InitDefaults()
@@ -2261,18 +2261,18 @@ namespace DMT.Services
             prefix = @"Credits";
             InitView("TSBCreditTransactionView", 1, prefix);
             InitView("TSBCreditSummaryView", 1, prefix);
-            /*
+            
             InitView("UserCreditBorrowSummaryView", 1, prefix);
             InitView("UserCreditReturnSummaryView", 1, prefix);
-            */
+            // !!! Required UserCreditBorrowSummaryView and UserCreditBorrowSummaryView
             InitView("UserCreditSummaryView", 1, prefix);
+
             InitView("UserCreditTransactionView", 1, prefix);
 
             // Coupons - Embeded resource used . instead / to access sub contents.
             /*
             prefix = @"Coupons";
             InitView("TSBCouponTransactionView", 1, prefix);
-            
 
             InitView("TSBCouponStockBalanceView", 1, prefix);
             InitView("TSBCouponLaneBalanceView", 1, prefix);
@@ -2288,11 +2288,9 @@ namespace DMT.Services
             */
 
             // Exchanges - Embeded resource used . instead / to access sub contents.
-            /*
             prefix = @"Exchanges";
             InitView("TSBExchangeGroupView", 1, prefix);
             InitView("TSBExchangeTransactionView", 1, prefix);
-            */
         }
 
         class ViewInfo

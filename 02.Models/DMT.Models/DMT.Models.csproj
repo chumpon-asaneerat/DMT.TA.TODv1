@@ -205,6 +205,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Views\Scripts\Revenues\RevenueEntryView.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Scripts\Exchanges\TSBExchangeGroupView.sql" />
+    <EmbeddedResource Include="Views\Scripts\Exchanges\TSBExchangeTransactionView.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(SolutionDir)References\runtimes\*.*" "$(TargetDir)\runtimes\*.*" /Y/D/E

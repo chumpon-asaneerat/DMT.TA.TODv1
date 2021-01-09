@@ -1,4 +1,5 @@
-﻿CREATE VIEW UserCreditBorrowSummaryView
+﻿/* USE IN UserCreditBorrowSummaryView */
+CREATE VIEW UserCreditBorrowSummaryView
 AS
 	SELECT UserCreditBalance.* 
 		 , TSB.TSBNameEN
