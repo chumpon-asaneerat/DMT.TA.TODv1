@@ -125,6 +125,9 @@ namespace DMT.Models
 		private string _TSBId = string.Empty;
 		private string _TSBNameEN = string.Empty;
 		private string _TSBNameTH = string.Empty;
+		// วงเงินอนุมัติ เป็นวงเงินที่ บ/ช กำหนดให้แต่ละด่าน เป็นค่าสูงสุดที่แต่ละด่านจะมีได้ โดยยอดนี้จะต้อง มากกว่าหรือเท่ากับ ยอดรวม + เงินยืมเพิ่ม
+		private decimal _MaxCredit = decimal.Zero;
+
 		// Request Transaction (runtime)
 		private int _TransactionId = 0;
 		private DateTime _TransactionDate = DateTime.MinValue;
@@ -135,8 +138,6 @@ namespace DMT.Models
 		private string _FullNameTH = string.Empty;
 		// Request Amounts (runtime)
 
-		// วงเงินอนุมัติ เป็นวงเงินที่ บ/ช กำหนดให้แต่ละด่าน เป็นค่าสูงสุดที่แต่ละด่านจะมีได้ โดยยอดนี้จะต้อง มากกว่าหรือเท่ากับ ยอดรวม + เงินยืมเพิ่ม
-		private decimal _MaxAllowBHT = decimal.Zero;
 		// วงเงินขอเพิ่ม เป็นเงินที่ ขอเพิ่มไปยัง บ/ช โดย เมื่อรวมกับยอดรวม ต้องไม่เกิน ยอดวงเงินอนุมัติ
 		private decimal _AdditionalBHT = decimal.Zero;
 		// เงินยืมเพิ่ม ไม่จำกัด เพราะต้องคืน เท่ากับที่ยืมมา
@@ -430,6 +431,26 @@ namespace DMT.Models
 				}
 			}
 		}
+		/// <summary>
+		/// Gets or sets amount TSB Max BHT.
+		/// </summary>
+		[Category("TSB")]
+		[Description("Gets or sets Max TSB Credit.")]
+		[Ignore]
+		[PropertyMapName("MaxCredit")]
+		public virtual decimal MaxCredit
+		{
+			get { return _MaxCredit; }
+			set
+			{
+				if (_MaxCredit != value)
+				{
+					_MaxCredit = value;
+					// Raise event.
+					this.RaiseChanged("MaxCredit");
+				}
+			}
+		}
 
 		#endregion
 
@@ -658,28 +679,8 @@ namespace DMT.Models
 
 		#endregion
 
-		#region MaxAllowBHT/Exchange/Borrow/Additional
+		#region Exchange/Borrow/Additional
 
-		/// <summary>
-		/// Gets or sets amount TSB Max BHT.
-		/// </summary>
-		[Category("Summary (Amount)")]
-		[Description("Gets or sets amount TSB Max BHT.")]
-		[Ignore]
-		[PropertyMapName("MaxAllowBHT")]
-		public virtual decimal MaxAllowBHT
-		{
-			get { return _MaxAllowBHT; }
-			set
-			{
-				if (_MaxAllowBHT != value)
-				{
-					_MaxAllowBHT = value;
-					// Raise event.
-					this.RaiseChanged("MaxAllowBHT");
-				}
-			}
-		}
 		/// <summary>
 		/// Gets or sets amount Exchange BHT.
 		/// </summary>
@@ -1067,6 +1068,15 @@ namespace DMT.Models
 				get { return base.TSBNameTH; }
 				set { base.TSBNameTH = value; }
 			}
+			/// <summary>
+			/// Gets or sets amount TSB Max BHT.
+			/// </summary>
+			[PropertyMapName("MaxCredit")]
+			public override decimal MaxCredit
+			{
+				get { return base.MaxCredit; }
+				set { base.MaxCredit = value; }
+			}
 
 			#endregion
 
@@ -1121,14 +1131,7 @@ namespace DMT.Models
 
 			#endregion
 
-			#region MaxAllowBHT/Exchange/Borrow/Additional
-
-			[PropertyMapName("MaxAllowBHT")]
-			public override decimal MaxAllowBHT
-			{
-				get { return base.MaxAllowBHT; }
-				set { base.MaxAllowBHT = value; }
-			}
+			#region Exchange/Borrow/Additional
 			[PropertyMapName("ExchangeBHT")]
 			public override decimal ExchangeBHT
 			{
