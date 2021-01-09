@@ -1126,8 +1126,7 @@ namespace DMT.Models
 
 			#endregion
 
-			#region Exchange/Borrow/Additional/User(borrow/returns)
-
+			#region MaxAllowBHT/Exchange/Borrow/Additional/User(borrow/returns)
 
 			/// <summary>
 			/// Gets or sets amount TSB Max BHT.
