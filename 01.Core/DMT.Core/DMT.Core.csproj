@@ -55,6 +55,8 @@
   <ItemGroup>
     <Compile Include="Consts\AppConsts.cs" />
     <Compile Include="Consts\ErrorConsts.cs" />
+    <Compile Include="Consts\Routes\Local\Coupon\Coupon.Controller.cs" />
+    <Compile Include="Consts\Routes\Local\Credit\Credit.Controller.cs" />
     <Compile Include="Consts\Routes\Local\Infrastructure\Actions\Lane\Save.cs" />
     <Compile Include="Consts\Routes\Local\Infrastructure\Actions\Lane\Searchs.cs" />
     <Compile Include="Consts\Routes\Local\Infrastructure\Actions\PlazaGroup\Save.cs" />

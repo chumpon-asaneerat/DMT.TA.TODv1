@@ -1,22 +1,22 @@
 Operations:
     Notify (/Notify):
         TSB (/Notify/TSB):
-            ☐ ActiveChanged refactored.
-            ☐ ShiftChanged refactored.
+            ✘ ActiveChanged refactored. @cancelled(21-01-09 21:26)
+            ✘ ShiftChanged refactored. @cancelled(21-01-09 21:26)
     Coupon (/Coupon):
         TSB (/Coupon/TSB):
             ☐ GetBalance (/Coupon/TSB/GetBalance) refactored.
             ☐ GetSummaries (/Coupon/TSB/GetSummaries) refactored.
-            Transactions (/Coupon/TSB/Transactions):
-                ☐ GetTransactions (/Coupon/TSB/Transactions/Gets) refactored.
-                ☐ SaveTransactions (/Coupon/TSB/Transactions/Save) refactored.
-                ☐ SyncTransactions (/Coupon/TSB/Transactions/Sync) refactored.
-        User <NEW!> (/Coupon/Users):
-            ☐ GetBalance (/Coupon/Users/GetBalance) refactored.
-            ☐ GetSummaries (/Coupon/Users/GetSummaries) refactored.
-            Transactions (/Coupon/Users/Transactions):
-                ☐ GetTransactions (/Coupon/Users/Transactions/Gets) refactored.
-                ☐ SaveTransactions (/Coupon/Users/Transactions/Save) refactored.
+            Transaction (/Coupon/TSB/Transaction):
+                ☐ GetTransactions (/Coupon/TSB/Transaction/Gets) refactored.
+                ☐ SaveTransactions (/Coupon/TSB/Transaction/Save) refactored.
+                ☐ SyncTransactions (/Coupon/TSB/Transaction/Sync) refactored.
+        User <NEW!> (/Coupon/User):
+            ☐ GetBalance (/Coupon/User/GetBalance) refactored.
+            ☐ GetSummaries (/Coupon/User/GetSummaries) refactored.
+            Transaction (/Coupon/User/Transaction):
+                ☐ GetTransactions (/Coupon/User/Transaction/Gets) refactored.
+                ☐ SaveTransactions (/Coupon/User/Transaction/Save) refactored.
     Credit (/Credit):
         TSB (/Credit/TSB):
             ☐ Get (/Credit/TSB/Get) refactored.
@@ -32,24 +32,24 @@ Operations:
         Groups (/Exchange/Groups):
             ☐ GetTSBExchangeGroups (/Exchange/Groups/Gets) refactored.
             ☐ SaveTSBExchangeGroup (/Exchange/Groups/Save) refactored.
-        Transactions (/Exchange/Transactions:
-            ☐ GetTSBExchangeTransactions (/Exchange/Transactions/Gets) refactored.
+        Transaction (/Exchange/Transaction):
+            ☐ GetTSBExchangeTransactions (/Exchange/Transaction/Gets) refactored.
     Job (/Job):
         Attendances (/Job/Attendances):
-            ☐ Create (/Job/Attendances/Create) refactored.
-            ☐ SaveAttendances (/Job/Attendances/Save) refactored.
+            ✘ Create (/Job/Attendances/Create) refactored. @cancelled(21-01-09 21:20)
+            ✘ SaveAttendances (/Job/Attendances/Save) refactored. @cancelled(21-01-09 21:20)
             Search (/Job/Attendances/Search):
-                ☐ GetAttendancesByDate (/Job/Attendances/Search/Date) refactored.
-                ☐ GetAttendancesByUserShifts (/Job/Attendances/Search/Shift) refactored.
-                ☐ GetAttendancesByRevenue (/Job/Attendances/Search/Revenue) (has filter no entry) refactored.
-                ☐ GetAttendancesByLanes (/Job/Attendances/Search/Lane) refactored.
-        Attendances (/Job/Payments):
-            ☐ CreatePayment (/Job/Payments/Create) refactored.
-            ☐ SavePayments (/Job/Payments/Save) refactored.
+                ✘ GetAttendancesByDate (/Job/Attendances/Search/Date) refactored. @cancelled(21-01-09 21:20)
+                ✘ GetAttendancesByUserShifts (/Job/Attendances/Search/Shift) refactored. @cancelled(21-01-09 21:20)
+                ✘ GetAttendancesByRevenue (/Job/Attendances/Search/Revenue) (has filter no entry) refactored. @cancelled(21-01-09 21:20)
+                ✘ GetAttendancesByLanes (/Job/Attendances/Search/Lane) refactored. @cancelled(21-01-09 21:20)
+        Payments (/Job/Payments):
+            ✘ CreatePayment (/Job/Payments/Create) refactored. @cancelled(21-01-09 21:20)
+            ✘ SavePayments (/Job/Payments/Save) refactored. @cancelled(21-01-09 21:20)
             Search (/Job/Payments/Search):
-                ☐ GetPaymentsByDate (/Job/Payments/Search/Date) refactored.
-                ☐ GetPaymentsByUserShifts (/Job/Payments/Search/Shift) refactored.
-                ☐ GetPaymentsByLanes (/Job/Payments/Search/Lane) refactored.
+                ✘ GetPaymentsByDate (/Job/Payments/Search/Date) refactored. @cancelled(21-01-09 21:20)
+                ✘ GetPaymentsByUserShifts (/Job/Payments/Search/Shift) refactored. @cancelled(21-01-09 21:20)
+                ✘ GetPaymentsByLanes (/Job/Payments/Search/Lane) refactored. @cancelled(21-01-09 21:20)
     Master (/Master):
         ☐ GetCurrencies (/Master/Currency/Gets) refactored.
         ☐ GetCoupons (/Master/Coupon/Gets) refactored.

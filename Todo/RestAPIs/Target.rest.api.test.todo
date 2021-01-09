@@ -1,22 +1,22 @@
 Operations:
     Notify (/Notify):
         TSB (/Notify/TSB):
-            ☐ ActiveChanged TESTED.
-            ☐ ShiftChanged TESTED.
+            ✘ ActiveChanged TESTED. @cancelled(21-01-09 21:26)
+            ✘ ShiftChanged TESTED. @cancelled(21-01-09 21:26)
     Coupon (/Coupon):
         TSB (/Coupon/TSB):
             ☐ GetBalance (/Coupon/TSB/GetBalance) TESTED.
             ☐ GetSummaries (/Coupon/TSB/GetSummaries) TESTED.
-            Transactions (/Coupon/TSB/Transactions):
-                ☐ GetTransactions (/Coupon/TSB/Transactions/Gets) TESTED.
-                ☐ SaveTransactions (/Coupon/TSB/Transactions/Save) TESTED.
-                ☐ SyncTransactions (/Coupon/TSB/Transactions/Sync) TESTED.
+            Transactions (/Coupon/TSB/Transaction):
+                ☐ GetTransactions (/Coupon/TSB/Transaction/Gets) TESTED.
+                ☐ SaveTransactions (/Coupon/TSB/Transaction/Save) TESTED.
+                ☐ SyncTransactions (/Coupon/TSB/Transaction/Sync) TESTED.
         User <NEW!> (/Coupon/Users):
             ☐ GetBalance (/Coupon/Users/GetBalance) TESTED.
             ☐ GetSummaries (/Coupon/Users/GetSummaries) TESTED.
-            Transactions (/Coupon/Users/Transactions):
-                ☐ GetTransactions (/Coupon/Users/Transactions/Gets) TESTED.
-                ☐ SaveTransactions (/Coupon/Users/Transactions/Save) TESTED.
+            Transactions (/Coupon/User/Transaction):
+                ☐ GetTransactions (/Coupon/User/Transaction/Gets) TESTED.
+                ☐ SaveTransactions (/Coupon/User/Transaction/Save) TESTED.
     Credit (/Credit):
         TSB (/Credit/TSB):
             ☐ Get (/Credit/TSB/Get) TESTED.
@@ -32,24 +32,24 @@ Operations:
         Groups (/Exchange/Groups):
             ☐ GetTSBExchangeGroups (/Exchange/Groups/Gets) TESTED.
             ☐ SaveTSBExchangeGroup (/Exchange/Groups/Save) TESTED.
-        Transactions (/Exchange/Transactions:
-            ☐ GetTSBExchangeTransactions (/Exchange/Transactions/Gets) TESTED.
+        Transaction (/Exchange/Transaction):
+            ☐ GetTSBExchangeTransactions (/Exchange/Transaction/Gets) TESTED.
     Job (/Job):
         Attendances (/Job/Attendances):
-            ☐ Create (/Job/Attendances/Create) TESTED.
-            ☐ SaveAttendances (/Job/Attendances/Save) TESTED.
+            ✘ Create (/Job/Attendances/Create) TESTED. @cancelled(21-01-09 21:20)
+            ✘ SaveAttendances (/Job/Attendances/Save) TESTED. @cancelled(21-01-09 21:20)
             Search (/Job/Attendances/Search):
-                ☐ GetAttendancesByDate (/Job/Attendances/Search/Date) TESTED.
-                ☐ GetAttendancesByUserShifts (/Job/Attendances/Search/Shift) TESTED.
-                ☐ GetAttendancesByRevenue (/Job/Attendances/Search/Revenue) (has filter no entry) TESTED.
-                ☐ GetAttendancesByLanes (/Job/Attendances/Search/Lane) TESTED.
-        Attendances (/Job/Payments):
-            ☐ CreatePayment (/Job/Payments/Create) TESTED.
-            ☐ SavePayments (/Job/Payments/Save) TESTED.
+                ✘ GetAttendancesByDate (/Job/Attendances/Search/Date) TESTED. @cancelled(21-01-09 21:20)
+                ✘ GetAttendancesByUserShifts (/Job/Attendances/Search/Shift) TESTED. @cancelled(21-01-09 21:20)
+                ✘ GetAttendancesByRevenue (/Job/Attendances/Search/Revenue) (has filter no entry) TESTED. @cancelled(21-01-09 21:20)
+                ✘ GetAttendancesByLanes (/Job/Attendances/Search/Lane) TESTED. @cancelled(21-01-09 21:20)
+        Payments (/Job/Payments):
+            ✘ CreatePayment (/Job/Payments/Create) TESTED. @cancelled(21-01-09 21:20)
+            ✘ SavePayments (/Job/Payments/Save) TESTED. @cancelled(21-01-09 21:20)
             Search (/Job/Payments/Search):
-                ☐ GetPaymentsByDate (/Job/Payments/Search/Date) TESTED.
-                ☐ GetPaymentsByUserShifts (/Job/Payments/Search/Shift) TESTED.
-                ☐ GetPaymentsByLanes (/Job/Payments/Search/Lane) TESTED.
+                ✘ GetPaymentsByDate (/Job/Payments/Search/Date) TESTED. @cancelled(21-01-09 21:20)
+                ✘ GetPaymentsByUserShifts (/Job/Payments/Search/Shift) TESTED. @cancelled(21-01-09 21:20)
+                ✘ GetPaymentsByLanes (/Job/Payments/Search/Lane) TESTED. @cancelled(21-01-09 21:20)
     Master (/Master):
         ☐ GetCurrencies (/Master/Currency/Gets) TESTED.
         ☐ GetCoupons (/Master/Coupon/Gets) TESTED.
