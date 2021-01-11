@@ -33,8 +33,8 @@
                                DockPanel.Dock="Bottom">
                         <Grid Width="5" DockPanel.Dock="Left" />
                         <ctrl:ImageButton x:Name="cmdBack"
-                                          DockPanel.Dock="Left"
                                           Click="cmdBack_Click"
+                                          DockPanel.Dock="Left"
                                           ImageSource="/DMT.TOD.App;component/Images/Button/Cancel2.png">
                             <TextBlock Style="{StaticResource ImageButtonText}" Text="ยกเลิก" />
                         </ctrl:ImageButton>
@@ -70,15 +70,15 @@
                                DockPanel.Dock="Bottom">
                         <Grid Width="5" DockPanel.Dock="Left" />
                         <ctrl:ImageButton x:Name="cmdBack2"
-                                          DockPanel.Dock="Left"
                                           Click="cmdBack2_Click"
+                                          DockPanel.Dock="Left"
                                           ImageSource="/DMT.TOD.App;component/Images/Button/Cancel2.png">
                             <TextBlock Style="{StaticResource ImageButtonText}" Text="ยกเลิก" />
                         </ctrl:ImageButton>
                         <Grid Width="5" DockPanel.Dock="Left" />
                         <ctrl:ImageButton x:Name="cmdGotoRevenueEntryPreview"
-                                          DockPanel.Dock="Right"
                                           Click="cmdGotoRevenueEntryPreview_Click"
+                                          DockPanel.Dock="Right"
                                           ImageSource="/DMT.TOD.App;component/Images/Button/Money.png">
                             <TextBlock Style="{StaticResource ImageButtonText}" Text="นำส่งรายได้" />
                         </ctrl:ImageButton>
@@ -114,8 +114,8 @@
                         </ctrl:ImageButton>
                         <Grid Width="5" DockPanel.Dock="Left" />
                         <ctrl:ImageButton x:Name="cmdOk"
-                                          DockPanel.Dock="Right"
                                           Click="cmdOk_Click"
+                                          DockPanel.Dock="Right"
                                           ImageSource="/DMT.TOD.App;component/Images/Button/Approve.png">
                             <TextBlock Style="{StaticResource ImageButtonText}" Text="ยืนยัน นำส่งรายได้" />
                         </ctrl:ImageButton>
