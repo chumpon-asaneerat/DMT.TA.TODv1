@@ -16,21 +16,36 @@
                  BorderThickness="0"
                  Header="เลือกวันที่ของรายได้"
                  Visibility="Visible">
-            
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Auto"
+                          Background="Silver">
+                <DockPanel>
+                </DockPanel>
+            </ScrollViewer>
         </TabItem>
         <TabItem Background="Transparent"
                  BorderBrush="Transparent"
                  BorderThickness="0"
                  Header="ป้อนรายได้"
                  Visibility="Visible">
-
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Auto"
+                          Background="Silver">
+                <DockPanel>
+                </DockPanel>
+            </ScrollViewer>
         </TabItem>
         <TabItem Background="Transparent"
                  BorderBrush="Transparent"
                  BorderThickness="0"
                  Header="ยืนยันการป้อนรายได้"
                  Visibility="Visible">
-
+            <ScrollViewer VerticalScrollBarVisibility="Auto"
+                          HorizontalScrollBarVisibility="Auto"
+                          Background="Silver">
+                <DockPanel>
+                </DockPanel>
+            </ScrollViewer>
         </TabItem>
     </TabControl>
 </UserControl>
