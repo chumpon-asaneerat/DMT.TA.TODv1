@@ -4,26 +4,4 @@
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib"
                     mc:Ignorable="PresentationOptions">
-
-    <!--  FONT SIZE  -->
-    <sys:Double x:Key="EntryFontSize18" PresentationOptions:Freeze="True">18</sys:Double>
-
-    <!--  TEXT BOX COLORS  -->
-    <SolidColorBrush x:Key="EntryTextForeground" Color="WhiteSmoke" />
-
-    <!--  STACK PANEL STYLE  -->
-    <Style x:Key="EntryStackPanel" TargetType="StackPanel">
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Orientation" Value="Horizontal" />
-    </Style>
-
-    <!--  ENTRY HEADER CAPTION  -->
-    <Style x:Key="EntryHeaderCaption" TargetType="TextBlock">
-        <Setter Property="Width" Value="220" />
-        <Setter Property="FontSize" Value="{StaticResource EntryFontSize18}" />
-        <Setter Property="Foreground" Value="{StaticResource EntryTextForeground}" />
-        <Setter Property="TextAlignment" Value="Center" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Margin" Value="3" />
-    </Style>
 </ResourceDictionary>
