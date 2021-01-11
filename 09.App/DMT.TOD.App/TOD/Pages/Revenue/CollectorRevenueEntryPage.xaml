@@ -6,5 +6,31 @@
              d:DesignHeight="450"
              d:DesignWidth="800"
              mc:Ignorable="d">
-    <Grid />
+    <TabControl x:Name="tabs"                
+                Background="Transparent"
+                BorderBrush="Transparent"
+                BorderThickness="0"
+                SelectedIndex="0">
+        <TabItem Background="Transparent"
+                 BorderBrush="Transparent"
+                 BorderThickness="0"
+                 Header="เลือกวันที่ของรายได้"
+                 Visibility="Visible">
+            
+        </TabItem>
+        <TabItem Background="Transparent"
+                 BorderBrush="Transparent"
+                 BorderThickness="0"
+                 Header="ป้อนรายได้"
+                 Visibility="Visible">
+
+        </TabItem>
+        <TabItem Background="Transparent"
+                 BorderBrush="Transparent"
+                 BorderThickness="0"
+                 Header="ยืนยันการป้อนรายได้"
+                 Visibility="Visible">
+
+        </TabItem>
+    </TabControl>
 </UserControl>
