@@ -12,6 +12,11 @@
                 <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/ListBoxStyle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/ListViewStyle.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/TreeViewStyle.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/CommonEntryStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/CreditEntryStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/CouponEntryStyle.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/DMT.Controls;component/Themes/RevenueEntryStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

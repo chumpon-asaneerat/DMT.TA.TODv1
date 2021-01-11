@@ -136,7 +136,4 @@
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
-
-    <!--  COMBO BOX STYLE  -->
-    
 </ResourceDictionary>
