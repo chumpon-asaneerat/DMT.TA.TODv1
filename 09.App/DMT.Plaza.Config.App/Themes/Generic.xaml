@@ -12,6 +12,7 @@
         <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/ListViewStyle.xaml" />
         <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/TreeViewStyle.xaml" />
 
+        <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/CommonEntryStyle.xaml" />
         <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/CreditEntryStyle.xaml" />
         <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/CouponEntryStyle.xaml" />
         <ResourceDictionary Source="/DMT.Plaza.Config.App;component/Themes/RevenueEntryStyle.xaml" />
