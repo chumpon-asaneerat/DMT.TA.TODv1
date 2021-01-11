@@ -4,35 +4,17 @@
              xmlns:util="clr-namespace:DMT.Controls.Utils"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              d:DesignHeight="430"
              d:DesignWidth="240"
              Focusable="False"
              IsTabStop="False"
              mc:Ignorable="d">
     <UserControl.Resources>
-        <sys:Double x:Key="CommonFontSize">16</sys:Double>
-        <SolidColorBrush x:Key="TextForeground" Color="WhiteSmoke" />
-
-        <!--  STACK PANEL  -->
-        <Style x:Key="StackPanelStyle" TargetType="StackPanel">
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Orientation" Value="Horizontal" />
-        </Style>
-        <!--  HEADER CAPTION  -->
-        <Style x:Key="CaptionStyle" TargetType="TextBlock">
-            <Setter Property="Width" Value="220" />
-            <Setter Property="FontSize" Value="{StaticResource CommonFontSize}" />
-            <Setter Property="Foreground" Value="{StaticResource TextForeground}" />
-            <Setter Property="TextAlignment" Value="Center" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="Margin" Value="3" />
-        </Style>
         <!--  BANK NOTE DESCRIPTION  -->
         <Style x:Key="DescriptionStyle" TargetType="TextBlock">
             <Setter Property="Width" Value="80" />
-            <Setter Property="FontSize" Value="{StaticResource CommonFontSize}" />
-            <Setter Property="Foreground" Value="{StaticResource TextForeground}" />
+            <Setter Property="FontSize" Value="{StaticResource EntryFontSize18}" />
+            <Setter Property="Foreground" Value="{StaticResource EntryTextForeground}" />
             <Setter Property="TextAlignment" Value="Right" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="5,2" />
@@ -94,7 +76,7 @@
                BasedOn="{StaticResource CommonTextBox}"
                TargetType="TextBox">
             <Setter Property="Width" Value="80" />
-            <Setter Property="FontSize" Value="{StaticResource CommonFontSize}" />
+            <Setter Property="FontSize" Value="{StaticResource EntryFontSize18}" />
             <Setter Property="TextAlignment" Value="Right" />
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="Margin" Value="0,2" />
@@ -169,8 +151,8 @@
         <!--  BANK NOTE UNIT  -->
         <Style x:Key="UnitStyle" TargetType="TextBlock">
             <Setter Property="Width" Value="60" />
-            <Setter Property="FontSize" Value="{StaticResource CommonFontSize}" />
-            <Setter Property="Foreground" Value="{StaticResource TextForeground}" />
+            <Setter Property="FontSize" Value="{StaticResource EntryFontSize18}" />
+            <Setter Property="Foreground" Value="{StaticResource EntryTextForeground}" />
             <Setter Property="TextAlignment" Value="Left" />
             <Setter Property="Margin" Value="5,2" />
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -202,67 +184,67 @@
                     </LinearGradientBrush>
                 </Border.Background>
                 <TextBlock DockPanel.Dock="Left"
-                           Style="{StaticResource CaptionStyle}"
+                           Style="{StaticResource EntryHeaderCaption}"
                            Text="" />
             </Border>
             <!--  SEPERATOR  -->
             <TextBlock Height="5" DockPanel.Dock="Top" />
             <!--  1 BHT  -->
-            <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
+            <StackPanel DockPanel.Dock="Top" Style="{StaticResource EntryStackPanel}">
                 <TextBlock Style="{StaticResource BHT1Description}" />
                 <TextBox Style="{StaticResource BHT1Amount}" />
                 <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  2 BHT  -->
-            <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
+            <StackPanel DockPanel.Dock="Top" Style="{StaticResource EntryStackPanel}">
                 <TextBlock Style="{StaticResource BHT2Description}" />
                 <TextBox Style="{StaticResource BHT2Amount}" />
                 <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  5 BHT  -->
-            <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
+            <StackPanel DockPanel.Dock="Top" Style="{StaticResource EntryStackPanel}">
                 <TextBlock Style="{StaticResource BHT5Description}" />
                 <TextBox Style="{StaticResource BHT5Amount}" />
                 <TextBlock Style="{StaticResource ConinUnitStyle}" />
             </StackPanel>
             <!--  10 BHT  -->
-            <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
+            <StackPanel DockPanel.Dock="Top" Style="{StaticResource EntryStackPanel}">
                 <TextBlock Style="{StaticResource BHT10Description}" />
                 <TextBox Style="{StaticResource BHT10Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  20 BHT  -->
-            <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
+            <StackPanel DockPanel.Dock="Top" Style="{StaticResource EntryStackPanel}">
                 <TextBlock Style="{StaticResource BHT20Description}" />
                 <TextBox Style="{StaticResource BHT20Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  50 BHT  -->
-            <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
+            <StackPanel DockPanel.Dock="Top" Style="{StaticResource EntryStackPanel}">
                 <TextBlock Style="{StaticResource BHT50Description}" />
                 <TextBox Style="{StaticResource BHT50Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  100 BHT  -->
-            <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
+            <StackPanel DockPanel.Dock="Top" Style="{StaticResource EntryStackPanel}">
                 <TextBlock Style="{StaticResource BHT100Description}" />
                 <TextBox Style="{StaticResource BHT100Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  500 BHT  -->
-            <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
+            <StackPanel DockPanel.Dock="Top" Style="{StaticResource EntryStackPanel}">
                 <TextBlock Style="{StaticResource BHT500Description}" />
                 <TextBox Style="{StaticResource BHT500Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  1000 BHT  -->
-            <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
+            <StackPanel DockPanel.Dock="Top" Style="{StaticResource EntryStackPanel}">
                 <TextBlock Style="{StaticResource BHT1000Description}" />
                 <TextBox Style="{StaticResource BHT1000Amount}" />
                 <TextBlock Style="{StaticResource BillUnitStyle}" />
             </StackPanel>
             <!--  TOTAL BHT  -->
-            <StackPanel DockPanel.Dock="Top" Style="{StaticResource StackPanelStyle}">
+            <StackPanel DockPanel.Dock="Top" Style="{StaticResource EntryStackPanel}">
                 <TextBlock Style="{StaticResource BHTTotalDescription}" />
                 <TextBox IsEnabled="False" Style="{StaticResource BHTTotalAmount}" />
                 <TextBlock Style="{StaticResource TotalUnitStyle}" />
@@ -271,8 +253,8 @@
             <TextBlock Margin="10,2"
                        VerticalAlignment="Center"
                        DockPanel.Dock="Top"
-                       FontSize="{StaticResource CommonFontSize}"
-                       Foreground="{StaticResource TextForeground}"
+                       FontSize="{StaticResource EntryFontSize18}"
+                       Foreground="{StaticResource EntryTextForeground}"
                        Text="หมายเหตุ"
                        TextAlignment="Left" />
             <TextBox Width="220"
