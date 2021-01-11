@@ -11,5 +11,9 @@
         <ResourceDictionary Source="/DMT.Plaza.Simulator.App;component/Themes/ListBoxStyle.xaml" />
         <ResourceDictionary Source="/DMT.Plaza.Simulator.App;component/Themes/ListViewStyle.xaml" />
         <ResourceDictionary Source="/DMT.Plaza.Simulator.App;component/Themes/TreeViewStyle.xaml" />
+
+        <ResourceDictionary Source="/DMT.Plaza.Simulator.App;component/Themes/CreditEntryStyle.xaml" />
+        <ResourceDictionary Source="/DMT.Plaza.Simulator.App;component/Themes/CouponEntryStyle.xaml" />
+        <ResourceDictionary Source="/DMT.Plaza.Simulator.App;component/Themes/RevenueEntryStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 </ResourceDictionary>
