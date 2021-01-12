@@ -7,7 +7,7 @@
                     mc:Ignorable="PresentationOptions">
     <ResourceDictionary.MergedDictionaries>
         <!--  Force Merge related resource dictionary  -->
-        <ResourceDictionary Source="/DMT.Controls;component/Themes/CommonEntryStyle.xaml" />
+        <ResourceDictionary Source="/DMT.Controls;component/Themes/CommonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
     <!--  FONT SIZE  -->
