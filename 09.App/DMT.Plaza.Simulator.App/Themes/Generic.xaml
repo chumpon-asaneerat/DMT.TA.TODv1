@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/DMT.Plaza.Simulator.App;component/Themes/__CommonStyle.xaml" />
+        <ResourceDictionary Source="/DMT.Plaza.Simulator.App;component/Themes/CommonStyle.xaml" />
         <!-- 
         <ResourceDictionary Source="/DMT.Plaza.Simulator.App;component/Themes/GroupMenuStyle.xaml" />
         <ResourceDictionary Source="/DMT.Plaza.Simulator.App;component/Themes/ImageButtonStyle.xaml" />
