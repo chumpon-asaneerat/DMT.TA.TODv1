@@ -64,7 +64,7 @@
                             <Setter TargetName="bg" Property="Opacity" Value=".5" />
                             <Setter TargetName="bg" Property="Background" Value="{StaticResource TextBoxDisableBackground}" />
                             <Setter Property="Foreground" Value="{StaticResource TextBoxDisableForeground}" />
-                            <Setter Property="Opacity" Value=".9" />
+                            <Setter Property="Opacity" Value="1" />
                         </Trigger>
 
                         <Trigger Property="IsEnabled" Value="False">
