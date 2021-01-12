@@ -104,6 +104,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Config\Controls\Utils\AttachProperties.cs" />
     <Compile Include="Config\Pages\ShiftViewPage.xaml.cs">
       <DependentUpon>ShiftViewPage.xaml</DependentUpon>
     </Compile>
@@ -227,7 +228,6 @@
     <Resource Include="Images\Networks\plaza_network2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Config\Controls\" />
     <Folder Include="Config\Windows\" />
   </ItemGroup>
   <ItemGroup>
