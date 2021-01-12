@@ -6,10 +6,11 @@
                     xmlns:util="clr-namespace:DMT.Controls.Utils"
                     mc:Ignorable="PresentationOptions">
     <ResourceDictionary.MergedDictionaries>
-        <!-- Force Merge related resource dictionary -->
+        <!--  Force Merge related resource dictionary  -->
         <ResourceDictionary Source="/DMT.Plaza.Simulator.App;component/Themes/CommonStyle.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <!--  FONT SIZE  -->
     <sys:Double x:Key="EntryFontSize18">18</sys:Double>
 
     <!--  TEXT BOX COLORS  -->
@@ -17,7 +18,7 @@
                      PresentationOptions:Freeze="True"
                      Color="WhiteSmoke" />
 
-    <!--  STACK PANEL STYLE  -->
+    <!--  ENTRY STACK PANEL STYLE  -->
     <Style x:Key="EntryStackPanel" TargetType="StackPanel">
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Orientation" Value="Horizontal" />
@@ -31,67 +32,6 @@
         <Setter Property="TextAlignment" Value="Center" />
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Margin" Value="3" />
-    </Style>
-
-    <!--  COMMON BANK NOTE DESCRIPTION  -->
-    <Style x:Key="BankNoteDescriptionStyle" TargetType="TextBlock">
-        <Setter Property="Width" Value="80" />
-        <Setter Property="FontSize" Value="{StaticResource EntryFontSize18}" />
-        <Setter Property="Foreground" Value="{StaticResource EntryTextForeground}" />
-        <Setter Property="TextAlignment" Value="Right" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="Margin" Value="5,2" />
-    </Style>
-    <!--  EACH BANK NOTE DESCRIPTION  -->
-    <Style x:Key="BHT1Description"
-           BasedOn="{StaticResource BankNoteDescriptionStyle}"
-           TargetType="TextBlock">
-        <Setter Property="Text" Value="1 บาท" />
-    </Style>
-    <Style x:Key="BHT2Description"
-           BasedOn="{StaticResource BankNoteDescriptionStyle}"
-           TargetType="TextBlock">
-        <Setter Property="Text" Value="2 บาท" />
-    </Style>
-    <Style x:Key="BHT5Description"
-           BasedOn="{StaticResource BankNoteDescriptionStyle}"
-           TargetType="TextBlock">
-        <Setter Property="Text" Value="5 บาท" />
-    </Style>
-    <Style x:Key="BHT10Description"
-           BasedOn="{StaticResource BankNoteDescriptionStyle}"
-           TargetType="TextBlock">
-        <Setter Property="Text" Value="10 บาท" />
-    </Style>
-    <Style x:Key="BHT20Description"
-           BasedOn="{StaticResource BankNoteDescriptionStyle}"
-           TargetType="TextBlock">
-        <Setter Property="Text" Value="20 บาท" />
-    </Style>
-    <Style x:Key="BHT50Description"
-           BasedOn="{StaticResource BankNoteDescriptionStyle}"
-           TargetType="TextBlock">
-        <Setter Property="Text" Value="50 บาท" />
-    </Style>
-    <Style x:Key="BHT100Description"
-           BasedOn="{StaticResource BankNoteDescriptionStyle}"
-           TargetType="TextBlock">
-        <Setter Property="Text" Value="100 บาท" />
-    </Style>
-    <Style x:Key="BHT500Description"
-           BasedOn="{StaticResource BankNoteDescriptionStyle}"
-           TargetType="TextBlock">
-        <Setter Property="Text" Value="500 บาท" />
-    </Style>
-    <Style x:Key="BHT1000Description"
-           BasedOn="{StaticResource BankNoteDescriptionStyle}"
-           TargetType="TextBlock">
-        <Setter Property="Text" Value="1000 บาท" />
-    </Style>
-    <Style x:Key="BHTTotalDescription"
-           BasedOn="{StaticResource BankNoteDescriptionStyle}"
-           TargetType="TextBlock">
-        <Setter Property="Text" Value="ยอดรวม" />
     </Style>
 
     <!--  BANK NOTE AMOUNT (TEXTBOX)  -->
@@ -109,5 +49,15 @@
         <Setter Property="util:KeyboardOptions.EnterAsTab" Value="True" />
         <Setter Property="util:KeyboardOptions.UpDownNavigation" Value="True" />
         <Setter Property="util:KeyboardOptions.LeftRightNavigation" Value="True" />
+    </Style>
+
+    <!--  BANK NOTE UNIT  -->
+    <Style x:Key="UnitStyle" TargetType="TextBlock">
+        <Setter Property="Width" Value="60" />
+        <Setter Property="FontSize" Value="{StaticResource EntryFontSize18}" />
+        <Setter Property="Foreground" Value="{StaticResource EntryTextForeground}" />
+        <Setter Property="TextAlignment" Value="Left" />
+        <Setter Property="Margin" Value="5,2" />
+        <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
 </ResourceDictionary>
