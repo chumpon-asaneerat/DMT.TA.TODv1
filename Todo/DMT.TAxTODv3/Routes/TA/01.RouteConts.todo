@@ -1,45 +1,46 @@
 Operations:
-    Shift (/Shift):
-        ☐ Gets (/Shift/Gets) refactored.
-        ☐ Save (/Shift/Seve) refactored.
-        TSB (/Shift/TSB):
-            ☐ Current(/Shift/TSB/Current)  refactored.
-    Infrastructure (/Infrastructure):
-        TSBs (/Infrastructure/TSB):
-            ☐ Gets (/Infrastructure/TSB/Gets) refactored.
-            ☐ Current (/Infrastructure/TSB/Current) refactored.
-            ☐ SetActive (/Infrastructure/TSB/SetActive) refactored.
-            ☐ Save (/Infrastructure/TSB/Save) refactored.
-        PlazaGroups (/Infrastructure/PlazaGroup):
-            ☐ Gets (/Infrastructure/PlazaGroup/Gets) refactored.
-            ☐ Save (/Infrastructure/PlazaGroup/Save) refactored.
-            Search (/Infrastructure/PlazaGroup/Search):
-                ☐ ByTSB (/Infrastructure/PlazaGroup/Search/ByTSB) refactored.
-        Plazas (/Infrastructure/Plaza):
-            ☐ Gets (/Infrastructure/Plaza/Gets) refactored.
-            ☐ Save (/Infrastructure/Plaza/Save) refactored.
-            Search (/Infrastructure/Plaza/Search):
-                ☐ ByTSB (/Infrastructure/Plaza/Search/ByTSB) refactored.
-                ☐ ByPlazaGroup (/Infrastructure/Plaza/Search/ByPlazaGroup) refactored.
-        Lanes (/Infrastructure/Lane):
-            ☐ Gets (/Infrastructure/Lane/Gets) refactored.
-            ☐ Save (/Infrastructure/Lane/Save) refactored.
-            Search (/TSB/Lane/Search):
-                ☐ ByTSB (/Infrastructure/Lane/Search/ByTSB) refactored.
-                ☐ ByPlazaGroup (/Infrastructure/Lane/Search/ByPlazaGroup) refactored.
-                ☐ ByPlaza (/Infrastructure/Lane/Search/ByPlaza) refactored.
-    Security (/Security):
-        Role (/Security/Role):
-            ☐ Gets (/User/Role/Gets) refactored.
-            ☐ Save (/User/Role/Save) refactored.
-        User (/Security/User):
-            ☐ Gets (/User/User/Gets) refactored.
-            ☐ Save (/User/User/Save) refactored.
-            Search (/Security/User/Search):
-                ☐ ById (/Security/User/Search/ById) refactored.
-                ☐ ByCardNo (/Security/User/Search/ByCardNo) refactored.
-                ☐ ByLogIn (/Security/User/Search/ByLogIn) refactored.
-                ☐ ByGroupId (/Security/User/Search/ByGroupId) refactored.
-                ☐ ByRoleId (/Security/User/Search/ByRoleId) refactored.
-                ☐ ByFilter (/Security/User/Search/ByFilter) refactored.
+    TA:
+        Shift (/TA/Shift):
+            ☐ Gets (/TA/Shift/Gets) refactored.
+            ☐ Save (/TA/Shift/Seve) refactored.
+            TSB (/TA/Shift/TSB):
+                ☐ Current(/TA/Shift/TSB/Current)  refactored.
+        Infrastructure (/TA/Infrastructure):
+            TSBs (/TA/Infrastructure/TSB):
+                ☐ Gets (/TA/Infrastructure/TSB/Gets) refactored.
+                ☐ Current (/TA/Infrastructure/TSB/Current) refactored.
+                ☐ SetActive (/TA/Infrastructure/TSB/SetActive) refactored.
+                ☐ Save (/TA/Infrastructure/TSB/Save) refactored.
+            PlazaGroups (/TA/Infrastructure/PlazaGroup):
+                ☐ Gets (/TA/Infrastructure/PlazaGroup/Gets) refactored.
+                ☐ Save (/TA/Infrastructure/PlazaGroup/Save) refactored.
+                Search (/TA/Infrastructure/PlazaGroup/Search):
+                    ☐ ByTSB (/TA/Infrastructure/PlazaGroup/Search/ByTSB) refactored.
+            Plazas (/TA/Infrastructure/Plaza):
+                ☐ Gets (/TA/Infrastructure/Plaza/Gets) refactored.
+                ☐ Save (/TA/Infrastructure/Plaza/Save) refactored.
+                Search (/TA/Infrastructure/Plaza/Search):
+                    ☐ ByTSB (/TA/Infrastructure/Plaza/Search/ByTSB) refactored.
+                    ☐ ByPlazaGroup (/TA/Infrastructure/Plaza/Search/ByPlazaGroup) refactored.
+            Lanes (/TA/Infrastructure/Lane):
+                ☐ Gets (/TA/Infrastructure/Lane/Gets) refactored.
+                ☐ Save (/TA/Infrastructure/Lane/Save) refactored.
+                Search (/TA/TSB/Lane/Search):
+                    ☐ ByTSB (/TA/Infrastructure/Lane/Search/ByTSB) refactored.
+                    ☐ ByPlazaGroup (/TA/Infrastructure/Lane/Search/ByPlazaGroup) refactored.
+                    ☐ ByPlaza (/TA/Infrastructure/Lane/Search/ByPlaza) refactored.
+        Security (/TA/Security):
+            Role (/TA/Security/Role):
+                ☐ Gets (/TA/User/Role/Gets) refactored.
+                ☐ Save (/TA/User/Role/Save) refactored.
+            User (/TA/Security/User):
+                ☐ Gets (/TA/User/User/Gets) refactored.
+                ☐ Save (/TA/User/User/Save) refactored.
+                Search (/TA/Security/User/Search):
+                    ☐ ById (/TA/Security/User/Search/ById) refactored.
+                    ☐ ByCardNo (/TA/Security/User/Search/ByCardNo) refactored.
+                    ☐ ByLogIn (/TA/Security/User/Search/ByLogIn) refactored.
+                    ☐ ByGroupId (/TA/Security/User/Search/ByGroupId) refactored.
+                    ☐ ByRoleId (/TA/Security/User/Search/ByRoleId) refactored.
+                    ☐ ByFilter (/TA/Security/User/Search/ByFilter) refactored.
                         
