@@ -1,14 +1,14 @@
 Operations:
     TOD:
         Shift (/TOD/Shift):
-            ☐ Gets (/TOD/Shift/Gets) refactored.
-            ☐ Save (/TOD/Shift/Seve) refactored.
+            ✔ Gets (/TOD/Shift/Gets) refactored. @done(21-01-15 08:50)
+            ✔ Save (/TOD/Shift/Seve) refactored. @done(21-01-15 08:50)
             TSB (/TOD/Shift/TSB):
-                ☐ Current(/TOD/Shift/TSB/Current)  refactored.
-                Users (/TOD/Shift/User):
-                    ☐ Current (/TOD/Shift/User/Current) refactored.
-                    Search (/TOD/Shift/User/Search):
-                        ☐ ByStatus (/TOD/Shift/User/Search/ByStatus) (all/close/unclose) refactored.
+                ✔ Current(/TOD/Shift/TSB/Current)  refactored. @done(21-01-15 08:51)
+            Users (/TOD/Shift/User):
+                ☐ Current (/TOD/Shift/User/Current) refactored.
+                Search (/TOD/Shift/User/Search):
+                    ☐ ByStatus (/TOD/Shift/User/Search/ByStatus) (all/close/unclose) refactored.
         Infrastructure (/TOD/Infrastructure):
             TSBs (/TOD/Infrastructure/TSB):
                 ✔ Gets (/TOD/Infrastructure/TSB/Gets) refactored. @done(21-01-15 08:25)
@@ -35,16 +35,16 @@ Operations:
                     ✔ ByPlaza (/TOD/Infrastructure/Lane/Search/ByPlaza) refactored. @done(21-01-15 08:25)
         Security (/TOD/Security):
             Role (/TOD/Security/Role):
-                ☐ Gets (/TOD/User/Role/Gets) refactored.
-                ☐ Save (/TOD/User/Role/Save) refactored.
+                ✔ Gets (/TOD/User/Role/Gets) refactored. @done(21-01-15 08:36)
+                ✔ Save (/TOD/User/Role/Save) refactored. @done(21-01-15 08:36)
             User (/TOD/Security/User):
-                ☐ Gets (/TOD/User/User/Gets) refactored.
-                ☐ Save (/TOD/User/User/Save) refactored.
+                ✔ Gets (/TOD/User/User/Gets) refactored. @done(21-01-15 08:36)
+                ✔ Save (/TOD/User/User/Save) refactored. @done(21-01-15 08:36)
                 Search (/TOD/Security/User/Search):
-                    ☐ ById (/TOD/Security/User/Search/ById) refactored.
-                    ☐ ByCardNo (/TOD/Security/User/Search/ByCardNo) refactored.
-                    ☐ ByLogIn (/TOD/Security/User/Search/ByLogIn) refactored.
-                    ☐ ByGroupId (/TOD/Security/User/Search/ByGroupId) refactored.
-                    ☐ ByRoleId (/TOD/Security/User/Search/ByRoleId) refactored.
-                    ☐ ByFilter (/TOD/Security/User/Search/ByFilter) refactored.
+                    ✔ ById (/TOD/Security/User/Search/ById) refactored. @done(21-01-15 08:36)
+                    ✔ ByCardNo (/TOD/Security/User/Search/ByCardNo) refactored. @done(21-01-15 08:36)
+                    ✔ ByLogIn (/TOD/Security/User/Search/ByLogIn) refactored. @done(21-01-15 08:36)
+                    ✔ ByGroupId (/TOD/Security/User/Search/ByGroupId) refactored. @done(21-01-15 08:36)
+                    ✔ ByRoleId (/TOD/Security/User/Search/ByRoleId) refactored. @done(21-01-15 08:36)
+                    ✔ ByFilter (/TOD/Security/User/Search/ByFilter) refactored. @done(21-01-15 08:36)
                                 

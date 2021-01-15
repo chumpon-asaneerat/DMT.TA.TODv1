@@ -1,10 +1,8 @@
 Operations:
     TA:
         Shift (/TA/Shift):
-            ☐ Gets (/TA/Shift/Gets) refactored.
-            ☐ Save (/TA/Shift/Seve) refactored.
-            TSB (/TA/Shift/TSB):
-                ☐ Current(/TA/Shift/TSB/Current)  refactored.
+            ✔ Gets (/TA/Shift/Gets) refactored. @done(21-01-15 08:51)
+            ✔ Save (/TA/Shift/Seve) refactored. @done(21-01-15 08:51)
         Infrastructure (/TA/Infrastructure):
             TSBs (/TA/Infrastructure/TSB):
                 ✔ Gets (/TA/Infrastructure/TSB/Gets) refactored. @done(21-01-15 08:25)
@@ -31,16 +29,16 @@ Operations:
                     ✔ ByPlaza (/TA/Infrastructure/Lane/Search/ByPlaza) refactored. @done(21-01-15 08:26)
         Security (/TA/Security):
             Role (/TA/Security/Role):
-                ☐ Gets (/TA/User/Role/Gets) refactored.
-                ☐ Save (/TA/User/Role/Save) refactored.
+                ✔ Gets (/TA/User/Role/Gets) refactored. @done(21-01-15 08:35)
+                ✔ Save (/TA/User/Role/Save) refactored. @done(21-01-15 08:35)
             User (/TA/Security/User):
-                ☐ Gets (/TA/User/User/Gets) refactored.
-                ☐ Save (/TA/User/User/Save) refactored.
+                ✔ Gets (/TA/User/User/Gets) refactored. @done(21-01-15 08:36)
+                ✔ Save (/TA/User/User/Save) refactored. @done(21-01-15 08:36)
                 Search (/TA/Security/User/Search):
-                    ☐ ById (/TA/Security/User/Search/ById) refactored.
-                    ☐ ByCardNo (/TA/Security/User/Search/ByCardNo) refactored.
-                    ☐ ByLogIn (/TA/Security/User/Search/ByLogIn) refactored.
-                    ☐ ByGroupId (/TA/Security/User/Search/ByGroupId) refactored.
-                    ☐ ByRoleId (/TA/Security/User/Search/ByRoleId) refactored.
-                    ☐ ByFilter (/TA/Security/User/Search/ByFilter) refactored.
+                    ✔ ById (/TA/Security/User/Search/ById) refactored. @done(21-01-15 08:36)
+                    ✔ ByCardNo (/TA/Security/User/Search/ByCardNo) refactored. @done(21-01-15 08:36)
+                    ✔ ByLogIn (/TA/Security/User/Search/ByLogIn) refactored. @done(21-01-15 08:36)
+                    ✔ ByGroupId (/TA/Security/User/Search/ByGroupId) refactored. @done(21-01-15 08:36)
+                    ✔ ByRoleId (/TA/Security/User/Search/ByRoleId) refactored. @done(21-01-15 08:36)
+                    ✔ ByFilter (/TA/Security/User/Search/ByFilter) refactored. @done(21-01-15 08:36)
                         

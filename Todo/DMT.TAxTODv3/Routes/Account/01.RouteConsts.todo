@@ -24,15 +24,15 @@ Operations:
                     ✔ ByPlaza (/Account/Infrastructure/Lane/Search/ByPlaza) refactored. @done(21-01-15 08:25)
         Security (/Account/Security):
             Role (/Account/Security/Role):
-                ☐ Gets (/Account/User/Role/Gets) refactored.
-                ☐ Save (/Account/User/Role/Save) refactored.
+                ✔ Gets (/Account/User/Role/Gets) refactored. @done(21-01-15 08:36)
+                ✔ Save (/Account/User/Role/Save) refactored. @done(21-01-15 08:36)
             User (/Account/Security/User):
-                ☐ Gets (/Account/User/User/Gets) refactored.
-                ☐ Save (/Account/User/User/Save) refactored.
+                ✔ Gets (/Account/User/User/Gets) refactored. @done(21-01-15 08:36)
+                ✔ Save (/Account/User/User/Save) refactored. @done(21-01-15 08:36)
                 Search (/Account/Security/User/Search):
-                    ☐ ById (/Account/Security/User/Search/ById) refactored.
-                    ☐ ByCardNo (/Account/Security/User/Search/ByCardNo) refactored.
-                    ☐ ByLogIn (/Account/Security/User/Search/ByLogIn) refactored.
-                    ☐ ByGroupId (/Account/Security/User/Search/ByGroupId) refactored.
-                    ☐ ByRoleId (/Account/Security/User/Search/ByRoleId) refactored.
-                    ☐ ByFilter (/Account/Security/User/Search/ByFilter) refactored.
+                    ✔ ById (/Account/Security/User/Search/ById) refactored. @done(21-01-15 08:36)
+                    ✔ ByCardNo (/Account/Security/User/Search/ByCardNo) refactored. @done(21-01-15 08:36)
+                    ✔ ByLogIn (/Account/Security/User/Search/ByLogIn) refactored. @done(21-01-15 08:36)
+                    ✔ ByGroupId (/Account/Security/User/Search/ByGroupId) refactored. @done(21-01-15 08:36)
+                    ✔ ByRoleId (/Account/Security/User/Search/ByRoleId) refactored. @done(21-01-15 08:36)
+                    ✔ ByFilter (/Account/Security/User/Search/ByFilter) refactored. @done(21-01-15 08:36)
