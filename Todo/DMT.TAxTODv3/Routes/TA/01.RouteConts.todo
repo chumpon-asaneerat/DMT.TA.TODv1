@@ -7,28 +7,28 @@ Operations:
                 ☐ Current(/TA/Shift/TSB/Current)  refactored.
         Infrastructure (/TA/Infrastructure):
             TSBs (/TA/Infrastructure/TSB):
-                ☐ Gets (/TA/Infrastructure/TSB/Gets) refactored.
-                ☐ Current (/TA/Infrastructure/TSB/Current) refactored.
-                ☐ SetActive (/TA/Infrastructure/TSB/SetActive) refactored.
-                ☐ Save (/TA/Infrastructure/TSB/Save) refactored.
+                ✔ Gets (/TA/Infrastructure/TSB/Gets) refactored. @done(21-01-15 08:25)
+                ✔ Current (/TA/Infrastructure/TSB/Current) refactored. @done(21-01-15 08:25)
+                ✔ SetActive (/TA/Infrastructure/TSB/SetActive) refactored. @done(21-01-15 08:25)
+                ✔ Save (/TA/Infrastructure/TSB/Save) refactored. @done(21-01-15 08:25)
             PlazaGroups (/TA/Infrastructure/PlazaGroup):
-                ☐ Gets (/TA/Infrastructure/PlazaGroup/Gets) refactored.
-                ☐ Save (/TA/Infrastructure/PlazaGroup/Save) refactored.
+                ✔ Gets (/TA/Infrastructure/PlazaGroup/Gets) refactored. @done(21-01-15 08:25)
+                ✔ Save (/TA/Infrastructure/PlazaGroup/Save) refactored. @done(21-01-15 08:25)
                 Search (/TA/Infrastructure/PlazaGroup/Search):
-                    ☐ ByTSB (/TA/Infrastructure/PlazaGroup/Search/ByTSB) refactored.
+                    ✔ ByTSB (/TA/Infrastructure/PlazaGroup/Search/ByTSB) refactored. @done(21-01-15 08:25)
             Plazas (/TA/Infrastructure/Plaza):
-                ☐ Gets (/TA/Infrastructure/Plaza/Gets) refactored.
-                ☐ Save (/TA/Infrastructure/Plaza/Save) refactored.
+                ✔ Gets (/TA/Infrastructure/Plaza/Gets) refactored. @done(21-01-15 08:25)
+                ✔ Save (/TA/Infrastructure/Plaza/Save) refactored. @done(21-01-15 08:25)
                 Search (/TA/Infrastructure/Plaza/Search):
-                    ☐ ByTSB (/TA/Infrastructure/Plaza/Search/ByTSB) refactored.
-                    ☐ ByPlazaGroup (/TA/Infrastructure/Plaza/Search/ByPlazaGroup) refactored.
+                    ✔ ByTSB (/TA/Infrastructure/Plaza/Search/ByTSB) refactored. @done(21-01-15 08:25)
+                    ✔ ByPlazaGroup (/TA/Infrastructure/Plaza/Search/ByPlazaGroup) refactored. @done(21-01-15 08:25)
             Lanes (/TA/Infrastructure/Lane):
-                ☐ Gets (/TA/Infrastructure/Lane/Gets) refactored.
-                ☐ Save (/TA/Infrastructure/Lane/Save) refactored.
+                ✔ Gets (/TA/Infrastructure/Lane/Gets) refactored. @done(21-01-15 08:25)
+                ✔ Save (/TA/Infrastructure/Lane/Save) refactored. @done(21-01-15 08:25)
                 Search (/TA/TSB/Lane/Search):
-                    ☐ ByTSB (/TA/Infrastructure/Lane/Search/ByTSB) refactored.
-                    ☐ ByPlazaGroup (/TA/Infrastructure/Lane/Search/ByPlazaGroup) refactored.
-                    ☐ ByPlaza (/TA/Infrastructure/Lane/Search/ByPlaza) refactored.
+                    ✔ ByTSB (/TA/Infrastructure/Lane/Search/ByTSB) refactored. @done(21-01-15 08:25)
+                    ✔ ByPlazaGroup (/TA/Infrastructure/Lane/Search/ByPlazaGroup) refactored. @done(21-01-15 08:26)
+                    ✔ ByPlaza (/TA/Infrastructure/Lane/Search/ByPlaza) refactored. @done(21-01-15 08:26)
         Security (/TA/Security):
             Role (/TA/Security/Role):
                 ☐ Gets (/TA/User/Role/Gets) refactored.
