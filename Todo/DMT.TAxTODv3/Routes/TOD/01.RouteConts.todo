@@ -1,7 +1,4 @@
 Operations:
-    Master (/Master):
-        ☐ GetCurrencies (/Master/Currency/Gets) refactored.
-        ☐ GetCoupons (/Master/Coupon/Gets) refactored.
     Shift (/Shift):
         ☐ Gets (/Shift/Gets) refactored.
         ☐ Save (/Shift/Seve) refactored.

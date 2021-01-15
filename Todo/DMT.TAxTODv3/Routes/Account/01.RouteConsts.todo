@@ -1,9 +1,4 @@
 Operations:
-    Shift (/Shift):
-        ☐ Gets (/Shift/Gets) refactored.
-        ☐ Save (/Shift/Seve) refactored.
-        TSB (/Shift/TSB):
-            ☐ Current(/Shift/TSB/Current)  refactored.
     Infrastructure (/Infrastructure):
         TSBs (/Infrastructure/TSB):
             ☐ Gets (/Infrastructure/TSB/Gets) refactored.
@@ -42,4 +37,3 @@ Operations:
                 ☐ ByGroupId (/Security/User/Search/ByGroupId) refactored.
                 ☐ ByRoleId (/Security/User/Search/ByRoleId) refactored.
                 ☐ ByFilter (/Security/User/Search/ByFilter) refactored.
-                        
