@@ -41,4 +41,37 @@ Operations:
                     ✔ ByGroupId (/TA/Security/User/Search/ByGroupId) refactored. @done(21-01-15 08:36)
                     ✔ ByRoleId (/TA/Security/User/Search/ByRoleId) refactored. @done(21-01-15 08:36)
                     ✔ ByFilter (/TA/Security/User/Search/ByFilter) refactored. @done(21-01-15 08:36)
-                        
+        Coupon (/TA/Coupon):
+            TSB (/TA/Coupon/TSB):
+                ☐ GetBalance (/TA/Coupon/TSB/GetBalance) refactored.
+                ☐ GetSummaries (/TA/Coupon/TSB/GetSummaries) refactored.
+                Transaction (/TA/Coupon/TSB/Transaction):
+                    ✔ Gets (/TA/Coupon/TSB/Transaction/Gets) refactored. @done(21-01-15 09:05)
+                    ✔ Save (/TA/Coupon/TSB/Transaction/Save) refactored. @done(21-01-15 09:05)
+                    ☐ Sync (/TA/Coupon/TSB/Transaction/Sync) refactored.
+            User (/TA/Coupon/User):
+                ☐ GetBalance (/TA/Coupon/User/GetBalance) refactored.
+                ☐ GetSummaries (/TA/Coupon/User/GetSummaries) refactored.
+                Transaction (/TA/Coupon/User/Transaction):
+                    ✔ Gets (/TA/Coupon/User/Transaction/Gets) refactored. @done(21-01-15 09:06)
+                    ✔ Save (/TA/Coupon/User/Transaction/Save) refactored. @done(21-01-15 09:06)
+        Credit (/TA/Credit):
+            TSB (/TA/Credit/TSB):
+                ✔ Current (/TA/Credit/TSB/Current) refactored. @done(21-01-15 09:07)
+                Transaction (/TA/Credit/TSB/Transaction):
+                    ✔ Gets (/TA/Credit/TSB/Transaction/Gets) refactored. @done(21-01-15 09:07)
+                    ✔ Save (/TA/Credit/TSB/Transaction/Save) refactored. @done(21-01-15 09:07)
+            User (/TA/Credit/User):
+                ✔ Current (/TA/Credit/User/Current) refactored. @done(21-01-15 09:07)
+                ✔ Cancel (/TA/Credit/User/Cancel) refactored. @done(21-01-15 09:07)
+                ✔ Save (/TA/Credit/User/Save) refactored. @done(21-01-15 09:07)
+                Transaction (/TA/Credit/User/Transaction):
+                    ✔ Gets (/TA/Credit/User/Transaction/Gets) refactored. @done(21-01-15 09:07)
+                    ✔ Save (/TA/Credit/User/Transaction/Save) refactored. @done(21-01-15 09:07)
+        Exchange (/TA/Exchange):
+            Groups (/TA/Exchange/Groups):
+                ☐ Gets (/TA/Exchange/Groups/Gets) refactored.
+                ☐ Save (/TA/Exchange/Groups/Save) refactored.
+            Transaction (/TA/Exchange/Transaction):
+                ☐ GetTSBExchangeTransactions (/TA/Exchange/Transaction/Gets) refactored.
+                                        

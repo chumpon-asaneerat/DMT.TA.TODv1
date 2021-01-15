@@ -6,7 +6,7 @@ Operations:
             TSB (/TOD/Shift/TSB):
                 ✔ Current(/TOD/Shift/TSB/Current)  refactored. @done(21-01-15 08:51)
             Users (/TOD/Shift/User):
-                ☐ Current (/TOD/Shift/User/Current) refactored.
+                ✔ Current (/TOD/Shift/User/Current) refactored. @done(21-01-15 08:52)
                 Search (/TOD/Shift/User/Search):
                     ☐ ByStatus (/TOD/Shift/User/Search/ByStatus) (all/close/unclose) refactored.
         Infrastructure (/TOD/Infrastructure):
