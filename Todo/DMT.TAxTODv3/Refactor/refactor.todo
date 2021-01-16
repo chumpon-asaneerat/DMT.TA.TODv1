@@ -17,7 +17,7 @@ Refactor:
             ☐ Add ListBox Style xaml.
     DMT.Plaza.Sumulator.App:
         ☐ Update ListBox, ListBoxItem Style for Rounded Connor Item Selection.
-        ☐ Refactor Lane Simulator view page.
+        ✔ Refactor Lane Simulator view page. @done(21-01-16 20:58)
         ☐ Refactor User Selection window.
         ☐ Common Code for Singleton/Static Access All Pages, Windows.
         Styles:
