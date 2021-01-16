@@ -11,7 +11,7 @@ Refactor:
         Styles:
             ☐ Add ListBox Style xaml.
     DMT.Plaza.Config.App:
-        ☐ TSBViewPage Refactor to used TabControl for TA, TOD.
+        ✔ TSBViewPage Refactor to used TabControl for TA, TOD. @done(21-01-16 20:32)
         ☐ Common Code for Singleton/Static Access All Pages, Windows.
         Styles:
             ☐ Add ListBox Style xaml.
