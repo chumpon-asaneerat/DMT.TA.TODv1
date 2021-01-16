@@ -14,14 +14,14 @@ Refactor:
         ✔ TSBViewPage Refactor to used TabControl for TA, TOD. @done(21-01-16 20:32)
         ☐ Common Code for Singleton/Static Access All Pages, Windows.
         Styles:
-            ☐ Add ListBox Style xaml.
+            ✔ Add ListBox Style xaml. @done(21-01-17 00:10)
     DMT.Plaza.Sumulator.App:
         ☐ Update ListBox, ListBoxItem Style for Rounded Connor Item Selection.
         ✔ Refactor Lane Simulator view page. @done(21-01-16 20:58)
         ☐ Refactor User Selection window.
         ☐ Common Code for Singleton/Static Access All Pages, Windows.
         Styles:
-            ☐ Add ListBox Style xaml.
+            ✔ Add ListBox Style xaml. @done(21-01-17 00:10)
     DMT.Account.App:
         Controls:
             ☐ Add Config for disply status bars.
