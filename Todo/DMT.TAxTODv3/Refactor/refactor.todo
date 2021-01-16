@@ -1,0 +1,48 @@
+Refactor:
+    DMT.Models:
+        ☐ Add Table UserAccess Table.
+        ☐ Re-implements RabbitMQStaff ToLocal method to supports password and status.
+        ☐ Need method to call when login success/failed to track time and number of login failed.
+    DMT.RabbitMQ.Client:
+        ☐ Update code in ProcessJson method.
+    DMT.Controls:
+        AttachProperties:
+            ☐ Add Supports MaxLength for auto change focus (FocusOptions).
+        Styles:
+            ☐ Add ListBox Style xaml.
+    DMT.Plaza.Config.App:
+        ☐ TSBViewPage Refactor to used TabControl for TA, TOD.
+        ☐ Common Code for Singleton/Static Access All Pages, Windows.
+        Styles:
+            ☐ Add ListBox Style xaml.
+    DMT.Plaza.Sumulator.App:
+        ☐ Update ListBox, ListBoxItem Style for Rounded Connor Item Selection.
+        ☐ Refactor Lane Simulator view page.
+        ☐ Refactor User Selection window.
+        ☐ Common Code for Singleton/Static Access All Pages, Windows.
+        Styles:
+            ☐ Add ListBox Style xaml.
+    DMT.Account.App:
+        Controls:
+            ☐ Add Config for disply status bars.
+        ☐ Common Code for Singleton/Static Access All Pages, Windows.
+        ☐ Supports Sign-In notify Expire/Invalid pwd lock after 3 times.
+    DMT.TA.App:
+        Controls:
+            ☐ Add Config for disply status bars.
+        ☐ Common Code for Singleton/Static Access All Pages, Windows.
+        ☐ Supports Sign-In notify Expire/Invalid pwd lock after 3 times.
+    DMT.TOD.App:
+        Controls:
+            ☐ Add Config for disply status bars.
+        ☐ Common Code for Singleton/Static Access All Pages, Windows.
+        ☐ Supports Sign-In notify Expire/Invalid pwd lock after 3 times.
+        ☐ Change Shift TSB.
+        ☐ Change Shift User.
+        ☐ EMV/QR Code View Page.
+        ☐ Job List View Page.
+        ☐ Revenue Entry Collector Page.
+        ☐ Revenue Entry Chief Page.
+        Check Exits Reports:
+            ☐ Daily Revenue Entry Slip.
+            ☐ Revenue Summary Report.
