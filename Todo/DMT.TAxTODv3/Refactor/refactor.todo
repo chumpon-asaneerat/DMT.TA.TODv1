@@ -9,7 +9,7 @@ Refactor:
         AttachProperties:
             ☐ Add Supports MaxLength for auto change focus (FocusOptions).
         Styles:
-            ☐ Add ListBox Style xaml.
+            ✔ Add ListBox Style xaml. @done(21-01-17 01:06)
     DMT.Plaza.Config.App:
         ✔ TSBViewPage Refactor to used TabControl for TA, TOD. @done(21-01-16 20:32)
         ☐ Common Code for Singleton/Static Access All Pages, Windows.
