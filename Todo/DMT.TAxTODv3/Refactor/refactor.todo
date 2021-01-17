@@ -1,7 +1,7 @@
 Refactor:
     DMT.Models:
         ☐ Add Table UserAccess Table.
-        ☐ Re-implements RabbitMQStaff ToLocal method to supports password and status.
+        ✔ Re-implements RabbitMQStaff ToLocal method to supports password and status. @done(21-01-18 01:24)
         ☐ Need method to call when login success/failed to track time and number of login failed.
     DMT.RabbitMQ.Client:
         ☐ Update code in ProcessJson method.
