@@ -7,7 +7,7 @@ Refactor:
         ☐ Update code in ProcessJson method.
     DMT.Controls:
         AttachProperties:
-            ☐ Add Supports MaxLength for auto change focus (FocusOptions).
+            ✘ Add Supports MaxLength for auto change focus (FocusOptions). @cancelled(21-01-18 05:38)
         Styles:
             ✔ Add ListBox Style xaml. @done(21-01-17 01:06)
     DMT.Plaza.Config.App:
