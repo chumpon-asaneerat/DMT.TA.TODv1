@@ -25,7 +25,7 @@ Refactor:
     DMT.Account.App:
         Controls:
             ✔ Add Config for disply status bars. @done(21-01-18 03:53)
-        ☐ Common Code for Singleton/Static Access All Pages, Windows.
+        ✔ Common Code for Singleton/Static Access All Pages, Windows. @done(21-01-18 06:08)
         ☐ Supports Sign-In notify Expire/Invalid pwd lock after 3 times.
     DMT.TA.App:
         Controls:
