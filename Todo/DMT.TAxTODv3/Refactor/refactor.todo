@@ -1,10 +1,10 @@
 Refactor:
     DMT.Models:
-        ☐ Add Table UserAccess Table.
+        ✔ Add Table UserAccess Table. @done(21-01-19 11:09)
         ✔ Re-implements RabbitMQStaff ToLocal method to supports password and status. @done(21-01-18 01:24)
-        ☐ Need method to call when login success/failed to track time and number of login failed.
+        ✔ Need method to call when login success/failed to track time and number of login failed. @done(21-01-19 11:09)
     DMT.RabbitMQ.Client:
-        ☐ Update code in ProcessJson method.
+        ✔ Update code in ProcessJson method. @done(21-01-19 11:09)
     DMT.Controls:
         AttachProperties:
             ✘ Add Supports MaxLength for auto change focus (FocusOptions). @cancelled(21-01-18 05:38)
