@@ -41,14 +41,14 @@ Refactor:
         Controls:
             ✔ Add Config for disply status bars. @done(21-01-18 05:31)
         ✔ Common Code for Singleton/Static Access All Pages, Windows. @done(21-01-18 06:40)
-        ☐ Common Code for Singleton/Static Access Windows -> Auto set Owner.
+        ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 01:00)
         ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
     DMT.TOD.App:
         Controls:
             ✔ Add Config for disply status bars. @done(21-01-18 05:31)
         ✔ Common Code for Singleton/Static Access All Pages, Windows. @done(21-01-18 07:36)
-        ☐ Common Code for Singleton/Static Access Windows -> Auto set Owner.
+        ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 01:00)
         ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
         ✔ Change Shift TSB. @done(21-01-19 17:49)
