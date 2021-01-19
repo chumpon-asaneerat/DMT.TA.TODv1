@@ -40,8 +40,8 @@ Refactor:
         ✔ Common Code for Singleton/Static Access All Pages, Windows. @done(21-01-18 07:36)
         ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
-        ☐ Change Shift TSB.
-        ☐ Change Shift User.
+        ✔ Change Shift TSB. @done(21-01-19 17:49)
+        ✔ Change Shift User. @done(21-01-19 17:49)
         ☐ EMV/QR Code View Page.
         ☐ Job List View Page.
         ☐ Revenue Entry Collector Page.
