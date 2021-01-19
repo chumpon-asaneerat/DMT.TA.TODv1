@@ -18,8 +18,8 @@ Refactor:
             ✔ MessageBoxYesNo3Window @done(21-01-20 00:47)
     DMT.Plaza.Config.App:
         ✔ TSBViewPage Refactor to used TabControl for TA, TOD. @done(21-01-16 20:32)
-        ✔ Common Code for Singleton/Static Access All Pages, Windows. @done(21-01-18 07:01)
-        ☐ Common Code for Singleton/Static Access Windows -> Auto set Owner.
+        ☐ Common Code for Singleton/Static Access All Pages, Windows.
+        ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 04:47)
         Styles:
             ✔ Add ListBox Style xaml. @done(21-01-17 00:10)
     DMT.Plaza.Sumulator.App:
@@ -34,7 +34,7 @@ Refactor:
         Controls:
             ✔ Add Config for disply status bars. @done(21-01-18 03:53)
         ✔ Common Code for Singleton/Static Access All Pages, Windows. @done(21-01-18 06:08)
-        ☐ Common Code for Singleton/Static Access Windows -> Auto set Owner.
+        ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 04:47)
         ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
     DMT.TA.App:
