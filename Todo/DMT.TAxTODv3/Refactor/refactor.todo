@@ -53,7 +53,7 @@ Refactor:
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
         ✔ Change Shift TSB. @done(21-01-19 17:49)
         ✔ Change Shift User. @done(21-01-19 17:49)
-        ☐ EMV/QR Code View Page.
+        ✔ EMV/QR Code View Page. @done(21-01-20 21:24)
         ✔ Job List View Page. @done(21-01-20 03:57)
         ☐ Revenue Entry Collector Page.
         ☐ Revenue Entry Chief Page.
