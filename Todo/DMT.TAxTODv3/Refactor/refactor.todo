@@ -55,8 +55,10 @@ Refactor:
         ✔ Change Shift User. @done(21-01-19 17:49)
         ✔ EMV/QR Code View Page. @done(21-01-20 21:24)
         ✔ Job List View Page. @done(21-01-20 03:57)
-        ☐ Revenue Entry Collector Page.
-        ☐ Revenue Entry Chief Page.
+        ✔ Revenue Entry Collector Page (WITHOUT TA). @done(21-01-22 02:17)
+        ☐ Revenue Entry Collector Page (WITN TA).
+        ☐ Revenue Entry Chief Page (WITHOUT TA).
+        ☐ Revenue Entry Chief Page (WITN TA).
         Check Exits Reports:
             ✔ Daily Revenue Entry Slip. @done(21-01-20 05:01)
             ✔ Revenue Summary Report. @done(21-01-20 05:01)
