@@ -3,6 +3,8 @@ Refactor:
         ✔ Add Table UserAccess Table. @done(21-01-19 11:09)
         ✔ Re-implements RabbitMQStaff ToLocal method to supports password and status. @done(21-01-18 01:24)
         ✔ Need method to call when login success/failed to track time and number of login failed. @done(21-01-19 11:09)
+    DMT.TA.Models:
+        ☐ Add RevenueEntry Table (To Keep all revenue entry from TOD Apps).
     DMT.RabbitMQ.Client:
         ✔ Update code in ProcessJson method. @done(21-01-19 11:09)
     DMT.Controls:
@@ -37,6 +39,24 @@ Refactor:
         ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 04:47)
         ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
+    DMT.TA.Rest.Server:
+        Rest API:
+            Credit:
+                User:
+                    ☐ GetCreditBalance (for get Bag No. Belt No, IsRetrunBag).
+                    ☐ SaveCretidBalance (for update revenue id/revenue date).
+            Coupon:
+                User:
+                    ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
+    DMT.TA.Rest.Client:
+        Rest API:
+            Credit:
+                User:
+                    ☐ GetCreditBalance (for get Bag No. Belt No, IsRetrunBag).
+                    ☐ SaveCretidBalance (for update revenue id/revenue date).
+            Coupon:
+                User:
+                    ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
     DMT.TA.App:
         Controls:
             ✔ Add Config for disply status bars. @done(21-01-18 05:31)
@@ -59,6 +79,17 @@ Refactor:
         ☐ Revenue Entry Collector Page (WITN TA).
         ☐ Revenue Entry Chief Page (WITHOUT TA).
         ☐ Revenue Entry Chief Page (WITN TA).
+        TODManagers:
+            CurrentTSBManager:
+                ☐ Add Internal Variable - UserShiftManager.
+                ☐ Add Internal Variable - JobManager.
+                ☐ Add Internal Variable - PaymentManager.
+            RevenueEntryManager:
+                Refactor code:
+                    ☐ Remove UserShiftManager and Use Property in CurrentTSBManager instead.
+                    ☐ Remove JobManager and Use Property in CurrentTSBManager instead.
+                    ☐ Remove PaymentManager and Use Property in CurrentTSBManager instead.
+                    ☐ Need to Generte RevenueEntry file to send to TAApp Rest API.
         Check Exits Reports:
             ✔ Daily Revenue Entry Slip. @done(21-01-20 05:01)
             ✔ Revenue Summary Report. @done(21-01-20 05:01)
