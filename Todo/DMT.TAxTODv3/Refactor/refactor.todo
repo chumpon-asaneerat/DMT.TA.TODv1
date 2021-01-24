@@ -5,11 +5,11 @@ Refactor:
         ✔ Add Table UserAccess Table. @done(21-01-19 11:09)
         ✔ Re-implements RabbitMQStaff ToLocal method to supports password and status. @done(21-01-18 01:24)
         ✔ Need method to call when login success/failed to track time and number of login failed. @done(21-01-19 11:09)
-        ☐ Move RevenueEntry Model from DMT.TOD.Models.
+        ✔ Move RevenueEntry Model from DMT.TOD.Models. @done(21-01-24 11:20)
     DMT.TA.Models:
-        ☐ Add RevenueEntry Table (To Keep all revenue entry from TOD Apps).
+        ✔ Add RevenueEntry Table (To Keep all revenue entry from TOD Apps). @done(21-01-24 11:20)
     DMT.TOD.Models:
-        ☐ Remove RevenueEntry Model (move to DMT.Models project).
+        ✔ Remove RevenueEntry Model (move to DMT.Models project). @done(21-01-24 11:20)
     DMT.RabbitMQ.Client:
         ✔ Update code in ProcessJson method. @done(21-01-19 11:09)
     DMT.Controls:
@@ -25,7 +25,7 @@ Refactor:
             ✔ MessageBoxYesNo3Window @done(21-01-20 00:47)
     DMT.Plaza.Config.App:
         ✔ TSBViewPage Refactor to used TabControl for TA, TOD. @done(21-01-16 20:32)
-        ☐ Common Code for Singleton/Static Access All Pages, Windows.
+        ✘ Common Code for Singleton/Static Access All Pages, Windows. @cancelled(21-01-24 11:20)
         ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 04:47)
         Styles:
             ✔ Add ListBox Style xaml. @done(21-01-17 00:10)
