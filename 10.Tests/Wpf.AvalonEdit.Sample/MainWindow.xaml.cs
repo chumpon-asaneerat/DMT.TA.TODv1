@@ -6,10 +6,10 @@ using System.Text;
 using System.Windows;
 using System.Windows.Media;
 
-// AvalonEdit
 using System.Reflection;
 using System.Xml;
 
+// AvalonEdit
 using ICSharpCode.AvalonEdit;
 using ICSharpCode.AvalonEdit.Document;
 using ICSharpCode.AvalonEdit.Folding;
