@@ -1,10 +1,15 @@
 Refactor:
+    DMT.Cores:
+        ☐ TOD Config nedd to add PlazaId array to force only used that plazaid in all pages.
     DMT.Models:
         ✔ Add Table UserAccess Table. @done(21-01-19 11:09)
         ✔ Re-implements RabbitMQStaff ToLocal method to supports password and status. @done(21-01-18 01:24)
         ✔ Need method to call when login success/failed to track time and number of login failed. @done(21-01-19 11:09)
+        ☐ Move RevenueEntry Model from DMT.TOD.Models.
     DMT.TA.Models:
         ☐ Add RevenueEntry Table (To Keep all revenue entry from TOD Apps).
+    DMT.TOD.Models:
+        ☐ Remove RevenueEntry Model (move to DMT.Models project).
     DMT.RabbitMQ.Client:
         ✔ Update code in ProcessJson method. @done(21-01-19 11:09)
     DMT.Controls:
@@ -84,6 +89,9 @@ Refactor:
                 ☐ Add Internal Variable - UserShiftManager.
                 ☐ Add Internal Variable - JobManager.
                 ☐ Add Internal Variable - PaymentManager.
+            PaymentManager:
+                ☐ For GetEMV need in IsHistorical mode to used Job selection start/end datetime.
+                ☐ For GetQRCode need in IsHistorical mode to used Job selection start/end datetime.
             RevenueEntryManager:
                 Refactor code:
                     ☐ Remove UserShiftManager and Use Property in CurrentTSBManager instead.
