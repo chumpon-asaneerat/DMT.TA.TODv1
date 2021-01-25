@@ -6,6 +6,12 @@ Refactor:
         ✔ Re-implements RabbitMQStaff ToLocal method to supports password and status. @done(21-01-18 01:24)
         ✔ Need method to call when login success/failed to track time and number of login failed. @done(21-01-19 11:09)
         ✔ Move RevenueEntry Model from DMT.TOD.Models. @done(21-01-24 11:20)
+        ☐ TSBShift -> Change Id to Guid.
+        ☐ UserShift -> Change Id to Guid.
+        ☐ UserShiftRevenue -> Change UserShiftId to Guid.
+        ☐ Update TSBShiftView.
+        ☐ Updete UserShift View.
+        ☐ Updete UserShiftRevenue View.
     DMT.TA.Models:
         ✔ Add RevenueEntry Table (To Keep all revenue entry from TOD Apps). @done(21-01-24 11:20)
     DMT.TOD.Models:
@@ -46,6 +52,18 @@ Refactor:
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
     DMT.TA.Rest.Server:
         Rest API:
+            Noyofy:
+                TSB:
+                    ☐ TSBShiftChange
+                User:
+                    ☐ UserShiftChange -> Return UserShift
+            Shift:
+                TSB:
+                    ☐ Remove GetCurrent
+                    ☐ Remove Search By Status.
+                User:
+                    ☐ Remove GetCurrent
+                    ☐ Remove Search By Status.
             Credit:
                 User:
                     ☐ GetCreditBalance (for get Bag No. Belt No, IsRetrunBag).
@@ -55,6 +73,11 @@ Refactor:
                     ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
     DMT.TA.Rest.Client:
         Rest API:
+            Shift:
+                TSB:
+                    ☐ Add GetCurrent
+                User:
+                    ☐ Add GetCurrent
             Credit:
                 User:
                     ☐ GetCreditBalance (for get Bag No. Belt No, IsRetrunBag).
