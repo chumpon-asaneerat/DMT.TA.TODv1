@@ -93,6 +93,7 @@ Refactor:
         ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 01:00)
         ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
+        ☐ Check Cannot Create duplicate UserCreditBalance (need check PlazaGroup).
     DMT.TOD.App:
         Controls:
             ✔ Add Config for disply status bars. @done(21-01-18 05:31)
@@ -104,6 +105,7 @@ Refactor:
         ✔ Change Shift User. @done(21-01-19 17:49)
         ✔ EMV/QR Code View Page. @done(21-01-20 21:24)
         ✔ Job List View Page. @done(21-01-20 03:57)
+        ☐ Revenue Entry Need to Notify UserCreditBanace not match PlazaGroup.
         ✔ Revenue Entry Collector Page (WITHOUT TA). @done(21-01-22 02:17)
         ☐ Revenue Entry Collector Page (WITN TA).
         ✔ Revenue Entry Chief Page (WITHOUT TA). @done(21-01-26 17:10)
