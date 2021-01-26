@@ -17,6 +17,8 @@ Refactor:
         ✔ Updete UserShift View. @done(21-01-26 21:27)
         ✔ Updete UserShiftRevenue View. @done(21-01-26 21:27)
         ☐ Add Table LastSync (TableName, LastSyncDate).
+        ☐ Add RevenueInfo Model (UserId, FullNameEN, FullNameTH, RevenueId)
+        ☐ Add RevenueInfoView
     DMT.TA.Models:
         ✔ Add RevenueEntry Table (To Keep all revenue entry from TOD Apps). @done(21-01-24 11:20)
     DMT.TOD.Models:
@@ -76,6 +78,8 @@ Refactor:
             Coupon:
                 User:
                     ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
+            Revenue:
+                ☐ GetRevenueByDate -> List<RevenueInfo>.
     DMT.TAxTOD.Rest.Client:
         ☐ Test Call GetCoupons -> With output (Test in simlulator).
         ☐ Test Call SoldCoupon -> TCT Simulator function.
@@ -97,6 +101,8 @@ Refactor:
             Coupon:
                 User:
                     ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
+            Revenue:
+                ☐ GetRevenueByDate -> List<RevenueInfo>.
     DMT.Account.App:
         Controls:
             ☐ Add Config for disply status bars.
@@ -130,6 +136,8 @@ Refactor:
         ☐ Revenue Entry Chief Page (WITN TA).
         ☐ Revenue Entry Chief Page -> Search User need Smartcard link.
         ☐ EMV/QR Code View Page -> Search User need Smartcard link.
+        ☐ Daily Slip Report Window -> (Select Date, RevenueInfo item) -> Show Daily Slip Page.
+        ☐ Daily Summary Report Window => (Select Date) -> Show Daily Summary Page.
         TODManagers:
             CurrentTSBManager:
                 ✔ Add Internal Variable - UserShiftManager. @done(21-01-26 10:26)
