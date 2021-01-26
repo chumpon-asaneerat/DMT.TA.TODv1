@@ -81,8 +81,8 @@ Refactor:
                     ✔ Add Save @done(21-01-26 14:52)
             Credit:
                 User:
-                    ☐ GetCreditBalance (for get Bag No. Belt No, IsRetrunBag).
-                    ☐ SaveCretidBalance (for update revenue id/revenue date).
+                    ✔ GetCreditBalance (for get Bag No. Belt No, IsRetrunBag). @done(21-01-26 17:10)
+                    ✔ SaveCretidBalance (for update revenue id/revenue date). @done(21-01-26 17:10)
             Coupon:
                 User:
                     ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
@@ -106,7 +106,7 @@ Refactor:
         ✔ Job List View Page. @done(21-01-20 03:57)
         ✔ Revenue Entry Collector Page (WITHOUT TA). @done(21-01-22 02:17)
         ☐ Revenue Entry Collector Page (WITN TA).
-        ☐ Revenue Entry Chief Page (WITHOUT TA).
+        ✔ Revenue Entry Chief Page (WITHOUT TA). @done(21-01-26 17:10)
         ☐ Revenue Entry Chief Page (WITN TA).
         TODManagers:
             CurrentTSBManager:
