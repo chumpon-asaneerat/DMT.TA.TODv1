@@ -9,6 +9,7 @@ Refactor:
         ☐ TSBShift -> Change Id to Guid.
         ☐ UserShift -> Change Id to Guid.
         ☐ UserShiftRevenue -> Change UserShiftId to Guid.
+        ☐ RevenueEntry -> Change PK to Guid.
         ☐ Update TSBShiftView.
         ☐ Updete UserShift View.
         ☐ Updete UserShiftRevenue View.
@@ -54,9 +55,9 @@ Refactor:
         Rest API:
             Noyofy:
                 TSB:
-                    ☐ TSBShiftChange
+                    ✔ TSBShiftChange @done(21-01-26 19:40)
                 User:
-                    ☐ UserShiftChange -> Return UserShift
+                    ✔ UserShiftChange @done(21-01-26 19:40)
             Shift:
                 TSB:
                     ☐ Remove Current
