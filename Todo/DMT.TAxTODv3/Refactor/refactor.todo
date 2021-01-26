@@ -9,6 +9,9 @@ Refactor:
         ✔ TSBShift -> Change Id to Guid. @done(21-01-26 21:09)
         ✔ UserShift -> Change Id to Guid. @done(21-01-26 21:27)
         ✔ UserShiftRevenue -> Change UserShiftId to Guid. @done(21-01-26 21:27)
+        ☐ TSBShift -> Add Field LastSync (DateTime?)
+        ☐ UserShift -> Add Field LastSync (DateTime?)
+        ☐ UserShiftRevenue -> Add Field LastSync (DateTime?)
         ✘ RevenueEntry -> Change PK to Guid. @cancelled(21-01-26 21:34)
         ✔ UserShiftBalance -> Change RevenueId to Guid. @done(21-01-26 21:34)
         ☐ RevenueEntry -> RevenueId (string) need to contains PlazaGroupId in UniqueId.
@@ -58,6 +61,8 @@ Refactor:
         ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
     DMT.TA.Rest.Server:
+        MQService:
+            ☐ Add TAMQService -> Setup in TOD App (for keep message to send to TA later).
         Rest API:
             Noyofy:
                 TSB:
@@ -80,6 +85,14 @@ Refactor:
                     ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
             Revenue:
                 ☐ GetRevenueByDate -> List<RevenueInfo>.
+            TSBShift:
+                ☐ Gets By LastSync.
+    DMT.TOD.Rest.Server:
+        MQService:
+            ☐ Add TODMQService -> Setup in TA App (for keep message to send to TOD(s) later).
+        Rest API:
+            TSBShift:
+                ☐ Gets By LastSync.
     DMT.TAxTOD.Rest.Client:
         ☐ Test Call GetCoupons -> With output (Test in simlulator).
         ☐ Test Call SoldCoupon -> TCT Simulator function.
