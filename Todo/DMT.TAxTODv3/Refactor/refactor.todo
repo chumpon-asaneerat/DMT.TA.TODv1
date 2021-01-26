@@ -9,8 +9,9 @@ Refactor:
         ✔ TSBShift -> Change Id to Guid. @done(21-01-26 21:09)
         ✔ UserShift -> Change Id to Guid. @done(21-01-26 21:27)
         ✔ UserShiftRevenue -> Change UserShiftId to Guid. @done(21-01-26 21:27)
-        ☐ RevenueEntry -> Change PK to Guid.
-        ☐ UserShiftBalance -> Change RevenueId to Guid.
+        ✘ RevenueEntry -> Change PK to Guid. @cancelled(21-01-26 21:34)
+        ✔ UserShiftBalance -> Change RevenueId to Guid. @done(21-01-26 21:34)
+        ☐ RevenueEntry -> RevenueId (string) need to contains PlazaGroupId in UniqueId.
         ✔ Update TSBShiftView. @done(21-01-26 21:27)
         ✔ Updete UserShift View. @done(21-01-26 21:27)
         ✔ Updete UserShiftRevenue View. @done(21-01-26 21:27)
