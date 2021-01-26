@@ -12,9 +12,11 @@ Refactor:
         ✘ RevenueEntry -> Change PK to Guid. @cancelled(21-01-26 21:34)
         ✔ UserShiftBalance -> Change RevenueId to Guid. @done(21-01-26 21:34)
         ☐ RevenueEntry -> RevenueId (string) need to contains PlazaGroupId in UniqueId.
+        ☐ RevenueEntry -> No need to sync back to TOD.
         ✔ Update TSBShiftView. @done(21-01-26 21:27)
         ✔ Updete UserShift View. @done(21-01-26 21:27)
         ✔ Updete UserShiftRevenue View. @done(21-01-26 21:27)
+        ☐ Add Table LastSync (TableName, LastSyncDate).
     DMT.TA.Models:
         ✔ Add RevenueEntry Table (To Keep all revenue entry from TOD Apps). @done(21-01-24 11:20)
     DMT.TOD.Models:
