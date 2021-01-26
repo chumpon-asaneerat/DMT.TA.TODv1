@@ -7,13 +7,13 @@ Refactor:
         ✔ Need method to call when login success/failed to track time and number of login failed. @done(21-01-19 11:09)
         ✔ Move RevenueEntry Model from DMT.TOD.Models. @done(21-01-24 11:20)
         ✔ TSBShift -> Change Id to Guid. @done(21-01-26 21:09)
-        ☐ UserShift -> Change Id to Guid.
-        ☐ UserShiftRevenue -> Change UserShiftId to Guid.
+        ✔ UserShift -> Change Id to Guid. @done(21-01-26 21:27)
+        ✔ UserShiftRevenue -> Change UserShiftId to Guid. @done(21-01-26 21:27)
         ☐ RevenueEntry -> Change PK to Guid.
         ☐ UserShiftBalance -> Change RevenueId to Guid.
-        ☐ Update TSBShiftView.
-        ☐ Updete UserShift View.
-        ☐ Updete UserShiftRevenue View.
+        ✔ Update TSBShiftView. @done(21-01-26 21:27)
+        ✔ Updete UserShift View. @done(21-01-26 21:27)
+        ✔ Updete UserShiftRevenue View. @done(21-01-26 21:27)
     DMT.TA.Models:
         ✔ Add RevenueEntry Table (To Keep all revenue entry from TOD Apps). @done(21-01-24 11:20)
     DMT.TOD.Models:
