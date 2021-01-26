@@ -10,6 +10,7 @@ Refactor:
         ☐ UserShift -> Change Id to Guid.
         ☐ UserShiftRevenue -> Change UserShiftId to Guid.
         ☐ RevenueEntry -> Change PK to Guid.
+        ☐ UserShiftBalance -> Change RevenueId to Guid.
         ☐ Update TSBShiftView.
         ☐ Updete UserShift View.
         ☐ Updete UserShiftRevenue View.
