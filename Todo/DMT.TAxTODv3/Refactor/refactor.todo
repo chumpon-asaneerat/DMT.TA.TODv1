@@ -59,15 +59,15 @@ Refactor:
                     ☐ UserShiftChange -> Return UserShift
             Shift:
                 TSB:
-                    ☐ Remove GetCurrent
-                    ☐ Remove Search By Status.
+                    ☐ Remove Current
+                    ✔ Remove Search By Status. @done(21-01-26 14:53)
                 User:
-                    ☐ Remove GetCurrent
-                    ☐ Remove Search By Status.
+                    ☐ Remove Current
+                    ✔ Remove Search By Status. @done(21-01-26 14:53)
             Credit:
                 User:
-                    ☐ GetCreditBalance (for get Bag No. Belt No, IsRetrunBag).
-                    ☐ SaveCretidBalance (for update revenue id/revenue date).
+                    ✔ Current (for get Bag No. Belt No, IsRetrunBag). @done(21-01-26 14:53)
+                    ✔ Save (for update revenue id/revenue date). @done(21-01-26 14:53)
             Coupon:
                 User:
                     ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
@@ -77,7 +77,8 @@ Refactor:
                 TSB:
                     ☐ Add GetCurrent
                 User:
-                    ☐ Add GetCurrent
+                    ✔ Add Current @done(21-01-26 14:52)
+                    ✔ Add Save @done(21-01-26 14:52)
             Credit:
                 User:
                     ☐ GetCreditBalance (for get Bag No. Belt No, IsRetrunBag).
