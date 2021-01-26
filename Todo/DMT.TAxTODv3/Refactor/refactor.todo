@@ -109,18 +109,18 @@ Refactor:
         ☐ Revenue Entry Chief Page (WITN TA).
         TODManagers:
             CurrentTSBManager:
-                ☐ Add Internal Variable - UserShiftManager.
-                ☐ Add Internal Variable - JobManager.
-                ☐ Add Internal Variable - PaymentManager.
+                ✔ Add Internal Variable - UserShiftManager. @done(21-01-26 10:26)
+                ✔ Add Internal Variable - JobManager. @done(21-01-26 10:26)
+                ✔ Add Internal Variable - PaymentManager. @done(21-01-26 10:26)
             PaymentManager:
                 ☐ For GetEMV need in IsHistorical mode to used Job selection start/end datetime.
                 ☐ For GetQRCode need in IsHistorical mode to used Job selection start/end datetime.
             RevenueEntryManager:
                 Refactor code:
-                    ☐ Remove UserShiftManager and Use Property in CurrentTSBManager instead.
-                    ☐ Remove JobManager and Use Property in CurrentTSBManager instead.
-                    ☐ Remove PaymentManager and Use Property in CurrentTSBManager instead.
-                    ☐ Need to Generte RevenueEntry file to send to TAApp Rest API.
+                    ✔ Remove UserShiftManager and Use Property in CurrentTSBManager instead. @done(21-01-26 10:27)
+                    ✔ Remove JobManager and Use Property in CurrentTSBManager instead. @done(21-01-26 10:27)
+                    ✔ Remove PaymentManager and Use Property in CurrentTSBManager instead. @done(21-01-26 10:27)
+                    ✔ Need to Generte RevenueEntry file to send to TAApp Rest API. @done(21-01-26 10:27)
         Check Exits Reports:
             ✔ Daily Revenue Entry Slip. @done(21-01-20 05:01)
             ✔ Revenue Summary Report. @done(21-01-20 05:01)
