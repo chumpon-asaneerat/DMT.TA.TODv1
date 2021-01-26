@@ -99,6 +99,7 @@ Refactor:
         ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
         ☐ Check Cannot Create duplicate UserCreditBalance (need check PlazaGroup).
+        ☐ Add New Collector Credit Balance -> Search User need Smartcard link.
     DMT.TOD.App:
         Controls:
             ✔ Add Config for disply status bars. @done(21-01-18 05:31)
@@ -115,6 +116,8 @@ Refactor:
         ☐ Revenue Entry Collector Page (WITN TA).
         ✔ Revenue Entry Chief Page (WITHOUT TA). @done(21-01-26 17:10)
         ☐ Revenue Entry Chief Page (WITN TA).
+        ☐ Revenue Entry Chief Page -> Search User need Smartcard link.
+        ☐ EMV/QR Code View Page -> Search User need Smartcard link.
         TODManagers:
             CurrentTSBManager:
                 ✔ Add Internal Variable - UserShiftManager. @done(21-01-26 10:26)
