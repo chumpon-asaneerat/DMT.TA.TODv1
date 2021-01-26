@@ -6,7 +6,7 @@ Refactor:
         ✔ Re-implements RabbitMQStaff ToLocal method to supports password and status. @done(21-01-18 01:24)
         ✔ Need method to call when login success/failed to track time and number of login failed. @done(21-01-19 11:09)
         ✔ Move RevenueEntry Model from DMT.TOD.Models. @done(21-01-24 11:20)
-        ☐ TSBShift -> Change Id to Guid.
+        ✔ TSBShift -> Change Id to Guid. @done(21-01-26 21:09)
         ☐ UserShift -> Change Id to Guid.
         ☐ UserShiftRevenue -> Change UserShiftId to Guid.
         ☐ RevenueEntry -> Change PK to Guid.
