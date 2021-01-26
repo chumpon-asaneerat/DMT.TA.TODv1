@@ -78,6 +78,10 @@ Refactor:
                     ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
     DMT.TAxTOD.Rest.Client:
         ☐ Test Call GetCoupons -> With output (Test in simlulator).
+        ☐ Test Call SoldCoupon -> TCT Simulator function.
+    DMT.Plaza.Simulator.App:
+        ☐ Update LaneActivity -> Add Button for Sold Coupon.
+        ☐ Add SoldCoupon Window.
     DMT.TA.Rest.Client:
         Rest API:
             Shift:
