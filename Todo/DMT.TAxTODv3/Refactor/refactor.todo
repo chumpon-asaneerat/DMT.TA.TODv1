@@ -130,7 +130,7 @@ Refactor:
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
         ✔ Check Cannot Create duplicate UserCreditBalance (need check PlazaGroup). @done(21-01-27 07:57)
         ☐ Add New Collector Credit Balance -> Search User need Smartcard link.
-        ☐ Bug Return Credit reach zero but not remove from list.
+        ✔ Bug Return Credit reach zero but not remove from list. @done(21-01-27 18:15)
     DMT.TOD.App:
         Controls:
             ☐ Add Config for disply status bars.
@@ -154,7 +154,7 @@ Refactor:
         ☐ Daily Summary Report Window => (Select Date) -> Show Daily Summary Page.
         Bug Anusornsatan:
             ☐ job list is duplicate need to check.
-            ☐ emv list sned same startdate/starttime why (revenue entry)
+            ✔ emv list sned same startdate/starttime why (revenue entry) @done(21-01-27 18:15)
         TODManagers:
             CurrentTSBManager:
                 ✔ Add Internal Variable - UserShiftManager. @done(21-01-26 10:26)
