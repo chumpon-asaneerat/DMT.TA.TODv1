@@ -128,7 +128,7 @@ Refactor:
         ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 01:00)
         ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
         ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
-        ☐ Check Cannot Create duplicate UserCreditBalance (need check PlazaGroup).
+        ✔ Check Cannot Create duplicate UserCreditBalance (need check PlazaGroup). @done(21-01-27 07:57)
         ☐ Add New Collector Credit Balance -> Search User need Smartcard link.
     DMT.TOD.App:
         Controls:
