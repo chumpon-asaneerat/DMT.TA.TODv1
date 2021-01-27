@@ -143,11 +143,11 @@ Refactor:
         ✔ Change Shift User. @done(21-01-19 17:49)
         ✔ EMV/QR Code View Page. @done(21-01-20 21:24)
         ✔ Job List View Page. @done(21-01-20 03:57)
-        ☐ Revenue Entry Need to Notify UserCreditBanace not match PlazaGroup.
+        ✘ Revenue Entry Need to Notify UserCreditBanace not match PlazaGroup. @cancelled(21-01-27 19:11)
         ✔ Revenue Entry Collector Page (WITHOUT TA). @done(21-01-22 02:17)
-        ☐ Revenue Entry Collector Page (WITN TA).
+        ✔ Revenue Entry Collector Page (WITN TA). @done(21-01-27 19:11)
         ✔ Revenue Entry Chief Page (WITHOUT TA). @done(21-01-26 17:10)
-        ☐ Revenue Entry Chief Page (WITN TA).
+        ✔ Revenue Entry Chief Page (WITN TA). @done(21-01-27 19:11)
         ☐ Revenue Entry Chief Page -> Search User need Smartcard link.
         ☐ EMV/QR Code View Page -> Search User need Smartcard link.
         ☐ Daily Slip Report Window -> (Select Date, RevenueInfo item) -> Show Daily Slip Page.
