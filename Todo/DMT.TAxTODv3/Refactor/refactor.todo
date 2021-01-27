@@ -1,6 +1,7 @@
 Refactor:
     DMT.Cores:
         ☐ TOD Config nedd to add PlazaId array to force only used that plazaid in all pages.
+        ☐ Nedd method to GetPlazaGroups by Config PlazaId(s). 
     DMT.Models:
         ✔ Add Table UserAccess Table. @done(21-01-19 11:09)
         ✔ Re-implements RabbitMQStaff ToLocal method to supports password and status. @done(21-01-18 01:24)
@@ -66,6 +67,9 @@ Refactor:
     DMT.TA.Rest.Server:
         MQService:
             ☐ Add TAMQService -> Setup in TOD App (for keep message to send to TA later).
+        TODClientManageService:
+            ☐ Register
+            ☐ Unregister
         Rest API:
             Noyofy:
                 TSB:
