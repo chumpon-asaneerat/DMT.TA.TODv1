@@ -22,6 +22,9 @@ Refactor:
         ☐ Add Table LastSync (TableName, LastSyncDate).
         ☐ Add RevenueInfo Model (UserId, FullNameEN, FullNameTH, RevenueId)
         ☐ Add RevenueInfoView
+        ☐ UserBalance -> Begin/Emd
+        ☐ UserBalance -> GetBalance(JobBegin, JobEnd) -> UserBalance.End is between Jobs Begin/End.
+        ☐ TOD JobManager -> Add methods to extract Begin/End from list of Jobs (by plazagroup)
     DMT.TA.Models:
         ✔ Add RevenueEntry Table (To Keep all revenue entry from TOD Apps). @done(21-01-24 11:20)
     DMT.TOD.Models:
