@@ -157,8 +157,8 @@ Refactor:
                 ✔ Add Internal Variable - JobManager. @done(21-01-26 10:26)
                 ✔ Add Internal Variable - PaymentManager. @done(21-01-26 10:26)
             PaymentManager:
-                ☐ For GetEMV need in IsHistorical mode to used Job selection start/end datetime.
-                ☐ For GetQRCode need in IsHistorical mode to used Job selection start/end datetime.
+                ✔ For GetEMV need in IsHistorical mode to used Job selection start/end datetime. @done(21-01-27 09:19)
+                ✔ For GetQRCode need in IsHistorical mode to used Job selection start/end datetime. @done(21-01-27 09:19)
             RevenueEntryManager:
                 Refactor code:
                     ✔ Remove UserShiftManager and Use Property in CurrentTSBManager instead. @done(21-01-26 10:27)
