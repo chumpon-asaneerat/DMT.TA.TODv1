@@ -15,8 +15,6 @@ Refactor:
         MQService:
             ☐ Add TAMQService -> Setup in TOD App (for keep message to send to TA later).
         Rest API:
-            Norify:
-                ☐ IsAlive.
             Shift:
                 TSB:
                     ☐ Remove Current
@@ -33,8 +31,6 @@ Refactor:
         MQService:
             ☐ Add TODMQService -> Setup in TA App (for keep message to send to TOD(s) later).
         Rest API:
-            Norify:
-                ☐ IsAlive.
             TSBShift:
                 ☐ Gets By LastSync.
     DMT.TAxTOD.Rest.Client:
@@ -56,16 +52,13 @@ Refactor:
     DMT.Account.App:
         Controls:
             ☐ Add Config for disply status bars.
-            ☐ Add RabbitMQ statusbar.
     DMT.TA.App:
         Controls:
             ☐ Add Config for disply status bars.
-            ☐ Add RabbitMQ statusbar.
         ☐ Add New Collector Credit Balance -> Search User need Smartcard link.
     DMT.TOD.App:
         Controls:
             ☐ Add Config for disply status bars.
-            ☐ Add RabbitMQ statusbar.
         ☐ Revenue Entry Chief Page -> Search User need Smartcard link.
         ☐ EMV/QR Code View Page -> Search User need Smartcard link.
         ☐ Daily Slip Report Window -> (Select Date, RevenueInfo item) -> Show Daily Slip Page.
