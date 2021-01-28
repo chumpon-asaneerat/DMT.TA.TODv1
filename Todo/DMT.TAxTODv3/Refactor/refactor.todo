@@ -1,7 +1,7 @@
 Refactor:
     DMT.Cores:
-        ☐ TOD Config nedd to add PlazaId array to force only used that plazaid in all pages.
-        ☐ Nedd method to GetPlazaGroups by Config PlazaId(s). 
+        ✔ TOD Config nedd to add PlazaId array to force only used that plazaid in all pages. @done(21-01-28 12:54)
+        ✔ Nedd method to GetPlazaGroups by Config PlazaId(s). @done(21-01-28 12:54)
     DMT.Models:
         ✔ Add Table UserAccess Table. @done(21-01-19 11:09)
         ✔ Re-implements RabbitMQStaff ToLocal method to supports password and status. @done(21-01-18 01:24)
@@ -160,7 +160,7 @@ Refactor:
         ☐ Daily Slip Report Window -> (Select Date, RevenueInfo item) -> Show Daily Slip Page.
         ☐ Daily Summary Report Window => (Select Date) -> Show Daily Summary Page.
         Bug Anusornsatan:
-            ☐ job list is duplicate need to check.
+            ✔ job list is duplicate need to check. @done(21-01-28 12:55)
             ✔ emv list sned same startdate/starttime why (revenue entry) @done(21-01-27 18:15)
         TODManagers:
             CurrentTSBManager:
