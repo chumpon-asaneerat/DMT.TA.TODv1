@@ -1,8 +1,6 @@
 Refactor:
     DMT.Models:
         ☐ TSBShift -> Add Field LastSync (DateTime?)
-        ☐ UserShift -> Add Field LastSync (DateTime?)
-        ☐ UserShiftRevenue -> Add Field LastSync (DateTime?)
         ☐ RevenueEntry -> RevenueId (string) need to contains PlazaGroupId in UniqueId.
         ☐ RevenueEntry -> No need to sync back to TOD.
         ☐ Add Table LastSync (TableName, LastSyncDate).
