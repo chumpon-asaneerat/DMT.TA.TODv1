@@ -1,92 +1,29 @@
 Refactor:
-    DMT.Cores:
-        ✔ TOD Config nedd to add PlazaId array to force only used that plazaid in all pages. @done(21-01-28 12:54)
-        ✔ Nedd method to GetPlazaGroups by Config PlazaId(s). @done(21-01-28 12:54)
     DMT.Models:
-        ✔ Add Table UserAccess Table. @done(21-01-19 11:09)
-        ✔ Re-implements RabbitMQStaff ToLocal method to supports password and status. @done(21-01-18 01:24)
-        ✔ Need method to call when login success/failed to track time and number of login failed. @done(21-01-19 11:09)
-        ✔ Move RevenueEntry Model from DMT.TOD.Models. @done(21-01-24 11:20)
-        ✔ TSBShift -> Change Id to Guid. @done(21-01-26 21:09)
-        ✔ UserShift -> Change Id to Guid. @done(21-01-26 21:27)
-        ✔ UserShiftRevenue -> Change UserShiftId to Guid. @done(21-01-26 21:27)
         ☐ TSBShift -> Add Field LastSync (DateTime?)
         ☐ UserShift -> Add Field LastSync (DateTime?)
         ☐ UserShiftRevenue -> Add Field LastSync (DateTime?)
-        ✘ RevenueEntry -> Change PK to Guid. @cancelled(21-01-26 21:34)
-        ✔ UserShiftBalance -> Change RevenueId to Guid. @done(21-01-26 21:34)
         ☐ RevenueEntry -> RevenueId (string) need to contains PlazaGroupId in UniqueId.
         ☐ RevenueEntry -> No need to sync back to TOD.
-        ✔ Update TSBShiftView. @done(21-01-26 21:27)
-        ✔ Updete UserShift View. @done(21-01-26 21:27)
-        ✔ Updete UserShiftRevenue View. @done(21-01-26 21:27)
         ☐ Add Table LastSync (TableName, LastSyncDate).
         ☐ Add RevenueInfo Model (UserId, FullNameEN, FullNameTH, RevenueId)
         ☐ Add RevenueInfoView
         ☐ UserBalance -> Begin/Emd
         ☐ UserBalance -> GetBalance(JobBegin, JobEnd) -> UserBalance.End is between Jobs Begin/End.
         ☐ TOD JobManager -> Add methods to extract Begin/End from list of Jobs (by plazagroup)
-    DMT.TA.Models:
-        ✔ Add RevenueEntry Table (To Keep all revenue entry from TOD Apps). @done(21-01-24 11:20)
-    DMT.TOD.Models:
-        ✔ Remove RevenueEntry Model (move to DMT.Models project). @done(21-01-24 11:20)
-    DMT.RabbitMQ.Client:
-        ✔ Update code in ProcessJson method. @done(21-01-19 11:09)
-    DMT.Controls:
-        AttachProperties:
-            ✘ Add Supports MaxLength for auto change focus (FocusOptions). @cancelled(21-01-18 05:38)
-        Styles:
-            ✔ Add ListBox Style xaml. @done(21-01-17 01:06)
-        MessageBox:
-            ✔ MessageBoxWindow @done(21-01-19 23:56)
-            ✔ MessageBoxYesNoWindow (TOD) @done(21-01-19 23:56)
-            ✘ MessageBoxYesNoRedWindow @cancelled(21-01-20 00:34)
-            ✔ MessageBoxYesNo2Window @done(21-01-20 00:34)
-            ✔ MessageBoxYesNo3Window @done(21-01-20 00:47)
-    DMT.Plaza.Config.App:
-        ✔ TSBViewPage Refactor to used TabControl for TA, TOD. @done(21-01-16 20:32)
-        ✘ Common Code for Singleton/Static Access All Pages, Windows. @cancelled(21-01-24 11:20)
-        ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 04:47)
-        Styles:
-            ✔ Add ListBox Style xaml. @done(21-01-17 00:10)
     DMT.Plaza.Sumulator.App:
-        ✔ Update ListBox, ListBoxItem Style for Rounded Connor Item Selection. @done(21-01-18 05:31)
-        ✔ Refactor Lane Simulator view page. @done(21-01-16 20:58)
         ☐ Refactor User Selection window.
-        ✔ Common Code for Singleton/Static Access All Pages, Windows. @done(21-01-18 06:56)
-        ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 01:04)
-        Styles:
-            ✔ Add ListBox Style xaml. @done(21-01-17 00:10)
-    DMT.Account.App:
-        Controls:
-            ✔ Add Config for disply status bars. @done(21-01-18 03:53)
-        ✔ Common Code for Singleton/Static Access All Pages, Windows. @done(21-01-18 06:08)
-        ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 04:47)
-        ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
-        ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
     DMT.TA.Rest.Server:
         MQService:
             ☐ Add TAMQService -> Setup in TOD App (for keep message to send to TA later).
-        TODClientManageService:
-            ☐ Register
-            ☐ Unregister
         Rest API:
-            Noyofy:
-                TSB:
-                    ✔ TSBShiftChange @done(21-01-26 19:40)
-                User:
-                    ✔ UserShiftChange @done(21-01-26 19:40)
+            Norify:
+                ☐ IsAlive.
             Shift:
                 TSB:
                     ☐ Remove Current
-                    ✔ Remove Search By Status. @done(21-01-26 14:53)
                 User:
                     ☐ Remove Current
-                    ✔ Remove Search By Status. @done(21-01-26 14:53)
-            Credit:
-                User:
-                    ✔ Current (for get Bag No. Belt No, IsRetrunBag). @done(21-01-26 14:53)
-                    ✔ Save (for update revenue id/revenue date). @done(21-01-26 14:53)
             Coupon:
                 User:
                     ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
@@ -98,6 +35,8 @@ Refactor:
         MQService:
             ☐ Add TODMQService -> Setup in TA App (for keep message to send to TOD(s) later).
         Rest API:
+            Norify:
+                ☐ IsAlive.
             TSBShift:
                 ☐ Gets By LastSync.
     DMT.TAxTOD.Rest.Client:
@@ -111,13 +50,6 @@ Refactor:
             Shift:
                 TSB:
                     ☐ Add GetCurrent
-                User:
-                    ✔ Add Current @done(21-01-26 14:52)
-                    ✔ Add Save @done(21-01-26 14:52)
-            Credit:
-                User:
-                    ✔ GetCreditBalance (for get Bag No. Belt No, IsRetrunBag). @done(21-01-26 17:10)
-                    ✔ SaveCretidBalance (for update revenue id/revenue date). @done(21-01-26 17:10)
             Coupon:
                 User:
                     ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
@@ -131,51 +63,13 @@ Refactor:
         Controls:
             ☐ Add Config for disply status bars.
             ☐ Add RabbitMQ statusbar.
-        ✔ Common Code for Singleton/Static Access All Pages, Windows. @done(21-01-18 06:40)
-        ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 01:00)
-        ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
-        ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
-        ✔ Check Cannot Create duplicate UserCreditBalance (need check PlazaGroup). @done(21-01-27 07:57)
         ☐ Add New Collector Credit Balance -> Search User need Smartcard link.
-        ✔ Bug Return Credit reach zero but not remove from list. @done(21-01-27 18:15)
     DMT.TOD.App:
         Controls:
             ☐ Add Config for disply status bars.
             ☐ Add RabbitMQ statusbar.
-        ✔ Common Code for Singleton/Static Access All Pages, Windows. @done(21-01-18 07:36)
-        ✔ Common Code for Singleton/Static Access Windows -> Auto set Owner. @done(21-01-20 01:00)
-        ✔ Supports Sign-In notify Expire @done(21-01-19 15:19)
-        ✔ Supports Sign-In notify Invalid pwd lock after 3 times. @done(21-01-19 15:19)
-        ✔ Change Shift TSB. @done(21-01-19 17:49)
-        ✔ Change Shift User. @done(21-01-19 17:49)
-        ✔ EMV/QR Code View Page. @done(21-01-20 21:24)
-        ✔ Job List View Page. @done(21-01-20 03:57)
-        ✘ Revenue Entry Need to Notify UserCreditBanace not match PlazaGroup. @cancelled(21-01-27 19:11)
-        ✔ Revenue Entry Collector Page (WITHOUT TA). @done(21-01-22 02:17)
-        ✔ Revenue Entry Collector Page (WITN TA). @done(21-01-27 19:11)
-        ✔ Revenue Entry Chief Page (WITHOUT TA). @done(21-01-26 17:10)
-        ✔ Revenue Entry Chief Page (WITN TA). @done(21-01-27 19:11)
         ☐ Revenue Entry Chief Page -> Search User need Smartcard link.
         ☐ EMV/QR Code View Page -> Search User need Smartcard link.
         ☐ Daily Slip Report Window -> (Select Date, RevenueInfo item) -> Show Daily Slip Page.
         ☐ Daily Summary Report Window => (Select Date) -> Show Daily Summary Page.
-        Bug Anusornsatan:
-            ✔ job list is duplicate need to check. @done(21-01-28 12:55)
-            ✔ emv list sned same startdate/starttime why (revenue entry) @done(21-01-27 18:15)
-        TODManagers:
-            CurrentTSBManager:
-                ✔ Add Internal Variable - UserShiftManager. @done(21-01-26 10:26)
-                ✔ Add Internal Variable - JobManager. @done(21-01-26 10:26)
-                ✔ Add Internal Variable - PaymentManager. @done(21-01-26 10:26)
-            PaymentManager:
-                ✔ For GetEMV need in IsHistorical mode to used Job selection start/end datetime. @done(21-01-27 09:19)
-                ✔ For GetQRCode need in IsHistorical mode to used Job selection start/end datetime. @done(21-01-27 09:19)
-            RevenueEntryManager:
-                Refactor code:
-                    ✔ Remove UserShiftManager and Use Property in CurrentTSBManager instead. @done(21-01-26 10:27)
-                    ✔ Remove JobManager and Use Property in CurrentTSBManager instead. @done(21-01-26 10:27)
-                    ✔ Remove PaymentManager and Use Property in CurrentTSBManager instead. @done(21-01-26 10:27)
-                    ✔ Need to Generte RevenueEntry file to send to TAApp Rest API. @done(21-01-26 10:27)
-        Check Exits Reports:
-            ✔ Daily Revenue Entry Slip. @done(21-01-20 05:01)
-            ✔ Revenue Summary Report. @done(21-01-20 05:01)
+
