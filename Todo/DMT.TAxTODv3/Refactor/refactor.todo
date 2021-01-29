@@ -57,6 +57,8 @@ Refactor:
     DMT.TOD.App:
         Controls:
             ☐ Add Config for disply status bars.
+        Bug:
+            ☐ Chief Revenue Entry -> unselected jobs clear after send revenue (printd).
         ✘ Revenue Entry Chief Page -> Search User need Smartcard link. @cancelled(21-01-29 07:09)
         ✘ EMV/QR Code View Page -> Search User need Smartcard link. @cancelled(21-01-29 07:08)
 
