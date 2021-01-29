@@ -37,6 +37,7 @@ Refactor:
     DMT.Plaza.Simulator.App:
         ☐ Update LaneActivity -> Add Button for Sold Coupon.
         ☐ Add SoldCoupon Window.
+        ☐ Add Test Get Coupons with progress bar class and service.
     DMT.TA.Rest.Client:
         Rest API:
             Shift:
