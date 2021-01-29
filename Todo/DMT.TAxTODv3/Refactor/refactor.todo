@@ -2,11 +2,11 @@ Refactor:
     DMT.Models:
         ☐ TSBShift -> Add Field LastSync (DateTime?)
         ☐ RevenueEntry -> RevenueId (string) need to contains PlazaGroupId in UniqueId.
-        ☐ RevenueEntry -> No need to sync back to TOD.
+        ✘ RevenueEntry -> No need to sync back to TOD. @cancelled(21-01-29 07:09)
         ☐ Add Table LastSync (TableName, LastSyncDate).
-        ☐ Add RevenueInfo Model (UserId, FullNameEN, FullNameTH, RevenueId)
+        ✘ Add RevenueInfo Model (UserId, FullNameEN, FullNameTH, RevenueId) @cancelled(21-01-29 07:09)
         ☐ Add RevenueInfoView
-        ☐ UserBalance -> Begin/Emd
+        ☐ UserBalance -> Begin/End
         ☐ UserBalance -> GetBalance(JobBegin, JobEnd) -> UserBalance.End is between Jobs Begin/End.
         ☐ TOD JobManager -> Add methods to extract Begin/End from list of Jobs (by plazagroup)
     DMT.Plaza.Sumulator.App:
@@ -17,8 +17,6 @@ Refactor:
         Rest API:
             Shift:
                 TSB:
-                    ☐ Remove Current
-                User:
                     ☐ Remove Current
             Coupon:
                 User:
@@ -43,7 +41,7 @@ Refactor:
         Rest API:
             Shift:
                 TSB:
-                    ☐ Add GetCurrent
+                    ☐ Add GetCurrent ???
             Coupon:
                 User:
                     ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
@@ -55,10 +53,10 @@ Refactor:
     DMT.TA.App:
         Controls:
             ☐ Add Config for disply status bars.
-        ☐ Add New Collector Credit Balance -> Search User need Smartcard link.
+        ✘ Add New Collector Credit Balance -> Search User need Smartcard link. @cancelled(21-01-29 07:09)
     DMT.TOD.App:
         Controls:
             ☐ Add Config for disply status bars.
-        ☐ Revenue Entry Chief Page -> Search User need Smartcard link.
-        ☐ EMV/QR Code View Page -> Search User need Smartcard link.
+        ✘ Revenue Entry Chief Page -> Search User need Smartcard link. @cancelled(21-01-29 07:09)
+        ✘ EMV/QR Code View Page -> Search User need Smartcard link. @cancelled(21-01-29 07:08)
 
