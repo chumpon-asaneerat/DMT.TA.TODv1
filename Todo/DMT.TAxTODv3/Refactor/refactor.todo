@@ -38,6 +38,12 @@ Refactor:
         ☐ Update LaneActivity -> Add Button for Sold Coupon.
         ☐ Add SoldCoupon Window.
         ☐ Add Test Get Coupons with progress bar class and service.
+        CouponSyncService:
+            ☐ Step 1 - Check totalRecords.
+            ☐ Step 2 - 
+            ☐ Step 3 - 
+            ☐ Step 4 - 
+            ☐ Step 5 - 
     DMT.TA.Rest.Client:
         Rest API:
             Shift:
