@@ -2,25 +2,15 @@ Refactor:
     DMT.Models:
         ☐ TSBShift -> Add Field LastSync (DateTime?)
         ☐ RevenueEntry -> RevenueId (string) need to contains PlazaGroupId in UniqueId.
-        ✘ RevenueEntry -> No need to sync back to TOD. @cancelled(21-01-29 07:09)
         ☐ Add Table LastSync (TableName, LastSyncDate).
-        ✘ Add RevenueInfo Model (UserId, FullNameEN, FullNameTH, RevenueId) @cancelled(21-01-29 07:09)
         ☐ Add RevenueInfoView
         ☐ UserBalance -> Begin/End
         ☐ UserBalance -> GetBalance(JobBegin, JobEnd) -> UserBalance.End is between Jobs Begin/End.
         ☐ TOD JobManager -> Add methods to extract Begin/End from list of Jobs (by plazagroup)
-    DMT.Plaza.Sumulator.App:
-        ☐ Refactor User Selection window.
     DMT.TA.Rest.Server:
         MQService:
             ☐ Add TAMQService -> Setup in TOD App (for keep message to send to TA later).
         Rest API:
-            Shift:
-                TSB:
-                    ☐ Remove Current
-            Coupon:
-                User:
-                    ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
             Revenue:
                 ☐ GetRevenueByDate -> List<RevenueInfo>.
             TSBShift:
@@ -38,20 +28,11 @@ Refactor:
         ☐ Update LaneActivity -> Add Button for Sold Coupon.
         ☐ Add SoldCoupon Window.
         ☐ Add Test Get Coupons with progress bar class and service.
-        CouponSyncService:
-            ☐ Step 1 - Check totalRecords.
-            ☐ Step 2 - 
-            ☐ Step 3 - 
-            ☐ Step 4 - 
-            ☐ Step 5 - 
     DMT.TA.Rest.Client:
         Rest API:
             Shift:
                 TSB:
                     ☐ Add GetCurrent ???
-            Coupon:
-                User:
-                    ☐ GetCouponBalance (for get Coupon Sold, IsReturnCoupon).
             Revenue:
                 ☐ GetRevenueByDate -> List<RevenueInfo>.
     DMT.Account.App:
@@ -60,12 +41,9 @@ Refactor:
     DMT.TA.App:
         Controls:
             ☐ Add Config for disply status bars.
-        ✘ Add New Collector Credit Balance -> Search User need Smartcard link. @cancelled(21-01-29 07:09)
     DMT.TOD.App:
         Controls:
             ☐ Add Config for disply status bars.
         Bug:
             ☐ Chief Revenue Entry -> unselected jobs clear after send revenue (printd).
-        ✘ Revenue Entry Chief Page -> Search User need Smartcard link. @cancelled(21-01-29 07:09)
-        ✘ EMV/QR Code View Page -> Search User need Smartcard link. @cancelled(21-01-29 07:08)
 
