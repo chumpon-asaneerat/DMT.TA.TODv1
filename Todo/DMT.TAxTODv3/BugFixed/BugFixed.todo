@@ -4,6 +4,7 @@ DMT:
             ✔ Fixed HeaderBars/StatusBars - แก้ bug update ข้อมูลส่วน header และ status ทุก ๆ 60 s ทำให้ดูเหมือนโปรแกรมค้าง @done(21-02-13 01:56)
         TOD:
             ✔ Fixed HeaderBars/StatusBars - แก้ bug update ข้อมูลส่วน header และ status ทุก ๆ 60 s ทำให้ดูเหมือนโปรแกรมค้าง @done(21-02-13 01:56)
+            ✔ Fixed bug to find auto select shift (after mid night). @done(21-02-13 02:55)
     Common:
         ✔ ปฎิทิน ขอใหญ่ หน่อย เลือกวัน ใน ปฎิทิน แล้ว ปฎิทินไม่หาย @done(21-02-02 19:44)
     TA:
@@ -63,3 +64,4 @@ DMT:
         ✔ Fixed bug auto select shift (หัวหน้าเปลี่ยนกะ/พนักงานเปิดกะ) @done(21-02-10 21:47)
         ✔ Quick fixed ปัญหาถุงเงิน โดย เปลี่ยนให้ไปหยิบ ถุง ล่าสุด ที่ เพิ่ง สร้างแทน ในการนำไปแสดงตอนป้อนรายได้ @done(21-02-12 19:17)
         ✔ Fixed HeaderBars/StatusBars - แก้ bug update ข้อมูลส่วน header และ status ทุก ๆ 60 s ทำให้ดูเหมือนโปรแกรมค้าง @done(21-02-13 01:56)
+        ✔ Fixed bug to find auto select shift (after mid night). @done(21-02-13 02:55)
