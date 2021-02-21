@@ -2,10 +2,10 @@ DMT:
     Note:
         ☐ ยังพบ Bug โปรแกรมปิดไปเอง เนื่องจากปัญหาการ sync คูปองกับ TA Server แม้จะไม่ได้ทำการกดปุ่ม sync ซึ่งยังหาสาเหตุไม่ได้
     New Update:
+        TA:
+            ✔ Json date serialization -> fixed all datetime datatype to add +7 at the end. @done(21-02-21 18:41)
         TOD:
-            ✔ แก้ bug format declare -> OperationDateTime, DeclareDateTime เพิ่ม +7 ต่อท้าย @done(21-02-21 14:34)
-            ✔ แก้ bug emv/qrcide -> Start/End เพิ่ม +7 ต่อท้าย @done(21-02-21 15:44)
-            ✔ แก้ bug format declare -> attendanceDateTime, departureDateTime เพิ่ม +7 ต่อท้าย @done(21-02-21 16:48)
+            ✔ Json date serialization -> fixed all datetime datatype to add +7 at the end. @done(21-02-21 18:41)
     Common:
         ✔ ปฎิทิน ขอใหญ่ หน่อย เลือกวัน ใน ปฎิทิน แล้ว ปฎิทินไม่หาย @done(21-02-02 19:44)
     TA:
@@ -54,6 +54,7 @@ DMT:
         ✔ หน้าจอยืมคูปอง Fixed Date Problem. @done(21-02-20 13:31)
         ✔ หน้าจอคืนคูปอง Fixed Date Problem. @done(21-02-20 13:31)
         ✔ หน้าจอหัวหน้าขายคูปอง Fixed Date Problem. @done(21-02-20 13:31)
+        ✔ Json date serialization -> fixed all datetime datatype to add +7 at the end. @done(21-02-21 18:41)
     TOD:
         ✔ หัวหน้า เปลี่ยนกะ ให้ default เลือกกะ ให้ โดยดูจากเวลาที่ พนง มาเปิด @done(21-02-02 18:46)
             05:00 - 13:00 เช้า
@@ -89,3 +90,4 @@ DMT:
         ✔ แก้ bug format declare -> OperationDateTime, DeclareDateTime เพิ่ม +7 ต่อท้าย @done(21-02-21 14:34)
         ✔ แก้ bug emv/qrcide -> Start/End เพิ่ม +7 ต่อท้าย @done(21-02-21 15:44)
         ✔ แก้ bug format declare -> attendanceDateTime, departureDateTime เพิ่ม +7 ต่อท้าย @done(21-02-21 16:48)
+        ✔ Json date serialization -> fixed all datetime datatype to add +7 at the end. @done(21-02-21 18:41)
