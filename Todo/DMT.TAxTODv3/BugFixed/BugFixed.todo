@@ -2,19 +2,8 @@ DMT:
     Note:
         ☐ ยังพบ Bug โปรแกรมปิดไปเอง เนื่องจากปัญหาการ sync คูปองกับ TA Server แม้จะไม่ได้ทำการกดปุ่ม sync ซึ่งยังหาสาเหตุไม่ได้
     Nw Update:
-        Common:
-            ✔ Auto Compress old backup files -> ทำการ compress message files เมื่อเกิน 2 เดือน @done(21-02-20 15:03)
-            การทำงาน 
-            1. จากเดือนปัจจุบัน เช่น 2021-02 จะทำการนำ message files ที่ เก่ากว่าวันที่ 2020-12-01
-            2. ทำการ compress files ดังกล่าว โดยจะมีชื่อเป็น 2020-12-01
-        TA:
-            ✔ Update View UserCouponSoldTransactionView -> ไม่เช็ค FininshFlag. @done(21-02-20 13:31)
-            ✔ หน้าจอยืมคูปอง Fixed Date Problem. @done(21-02-20 13:31)
-            ✔ หน้าจอคืนคูปอง Fixed Date Problem. @done(21-02-20 13:31)
-            ✔ หน้าจอหัวหน้าขายคูปอง Fixed Date Problem. @done(21-02-20 13:31)
         TOD:
-            ✔ หน้าจอป้อนรายได้ Fixed Date Problem. @done(21-02-20 13:32)
-            ✔ หน้าจอป้อนรายได้ สามารถดึงข้อมูลการขายคูปองมาแสดงได้ (โดยคูปองไม่ต้องเข้าหน้าจอคืนคูปอง). @done(21-02-20 13:32)
+            ✔ แก้ bug format declare -> OperationDateTime, DeclareDateTime เพิ่ม +7 ต่อท้าย @done(21-02-21 14:34)
     Common:
         ✔ ปฎิทิน ขอใหญ่ หน่อย เลือกวัน ใน ปฎิทิน แล้ว ปฎิทินไม่หาย @done(21-02-02 19:44)
     TA:
@@ -95,3 +84,4 @@ DMT:
         ✔ Fixed bug to find auto select shift (after mid night). @done(21-02-13 02:55)
         ✔ หน้าจอป้อนรายได้ Fixed Date Problem. @done(21-02-20 13:32)
         ✔ หน้าจอป้อนรายได้ สามารถดึงข้อมูลการขายคูปองมาแสดงได้ (โดยคูปองไม่ต้องเข้าหน้าจอคืนคูปอง). @done(21-02-20 13:32)
+        ✔ แก้ bug format declare -> OperationDateTime, DeclareDateTime เพิ่ม +7 ต่อท้าย @done(21-02-21 14:34)
