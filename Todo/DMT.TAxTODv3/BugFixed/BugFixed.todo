@@ -5,6 +5,7 @@ DMT:
         TOD:
             ✔ แก้ bug format declare -> OperationDateTime, DeclareDateTime เพิ่ม +7 ต่อท้าย @done(21-02-21 14:34)
             ✔ แก้ bug emv/qrcide -> Start/End เพิ่ม +7 ต่อท้าย @done(21-02-21 15:44)
+            ✔ แก้ bug format declare -> attendanceDateTime, departureDateTime เพิ่ม +7 ต่อท้าย @done(21-02-21 16:48)
     Common:
         ✔ ปฎิทิน ขอใหญ่ หน่อย เลือกวัน ใน ปฎิทิน แล้ว ปฎิทินไม่หาย @done(21-02-02 19:44)
     TA:
@@ -87,3 +88,4 @@ DMT:
         ✔ หน้าจอป้อนรายได้ สามารถดึงข้อมูลการขายคูปองมาแสดงได้ (โดยคูปองไม่ต้องเข้าหน้าจอคืนคูปอง). @done(21-02-20 13:32)
         ✔ แก้ bug format declare -> OperationDateTime, DeclareDateTime เพิ่ม +7 ต่อท้าย @done(21-02-21 14:34)
         ✔ แก้ bug emv/qrcide -> Start/End เพิ่ม +7 ต่อท้าย @done(21-02-21 15:44)
+        ✔ แก้ bug format declare -> attendanceDateTime, departureDateTime เพิ่ม +7 ต่อท้าย @done(21-02-21 16:48)
