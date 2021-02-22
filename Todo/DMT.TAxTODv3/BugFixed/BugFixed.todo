@@ -6,11 +6,11 @@ DMT:
             ☐ Msg ต่างๆ เช่น password ผิด ขอให้เป็นสีส้มสีแดง ( เหมือนตอนรับถุงเงิน)
         TA:
             ✔ สถานะ DB local แก้จาก connected เป็น on/off @done(21-02-22 11:03)
-            ☐ ข้อความกรณี รหัส โดน lock ตัด ข้อความ 24 hrs ออก เพิ่มว่า โปรดติดต่อผู้ดูแลระบบ หมายเลข 7777
+            ✔ ข้อความกรณี รหัส โดน lock ตัด ข้อความ 24 hrs ออก เพิ่มว่า โปรดติดต่อผู้ดูแลระบบ หมายเลข 7777 @done(21-02-22 11:31)
             ☐ Json date serialization#2 -> fixed all datetime datatype to add +7 at the end.
         TOD:
             ✔ สถานะ DB local แก้จาก connected เป็น on/off @done(21-02-22 11:03)
-            ☐ ข้อความกรณี รหัส โดน lock ตัด ข้อความ 24 hrs ออก เพิ่มว่า โปรดติดต่อผู้ดูแลระบบ หมายเลข 7777
+            ✔ ข้อความกรณี รหัส โดน lock ตัด ข้อความ 24 hrs ออก เพิ่มว่า โปรดติดต่อผู้ดูแลระบบ หมายเลข 7777 @done(21-02-22 11:31)
             ☐ Json date serialization#2 -> fixed all datetime datatype to add +7 at the end.
     Common:
         ✔ ปฎิทิน ขอใหญ่ หน่อย เลือกวัน ใน ปฎิทิน แล้ว ปฎิทินไม่หาย @done(21-02-02 19:44)
@@ -62,6 +62,7 @@ DMT:
         ✔ หน้าจอหัวหน้าขายคูปอง Fixed Date Problem. @done(21-02-20 13:31)
         ✔ Json date serialization -> fixed all datetime datatype to add +7 at the end. @done(21-02-21 18:41)
         ✔ สถานะ DB local แก้จาก connected เป็น on/off @done(21-02-22 11:03)
+        ✔ ข้อความกรณี รหัส โดน lock ตัด ข้อความ 24 hrs ออก เพิ่มว่า โปรดติดต่อผู้ดูแลระบบ หมายเลข 7777 @done(21-02-22 11:31)
     TOD:
         ✔ หัวหน้า เปลี่ยนกะ ให้ default เลือกกะ ให้ โดยดูจากเวลาที่ พนง มาเปิด @done(21-02-02 18:46)
             05:00 - 13:00 เช้า
@@ -99,3 +100,4 @@ DMT:
         ✔ แก้ bug format declare -> attendanceDateTime, departureDateTime เพิ่ม +7 ต่อท้าย @done(21-02-21 16:48)
         ✔ Json date serialization -> fixed all datetime datatype to add +7 at the end. @done(21-02-21 18:41)
         ✔ สถานะ DB local แก้จาก connected เป็น on/off @done(21-02-22 11:03)
+        ✔ ข้อความกรณี รหัส โดน lock ตัด ข้อความ 24 hrs ออก เพิ่มว่า โปรดติดต่อผู้ดูแลระบบ หมายเลข 7777 @done(21-02-22 11:31)
