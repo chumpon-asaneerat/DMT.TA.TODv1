@@ -6,12 +6,12 @@ DMT:
             ✔ สถานะ DB local แก้จาก connected เป็น on/off @done(21-02-22 11:03)
             ✔ ข้อความกรณี รหัส โดน lock ตัด ข้อความ 24 hrs ออก เพิ่มว่า โปรดติดต่อผู้ดูแลระบบ หมายเลข 7777 @done(21-02-22 11:31)
             ✔ Msg ต่างๆ เช่น password ผิด ขอให้เป็นสีส้มสีแดง ( เหมือนตอนรับถุงเงิน) @done(21-02-22 12:40)
-            ☐ Json date serialization#2 -> fixed all datetime datatype to add +7 at the end.
+            ✔ Json date serialization#2 -> fixed all datetime datatype to add +7 at the end. @done(21-02-22 17:18)
         TOD:
             ✔ สถานะ DB local แก้จาก connected เป็น on/off @done(21-02-22 11:03)
             ✔ ข้อความกรณี รหัส โดน lock ตัด ข้อความ 24 hrs ออก เพิ่มว่า โปรดติดต่อผู้ดูแลระบบ หมายเลข 7777 @done(21-02-22 11:31)
             ✔ Msg ต่างๆ เช่น password ผิด ขอให้เป็นสีส้มสีแดง ( เหมือนตอนรับถุงเงิน) @done(21-02-22 12:40)
-            ☐ Json date serialization#2 -> fixed all datetime datatype to add +7 at the end.
+            ✔ Json date serialization#2 -> fixed all datetime datatype to add +7 at the end. @done(21-02-22 17:18)
     Common:
         ✔ ปฎิทิน ขอใหญ่ หน่อย เลือกวัน ใน ปฎิทิน แล้ว ปฎิทินไม่หาย @done(21-02-02 19:44)
     TA:
