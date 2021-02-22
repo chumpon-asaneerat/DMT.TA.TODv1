@@ -3,9 +3,9 @@ DMT:
         ☐ ยังพบ Bug โปรแกรมปิดไปเอง เนื่องจากปัญหาการ sync คูปองกับ TA Server แม้จะไม่ได้ทำการกดปุ่ม sync ซึ่งยังหาสาเหตุไม่ได้
     New Update:
         TA:
-            ✔ Json date serialization -> fixed all datetime datatype to add +7 at the end. @done(21-02-21 18:41)
+            ☐ Json date serialization#2 -> fixed all datetime datatype to add +7 at the end.
         TOD:
-            ✔ Json date serialization -> fixed all datetime datatype to add +7 at the end. @done(21-02-21 18:41)
+            ☐ Json date serialization#2 -> fixed all datetime datatype to add +7 at the end.
     Common:
         ✔ ปฎิทิน ขอใหญ่ หน่อย เลือกวัน ใน ปฎิทิน แล้ว ปฎิทินไม่หาย @done(21-02-02 19:44)
     TA:
