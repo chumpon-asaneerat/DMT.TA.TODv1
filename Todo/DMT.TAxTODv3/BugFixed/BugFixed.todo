@@ -2,9 +2,15 @@ DMT:
     Note:
         ☐ ยังพบ Bug โปรแกรมปิดไปเอง เนื่องจากปัญหาการ sync คูปองกับ TA Server แม้จะไม่ได้ทำการกดปุ่ม sync ซึ่งยังหาสาเหตุไม่ได้
     New Update:
+        Common:
+            ☐ Msg ต่างๆ เช่น password ผิด ขอให้เป็นสีส้มสีแดง ( เหมือนตอนรับถุงเงิน)
         TA:
+            ☐ สถานะ DB local แก้จาก connected เป็น on/off
+            ☐ ข้อความกรณี รหัส โดน lock ตัด ข้อความ 24 hrs ออก เพิ่มว่า โปรดติดต่อผู้ดูแลระบบ หมายเลข 7777
             ☐ Json date serialization#2 -> fixed all datetime datatype to add +7 at the end.
         TOD:
+            ☐ สถานะ DB local แก้จาก connected เป็น on/off
+            ☐ ข้อความกรณี รหัส โดน lock ตัด ข้อความ 24 hrs ออก เพิ่มว่า โปรดติดต่อผู้ดูแลระบบ หมายเลข 7777
             ☐ Json date serialization#2 -> fixed all datetime datatype to add +7 at the end.
     Common:
         ✔ ปฎิทิน ขอใหญ่ หน่อย เลือกวัน ใน ปฎิทิน แล้ว ปฎิทินไม่หาย @done(21-02-02 19:44)
